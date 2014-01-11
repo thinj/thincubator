@@ -99,10 +99,10 @@ void getOperandRelativeToStackPointer(contextDef* context, s1 offset, stackable*
 void markStackObjects(u1 mark);
 
 /**
- * This method initializes the stack by writing integer values at all locations.
- * \return The allocated main Java stack
+ * This funciton sets the size of the Java stack (in counts of stackables)
+ * @param stackSize The size of the java stack
  */
-jbyteArray osMainStackInit(contextDef* context, size_t stackSize);
+void osSetJavaStackSize(size_t stackSize);
 
 /**
  * This method returns true if and only if the jobject variable # varnum is null

@@ -26,9 +26,6 @@
 static ntThreadContext_t* sAllThreads = NULL;
 ntThreadContext_t* thCurrentThread = NULL;
 
-// Helper variable for transferring of the stack size to the main thread:
-static size_t sJavaStackSize;
-
 // Native Thread context for the 'thread' calling the 'main' method of this executable:
 static ntThreadContext_t sCMainContext;
 
@@ -138,55 +135,6 @@ void thTryYield(contextDef* context) {
         }
     }
 }
-
-///**
-// * \return The next thread from the collection of threads. NULL is returned if no more threads
-// */
-//static jobject sGetNextThread(contextDef* context, jclass cls, jobject thread) {
-//    thread = GetObjectField(context, thread, A_java_lang_Thread_aNextThread);
-//    if (thread == NULL) {
-//        // End of list reached; start all over:
-//        thread = GetStaticObjectField(cls, A_java_lang_Thread_aAllThreads);
-//    }
-//
-//    return thread;
-//}
-
-///**
-// * This method removes the thread 'thread' from the thread collection
-// * \param cls Thread class
-// * \param thread The thread to remove
-// */
-//static void sRemoveThread(contextDef* context, jclass cls, jobject thread) {
-//    __DEBUG("**** BEGIN %p", thread);
-//    //sDumpAllThreads();
-//
-//    jobject prev = NULL;
-//    jobject t = GetStaticObjectField(cls, A_java_lang_Thread_aAllThreads);
-//    while (t != thread && t != NULL) {
-//        prev = t;
-//        t = GetObjectField(context, t, A_java_lang_Thread_aNextThread);
-//    }
-//    if (prev == NULL) {
-//        // Didn't enter the loop at all:
-//        if (t != NULL) {
-//            // It's the first thread and there is at least a single thread left:
-//            jobject next = GetObjectField(context, t, A_java_lang_Thread_aNextThread);
-//            SetStaticObjectField(cls, A_java_lang_Thread_aAllThreads, next);
-//        }
-//    } else {
-//        jobject next;
-//        if (t != NULL) {
-//            next = GetObjectField(context, t, A_java_lang_Thread_aNextThread);
-//        } else {
-//            // It is the last element:
-//            next = NULL;
-//        }
-//        SetObjectField(prev, A_java_lang_Thread_aNextThread, next);
-//    }
-//    //sDumpAllThreads();
-//    __DEBUG("**** END %p", thread);
-//}
 
 jlong thGetCurrentThreadId(contextDef* context) {
     jobject currentThread = thCurrentThread->javaThread;
@@ -670,17 +618,19 @@ jbyteArray sAllocStack(contextDef* context, jobject thread) {
     jbyteArray stackObject = osAllocateStack(context);
 
     if (stackObject != NULL) {
-        // Prepare the stack so it contains 'this' as its first element:
-        stackable* stack = jaGetArrayPayLoad(context, (jarray) stackObject);
+        // Avoid garbage collection of our one and only stack (at this point).
+        // The stack shall be unprotected when the stack has been referenced from the
+        // first thread, see osUnprotectStack():
+        heapProtect((jobject) stackObject, TRUE);
 
-        //        const methodInClass* mic = getVirtualMethodEntryByLinkId(thread, M_java_lang_Thread_runFromNative);
-        //        __DEBUG("start addr = 0x%04x", mic->codeOffset);
-        // Prepare the VM context so it will start running the method leading way to Thread.run():
-        u2 sp = 0;
+        if (thread != NULL) {
+            // Prepare the stack so it contains 'this' as its first element:
+            stackable* stack = jaGetArrayPayLoad(context, (jarray) stackObject);
 
-        // Push 'this':
-        stack[sp].operand.jref = thread;
-        stack[sp++].type = OBJECTREF;
+            // Push 'this':
+            stack[0].operand.jref = thread;
+            stack[0].type = OBJECTREF;
+        }
     }
     // else: An out-of-mem exception has been thrown
 
@@ -783,7 +733,15 @@ static void sMainFunction(ntThreadContext_t* ntc) {
     sAllThreads = ntc;
 
     // initialize java stack:
-    sMainThreadJavaStack = osMainStackInit(&ntc->context, sJavaStackSize);
+    sMainThreadJavaStack = sAllocStack(&ntc->context, NULL);
+
+    if (sMainThreadJavaStack == NULL) {
+        consoutli("Premature out of memory; can't alloc a stack\n");
+        jvmexit(1);
+    }
+
+    // Set as current stack:
+    osSetStack(&ntc->context, sMainThreadJavaStack);
 
     // Load all java.lang.Class instances:
     cpGenerateJavaLangClassInstances(&ntc->context);
@@ -797,14 +755,14 @@ static void sMainFunction(ntThreadContext_t* ntc) {
 }
 
 void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cStackSize) {
-    // Record the size of a C stack:
-    sCStackSize = cStackSize;
-
     // Initialize java heap:
     heapInit(heap, heapSize);
 
-    // Java stack size:
-    sJavaStackSize = javaStackSize;
+    // Record the size of a C stack:
+    sCStackSize = cStackSize;
+
+    // Record the size of a java stack:
+    osSetJavaStackSize(javaStackSize);
 
     // Clear static area:
     memset(&staticMemory[0], staticMemorySize, sizeof (stackable));

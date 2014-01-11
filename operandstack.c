@@ -44,40 +44,16 @@ jbyteArray osAllocateStack(contextDef* context) {
     return stackObject;
 }
 
-jbyteArray osMainStackInit(contextDef* context, size_t stackSize) {
+void osSetJavaStackSize(size_t stackSize) {
     // STACK_SIZE is in count of stackables, not bytes:
     STACK_SIZE = stackSize / sizeof (stackable);
 
     if (sGetStackSizeInBytes() >= hlGetHeapSizeInBytes()) {
         consoutli("Stack is larger than heap\n");
         jvmexit(1);
-    }
-    
-    // Allocate a java object (byte[]) containing the stack:
-    jbyteArray jstack = osAllocateStack(context);
-
-    if (jstack == NULL) {
-        consoutli("Premature out of memory; can't alloc a stack\n");
-        jvmexit(1);
-    }
-
-    // Avoid garbage collection of our one and only stack (at this point).
-    // The stack shall be unprotected when the stack has been referenced from the
-    // first thread, see osUnprotectStack():
-    heapProtect((jobject) jstack, TRUE);
-
-    // Set as current stack:
-    osSetStack(context, jstack);
-
-//    // Clear stack so that it contains jints all over:
-//    context->stackPointer = 0;
-//    while (context->stackPointer < STACK_SIZE) {
-//        operandStackPushJavaInt(context, 0);
-//    }
-//    context->stackPointer = 0;
-    
-    return jstack;
+    }    
 }
+
 
 void osSetStack(contextDef* context, jbyteArray jStack) {
     // Avoid dereferencing the java type each time the stack is going to be referenced:
