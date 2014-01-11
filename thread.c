@@ -24,7 +24,16 @@
 
 // Collection of all threads:
 static ntThreadContext_t* sAllThreads = NULL;
-ntThreadContext_t* sCurrentThread = NULL;
+ntThreadContext_t* thCurrentThread = NULL;
+
+// Helper variable for transferring of the stack size to the main thread:
+static size_t sJavaStackSize;
+
+// Native Thread context for the 'thread' calling the 'main' method of this executable:
+static ntThreadContext_t sCMainContext;
+
+// Native thread context for the main thread:
+static ntThreadContext_t* sJavaMainContext;
 
 BOOL nissehat = FALSE;
 
@@ -180,7 +189,7 @@ void thTryYield(contextDef* context) {
 //}
 
 jlong thGetCurrentThreadId(contextDef* context) {
-    jobject currentThread = sCurrentThread->javaThread;
+    jobject currentThread = thCurrentThread->javaThread;
     return GetLongField(context, currentThread, A_java_lang_Thread_aId);
 }
 
@@ -231,7 +240,7 @@ void thYield(contextDef* context) {
     ////////////////////////////////////////////////////////////////////////////
     // Find next runnable thread:
     ////////////////////////////////////////////////////////////////////////////
-    ntThreadContext_t* nextThread = sCurrentThread;
+    ntThreadContext_t* nextThread = thCurrentThread;
     BOOL interrupted = FALSE;
     while ((nextThread = sGetNextThread(nextThread)) != NULL) {
         int state = GetIntField(context, nextThread->javaThread, A_java_lang_Thread_aState);
@@ -269,14 +278,14 @@ void thYield(contextDef* context) {
         SetStaticObjectField(context, cls, A_java_lang_Thread_aCurrentThread, nextThread->javaThread);
 
         // Let the other thread run:
-        if (sCurrentThread != nextThread) {
-            __DEBUG("nt yield %p %p\n", sCurrentThread, nextThread);
+        if (thCurrentThread != nextThread) {
+            __DEBUG("nt yield %p %p\n", thCurrentThread, nextThread);
             if (nissehat) consoutli("nt yield %p %p\n", &nextThread->context, &nextThread->context);
             // Set stack to point at next Thread's stack:
             osSetStack(context, nextThread->javaStack);
 
-            ntThreadContext_t* currNtc = sCurrentThread;
-            sCurrentThread = nextThread;
+            ntThreadContext_t* currNtc = thCurrentThread;
+            thCurrentThread = nextThread;
             ntYield(context, currNtc, nextThread);
         }
         if (interrupted) {
@@ -698,11 +707,12 @@ static void sRunFunction(ntThreadContext_t* ntc) {
  * \param stack The native stack
  * \return The native thread context as a java object (byte[])
  */
-jbyteArray thAllocNativeContext(contextDef* context, jobject this, jobject stack) {
+ntThreadContext_t* thAllocNativeContext(contextDef* context, jobject this, jobject stack) {
     jbyteArray ntContextObject = NewByteArray(context, sizeof (ntThreadContext_t));
+    ntThreadContext_t* nt = NULL;
     if (ntContextObject != NULL) {
         heapProtect((jobject) ntContextObject, TRUE);
-        ntThreadContext_t* nt = (ntThreadContext_t*) jaGetArrayPayLoad(context, (jarray) ntContextObject);
+        nt = (ntThreadContext_t*) jaGetArrayPayLoad(context, (jarray) ntContextObject);
         const methodInClass* mic = getVirtualMethodEntryByLinkId(this, M_java_lang_Thread_runFromNative);
 
         ntInitContext(nt, (jbyteArray) stack, sCStackSize, sRunFunction, C_java_lang_Thread, mic->codeOffset);
@@ -710,34 +720,21 @@ jbyteArray thAllocNativeContext(contextDef* context, jobject this, jobject stack
     }
     // else: Out of mem has been thrown
 
-    return ntContextObject;
+    return nt;
 }
 
-
-//vejen frem:
-//   aStack, aNativeStack og aNativeContext skal allokeres i funktionen
-//   thAddToThreadCollection og gemmes i 'context' (undtagen for main, men i det 
-//   tilfælde er sAllThreads == NULL). 
-//   Attributterne fjernes fra java klassen. 
-//   Thread collection implementeres som hægtet liste i 'context', og
-//   sAllThreads skal indeholde collection'en.
-//   Konsekvensen er: Der kan nu itereres over alle contexts uden selv at have en
-//   context.
-//HOV: Hvordan undgås GC - problemer, når disse attributter ikke længere er refereret
-//fra thread object'et?'
 
 void thAddToThreadCollection(contextDef* context, jclass threadCls, jobject thread) {
     __DEBUG("**** BEGIN adding: %p", thread);
     jbyteArray javaStack = NULL;
     jbyteArray nativeStack = NULL;
-    jbyteArray nativeContext = NULL;
+    ntThreadContext_t* nativeContext = NULL;
 
     if (sAllThreads == NULL) {
         // Use Main thread context
         javaStack = sMainThreadJavaStack;
         nativeStack = sMainThreadNativeStack;
-
-        //        nativeContext = sJavaMainContextObject;
+        nativeContext = sJavaMainContext;
     } else {
         // Allocate and prepare the java stack for this thread:
         javaStack = sAllocStack(context, thread);
@@ -752,11 +749,10 @@ void thAddToThreadCollection(contextDef* context, jclass threadCls, jobject thre
     }
 
     if (nativeContext != NULL) {
-        ntThreadContext_t* ntc = (ntThreadContext_t*) jaGetArrayPayLoad(context, (jarray) nativeContext);
-        ntc->next = sAllThreads;
-        ntc->javaStack = javaStack;
+        nativeContext->next = sAllThreads;
+        nativeContext->javaStack = javaStack;
 
-        sAllThreads = ntc;
+        sAllThreads = nativeContext;
     }
     // else: Out of mem thrown
 
@@ -770,14 +766,6 @@ void thInterrupt(contextDef* context, jobject thread) {
 }
 
 
-// Helper variable for transferring of the stack size to the main thread:
-static size_t sJavaStackSize;
-
-// Native Thread context for the 'thread' calling the 'main' method of this executable:
-static ntThreadContext_t sCMainContext;
-
-// Native thread context for the main thread:
-static ntThreadContext_t* sJavaMainContext;
 
 //jobject thGetMainNativeContext(void) {
 //    return (jobject) sJavaMainContextObject;
