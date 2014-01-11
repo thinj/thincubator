@@ -43,7 +43,7 @@ extern "C" {
 
         // Pointer to encapsulating java object:
         jbyteArray javaSelf;
-        
+
         // Simple thread collection; use a chained list:
         struct __ntThreadContext_t* next;
     } ntThreadContext_t;
@@ -57,9 +57,7 @@ extern "C" {
      * \param stackSize Size of the stack
      * \param func Function pointer to the function to run. Set to NULL after start
      */
-    void ntInitContext(ntThreadContext_t* ctx, jbyteArray stack, size_t stackSize, void (*func)(ntThreadContext_t*),
-            u2 classId, codeIndex startAddress);
-
+    void ntInitContext(ntThreadContext_t* ctx, size_t stackSize, void (*func)(ntThreadContext_t*), u2 classId, codeIndex startAddress);
 #ifdef	__cplusplus
 }
 #endif

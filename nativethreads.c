@@ -87,9 +87,8 @@ void ntYield(contextDef* context, ntThreadContext_t* currThr, ntThreadContext_t*
     }
 }
 
-void ntInitContext(ntThreadContext_t* ctx, jbyteArray stack, size_t stackSize, void (*func)(ntThreadContext_t*), u2 classId, codeIndex startAddress) {
+void ntInitContext(ntThreadContext_t* ctx, size_t stackSize, void (*func)(ntThreadContext_t*), u2 classId, codeIndex startAddress) {
     ctx->func = func;
-    ctx->stack = stack;
     ctx->stackSize = stackSize;
     ctx->next = NULL;
     

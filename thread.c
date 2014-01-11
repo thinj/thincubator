@@ -37,11 +37,11 @@ BOOL nissehat = FALSE;
 // The size of a Native C stack:
 static size_t sCStackSize;
 
-// The native C stack for the java main thread:
-static jbyteArray sMainThreadNativeStack;
-
-// The java stack for the main thread:
-static jbyteArray sMainThreadJavaStack;
+//// The native C stack for the java main thread:
+//static jbyteArray sMainThreadNativeStack;
+//
+//// The java stack for the main thread:
+//static jbyteArray sMainThreadJavaStack;
 
 /**
  *  Flag for enabling scheduling.
@@ -654,15 +654,18 @@ static void sRunFunction(ntThreadContext_t* ntc) {
  * \param stack The native stack
  * \return The native thread context as a java object (byte[])
  */
-ntThreadContext_t* thAllocNativeContext(contextDef* context, jobject this, jobject stack) {
+ntThreadContext_t* thAllocNativeContext(contextDef* context, jobject this, jbyteArray stack) {
     jbyteArray ntContextObject = NewByteArray(context, sizeof (ntThreadContext_t));
     ntThreadContext_t* nt = NULL;
     if (ntContextObject != NULL) {
         heapProtect((jobject) ntContextObject, TRUE);
         nt = (ntThreadContext_t*) jaGetArrayPayLoad(context, (jarray) ntContextObject);
-        const methodInClass* mic = getVirtualMethodEntryByLinkId(this, M_java_lang_Thread_runFromNative);
-
-        ntInitContext(nt, (jbyteArray) stack, sCStackSize, sRunFunction, C_java_lang_Thread, mic->codeOffset);
+        nt->stack = stack;
+        if (this != NULL) {
+            const methodInClass* mic = getVirtualMethodEntryByLinkId(this, M_java_lang_Thread_runFromNative);
+            ntInitContext(nt, sCStackSize, sRunFunction, C_java_lang_Thread, mic->codeOffset);
+        }
+        // else: It's the main thread
         nt->javaSelf = ntContextObject;
     }
     // else: Out of mem has been thrown
@@ -670,33 +673,46 @@ ntThreadContext_t* thAllocNativeContext(contextDef* context, jobject this, jobje
     return nt;
 }
 
-void thAddToThreadCollection(contextDef* context, jclass threadCls, jobject thread) {
-    __DEBUG("**** BEGIN adding: %p", thread);
+static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
     jbyteArray javaStack = NULL;
     jbyteArray nativeStack = NULL;
     ntThreadContext_t* nativeContext = NULL;
 
-    if (sAllThreads == NULL) {
-        // Use Main thread context
-        javaStack = sMainThreadJavaStack;
-        nativeStack = sMainThreadNativeStack;
-        nativeContext = sJavaMainContext;
-    } else {
-        // Allocate and prepare the java stack for this thread:
-        javaStack = sAllocStack(context, thread);
-        if (javaStack != NULL) {
-            // Allocate and prepare the native C stack for this thread:
-            nativeStack = NewByteArray(context, sCStackSize);
-        }
-        if (nativeStack != NULL) {
-            // Allocate and prepare a native thread context:
-            nativeContext = thAllocNativeContext(context, thread, (jobject) nativeStack);
-        }
+    // Allocate and prepare the java stack for this thread:
+    javaStack = sAllocStack(context, thread);
+    if (javaStack != NULL) {
+        // Allocate and prepare the native C stack for this thread:
+        nativeStack = NewByteArray(context, sCStackSize);
     }
+    if (nativeStack != NULL) {
+        // Allocate and prepare a native thread context:
+        nativeContext = thAllocNativeContext(context, thread, (jobject) nativeStack);
+    }
+    if (nativeContext != NULL) {
+        nativeContext->next = NULL;
+        nativeContext->javaStack = javaStack;
+    }
+
+    return nativeContext;
+}
+
+void thAddToThreadCollection(contextDef* context, jclass threadCls, jobject thread) {
+    __DEBUG("**** BEGIN adding: %p", thread);
+    //    jbyteArray javaStack = NULL;
+    //    jbyteArray nativeStack = NULL;
+    ntThreadContext_t* nativeContext = NULL;
+
+    //    if (sAllThreads == NULL) {
+    //        // Use Main thread context
+    //        javaStack = sMainThreadJavaStack;
+    //        nativeStack = sMainThreadNativeStack;
+    //        nativeContext = sJavaMainContext;
+    //    } else {
+    nativeContext = sAllocContext(context, thread);
+    //    }
 
     if (nativeContext != NULL) {
         nativeContext->next = sAllThreads;
-        nativeContext->javaStack = javaStack;
 
         sAllThreads = nativeContext;
     }
@@ -732,17 +748,6 @@ static void sMainFunction(ntThreadContext_t* ntc) {
     // First thread running:
     sAllThreads = ntc;
 
-    // initialize java stack:
-    sMainThreadJavaStack = sAllocStack(&ntc->context, NULL);
-
-    if (sMainThreadJavaStack == NULL) {
-        consoutli("Premature out of memory; can't alloc a stack\n");
-        jvmexit(1);
-    }
-
-    // Set as current stack:
-    osSetStack(&ntc->context, sMainThreadJavaStack);
-
     // Load all java.lang.Class instances:
     cpGenerateJavaLangClassInstances(&ntc->context);
 
@@ -772,35 +777,55 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
     memset(&sCMainContext, 0, sizeof (sCMainContext));
     sCMainContext.func = NULL;
 
-    jbyteArray jmc = NewByteArray(&sCMainContext.context, sizeof (ntThreadContext_t));
-
-    if (jmc == NULL) {
-        consoutli("Premature out of memory; can't alloc thread context for main thread\n");
+    // -------------------------------------------------------------------
+    sJavaMainContext = sAllocContext(&sCMainContext.context, NULL);
+    if (sJavaMainContext == NULL) {
+        consoutli("Premature out of memory; can't alloc resources for main thread\n");
         jvmexit(1);
     }
 
-    sJavaMainContext = (ntThreadContext_t*) jaGetArrayPayLoad(&sCMainContext.context, (jarray) jmc);
+    // Set as current stack:
+    osSetStack(&sCMainContext.context, sJavaMainContext->javaStack);
 
-    // Establish self-pointing pointer (thus enabling later references to the java object
-    // containing the context):
-    sJavaMainContext->javaSelf = jmc;
+    //    // initialize java stack:
+    //    sMainThreadJavaStack = sAllocStack(&sCMainContext.context, NULL);
+    //
+    //    if (sMainThreadJavaStack == NULL) {
+    //        consoutli("Premature out of memory; can't alloc a stack\n");
+    //        jvmexit(1);
+    //    }
+    //
+    //    // Set as current stack:
+    //    osSetStack(&sCMainContext.context, sMainThreadJavaStack);
+    //
+    //    jbyteArray jmc = NewByteArray(&sCMainContext.context, sizeof (ntThreadContext_t));
+    //
+    //    if (jmc == NULL) {
+    //        consoutli("Premature out of memory; can't alloc thread context for main thread\n");
+    //        jvmexit(1);
+    //    }
+    //
+    //    sJavaMainContext = (ntThreadContext_t*) jaGetArrayPayLoad(&sCMainContext.context, (jarray) jmc);
+    //
+    //    // Establish self-pointing pointer (thus enabling later references to the java object
+    //    // containing the context):
+    //    sJavaMainContext->javaSelf = jmc;
 
-    // Protect it so GC won't eat it:
-    heapProtect((jobject) jmc, TRUE);
-
-    // Create native C stack for the Java main thread execution:
-    sMainThreadNativeStack = NewByteArray(&sCMainContext.context, cStackSize);
-    if (sMainThreadNativeStack == NULL) {
-        consoutli("Premature out of memory; can't alloc a stack\n");
-        jvmexit(1);
-    }
-
-    // Protect it so GC won't eat it:
-    heapProtect((jobject) sMainThreadNativeStack, TRUE);
+    //    // Protect it so GC won't eat it:
+    //    heapProtect((jobject) jmc, TRUE);
+    //
+    //    // Create native C stack for the Java main thread execution:
+    //    sMainThreadNativeStack = NewByteArray(&sCMainContext.context, cStackSize);
+    //    if (sMainThreadNativeStack == NULL) {
+    //        consoutli("Premature out of memory; can't alloc a stack\n");
+    //        jvmexit(1);
+    //    }
+    //
+    //    // Protect it so GC won't eat it:
+    //    heapProtect((jobject) sMainThreadNativeStack, TRUE);
 
     // Initialize context:
-    ntInitContext(sJavaMainContext, sMainThreadNativeStack, sCStackSize, sMainFunction,
-            startClassIndex, startAddress);
+    ntInitContext(sJavaMainContext, sCStackSize, sMainFunction, startClassIndex, startAddress);
 
     // Start Java Main Thread:
     ntYield(&sJavaMainContext->context, &sCMainContext, sJavaMainContext);
@@ -813,7 +838,7 @@ jobject thAllocNativeStack(void) {
 }
 
 jobject thGetMainNativeStack(void) {
-    return (jobject) sMainThreadNativeStack;
+    return NULL; //(jobject) sMainThreadNativeStack;
 }
 
 int thGetJavaStackPointer(jobject thread) {
