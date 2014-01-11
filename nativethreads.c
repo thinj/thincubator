@@ -14,6 +14,7 @@
 #define DEBUG_ENABLE
 #include "debug.h"
 
+extern ntThreadContext_t* sCurrentThread;
 
 // During thread switching we are not able to use variables on a stack, so these are used as scratch variables:
 static ntReg_t RSP;
@@ -65,6 +66,8 @@ void ntYield(contextDef* context, ntThreadContext_t* currThr, ntThreadContext_t*
         cThr->rsp = RSP;
     }
 
+    sCurrentThread = nextThr;
+    
     if (nThr->func != NULL) {
         // Start new thread:
         stack = jaGetArrayPayLoad(context, (jarray) nThr->stack) + nThr->stackSize;
@@ -88,7 +91,8 @@ void ntInitContext(ntThreadContext_t* ctx, jbyteArray stack, size_t stackSize, v
     ctx->func = func;
     ctx->stack = stack;
     ctx->stackSize = stackSize;
-
+    ctx->next = NULL;
+    
     ctx->context.programCounter = startAddress;
     ctx->context.classIndex = classId;
     ctx->context.stackPointer = 1;

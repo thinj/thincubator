@@ -24,7 +24,7 @@
 
 // Collection of all threads:
 static ntThreadContext_t* sAllThreads = NULL;
-static ntThreadContext_t* sCurrentThread = NULL;
+ntThreadContext_t* sCurrentThread = NULL;
 
 BOOL nissehat = FALSE;
 
@@ -227,6 +227,7 @@ void thYield(contextDef* context) {
     __DEBUG("before: pc = 0x%04x, sp = 0x%04x", context->programCounter, context->stackPointer);
 
     if (nissehat) consoutli("foobar %p\n", context);
+    consoutli("foobar\n");
     ////////////////////////////////////////////////////////////////////////////
     // Find next runnable thread:
     ////////////////////////////////////////////////////////////////////////////
@@ -269,7 +270,7 @@ void thYield(contextDef* context) {
 
         // Let the other thread run:
         if (sCurrentThread != nextThread) {
-            //__DEBUG("nt yield %p %p\n", currNtc, nextNtc);
+            __DEBUG("nt yield %p %p\n", sCurrentThread, nextThread);
             if (nissehat) consoutli("nt yield %p %p\n", &nextThread->context, &nextThread->context);
             // Set stack to point at next Thread's stack:
             osSetStack(context, nextThread->javaStack);
@@ -794,6 +795,9 @@ static ntThreadContext_t* sJavaMainContext;
  * Definition of main function for VM. Has to be compatible with the native scheduling mechanism
  */
 static void sMainFunction(ntThreadContext_t* ntc) {
+    // First thread running:
+    sAllThreads = ntc;
+    
     // initialize java stack:
     sMainThreadJavaStack = osMainStackInit(&ntc->context, sJavaStackSize);
 
