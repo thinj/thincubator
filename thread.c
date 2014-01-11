@@ -37,11 +37,6 @@ BOOL nissehat = FALSE;
 // The size of a Native C stack:
 static size_t sCStackSize;
 
-//// The native C stack for the java main thread:
-//static jbyteArray sMainThreadNativeStack;
-//
-//// The java stack for the main thread:
-//static jbyteArray sMainThreadJavaStack;
 
 /**
  *  Flag for enabling scheduling.
@@ -686,7 +681,7 @@ static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
     }
     if (nativeStack != NULL) {
         // Allocate and prepare a native thread context:
-        nativeContext = thAllocNativeContext(context, thread, (jobject) nativeStack);
+        nativeContext = thAllocNativeContext(context, thread, nativeStack);
     }
     if (nativeContext != NULL) {
         nativeContext->next = NULL;
@@ -786,43 +781,6 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
 
     // Set as current stack:
     osSetStack(&sCMainContext.context, sJavaMainContext->javaStack);
-
-    //    // initialize java stack:
-    //    sMainThreadJavaStack = sAllocStack(&sCMainContext.context, NULL);
-    //
-    //    if (sMainThreadJavaStack == NULL) {
-    //        consoutli("Premature out of memory; can't alloc a stack\n");
-    //        jvmexit(1);
-    //    }
-    //
-    //    // Set as current stack:
-    //    osSetStack(&sCMainContext.context, sMainThreadJavaStack);
-    //
-    //    jbyteArray jmc = NewByteArray(&sCMainContext.context, sizeof (ntThreadContext_t));
-    //
-    //    if (jmc == NULL) {
-    //        consoutli("Premature out of memory; can't alloc thread context for main thread\n");
-    //        jvmexit(1);
-    //    }
-    //
-    //    sJavaMainContext = (ntThreadContext_t*) jaGetArrayPayLoad(&sCMainContext.context, (jarray) jmc);
-    //
-    //    // Establish self-pointing pointer (thus enabling later references to the java object
-    //    // containing the context):
-    //    sJavaMainContext->javaSelf = jmc;
-
-    //    // Protect it so GC won't eat it:
-    //    heapProtect((jobject) jmc, TRUE);
-    //
-    //    // Create native C stack for the Java main thread execution:
-    //    sMainThreadNativeStack = NewByteArray(&sCMainContext.context, cStackSize);
-    //    if (sMainThreadNativeStack == NULL) {
-    //        consoutli("Premature out of memory; can't alloc a stack\n");
-    //        jvmexit(1);
-    //    }
-    //
-    //    // Protect it so GC won't eat it:
-    //    heapProtect((jobject) sMainThreadNativeStack, TRUE);
 
     // Initialize context:
     ntInitContext(sJavaMainContext, sCStackSize, sMainFunction, startClassIndex, startAddress);
