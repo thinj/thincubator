@@ -14,7 +14,7 @@
 #define DEBUG_ENABLE
 #include "debug.h"
 
-extern ntThreadContext_t* sCurrentThread;
+extern ntThreadContext_t* thCurrentThread;
 
 // During thread switching we are not able to use variables on a stack, so these are used as scratch variables:
 static ntReg_t RSP;
@@ -66,7 +66,7 @@ void ntYield(contextDef* context, ntThreadContext_t* currThr, ntThreadContext_t*
         cThr->rsp = RSP;
     }
 
-    sCurrentThread = nextThr;
+    thCurrentThread = nextThr;
     
     if (nThr->func != NULL) {
         // Start new thread:

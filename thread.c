@@ -687,8 +687,6 @@ jbyteArray sAllocStack(contextDef* context, jobject thread) {
     return stackObject;
 }
 
-
-
 /**
  * Definition of function for starting the run-method
  */
@@ -698,7 +696,6 @@ static void sRunFunction(ntThreadContext_t* ntc) {
 
     // Unreachable; runFromNative will never return to this point
 }
-
 
 /**
  * This function allocates a native thread context for the calling thread.
@@ -723,7 +720,6 @@ ntThreadContext_t* thAllocNativeContext(contextDef* context, jobject this, jobje
     return nt;
 }
 
-
 void thAddToThreadCollection(contextDef* context, jclass threadCls, jobject thread) {
     __DEBUG("**** BEGIN adding: %p", thread);
     jbyteArray javaStack = NULL;
@@ -740,7 +736,7 @@ void thAddToThreadCollection(contextDef* context, jclass threadCls, jobject thre
         javaStack = sAllocStack(context, thread);
         if (javaStack != NULL) {
             // Allocate and prepare the native C stack for this thread:
-            nativeStack = osAllocateNativeStack(context, sCStackSize);
+            nativeStack = NewByteArray(context, sCStackSize);
         }
         if (nativeStack != NULL) {
             // Allocate and prepare a native thread context:
@@ -785,7 +781,7 @@ void thInterrupt(contextDef* context, jobject thread) {
 static void sMainFunction(ntThreadContext_t* ntc) {
     // First thread running:
     sAllThreads = ntc;
-    
+
     // initialize java stack:
     sMainThreadJavaStack = osMainStackInit(&ntc->context, sJavaStackSize);
 
@@ -799,7 +795,6 @@ static void sMainFunction(ntThreadContext_t* ntc) {
     // Return to C Main thread:
     ntYield(&ntc->context, sJavaMainContext, &sCMainContext);
 }
-
 
 void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cStackSize) {
     // Record the size of a C stack:
@@ -816,11 +811,11 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
 
     // Turn this 'thread' into C Main thread. The C Main thread shall remain 
     // passive until termination of VM:
-    memset(&sCMainContext, 0, sizeof(sCMainContext));
+    memset(&sCMainContext, 0, sizeof (sCMainContext));
     sCMainContext.func = NULL;
 
     jbyteArray jmc = NewByteArray(&sCMainContext.context, sizeof (ntThreadContext_t));
-    
+
     if (jmc == NULL) {
         consoutli("Premature out of memory; can't alloc thread context for main thread\n");
         jvmexit(1);
@@ -831,12 +826,12 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
     // Establish self-pointing pointer (thus enabling later references to the java object
     // containing the context):
     sJavaMainContext->javaSelf = jmc;
-    
+
     // Protect it so GC won't eat it:
     heapProtect((jobject) jmc, TRUE);
 
     // Create native C stack for the Java main thread execution:
-    sMainThreadNativeStack = osAllocateNativeStack(&sCMainContext.context, cStackSize);
+    sMainThreadNativeStack = NewByteArray(&sCMainContext.context, cStackSize);
     if (sMainThreadNativeStack == NULL) {
         consoutli("Premature out of memory; can't alloc a stack\n");
         jvmexit(1);
@@ -846,7 +841,7 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
     heapProtect((jobject) sMainThreadNativeStack, TRUE);
 
     // Initialize context:
-    ntInitContext(sJavaMainContext, sMainThreadNativeStack, cStackSize, sMainFunction,
+    ntInitContext(sJavaMainContext, sMainThreadNativeStack, sCStackSize, sMainFunction,
             startClassIndex, startAddress);
 
     // Start Java Main Thread:
@@ -854,7 +849,6 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
 
     // will only return to this point when the main thread has terminated
 }
-
 
 jobject thAllocNativeStack(void) {
     return (jobject) NULL; //osAllocateNativeStack(sCStackSize);

@@ -44,12 +44,6 @@ jbyteArray osAllocateStack(contextDef* context) {
     return stackObject;
 }
 
-jbyteArray osAllocateNativeStack(contextDef* context, size_t cStackSize) {
-    jbyteArray stackObject = NewByteArray(context, cStackSize);
-
-    return stackObject;
-}
-
 jbyteArray osMainStackInit(contextDef* context, size_t stackSize) {
     // STACK_SIZE is in count of stackables, not bytes:
     STACK_SIZE = stackSize / sizeof (stackable);

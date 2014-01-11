@@ -131,13 +131,6 @@ stackable* getStack();
 jbyteArray osAllocateStack(contextDef* context);
 
 /**
- * This function allocates a native C stack on heap and return the allocated stack.
- * \param cStackSize The size of the c stack (in bytes)
- * \return The allocated stack (as a byte[])
- */
-jbyteArray osAllocateNativeStack(contextDef* context, size_t cStackSize);
-
-/**
  * This function returns the current stack. Is only guaranteed to be valid during Thread#clinit().
  * \return A byte[] with the current stack
  */
