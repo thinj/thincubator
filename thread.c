@@ -35,6 +35,20 @@ static ntThreadContext_t* sJavaMainContext;
 // The size of a Native C stack:
 static size_t sCStackSize;
 
+/**
+ * The size of a thread stack in count of stackables. Default is 100, but this is changed when the main stack is initialized
+ */
+size_t STACK_SIZE = 100;
+
+/**
+ * This function returns the size of a stack in number of bytes
+ */
+static size_t sGetStackSizeInBytes() {
+    return STACK_SIZE * sizeof (stackable);
+}
+
+
+
 static void sDumpContext(contextDef* context, char* prefix) {
     jobject thr = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread), A_java_lang_Thread_aCurrentThread);
     consoutli("%s"
@@ -576,7 +590,7 @@ void thSleep(contextDef* context, jlong millis) {
 
 jbyteArray sAllocStack(contextDef* context, jobject thread) {
     // Allocate an object without protecting it:
-    jbyteArray stackObject = osAllocateStack(context);
+    jbyteArray stackObject = NewByteArray(context, sGetStackSizeInBytes());
 
     if (stackObject != NULL) {
         // Avoid garbage collection of our one and only stack (at this point).
@@ -646,6 +660,7 @@ static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
         nativeStack = NewByteArray(context, sCStackSize);
     }
     if (nativeStack != NULL) {
+        heapProtect((jobject) nativeStack, TRUE);
         // Allocate and prepare a native thread context:
         nativeContext = thAllocNativeContext(context, thread, nativeStack);
     }
@@ -661,8 +676,7 @@ static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
 void thAttach(contextDef* context, jobject thread) {
     __DEBUG("**** BEGIN adding: %p", thread);
     // The initial stack shall no longer be protected:
-    osUnprotectStack();
-    consoutli("Unprotect othe rstuff ?\n");
+    consoutli("When a thread is terminated its context shall be unprotected\n");
 
     // Set current state to StateRunnable:
     SetIntField(context, thread, A_java_lang_Thread_aState, StateRunnable);
@@ -681,7 +695,6 @@ void thAttach(contextDef* context, jobject thread) {
         sAllThreads->javaThread = thread;
     }
 
-    //sDumpAllThreads();
     __DEBUG("**** END adding: %p", thread);
 }
 
@@ -716,9 +729,9 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
     // Record the size of a C stack:
     sCStackSize = cStackSize;
 
-    // Record the size of a java stack:
-    osSetJavaStackSize(javaStackSize);
-
+    // STACK_SIZE is in count of stackables, not bytes:
+    STACK_SIZE = javaStackSize / sizeof (stackable);
+    
     // Clear static area:
     memset(&staticMemory[0], staticMemorySize, sizeof (stackable));
 

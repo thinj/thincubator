@@ -125,12 +125,6 @@ BOOL osIsObjectRefAtOffsetNull(contextDef* context, u2 offset);
 stackable* getStack();
 
 /**
- * This function allocates a stack on heap and return the allocated stack.
- * \return The allocated stack (as a byte[])
- */
-jbyteArray osAllocateStack(contextDef* context);
-
-/**
  * This function returns the current stack. Is only guaranteed to be valid during Thread#clinit().
  * \return A byte[] with the current stack
  */
@@ -141,15 +135,6 @@ jbyteArray osGetCurrentStack();
  * \param The new jstack
  */
 void osSetStack(contextDef* context, jbyteArray jStack);
-
-/**
- * This method unprotects the current stack. Shall only be used to fix a problem with the first stack:
- * The first stack is allocated on the heap, but not referenced from any objects / classes. In order of
- * avoiding GC og this stack, it is initially protected. However, when the java.lang.Thread.<clinit> has
- * been run, this initial stack is begin referenced from Thread.currentThread => it shall no longer be
- * protected. This serves this function.
- */
-void osUnprotectStack();
 
 /**
  * This function dumps the current operand stack no stdout

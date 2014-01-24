@@ -19,49 +19,16 @@
 #include "vmids.h"
 #include "constantpool.h"
 
-/**
- * The size of a thread stack in count of stackables. Default is 100, but this is changed when the main stack is initialized
- */
-size_t STACK_SIZE = 100;
 
 // TODO Make the current stack part of context -or, even better: Let there be one and only one combined c/java stack!
 // The current stack :
 stackable* stack;
 
-// The current java stack as a java-object:
-// static jbyteArray aCurrentStack;
-
-/**
- * This function returns the size of a stack in number of bytes
- */
-static size_t sGetStackSizeInBytes() {
-    return STACK_SIZE * sizeof (stackable);
-}
-
-jbyteArray osAllocateStack(contextDef* context) {
-    jbyteArray stackObject = NewByteArray(context, sGetStackSizeInBytes());
-
-    return stackObject;
-}
-
-void osSetJavaStackSize(size_t stackSize) {
-    // STACK_SIZE is in count of stackables, not bytes:
-    STACK_SIZE = stackSize / sizeof (stackable);
-
-    if (sGetStackSizeInBytes() >= hlGetHeapSizeInBytes()) {
-        consoutli("Stack is larger than heap\n");
-        jvmexit(1);
-    }    
-}
 
 
 void osSetStack(contextDef* context, jbyteArray jStack) {
     // Avoid dereferencing the java type each time the stack is going to be referenced:
     stack = jaGetArrayPayLoad(context, (jarray) jStack);
-}
-
-void osUnprotectStack() {
-    consoutli("unprotect some stack...\n");
 }
 
 stackable* getStack() {
@@ -79,7 +46,6 @@ void pop(contextDef* context, stackable* ret) {
 }
 
 void push(contextDef* context, stackableOperand OP, stackType TYPE) {
-//    consoutli("beforer push: %d %d\n", context->stackPointer, STACK_SIZE);
     if (context->stackPointer >= STACK_SIZE) {
         consoutli("stack overflow: %d\n", (int) (context->stackPointer));
         jvmexit(1);
@@ -87,7 +53,6 @@ void push(contextDef* context, stackableOperand OP, stackType TYPE) {
     stack[context->stackPointer].operand = OP;
     stack[context->stackPointer].type = TYPE;
     context->stackPointer++;
-//    consoutli("after push: %d\n", context->stackPointer);
 }
 
 jint POP_VERIFY_INT(contextDef* context) {
