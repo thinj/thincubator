@@ -5,7 +5,6 @@
  * Created on December 27, 2013, 4:03 PM
  */
 
-//#include <stdio.h>
 
 #include "nativethreads.h"
 #include "console.h"
@@ -32,25 +31,28 @@ static void (*nextFunc)(ntThreadContext_t*);
  * \param ntc The thread context to test
  */
 static void sCheckStack(contextDef* context, ntThreadContext_t* ntc) {
-    static size_t maxSize = 0;
-    char* cp = jaGetArrayPayLoad(context, (jarray) nThr->stack);
-    size_t i;
-    size_t size = 0;
+    // The C Main 'thread' does not have a java stack:
+    if (nThr->stack != NULL) {
+        static size_t maxSize = 0;
+        char* cp = jaGetArrayPayLoad(context, (jarray) nThr->stack);
+        size_t i;
+        size_t size = 0;
 
-    for (i = 0; i < ntc->stackSize; i++) {
-        if (cp[i] != 0) {
-            size = ntc->stackSize - i;
-            break;
+        for (i = 0; i < ntc->stackSize; i++) {
+            if (cp[i] != 0) {
+                size = ntc->stackSize - i;
+                break;
+            }
         }
-    }
 
-    if (size > maxSize) {
-        maxSize = size;
-        consoutli("New max stack usage = %d/%d\n", maxSize, ntc->stackSize);
+        if (size > maxSize) {
+            maxSize = size;
+            consoutli("New max stack usage = %d/%d\n", maxSize, ntc->stackSize);
+        }
     }
 }
 #else
-#define sCheckStack(X)
+#define sCheckStack(X, Y)
 #endif
 
 void ntYield(contextDef* context, ntThreadContext_t* currThr, ntThreadContext_t* nextThr) {
@@ -67,7 +69,7 @@ void ntYield(contextDef* context, ntThreadContext_t* currThr, ntThreadContext_t*
     }
 
     thCurrentThread = nextThr;
-    
+
     if (nThr->func != NULL) {
         // Start new thread:
         stack = jaGetArrayPayLoad(context, (jarray) nThr->stack) + nThr->stackSize;
@@ -91,7 +93,7 @@ void ntInitContext(ntThreadContext_t* ctx, size_t stackSize, void (*func)(ntThre
     ctx->func = func;
     ctx->stackSize = stackSize;
     ctx->next = NULL;
-    
+
     ctx->context.programCounter = startAddress;
     ctx->context.classIndex = classId;
     ctx->context.stackPointer = 1;

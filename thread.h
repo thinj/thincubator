@@ -29,9 +29,13 @@ typedef struct {
 BOOL thIsSchedulingEnabled(void);
 
 /**
- * This method enables scheduling.
+ * This function attaches the thread to the kernel at sets its state to StateRunnable
+ * @param 
+ * \param this The thread to attach to kernel. If its the first thread, it is assumed
+ * to be the main thread
  */
-void thStartScheduling(void);
+
+void thAttach(contextDef* context, jobject this);
 
 /**
  * This function reschedules.

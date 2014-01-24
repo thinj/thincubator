@@ -18,7 +18,7 @@
 #include "jarray.h"
 #include "instructions.h"
 
-#define DEBUG_ENABLE
+//#define DEBUG_ENABLE
 #include "debug.h"
 #include "alltests.h"
 
@@ -32,17 +32,8 @@ static ntThreadContext_t sCMainContext;
 // Native thread context for the main thread:
 static ntThreadContext_t* sJavaMainContext;
 
-BOOL nissehat = FALSE;
-
 // The size of a Native C stack:
 static size_t sCStackSize;
-
-
-/**
- *  Flag for enabling scheduling.
- *  Shall be set true when java.lang.Thread has changed the way stacks and context shall be accessed.
- */
-static BOOL aSchedulingEnabled = FALSE;
 
 static void sDumpContext(contextDef* context, char* prefix) {
     jobject thr = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread), A_java_lang_Thread_aCurrentThread);
@@ -72,32 +63,6 @@ static void sDumpContext(contextDef* context, char* prefix) {
 }
 
 
-///**
-// * This function returns the context of a thread. It is the callers responsibility to
-// * ensure that the thread != NULL
-// * 
-// * \param thread The thread to get a context from 
-// * \return The execution context of the thread
-// */
-//static ntThreadContext_t* sGetContext(contextDef* context, jobject thread) {
-//    jobject contextObject = GetObjectField(context, thread, A_java_lang_Thread_aNativeContext);
-//    return (ntThreadContext_t*) jaGetArrayPayLoad(contextObject);
-//}
-
-/**
- * \return true if scheduling is enabled
- */
-BOOL thIsSchedulingEnabled() {
-    return aSchedulingEnabled;
-}
-
-/**
- * This method enables scheduling.
- */
-void thStartScheduling() {
-    aSchedulingEnabled = TRUE;
-}
-
 //static void sDumpAllThreads() {
 //	jclass threadClass = getJavaLangClass(C_java_lang_Thread);
 //	jobject stackThread = GetStaticObjectField(threadClass, A_java_lang_Thread_aAllThreads);
@@ -115,19 +80,9 @@ void thStartScheduling() {
 static int aYieldCount = 0;
 
 void thTryYield(contextDef* context) {
-    if (aSchedulingEnabled) {
-        if (aYieldCount++ >= 100) {
-            aYieldCount = 0;
-            __DEBUG("*** Before calling yield... pc = 0x%04x, sp = 0x%04x, cp = 0x%04x, stack = %p",
-                    context->programCounter, context->stackPointer, context->contextPointer, getStack());
-            if (nissehat) consoutli("*** Before calling yield... pc = 0x%04x, sp = 0x%04x, cp = 0x%04x, stack = %p\n",
-                    context->programCounter, context->stackPointer, context->contextPointer, getStack());
-            thYield(context);
-            __DEBUG("*** After calling yield... pc = 0x%04x, sp = 0x%04x, cp = 0x%04x, stack = %p",
-                    context->programCounter, context->stackPointer, context->contextPointer, getStack());
-            if (nissehat) consoutli("*** After calling yield... pc = 0x%04x, sp = 0x%04x, cp = 0x%04x, stack = %p\n",
-                    context->programCounter, context->stackPointer, context->contextPointer, getStack());
-        }
+    if (aYieldCount++ >= 100) {
+        aYieldCount = 0;
+        thYield(context);
     }
 }
 
@@ -140,7 +95,7 @@ static ntThreadContext_t* sGetNextThread(ntThreadContext_t* curr) {
     ntThreadContext_t* next = curr->next;
     if (next == NULL) {
         // Start all over:
-        next = sAllThreads->next;
+        next = sAllThreads;
     }
 
     return next;
@@ -173,77 +128,93 @@ static void sRemoveThread(ntThreadContext_t* curr) {
     }
 }
 
+/**
+ * This function returns the next thread to switch to. If the Main Java thread
+ * has not yet been attached, this method returns the contents of thCurrentThread
+ * @return the next thread to switch to. 
+ */
+
+ntThreadContext_t* sGetNextRunnableThread(contextDef* context) {
+    BOOL interrupted = FALSE;
+    ntThreadContext_t* nextThread = thCurrentThread;
+    if (nextThread->javaThread != NULL) {
+        while ((nextThread = sGetNextThread(nextThread)) != NULL) {
+            int state = GetIntField(context, nextThread->javaThread, A_java_lang_Thread_aState);
+            if (state == StateTerminated) {
+                // TODO Use enum value in stead!
+                // Thread is terminated, get rid of it:
+                sRemoveThread(nextThread);
+
+                // Start all over searching for a runnable thread:
+                nextThread = sAllThreads;
+            } else if (state == StateTimedWaiting) {
+                jobject javaThread = nextThread->javaThread;
+                jlong when = GetLongField(context, nextThread->javaThread, A_java_lang_Thread_aWakeUpAt);
+                if (when < vtCurrentTimeMillis()) {
+                    SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
+                    break;
+                } else {
+                    // Check for interrupt:
+                    if (GetBooleanField(context, javaThread, A_java_lang_Thread_aInterrupted)) {
+                        SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
+                        interrupted = TRUE;
+                        break;
+                    }
+                    // else: Not interrupted, stay asleep...
+                }
+            } else if (state == StateRunnable) {
+                break;
+            }
+        }
+    } else {
+        nextThread = thCurrentThread;
+    }
+
+    return nextThread;
+}
+
 void thYield(contextDef* context) {
-    jclass cls = getJavaLangClass(context, C_java_lang_Thread);
-    //sDumpContext(context, "thYield before: ");
+    // sDumpContext(context, "thYield before: ");
     __DEBUG("before: pc = 0x%04x, sp = 0x%04x", context->programCounter, context->stackPointer);
 
-    if (nissehat) consoutli("foobar %p\n", context);
-    consoutli("foobar\n");
     ////////////////////////////////////////////////////////////////////////////
     // Find next runnable thread:
     ////////////////////////////////////////////////////////////////////////////
-    ntThreadContext_t* nextThread = thCurrentThread;
-    BOOL interrupted = FALSE;
-    while ((nextThread = sGetNextThread(nextThread)) != NULL) {
-        int state = GetIntField(context, nextThread->javaThread, A_java_lang_Thread_aState);
-        if (state == StateTerminated) {
-            // TODO Use enum value in stead!
-            // Thread is terminated, get rid of it:
-            sRemoveThread(nextThread);
-
-            // Start all over searching for a runnable thread:
-            nextThread = sAllThreads;
-        } else if (state == StateTimedWaiting) {
-            jobject javaThread = nextThread->javaThread;
-            jlong when = GetLongField(context, nextThread->javaThread, A_java_lang_Thread_aWakeUpAt);
-            if (when < vtCurrentTimeMillis()) {
-                SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
-                break;
-            } else {
-                // Check for interrupt:
-                if (GetBooleanField(context, javaThread, A_java_lang_Thread_aInterrupted)) {
-                    SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
-                    interrupted = TRUE;
-                    break;
-                }
-                // else: Not interrupted, stay asleep...
-            }
-        } else if (state == StateRunnable) {
-            break;
-        }
-    }
+    ntThreadContext_t* nextThread = sGetNextRunnableThread(context);
 
     ////////////////////////////////////////////////////////////////////////////
     // Switch to next thread:
     ////////////////////////////////////////////////////////////////////////////
     if (nextThread != NULL) {
-        SetStaticObjectField(context, cls, A_java_lang_Thread_aCurrentThread, nextThread->javaThread);
-
         // Let the other thread run:
         if (thCurrentThread != nextThread) {
+            jclass cls = getJavaLangClass(context, C_java_lang_Thread);
+            if (nextThread->javaThread == NULL) {
+                jvmexit(88);
+            }
+            SetStaticObjectField(context, cls, A_java_lang_Thread_aCurrentThread, nextThread->javaThread);
+
             __DEBUG("nt yield %p %p\n", thCurrentThread, nextThread);
-            if (nissehat) consoutli("nt yield %p %p\n", &nextThread->context, &nextThread->context);
+            consoutli("nt yield %p %p\n", &nextThread->context, &nextThread->context);
             // Set stack to point at next Thread's stack:
             osSetStack(context, nextThread->javaStack);
 
             ntThreadContext_t* currNtc = thCurrentThread;
             thCurrentThread = nextThread;
+            consoutli("setting thCurrentThread...\n");
             ntYield(context, currNtc, nextThread);
         }
-        if (interrupted) {
-            consoutli("interrupted: not impl!!!\n");
-            jvmexit(7435);
-            // throwInterruptedException();
-        }
+        //        if (interrupted) {
+        //            consoutli("interrupted: not impl!!!\n");
+        //            jvmexit(7435);
+        //            // throwInterruptedException();
+        //        }
     } else {
         // All threads are terminated:
         jvmexit(0);
     }
 
-    __DEBUG("after");
     //sDumpContext(context, "thYield after : ");
-    if (nissehat) consoutli("foobar %p\n", context);
 }
 
 /**
@@ -413,7 +384,6 @@ void thMonitorExit(contextDef* context, jobject objectToLock) {
         throwNullPointerException(context);
     }
     consoutli("thMonitorExit leave %p\n", context);
-    nissehat = TRUE;
 }
 
 /**
@@ -589,10 +559,6 @@ void thWait(contextDef* context, jobject lockedObject) {
 
     __DEBUG("ended\n");
     sDumpContext(context, "thWait  after : ");
-    context->stackPointer += 5;
-    context->contextPointer += 6;
-    context->framePointer += 10;
-    sDumpContext(context, "thWait  after : ");
 }
 
 void thSleep(contextDef* context, jlong millis) {
@@ -686,32 +652,34 @@ static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
     if (nativeContext != NULL) {
         nativeContext->next = NULL;
         nativeContext->javaStack = javaStack;
+        nativeContext->javaThread = thread;
     }
 
     return nativeContext;
 }
 
-void thAddToThreadCollection(contextDef* context, jclass threadCls, jobject thread) {
+void thAttach(contextDef* context, jobject thread) {
     __DEBUG("**** BEGIN adding: %p", thread);
-    //    jbyteArray javaStack = NULL;
-    //    jbyteArray nativeStack = NULL;
-    ntThreadContext_t* nativeContext = NULL;
+    // The initial stack shall no longer be protected:
+    osUnprotectStack();
+    consoutli("Unprotect othe rstuff ?\n");
 
-    //    if (sAllThreads == NULL) {
-    //        // Use Main thread context
-    //        javaStack = sMainThreadJavaStack;
-    //        nativeStack = sMainThreadNativeStack;
-    //        nativeContext = sJavaMainContext;
-    //    } else {
-    nativeContext = sAllocContext(context, thread);
-    //    }
+    // Set current state to StateRunnable:
+    SetIntField(context, thread, A_java_lang_Thread_aState, StateRunnable);
 
-    if (nativeContext != NULL) {
-        nativeContext->next = sAllThreads;
+    if (sAllThreads->javaThread != NULL) {
+        ntThreadContext_t* nativeContext = sAllocContext(context, thread);
 
-        sAllThreads = nativeContext;
+        if (nativeContext != NULL) {
+            nativeContext->next = sAllThreads;
+            sAllThreads = nativeContext;
+        }
+        // else: Out of mem thrown
+    } else {
+        // It's the main thread; the context has already been alloc'ed, however
+        // at the alloc time the java Thread object did not exist:
+        sAllThreads->javaThread = thread;
     }
-    // else: Out of mem thrown
 
     //sDumpAllThreads();
     __DEBUG("**** END adding: %p", thread);
@@ -721,20 +689,6 @@ void thInterrupt(contextDef* context, jobject thread) {
     // How difficult can it be ?!
     SetBooleanField(context, thread, A_java_lang_Thread_aInterrupted, TRUE);
 }
-
-
-
-//jobject thGetMainNativeContext(void) {
-//    return (jobject) sJavaMainContextObject;
-//}
-
-///**
-// * This function returns a pointer to native thread context for the main thread
-// * \return A pointer to native thread context for the main thread
-// */
-//ntThreadContext_t* thGetJavaMainContext(void) {
-//    return (ntThreadContext_t*) jaGetArrayPayLoad((jarray) sJavaMainContextObject);
-//}
 
 /**
  * Definition of main function for VM. Has to be compatible with the native scheduling mechanism
@@ -750,6 +704,7 @@ static void sMainFunction(ntThreadContext_t* ntc) {
 
     inExecute(&ntc->context);
 
+    __DEBUG("Java Main thread has terminated");
     // Return to C Main thread:
     ntYield(&ntc->context, sJavaMainContext, &sCMainContext);
 }
@@ -788,6 +743,7 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
     // Start Java Main Thread:
     ntYield(&sJavaMainContext->context, &sCMainContext, sJavaMainContext);
 
+    __DEBUG("VM is terminating");
     // will only return to this point when the main thread has terminated
 }
 

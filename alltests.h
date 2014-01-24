@@ -11,19 +11,16 @@
 #define C_java_io_PrintStream 7
 #define C_java_lang_Error 12
 #define C_java_lang_Exception 13
-#define C_java_lang_IllegalArgumentException 14
-#define C_java_lang_IllegalThreadStateException 16
-#define C_java_lang_IndexOutOfBoundsException 17
-#define C_java_lang_Runnable 24
-#define C_java_lang_RuntimeException 25
-#define C_java_lang_StringBuilder 27
-#define C_java_lang_System 28
-#define C_java_lang_Throwable 30
-#define C_java_lang_VirtualMachineError 31
-#define C_java_util_Arrays 32
-#define C_thinj_regression_AllTests 33
-#define C_thinj_regression_ThreadTest 34
-#define C_thinj_regression_ThreadTest_1 35
+#define C_java_lang_IndexOutOfBoundsException 15
+#define C_java_lang_Runnable 22
+#define C_java_lang_RuntimeException 23
+#define C_java_lang_StringBuilder 25
+#define C_java_lang_System 26
+#define C_java_lang_Throwable 28
+#define C_java_lang_VirtualMachineError 29
+#define C_java_util_Arrays 30
+#define C_thinj_regression_AllTests 31
+#define C_thinj_regression_ThreadTest 32
 
 //------------------------------------------------------------------------------
 // Class referenced by VM
@@ -79,18 +76,17 @@ extern const u2 A_thinj_util_SimpleList_aList;
 extern const u2 A_thinj_util_SimpleList_Element_aNext;
 extern const u2 A_thinj_util_SimpleList_Element_aValue;
 #define A_java_lang_OutOfMemoryError_INSTANCE 26
-#define A_java_lang_StringBuilder_aValue 128
+#define A_java_lang_StringBuilder_aValue 127
 #define A_java_lang_System_err 33
-#define A_java_lang_System_out 79
+#define A_java_lang_System_out 77
 #define A_java_lang_Thread_aRunnable 46
 #define A_java_lang_Thread_aThreadIdGenerator 47
-#define A_java_lang_Thread_aAllThreads 54
 #define A_java_lang_Throwable_aCause 29
 #define A_java_lang_Throwable_aStackTrace 31
-#define A_thinj_regression_ThreadTest_aFlag 93
-#define A_thinj_regression_ThreadTest_aMutex 95
-#define A_thinj_regression_ThreadTest_aCount1 96
-#define A_thinj_regression_ThreadTest_aDone 98
+#define A_thinj_regression_ThreadTest_aFlag 91
+#define A_thinj_regression_ThreadTest_aMutex 93
+#define A_thinj_regression_ThreadTest_aCount1 94
+#define A_thinj_regression_ThreadTest_aDone 96
 
 //------------------------------------------------------------------------------
 // Method Attributes
@@ -104,15 +100,13 @@ extern const u2 A_thinj_util_SimpleList_Element_aValue;
 #define M_java_io_PrintStream_printlnLjava_lang_String 35
 #define M_java_io_PrintStream_printLjava_lang_String 36
 #define M_java_io_PrintStream_printI 37
-#define M_java_io_PrintStream_outStringLfLjava_lang_String 83
-#define M_java_io_PrintStream_outStringLjava_lang_String 84
+#define M_java_io_PrintStream_outStringLfLjava_lang_String 81
+#define M_java_io_PrintStream_outStringLjava_lang_String 82
 #define M_java_lang_Class_getName 3
 #define M_java_lang_Class_toString 6
 #define M_java_lang_Error__init 1
 #define M_java_lang_Exception__init 1
 #define M_java_lang_Exception__init_Ljava_lang_String 24
-#define M_java_lang_IllegalArgumentException__init_Ljava_lang_String 24
-#define M_java_lang_IllegalThreadStateException__init_Ljava_lang_String 24
 #define M_java_lang_IndexOutOfBoundsException__init_Ljava_lang_String 24
 #define M_java_lang_NullPointerException__init_Ljava_lang_String 24
 #define M_java_lang_OutOfMemoryError__clinit 28
@@ -130,15 +124,12 @@ extern const u2 A_thinj_util_SimpleList_Element_aValue;
 #define M_java_lang_StringBuilder_toString 6
 #define M_java_lang_StringBuilder_appendI 17
 #define M_java_lang_System__clinit 28
-#define M_java_lang_System_nanoTime 82
 #define M_java_lang_Thread__init 1
 #define M_java_lang_Thread__clinit 28
 #define M_java_lang_Thread_run 44
 #define M_java_lang_Thread__init_Ljava_lang_Runnable 45
-#define M_java_lang_Thread_addToThreadCollectionLjava_lang_Thread 51
+#define M_java_lang_Thread_attach 51
 #define M_java_lang_Thread_yield 52
-#define M_java_lang_Thread_startScheduling 55
-#define M_java_lang_Thread_start 64
 #define M_java_lang_Throwable__init 1
 #define M_java_lang_Throwable_toString 6
 #define M_java_lang_Throwable__init_Ljava_lang_String 24
@@ -147,12 +138,8 @@ extern const u2 A_thinj_util_SimpleList_Element_aValue;
 #define M_java_lang_Throwable_printStackTrace 38
 #define M_java_lang_VirtualMachineError__init 1
 #define M_java_util_Arrays_hashCode_C 7
-#define M_thinj_regression_AllTests_main_Ljava_lang_String 80
-#define M_thinj_regression_AllTests__jvminit 130
+#define M_thinj_regression_AllTests_main_Ljava_lang_String 78
+#define M_thinj_regression_AllTests__jvminit 129
 #define M_thinj_regression_ThreadTest__clinit 28
-#define M_thinj_regression_ThreadTest_main_Ljava_lang_String 80
-#define M_thinj_regression_ThreadTest_testAutoYield 99
-#define M_thinj_regression_ThreadTest_busyWaitDoneJ 100
-#define M_thinj_regression_ThreadTest_access_002Z 121
-#define M_thinj_regression_ThreadTest_1__init 1
-#define M_thinj_regression_ThreadTest_1_run 44
+#define M_thinj_regression_ThreadTest_main_Ljava_lang_String 78
+#define M_thinj_regression_ThreadTest_simpleYield 97

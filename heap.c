@@ -191,7 +191,7 @@ void markAndSweep(contextDef* context) {
 
     consoutli("ikke fardigt...\n");
     jvmexit(65);
-    if (thIsSchedulingEnabled()) {
+//    if (thIsSchedulingEnabled()) {
         // Iterate through all threads:
         jclass threadClass = getJavaLangClass(context, C_java_lang_Thread);
         // jobject thread = GetStaticObjectField(threadClass, A_java_lang_Thread_aAllThreads);
@@ -206,13 +206,13 @@ void markAndSweep(contextDef* context) {
             // Next thread:
 //            thread = GetObjectField(context, thread, A_java_lang_Thread_aNextThread);
 //        }
-    } else {
+//    } else {
         // TODO test!
         consoutli("Untested code; expected to work...\n");
         jvmexit(65);
         // The java.lang.Thread.<clinit> hasn't finished yet, so only a single thread is running:
          mark2(context, getStack(), 0 /*thGetJavaMainContext()->context.stackPointer*/);
-    }
+//    }
     // Sweep heap:
     heap_sweep(markValue);
 
