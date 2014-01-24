@@ -60,6 +60,8 @@ size_t strlen(const char *s) {
  */
 void abort(void) {
     jvmexit(1);
+    // Make compiler believe that there is no return from this method:
+    exit(1);
 }
 /*
  /home/hammer/workspace/bluevm/frame.c:50: undefined reference to `memcpy'

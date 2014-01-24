@@ -228,7 +228,9 @@ void consout(char * format, ...) {
                     {
                         print_cp(prefix, size, "0x");
                         // Platform dependent:
+#pragma GCC diagnostic ignored "-Wpointer-to-int-cast"
                         unsigned int value = (unsigned int) va_arg(args, void*);
+#pragma GCC diagnostic warning "-Wpointer-to-int-cast"
                         //unsigned int value = (unsigned int) va_arg(args, unsigned int);
                         print_x(' ', 0, value);
                         break;

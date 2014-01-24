@@ -19,7 +19,9 @@
 #include "debug.h"
 
 jint Java_java_lang_Object_hashCode(void *context, jobject this) {
+#pragma GCC diagnostic ignored "-Wpointer-to-int-cast"
     return (jint) this;
+#pragma GCC diagnostic warning "-Wpointer-to-int-cast"
 }
 
 jobject JNICALL Java_java_lang_Object_getClass(JNIEnv *env, jobject this) {
