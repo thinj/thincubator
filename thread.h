@@ -11,23 +11,6 @@
 #include "types.h"
 #include "nativethreads.h"
 
-// Iteration type:
-typedef struct {
-    // Thread:
-    jobject thread;
-    
-    // Pointer to stack
-    stackable* stack;
-    
-    // The current stack pointer in the stack:
-    u2 stackPointer;
-} thStackInfo_t;
-
-/**
- * \return true if scheduling is enabled
- */
-BOOL thIsSchedulingEnabled(void);
-
 /**
  * This function attaches the thread to the kernel at sets its state to StateRunnable
  * @param 
@@ -97,32 +80,10 @@ void thInterrupt(contextDef* context, jobject thread);
 void thTryYield(contextDef* context);
 
 /**
- * This function adds the thread to the collection of all threads
- *
- * \param threadCls the java.lang.Thread class
- * \param thread The thread to add
- */
-void thAddToThreadCollection(contextDef* context, jclass threadCls, jobject thread);
-
-/**
  * This method returns the thread id of the current thread.
  * Note that unpredictable results might occur if called before Thread class has been class loaded.
  */
 jlong thGetCurrentThreadId(contextDef* context);
-
-/**
- * This method returns the native thread context for the main thread.
- *
- * \return The native thread context for the main thread.
- */
-jobject thGetMainNativeContext(void);
-
-/**
- * This method returns the native stack for the main thread.
- *
- * \return The native stack for the main thread.
- */
-jobject thGetMainNativeStack(void);
 
 /**
  * This function starts the VM and will never return.
@@ -133,35 +94,17 @@ jobject thGetMainNativeStack(void);
  */
 void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cStackSize);
 
-/**
- * This function allocates a native stack for the calling thread.
- * \return The native stack as a java object (byte[])
- */
-jobject thAllocNativeStack(void);
+
+typedef void (*thCallback_t)(contextDef* context, stackable* memory, size_t size);
 
 /**
- * This function returns the current stack pointer value for the indicated thread
- * \param thread The thread to get a Java Stack pointer value from
- * \return  The stack pointer value
+ * This function iterates over all threads and for each thread the callback is called.
+ * The context
+ * \param context The context supplied by the caller of this method. Will be used 
+ * as 1st argument to callback function
+ * @param callback The callback function pointer
  */
-int thGetJavaStackPointer(jobject thread);
-
-/**
- * This function returns a pointer to thread context for the main thread
- * \return A pointer to native thread context for the main thread
- */
-ntThreadContext_t* thGetJavaMainContext(void);
-
-
-/**
- * This function shall be used for iteration over the stack info for all threads.
- * 
- * \param current If the 'thread' field is set to NULL prior to this call the first thread
- * is read; if set to a non-NULL value it is assumed to point at the last thread read, 
- * and the returned value will be the next thread and its stack info
- * \return The stack info for the requested thread
- */
-thStackInfo_t* nextStackInfo(thStackInfo_t* current);
+void thForeachThread(contextDef* context, thCallback_t callback);
 
 /**
  * This function shall exit the vm

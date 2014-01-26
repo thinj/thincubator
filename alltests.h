@@ -76,17 +76,17 @@ extern const u2 A_thinj_util_SimpleList_aList;
 extern const u2 A_thinj_util_SimpleList_Element_aNext;
 extern const u2 A_thinj_util_SimpleList_Element_aValue;
 #define A_java_lang_OutOfMemoryError_INSTANCE 26
-#define A_java_lang_StringBuilder_aValue 127
+#define A_java_lang_StringBuilder_aValue 122
 #define A_java_lang_System_err 33
-#define A_java_lang_System_out 77
+#define A_java_lang_System_out 71
 #define A_java_lang_Thread_aRunnable 46
 #define A_java_lang_Thread_aThreadIdGenerator 47
 #define A_java_lang_Throwable_aCause 29
 #define A_java_lang_Throwable_aStackTrace 31
-#define A_thinj_regression_ThreadTest_aFlag 91
-#define A_thinj_regression_ThreadTest_aMutex 93
-#define A_thinj_regression_ThreadTest_aCount1 94
-#define A_thinj_regression_ThreadTest_aDone 96
+#define A_thinj_regression_ThreadTest_aFlag 85
+#define A_thinj_regression_ThreadTest_aMutex 87
+#define A_thinj_regression_ThreadTest_aCount1 88
+#define A_thinj_regression_ThreadTest_aDone 90
 
 //------------------------------------------------------------------------------
 // Method Attributes
@@ -100,8 +100,8 @@ extern const u2 A_thinj_util_SimpleList_Element_aValue;
 #define M_java_io_PrintStream_printlnLjava_lang_String 35
 #define M_java_io_PrintStream_printLjava_lang_String 36
 #define M_java_io_PrintStream_printI 37
-#define M_java_io_PrintStream_outStringLfLjava_lang_String 81
-#define M_java_io_PrintStream_outStringLjava_lang_String 82
+#define M_java_io_PrintStream_outStringLfLjava_lang_String 75
+#define M_java_io_PrintStream_outStringLjava_lang_String 76
 #define M_java_lang_Class_getName 3
 #define M_java_lang_Class_toString 6
 #define M_java_lang_Error__init 1
@@ -138,8 +138,9 @@ extern const u2 A_thinj_util_SimpleList_Element_aValue;
 #define M_java_lang_Throwable_printStackTrace 38
 #define M_java_lang_VirtualMachineError__init 1
 #define M_java_util_Arrays_hashCode_C 7
-#define M_thinj_regression_AllTests_main_Ljava_lang_String 78
-#define M_thinj_regression_AllTests__jvminit 129
+#define M_thinj_regression_AllTests_main_Ljava_lang_String 72
+#define M_thinj_regression_AllTests__jvminit 124
 #define M_thinj_regression_ThreadTest__clinit 28
-#define M_thinj_regression_ThreadTest_main_Ljava_lang_String 78
-#define M_thinj_regression_ThreadTest_simpleYield 97
+#define M_thinj_regression_ThreadTest_main_Ljava_lang_String 72
+#define M_thinj_regression_ThreadTest_simpleYield 91
+#define M_thinj_regression_ThreadTest_yieldAndGC 92

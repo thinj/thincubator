@@ -186,33 +186,12 @@ void markAndSweep(contextDef* context) {
     // => it can be collected:
     markValue = (markValue + 2) & ((1 << MARK_BIT_SIZE) - 1);
 
-    // Mark:
+    // Mark static area:
     mark2(context, staticMemory, staticMemorySize);
 
-    consoutli("ikke fardigt...\n");
-    jvmexit(65);
-//    if (thIsSchedulingEnabled()) {
-        // Iterate through all threads:
-        jclass threadClass = getJavaLangClass(context, C_java_lang_Thread);
-        // jobject thread = GetStaticObjectField(threadClass, A_java_lang_Thread_aAllThreads);
-
-        // Mark all objects referenced from the stacks:
-//        while (thread != NULL) {
-//            int stackPointer = thGetJavaStackPointer(thread);
-//            
-//            stackable* stack = sGetThreadStack(thread);
-//            mark2(stack, stackPointer);
-
-            // Next thread:
-//            thread = GetObjectField(context, thread, A_java_lang_Thread_aNextThread);
-//        }
-//    } else {
-        // TODO test!
-        consoutli("Untested code; expected to work...\n");
-        jvmexit(65);
-        // The java.lang.Thread.<clinit> hasn't finished yet, so only a single thread is running:
-         mark2(context, getStack(), 0 /*thGetJavaMainContext()->context.stackPointer*/);
-//    }
+    // Mark all stacks:
+    thForeachThread(context, mark2);
+    
     // Sweep heap:
     heap_sweep(markValue);
 

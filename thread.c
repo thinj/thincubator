@@ -47,8 +47,6 @@ static size_t sGetStackSizeInBytes() {
     return STACK_SIZE * sizeof (stackable);
 }
 
-
-
 static void sDumpContext(contextDef* context, char* prefix) {
     jobject thr = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread), A_java_lang_Thread_aCurrentThread);
     consoutli("%s"
@@ -731,7 +729,7 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
 
     // STACK_SIZE is in count of stackables, not bytes:
     STACK_SIZE = javaStackSize / sizeof (stackable);
-    
+
     // Clear static area:
     memset(&staticMemory[0], staticMemorySize, sizeof (stackable));
 
@@ -760,18 +758,14 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
     // will only return to this point when the main thread has terminated
 }
 
-jobject thAllocNativeStack(void) {
-    return (jobject) NULL; //osAllocateNativeStack(sCStackSize);
-}
+void thForeachThread(contextDef* context, thCallback_t callback) {
+    ntThreadContext_t* ntc;
+    consoutli("for each 1\n");
+    for (ntc = sAllThreads; ntc != NULL; ntc = ntc->next) {
+        consoutli("for each 2\n");
+        stackable* stack = jaGetArrayPayLoad(context, (jarray) ntc->javaStack);
 
-jobject thGetMainNativeStack(void) {
-    return NULL; //(jobject) sMainThreadNativeStack;
+        callback(context, stack, ntc->context.stackPointer);
+    }
+    consoutli("for each 3\n");
 }
-
-int thGetJavaStackPointer(jobject thread) {
-    return 0;
-}
-
-//thStackInfo_t* nextStackInfo(thStackInfo_t* current) {
-//
-//}
