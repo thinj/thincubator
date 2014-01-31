@@ -17,7 +17,7 @@
 #include "vmids.h"
 #include "thread.h"
 
-#define DEBUG_ENABLE
+//#define DEBUG_ENABLE
 #include "debug.h"
 #include "nativethreads.h"
 

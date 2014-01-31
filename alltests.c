@@ -160,35 +160,40 @@ const classInstanceInfoDef const allClassInstanceInfo[] = {
     {   0,   1,   0,   0, CT_OBJECT_ARRAY,  10, sizeof(jobject) }, // 5:[Ljava/lang/Class
     {   0,   1,   0,   0, CT_OBJECT_ARRAY,   0, sizeof(jobject) }, // 6:[Ljava/lang/Object
     {   0,   1,   0,   0, CT_CLASS,          0, 0               }, // 7:java/io/PrintStream
-    {  23,   3,   0,   0, CT_CLASS,          0, 0               }, // 8:java/lang/ArithmeticException
-    {  15,   3,   0,   0, CT_CLASS,          0, 0               }, // 9:java/lang/ArrayIndexOutOfBoundsException
+    {  25,   3,   0,   0, CT_CLASS,          0, 0               }, // 8:java/lang/ArithmeticException
+    {  17,   3,   0,   0, CT_CLASS,          0, 0               }, // 9:java/lang/ArrayIndexOutOfBoundsException
     {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 10:java/lang/Class
-    {  23,   3,   0,   0, CT_CLASS,          0, 0               }, // 11:java/lang/ClassCastException
-    {  28,   3,   0,   0, CT_CLASS,          0, 0               }, // 12:java/lang/Error
-    {  28,   3,   0,   0, CT_CLASS,          0, 0               }, // 13:java/lang/Exception
-    {  23,   3,   0,   0, CT_CLASS,          0, 0               }, // 14:java/lang/IllegalMonitorStateException
-    {  23,   3,   0,   0, CT_CLASS,          0, 0               }, // 15:java/lang/IndexOutOfBoundsException
-    {  13,   3,   0,   0, CT_CLASS,          0, 0               }, // 16:java/lang/InterruptedException
-    {  23,   3,   0,   0, CT_CLASS,          0, 0               }, // 17:java/lang/NegativeArraySizeException
-    {  23,   3,   0,   0, CT_CLASS,          0, 0               }, // 18:java/lang/NullPointerException
-    {   0,   4,   0,   0, CT_CLASS,          0, 0               }, // 19:java/lang/Object$Monitor
-    {   0,   3,   0,   0, CT_CLASS,          0, 0               }, // 20:java/lang/Object$WaitElement
-    {  29,   3,   0,   0, CT_CLASS,          0, 0               }, // 21:java/lang/OutOfMemoryError
-    {   0,   1,   0,   0, CT_INTERFACE,      0, 0               }, // 22:java/lang/Runnable
-    {  13,   3,   0,   0, CT_CLASS,          0, 0               }, // 23:java/lang/RuntimeException
-    {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 24:java/lang/String
-    {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 25:java/lang/StringBuilder
-    {   0,   1,   0,   0, CT_CLASS,          0, 0               }, // 26:java/lang/System
-    {   0,  10,   0,   1, CT_CLASS,          0, 0               }, // 27:java/lang/Thread
-    {   0,   3,   1,   0, CT_CLASS,          0, 0               }, // 28:java/lang/Throwable
-    {  12,   3,   1,   0, CT_CLASS,          0, 0               }, // 29:java/lang/VirtualMachineError
-    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 30:java/util/Arrays
-    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 31:thinj/regression/AllTests
-    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 32:thinj/regression/ThreadTest
-    {   0,   2,   1,   0, CT_CLASS,          0, 0               }, // 33:thinj/util/SimpleList
-    {   0,   3,   1,   0, CT_CLASS,          0, 0               }, // 34:thinj/util/SimpleList$Element
+    {  25,   3,   0,   0, CT_CLASS,          0, 0               }, // 11:java/lang/ClassCastException
+    {  30,   3,   0,   0, CT_CLASS,          0, 0               }, // 12:java/lang/Error
+    {  30,   3,   0,   0, CT_CLASS,          0, 0               }, // 13:java/lang/Exception
+    {  25,   3,   0,   0, CT_CLASS,          0, 0               }, // 14:java/lang/IllegalArgumentException
+    {  25,   3,   0,   0, CT_CLASS,          0, 0               }, // 15:java/lang/IllegalMonitorStateException
+    {  14,   3,   0,   0, CT_CLASS,          0, 0               }, // 16:java/lang/IllegalThreadStateException
+    {  25,   3,   0,   0, CT_CLASS,          0, 0               }, // 17:java/lang/IndexOutOfBoundsException
+    {  13,   3,   0,   0, CT_CLASS,          0, 0               }, // 18:java/lang/InterruptedException
+    {  25,   3,   0,   0, CT_CLASS,          0, 0               }, // 19:java/lang/NegativeArraySizeException
+    {  25,   3,   0,   0, CT_CLASS,          0, 0               }, // 20:java/lang/NullPointerException
+    {   0,   4,   0,   0, CT_CLASS,          0, 0               }, // 21:java/lang/Object$Monitor
+    {   0,   3,   0,   0, CT_CLASS,          0, 0               }, // 22:java/lang/Object$WaitElement
+    {  31,   3,   0,   0, CT_CLASS,          0, 0               }, // 23:java/lang/OutOfMemoryError
+    {   0,   1,   0,   0, CT_INTERFACE,      0, 0               }, // 24:java/lang/Runnable
+    {  13,   3,   0,   0, CT_CLASS,          0, 0               }, // 25:java/lang/RuntimeException
+    {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 26:java/lang/String
+    {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 27:java/lang/StringBuilder
+    {   0,   1,   0,   0, CT_CLASS,          0, 0               }, // 28:java/lang/System
+    {   0,  10,   0,   1, CT_CLASS,          0, 0               }, // 29:java/lang/Thread
+    {   0,   3,   1,   0, CT_CLASS,          0, 0               }, // 30:java/lang/Throwable
+    {  12,   3,   1,   0, CT_CLASS,          0, 0               }, // 31:java/lang/VirtualMachineError
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 32:java/util/Arrays
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 33:thinj/regression/AllTests
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 34:thinj/regression/Regression
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 35:thinj/regression/ThreadTest
+    {   0,   2,   1,   1, CT_CLASS,          0, 0               }, // 36:thinj/regression/ThreadTest$8
+    {   0,   2,   2,   1, CT_CLASS,          0, 0               }, // 37:thinj/regression/ThreadTest$9
+    {   0,   2,   3,   0, CT_CLASS,          0, 0               }, // 38:thinj/util/SimpleList
+    {   0,   3,   3,   0, CT_CLASS,          0, 0               }, // 39:thinj/util/SimpleList$Element
 };
-const u2 cpNumberOfAllClassInstanceInfo = 35;
+const u2 cpNumberOfAllClassInstanceInfo = 40;
 
 //------------------------------------------------------------------------------
 // Implemented interfaces
@@ -196,7 +201,11 @@ const u2 cpNumberOfAllClassInstanceInfo = 35;
 
 const u2 const implementedInterfaces[] = {
     // java/lang/Thread
-    22, 
+    24, 
+    // thinj/regression/ThreadTest$8
+    24, 
+    // thinj/regression/ThreadTest$9
+    24, 
 };
 
 //------------------------------------------------------------------------------
@@ -205,29 +214,37 @@ const u2 const implementedInterfaces[] = {
 
 const classReference const allClassReferences[] = {
     // Class Id: 0
-    {0, 2, 25}, // "java/lang/StringBuilder"
+    {0, 2, 27}, // "java/lang/StringBuilder"
     // Class Id: 7
-    {7, 9, 25}, // "java/lang/StringBuilder"
+    {7, 9, 27}, // "java/lang/StringBuilder"
     // Class Id: 9
-    {9, 2, 25}, // "java/lang/StringBuilder"
+    {9, 2, 27}, // "java/lang/StringBuilder"
     // Class Id: 10
-    {10, 2, 25}, // "java/lang/StringBuilder"
-    // Class Id: 21
-    {21, 4, 21}, // "java/lang/OutOfMemoryError"
-    // Class Id: 25
-    {25, 10, 24}, // "java/lang/String"
-    // Class Id: 26
-    {26, 2, 7}, // "java/io/PrintStream"
+    {10, 2, 27}, // "java/lang/StringBuilder"
+    // Class Id: 23
+    {23, 4, 23}, // "java/lang/OutOfMemoryError"
     // Class Id: 27
-    {27, 19, 28}, // "java/lang/Throwable"
-    {27, 23, 27}, // "java/lang/Thread"
+    {27, 10, 26}, // "java/lang/String"
     // Class Id: 28
-    {28, 10, 25}, // "java/lang/StringBuilder"
-    // Class Id: 32
-    {32, 15, 25}, // "java/lang/StringBuilder"
-    {32, 30, 0}, // "java/lang/Object"
+    {28, 2, 7}, // "java/io/PrintStream"
+    // Class Id: 29
+    {29, 9, 16}, // "java/lang/IllegalThreadStateException"
+    {29, 10, 27}, // "java/lang/StringBuilder"
+    {29, 19, 30}, // "java/lang/Throwable"
+    {29, 23, 29}, // "java/lang/Thread"
+    // Class Id: 30
+    {30, 10, 27}, // "java/lang/StringBuilder"
+    // Class Id: 34
+    {34, 2, 13}, // "java/lang/Exception"
+    // Class Id: 35
+    {35, 33, 0}, // "java/lang/Object"
+    {35, 42, 29}, // "java/lang/Thread"
+    {35, 54, 36}, // "thinj/regression/ThreadTest$8"
+    {35, 56, 37}, // "thinj/regression/ThreadTest$9"
+    // Class Id: 36
+    {36, 9, 18}, // "java/lang/InterruptedException"
 };
-const u2 numberOfAllClassReferences = 12;
+const u2 numberOfAllClassReferences = 18;
 
 //------------------------------------------------------------------------------
 // Class referenced by VM
@@ -238,18 +255,18 @@ const u2 C_java_lang_ArithmeticException = 8;
 const u2 C_java_lang_ArrayIndexOutOfBoundsException = 9;
 const u2 C_java_lang_Class = 10;
 const u2 C_java_lang_ClassCastException = 11;
-const u2 C_java_lang_IllegalMonitorStateException = 14;
-const u2 C_java_lang_InterruptedException = 16;
-const u2 C_java_lang_NegativeArraySizeException = 17;
-const u2 C_java_lang_NullPointerException = 18;
+const u2 C_java_lang_IllegalMonitorStateException = 15;
+const u2 C_java_lang_InterruptedException = 18;
+const u2 C_java_lang_NegativeArraySizeException = 19;
+const u2 C_java_lang_NullPointerException = 20;
 const u2 C_java_lang_Object = 0;
-const u2 C_java_lang_Object_Monitor = 19;
-const u2 C_java_lang_Object_WaitElement = 20;
-const u2 C_java_lang_OutOfMemoryError = 21;
-const u2 C_java_lang_String = 24;
-const u2 C_java_lang_Thread = 27;
-const u2 C_thinj_util_SimpleList = 33;
-const u2 C_thinj_util_SimpleList_Element = 34;
+const u2 C_java_lang_Object_Monitor = 21;
+const u2 C_java_lang_Object_WaitElement = 22;
+const u2 C_java_lang_OutOfMemoryError = 23;
+const u2 C_java_lang_String = 26;
+const u2 C_java_lang_Thread = 29;
+const u2 C_thinj_util_SimpleList = 38;
+const u2 C_thinj_util_SimpleList_Element = 39;
 
 //------------------------------------------------------------------------------
 // Link Ids referenced by VM
@@ -295,48 +312,58 @@ const memberReference const allFieldReferences10[] = {
     {10, 21}, // 0: java/lang/Class#aClassId#I
 };
 
-const memberReference const allFieldReferences21[] = {
-    {21, 26}, // 0: java/lang/OutOfMemoryError#INSTANCE#Ljava/lang/OutOfMemoryError;
-};
-
-const memberReference const allFieldReferences24[] = {
-    {24, 5}, // 0: java/lang/String#value#[C
-};
-
-const memberReference const allFieldReferences25[] = {
-    {25, 122}, // 0: java/lang/StringBuilder#aValue#[C
+const memberReference const allFieldReferences23[] = {
+    {23, 26}, // 0: java/lang/OutOfMemoryError#INSTANCE#Ljava/lang/OutOfMemoryError;
 };
 
 const memberReference const allFieldReferences26[] = {
-    {26, 71}, // 0: java/lang/System#out#Ljava/io/PrintStream;
-    {26, 33}, // 1: java/lang/System#err#Ljava/io/PrintStream;
+    {26, 5}, // 0: java/lang/String#value#[C
 };
 
 const memberReference const allFieldReferences27[] = {
-    {27, 46}, // 0: java/lang/Thread#aRunnable#Ljava/lang/Runnable;
-    {27, 47}, // 1: java/lang/Thread#aThreadIdGenerator#J
-    {27, 48}, // 2: java/lang/Thread#aId#J
-    {27, 49}, // 3: java/lang/Thread#aState#I
-    {27, 50}, // 4: java/lang/Thread#aInterrupted#Z
-    {27, 53}, // 5: java/lang/Thread#aCurrentThread#Ljava/lang/Thread;
+    {27, 128}, // 0: java/lang/StringBuilder#aValue#[C
 };
 
 const memberReference const allFieldReferences28[] = {
-    {28, 29}, // 0: java/lang/Throwable#aCause#Ljava/lang/String;
-    {28, 31}, // 1: java/lang/Throwable#aStackTrace#[I
-    {26, 33}, // 2: java/lang/System#err#Ljava/io/PrintStream;
+    {28, 71}, // 0: java/lang/System#out#Ljava/io/PrintStream;
+    {28, 33}, // 1: java/lang/System#err#Ljava/io/PrintStream;
 };
 
-const memberReference const allFieldReferences31[] = {
-    {26, 71}, // 0: java/lang/System#out#Ljava/io/PrintStream;
+const memberReference const allFieldReferences29[] = {
+    {29, 46}, // 0: java/lang/Thread#aRunnable#Ljava/lang/Runnable;
+    {29, 47}, // 1: java/lang/Thread#aThreadIdGenerator#J
+    {29, 48}, // 2: java/lang/Thread#aId#J
+    {29, 49}, // 3: java/lang/Thread#aState#I
+    {29, 50}, // 4: java/lang/Thread#aInterrupted#Z
+    {29, 53}, // 5: java/lang/Thread#aCurrentThread#Ljava/lang/Thread;
 };
 
-const memberReference const allFieldReferences32[] = {
-    {32, 85}, // 0: thinj/regression/ThreadTest#aFlag#Z
-    {32, 87}, // 1: thinj/regression/ThreadTest#aMutex#Ljava/lang/Object;
-    {32, 88}, // 2: thinj/regression/ThreadTest#aCount1#I
-    {32, 90}, // 3: thinj/regression/ThreadTest#aDone#Z
-    {26, 71}, // 4: java/lang/System#out#Ljava/io/PrintStream;
+const memberReference const allFieldReferences30[] = {
+    {30, 29}, // 0: java/lang/Throwable#aCause#Ljava/lang/String;
+    {30, 31}, // 1: java/lang/Throwable#aStackTrace#[I
+    {28, 33}, // 2: java/lang/System#err#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences33[] = {
+    {28, 71}, // 0: java/lang/System#out#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences35[] = {
+    {35, 85}, // 0: thinj/regression/ThreadTest#aFlag#Z
+    {35, 87}, // 1: thinj/regression/ThreadTest#aMutex#Ljava/lang/Object;
+    {35, 89}, // 2: thinj/regression/ThreadTest#aDone#Z
+    {35, 90}, // 3: thinj/regression/ThreadTest#aCount1#I
+    {28, 71}, // 4: java/lang/System#out#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences36[] = {
+    {36, 127}, // 0: thinj/regression/ThreadTest$8#val$mutex#Ljava/lang/Object;
+    {28, 71}, // 1: java/lang/System#out#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences37[] = {
+    {37, 127}, // 0: thinj/regression/ThreadTest$9#val$mutex#Ljava/lang/Object;
+    {28, 71}, // 1: java/lang/System#out#Ljava/io/PrintStream;
 };
 
 
@@ -354,35 +381,35 @@ const fieldInClass const allFields10[] = {
    {23, 1, 1}, // 23-java/lang/Class#aGlobalRefList#Ljava/lang/Object;
 };
 
-const fieldInClass const allFields19[] = {
+const fieldInClass const allFields21[] = {
    {39, 1, 1}, // 39-java/lang/Object$Monitor#aOwner#Ljava/lang/Thread;
    {40, 2, 1}, // 40-java/lang/Object$Monitor#aLockCount#I
    {41, 3, 1}, // 41-java/lang/Object$Monitor#aWaitSet#Ljava/lang/Object$WaitElement;
 };
 
-const fieldInClass const allFields20[] = {
+const fieldInClass const allFields22[] = {
    {42, 1, 1}, // 42-java/lang/Object$WaitElement#aWaiting#Ljava/lang/Thread;
    {43, 2, 1}, // 43-java/lang/Object$WaitElement#aNext#Ljava/lang/Object$WaitElement;
 };
 
-const fieldInClass const allFields21[] = {
+const fieldInClass const allFields23[] = {
    {26, 2, 1}, // 26-java/lang/OutOfMemoryError#INSTANCE#Ljava/lang/OutOfMemoryError;
 };
 
-const fieldInClass const allFields24[] = {
+const fieldInClass const allFields26[] = {
    {5, 1, 1}, // 5-java/lang/String#value#[C
 };
 
-const fieldInClass const allFields25[] = {
-   {122, 1, 1}, // 122-java/lang/StringBuilder#aValue#[C
+const fieldInClass const allFields27[] = {
+   {128, 1, 1}, // 128-java/lang/StringBuilder#aValue#[C
 };
 
-const fieldInClass const allFields26[] = {
+const fieldInClass const allFields28[] = {
    {33, 7, 1}, // 33-java/lang/System#err#Ljava/io/PrintStream;
    {71, 6, 1}, // 71-java/lang/System#out#Ljava/io/PrintStream;
 };
 
-const fieldInClass const allFields27[] = {
+const fieldInClass const allFields29[] = {
    {40, 6, 1}, // 40-java/lang/Thread#aLockCount#I
    {46, 3, 1}, // 46-java/lang/Thread#aRunnable#Ljava/lang/Runnable;
    {47, 4, 2}, // 47-java/lang/Thread#aThreadIdGenerator#J
@@ -394,23 +421,31 @@ const fieldInClass const allFields27[] = {
    {61, 7, 2}, // 61-java/lang/Thread#aWakeUpAt#J
 };
 
-const fieldInClass const allFields28[] = {
+const fieldInClass const allFields30[] = {
    {29, 1, 1}, // 29-java/lang/Throwable#aCause#Ljava/lang/String;
    {31, 2, 1}, // 31-java/lang/Throwable#aStackTrace#[I
 };
 
-const fieldInClass const allFields32[] = {
+const fieldInClass const allFields35[] = {
    {85, 9, 1}, // 85-thinj/regression/ThreadTest#aFlag#Z
    {87, 11, 1}, // 87-thinj/regression/ThreadTest#aMutex#Ljava/lang/Object;
-   {88, 10, 1}, // 88-thinj/regression/ThreadTest#aCount1#I
-   {90, 8, 1}, // 90-thinj/regression/ThreadTest#aDone#Z
+   {89, 8, 1}, // 89-thinj/regression/ThreadTest#aDone#Z
+   {90, 10, 1}, // 90-thinj/regression/ThreadTest#aCount1#I
 };
 
-const fieldInClass const allFields33[] = {
+const fieldInClass const allFields36[] = {
+   {127, 1, 1}, // 127-thinj/regression/ThreadTest$8#val$mutex#Ljava/lang/Object;
+};
+
+const fieldInClass const allFields37[] = {
+   {127, 1, 1}, // 127-thinj/regression/ThreadTest$9#val$mutex#Ljava/lang/Object;
+};
+
+const fieldInClass const allFields38[] = {
    {68, 1, 1}, // 68-thinj/util/SimpleList#aList#Lthinj/util/SimpleList$Element;
 };
 
-const fieldInClass const allFields34[] = {
+const fieldInClass const allFields39[] = {
    {69, 1, 1}, // 69-thinj/util/SimpleList$Element#aNext#Lthinj/util/SimpleList$Element;
    {70, 2, 1}, // 70-thinj/util/SimpleList$Element#aValue#Ljava/lang/Object;
 };
@@ -428,13 +463,13 @@ stackable staticMemory[12];
 //------------------------------------------------------------------------------
 
 const memberReference const allMethodReferences0[] = {
-    {25, 1, 1}, // 0: java/lang/StringBuilder#<init>#()V
+    {27, 1, 1}, // 0: java/lang/StringBuilder#<init>#()V
     {0, 2, 1}, // 1: java/lang/Object#getClass#()Ljava/lang/Class;
     {10, 3, 1}, // 2: java/lang/Class#getName#()Ljava/lang/String;
-    {25, 4, 2}, // 3: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {27, 4, 2}, // 3: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
     {0, 15, 1}, // 4: java/lang/Object#hashCode#()I
-    {25, 17, 2}, // 5: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {25, 6, 1}, // 6: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {27, 17, 2}, // 5: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {27, 6, 1}, // 6: java/lang/StringBuilder#toString#()Ljava/lang/String;
 };
 
 const memberReference const allMethodReferences7[] = {
@@ -442,145 +477,177 @@ const memberReference const allMethodReferences7[] = {
     {7, 75, 1}, // 1: java/io/PrintStream#outStringLf#(Ljava/lang/String;)V
     {7, 76, 1}, // 2: java/io/PrintStream#outString#(Ljava/lang/String;)V
     {7, 36, 2}, // 3: java/io/PrintStream#print#(Ljava/lang/String;)V
-    {25, 1, 1}, // 4: java/lang/StringBuilder#<init>#()V
-    {25, 4, 2}, // 5: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {25, 17, 2}, // 6: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {25, 6, 1}, // 7: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {27, 1, 1}, // 4: java/lang/StringBuilder#<init>#()V
+    {27, 4, 2}, // 5: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {27, 17, 2}, // 6: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {27, 6, 1}, // 7: java/lang/StringBuilder#toString#()Ljava/lang/String;
     {0, 6, 1}, // 8: java/lang/Object#toString#()Ljava/lang/String;
 };
 
 const memberReference const allMethodReferences8[] = {
-    {23, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    {25, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences9[] = {
-    {15, 24, 2}, // 0: java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
-    {25, 1, 1}, // 1: java/lang/StringBuilder#<init>#()V
-    {25, 4, 2}, // 2: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {25, 17, 2}, // 3: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {25, 6, 1}, // 4: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {17, 24, 2}, // 0: java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
+    {27, 1, 1}, // 1: java/lang/StringBuilder#<init>#()V
+    {27, 4, 2}, // 2: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {27, 17, 2}, // 3: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {27, 6, 1}, // 4: java/lang/StringBuilder#toString#()Ljava/lang/String;
 };
 
 const memberReference const allMethodReferences10[] = {
-    {25, 1, 1}, // 0: java/lang/StringBuilder#<init>#()V
-    {25, 4, 2}, // 1: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {25, 17, 2}, // 2: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {25, 6, 1}, // 3: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {27, 1, 1}, // 0: java/lang/StringBuilder#<init>#()V
+    {27, 4, 2}, // 1: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {27, 17, 2}, // 2: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {27, 6, 1}, // 3: java/lang/StringBuilder#toString#()Ljava/lang/String;
     {10, 3, 1}, // 4: java/lang/Class#getName#()Ljava/lang/String;
 };
 
 const memberReference const allMethodReferences11[] = {
-    {23, 1, 1}, // 0: java/lang/RuntimeException#<init>#()V
+    {25, 1, 1}, // 0: java/lang/RuntimeException#<init>#()V
 };
 
 const memberReference const allMethodReferences12[] = {
-    {28, 1, 1}, // 0: java/lang/Throwable#<init>#()V
+    {30, 1, 1}, // 0: java/lang/Throwable#<init>#()V
 };
 
 const memberReference const allMethodReferences13[] = {
-    {28, 24, 2}, // 0: java/lang/Throwable#<init>#(Ljava/lang/String;)V
-    {28, 1, 1}, // 1: java/lang/Throwable#<init>#()V
+    {30, 24, 2}, // 0: java/lang/Throwable#<init>#(Ljava/lang/String;)V
+    {30, 1, 1}, // 1: java/lang/Throwable#<init>#()V
 };
 
 const memberReference const allMethodReferences14[] = {
-    {23, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    {25, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences15[] = {
-    {23, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    {25, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences16[] = {
-    {13, 1, 1}, // 0: java/lang/Exception#<init>#()V
+    {14, 24, 2}, // 0: java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences17[] = {
-    {23, 1, 1}, // 0: java/lang/RuntimeException#<init>#()V
+    {25, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences18[] = {
-    {23, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
-    {18, 24, 2}, // 1: java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
+    {13, 1, 1}, // 0: java/lang/Exception#<init>#()V
 };
 
-const memberReference const allMethodReferences21[] = {
-    {29, 1, 1}, // 0: java/lang/VirtualMachineError#<init>#()V
-    {21, 1, 1}, // 1: java/lang/OutOfMemoryError#<init>#()V
+const memberReference const allMethodReferences19[] = {
+    {25, 1, 1}, // 0: java/lang/RuntimeException#<init>#()V
+};
+
+const memberReference const allMethodReferences20[] = {
+    {25, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    {20, 24, 2}, // 1: java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences23[] = {
+    {31, 1, 1}, // 0: java/lang/VirtualMachineError#<init>#()V
+    {23, 1, 1}, // 1: java/lang/OutOfMemoryError#<init>#()V
+};
+
+const memberReference const allMethodReferences25[] = {
     {13, 24, 2}, // 0: java/lang/Exception#<init>#(Ljava/lang/String;)V
     {13, 1, 1}, // 1: java/lang/Exception#<init>#()V
 };
 
-const memberReference const allMethodReferences24[] = {
-    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
-    {30, 7, 1}, // 1: java/util/Arrays#hashCode#([C)I
-};
-
-const memberReference const allMethodReferences25[] = {
-    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
-    {24, 11, 1}, // 1: java/lang/String#length#()I
-    {24, 14, 5}, // 2: java/lang/String#getChars#(II[CI)V
-    {25, 4, 2}, // 3: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {24, 9, 4}, // 4: java/lang/String#<init>#([CII)V
-    {24, 10, 2}, // 5: java/lang/String#<init>#([C)V
-};
-
 const memberReference const allMethodReferences26[] = {
-    {7, 1, 1}, // 0: java/io/PrintStream#<init>#()V
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {32, 7, 1}, // 1: java/util/Arrays#hashCode#([C)I
 };
 
 const memberReference const allMethodReferences27[] = {
-    {27, 45, 2}, // 0: java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
-    {0, 1, 1}, // 1: java/lang/Object#<init>#()V
-    {27, 51, 1}, // 2: java/lang/Thread#attach#()V
-    {22, 44, 1}, // 3: java/lang/Runnable#run#()V
-    {27, 44, 1}, // 4: java/lang/Thread#run#()V
-    {28, 38, 1}, // 5: java/lang/Throwable#printStackTrace#()V
-    {27, 52, 0}, // 6: java/lang/Thread#yield#()V
-    {27, 1, 1}, // 7: java/lang/Thread#<init>#()V
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {26, 11, 1}, // 1: java/lang/String#length#()I
+    {26, 14, 5}, // 2: java/lang/String#getChars#(II[CI)V
+    {27, 4, 2}, // 3: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {26, 9, 4}, // 4: java/lang/String#<init>#([CII)V
+    {26, 10, 2}, // 5: java/lang/String#<init>#([C)V
 };
 
 const memberReference const allMethodReferences28[] = {
-    {28, 24, 2}, // 0: java/lang/Throwable#<init>#(Ljava/lang/String;)V
+    {7, 1, 1}, // 0: java/io/PrintStream#<init>#()V
+};
+
+const memberReference const allMethodReferences29[] = {
+    {29, 45, 2}, // 0: java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
     {0, 1, 1}, // 1: java/lang/Object#<init>#()V
-    {28, 30, 1}, // 2: java/lang/Throwable#getStackTraceDepth#()I
-    {28, 32, 2}, // 3: java/lang/Throwable#getStackTraceElement#(I)I
+    {29, 51, 1}, // 2: java/lang/Thread#attach#()V
+    {27, 1, 1}, // 3: java/lang/StringBuilder#<init>#()V
+    {27, 4, 2}, // 4: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {27, 17, 2}, // 5: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {27, 6, 1}, // 6: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {16, 24, 2}, // 7: java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V
+    {24, 44, 1}, // 8: java/lang/Runnable#run#()V
+    {29, 44, 1}, // 9: java/lang/Thread#run#()V
+    {30, 38, 1}, // 10: java/lang/Throwable#printStackTrace#()V
+    {29, 52, 0}, // 11: java/lang/Thread#yield#()V
+    {29, 1, 1}, // 12: java/lang/Thread#<init>#()V
+};
+
+const memberReference const allMethodReferences30[] = {
+    {30, 24, 2}, // 0: java/lang/Throwable#<init>#(Ljava/lang/String;)V
+    {0, 1, 1}, // 1: java/lang/Object#<init>#()V
+    {30, 30, 1}, // 2: java/lang/Throwable#getStackTraceDepth#()I
+    {30, 32, 2}, // 3: java/lang/Throwable#getStackTraceElement#(I)I
     {0, 2, 1}, // 4: java/lang/Object#getClass#()Ljava/lang/Class;
     {7, 34, 2}, // 5: java/io/PrintStream#print#(Ljava/lang/Object;)V
-    {25, 1, 1}, // 6: java/lang/StringBuilder#<init>#()V
-    {25, 4, 2}, // 7: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {25, 6, 1}, // 8: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {27, 1, 1}, // 6: java/lang/StringBuilder#<init>#()V
+    {27, 4, 2}, // 7: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {27, 6, 1}, // 8: java/lang/StringBuilder#toString#()Ljava/lang/String;
     {7, 35, 2}, // 9: java/io/PrintStream#println#(Ljava/lang/String;)V
     {7, 36, 2}, // 10: java/io/PrintStream#print#(Ljava/lang/String;)V
     {7, 37, 2}, // 11: java/io/PrintStream#print#(I)V
 };
 
-const memberReference const allMethodReferences29[] = {
+const memberReference const allMethodReferences31[] = {
     {12, 1, 1}, // 0: java/lang/Error#<init>#()V
 };
 
-const memberReference const allMethodReferences31[] = {
+const memberReference const allMethodReferences33[] = {
     {7, 35, 2}, // 0: java/io/PrintStream#println#(Ljava/lang/String;)V
-    {32, 72, 1}, // 1: thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
-    {21, 28, 0}, // 2: java/lang/OutOfMemoryError#<clinit>#()V
-    {26, 28, 0}, // 3: java/lang/System#<clinit>#()V
-    {27, 28, 0}, // 4: java/lang/Thread#<clinit>#()V
-    {32, 28, 0}, // 5: thinj/regression/ThreadTest#<clinit>#()V
-    {31, 72, 1}, // 6: thinj/regression/AllTests#main#([Ljava/lang/String;)V
+    {35, 72, 1}, // 1: thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
+    {23, 28, 0}, // 2: java/lang/OutOfMemoryError#<clinit>#()V
+    {28, 28, 0}, // 3: java/lang/System#<clinit>#()V
+    {29, 28, 0}, // 4: java/lang/Thread#<clinit>#()V
+    {35, 28, 0}, // 5: thinj/regression/ThreadTest#<clinit>#()V
+    {33, 72, 1}, // 6: thinj/regression/AllTests#main#([Ljava/lang/String;)V
 };
 
-const memberReference const allMethodReferences32[] = {
+const memberReference const allMethodReferences34[] = {
+    {13, 24, 2}, // 0: java/lang/Exception#<init>#(Ljava/lang/String;)V
+    {13, 38, 1}, // 1: java/lang/Exception#printStackTrace#()V
+};
+
+const memberReference const allMethodReferences35[] = {
     {0, 1, 1}, // 0: java/lang/Object#<init>#()V
     {7, 35, 2}, // 1: java/io/PrintStream#println#(Ljava/lang/String;)V
-    {32, 91, 0}, // 2: thinj/regression/ThreadTest#simpleYield#()V
-    {32, 92, 0}, // 3: thinj/regression/ThreadTest#yieldAndGC#()V
-    {27, 52, 0}, // 4: java/lang/Thread#yield#()V
-    {25, 1, 1}, // 5: java/lang/StringBuilder#<init>#()V
-    {25, 4, 2}, // 6: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {25, 17, 2}, // 7: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {25, 6, 1}, // 8: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {35, 91, 0}, // 2: thinj/regression/ThreadTest#test2_4#()V
+    {35, 92, 2}, // 3: thinj/regression/ThreadTest#busyWaitDone#(J)V
+    {34, 93, 1}, // 4: thinj/regression/Regression#verify#(Z)V
+    {29, 62, 1}, // 5: java/lang/Thread#start#()V
+    {29, 45, 2}, // 6: java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
+    {36, 94, 2}, // 7: thinj/regression/ThreadTest$8#<init>#(Ljava/lang/Object;)V
+    {37, 94, 2}, // 8: thinj/regression/ThreadTest$9#<init>#(Ljava/lang/Object;)V
+    {28, 74, 0}, // 9: java/lang/System#nanoTime#()J
+};
+
+const memberReference const allMethodReferences36[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {7, 35, 2}, // 1: java/io/PrintStream#println#(Ljava/lang/String;)V
+    {0, 20, 1}, // 2: java/lang/Object#wait#()V
+    {35, 121, 1}, // 3: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences37[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {7, 35, 2}, // 1: java/io/PrintStream#println#(Ljava/lang/String;)V
+    {0, 18, 1}, // 2: java/lang/Object#notifyAll#()V
 };
 
 
@@ -591,19 +658,21 @@ const memberReference const allMethodReferences32[] = {
 
 const methodInClass const allMethods0[] = {
     {0, 1, 0x0085, 1, 1, 1, 0}, // 1-java/lang/Object#<init>#()V
-    {0, 2, 0x0086, 0, 1, 1, 2}, // 2-java/lang/Object#getClass#()Ljava/lang/Class;
+    {0, 2, 0x0086, 0, 1, 1, 4}, // 2-java/lang/Object#getClass#()Ljava/lang/Class;
     {0, 6, 0x0086, 33, 1, 1, 0}, // 6-java/lang/Object#toString#()Ljava/lang/String;
-    {0, 15, 0x0086, 0, 1, 1, 1}, // 15-java/lang/Object#hashCode#()I
+    {0, 15, 0x0086, 0, 1, 1, 3}, // 15-java/lang/Object#hashCode#()I
+    {0, 18, 0x0086, 0, 1, 1, 1}, // 18-java/lang/Object#notifyAll#()V
+    {0, 20, 0x0086, 0, 1, 1, 2}, // 20-java/lang/Object#wait#()V
 };
 
 const methodInClass const allMethods7[] = {
-    {7, 1, 0x0275, 5, 1, 1, 0}, // 1-java/io/PrintStream#<init>#()V
-    {7, 34, 0x029c, 17, 2, 2, 0}, // 34-java/io/PrintStream#print#(Ljava/lang/Object;)V
-    {7, 35, 0x027a, 5, 2, 2, 0}, // 35-java/io/PrintStream#println#(Ljava/lang/String;)V
-    {7, 36, 0x027f, 5, 2, 2, 0}, // 36-java/io/PrintStream#print#(Ljava/lang/String;)V
-    {7, 37, 0x0284, 24, 2, 2, 0}, // 37-java/io/PrintStream#print#(I)V
-    {7, 75, 0x027a, 0, 1, 1, 7}, // 75-java/io/PrintStream#outStringLf#(Ljava/lang/String;)V
-    {7, 76, 0x027a, 0, 1, 1, 8}, // 76-java/io/PrintStream#outString#(Ljava/lang/String;)V
+    {7, 1, 0x02a2, 5, 1, 1, 0}, // 1-java/io/PrintStream#<init>#()V
+    {7, 34, 0x02c9, 17, 2, 2, 0}, // 34-java/io/PrintStream#print#(Ljava/lang/Object;)V
+    {7, 35, 0x02a7, 5, 2, 2, 0}, // 35-java/io/PrintStream#println#(Ljava/lang/String;)V
+    {7, 36, 0x02ac, 5, 2, 2, 0}, // 36-java/io/PrintStream#print#(Ljava/lang/String;)V
+    {7, 37, 0x02b1, 24, 2, 2, 0}, // 37-java/io/PrintStream#print#(I)V
+    {7, 75, 0x02a7, 0, 1, 1, 10}, // 75-java/io/PrintStream#outStringLf#(Ljava/lang/String;)V
+    {7, 76, 0x02a7, 0, 1, 1, 11}, // 76-java/io/PrintStream#outString#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods8[] = {
@@ -628,103 +697,128 @@ const methodInClass const allMethods12[] = {
 };
 
 const methodInClass const allMethods13[] = {
-    {13, 1, 0x03ec, 5, 1, 1, 0}, // 1-java/lang/Exception#<init>#()V
-    {13, 24, 0x03e6, 6, 2, 2, 0}, // 24-java/lang/Exception#<init>#(Ljava/lang/String;)V
+    {13, 1, 0x04d9, 5, 1, 1, 0}, // 1-java/lang/Exception#<init>#()V
+    {13, 24, 0x04d3, 6, 2, 2, 0}, // 24-java/lang/Exception#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods14[] = {
-    {14, 24, 0x00e6, 6, 2, 2, 0}, // 24-java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V
+    {14, 24, 0x04c2, 6, 2, 2, 0}, // 24-java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods15[] = {
-    {15, 24, 0x03f1, 6, 2, 2, 0}, // 24-java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
+    {15, 24, 0x00e6, 6, 2, 2, 0}, // 24-java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods16[] = {
-    {16, 1, 0x00ec, 5, 1, 1, 0}, // 1-java/lang/InterruptedException#<init>#()V
+    {16, 24, 0x0407, 6, 2, 2, 0}, // 24-java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods17[] = {
-    {17, 1, 0x00f1, 5, 1, 1, 0}, // 1-java/lang/NegativeArraySizeException#<init>#()V
+    {17, 24, 0x04ef, 6, 2, 2, 0}, // 24-java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods18[] = {
-    {18, 1, 0x00fc, 6, 1, 1, 0}, // 1-java/lang/NullPointerException#<init>#()V
-    {18, 24, 0x00f6, 6, 2, 2, 0}, // 24-java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
+    {18, 1, 0x00ec, 5, 1, 1, 0}, // 1-java/lang/InterruptedException#<init>#()V
 };
 
-const methodInClass const allMethods21[] = {
-    {21, 1, 0x0102, 5, 1, 1, 0}, // 1-java/lang/OutOfMemoryError#<init>#()V
-    {21, 27, 0x0107, 4, 0, 0, 0}, // 27-java/lang/OutOfMemoryError#getInstance#()Ljava/lang/OutOfMemoryError;
-    {21, 28, 0x010b, 11, 0, 0, 0}, // 28-java/lang/OutOfMemoryError#<clinit>#()V
+const methodInClass const allMethods19[] = {
+    {19, 1, 0x00f1, 5, 1, 1, 0}, // 1-java/lang/NegativeArraySizeException#<init>#()V
 };
 
-const methodInClass const allMethods22[] = {
-    {22, 44, 0x01e6, 0, 0, 1, 0}, // 44-java/lang/Runnable#run#()V
+const methodInClass const allMethods20[] = {
+    {20, 1, 0x00fc, 6, 1, 1, 0}, // 1-java/lang/NullPointerException#<init>#()V
+    {20, 24, 0x00f6, 6, 2, 2, 0}, // 24-java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods23[] = {
-    {23, 1, 0x03e1, 5, 1, 1, 0}, // 1-java/lang/RuntimeException#<init>#()V
-    {23, 24, 0x03db, 6, 2, 2, 0}, // 24-java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    {23, 1, 0x0102, 5, 1, 1, 0}, // 1-java/lang/OutOfMemoryError#<init>#()V
+    {23, 27, 0x0107, 4, 0, 0, 0}, // 27-java/lang/OutOfMemoryError#getInstance#()Ljava/lang/OutOfMemoryError;
+    {23, 28, 0x010b, 11, 0, 0, 0}, // 28-java/lang/OutOfMemoryError#<clinit>#()V
 };
 
 const methodInClass const allMethods24[] = {
-    {24, 6, 0x0072, 2, 1, 1, 0}, // 6-java/lang/String#toString#()Ljava/lang/String;
-    {24, 9, 0x0000, 40, 5, 4, 0}, // 9-java/lang/String#<init>#([CII)V
-    {24, 10, 0x0028, 36, 3, 2, 0}, // 10-java/lang/String#<init>#([C)V
-    {24, 11, 0x004c, 6, 1, 1, 0}, // 11-java/lang/String#length#()I
-    {24, 14, 0x0052, 32, 6, 5, 0}, // 14-java/lang/String#getChars#(II[CI)V
-    {24, 15, 0x0074, 17, 3, 1, 0}, // 15-java/lang/String#hashCode#()I
+    {24, 44, 0x01e6, 0, 0, 1, 0}, // 44-java/lang/Runnable#run#()V
 };
 
 const methodInClass const allMethods25[] = {
-    {25, 1, 0x0326, 12, 1, 1, 0}, // 1-java/lang/StringBuilder#<init>#()V
-    {25, 4, 0x0332, 72, 4, 2, 0}, // 4-java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {25, 6, 0x03cf, 12, 1, 1, 0}, // 6-java/lang/StringBuilder#toString#()Ljava/lang/String;
-    {25, 17, 0x037a, 85, 5, 2, 0}, // 17-java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {25, 1, 0x04ce, 5, 1, 1, 0}, // 1-java/lang/RuntimeException#<init>#()V
+    {25, 24, 0x04c8, 6, 2, 2, 0}, // 24-java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods26[] = {
-    {26, 28, 0x0260, 21, 0, 0, 0}, // 28-java/lang/System#<clinit>#()V
+    {26, 6, 0x0072, 2, 1, 1, 0}, // 6-java/lang/String#toString#()Ljava/lang/String;
+    {26, 9, 0x0000, 40, 5, 4, 0}, // 9-java/lang/String#<init>#([CII)V
+    {26, 10, 0x0028, 36, 3, 2, 0}, // 10-java/lang/String#<init>#([C)V
+    {26, 11, 0x004c, 6, 1, 1, 0}, // 11-java/lang/String#length#()I
+    {26, 14, 0x0052, 32, 6, 5, 0}, // 14-java/lang/String#getChars#(II[CI)V
+    {26, 15, 0x0074, 17, 3, 1, 0}, // 15-java/lang/String#hashCode#()I
 };
 
 const methodInClass const allMethods27[] = {
-    {27, 1, 0x01e6, 6, 1, 1, 0}, // 1-java/lang/Thread#<init>#()V
-    {27, 28, 0x0236, 21, 0, 0, 0}, // 28-java/lang/Thread#<clinit>#()V
-    {27, 44, 0x0235, 1, 1, 1, 0}, // 44-java/lang/Thread#run#()V
-    {27, 45, 0x01ec, 33, 2, 2, 0}, // 45-java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
-    {27, 51, 0x0236, 0, 1, 1, 6}, // 51-java/lang/Thread#attach#()V
-    {27, 52, 0x0236, 0, 0, 0, 5}, // 52-java/lang/Thread#yield#()V
-    {27, 63, 0x020d, 40, 2, 1, 0}, // 63-java/lang/Thread#runFromNative#()V
+    {27, 1, 0x040d, 12, 1, 1, 0}, // 1-java/lang/StringBuilder#<init>#()V
+    {27, 4, 0x0419, 72, 4, 2, 0}, // 4-java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {27, 6, 0x04b6, 12, 1, 1, 0}, // 6-java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {27, 17, 0x0461, 85, 5, 2, 0}, // 17-java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
 };
 
 const methodInClass const allMethods28[] = {
-    {28, 1, 0x0120, 6, 1, 1, 0}, // 1-java/lang/Throwable#<init>#()V
-    {28, 6, 0x01cf, 23, 1, 1, 0}, // 6-java/lang/Throwable#toString#()Ljava/lang/String;
-    {28, 24, 0x0126, 46, 4, 2, 0}, // 24-java/lang/Throwable#<init>#(Ljava/lang/String;)V
-    {28, 30, 0x0154, 0, 1, 1, 4}, // 30-java/lang/Throwable#getStackTraceDepth#()I
-    {28, 32, 0x0154, 0, 2, 2, 3}, // 32-java/lang/Throwable#getStackTraceElement#(I)I
-    {28, 38, 0x0154, 123, 6, 1, 0}, // 38-java/lang/Throwable#printStackTrace#()V
+    {28, 28, 0x028d, 21, 0, 0, 0}, // 28-java/lang/System#<clinit>#()V
+    {28, 74, 0x028d, 0, 0, 0, 9}, // 74-java/lang/System#nanoTime#()J
 };
 
 const methodInClass const allMethods29[] = {
-    {29, 1, 0x0116, 5, 1, 1, 0}, // 1-java/lang/VirtualMachineError#<init>#()V
+    {29, 1, 0x01e6, 6, 1, 1, 0}, // 1-java/lang/Thread#<init>#()V
+    {29, 28, 0x0263, 21, 0, 0, 0}, // 28-java/lang/Thread#<clinit>#()V
+    {29, 44, 0x0262, 1, 1, 1, 0}, // 44-java/lang/Thread#run#()V
+    {29, 45, 0x01ec, 33, 2, 2, 0}, // 45-java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
+    {29, 51, 0x0263, 0, 1, 1, 8}, // 51-java/lang/Thread#attach#()V
+    {29, 52, 0x0263, 0, 0, 0, 7}, // 52-java/lang/Thread#yield#()V
+    {29, 62, 0x020d, 45, 1, 1, 0}, // 62-java/lang/Thread#start#()V
+    {29, 63, 0x023a, 40, 2, 1, 0}, // 63-java/lang/Thread#runFromNative#()V
 };
 
 const methodInClass const allMethods30[] = {
-    {30, 7, 0x03f7, 38, 6, 1, 0}, // 7-java/util/Arrays#hashCode#([C)I
+    {30, 1, 0x0120, 6, 1, 1, 0}, // 1-java/lang/Throwable#<init>#()V
+    {30, 6, 0x01cf, 23, 1, 1, 0}, // 6-java/lang/Throwable#toString#()Ljava/lang/String;
+    {30, 24, 0x0126, 46, 4, 2, 0}, // 24-java/lang/Throwable#<init>#(Ljava/lang/String;)V
+    {30, 30, 0x0154, 0, 1, 1, 6}, // 30-java/lang/Throwable#getStackTraceDepth#()I
+    {30, 32, 0x0154, 0, 2, 2, 5}, // 32-java/lang/Throwable#getStackTraceElement#(I)I
+    {30, 38, 0x0154, 123, 6, 1, 0}, // 38-java/lang/Throwable#printStackTrace#()V
 };
 
 const methodInClass const allMethods31[] = {
-    {31, 72, 0x024b, 21, 1, 1, 0}, // 72-thinj/regression/AllTests#main#([Ljava/lang/String;)V
-    {31, 124, 0x041d, 16, 0, 0, 0}, // 124-thinj/regression/AllTests#<jvminit>#()V
+    {31, 1, 0x0116, 5, 1, 1, 0}, // 1-java/lang/VirtualMachineError#<init>#()V
 };
 
 const methodInClass const allMethods32[] = {
-    {32, 28, 0x030f, 23, 0, 0, 0}, // 28-thinj/regression/ThreadTest#<clinit>#()V
-    {32, 72, 0x02ad, 23, 1, 1, 0}, // 72-thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
-    {32, 91, 0x02c4, 22, 1, 0, 0}, // 91-thinj/regression/ThreadTest#simpleYield#()V
-    {32, 92, 0x02da, 53, 2, 0, 0}, // 92-thinj/regression/ThreadTest#yieldAndGC#()V
+    {32, 7, 0x04f5, 38, 6, 1, 0}, // 7-java/util/Arrays#hashCode#([C)I
+};
+
+const methodInClass const allMethods33[] = {
+    {33, 72, 0x0278, 21, 1, 1, 0}, // 72-thinj/regression/AllTests#main#([Ljava/lang/String;)V
+    {33, 130, 0x051b, 16, 0, 0, 0}, // 130-thinj/regression/AllTests#<jvminit>#()V
+};
+
+const methodInClass const allMethods34[] = {
+    {34, 93, 0x04de, 17, 1, 1, 0}, // 93-thinj/regression/Regression#verify#(Z)V
+};
+
+const methodInClass const allMethods35[] = {
+    {35, 28, 0x0351, 23, 0, 0, 0}, // 28-thinj/regression/ThreadTest#<clinit>#()V
+    {35, 72, 0x02da, 12, 1, 1, 0}, // 72-thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
+    {35, 91, 0x02e6, 73, 2, 0, 0}, // 91-thinj/regression/ThreadTest#test2_4#()V
+    {35, 92, 0x032f, 28, 4, 2, 0}, // 92-thinj/regression/ThreadTest#busyWaitDone#(J)V
+    {35, 121, 0x034b, 6, 1, 1, 0}, // 121-thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const methodInClass const allMethods36[] = {
+    {36, 44, 0x03ad, 90, 7, 1, 0}, // 44-thinj/regression/ThreadTest$8#run#()V
+    {36, 94, 0x03a3, 10, 2, 2, 0}, // 94-thinj/regression/ThreadTest$8#<init>#(Ljava/lang/Object;)V
+};
+
+const methodInClass const allMethods37[] = {
+    {37, 44, 0x0372, 49, 3, 1, 0}, // 44-thinj/regression/ThreadTest$9#run#()V
+    {37, 94, 0x0368, 10, 2, 2, 0}, // 94-thinj/regression/ThreadTest$9#<init>#(Ljava/lang/Object;)V
 };
 
 
@@ -733,17 +827,48 @@ const methodInClass const allMethods32[] = {
 //------------------------------------------------------------------------------
 
 const exceptionHandler const allExceptionHandersInAllClasses[] = {
-    {27, 28, 0x020d, 0x0224, 0x0227}, // java/lang/Throwable @0x020d
+    {29, 30, 0x023a, 0x0251, 0x0254}, // java/lang/Throwable @0x023a
+    {37, 0, 0x0381, 0x039a, 0x039d}, // <finally> @0x0372
+    {37, 0, 0x039d, 0x03a0, 0x039d}, // <finally> @0x0372
+    {36, 0, 0x03c2, 0x03db, 0x03de}, // <finally> @0x03ad
+    {36, 0, 0x03de, 0x03e2, 0x03de}, // <finally> @0x03ad
+    {36, 0, 0x03bb, 0x03e7, 0x03ea}, // <finally> @0x03ad
+    {36, 0, 0x03ea, 0x03ee, 0x03ea}, // <finally> @0x03ad
+    {36, 0, 0x03b4, 0x03f3, 0x03f6}, // <finally> @0x03ad
+    {36, 0, 0x03f6, 0x03fa, 0x03f6}, // <finally> @0x03ad
+    {36, 18, 0x03ad, 0x0402, 0x0405}, // java/lang/InterruptedException @0x03ad
 };
-const u2 numberOfAllExceptionHandersInAllClasses = 1;
+const u2 numberOfAllExceptionHandersInAllClasses = 10;
 
 //------------------------------------------------------------------------------
 // Native Method Encapsulations
 //------------------------------------------------------------------------------
 
-// 1: Java_java_lang_Object_hashCode
-JNIEXPORT jint JNICALL Java_java_lang_Object_hashCode(JNIEnv *, jobject);
+// 1: Java_java_lang_Object_notifyAll
+JNIEXPORT void JNICALL Java_java_lang_Object_notifyAll(JNIEnv *, jobject);
 void native1(contextDef* context) {
+
+    jobject thisOrClass = operandStackPeekObjectRef(context, 0);
+    Java_java_lang_Object_notifyAll(context, thisOrClass);
+    if (!ExceptionCheck(context)) {
+        pop_frame(context);
+        
+    }
+}
+// 2: Java_java_lang_Object_wait
+JNIEXPORT void JNICALL Java_java_lang_Object_wait(JNIEnv *, jobject);
+void native2(contextDef* context) {
+
+    jobject thisOrClass = operandStackPeekObjectRef(context, 0);
+    Java_java_lang_Object_wait(context, thisOrClass);
+    if (!ExceptionCheck(context)) {
+        pop_frame(context);
+        
+    }
+}
+// 3: Java_java_lang_Object_hashCode
+JNIEXPORT jint JNICALL Java_java_lang_Object_hashCode(JNIEnv *, jobject);
+void native3(contextDef* context) {
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
     jint retval = Java_java_lang_Object_hashCode(context, thisOrClass);
@@ -752,9 +877,9 @@ void native1(contextDef* context) {
         operandStackPushJavaInt(context, retval);
     }
 }
-// 2: Java_java_lang_Object_getClass
+// 4: Java_java_lang_Object_getClass
 JNIEXPORT jobject JNICALL Java_java_lang_Object_getClass(JNIEnv *, jobject);
-void native2(contextDef* context) {
+void native4(contextDef* context) {
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
     jobject retval = Java_java_lang_Object_getClass(context, thisOrClass);
@@ -763,9 +888,9 @@ void native2(contextDef* context) {
         operandStackPushObjectRef(context, retval);
     }
 }
-// 3: Java_java_lang_Throwable_getStackTraceElement
+// 5: Java_java_lang_Throwable_getStackTraceElement
 JNIEXPORT jint JNICALL Java_java_lang_Throwable_getStackTraceElement(JNIEnv *, jobject, jint);
-void native3(contextDef* context) {
+void native5(contextDef* context) {
     jint p0 = operandStackPeekJavaInt(context, 1);
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
@@ -775,9 +900,9 @@ void native3(contextDef* context) {
         operandStackPushJavaInt(context, retval);
     }
 }
-// 4: Java_java_lang_Throwable_getStackTraceDepth
+// 6: Java_java_lang_Throwable_getStackTraceDepth
 JNIEXPORT jint JNICALL Java_java_lang_Throwable_getStackTraceDepth(JNIEnv *, jobject);
-void native4(contextDef* context) {
+void native6(contextDef* context) {
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
     jint retval = Java_java_lang_Throwable_getStackTraceDepth(context, thisOrClass);
@@ -786,20 +911,20 @@ void native4(contextDef* context) {
         operandStackPushJavaInt(context, retval);
     }
 }
-// 5: Java_java_lang_Thread_yield
+// 7: Java_java_lang_Thread_yield
 JNIEXPORT void JNICALL Java_java_lang_Thread_yield(JNIEnv *, jclass);
-void native5(contextDef* context) {
+void native7(contextDef* context) {
 
-    jclass thisOrClass = getJavaLangClass(context, 27);
+    jclass thisOrClass = getJavaLangClass(context, 29);
     Java_java_lang_Thread_yield(context, thisOrClass);
     if (!ExceptionCheck(context)) {
         pop_frame(context);
         
     }
 }
-// 6: Java_java_lang_Thread_attach
+// 8: Java_java_lang_Thread_attach
 JNIEXPORT void JNICALL Java_java_lang_Thread_attach(JNIEnv *, jobject);
-void native6(contextDef* context) {
+void native8(contextDef* context) {
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
     Java_java_lang_Thread_attach(context, thisOrClass);
@@ -808,9 +933,20 @@ void native6(contextDef* context) {
         
     }
 }
-// 7: Java_java_io_PrintStream_outStringLf
+// 9: Java_java_lang_System_nanoTime
+JNIEXPORT jlong JNICALL Java_java_lang_System_nanoTime(JNIEnv *, jclass);
+void native9(contextDef* context) {
+
+    jclass thisOrClass = getJavaLangClass(context, 28);
+    jlong retval = Java_java_lang_System_nanoTime(context, thisOrClass);
+    if (!ExceptionCheck(context)) {
+        pop_frame(context);
+        operandStackPushJavaLong(context, retval);
+    }
+}
+// 10: Java_java_io_PrintStream_outStringLf
 JNIEXPORT void JNICALL Java_java_io_PrintStream_outStringLf(JNIEnv *, jclass, jstring);
-void native7(contextDef* context) {
+void native10(contextDef* context) {
     jstring p0 = (jstring) operandStackPeekObjectRef(context, 0);
 
     jclass thisOrClass = getJavaLangClass(context, 7);
@@ -820,9 +956,9 @@ void native7(contextDef* context) {
         
     }
 }
-// 8: Java_java_io_PrintStream_outString
+// 11: Java_java_io_PrintStream_outString
 JNIEXPORT void JNICALL Java_java_io_PrintStream_outString(JNIEnv *, jclass, jstring);
-void native8(contextDef* context) {
+void native11(contextDef* context) {
     jstring p0 = (jstring) operandStackPeekObjectRef(context, 0);
 
     jclass thisOrClass = getJavaLangClass(context, 7);
@@ -846,8 +982,11 @@ const nativeJumpTableEntry const nativeJumpTable[] = {
     native6,
     native7,
     native8,
+    native9,
+    native10,
+    native11,
 };
-const u2 nativeJumpTableSize = 8;
+const u2 nativeJumpTableSize = 11;
 
 //------------------------------------------------------------------------------
 // Integer Constant References
@@ -861,8 +1000,10 @@ const integerConstantReference const allIntegerConstantReferences[] = {
 // Long Constant References
 //------------------------------------------------------------------------------
 
-const u2 numberOfAllLongConstantReferences = 0;
+const u2 numberOfAllLongConstantReferences = 2;
 const longConstantReference const allLongConstantReferences[] = {
+    {35, 52, 100}, 
+    {35, 109, 1000000}, 
 };
 
 //------------------------------------------------------------------------------
@@ -885,24 +1026,29 @@ const doubleConstantReference const allDoubleConstantReferences[] = {
 // String Constant References
 //------------------------------------------------------------------------------
 
-const u2 numberOfAllStringConstantReferences = 16;
+const u2 numberOfAllStringConstantReferences = 21;
 const stringConstantReference const allStringConstantReferences[] = {
     {0, 7, "@"}, 
     {10, 4, "#"}, 
     {9, 4, "Index out of bounds: "}, 
-    {28, 12, ": "}, 
-    {28, 15, ""}, 
-    {28, 17, ","}, 
-    {28, 19, "  at: "}, 
-    {28, 21, "Throwable: "}, 
-    {31, 3, "Starting"}, 
-    {31, 5, "Test 28"}, 
+    {30, 12, ": "}, 
+    {30, 15, ""}, 
+    {30, 17, ","}, 
+    {30, 19, "  at: "}, 
+    {30, 21, "Throwable: "}, 
+    {29, 12, "Illegal thread state: "}, 
+    {33, 3, "Starting"}, 
+    {33, 5, "Test 28"}, 
     {7, 4, ""}, 
     {7, 17, "null"}, 
-    {32, 9, "Hello folks"}, 
-    {32, 13, "Bye-bye folks"}, 
-    {32, 17, "nissehat "}, 
-    {25, 5, "null"}, 
+    {35, 9, "Hello folks"}, 
+    {37, 4, "hat 1"}, 
+    {37, 6, "hat 2"}, 
+    {37, 8, "hat 3"}, 
+    {36, 4, "nisse 4"}, 
+    {36, 7, "nisse 5"}, 
+    {27, 5, "null"}, 
+    {34, 3, "Regression failed"}, 
 };
 
 //------------------------------------------------------------------------------
@@ -912,7 +1058,7 @@ const stringConstantReference const allStringConstantReferences[] = {
 const u1 code[] = {
 
     //------------------------------------------------------------------------------
-    // (24) java/lang/String#<init>#([CII)V
+    // (26) java/lang/String#<init>#([CII)V
     //------------------------------------------------------------------------------
 
     // java/lang/String#<init>#([CII)V:9
@@ -951,7 +1097,7 @@ const u1 code[] = {
     /* 0027 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (24) java/lang/String#<init>#([C)V
+    // (26) java/lang/String#<init>#([C)V
     //------------------------------------------------------------------------------
 
     // java/lang/String#<init>#([C)V:16
@@ -990,7 +1136,7 @@ const u1 code[] = {
     /* 004b */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (24) java/lang/String#length#()I
+    // (26) java/lang/String#length#()I
     //------------------------------------------------------------------------------
 
     // java/lang/String#length#()I:25
@@ -1000,7 +1146,7 @@ const u1 code[] = {
     /* 0051 */      c_ireturn()
 
     //------------------------------------------------------------------------------
-    // (24) java/lang/String#getChars#(II[CI)V
+    // (26) java/lang/String#getChars#(II[CI)V
     //------------------------------------------------------------------------------
 
     // java/lang/String#getChars#(II[CI)V:44
@@ -1031,7 +1177,7 @@ const u1 code[] = {
     /* 0071 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (24) java/lang/String#toString#()Ljava/lang/String;
+    // (26) java/lang/String#toString#()Ljava/lang/String;
     //------------------------------------------------------------------------------
 
     // java/lang/String#toString#()Ljava/lang/String;:51
@@ -1039,7 +1185,7 @@ const u1 code[] = {
     /* 0073 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (24) java/lang/String#hashCode#()I
+    // (26) java/lang/String#hashCode#()I
     //------------------------------------------------------------------------------
 
     // java/lang/String#hashCode#()I:57
@@ -1153,7 +1299,7 @@ const u1 code[] = {
     /* 00e5 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (14) java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V
+    // (15) java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V:8
@@ -1165,7 +1311,7 @@ const u1 code[] = {
     /* 00eb */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (16) java/lang/InterruptedException#<init>#()V
+    // (18) java/lang/InterruptedException#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/InterruptedException#<init>#()V:3
@@ -1174,7 +1320,7 @@ const u1 code[] = {
     /* 00f0 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (17) java/lang/NegativeArraySizeException#<init>#()V
+    // (19) java/lang/NegativeArraySizeException#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/NegativeArraySizeException#<init>#()V:3
@@ -1183,7 +1329,7 @@ const u1 code[] = {
     /* 00f5 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (18) java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
+    // (20) java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/NullPointerException#<init>#(Ljava/lang/String;)V:5
@@ -1195,7 +1341,7 @@ const u1 code[] = {
     /* 00fb */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (18) java/lang/NullPointerException#<init>#()V
+    // (20) java/lang/NullPointerException#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/NullPointerException#<init>#()V:9
@@ -1207,7 +1353,7 @@ const u1 code[] = {
     /* 0101 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (21) java/lang/OutOfMemoryError#<init>#()V
+    // (23) java/lang/OutOfMemoryError#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/OutOfMemoryError#<init>#()V:10
@@ -1218,7 +1364,7 @@ const u1 code[] = {
     /* 0106 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (21) java/lang/OutOfMemoryError#getInstance#()Ljava/lang/OutOfMemoryError;
+    // (23) java/lang/OutOfMemoryError#getInstance#()Ljava/lang/OutOfMemoryError;
     //------------------------------------------------------------------------------
 
     // java/lang/OutOfMemoryError#getInstance#()Ljava/lang/OutOfMemoryError;:18
@@ -1226,7 +1372,7 @@ const u1 code[] = {
     /* 010a */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (21) java/lang/OutOfMemoryError#<clinit>#()V
+    // (23) java/lang/OutOfMemoryError#<clinit>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/OutOfMemoryError#<clinit>#()V:5
@@ -1237,7 +1383,7 @@ const u1 code[] = {
     /* 0115 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (29) java/lang/VirtualMachineError#<init>#()V
+    // (31) java/lang/VirtualMachineError#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/VirtualMachineError#<init>#()V:8
@@ -1259,7 +1405,7 @@ const u1 code[] = {
     /* 011f */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (28) java/lang/Throwable#<init>#()V
+    // (30) java/lang/Throwable#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Throwable#<init>#()V:11
@@ -1271,7 +1417,7 @@ const u1 code[] = {
     /* 0125 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (28) java/lang/Throwable#<init>#(Ljava/lang/String;)V
+    // (30) java/lang/Throwable#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/Throwable#<init>#(Ljava/lang/String;)V:14
@@ -1318,7 +1464,7 @@ const u1 code[] = {
     /* 0153 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (28) java/lang/Throwable#printStackTrace#()V
+    // (30) java/lang/Throwable#printStackTrace#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Throwable#printStackTrace#()V:39
@@ -1403,7 +1549,7 @@ const u1 code[] = {
     /* 01ce */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (28) java/lang/Throwable#toString#()Ljava/lang/String;
+    // (30) java/lang/Throwable#toString#()Ljava/lang/String;
     //------------------------------------------------------------------------------
 
     // java/lang/Throwable#toString#()Ljava/lang/String;:57
@@ -1419,7 +1565,7 @@ const u1 code[] = {
     /* 01e5 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/Thread#<init>#()V
+    // (29) java/lang/Thread#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#<init>#()V:68
@@ -1431,7 +1577,7 @@ const u1 code[] = {
     /* 01eb */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
+    // (29) java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#<init>#(Ljava/lang/Runnable;)V:76
@@ -1466,577 +1612,820 @@ const u1 code[] = {
     /* 020c */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/Thread#runFromNative#()V
+    // (29) java/lang/Thread#start#()V
+    //------------------------------------------------------------------------------
+
+    // java/lang/Thread#start#()V:88
+    /* 020d */      c_aload_0()
+    /* 020e */      c_getfield(0x00, 0x03)
+    /* 0211 */      c_ifne(0x00, 0x0a)
+
+    // java/lang/Thread#start#()V:90
+    /* 0214 */      c_aload_0()
+    /* 0215 */      c_invokespecial(0x00, 0x02)
+    /* 0218 */      c_goto(0x00, 0x21)
+
+    // java/lang/Thread#start#()V:94
+    /* 021b */      c_new(0x00, 0x09)
+    /* 021e */      c_dup()
+    /* 021f */      c_new(0x00, 0x0a)
+    /* 0222 */      c_dup()
+    /* 0223 */      c_invokespecial(0x00, 0x03)
+    /* 0226 */      c_ldc(0x0c)
+    /* 0228 */      c_invokevirtual(0x00, 0x04)
+    /* 022b */      c_aload_0()
+    /* 022c */      c_getfield(0x00, 0x03)
+    /* 022f */      c_invokevirtual(0x00, 0x05)
+    /* 0232 */      c_invokevirtual(0x00, 0x06)
+    /* 0235 */      c_invokespecial(0x00, 0x07)
+    /* 0238 */      c_athrow()
+
+    // java/lang/Thread#start#()V:96
+    /* 0239 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (29) java/lang/Thread#runFromNative#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#runFromNative#()V:103
-    /* 020d */      c_aload_0()
-    /* 020e */      c_getfield(0x00, 0x00)
-    /* 0211 */      c_ifnull(0x00, 0x0f)
+    /* 023a */      c_aload_0()
+    /* 023b */      c_getfield(0x00, 0x00)
+    /* 023e */      c_ifnull(0x00, 0x0f)
 
     // java/lang/Thread#runFromNative#()V:104
-    /* 0214 */      c_aload_0()
-    /* 0215 */      c_getfield(0x00, 0x00)
-    /* 0218 */      c_invokeinterface(0x00, 0x03, 0x01, 0x00)
-    /* 021d */      c_goto(0x00, 0x07)
+    /* 0241 */      c_aload_0()
+    /* 0242 */      c_getfield(0x00, 0x00)
+    /* 0245 */      c_invokeinterface(0x00, 0x08, 0x01, 0x00)
+    /* 024a */      c_goto(0x00, 0x07)
 
     // java/lang/Thread#runFromNative#()V:106
-    /* 0220 */      c_aload_0()
-    /* 0221 */      c_invokevirtual(0x00, 0x04)
+    /* 024d */      c_aload_0()
+    /* 024e */      c_invokevirtual(0x00, 0x09)
 
     // java/lang/Thread#runFromNative#()V:110
-    /* 0224 */      c_goto(0x00, 0x08)
+    /* 0251 */      c_goto(0x00, 0x08)
 
     // java/lang/Thread#runFromNative#()V:108
-    /* 0227 */      c_astore_1()
+    /* 0254 */      c_astore_1()
 
     // java/lang/Thread#runFromNative#()V:109
-    /* 0228 */      c_aload_1()
-    /* 0229 */      c_invokevirtual(0x00, 0x05)
+    /* 0255 */      c_aload_1()
+    /* 0256 */      c_invokevirtual(0x00, 0x0a)
 
     // java/lang/Thread#runFromNative#()V:112
-    /* 022c */      c_aload_0()
-    /* 022d */      c_iconst_5()
-    /* 022e */      c_putfield(0x00, 0x03)
+    /* 0259 */      c_aload_0()
+    /* 025a */      c_iconst_5()
+    /* 025b */      c_putfield(0x00, 0x03)
 
     // java/lang/Thread#runFromNative#()V:119
-    /* 0231 */      c_invokestatic(0x00, 0x06)
+    /* 025e */      c_invokestatic(0x00, 0x0b)
 
     // java/lang/Thread#runFromNative#()V:120
-    /* 0234 */      c_vreturn()
+    /* 0261 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/Thread#run#()V
+    // (29) java/lang/Thread#run#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#run#()V:131
-    /* 0235 */      c_vreturn()
+    /* 0262 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/Thread#<clinit>#()V
+    // (29) java/lang/Thread#<clinit>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#<clinit>#()V:27
-    /* 0236 */      c_lconst_0()
-    /* 0237 */      c_putstatic(0x00, 0x01)
+    /* 0263 */      c_lconst_0()
+    /* 0264 */      c_putstatic(0x00, 0x01)
 
     // java/lang/Thread#<clinit>#()V:58
-    /* 023a */      c_new(0x00, 0x17)
-    /* 023d */      c_dup()
-    /* 023e */      c_invokespecial(0x00, 0x07)
-    /* 0241 */      c_putstatic(0x00, 0x05)
+    /* 0267 */      c_new(0x00, 0x17)
+    /* 026a */      c_dup()
+    /* 026b */      c_invokespecial(0x00, 0x0c)
+    /* 026e */      c_putstatic(0x00, 0x05)
 
     // java/lang/Thread#<clinit>#()V:61
-    /* 0244 */      c_getstatic(0x00, 0x05)
-    /* 0247 */      c_invokespecial(0x00, 0x02)
+    /* 0271 */      c_getstatic(0x00, 0x05)
+    /* 0274 */      c_invokespecial(0x00, 0x02)
 
     // java/lang/Thread#<clinit>#()V:62
-    /* 024a */      c_vreturn()
+    /* 0277 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (31) thinj/regression/AllTests#main#([Ljava/lang/String;)V
+    // (33) thinj/regression/AllTests#main#([Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // thinj/regression/AllTests#main#([Ljava/lang/String;)V:5
-    /* 024b */      c_getstatic(0x00, 0x00)
-    /* 024e */      c_ldc(0x03)
-    /* 0250 */      c_invokevirtual(0x00, 0x00)
+    /* 0278 */      c_getstatic(0x00, 0x00)
+    /* 027b */      c_ldc(0x03)
+    /* 027d */      c_invokevirtual(0x00, 0x00)
 
     // thinj/regression/AllTests#main#([Ljava/lang/String;)V:107
-    /* 0253 */      c_getstatic(0x00, 0x00)
-    /* 0256 */      c_ldc(0x05)
-    /* 0258 */      c_invokevirtual(0x00, 0x00)
+    /* 0280 */      c_getstatic(0x00, 0x00)
+    /* 0283 */      c_ldc(0x05)
+    /* 0285 */      c_invokevirtual(0x00, 0x00)
 
     // thinj/regression/AllTests#main#([Ljava/lang/String;)V:108
-    /* 025b */      c_aconst_null()
-    /* 025c */      c_invokestatic(0x00, 0x01)
+    /* 0288 */      c_aconst_null()
+    /* 0289 */      c_invokestatic(0x00, 0x01)
 
     // thinj/regression/AllTests#main#([Ljava/lang/String;)V:114
-    /* 025f */      c_vreturn()
+    /* 028c */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (26) java/lang/System#<clinit>#()V
+    // (28) java/lang/System#<clinit>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/System#<clinit>#()V:6
-    /* 0260 */      c_new(0x00, 0x02)
-    /* 0263 */      c_dup()
-    /* 0264 */      c_invokespecial(0x00, 0x00)
-    /* 0267 */      c_putstatic(0x00, 0x00)
+    /* 028d */      c_new(0x00, 0x02)
+    /* 0290 */      c_dup()
+    /* 0291 */      c_invokespecial(0x00, 0x00)
+    /* 0294 */      c_putstatic(0x00, 0x00)
 
     // java/lang/System#<clinit>#()V:7
-    /* 026a */      c_new(0x00, 0x02)
-    /* 026d */      c_dup()
-    /* 026e */      c_invokespecial(0x00, 0x00)
-    /* 0271 */      c_putstatic(0x00, 0x01)
-    /* 0274 */      c_vreturn()
+    /* 0297 */      c_new(0x00, 0x02)
+    /* 029a */      c_dup()
+    /* 029b */      c_invokespecial(0x00, 0x00)
+    /* 029e */      c_putstatic(0x00, 0x01)
+    /* 02a1 */      c_vreturn()
 
     //------------------------------------------------------------------------------
     // (7) java/io/PrintStream#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/io/PrintStream#<init>#()V:3
-    /* 0275 */      c_aload_0()
-    /* 0276 */      c_invokespecial(0x00, 0x00)
-    /* 0279 */      c_vreturn()
+    /* 02a2 */      c_aload_0()
+    /* 02a3 */      c_invokespecial(0x00, 0x00)
+    /* 02a6 */      c_vreturn()
 
     //------------------------------------------------------------------------------
     // (7) java/io/PrintStream#println#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/io/PrintStream#println#(Ljava/lang/String;)V:9
-    /* 027a */      c_aload_1()
-    /* 027b */      c_invokestatic(0x00, 0x01)
+    /* 02a7 */      c_aload_1()
+    /* 02a8 */      c_invokestatic(0x00, 0x01)
 
     // java/io/PrintStream#println#(Ljava/lang/String;)V:10
-    /* 027e */      c_vreturn()
+    /* 02ab */      c_vreturn()
 
     //------------------------------------------------------------------------------
     // (7) java/io/PrintStream#print#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/io/PrintStream#print#(Ljava/lang/String;)V:13
-    /* 027f */      c_aload_1()
-    /* 0280 */      c_invokestatic(0x00, 0x02)
+    /* 02ac */      c_aload_1()
+    /* 02ad */      c_invokestatic(0x00, 0x02)
 
     // java/io/PrintStream#print#(Ljava/lang/String;)V:14
-    /* 0283 */      c_vreturn()
+    /* 02b0 */      c_vreturn()
 
     //------------------------------------------------------------------------------
     // (7) java/io/PrintStream#print#(I)V
     //------------------------------------------------------------------------------
 
     // java/io/PrintStream#print#(I)V:29
-    /* 0284 */      c_aload_0()
-    /* 0285 */      c_new(0x00, 0x09)
-    /* 0288 */      c_dup()
-    /* 0289 */      c_invokespecial(0x00, 0x04)
-    /* 028c */      c_ldc(0x04)
-    /* 028e */      c_invokevirtual(0x00, 0x05)
-    /* 0291 */      c_iload_1()
-    /* 0292 */      c_invokevirtual(0x00, 0x06)
-    /* 0295 */      c_invokevirtual(0x00, 0x07)
-    /* 0298 */      c_invokevirtual(0x00, 0x03)
+    /* 02b1 */      c_aload_0()
+    /* 02b2 */      c_new(0x00, 0x09)
+    /* 02b5 */      c_dup()
+    /* 02b6 */      c_invokespecial(0x00, 0x04)
+    /* 02b9 */      c_ldc(0x04)
+    /* 02bb */      c_invokevirtual(0x00, 0x05)
+    /* 02be */      c_iload_1()
+    /* 02bf */      c_invokevirtual(0x00, 0x06)
+    /* 02c2 */      c_invokevirtual(0x00, 0x07)
+    /* 02c5 */      c_invokevirtual(0x00, 0x03)
 
     // java/io/PrintStream#print#(I)V:30
-    /* 029b */      c_vreturn()
+    /* 02c8 */      c_vreturn()
 
     //------------------------------------------------------------------------------
     // (7) java/io/PrintStream#print#(Ljava/lang/Object;)V
     //------------------------------------------------------------------------------
 
     // java/io/PrintStream#print#(Ljava/lang/Object;)V:49
-    /* 029c */      c_aload_1()
-    /* 029d */      c_ifnonnull(0x00, 0x08)
-    /* 02a0 */      c_ldc(0x11)
-    /* 02a2 */      c_goto(0x00, 0x07)
-    /* 02a5 */      c_aload_1()
-    /* 02a6 */      c_invokevirtual(0x00, 0x08)
-    /* 02a9 */      c_invokestatic(0x00, 0x02)
+    /* 02c9 */      c_aload_1()
+    /* 02ca */      c_ifnonnull(0x00, 0x08)
+    /* 02cd */      c_ldc(0x11)
+    /* 02cf */      c_goto(0x00, 0x07)
+    /* 02d2 */      c_aload_1()
+    /* 02d3 */      c_invokevirtual(0x00, 0x08)
+    /* 02d6 */      c_invokestatic(0x00, 0x02)
 
     // java/io/PrintStream#print#(Ljava/lang/Object;)V:50
-    /* 02ac */      c_vreturn()
-
-    //------------------------------------------------------------------------------
-    // (32) thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
-    //------------------------------------------------------------------------------
-
-    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:9
-    /* 02ad */      c_getstatic(0x00, 0x04)
-    /* 02b0 */      c_ldc(0x09)
-    /* 02b2 */      c_invokevirtual(0x00, 0x01)
-
-    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:10
-    /* 02b5 */      c_invokestatic(0x00, 0x02)
-
-    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:11
-    /* 02b8 */      c_invokestatic(0x00, 0x03)
-
-    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:27
-    /* 02bb */      c_getstatic(0x00, 0x04)
-    /* 02be */      c_ldc(0x0d)
-    /* 02c0 */      c_invokevirtual(0x00, 0x01)
-
-    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:28
-    /* 02c3 */      c_vreturn()
-
-    //------------------------------------------------------------------------------
-    // (32) thinj/regression/ThreadTest#simpleYield#()V
-    //------------------------------------------------------------------------------
-
-    // thinj/regression/ThreadTest#simpleYield#()V:31
-    /* 02c4 */      c_iconst_0()
-    /* 02c5 */      c_putstatic(0x00, 0x03)
-
-    // thinj/regression/ThreadTest#simpleYield#()V:32
-    /* 02c8 */      c_iconst_0()
-    /* 02c9 */      c_istore_0()
-    /* 02ca */      c_iload_0()
-    /* 02cb */      c_bipush(0x0a)
-    /* 02cd */      c_if_icmpge(0x00, 0x0c)
-
-    // thinj/regression/ThreadTest#simpleYield#()V:33
-    /* 02d0 */      c_invokestatic(0x00, 0x04)
-
-    // thinj/regression/ThreadTest#simpleYield#()V:32
-    /* 02d3 */      c_iinc(0x00, 0x01)
-    /* 02d6 */      c_goto(0xff, 0xf4)
-
-    // thinj/regression/ThreadTest#simpleYield#()V:35
     /* 02d9 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (32) thinj/regression/ThreadTest#yieldAndGC#()V
+    // (35) thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
-    // thinj/regression/ThreadTest#yieldAndGC#()V:38
-    /* 02da */      c_iconst_0()
-    /* 02db */      c_istore_0()
-    /* 02dc */      c_iload_0()
-    /* 02dd */      c_sipush(0x03, 0xe8)
-    /* 02e0 */      c_if_icmpge(0x00, 0x2e)
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:9
+    /* 02da */      c_getstatic(0x00, 0x04)
+    /* 02dd */      c_ldc(0x09)
+    /* 02df */      c_invokevirtual(0x00, 0x01)
 
-    // thinj/regression/ThreadTest#yieldAndGC#()V:39
-    /* 02e3 */      c_invokestatic(0x00, 0x04)
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:22
+    /* 02e2 */      c_invokestatic(0x00, 0x02)
 
-    // thinj/regression/ThreadTest#yieldAndGC#()V:40
-    /* 02e6 */      c_new(0x00, 0x0f)
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:33
+    /* 02e5 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (35) thinj/regression/ThreadTest#test2_4#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test2_4#()V:245
+    /* 02e6 */      c_new(0x00, 0x21)
     /* 02e9 */      c_dup()
-    /* 02ea */      c_invokespecial(0x00, 0x05)
-    /* 02ed */      c_ldc(0x11)
-    /* 02ef */      c_invokevirtual(0x00, 0x06)
-    /* 02f2 */      c_iload_0()
-    /* 02f3 */      c_invokevirtual(0x00, 0x07)
-    /* 02f6 */      c_invokevirtual(0x00, 0x08)
-    /* 02f9 */      c_astore_1()
+    /* 02ea */      c_invokespecial(0x00, 0x00)
+    /* 02ed */      c_astore_0()
 
-    // thinj/regression/ThreadTest#yieldAndGC#()V:41
-    /* 02fa */      c_iload_0()
-    /* 02fb */      c_bipush(0x32)
-    /* 02fd */      c_irem()
-    /* 02fe */      c_ifne(0x00, 0x0a)
+    // thinj/regression/ThreadTest#test2_4#()V:246
+    /* 02ee */      c_iconst_0()
+    /* 02ef */      c_putstatic(0x00, 0x02)
 
-    // thinj/regression/ThreadTest#yieldAndGC#()V:42
-    /* 0301 */      c_getstatic(0x00, 0x04)
-    /* 0304 */      c_aload_1()
-    /* 0305 */      c_invokevirtual(0x00, 0x01)
+    // thinj/regression/ThreadTest#test2_4#()V:247
+    /* 02f2 */      c_new(0x00, 0x2a)
+    /* 02f5 */      c_dup()
+    /* 02f6 */      c_new(0x00, 0x36)
+    /* 02f9 */      c_dup()
+    /* 02fa */      c_aload_0()
+    /* 02fb */      c_invokespecial(0x00, 0x07)
+    /* 02fe */      c_invokespecial(0x00, 0x06)
+    /* 0301 */      c_astore_1()
 
-    // thinj/regression/ThreadTest#yieldAndGC#()V:38
-    /* 0308 */      c_iinc(0x00, 0x01)
-    /* 030b */      c_goto(0xff, 0xd1)
+    // thinj/regression/ThreadTest#test2_4#()V:265
+    /* 0302 */      c_aload_1()
+    /* 0303 */      c_invokevirtual(0x00, 0x05)
 
-    // thinj/regression/ThreadTest#yieldAndGC#()V:45
-    /* 030e */      c_vreturn()
+    // thinj/regression/ThreadTest#test2_4#()V:268
+    /* 0306 */      c_ldc2_w(0x00, 0x34)
+    /* 0309 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test2_4#()V:270
+    /* 030c */      c_iconst_0()
+    /* 030d */      c_putstatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest#test2_4#()V:271
+    /* 0310 */      c_new(0x00, 0x2a)
+    /* 0313 */      c_dup()
+    /* 0314 */      c_new(0x00, 0x38)
+    /* 0317 */      c_dup()
+    /* 0318 */      c_aload_0()
+    /* 0319 */      c_invokespecial(0x00, 0x08)
+    /* 031c */      c_invokespecial(0x00, 0x06)
+    /* 031f */      c_invokevirtual(0x00, 0x05)
+
+    // thinj/regression/ThreadTest#test2_4#()V:285
+    /* 0322 */      c_ldc2_w(0x00, 0x34)
+    /* 0325 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test2_4#()V:287
+    /* 0328 */      c_getstatic(0x00, 0x02)
+    /* 032b */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/ThreadTest#test2_4#()V:288
+    /* 032e */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (32) thinj/regression/ThreadTest#<clinit>#()V
+    // (35) thinj/regression/ThreadTest#busyWaitDone#(J)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#busyWaitDone#(J)V:659
+    /* 032f */      c_invokestatic(0x00, 0x09)
+    /* 0332 */      c_lload_0()
+    /* 0333 */      c_ldc2_w(0x00, 0x6d)
+    /* 0336 */      c_lmul()
+    /* 0337 */      c_ladd()
+    /* 0338 */      c_lstore_2()
+
+    // thinj/regression/ThreadTest#busyWaitDone#(J)V:660
+    /* 0339 */      c_invokestatic(0x00, 0x09)
+    /* 033c */      c_lload_2()
+    /* 033d */      c_lcmp()
+    /* 033e */      c_ifge(0x00, 0x0c)
+    /* 0341 */      c_getstatic(0x00, 0x02)
+    /* 0344 */      c_ifne(0x00, 0x06)
+
+    // thinj/regression/ThreadTest#busyWaitDone#(J)V:661
+    /* 0347 */      c_goto(0xff, 0xf2)
+
+    // thinj/regression/ThreadTest#busyWaitDone#(J)V:662
+    /* 034a */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (35) thinj/regression/ThreadTest#access$102#(Z)Z
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#access$102#(Z)Z:3
+    /* 034b */      c_iload_0()
+    /* 034c */      c_dup()
+    /* 034d */      c_putstatic(0x00, 0x02)
+    /* 0350 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (35) thinj/regression/ThreadTest#<clinit>#()V
     //------------------------------------------------------------------------------
 
     // thinj/regression/ThreadTest#<clinit>#()V:4
-    /* 030f */      c_iconst_0()
-    /* 0310 */      c_putstatic(0x00, 0x03)
+    /* 0351 */      c_iconst_0()
+    /* 0352 */      c_putstatic(0x00, 0x02)
 
     // thinj/regression/ThreadTest#<clinit>#()V:5
-    /* 0313 */      c_iconst_0()
-    /* 0314 */      c_putstatic(0x00, 0x00)
+    /* 0355 */      c_iconst_0()
+    /* 0356 */      c_putstatic(0x00, 0x00)
 
     // thinj/regression/ThreadTest#<clinit>#()V:6
-    /* 0317 */      c_iconst_0()
-    /* 0318 */      c_putstatic(0x00, 0x02)
+    /* 0359 */      c_iconst_0()
+    /* 035a */      c_putstatic(0x00, 0x03)
 
-    // thinj/regression/ThreadTest#<clinit>#()V:276
-    /* 031b */      c_new(0x00, 0x1e)
-    /* 031e */      c_dup()
-    /* 031f */      c_invokespecial(0x00, 0x00)
-    /* 0322 */      c_putstatic(0x00, 0x01)
-    /* 0325 */      c_vreturn()
+    // thinj/regression/ThreadTest#<clinit>#()V:307
+    /* 035d */      c_new(0x00, 0x21)
+    /* 0360 */      c_dup()
+    /* 0361 */      c_invokespecial(0x00, 0x00)
+    /* 0364 */      c_putstatic(0x00, 0x01)
+    /* 0367 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (25) java/lang/StringBuilder#<init>#()V
+    // (37) thinj/regression/ThreadTest$9#<init>#(Ljava/lang/Object;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$9#<init>#(Ljava/lang/Object;)V:271
+    /* 0368 */      c_aload_0()
+    /* 0369 */      c_aload_1()
+    /* 036a */      c_putfield(0x00, 0x00)
+    /* 036d */      c_aload_0()
+    /* 036e */      c_invokespecial(0x00, 0x00)
+    /* 0371 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (37) thinj/regression/ThreadTest$9#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$9#run#()V:273
+    /* 0372 */      c_getstatic(0x00, 0x01)
+    /* 0375 */      c_ldc(0x04)
+    /* 0377 */      c_invokevirtual(0x00, 0x01)
+
+    // thinj/regression/ThreadTest$9#run#()V:274
+    /* 037a */      c_aload_0()
+    /* 037b */      c_getfield(0x00, 0x00)
+    /* 037e */      c_dup()
+    /* 037f */      c_astore_1()
+    /* 0380 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$9#run#()V:275
+    /* 0381 */      c_getstatic(0x00, 0x01)
+    /* 0384 */      c_ldc(0x06)
+    /* 0386 */      c_invokevirtual(0x00, 0x01)
+
+    // thinj/regression/ThreadTest$9#run#()V:276
+    /* 0389 */      c_aload_0()
+    /* 038a */      c_getfield(0x00, 0x00)
+    /* 038d */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$9#run#()V:277
+    /* 0390 */      c_getstatic(0x00, 0x01)
+    /* 0393 */      c_ldc(0x08)
+    /* 0395 */      c_invokevirtual(0x00, 0x01)
+
+    // thinj/regression/ThreadTest$9#run#()V:278
+    /* 0398 */      c_aload_1()
+    /* 0399 */      c_monitorexit()
+    /* 039a */      c_goto(0x00, 0x08)
+    /* 039d */      c_astore_2()
+    /* 039e */      c_aload_1()
+    /* 039f */      c_monitorexit()
+    /* 03a0 */      c_aload_2()
+    /* 03a1 */      c_athrow()
+
+    // thinj/regression/ThreadTest$9#run#()V:279
+    /* 03a2 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (36) thinj/regression/ThreadTest$8#<init>#(Ljava/lang/Object;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$8#<init>#(Ljava/lang/Object;)V:247
+    /* 03a3 */      c_aload_0()
+    /* 03a4 */      c_aload_1()
+    /* 03a5 */      c_putfield(0x00, 0x00)
+    /* 03a8 */      c_aload_0()
+    /* 03a9 */      c_invokespecial(0x00, 0x00)
+    /* 03ac */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (36) thinj/regression/ThreadTest$8#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$8#run#()V:251
+    /* 03ad */      c_aload_0()
+    /* 03ae */      c_getfield(0x00, 0x00)
+    /* 03b1 */      c_dup()
+    /* 03b2 */      c_astore_1()
+    /* 03b3 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$8#run#()V:252
+    /* 03b4 */      c_aload_0()
+    /* 03b5 */      c_getfield(0x00, 0x00)
+    /* 03b8 */      c_dup()
+    /* 03b9 */      c_astore_2()
+    /* 03ba */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$8#run#()V:253
+    /* 03bb */      c_aload_0()
+    /* 03bc */      c_getfield(0x00, 0x00)
+    /* 03bf */      c_dup()
+    /* 03c0 */      c_astore_3()
+    /* 03c1 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$8#run#()V:254
+    /* 03c2 */      c_getstatic(0x00, 0x01)
+    /* 03c5 */      c_ldc(0x04)
+    /* 03c7 */      c_invokevirtual(0x00, 0x01)
+
+    // thinj/regression/ThreadTest$8#run#()V:255
+    /* 03ca */      c_aload_0()
+    /* 03cb */      c_getfield(0x00, 0x00)
+    /* 03ce */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$8#run#()V:256
+    /* 03d1 */      c_getstatic(0x00, 0x01)
+    /* 03d4 */      c_ldc(0x07)
+    /* 03d6 */      c_invokevirtual(0x00, 0x01)
+
+    // thinj/regression/ThreadTest$8#run#()V:257
+    /* 03d9 */      c_aload_3()
+    /* 03da */      c_monitorexit()
+    /* 03db */      c_goto(0x00, 0x0a)
+    /* 03de */      c_astore(0x04)
+    /* 03e0 */      c_aload_3()
+    /* 03e1 */      c_monitorexit()
+    /* 03e2 */      c_aload(0x04)
+    /* 03e4 */      c_athrow()
+
+    // thinj/regression/ThreadTest$8#run#()V:258
+    /* 03e5 */      c_aload_2()
+    /* 03e6 */      c_monitorexit()
+    /* 03e7 */      c_goto(0x00, 0x0a)
+    /* 03ea */      c_astore(0x05)
+    /* 03ec */      c_aload_2()
+    /* 03ed */      c_monitorexit()
+    /* 03ee */      c_aload(0x05)
+    /* 03f0 */      c_athrow()
+
+    // thinj/regression/ThreadTest$8#run#()V:259
+    /* 03f1 */      c_aload_1()
+    /* 03f2 */      c_monitorexit()
+    /* 03f3 */      c_goto(0x00, 0x0a)
+    /* 03f6 */      c_astore(0x06)
+    /* 03f8 */      c_aload_1()
+    /* 03f9 */      c_monitorexit()
+    /* 03fa */      c_aload(0x06)
+    /* 03fc */      c_athrow()
+
+    // thinj/regression/ThreadTest$8#run#()V:260
+    /* 03fd */      c_iconst_1()
+    /* 03fe */      c_invokestatic(0x00, 0x03)
+    /* 0401 */      c_pop()
+
+    // thinj/regression/ThreadTest$8#run#()V:262
+    /* 0402 */      c_goto(0x00, 0x04)
+
+    // thinj/regression/ThreadTest$8#run#()V:261
+    /* 0405 */      c_astore_1()
+
+    // thinj/regression/ThreadTest$8#run#()V:263
+    /* 0406 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (16) java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V
+    //------------------------------------------------------------------------------
+
+    // java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V:5
+    /* 0407 */      c_aload_0()
+    /* 0408 */      c_aload_1()
+    /* 0409 */      c_invokespecial(0x00, 0x00)
+
+    // java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V:6
+    /* 040c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (27) java/lang/StringBuilder#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/StringBuilder#<init>#()V:11
-    /* 0326 */      c_aload_0()
-    /* 0327 */      c_invokespecial(0x00, 0x00)
+    /* 040d */      c_aload_0()
+    /* 040e */      c_invokespecial(0x00, 0x00)
 
     // java/lang/StringBuilder#<init>#()V:12
-    /* 032a */      c_aload_0()
-    /* 032b */      c_iconst_0()
-    /* 032c */      c_newarray(0x05)
-    /* 032e */      c_putfield(0x00, 0x00)
+    /* 0411 */      c_aload_0()
+    /* 0412 */      c_iconst_0()
+    /* 0413 */      c_newarray(0x05)
+    /* 0415 */      c_putfield(0x00, 0x00)
 
     // java/lang/StringBuilder#<init>#()V:13
-    /* 0331 */      c_vreturn()
+    /* 0418 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (25) java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    // (27) java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
     //------------------------------------------------------------------------------
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:16
-    /* 0332 */      c_aload_1()
-    /* 0333 */      c_ifnonnull(0x00, 0x0a)
+    /* 0419 */      c_aload_1()
+    /* 041a */      c_ifnonnull(0x00, 0x0a)
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:17
-    /* 0336 */      c_aload_0()
-    /* 0337 */      c_ldc(0x05)
-    /* 0339 */      c_invokevirtual(0x00, 0x03)
-    /* 033c */      c_areturn()
+    /* 041d */      c_aload_0()
+    /* 041e */      c_ldc(0x05)
+    /* 0420 */      c_invokevirtual(0x00, 0x03)
+    /* 0423 */      c_areturn()
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:19
-    /* 033d */      c_aload_0()
-    /* 033e */      c_getfield(0x00, 0x00)
-    /* 0341 */      c_arraylength()
-    /* 0342 */      c_aload_1()
-    /* 0343 */      c_invokevirtual(0x00, 0x01)
-    /* 0346 */      c_iadd()
-    /* 0347 */      c_newarray(0x05)
-    /* 0349 */      c_astore_2()
+    /* 0424 */      c_aload_0()
+    /* 0425 */      c_getfield(0x00, 0x00)
+    /* 0428 */      c_arraylength()
+    /* 0429 */      c_aload_1()
+    /* 042a */      c_invokevirtual(0x00, 0x01)
+    /* 042d */      c_iadd()
+    /* 042e */      c_newarray(0x05)
+    /* 0430 */      c_astore_2()
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:21
-    /* 034a */      c_iconst_0()
-    /* 034b */      c_istore_3()
-    /* 034c */      c_iload_3()
-    /* 034d */      c_aload_0()
-    /* 034e */      c_getfield(0x00, 0x00)
-    /* 0351 */      c_arraylength()
-    /* 0352 */      c_if_icmpge(0x00, 0x12)
+    /* 0431 */      c_iconst_0()
+    /* 0432 */      c_istore_3()
+    /* 0433 */      c_iload_3()
+    /* 0434 */      c_aload_0()
+    /* 0435 */      c_getfield(0x00, 0x00)
+    /* 0438 */      c_arraylength()
+    /* 0439 */      c_if_icmpge(0x00, 0x12)
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:22
-    /* 0355 */      c_aload_2()
-    /* 0356 */      c_iload_3()
-    /* 0357 */      c_aload_0()
-    /* 0358 */      c_getfield(0x00, 0x00)
-    /* 035b */      c_iload_3()
-    /* 035c */      c_caload()
-    /* 035d */      c_castore()
+    /* 043c */      c_aload_2()
+    /* 043d */      c_iload_3()
+    /* 043e */      c_aload_0()
+    /* 043f */      c_getfield(0x00, 0x00)
+    /* 0442 */      c_iload_3()
+    /* 0443 */      c_caload()
+    /* 0444 */      c_castore()
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:21
-    /* 035e */      c_iinc(0x03, 0x01)
-    /* 0361 */      c_goto(0xff, 0xeb)
+    /* 0445 */      c_iinc(0x03, 0x01)
+    /* 0448 */      c_goto(0xff, 0xeb)
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:25
-    /* 0364 */      c_aload_1()
-    /* 0365 */      c_iconst_0()
-    /* 0366 */      c_aload_1()
-    /* 0367 */      c_invokevirtual(0x00, 0x01)
-    /* 036a */      c_aload_2()
-    /* 036b */      c_aload_0()
-    /* 036c */      c_getfield(0x00, 0x00)
-    /* 036f */      c_arraylength()
-    /* 0370 */      c_invokevirtual(0x00, 0x02)
+    /* 044b */      c_aload_1()
+    /* 044c */      c_iconst_0()
+    /* 044d */      c_aload_1()
+    /* 044e */      c_invokevirtual(0x00, 0x01)
+    /* 0451 */      c_aload_2()
+    /* 0452 */      c_aload_0()
+    /* 0453 */      c_getfield(0x00, 0x00)
+    /* 0456 */      c_arraylength()
+    /* 0457 */      c_invokevirtual(0x00, 0x02)
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:26
-    /* 0373 */      c_aload_0()
-    /* 0374 */      c_aload_2()
-    /* 0375 */      c_putfield(0x00, 0x00)
+    /* 045a */      c_aload_0()
+    /* 045b */      c_aload_2()
+    /* 045c */      c_putfield(0x00, 0x00)
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:28
-    /* 0378 */      c_aload_0()
-    /* 0379 */      c_areturn()
+    /* 045f */      c_aload_0()
+    /* 0460 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (25) java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    // (27) java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
     //------------------------------------------------------------------------------
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:42
-    /* 037a */      c_iload_1()
-    /* 037b */      c_ifge(0x00, 0x07)
-    /* 037e */      c_iconst_1()
-    /* 037f */      c_goto(0x00, 0x04)
-    /* 0382 */      c_iconst_0()
-    /* 0383 */      c_istore_2()
+    /* 0461 */      c_iload_1()
+    /* 0462 */      c_ifge(0x00, 0x07)
+    /* 0465 */      c_iconst_1()
+    /* 0466 */      c_goto(0x00, 0x04)
+    /* 0469 */      c_iconst_0()
+    /* 046a */      c_istore_2()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:43
-    /* 0384 */      c_iload_2()
-    /* 0385 */      c_ifeq(0x00, 0x06)
+    /* 046b */      c_iload_2()
+    /* 046c */      c_ifeq(0x00, 0x06)
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:44
-    /* 0388 */      c_iload_1()
-    /* 0389 */      c_ineg()
-    /* 038a */      c_istore_1()
+    /* 046f */      c_iload_1()
+    /* 0470 */      c_ineg()
+    /* 0471 */      c_istore_1()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:46
-    /* 038b */      c_bipush(0x0b)
-    /* 038d */      c_newarray(0x05)
-    /* 038f */      c_astore_3()
+    /* 0472 */      c_bipush(0x0b)
+    /* 0474 */      c_newarray(0x05)
+    /* 0476 */      c_astore_3()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:47
-    /* 0390 */      c_aload_3()
-    /* 0391 */      c_arraylength()
-    /* 0392 */      c_istore(0x04)
+    /* 0477 */      c_aload_3()
+    /* 0478 */      c_arraylength()
+    /* 0479 */      c_istore(0x04)
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:49
-    /* 0394 */      c_aload_3()
-    /* 0395 */      c_iinc(0x04, 0xff)
-    /* 0398 */      c_iload(0x04)
-    /* 039a */      c_bipush(0x30)
-    /* 039c */      c_iload_1()
-    /* 039d */      c_bipush(0x0a)
-    /* 039f */      c_irem()
-    /* 03a0 */      c_iadd()
-    /* 03a1 */      c_i2c()
-    /* 03a2 */      c_castore()
+    /* 047b */      c_aload_3()
+    /* 047c */      c_iinc(0x04, 0xff)
+    /* 047f */      c_iload(0x04)
+    /* 0481 */      c_bipush(0x30)
+    /* 0483 */      c_iload_1()
+    /* 0484 */      c_bipush(0x0a)
+    /* 0486 */      c_irem()
+    /* 0487 */      c_iadd()
+    /* 0488 */      c_i2c()
+    /* 0489 */      c_castore()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:50
-    /* 03a3 */      c_iload_1()
-    /* 03a4 */      c_bipush(0x0a)
-    /* 03a6 */      c_idiv()
-    /* 03a7 */      c_istore_1()
+    /* 048a */      c_iload_1()
+    /* 048b */      c_bipush(0x0a)
+    /* 048d */      c_idiv()
+    /* 048e */      c_istore_1()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:51
-    /* 03a8 */      c_iload_1()
-    /* 03a9 */      c_ifgt(0xff, 0xeb)
+    /* 048f */      c_iload_1()
+    /* 0490 */      c_ifgt(0xff, 0xeb)
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:53
-    /* 03ac */      c_iload_2()
-    /* 03ad */      c_ifeq(0x00, 0x0c)
+    /* 0493 */      c_iload_2()
+    /* 0494 */      c_ifeq(0x00, 0x0c)
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:54
-    /* 03b0 */      c_aload_3()
-    /* 03b1 */      c_iinc(0x04, 0xff)
-    /* 03b4 */      c_iload(0x04)
-    /* 03b6 */      c_bipush(0x2d)
-    /* 03b8 */      c_castore()
+    /* 0497 */      c_aload_3()
+    /* 0498 */      c_iinc(0x04, 0xff)
+    /* 049b */      c_iload(0x04)
+    /* 049d */      c_bipush(0x2d)
+    /* 049f */      c_castore()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:57
-    /* 03b9 */      c_aload_0()
-    /* 03ba */      c_new(0x00, 0x0a)
-    /* 03bd */      c_dup()
-    /* 03be */      c_aload_3()
-    /* 03bf */      c_iload(0x04)
-    /* 03c1 */      c_aload_3()
-    /* 03c2 */      c_arraylength()
-    /* 03c3 */      c_iload(0x04)
-    /* 03c5 */      c_isub()
-    /* 03c6 */      c_invokespecial(0x00, 0x04)
-    /* 03c9 */      c_invokevirtual(0x00, 0x03)
-    /* 03cc */      c_pop()
+    /* 04a0 */      c_aload_0()
+    /* 04a1 */      c_new(0x00, 0x0a)
+    /* 04a4 */      c_dup()
+    /* 04a5 */      c_aload_3()
+    /* 04a6 */      c_iload(0x04)
+    /* 04a8 */      c_aload_3()
+    /* 04a9 */      c_arraylength()
+    /* 04aa */      c_iload(0x04)
+    /* 04ac */      c_isub()
+    /* 04ad */      c_invokespecial(0x00, 0x04)
+    /* 04b0 */      c_invokevirtual(0x00, 0x03)
+    /* 04b3 */      c_pop()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:58
-    /* 03cd */      c_aload_0()
-    /* 03ce */      c_areturn()
+    /* 04b4 */      c_aload_0()
+    /* 04b5 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (25) java/lang/StringBuilder#toString#()Ljava/lang/String;
+    // (27) java/lang/StringBuilder#toString#()Ljava/lang/String;
     //------------------------------------------------------------------------------
 
     // java/lang/StringBuilder#toString#()Ljava/lang/String;:78
-    /* 03cf */      c_new(0x00, 0x0a)
-    /* 03d2 */      c_dup()
-    /* 03d3 */      c_aload_0()
-    /* 03d4 */      c_getfield(0x00, 0x00)
-    /* 03d7 */      c_invokespecial(0x00, 0x05)
-    /* 03da */      c_areturn()
+    /* 04b6 */      c_new(0x00, 0x0a)
+    /* 04b9 */      c_dup()
+    /* 04ba */      c_aload_0()
+    /* 04bb */      c_getfield(0x00, 0x00)
+    /* 04be */      c_invokespecial(0x00, 0x05)
+    /* 04c1 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (23) java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    // (14) java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V
+    //------------------------------------------------------------------------------
+
+    // java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V:6
+    /* 04c2 */      c_aload_0()
+    /* 04c3 */      c_aload_1()
+    /* 04c4 */      c_invokespecial(0x00, 0x00)
+
+    // java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V:7
+    /* 04c7 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (25) java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/RuntimeException#<init>#(Ljava/lang/String;)V:5
-    /* 03db */      c_aload_0()
-    /* 03dc */      c_aload_1()
-    /* 03dd */      c_invokespecial(0x00, 0x00)
+    /* 04c8 */      c_aload_0()
+    /* 04c9 */      c_aload_1()
+    /* 04ca */      c_invokespecial(0x00, 0x00)
 
     // java/lang/RuntimeException#<init>#(Ljava/lang/String;)V:6
-    /* 03e0 */      c_vreturn()
+    /* 04cd */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (23) java/lang/RuntimeException#<init>#()V
+    // (25) java/lang/RuntimeException#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/RuntimeException#<init>#()V:7
-    /* 03e1 */      c_aload_0()
-    /* 03e2 */      c_invokespecial(0x00, 0x01)
+    /* 04ce */      c_aload_0()
+    /* 04cf */      c_invokespecial(0x00, 0x01)
 
     // java/lang/RuntimeException#<init>#()V:8
-    /* 03e5 */      c_vreturn()
+    /* 04d2 */      c_vreturn()
 
     //------------------------------------------------------------------------------
     // (13) java/lang/Exception#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/Exception#<init>#(Ljava/lang/String;)V:5
-    /* 03e6 */      c_aload_0()
-    /* 03e7 */      c_aload_1()
-    /* 03e8 */      c_invokespecial(0x00, 0x00)
+    /* 04d3 */      c_aload_0()
+    /* 04d4 */      c_aload_1()
+    /* 04d5 */      c_invokespecial(0x00, 0x00)
 
     // java/lang/Exception#<init>#(Ljava/lang/String;)V:6
-    /* 03eb */      c_vreturn()
+    /* 04d8 */      c_vreturn()
 
     //------------------------------------------------------------------------------
     // (13) java/lang/Exception#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Exception#<init>#()V:8
-    /* 03ec */      c_aload_0()
-    /* 03ed */      c_invokespecial(0x00, 0x01)
+    /* 04d9 */      c_aload_0()
+    /* 04da */      c_invokespecial(0x00, 0x01)
 
     // java/lang/Exception#<init>#()V:9
-    /* 03f0 */      c_vreturn()
+    /* 04dd */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (15) java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
+    // (34) thinj/regression/Regression#verify#(Z)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/Regression#verify#(Z)V:11
+    /* 04de */      c_iload_0()
+    /* 04df */      c_ifne(0x00, 0x0f)
+
+    // thinj/regression/Regression#verify#(Z)V:12
+    /* 04e2 */      c_new(0x00, 0x02)
+    /* 04e5 */      c_dup()
+    /* 04e6 */      c_ldc(0x03)
+    /* 04e8 */      c_invokespecial(0x00, 0x00)
+    /* 04eb */      c_invokevirtual(0x00, 0x01)
+
+    // thinj/regression/Regression#verify#(Z)V:14
+    /* 04ee */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (17) java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V:5
-    /* 03f1 */      c_aload_0()
-    /* 03f2 */      c_aload_1()
-    /* 03f3 */      c_invokespecial(0x00, 0x00)
+    /* 04ef */      c_aload_0()
+    /* 04f0 */      c_aload_1()
+    /* 04f1 */      c_invokespecial(0x00, 0x00)
 
     // java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V:6
-    /* 03f6 */      c_vreturn()
+    /* 04f4 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (30) java/util/Arrays#hashCode#([C)I
+    // (32) java/util/Arrays#hashCode#([C)I
     //------------------------------------------------------------------------------
 
     // java/util/Arrays#hashCode#([C)I:6
-    /* 03f7 */      c_bipush(0x25)
-    /* 03f9 */      c_istore_1()
+    /* 04f5 */      c_bipush(0x25)
+    /* 04f7 */      c_istore_1()
 
     // java/util/Arrays#hashCode#([C)I:7
-    /* 03fa */      c_aload_0()
-    /* 03fb */      c_astore_2()
-    /* 03fc */      c_aload_2()
-    /* 03fd */      c_arraylength()
-    /* 03fe */      c_istore_3()
-    /* 03ff */      c_iconst_0()
-    /* 0400 */      c_istore(0x04)
-    /* 0402 */      c_iload(0x04)
-    /* 0404 */      c_iload_3()
-    /* 0405 */      c_if_icmpge(0x00, 0x16)
-    /* 0408 */      c_aload_2()
-    /* 0409 */      c_iload(0x04)
-    /* 040b */      c_caload()
-    /* 040c */      c_istore(0x05)
+    /* 04f8 */      c_aload_0()
+    /* 04f9 */      c_astore_2()
+    /* 04fa */      c_aload_2()
+    /* 04fb */      c_arraylength()
+    /* 04fc */      c_istore_3()
+    /* 04fd */      c_iconst_0()
+    /* 04fe */      c_istore(0x04)
+    /* 0500 */      c_iload(0x04)
+    /* 0502 */      c_iload_3()
+    /* 0503 */      c_if_icmpge(0x00, 0x16)
+    /* 0506 */      c_aload_2()
+    /* 0507 */      c_iload(0x04)
+    /* 0509 */      c_caload()
+    /* 050a */      c_istore(0x05)
 
     // java/util/Arrays#hashCode#([C)I:8
-    /* 040e */      c_iload_1()
-    /* 040f */      c_iconst_2()
-    /* 0410 */      c_imul()
-    /* 0411 */      c_iload(0x05)
-    /* 0413 */      c_iadd()
-    /* 0414 */      c_istore_1()
+    /* 050c */      c_iload_1()
+    /* 050d */      c_iconst_2()
+    /* 050e */      c_imul()
+    /* 050f */      c_iload(0x05)
+    /* 0511 */      c_iadd()
+    /* 0512 */      c_istore_1()
 
     // java/util/Arrays#hashCode#([C)I:7
-    /* 0415 */      c_iinc(0x04, 0x01)
-    /* 0418 */      c_goto(0xff, 0xea)
+    /* 0513 */      c_iinc(0x04, 0x01)
+    /* 0516 */      c_goto(0xff, 0xea)
 
     // java/util/Arrays#hashCode#([C)I:10
-    /* 041b */      c_iload_1()
-    /* 041c */      c_ireturn()
+    /* 0519 */      c_iload_1()
+    /* 051a */      c_ireturn()
 
     //------------------------------------------------------------------------------
-    // (31) thinj/regression/AllTests#<jvminit>#()V
+    // (33) thinj/regression/AllTests#<jvminit>#()V
     //------------------------------------------------------------------------------
-    /* 041d */      c_invokestatic(0x00, 0x02)
-    /* 0420 */      c_invokestatic(0x00, 0x03)
-    /* 0423 */      c_invokestatic(0x00, 0x04)
-    /* 0426 */      c_invokestatic(0x00, 0x05)
-    /* 0429 */      c_invokestatic(0x00, 0x06)
-    /* 042c */      c_vreturn()
+    /* 051b */      c_invokestatic(0x00, 0x02)
+    /* 051e */      c_invokestatic(0x00, 0x03)
+    /* 0521 */      c_invokestatic(0x00, 0x04)
+    /* 0524 */      c_invokestatic(0x00, 0x05)
+    /* 0527 */      c_invokestatic(0x00, 0x06)
+    /* 052a */      c_vreturn()
 };
-const u2 codeSize = 1069;
+const u2 codeSize = 1323;
 
 //------------------------------------------------------------------------------
 // Constant Pools
@@ -2044,7 +2433,7 @@ const u2 codeSize = 1069;
 
 const constantPool const allConstantPools[] = {
     // 0: java/lang/Object
-    {allMethodReferences0, 7, allMethods0, 4, NULL, 0, allFields0, 1},
+    {allMethodReferences0, 7, allMethods0, 6, NULL, 0, allFields0, 1},
     // 1: [B
     {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
     // 2: [C
@@ -2071,53 +2460,63 @@ const constantPool const allConstantPools[] = {
     {allMethodReferences12, 1, allMethods12, 1, NULL, 0, NULL, 0},
     // 13: java/lang/Exception
     {allMethodReferences13, 2, allMethods13, 2, NULL, 0, NULL, 0},
-    // 14: java/lang/IllegalMonitorStateException
+    // 14: java/lang/IllegalArgumentException
     {allMethodReferences14, 1, allMethods14, 1, NULL, 0, NULL, 0},
-    // 15: java/lang/IndexOutOfBoundsException
+    // 15: java/lang/IllegalMonitorStateException
     {allMethodReferences15, 1, allMethods15, 1, NULL, 0, NULL, 0},
-    // 16: java/lang/InterruptedException
+    // 16: java/lang/IllegalThreadStateException
     {allMethodReferences16, 1, allMethods16, 1, NULL, 0, NULL, 0},
-    // 17: java/lang/NegativeArraySizeException
+    // 17: java/lang/IndexOutOfBoundsException
     {allMethodReferences17, 1, allMethods17, 1, NULL, 0, NULL, 0},
-    // 18: java/lang/NullPointerException
-    {allMethodReferences18, 2, allMethods18, 2, NULL, 0, NULL, 0},
-    // 19: java/lang/Object$Monitor
-    {NULL, 0, NULL, 0, NULL, 0, allFields19, 3},
-    // 20: java/lang/Object$WaitElement
-    {NULL, 0, NULL, 0, NULL, 0, allFields20, 2},
-    // 21: java/lang/OutOfMemoryError
-    {allMethodReferences21, 2, allMethods21, 3, allFieldReferences21, 1, allFields21, 1},
-    // 22: java/lang/Runnable
-    {NULL, 0, allMethods22, 1, NULL, 0, NULL, 0},
-    // 23: java/lang/RuntimeException
-    {allMethodReferences23, 2, allMethods23, 2, NULL, 0, NULL, 0},
-    // 24: java/lang/String
-    {allMethodReferences24, 2, allMethods24, 6, allFieldReferences24, 1, allFields24, 1},
-    // 25: java/lang/StringBuilder
-    {allMethodReferences25, 6, allMethods25, 4, allFieldReferences25, 1, allFields25, 1},
-    // 26: java/lang/System
-    {allMethodReferences26, 1, allMethods26, 1, allFieldReferences26, 2, allFields26, 2},
-    // 27: java/lang/Thread
-    {allMethodReferences27, 8, allMethods27, 7, allFieldReferences27, 6, allFields27, 9},
-    // 28: java/lang/Throwable
-    {allMethodReferences28, 12, allMethods28, 6, allFieldReferences28, 3, allFields28, 2},
-    // 29: java/lang/VirtualMachineError
-    {allMethodReferences29, 1, allMethods29, 1, NULL, 0, NULL, 0},
-    // 30: java/util/Arrays
-    {NULL, 0, allMethods30, 1, NULL, 0, NULL, 0},
-    // 31: thinj/regression/AllTests
-    {allMethodReferences31, 7, allMethods31, 2, allFieldReferences31, 1, NULL, 0},
-    // 32: thinj/regression/ThreadTest
-    {allMethodReferences32, 9, allMethods32, 4, allFieldReferences32, 5, allFields32, 4},
-    // 33: thinj/util/SimpleList
-    {NULL, 0, NULL, 0, NULL, 0, allFields33, 1},
-    // 34: thinj/util/SimpleList$Element
-    {NULL, 0, NULL, 0, NULL, 0, allFields34, 2},
+    // 18: java/lang/InterruptedException
+    {allMethodReferences18, 1, allMethods18, 1, NULL, 0, NULL, 0},
+    // 19: java/lang/NegativeArraySizeException
+    {allMethodReferences19, 1, allMethods19, 1, NULL, 0, NULL, 0},
+    // 20: java/lang/NullPointerException
+    {allMethodReferences20, 2, allMethods20, 2, NULL, 0, NULL, 0},
+    // 21: java/lang/Object$Monitor
+    {NULL, 0, NULL, 0, NULL, 0, allFields21, 3},
+    // 22: java/lang/Object$WaitElement
+    {NULL, 0, NULL, 0, NULL, 0, allFields22, 2},
+    // 23: java/lang/OutOfMemoryError
+    {allMethodReferences23, 2, allMethods23, 3, allFieldReferences23, 1, allFields23, 1},
+    // 24: java/lang/Runnable
+    {NULL, 0, allMethods24, 1, NULL, 0, NULL, 0},
+    // 25: java/lang/RuntimeException
+    {allMethodReferences25, 2, allMethods25, 2, NULL, 0, NULL, 0},
+    // 26: java/lang/String
+    {allMethodReferences26, 2, allMethods26, 6, allFieldReferences26, 1, allFields26, 1},
+    // 27: java/lang/StringBuilder
+    {allMethodReferences27, 6, allMethods27, 4, allFieldReferences27, 1, allFields27, 1},
+    // 28: java/lang/System
+    {allMethodReferences28, 1, allMethods28, 2, allFieldReferences28, 2, allFields28, 2},
+    // 29: java/lang/Thread
+    {allMethodReferences29, 13, allMethods29, 8, allFieldReferences29, 6, allFields29, 9},
+    // 30: java/lang/Throwable
+    {allMethodReferences30, 12, allMethods30, 6, allFieldReferences30, 3, allFields30, 2},
+    // 31: java/lang/VirtualMachineError
+    {allMethodReferences31, 1, allMethods31, 1, NULL, 0, NULL, 0},
+    // 32: java/util/Arrays
+    {NULL, 0, allMethods32, 1, NULL, 0, NULL, 0},
+    // 33: thinj/regression/AllTests
+    {allMethodReferences33, 7, allMethods33, 2, allFieldReferences33, 1, NULL, 0},
+    // 34: thinj/regression/Regression
+    {allMethodReferences34, 2, allMethods34, 1, NULL, 0, NULL, 0},
+    // 35: thinj/regression/ThreadTest
+    {allMethodReferences35, 10, allMethods35, 5, allFieldReferences35, 5, allFields35, 4},
+    // 36: thinj/regression/ThreadTest$8
+    {allMethodReferences36, 4, allMethods36, 2, allFieldReferences36, 2, allFields36, 1},
+    // 37: thinj/regression/ThreadTest$9
+    {allMethodReferences37, 3, allMethods37, 2, allFieldReferences37, 2, allFields37, 1},
+    // 38: thinj/util/SimpleList
+    {NULL, 0, NULL, 0, NULL, 0, allFields38, 1},
+    // 39: thinj/util/SimpleList$Element
+    {NULL, 0, NULL, 0, NULL, 0, allFields39, 2},
 };
 
 //------------------------------------------------------------------------------
 // Startup information
 //------------------------------------------------------------------------------
 
-const u2 startClassIndex = 31;
-const codeIndex startAddress = 0x041d;
+const u2 startClassIndex = 33;
+const codeIndex startAddress = 0x051b;

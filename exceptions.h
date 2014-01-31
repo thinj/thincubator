@@ -28,7 +28,7 @@ void throwInterruptedException(void);
  * \param exception The exception to throw
  * \throws Unconditionally the exception
  */
-void throwException(jobject exception);
+void throwException(contextDef* context, jobject exception);
 
 /**
  * \param index The offending index
@@ -59,6 +59,6 @@ void throwArithmeticException(const char* cause);
  * \param cause The cause of the exception
  * \throws IllegalMonitorStateException unconditionally
  */
-void throwIllegalMonitorStateException(const char* cause);
+void throwIllegalMonitorStateException(contextDef* context, const char* cause);
 
 #endif /* EXCEPTIONS_H_ */

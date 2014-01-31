@@ -60,13 +60,6 @@ nextInstruction:
             thr, context->programCounter, context->stackPointer, context->framePointer,
             context->exceptionThrown ? "Yes" : "No", code[context->programCounter], context->classIndex);
 #endif
-//    if (nissehat) {
-//        jobject thr = GetStaticObjectField(getJavaLangClass(C_java_lang_Thread), A_java_lang_Thread_aCurrentThread);
-//        consoutli("thr=%p, pc = 0x%04x, sp = 0x%04x, fp = 0x%04x, ExcepThrown: %s, Ins=0x%02x\n",
-//                context, context->programCounter, context->stackPointer, context->framePointer,
-//                context->exceptionThrown ? "Yes" : "No", code[context->programCounter]);
-//    }
-
     // Note! 'code' is u1[] and we have 256 entries in the array => no check needed
     goto *jumpTable[code[context->programCounter++]];
 
@@ -232,12 +225,14 @@ nextInstruction:
     INS_BEGIN(f_athrow) {
         // TODO: Not complete - shall handle monitors when leaving a synchronized method
         // pop exception:
+        consoutli("athrow 1\n");
         jobject exception = operandStackPopObjectRef(context);
         if (exception == NULL) {
             throwNullPointerException(context);
         } else {
-            throwException(exception);
+            throwException(context, exception);
         }
+        consoutli("athrow 2\n");
     }
 
     INS_END

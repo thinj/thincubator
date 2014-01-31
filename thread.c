@@ -113,6 +113,12 @@ static ntThreadContext_t* sGetNextThread(ntThreadContext_t* curr) {
     return next;
 }
 
+/**
+ * This function removes the thread and makes the allocated resources available
+ * for garbage collection
+ * \param curr The thread to remove
+ */
+
 static void sRemoveThread(ntThreadContext_t* curr) {
     ntThreadContext_t* prev = NULL;
     ntThreadContext_t* t = sAllThreads;
@@ -138,6 +144,11 @@ static void sRemoveThread(ntThreadContext_t* curr) {
         }
         prev->next = next;
     }
+
+    // Make resources available for GC:
+    heapProtect((jobject) curr->stack, FALSE);
+    heapProtect((jobject) curr->javaStack, FALSE);
+    heapProtect((jobject) curr->javaSelf, FALSE);
 }
 
 /**
@@ -207,13 +218,11 @@ void thYield(contextDef* context) {
             SetStaticObjectField(context, cls, A_java_lang_Thread_aCurrentThread, nextThread->javaThread);
 
             __DEBUG("nt yield %p %p\n", thCurrentThread, nextThread);
-            consoutli("nt yield %p %p\n", &nextThread->context, &nextThread->context);
             // Set stack to point at next Thread's stack:
             osSetStack(context, nextThread->javaStack);
 
             ntThreadContext_t* currNtc = thCurrentThread;
             thCurrentThread = nextThread;
-            consoutli("setting thCurrentThread...\n");
             ntYield(context, currNtc, nextThread);
         }
         //        if (interrupted) {
@@ -237,12 +246,9 @@ void thYield(contextDef* context) {
  * \return TRUE, if the lock was granted to the thread; FALSE if the thread is blocked and should wait
  */
 BOOL sTryWaitForLock(contextDef* context, jobject thread) {
-    consoutli("sTryWait enter:%p\n", context);
     BOOL lockGranted = TRUE;
 
-    consoutli("sTryWait enter:%p\n", context);
     jint threadLockCount = GetIntField(context, thread, A_java_lang_Thread_aLockCount);
-    consoutli("sTryWait enter:%p\n", context);
     jobject objectToLock = GetObjectField(context, thread, A_java_lang_Thread_aBlockingObject);
     if (objectToLock == NULL) {
         // ups! obkectToLock er null ????!!!!
@@ -251,11 +257,9 @@ BOOL sTryWaitForLock(contextDef* context, jobject thread) {
     }
     jobject monitor = GetObjectField(context, objectToLock, A_java_lang_Object_aMonitor);
 
-    consoutli("sTryWait enter:%p\n", context);
     // If monitorLockCount == 0 then the monitor isn't locked:
     jint monitorLockCount = GetIntField(context, monitor, A_java_lang_Object_Monitor_aLockCount);
     if (monitorLockCount == 0) {
-        consoutli("sTryWait enter:%p\n", context);
         // thread is not owner and the monitor isn't locked, re-use monitor and set the thread as owner:
         SetObjectField(context, monitor, A_java_lang_Object_Monitor_aOwner, thread);
         SetIntField(context, monitor, A_java_lang_Object_Monitor_aLockCount, threadLockCount);
@@ -263,17 +267,13 @@ BOOL sTryWaitForLock(contextDef* context, jobject thread) {
         SetObjectField(context, thread, A_java_lang_Thread_aBlockingObject, NULL);
         __DEBUG("%p got lock %p\n", thread, objectToLock);
         SetIntField(context, thread, A_java_lang_Thread_aState, StateRunnable);
-        consoutli("sTryWait enter:%p\n", context);
     } else {
-        consoutli("sTryWait enter:%p\n", context);
         jobject lockOwnerThread = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aOwner);
         if (lockOwnerThread == thread) {
-            consoutli("sTryWait enter:%p\n", context);
             // Current thread is already owner; increment lock counter:
             threadLockCount += monitorLockCount;
             SetIntField(context, monitor, A_java_lang_Object_Monitor_aLockCount, threadLockCount);
         } else {
-            consoutli("sTryWait enter:%p\n", context);
             // Change state on thread to BLOCKED on object:
             SetObjectField(context, thread, A_java_lang_Thread_aBlockingObject, objectToLock);
             SetIntField(context, thread, A_java_lang_Thread_aState, StateBlocked);
@@ -281,10 +281,8 @@ BOOL sTryWaitForLock(contextDef* context, jobject thread) {
 
             lockGranted = FALSE;
         }
-        consoutli("sTryWait enter:%p\n", context);
     }
 
-    consoutli("sTryWait leave:%p\n", context);
     return lockGranted;
 }
 
@@ -302,41 +300,57 @@ void sWaitForLock(contextDef* context, jobject thread) {
 }
 
 /**
+ * This function searches for a thread blocked on 'lockedObject', and if any found
+ * the first found is set to state 'StateRunnable'
+ * @param context
+ * @param lockedObject The object that has been unlocked
+ */
+static void sUnlockThread(contextDef* context, jobject lockedObject) {
+    jobject monitor = GetObjectField(context, lockedObject, A_java_lang_Object_aMonitor);
+
+    // No longer locking the monitor, test if some other thread is blocking on the monitor:
+    ntThreadContext_t* thread = sAllThreads;
+    while (thread != NULL) {
+        jint state = GetIntField(context, thread->javaThread, A_java_lang_Thread_aState);
+        if (state == StateBlocked) {
+            jobject blockingObject = GetObjectField(context, thread->javaThread, A_java_lang_Thread_aBlockingObject);
+            if (blockingObject == lockedObject) {
+                // If monitorLockCount == 0 then the monitor isn't locked:
+                jint monitorLockCount = GetIntField(context, monitor, A_java_lang_Object_Monitor_aLockCount);
+                if (monitorLockCount == 0) {
+                    // Make this thread runnable; as long as it has a blocking object ref it will gain the 
+                    // lock before continuing execution:
+                    SetIntField(context, thread->javaThread, A_java_lang_Thread_aState, StateRunnable);
+                    break;
+                }
+            }
+        }
+        thread = thread->next;
+    }
+}
+
+/**
  * This function unlocks a monitor. It is the callers responsibility to ensure that current thread owns the
  * monitor
- * \param monitor The monitor to unlock
  * \param lockedObject The object encapsulating the monitor
  * \param unlockCount The number of unlocks to perform
  * \throws IllegalMonitorStateException if the monitors lockCount < unlockCount
  */
-static void sUnlockOwnedMonitor(contextDef* context, jobject monitor, jobject lockedObject, jint unlockCount) {
+static void sUnlockOwnedMonitor(contextDef* context, jobject lockedObject, jint unlockCount) {
     // Unlock monitor:
+    jobject monitor = GetObjectField(context, lockedObject, A_java_lang_Object_aMonitor);
+
     jint lockCount = GetIntField(context, monitor, A_java_lang_Object_Monitor_aLockCount);
     if (lockCount >= unlockCount) {
         lockCount -= unlockCount;
         SetIntField(context, monitor, A_java_lang_Object_Monitor_aLockCount, lockCount);
         if (lockCount == 0) {
             // No longer locking the monitor, test if some other thread is blocking on the monitor:
-            ntThreadContext_t* thread = sAllThreads;
-            //            jclass threadClass = getJavaLangClass(C_java_lang_Thread);
-            //            jobject thread = GetStaticObjectField(threadClass, A_java_lang_Thread_aAllThreads);
-            while (thread != NULL) {
-                jint state = GetIntField(context, thread->javaThread, A_java_lang_Thread_aState);
-                if (state == StateBlocked) {
-                    jobject blockingObject = GetObjectField(context, thread->javaThread, A_java_lang_Thread_aBlockingObject);
-                    if (blockingObject == lockedObject) {
-                        if (sTryWaitForLock(context, thread->javaThread)) {
-                            // Got the lock; no yield here, let the unlocking thread continue
-                            break;
-                        }
-                    }
-                }
-                thread = thread->next;
-            }
+            sUnlockThread(context, lockedObject);
         }
     } else {
         __DEBUG("throwIllegalMonitorStateException");
-        throwIllegalMonitorStateException("Monitor is not locked");
+        throwIllegalMonitorStateException(context, "Monitor is not locked");
     }
 }
 
@@ -376,7 +390,7 @@ void thMonitorEnter(contextDef* context, jobject objectToLock) {
 }
 
 void thMonitorExit(contextDef* context, jobject objectToLock) {
-    consoutli("thMonitorExit enter %p\n", context);
+    __DEBUG("thMonitorExit enter %p\n", context);
     if (objectToLock != NULL) {
         jobject monitor = GetObjectField(context, objectToLock, A_java_lang_Object_aMonitor);
         jobject currentThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread),
@@ -385,17 +399,17 @@ void thMonitorExit(contextDef* context, jobject objectToLock) {
 
         if (lockOwnerThread == currentThread) {
             // Unlock monitor:
-            sUnlockOwnedMonitor(context, monitor, objectToLock, 1);
+            sUnlockOwnedMonitor(context, objectToLock, 1);
         } else {
             __DEBUG("throwIllegalMonitorStateException");
-            throwIllegalMonitorStateException("Thread not owner");
+            throwIllegalMonitorStateException(context, "Thread not owner");
         }
     } else {
         // Can't lock on null:
         __DEBUG("throwNullPointerException");
         throwNullPointerException(context);
     }
-    consoutli("thMonitorExit leave %p\n", context);
+    __DEBUG("thMonitorExit leave %p\n", context);
 }
 
 /**
@@ -490,11 +504,11 @@ void thNotify(contextDef* context, jobject lockedObject, BOOL notifyAll) {
                 // exactly as it was when the wait method was invoked.
             } else {
                 __DEBUG("throwIllegalMonitorStateException");
-                throwIllegalMonitorStateException("Thread not owner");
+                throwIllegalMonitorStateException(context, "Thread not owner");
             }
         } else {
             __DEBUG("throwIllegalMonitorStateException");
-            throwIllegalMonitorStateException("Monitor is not locked");
+            throwIllegalMonitorStateException(context, "Monitor is not locked");
         }
     } else {
         // Can't notify on null:
@@ -549,7 +563,7 @@ void thWait(contextDef* context, jobject lockedObject) {
                     SetObjectField(context, currentThread, A_java_lang_Thread_aBlockingObject, lockedObject);
 
                     // Relinquish all locks:
-                    sUnlockOwnedMonitor(context, monitor, lockedObject, lockCount);
+                    sUnlockOwnedMonitor(context, lockedObject, lockCount);
 
                     // Find another thread to run:
                     thYield(context);
@@ -557,11 +571,11 @@ void thWait(contextDef* context, jobject lockedObject) {
                 // else: Out Of Mem has been thrown
             } else {
                 __DEBUG("throwIllegalMonitorStateException");
-                throwIllegalMonitorStateException("Thread not owner");
+                throwIllegalMonitorStateException(context, "Thread not owner");
             }
         } else {
             __DEBUG("throwIllegalMonitorStateException");
-            throwIllegalMonitorStateException("Monitor is not locked");
+            throwIllegalMonitorStateException(context, "Monitor is not locked");
         }
     } else {
         // Can't notify on null:
@@ -614,7 +628,7 @@ jbyteArray sAllocStack(contextDef* context, jobject thread) {
  * Definition of function for starting the run-method
  */
 static void sRunFunction(ntThreadContext_t* ntc) {
-    consoutli("Creating thread: %p\n", &ntc->context);
+    __DEBUG("Creating thread: %p\n", &ntc->context);
     inExecute(&ntc->context);
 
     // Unreachable; runFromNative will never return to this point
@@ -674,7 +688,6 @@ static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
 void thAttach(contextDef* context, jobject thread) {
     __DEBUG("**** BEGIN adding: %p", thread);
     // The initial stack shall no longer be protected:
-    consoutli("When a thread is terminated its context shall be unprotected\n");
 
     // Set current state to StateRunnable:
     SetIntField(context, thread, A_java_lang_Thread_aState, StateRunnable);
@@ -760,12 +773,9 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
 
 void thForeachThread(contextDef* context, thCallback_t callback) {
     ntThreadContext_t* ntc;
-    consoutli("for each 1\n");
     for (ntc = sAllThreads; ntc != NULL; ntc = ntc->next) {
-        consoutli("for each 2\n");
         stackable* stack = jaGetArrayPayLoad(context, (jarray) ntc->javaStack);
 
         callback(context, stack, ntc->context.stackPointer);
     }
-    consoutli("for each 3\n");
 }

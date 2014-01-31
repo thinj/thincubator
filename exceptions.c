@@ -78,7 +78,10 @@ void throwException(contextDef* context, jobject exception) {
         HEAP_VALIDATE;
         //heap_dump();
         *context = contextCopy;
-        consout("Uncaught exception (%d), terminating thread: \n", (int) exceptionClassId);
+        consoutli("Uncaught exception (%d), terminating thread: \n", (int) exceptionClassId);
+        consoutli("Terminate thread; create method for this in thread.c\n");
+        consoutli("lav om saa det er method returns...\n");
+        consoutli("vent til sammensmeltning af native kald og java kald...\n");
         jvmexit(1);
     }
     context->exceptionThrown = TRUE;
