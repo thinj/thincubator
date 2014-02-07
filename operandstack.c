@@ -130,7 +130,7 @@ jlong operandStackPeekJavaLong(contextDef* context, int offset) {
     j = value;
     j <<= 32;
     //	j = ((jlong) value) << 32;
-    value = PEEK_VERIFY_INT(context, offset + 1);
+    value = PEEK_VERIFY_INT(context, offset - 1);
     j = j | (value & 0xffffffff);
 
     return j;

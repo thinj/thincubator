@@ -225,14 +225,12 @@ nextInstruction:
     INS_BEGIN(f_athrow) {
         // TODO: Not complete - shall handle monitors when leaving a synchronized method
         // pop exception:
-        consoutli("athrow 1\n");
         jobject exception = operandStackPopObjectRef(context);
         if (exception == NULL) {
             throwNullPointerException(context);
         } else {
             throwException(context, exception);
         }
-        consoutli("athrow 2\n");
     }
 
     INS_END

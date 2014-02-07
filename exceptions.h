@@ -22,7 +22,7 @@ void throwNullPointerException(contextDef* context);
 /**
  * This method throws an Interrupted Exception
  */
-void throwInterruptedException(void);
+void throwInterruptedException(contextDef* context);
 
 /**
  * \param exception The exception to throw

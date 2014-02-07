@@ -154,11 +154,11 @@ static void sRemoveThread(ntThreadContext_t* curr) {
 /**
  * This function returns the next thread to switch to. If the Main Java thread
  * has not yet been attached, this method returns the contents of thCurrentThread
+ * \param interrupted Pointer to flag to set if returned thread is interrupted
  * @return the next thread to switch to. 
  */
 
 ntThreadContext_t* sGetNextRunnableThread(contextDef* context) {
-    BOOL interrupted = FALSE;
     ntThreadContext_t* nextThread = thCurrentThread;
     if (nextThread->javaThread != NULL) {
         while ((nextThread = sGetNextThread(nextThread)) != NULL) {
@@ -179,8 +179,7 @@ ntThreadContext_t* sGetNextRunnableThread(contextDef* context) {
                 } else {
                     // Check for interrupt:
                     if (GetBooleanField(context, javaThread, A_java_lang_Thread_aInterrupted)) {
-                        SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
-                        interrupted = TRUE;
+                        //       SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
                         break;
                     }
                     // else: Not interrupted, stay asleep...
@@ -224,12 +223,20 @@ void thYield(contextDef* context) {
             ntThreadContext_t* currNtc = thCurrentThread;
             thCurrentThread = nextThread;
             ntYield(context, currNtc, nextThread);
+
+            // Check for interrupt:
+
+            jobject newThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread), A_java_lang_Thread_aCurrentThread);
+            int state = GetIntField(context, newThread, A_java_lang_Thread_aState);
+            if (state == StateTimedWaiting) {
+                // If the thread is returned
+                SetIntField(context, newThread, A_java_lang_Thread_aState, StateRunnable);
+                //            }
+                //            if (GetBooleanField(context, newThread, A_java_lang_Thread_aInterrupted)) {
+                consoutli("interrupted: not impl!!!\n");
+                throwInterruptedException(context);
+            }
         }
-        //        if (interrupted) {
-        //            consoutli("interrupted: not impl!!!\n");
-        //            jvmexit(7435);
-        //            // throwInterruptedException();
-        //        }
     } else {
         // All threads are terminated:
         jvmexit(0);
@@ -413,6 +420,41 @@ void thMonitorExit(contextDef* context, jobject objectToLock) {
 }
 
 /**
+ * This function validates the object to lock on; sets monitor and current thread
+ *
+ * \param lockedObject The mutex that the thread hopefully is locked on
+ * \param monitor The monitor instance is returned in this pointer
+ * \param currentThread The current thread is returned in this pointer
+ * \return true, if no exceptions have been thrown and all is ok
+ */
+BOOL sCheckWaitNotify(contextDef* context, jobject lockedObject, jobject* monitor, jobject* currentThread) {
+    BOOL retval = FALSE;
+    if (lockedObject != NULL) {
+        *monitor = GetObjectField(context, lockedObject, A_java_lang_Object_aMonitor);
+        if (*monitor != NULL) {
+            *currentThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread),
+                    A_java_lang_Thread_aCurrentThread);
+            jobject lockOwnerThread = GetObjectField(context, *monitor, A_java_lang_Object_Monitor_aOwner);
+            if (*currentThread == lockOwnerThread) {
+                retval = TRUE;
+            } else {
+                __DEBUG("throwIllegalMonitorStateException");
+                throwIllegalMonitorStateException(context, "Thread not owner");
+            }
+        } else {
+            __DEBUG("throwIllegalMonitorStateException");
+            throwIllegalMonitorStateException(context, "Monitor is not locked");
+        }
+    } else {
+        // Can't notify on null:
+        __DEBUG("throwNullPointerException");
+        throwNullPointerException(context);
+    }
+
+    return retval;
+}
+
+/**
  * This function notifies one or all threads waiting on a mutex
  *
  * \param lockedObject The mutex
@@ -422,50 +464,34 @@ void thNotify(contextDef* context, jobject lockedObject, BOOL notifyAll) {
     __DEBUG("%p thNotify begin %04x\n",
             GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread), A_java_lang_Thread_aCurrentThread),
             context->programCounter);
-    if (lockedObject != NULL) {
-        jobject monitor = GetObjectField(context, lockedObject, A_java_lang_Object_aMonitor);
-        if (monitor != NULL) {
-            jobject currentThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread),
-                    A_java_lang_Thread_aCurrentThread);
-            jobject lockOwnerThread = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aOwner);
-            if (currentThread == lockOwnerThread) {
-                // Find all threads that are in Wait Set WAITING on the lockedObject:
-                jobject waitElement = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet);
-                while (waitElement != NULL) {
-                    jobject waitingThread = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aWaiting);
-                    if (waitingThread == NULL) {
-                        // This should never happen, but handle it gracefully:
-                        __DEBUG("throwNullPointerException");
-                        throwNullPointerException(context);
-                        break;
-                    }
 
-                    // Set state to RUNNABLE:
-                    SetIntField(context, waitingThread, A_java_lang_Thread_aState, StateRunnable);
-
-                    // Remove thread from the list of WAITING threads:
-                    jobject next = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aNext);
-                    SetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet, next);
-
-                    waitElement = next;
-
-                    // notifyAll / notify ?
-                    if (!notifyAll) {
-                        break;
-                    }
-                }
-            } else {
-                __DEBUG("throwIllegalMonitorStateException");
-                throwIllegalMonitorStateException(context, "Thread not owner");
+    jobject monitor, currentThread;
+    if (sCheckWaitNotify(context, lockedObject, &monitor, &currentThread)) {
+        // Find all threads that are in Wait Set WAITING on the lockedObject:
+        jobject waitElement = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet);
+        while (waitElement != NULL) {
+            jobject waitingThread = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aWaiting);
+            if (waitingThread == NULL) {
+                // This should never happen, but handle it gracefully:
+                __DEBUG("throwNullPointerException");
+                throwNullPointerException(context);
+                break;
             }
-        } else {
-            __DEBUG("throwIllegalMonitorStateException");
-            throwIllegalMonitorStateException(context, "Monitor is not locked");
+
+            // Set state to RUNNABLE:
+            SetIntField(context, waitingThread, A_java_lang_Thread_aState, StateRunnable);
+
+            // Remove thread from the list of WAITING threads:
+            jobject next = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aNext);
+            SetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet, next);
+
+            waitElement = next;
+
+            // notifyAll / notify ?
+            if (!notifyAll) {
+                break;
+            }
         }
-    } else {
-        // Can't notify on null:
-        __DEBUG("throwNullPointerException");
-        throwNullPointerException(context);
     }
 
     __DEBUG("end %04x\n", context->programCounter);
@@ -475,78 +501,61 @@ void thWait(contextDef* context, jobject lockedObject) {
     // file:///tools/vmspec/Threads.doc.html#21294
 
     __DEBUG("Begin PC = %04x\n", context->programCounter);
-    sDumpContext(context, "thWait  begin:  ");
-    if (lockedObject != NULL) {
-        jobject monitor = GetObjectField(context, lockedObject, A_java_lang_Object_aMonitor);
-        if (monitor != NULL) {
-            jobject currentThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread),
-                    A_java_lang_Thread_aCurrentThread);
-            jobject lockOwnerThread = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aOwner);
-            if (currentThread == lockOwnerThread) {
-                /*
-                 * Add current thread to (end of) wait set for locked object:
-                 */
-                jobject waitElement = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet);
-                jobject lastElement = waitElement;
-                while (waitElement != NULL) {
-                    lastElement = waitElement;
-                    waitElement = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aNext);
-                }
-
-                jobject newElement = AllocObject(context, getJavaLangClass(context, C_java_lang_Object_WaitElement));
-                if (newElement != NULL) {
-                    SetObjectField(context, newElement, A_java_lang_Object_WaitElement_aWaiting, currentThread);
-                    if (lastElement == NULL) {
-                        // Element is the one and only waiting thread:
-                        SetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet, newElement);
-                    } else {
-                        // There are more waiting threads:
-                        SetObjectField(context, lastElement, A_java_lang_Object_WaitElement_aNext, newElement);
-                    }
-
-                    /*
-                     * Set thread state to WAITING:
-                     */
-                    SetIntField(context, currentThread, A_java_lang_Thread_aState, StateWaiting);
-
-                    /*
-                     * Unlock locked object as many times as current thread has locked it (and save lock count):
-                     */
-                    jint lockCount = GetIntField(context, monitor, A_java_lang_Object_Monitor_aLockCount);
-                    SetIntField(context, currentThread, A_java_lang_Thread_aLockCount, lockCount);
-                    SetObjectField(context, currentThread, A_java_lang_Thread_aBlockingObject, lockedObject);
-
-                    // Relinquish all locks:
-                    sUnlockOwnedMonitor(context, lockedObject, lockCount);
-
-                    // Wait for a notification changing state from WAITING to RUNNABLE:
-                    while (GetIntField(context, currentThread, A_java_lang_Thread_aState) == StateWaiting) {
-                        thYield(context);
-                    }
-
-                    // Compete for lock:
-                    sWaitForLock(context, currentThread);
-
-                    // Restore lock count:
-                    SetIntField(context, currentThread, A_java_lang_Thread_aLockCount, lockCount);
-                }
-                // else: Out Of Mem has been thrown
-            } else {
-                __DEBUG("throwIllegalMonitorStateException");
-                throwIllegalMonitorStateException(context, "Thread not owner");
-            }
-        } else {
-            __DEBUG("throwIllegalMonitorStateException");
-            throwIllegalMonitorStateException(context, "Monitor is not locked");
+    // sDumpContext(context, "thWait  begin:  ");
+    jobject monitor, currentThread;
+    if (sCheckWaitNotify(context, lockedObject, &monitor, &currentThread)) {
+        /*
+         * Add current thread to (end of) wait set for locked object:
+         */
+        jobject waitElement = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet);
+        jobject lastElement = waitElement;
+        while (waitElement != NULL) {
+            lastElement = waitElement;
+            waitElement = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aNext);
         }
-    } else {
-        // Can't notify on null:
-        __DEBUG("throwNullPointerException");
-        throwNullPointerException(context);
+
+        jobject newElement = AllocObject(context, getJavaLangClass(context, C_java_lang_Object_WaitElement));
+        if (newElement != NULL) {
+            SetObjectField(context, newElement, A_java_lang_Object_WaitElement_aWaiting, currentThread);
+            if (lastElement == NULL) {
+                // Element is the one and only waiting thread:
+                SetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet, newElement);
+            } else {
+                // There are more waiting threads:
+                SetObjectField(context, lastElement, A_java_lang_Object_WaitElement_aNext, newElement);
+            }
+
+            /*
+             * Set thread state to WAITING:
+             */
+            SetIntField(context, currentThread, A_java_lang_Thread_aState, StateWaiting);
+
+            /*
+             * Unlock locked object as many times as current thread has locked it (and save lock count):
+             */
+            jint lockCount = GetIntField(context, monitor, A_java_lang_Object_Monitor_aLockCount);
+            SetIntField(context, currentThread, A_java_lang_Thread_aLockCount, lockCount);
+            SetObjectField(context, currentThread, A_java_lang_Thread_aBlockingObject, lockedObject);
+
+            // Relinquish all locks:
+            sUnlockOwnedMonitor(context, lockedObject, lockCount);
+
+            // Wait for a notification changing state from WAITING to RUNNABLE:
+            while (GetIntField(context, currentThread, A_java_lang_Thread_aState) == StateWaiting) {
+                thYield(context);
+            }
+
+            // Compete for lock:
+            sWaitForLock(context, currentThread);
+
+            // Restore lock count:
+            SetIntField(context, currentThread, A_java_lang_Thread_aLockCount, lockCount);
+        }
+        // else: Out Of Mem has been thrown
     }
 
     __DEBUG("ended\n");
-    sDumpContext(context, "thWait  after : ");
+    //    sDumpContext(context, "thWait  after : ");
 }
 
 void thSleep(contextDef* context, jlong millis) {
