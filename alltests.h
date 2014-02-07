@@ -156,6 +156,7 @@ extern const u2 A_thinj_util_SimpleList_Element_aValue;
 #define M_thinj_regression_Regression_verifyZ 93
 #define M_thinj_regression_ThreadTest__clinit 28
 #define M_thinj_regression_ThreadTest_main_Ljava_lang_String 72
+#define M_thinj_regression_ThreadTest_busyWaitJ 88
 #define M_thinj_regression_ThreadTest_test2_4 91
 #define M_thinj_regression_ThreadTest_busyWaitDoneJ 92
 #define M_thinj_regression_ThreadTest_access_102Z 121

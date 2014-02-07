@@ -429,13 +429,8 @@ void thNotify(contextDef* context, jobject lockedObject, BOOL notifyAll) {
                     A_java_lang_Thread_aCurrentThread);
             jobject lockOwnerThread = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aOwner);
             if (currentThread == lockOwnerThread) {
-                // Build a list of threads that changes from WAITING to RUNNABLE:
-                jobject runnableList = NULL;
-
                 // Find all threads that are in Wait Set WAITING on the lockedObject:
                 jobject waitElement = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet);
-
-                jobject previousWaitElement = NULL;
                 while (waitElement != NULL) {
                     jobject waitingThread = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aWaiting);
                     if (waitingThread == NULL) {
@@ -445,63 +440,20 @@ void thNotify(contextDef* context, jobject lockedObject, BOOL notifyAll) {
                         break;
                     }
 
-                    jobject runnableElement = NULL;
-                    BOOL removeFromWaitSet = TRUE;
-                    int threadState = GetIntField(context, waitingThread, A_java_lang_Thread_aState);
-                    if (threadState == StateWaiting) {
-                        SetIntField(context, waitingThread, A_java_lang_Thread_aState, StateRunnable);
-                        // Add thread to list of RUNNABLE threads (and remove from wait set):
-                        runnableElement = waitElement;
-                    } else if (threadState == StateTerminated) {
-                        // Remove from wait set
-                    } else {
-                        // Arggh, mismatch between wait set and thread state?
-                        consoutli("Unexpected state: %d\n", threadState);
-                        removeFromWaitSet = FALSE;
-                    }
+                    // Set state to RUNNABLE:
+                    SetIntField(context, waitingThread, A_java_lang_Thread_aState, StateRunnable);
 
-                    // Save a copy of the next - field:
+                    // Remove thread from the list of WAITING threads:
                     jobject next = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aNext);
+                    SetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet, next);
 
-                    // Build the list of threads that have changed state to RUNNABLE:
-                    if (runnableElement != NULL) {
-                        SetObjectField(context, runnableElement, A_java_lang_Object_WaitElement_aNext, runnableList);
-                        runnableList = runnableElement;
-                    }
-                    if (removeFromWaitSet) {
-                        if (previousWaitElement == NULL) {
-                            // It's the first element:
-                            SetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet, next);
-                        } else {
-                            SetObjectField(context, previousWaitElement, A_java_lang_Object_WaitElement_aNext, next);
-                        }
-                    } else {
-                        previousWaitElement = waitElement;
-                    }
                     waitElement = next;
 
                     // notifyAll / notify ?
                     if (!notifyAll) {
-                        if (runnableElement != NULL) {
-                            break;
-                        }
+                        break;
                     }
                 }
-                // The runnableList now contains all threads that have changed state to RUNNABLE:
-                // All threads in the runnableList should try to enter the monitor again:
-                for (waitElement = runnableList; waitElement != NULL;
-                        waitElement = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aNext)) {
-                    jobject thread = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aWaiting);
-                    // The object to lock and the lock count is already (shall be!) on the stack:
-                    sWaitForLock(context, thread);
-                }
-                // The thread T is then removed from the wait set and re-enabled for
-                // thread scheduling. It then locks the object again (which may involve
-                // competing in the usual manner with other threads); once it has gained
-                // control of the lock, it performs N - 1 additional lock operations on
-                // that same object and then returns from the invocation of the wait method.
-                // Thus, on return from the wait method, the state of the object's lock is
-                // exactly as it was when the wait method was invoked.
             } else {
                 __DEBUG("throwIllegalMonitorStateException");
                 throwIllegalMonitorStateException(context, "Thread not owner");
@@ -520,6 +472,8 @@ void thNotify(contextDef* context, jobject lockedObject, BOOL notifyAll) {
 }
 
 void thWait(contextDef* context, jobject lockedObject) {
+    // file:///tools/vmspec/Threads.doc.html#21294
+
     __DEBUG("Begin PC = %04x\n", context->programCounter);
     sDumpContext(context, "thWait  begin:  ");
     if (lockedObject != NULL) {
@@ -533,21 +487,21 @@ void thWait(contextDef* context, jobject lockedObject) {
                  * Add current thread to (end of) wait set for locked object:
                  */
                 jobject waitElement = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet);
-                jobject previos = waitElement;
+                jobject lastElement = waitElement;
                 while (waitElement != NULL) {
-                    previos = waitElement;
+                    lastElement = waitElement;
                     waitElement = GetObjectField(context, waitElement, A_java_lang_Object_WaitElement_aNext);
                 }
 
-                jobject element = AllocObject(context, getJavaLangClass(context, C_java_lang_Object_WaitElement));
-                if (element != NULL) {
-                    SetObjectField(context, element, A_java_lang_Object_WaitElement_aWaiting, currentThread);
-                    if (previos == NULL) {
+                jobject newElement = AllocObject(context, getJavaLangClass(context, C_java_lang_Object_WaitElement));
+                if (newElement != NULL) {
+                    SetObjectField(context, newElement, A_java_lang_Object_WaitElement_aWaiting, currentThread);
+                    if (lastElement == NULL) {
                         // Element is the one and only waiting thread:
-                        SetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet, element);
+                        SetObjectField(context, monitor, A_java_lang_Object_Monitor_aWaitSet, newElement);
                     } else {
                         // There are more waiting threads:
-                        SetObjectField(context, previos, A_java_lang_Object_WaitElement_aNext, element);
+                        SetObjectField(context, lastElement, A_java_lang_Object_WaitElement_aNext, newElement);
                     }
 
                     /*
@@ -565,8 +519,16 @@ void thWait(contextDef* context, jobject lockedObject) {
                     // Relinquish all locks:
                     sUnlockOwnedMonitor(context, lockedObject, lockCount);
 
-                    // Find another thread to run:
-                    thYield(context);
+                    // Wait for a notification changing state from WAITING to RUNNABLE:
+                    while (GetIntField(context, currentThread, A_java_lang_Thread_aState) == StateWaiting) {
+                        thYield(context);
+                    }
+
+                    // Compete for lock:
+                    sWaitForLock(context, currentThread);
+
+                    // Restore lock count:
+                    SetIntField(context, currentThread, A_java_lang_Thread_aLockCount, lockCount);
                 }
                 // else: Out Of Mem has been thrown
             } else {
