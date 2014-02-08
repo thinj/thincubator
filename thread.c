@@ -179,7 +179,7 @@ ntThreadContext_t* sGetNextRunnableThread(contextDef* context) {
                 } else {
                     // Check for interrupt:
                     if (GetBooleanField(context, javaThread, A_java_lang_Thread_aInterrupted)) {
-                        //       SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
+                        SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
                         break;
                     }
                     // else: Not interrupted, stay asleep...
@@ -223,19 +223,6 @@ void thYield(contextDef* context) {
             ntThreadContext_t* currNtc = thCurrentThread;
             thCurrentThread = nextThread;
             ntYield(context, currNtc, nextThread);
-
-            // Check for interrupt:
-
-            jobject newThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread), A_java_lang_Thread_aCurrentThread);
-            int state = GetIntField(context, newThread, A_java_lang_Thread_aState);
-            if (state == StateTimedWaiting) {
-                // If the thread is returned
-                SetIntField(context, newThread, A_java_lang_Thread_aState, StateRunnable);
-                //            }
-                //            if (GetBooleanField(context, newThread, A_java_lang_Thread_aInterrupted)) {
-                consoutli("interrupted: not impl!!!\n");
-                throwInterruptedException(context);
-            }
         }
     } else {
         // All threads are terminated:
@@ -569,6 +556,12 @@ void thSleep(contextDef* context, jlong millis) {
 
     // Switch thread:
     thYield(context);
+
+    // Check for interrupt:
+    jobject newThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread), A_java_lang_Thread_aCurrentThread);
+    if (GetBooleanField(context, newThread, A_java_lang_Thread_aInterrupted)) {
+        throwInterruptedException(context);
+    }
 }
 
 jbyteArray sAllocStack(contextDef* context, jobject thread) {
