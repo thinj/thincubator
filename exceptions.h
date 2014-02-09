@@ -12,7 +12,7 @@
  * This method throws an OutOfMemoryError
  * \throws Unconditionally an OutOfMemoryError
  */
-void throwOutOfMemoryError(void);
+void throwOutOfMemoryError(contextDef* context);
 
 /**
  * \throws Unconditionally a NullPointerException
@@ -35,14 +35,14 @@ void throwException(contextDef* context, jobject exception);
  * \param arrayLength The length of the arary
  * \throws ArrayIndexOutOfBoundsException unconditionally
  */
-void throwArrayIndexOutOfBoundsException(jint index, jint arrayLength);
+void throwArrayIndexOutOfBoundsException(contextDef* context, jint index, jint arrayLength);
 
 /**
  * \param classId_S
  * \param classId_T
  * \throws ClassCastException unconditionally
  */
-void throwClassCastException(u2 classId_S, u2 classId_T);
+void throwClassCastException(contextDef* context, u2 classId_S, u2 classId_T);
 
 /**
  * \throws NegativeArraySizeException unconditionally
@@ -53,7 +53,7 @@ void throwNegativeArraySizeException();
  * \param cause The cause of the exception
  * \throws NegativeArraySizeException unconditionally
  */
-void throwArithmeticException(const char* cause);
+void throwArithmeticException(contextDef* context, const char* cause);
 
 /**
  * \param cause The cause of the exception

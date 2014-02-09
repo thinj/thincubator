@@ -43,7 +43,7 @@ static void* GetPointerToArrayPosition(contextDef* context, jarray array, jint i
     void* p = jaGetArrayPayLoad(context, array);
     if (p != NULL) {
         if (ix < 0 || ix >= GetArrayLength(array)) {
-            throwArrayIndexOutOfBoundsException(ix, GetArrayLength(array));
+            throwArrayIndexOutOfBoundsException(context, ix, GetArrayLength(array));
             p = NULL;
         }
     }
@@ -171,7 +171,7 @@ jobjectArray NewObjectArray(contextDef* context, jint count, u2 elementClassId, 
     jobjectArray array = (jobjectArray) heapAllocObjectByByteSize(context, alignedSizeInBytes, arrayClassId);
 
     if (array == NULL) {
-        throwOutOfMemoryError();
+        throwOutOfMemoryError(context);
     } else {
         InitArray((jarray) array, count); //, elementClassId);
         jint i;

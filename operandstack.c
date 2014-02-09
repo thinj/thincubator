@@ -47,7 +47,7 @@ void pop(contextDef* context, stackable* ret) {
 
 void push(contextDef* context, stackableOperand OP, stackType TYPE) {
     if (context->stackPointer >= STACK_SIZE) {
-        consoutli("stack overflow: %d\n", (int) (context->stackPointer));
+        consoutli("stack overflow: %d > %d\n", (int) (context->stackPointer), STACK_SIZE);
         jvmexit(1);
     }
     stack[context->stackPointer].operand = OP;

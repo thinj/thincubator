@@ -302,7 +302,7 @@ nextInstruction:
             u2 classId_S = oaGetClassIdFromObject(ref.operand.jref);
 
             if (!CP_IsInstanceOf(classId_S, classId_T)) {
-                throwClassCastException(classId_S, classId_T);
+                throwClassCastException(context, classId_S, classId_T);
             }
         }
         //else: null is OK
@@ -1128,7 +1128,7 @@ nextInstruction:
         jint jrenameint1 = operandStackPopJavaInt(context);
         jint jrenameint2 = operandStackPopJavaInt(context);
         if (jrenameint1 == 0) {
-            throwArithmeticException(divisionByZeroMessage);
+            throwArithmeticException(context, divisionByZeroMessage);
         } else {
             operandStackPushJavaInt(context, jrenameint2 / jrenameint1);
         }
@@ -1140,7 +1140,7 @@ nextInstruction:
         jlong j1 = operandStackPopJavaLong(context);
         jlong j2 = operandStackPopJavaLong(context);
         if (j1 == 0) {
-            throwArithmeticException(divisionByZeroMessage);
+            throwArithmeticException(context, divisionByZeroMessage);
         } else {
             operandStackPushJavaLong(context, j2 / j1);
         }
@@ -1164,7 +1164,7 @@ nextInstruction:
         jint v1 = operandStackPopJavaInt(context);
         jint v2 = operandStackPopJavaInt(context);
         if (v1 == 0) {
-            throwArithmeticException(divisionByZeroMessage);
+            throwArithmeticException(context, divisionByZeroMessage);
         } else {
             operandStackPushJavaInt(context, v2 % v1);
         }
@@ -1176,7 +1176,7 @@ nextInstruction:
         jlong j1 = operandStackPopJavaLong(context);
         jlong j2 = operandStackPopJavaLong(context);
         if (j1 == 0) {
-            throwArithmeticException(divisionByZeroMessage);
+            throwArithmeticException(context, divisionByZeroMessage);
         } else {
             operandStackPushJavaLong(context, j2 % j1);
         }

@@ -47,7 +47,7 @@ jobject heapAllocObjectByByteSize(contextDef* context, u2 size, u2 classId) {
         // => it can be garbage collected, and it will not by incident look like it is marked
     } else {
         //		consout("out of mem friends!\n");
-        throwOutOfMemoryError();
+        throwOutOfMemoryError(context);
     }
 
     return (jobject) h;
