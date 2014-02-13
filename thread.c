@@ -47,7 +47,6 @@ static size_t sGetStackSizeInBytes() {
     return STACK_SIZE * sizeof (stackable);
 }
 
-
 /**
  * This function sets the java thread reference as the first element in the java stack
  * \param javaStack  The java stack to modify
@@ -598,7 +597,7 @@ void thSleep(contextDef* context, jlong millis) {
     }
 }
 
-jbyteArray sAllocStack(contextDef* context, jobject thread) {
+jbyteArray sAllocStack(contextDef* context) {
     // Allocate an object without protecting it:
     jbyteArray stackObject = NewByteArray(context, sGetStackSizeInBytes());
 
@@ -607,11 +606,6 @@ jbyteArray sAllocStack(contextDef* context, jobject thread) {
         // The stack shall be unprotected when the stack has been referenced from the
         // first thread, see osUnprotectStack():
         heapProtect((jobject) stackObject, TRUE);
-
-        if (thread != NULL) {
-            // Prepare the stack so it contains 'this' as its first element:
-            sSetJavaThread(context, stackObject, thread);
-        }
     }
     // else: An out-of-mem exception has been thrown
 
@@ -660,7 +654,7 @@ static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
     ntThreadContext_t* nativeContext = NULL;
 
     // Allocate and prepare the java stack for this thread:
-    javaStack = sAllocStack(context, thread);
+    javaStack = sAllocStack(context);
     if (javaStack != NULL) {
         // Allocate and prepare the native C stack for this thread:
         nativeStack = NewByteArray(context, sCStackSize);
@@ -676,31 +670,6 @@ static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
     }
 
     return nativeContext;
-}
-
-void thAttach(contextDef* context, jobject thread) {
-    __DEBUG("**** BEGIN adding: %p", thread);
-
-    // Set current state to StateRunnable:
-    SetIntField(context, thread, A_java_lang_Thread_aState, StateRunnable);
-
-    if (sGetJavaThread(context, sAllThreads) != NULL) {
-        ntThreadContext_t* nativeContext = sAllocContext(context, thread);
-
-        if (nativeContext != NULL) {
-            nativeContext->next = sAllThreads;
-            sAllThreads = nativeContext;
-        }
-        // else: Out of mem thrown
-    } else {
-        // It's the main thread; the context has already been alloc'ed, however
-        // at the alloc time the java Thread object did not exist:
-        // At the top of the java stack there shall be a reference to own thread;
-        // otherwise the Main Thread will be garbage collected:
-        sSetJavaThread(context, sAllThreads->javaStack, thread);
-    }
-
-    __DEBUG("**** END adding: %p", thread);
 }
 
 void thInterrupt(contextDef* context, jobject thread) {
@@ -763,6 +732,33 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
 
     __DEBUG("VM is terminating");
     // will only return to this point when the main thread has terminated
+}
+
+void thAttach(contextDef* context, jobject thread) {
+    __DEBUG("**** BEGIN adding: %p", thread);
+
+    // Set current state to StateRunnable:
+    SetIntField(context, thread, A_java_lang_Thread_aState, StateRunnable);
+
+    ntThreadContext_t* nativeContext;
+    if (sGetJavaThread(context, sAllThreads) != NULL) {
+        nativeContext = sAllocContext(context, thread);
+
+        if (nativeContext != NULL) {
+            nativeContext->next = sAllThreads;
+            sAllThreads = nativeContext;
+        }
+        // else: Out of mem thrown
+    } else {
+        // It's the main thread; the context has already been alloc'ed, however
+        // at the alloc time the java Thread object did not exist:
+        // At the top of the java stack there shall be a reference to own thread;
+        // otherwise the Main Thread will be garbage collected:
+        nativeContext = sAllThreads;
+    }
+    sSetJavaThread(context, nativeContext->javaStack, thread);
+
+    __DEBUG("**** END adding: %p", thread);
 }
 
 void thForeachThread(contextDef* context, thCallback_t callback) {
