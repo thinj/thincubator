@@ -157,42 +157,116 @@ const classInstanceInfoDef const allClassInstanceInfo[] = {
     {   0,   1,   0,   0, CT_CHAR_ARRAY,     0, sizeof(jchar)   }, // 2:[C
     {   0,   1,   0,   0, CT_INT_ARRAY,      0, sizeof(jint)    }, // 3:[I
     {   0,   1,   0,   0, CT_LONG_ARRAY,     0, sizeof(jlong)   }, // 4:[J
-    {   0,   1,   0,   0, CT_OBJECT_ARRAY,  11, sizeof(jobject) }, // 5:[Ljava/lang/Class
-    {   0,   1,   0,   0, CT_OBJECT_ARRAY,   0, sizeof(jobject) }, // 6:[Ljava/lang/Object
-    {   0,   1,   0,   0, CT_OBJECT_ARRAY,  27, sizeof(jobject) }, // 7:[Ljava/lang/String
-    {   0,   1,   0,   0, CT_CLASS,          0, 0               }, // 8:java/io/PrintStream
-    {  26,   3,   0,   0, CT_CLASS,          0, 0               }, // 9:java/lang/ArithmeticException
-    {  18,   3,   0,   0, CT_CLASS,          0, 0               }, // 10:java/lang/ArrayIndexOutOfBoundsException
-    {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 11:java/lang/Class
-    {  26,   3,   0,   0, CT_CLASS,          0, 0               }, // 12:java/lang/ClassCastException
-    {  31,   3,   0,   0, CT_CLASS,          0, 0               }, // 13:java/lang/Error
-    {  31,   3,   0,   0, CT_CLASS,          0, 0               }, // 14:java/lang/Exception
-    {  26,   3,   0,   0, CT_CLASS,          0, 0               }, // 15:java/lang/IllegalArgumentException
-    {  26,   3,   0,   0, CT_CLASS,          0, 0               }, // 16:java/lang/IllegalMonitorStateException
-    {  15,   3,   0,   0, CT_CLASS,          0, 0               }, // 17:java/lang/IllegalThreadStateException
-    {  26,   3,   0,   0, CT_CLASS,          0, 0               }, // 18:java/lang/IndexOutOfBoundsException
-    {  14,   3,   0,   0, CT_CLASS,          0, 0               }, // 19:java/lang/InterruptedException
-    {  26,   3,   0,   0, CT_CLASS,          0, 0               }, // 20:java/lang/NegativeArraySizeException
-    {  26,   3,   0,   0, CT_CLASS,          0, 0               }, // 21:java/lang/NullPointerException
-    {   0,   4,   0,   0, CT_CLASS,          0, 0               }, // 22:java/lang/Object$Monitor
-    {   0,   3,   0,   0, CT_CLASS,          0, 0               }, // 23:java/lang/Object$WaitElement
-    {  32,   3,   0,   0, CT_CLASS,          0, 0               }, // 24:java/lang/OutOfMemoryError
-    {   0,   1,   0,   0, CT_INTERFACE,      0, 0               }, // 25:java/lang/Runnable
-    {  14,   3,   0,   0, CT_CLASS,          0, 0               }, // 26:java/lang/RuntimeException
-    {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 27:java/lang/String
-    {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 28:java/lang/StringBuilder
-    {   0,   1,   0,   0, CT_CLASS,          0, 0               }, // 29:java/lang/System
-    {   0,  10,   0,   1, CT_CLASS,          0, 0               }, // 30:java/lang/Thread
-    {   0,   3,   1,   0, CT_CLASS,          0, 0               }, // 31:java/lang/Throwable
-    {  13,   3,   1,   0, CT_CLASS,          0, 0               }, // 32:java/lang/VirtualMachineError
-    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 33:java/util/Arrays
-    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 34:thinj/regression/AllTests
-    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 35:thinj/regression/ThreadTest
-    {  30,  11,   1,   0, CT_CLASS,          0, 0               }, // 36:thinj/regression/ThreadTest$4
-    {   0,   2,   1,   0, CT_CLASS,          0, 0               }, // 37:thinj/util/SimpleList
-    {   0,   3,   1,   0, CT_CLASS,          0, 0               }, // 38:thinj/util/SimpleList$Element
+    {   0,   1,   0,   0, CT_OBJECT_ARRAY,   3, sizeof(jobject) }, // 5:[L[I
+    {   0,   1,   0,   0, CT_OBJECT_ARRAY,   9, sizeof(jobject) }, // 6:[L[Ljava/lang/Object
+    {   0,   1,   0,   0, CT_OBJECT_ARRAY,  14, sizeof(jobject) }, // 7:[L[Lthinj/regression/checkcast/CheckCast
+    {   0,   1,   0,   0, CT_OBJECT_ARRAY,  19, sizeof(jobject) }, // 8:[Ljava/lang/Class
+    {   0,   1,   0,   0, CT_OBJECT_ARRAY,   0, sizeof(jobject) }, // 9:[Ljava/lang/Object
+    {   0,   1,   0,   0, CT_OBJECT_ARRAY,  35, sizeof(jobject) }, // 10:[Ljava/lang/String
+    {   0,   1,   0,   0, CT_OBJECT_ARRAY,  38, sizeof(jobject) }, // 11:[Ljava/lang/Thread
+    {   0,   1,   0,   0, CT_OBJECT_ARRAY,  91, sizeof(jobject) }, // 12:[Lthinj/regression/arrays/DummyClass
+    {   0,   1,   0,   0, CT_OBJECT_ARRAY,  92, sizeof(jobject) }, // 13:[Lthinj/regression/arrays/MultiArrayTest
+    {   0,   1,   0,   0, CT_OBJECT_ARRAY,  94, sizeof(jobject) }, // 14:[Lthinj/regression/checkcast/CheckCast
+    {   0,   1,   0,   0, CT_BOOLEAN_ARRAY,   0, 1               }, // 15:[Z
+    {   0,   1,   0,   0, CT_CLASS,          0, 0               }, // 16:java/io/PrintStream
+    {  34,   3,   0,   0, CT_CLASS,          0, 0               }, // 17:java/lang/ArithmeticException
+    {  26,   3,   0,   0, CT_CLASS,          0, 0               }, // 18:java/lang/ArrayIndexOutOfBoundsException
+    {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 19:java/lang/Class
+    {  34,   3,   0,   0, CT_CLASS,          0, 0               }, // 20:java/lang/ClassCastException
+    {  39,   3,   0,   0, CT_CLASS,          0, 0               }, // 21:java/lang/Error
+    {  39,   3,   0,   0, CT_CLASS,          0, 0               }, // 22:java/lang/Exception
+    {  34,   3,   0,   0, CT_CLASS,          0, 0               }, // 23:java/lang/IllegalArgumentException
+    {  34,   3,   0,   0, CT_CLASS,          0, 0               }, // 24:java/lang/IllegalMonitorStateException
+    {  23,   3,   0,   0, CT_CLASS,          0, 0               }, // 25:java/lang/IllegalThreadStateException
+    {  34,   3,   0,   0, CT_CLASS,          0, 0               }, // 26:java/lang/IndexOutOfBoundsException
+    {  22,   3,   0,   0, CT_CLASS,          0, 0               }, // 27:java/lang/InterruptedException
+    {  34,   3,   0,   0, CT_CLASS,          0, 0               }, // 28:java/lang/NegativeArraySizeException
+    {  34,   3,   0,   0, CT_CLASS,          0, 0               }, // 29:java/lang/NullPointerException
+    {   0,   4,   0,   0, CT_CLASS,          0, 0               }, // 30:java/lang/Object$Monitor
+    {   0,   3,   0,   0, CT_CLASS,          0, 0               }, // 31:java/lang/Object$WaitElement
+    {  40,   3,   0,   0, CT_CLASS,          0, 0               }, // 32:java/lang/OutOfMemoryError
+    {   0,   1,   0,   0, CT_INTERFACE,      0, 0               }, // 33:java/lang/Runnable
+    {  22,   3,   0,   0, CT_CLASS,          0, 0               }, // 34:java/lang/RuntimeException
+    {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 35:java/lang/String
+    {   0,   2,   0,   0, CT_CLASS,          0, 0               }, // 36:java/lang/StringBuilder
+    {   0,   1,   0,   0, CT_CLASS,          0, 0               }, // 37:java/lang/System
+    {   0,  10,   0,   1, CT_CLASS,          0, 0               }, // 38:java/lang/Thread
+    {   0,   3,   1,   0, CT_CLASS,          0, 0               }, // 39:java/lang/Throwable
+    {  21,   3,   1,   0, CT_CLASS,          0, 0               }, // 40:java/lang/VirtualMachineError
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 41:java/util/Arrays
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 42:thinj/regression/AllTests
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 43:thinj/regression/BaseClass
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 44:thinj/regression/ByteTest
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 45:thinj/regression/CharTest
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 46:thinj/regression/ClassTest
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 47:thinj/regression/DivMod
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 48:thinj/regression/EqualsTest
+    {  43,   1,   1,   0, CT_CLASS,          0, 0               }, // 49:thinj/regression/ExtendedBaseClass
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 50:thinj/regression/Ineg
+    {   0,   4,   1,   0, CT_CLASS,          0, 0               }, // 51:thinj/regression/InstanceAttributes
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 52:thinj/regression/InstanceMethods
+    {  52,   1,   1,   0, CT_CLASS,          0, 0               }, // 53:thinj/regression/InstanceMethodsSpecial
+    {  51,   5,   1,   0, CT_CLASS,          0, 0               }, // 54:thinj/regression/InstanceSubclassing
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 55:thinj/regression/LongTest
+    {   0,   4,   1,   0, CT_CLASS,          0, 0               }, // 56:thinj/regression/LongTest$LinkObject
+    {   0,   5,   1,   0, CT_CLASS,          0, 0               }, // 57:thinj/regression/LongTest$MyClass
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 58:thinj/regression/NativeTest
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 59:thinj/regression/ObjectTest
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 60:thinj/regression/Regression
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 61:thinj/regression/StaticInnerClassTest
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 62:thinj/regression/StaticInnerClassTest$Dims
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 63:thinj/regression/StaticInstanceAndMethod
+    {   0,   1,   1,   0, CT_CLASS,          0, 0               }, // 64:thinj/regression/ThreadTest
+    {  38,  12,   1,   0, CT_CLASS,          0, 0               }, // 65:thinj/regression/ThreadTest$1
+    {   0,   1,   1,   1, CT_CLASS,          0, 0               }, // 66:thinj/regression/ThreadTest$10
+    {   0,   2,   2,   1, CT_CLASS,          0, 0               }, // 67:thinj/regression/ThreadTest$11
+    {   0,   2,   3,   1, CT_CLASS,          0, 0               }, // 68:thinj/regression/ThreadTest$12
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 69:thinj/regression/ThreadTest$13
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 70:thinj/regression/ThreadTest$14
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 71:thinj/regression/ThreadTest$15
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 72:thinj/regression/ThreadTest$16
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 73:thinj/regression/ThreadTest$17
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 74:thinj/regression/ThreadTest$18
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 75:thinj/regression/ThreadTest$19
+    {  38,  11,   4,   0, CT_CLASS,          0, 0               }, // 76:thinj/regression/ThreadTest$2
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 77:thinj/regression/ThreadTest$20
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 78:thinj/regression/ThreadTest$21
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 79:thinj/regression/ThreadTest$22
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 80:thinj/regression/ThreadTest$23
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 81:thinj/regression/ThreadTest$3
+    {  38,  11,   4,   0, CT_CLASS,          0, 0               }, // 82:thinj/regression/ThreadTest$4
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 83:thinj/regression/ThreadTest$5
+    {  38,  10,   4,   0, CT_CLASS,          0, 0               }, // 84:thinj/regression/ThreadTest$6
+    {  38,  11,   4,   0, CT_CLASS,          0, 0               }, // 85:thinj/regression/ThreadTest$7
+    {  38,  12,   4,   0, CT_CLASS,          0, 0               }, // 86:thinj/regression/ThreadTest$8
+    {   0,   2,   4,   1, CT_CLASS,          0, 0               }, // 87:thinj/regression/ThreadTest$9
+    {   0,   2,   5,   0, CT_CLASS,          0, 0               }, // 88:thinj/regression/abstractclass/AbstractClass
+    {  88,   2,   5,   0, CT_CLASS,          0, 0               }, // 89:thinj/regression/abstractclass/ExtendingClass
+    {   0,   2,   5,   0, CT_CLASS,          0, 0               }, // 90:thinj/regression/arrays/ArrayTest
+    {   0,   2,   5,   0, CT_CLASS,          0, 0               }, // 91:thinj/regression/arrays/DummyClass
+    {   0,   1,   5,   0, CT_CLASS,          0, 0               }, // 92:thinj/regression/arrays/MultiArrayTest
+    {   0,   1,   5,   0, CT_CLASS,          0, 0               }, // 93:thinj/regression/arrays/Sudoku
+    {   0,   1,   5,   0, CT_CLASS,          0, 0               }, // 94:thinj/regression/checkcast/CheckCast
+    {   0,   1,   5,   1, CT_CLASS,          0, 0               }, // 95:thinj/regression/checkcast/CheckCast$1
+    {   0,   1,   6,   0, CT_CLASS,          0, 0               }, // 96:thinj/regression/checkcast/CheckCast$ClassA
+    {  96,   1,   6,   0, CT_CLASS,          0, 0               }, // 97:thinj/regression/checkcast/CheckCast$ClassB
+    {   0,   1,   6,   0, CT_INTERFACE,      0, 0               }, // 98:thinj/regression/checkcast/CheckCast$IA
+    {   0,   2,   6,   0, CT_CLASS,          0, 0               }, // 99:thinj/regression/exceptions/ExIALOAD
+    {   0,   3,   6,   0, CT_CLASS,          0, 0               }, // 100:thinj/regression/exceptions/ExIALOAD$LinkObject
+    {   0,   1,   6,   0, CT_INTERFACE,      0, 0               }, // 101:thinj/regression/exceptions/ExIALOAD$MyInterface
+    {   0,   1,   6,   0, CT_CLASS,          0, 0               }, // 102:thinj/regression/exceptions/ExceptionProxying
+    {   0,   1,   6,   0, CT_CLASS,          0, 0               }, // 103:thinj/regression/exceptions/TestNullPointerException
+    {   0,   1,   6,   0, CT_CLASS,          0, 0               }, // 104:thinj/regression/exceptions/ThrowException
+    {   0,   1,   6,   0, CT_CLASS,          0, 0               }, // 105:thinj/regression/gc/GC
+    {   0,   3,   6,   0, CT_CLASS,          0, 0               }, // 106:thinj/regression/gc/GC$LinkObject
+    {   0,   1,   6,   0, CT_CLASS,          0, 0               }, // 107:thinj/regression/gc/HeapTest
+    {   0,   1,   6,   1, CT_INTERFACE,      0, 0               }, // 108:thinj/regression/interfaces/AnInterface
+    {   0,   2,   7,   1, CT_CLASS,          0, 0               }, // 109:thinj/regression/interfaces/AnInterfaceImpl
+    {   0,   1,   8,   0, CT_INTERFACE,      0, 0               }, // 110:thinj/regression/interfaces/AnotherInterface
+    {   0,   2,   8,   0, CT_CLASS,          0, 0               }, // 111:thinj/util/SimpleList
+    {   0,   3,   8,   0, CT_CLASS,          0, 0               }, // 112:thinj/util/SimpleList$Element
 };
-const u2 cpNumberOfAllClassInstanceInfo = 39;
+const u2 cpNumberOfAllClassInstanceInfo = 113;
 
 //------------------------------------------------------------------------------
 // Implemented interfaces
@@ -200,7 +274,21 @@ const u2 cpNumberOfAllClassInstanceInfo = 39;
 
 const u2 const implementedInterfaces[] = {
     // java/lang/Thread
-    25, 
+    33, 
+    // thinj/regression/ThreadTest$10
+    33, 
+    // thinj/regression/ThreadTest$11
+    33, 
+    // thinj/regression/ThreadTest$12
+    33, 
+    // thinj/regression/ThreadTest$9
+    33, 
+    // thinj/regression/checkcast/CheckCast$1
+    98, 
+    // thinj/regression/interfaces/AnInterface
+    110, 
+    // thinj/regression/interfaces/AnInterfaceImpl
+    108, 
 };
 
 //------------------------------------------------------------------------------
@@ -209,61 +297,209 @@ const u2 const implementedInterfaces[] = {
 
 const classReference const allClassReferences[] = {
     // Class Id: 0
-    {0, 2, 28}, // "java/lang/StringBuilder"
-    // Class Id: 8
-    {8, 9, 28}, // "java/lang/StringBuilder"
-    // Class Id: 10
-    {10, 2, 28}, // "java/lang/StringBuilder"
-    // Class Id: 11
-    {11, 2, 28}, // "java/lang/StringBuilder"
-    // Class Id: 24
-    {24, 4, 24}, // "java/lang/OutOfMemoryError"
-    // Class Id: 28
-    {28, 10, 27}, // "java/lang/String"
-    {28, 24, 28}, // "java/lang/StringBuilder"
-    {28, 87, 7}, // "[Ljava/lang/String"
-    // Class Id: 29
-    {29, 2, 8}, // "java/io/PrintStream"
-    // Class Id: 30
-    {30, 9, 17}, // "java/lang/IllegalThreadStateException"
-    {30, 10, 28}, // "java/lang/StringBuilder"
-    {30, 19, 31}, // "java/lang/Throwable"
-    {30, 22, 30}, // "java/lang/Thread"
-    // Class Id: 31
-    {31, 10, 28}, // "java/lang/StringBuilder"
-    // Class Id: 34
-    {34, 8, 28}, // "java/lang/StringBuilder"
+    {0, 2, 36}, // "java/lang/StringBuilder"
+    // Class Id: 16
+    {16, 9, 36}, // "java/lang/StringBuilder"
+    // Class Id: 18
+    {18, 2, 36}, // "java/lang/StringBuilder"
+    // Class Id: 19
+    {19, 2, 36}, // "java/lang/StringBuilder"
+    // Class Id: 32
+    {32, 4, 32}, // "java/lang/OutOfMemoryError"
     // Class Id: 35
-    {35, 14, 0}, // "java/lang/Object"
-    {35, 29, 28}, // "java/lang/StringBuilder"
-    {35, 37, 36}, // "thinj/regression/ThreadTest$4"
-    {35, 42, 19}, // "java/lang/InterruptedException"
+    {35, 7, 35}, // "java/lang/String"
     // Class Id: 36
-    {36, 4, 28}, // "java/lang/StringBuilder"
+    {36, 10, 35}, // "java/lang/String"
+    {36, 24, 36}, // "java/lang/StringBuilder"
+    {36, 87, 10}, // "[Ljava/lang/String"
+    // Class Id: 37
+    {37, 2, 16}, // "java/io/PrintStream"
+    // Class Id: 38
+    {38, 9, 25}, // "java/lang/IllegalThreadStateException"
+    {38, 10, 36}, // "java/lang/StringBuilder"
+    {38, 19, 39}, // "java/lang/Throwable"
+    {38, 22, 38}, // "java/lang/Thread"
+    // Class Id: 39
+    {39, 10, 36}, // "java/lang/StringBuilder"
+    // Class Id: 42
+    {42, 60, 36}, // "java/lang/StringBuilder"
+    // Class Id: 46
+    {46, 4, 46}, // "thinj/regression/ClassTest"
+    {46, 9, 36}, // "java/lang/StringBuilder"
+    {46, 13, 0}, // "java/lang/Object"
+    {46, 23, 35}, // "java/lang/String"
+    {46, 79, 9}, // "[Ljava/lang/Object"
+    // Class Id: 48
+    {48, 2, 48}, // "thinj/regression/EqualsTest"
+    // Class Id: 49
+    {49, 2, 49}, // "thinj/regression/ExtendedBaseClass"
+    {49, 7, 43}, // "thinj/regression/BaseClass"
+    // Class Id: 51
+    {51, 5, 51}, // "thinj/regression/InstanceAttributes"
+    // Class Id: 52
+    {52, 3, 52}, // "thinj/regression/InstanceMethods"
+    {52, 6, 53}, // "thinj/regression/InstanceMethodsSpecial"
+    // Class Id: 53
+    {53, 5, 53}, // "thinj/regression/InstanceMethodsSpecial"
+    // Class Id: 54
+    {54, 3, 54}, // "thinj/regression/InstanceSubclassing"
+    // Class Id: 55
+    {55, 197, 57}, // "thinj/regression/LongTest$MyClass"
+    {55, 207, 32}, // "java/lang/OutOfMemoryError"
+    {55, 213, 18}, // "java/lang/ArrayIndexOutOfBoundsException"
+    {55, 214, 29}, // "java/lang/NullPointerException"
+    // Class Id: 56
+    {56, 5, 56}, // "thinj/regression/LongTest$LinkObject"
+    // Class Id: 58
+    {58, 2, 0}, // "java/lang/Object"
+    // Class Id: 59
+    {59, 3, 0}, // "java/lang/Object"
+    // Class Id: 60
+    {60, 2, 22}, // "java/lang/Exception"
+    // Class Id: 61
+    {61, 2, 62}, // "thinj/regression/StaticInnerClassTest$Dims"
+    // Class Id: 64
+    {64, 36, 0}, // "java/lang/Object"
+    {64, 37, 65}, // "thinj/regression/ThreadTest$1"
+    {64, 40, 76}, // "thinj/regression/ThreadTest$2"
+    {64, 47, 81}, // "thinj/regression/ThreadTest$3"
+    {64, 51, 36}, // "java/lang/StringBuilder"
+    {64, 59, 82}, // "thinj/regression/ThreadTest$4"
+    {64, 64, 27}, // "java/lang/InterruptedException"
+    {64, 66, 83}, // "thinj/regression/ThreadTest$5"
+    {64, 69, 84}, // "thinj/regression/ThreadTest$6"
+    {64, 72, 85}, // "thinj/regression/ThreadTest$7"
+    {64, 74, 86}, // "thinj/regression/ThreadTest$8"
+    {64, 77, 29}, // "java/lang/NullPointerException"
+    {64, 78, 38}, // "java/lang/Thread"
+    {64, 79, 87}, // "thinj/regression/ThreadTest$9"
+    {64, 83, 24}, // "java/lang/IllegalMonitorStateException"
+    {64, 84, 66}, // "thinj/regression/ThreadTest$10"
+    {64, 88, 67}, // "thinj/regression/ThreadTest$11"
+    {64, 90, 68}, // "thinj/regression/ThreadTest$12"
+    {64, 92, 69}, // "thinj/regression/ThreadTest$13"
+    {64, 95, 70}, // "thinj/regression/ThreadTest$14"
+    {64, 97, 71}, // "thinj/regression/ThreadTest$15"
+    {64, 99, 72}, // "thinj/regression/ThreadTest$16"
+    {64, 101, 73}, // "thinj/regression/ThreadTest$17"
+    {64, 104, 74}, // "thinj/regression/ThreadTest$18"
+    {64, 107, 75}, // "thinj/regression/ThreadTest$19"
+    {64, 115, 77}, // "thinj/regression/ThreadTest$20"
+    {64, 119, 78}, // "thinj/regression/ThreadTest$21"
+    {64, 124, 79}, // "thinj/regression/ThreadTest$22"
+    {64, 129, 80}, // "thinj/regression/ThreadTest$23"
+    {64, 328, 11}, // "[Ljava/lang/Thread"
+    {64, 329, 11}, // "[Ljava/lang/Thread"
+    // Class Id: 65
+    {65, 9, 27}, // "java/lang/InterruptedException"
+    // Class Id: 66
+    {66, 3, 29}, // "java/lang/NullPointerException"
+    // Class Id: 67
+    {67, 7, 27}, // "java/lang/InterruptedException"
+    // Class Id: 71
+    {71, 5, 27}, // "java/lang/InterruptedException"
+    // Class Id: 75
+    {75, 6, 27}, // "java/lang/InterruptedException"
+    // Class Id: 76
+    {76, 7, 27}, // "java/lang/InterruptedException"
+    // Class Id: 77
+    {77, 5, 27}, // "java/lang/InterruptedException"
+    // Class Id: 79
+    {79, 9, 27}, // "java/lang/InterruptedException"
+    // Class Id: 80
+    {80, 6, 27}, // "java/lang/InterruptedException"
+    // Class Id: 82
+    {82, 4, 36}, // "java/lang/StringBuilder"
+    // Class Id: 88
+    {88, 3, 89}, // "thinj/regression/abstractclass/ExtendingClass"
+    // Class Id: 90
+    {90, 4, 90}, // "thinj/regression/arrays/ArrayTest"
+    // Class Id: 92
+    {92, 2, 3}, // "[I"
+    {92, 4, 92}, // "thinj/regression/arrays/MultiArrayTest"
+    {92, 5, 91}, // "thinj/regression/arrays/DummyClass"
+    {92, 46, 5}, // "[L[I"
+    {92, 47, 13}, // "[Lthinj/regression/arrays/MultiArrayTest"
+    {92, 48, 12}, // "[Lthinj/regression/arrays/DummyClass"
+    // Class Id: 93
+    {93, 9, 3}, // "[I"
+    {93, 57, 5}, // "[L[I"
+    {93, 58, 5}, // "[L[I"
+    // Class Id: 94
+    {94, 2, 95}, // "thinj/regression/checkcast/CheckCast$1"
+    {94, 4, 0}, // "java/lang/Object"
+    {94, 6, 98}, // "thinj/regression/checkcast/CheckCast$IA"
+    {94, 7, 96}, // "thinj/regression/checkcast/CheckCast$ClassA"
+    {94, 9, 97}, // "thinj/regression/checkcast/CheckCast$ClassB"
+    {94, 11, 9}, // "[Ljava/lang/Object"
+    {94, 12, 94}, // "thinj/regression/checkcast/CheckCast"
+    {94, 13, 14}, // "[Lthinj/regression/checkcast/CheckCast"
+    {94, 14, 3}, // "[I"
+    {94, 15, 0}, // "[[I"
+    {94, 16, 0}, // "[[Ljava/lang/Object"
+    {94, 67, 9}, // "[Ljava/lang/Object"
+    {94, 68, 14}, // "[Lthinj/regression/checkcast/CheckCast"
+    {94, 69, 5}, // "[L[I"
+    {94, 70, 6}, // "[L[Ljava/lang/Object"
+    {94, 71, 7}, // "[L[Lthinj/regression/checkcast/CheckCast"
+    // Class Id: 99
+    {99, 2, 29}, // "java/lang/NullPointerException"
+    {99, 4, 18}, // "java/lang/ArrayIndexOutOfBoundsException"
+    {99, 5, 0}, // "java/lang/Object"
+    {99, 6, 17}, // "java/lang/ArithmeticException"
+    {99, 13, 32}, // "java/lang/OutOfMemoryError"
+    {99, 14, 28}, // "java/lang/NegativeArraySizeException"
+    {99, 15, 35}, // "java/lang/String"
+    {99, 18, 20}, // "java/lang/ClassCastException"
+    {99, 40, 39}, // "java/lang/Throwable"
+    {99, 41, 36}, // "java/lang/StringBuilder"
+    {99, 175, 9}, // "[Ljava/lang/Object"
+    {99, 176, 9}, // "[Ljava/lang/Object"
+    {99, 177, 10}, // "[Ljava/lang/String"
+    // Class Id: 100
+    {100, 4, 100}, // "thinj/regression/exceptions/ExIALOAD$LinkObject"
+    // Class Id: 102
+    {102, 11, 39}, // "java/lang/Throwable"
+    // Class Id: 103
+    {103, 5, 22}, // "java/lang/Exception"
+    // Class Id: 104
+    {104, 2, 22}, // "java/lang/Exception"
+    {104, 6, 39}, // "java/lang/Throwable"
+    // Class Id: 105
+    {105, 5, 106}, // "thinj/regression/gc/GC$LinkObject"
+    {105, 10, 35}, // "java/lang/String"
+    {105, 22, 32}, // "java/lang/OutOfMemoryError"
+    {105, 24, 36}, // "java/lang/StringBuilder"
+    {105, 99, 10}, // "[Ljava/lang/String"
+    // Class Id: 107
+    {107, 2, 36}, // "java/lang/StringBuilder"
+    {107, 9, 0}, // "java/lang/Object"
+    // Class Id: 109
+    {109, 3, 109}, // "thinj/regression/interfaces/AnInterfaceImpl"
 };
-const u2 numberOfAllClassReferences = 20;
+const u2 numberOfAllClassReferences = 132;
 
 //------------------------------------------------------------------------------
 // Class referenced by VM
 //------------------------------------------------------------------------------
 
 
-const u2 C_java_lang_ArithmeticException = 9;
-const u2 C_java_lang_ArrayIndexOutOfBoundsException = 10;
-const u2 C_java_lang_Class = 11;
-const u2 C_java_lang_ClassCastException = 12;
-const u2 C_java_lang_IllegalMonitorStateException = 16;
-const u2 C_java_lang_InterruptedException = 19;
-const u2 C_java_lang_NegativeArraySizeException = 20;
-const u2 C_java_lang_NullPointerException = 21;
+const u2 C_java_lang_ArithmeticException = 17;
+const u2 C_java_lang_ArrayIndexOutOfBoundsException = 18;
+const u2 C_java_lang_Class = 19;
+const u2 C_java_lang_ClassCastException = 20;
+const u2 C_java_lang_IllegalMonitorStateException = 24;
+const u2 C_java_lang_InterruptedException = 27;
+const u2 C_java_lang_NegativeArraySizeException = 28;
+const u2 C_java_lang_NullPointerException = 29;
 const u2 C_java_lang_Object = 0;
-const u2 C_java_lang_Object_Monitor = 22;
-const u2 C_java_lang_Object_WaitElement = 23;
-const u2 C_java_lang_OutOfMemoryError = 24;
-const u2 C_java_lang_String = 27;
-const u2 C_java_lang_Thread = 30;
-const u2 C_thinj_util_SimpleList = 37;
-const u2 C_thinj_util_SimpleList_Element = 38;
+const u2 C_java_lang_Object_Monitor = 30;
+const u2 C_java_lang_Object_WaitElement = 31;
+const u2 C_java_lang_OutOfMemoryError = 32;
+const u2 C_java_lang_String = 35;
+const u2 C_java_lang_Thread = 38;
+const u2 C_thinj_util_SimpleList = 111;
+const u2 C_thinj_util_SimpleList_Element = 112;
 
 //------------------------------------------------------------------------------
 // Link Ids referenced by VM
@@ -304,56 +540,186 @@ const u2 A_thinj_util_SimpleList_Element_aValue = 70;
 // Field references
 //------------------------------------------------------------------------------
 
-const memberReference const allFieldReferences11[] = {
-    {11, 21}, // 0: java/lang/Class#aClassId#I
+const memberReference const allFieldReferences19[] = {
+    {19, 21}, // 0: java/lang/Class#aClassId#I
 };
 
-const memberReference const allFieldReferences24[] = {
-    {24, 26}, // 0: java/lang/OutOfMemoryError#INSTANCE#Ljava/lang/OutOfMemoryError;
-};
-
-const memberReference const allFieldReferences27[] = {
-    {27, 5}, // 0: java/lang/String#value#[C
-};
-
-const memberReference const allFieldReferences28[] = {
-    {28, 75}, // 0: java/lang/StringBuilder#aValue#[C
-};
-
-const memberReference const allFieldReferences29[] = {
-    {29, 71}, // 0: java/lang/System#out#Ljava/io/PrintStream;
-    {29, 33}, // 1: java/lang/System#err#Ljava/io/PrintStream;
-};
-
-const memberReference const allFieldReferences30[] = {
-    {30, 46}, // 0: java/lang/Thread#aRunnable#Ljava/lang/Runnable;
-    {30, 47}, // 1: java/lang/Thread#aThreadIdGenerator#J
-    {30, 48}, // 2: java/lang/Thread#aId#J
-    {30, 49}, // 3: java/lang/Thread#aState#I
-    {30, 50}, // 4: java/lang/Thread#aInterrupted#Z
-};
-
-const memberReference const allFieldReferences31[] = {
-    {31, 29}, // 0: java/lang/Throwable#aCause#Ljava/lang/String;
-    {31, 31}, // 1: java/lang/Throwable#aStackTrace#[I
-    {29, 33}, // 2: java/lang/System#err#Ljava/io/PrintStream;
-};
-
-const memberReference const allFieldReferences34[] = {
-    {29, 71}, // 0: java/lang/System#out#Ljava/io/PrintStream;
+const memberReference const allFieldReferences32[] = {
+    {32, 26}, // 0: java/lang/OutOfMemoryError#INSTANCE#Ljava/lang/OutOfMemoryError;
 };
 
 const memberReference const allFieldReferences35[] = {
-    {35, 89}, // 0: thinj/regression/ThreadTest#aMutex#Ljava/lang/Object;
-    {35, 91}, // 1: thinj/regression/ThreadTest#aFlag#Z
-    {35, 92}, // 2: thinj/regression/ThreadTest#aDone#Z
-    {35, 93}, // 3: thinj/regression/ThreadTest#aCount1#I
-    {29, 71}, // 4: java/lang/System#out#Ljava/io/PrintStream;
+    {35, 5}, // 0: java/lang/String#value#[C
 };
 
 const memberReference const allFieldReferences36[] = {
-    {36, 134}, // 0: thinj/regression/ThreadTest$4#val$mutex#Ljava/lang/Object;
-    {29, 71}, // 1: java/lang/System#out#Ljava/io/PrintStream;
+    {36, 76}, // 0: java/lang/StringBuilder#aValue#[C
+};
+
+const memberReference const allFieldReferences37[] = {
+    {37, 71}, // 0: java/lang/System#out#Ljava/io/PrintStream;
+    {37, 33}, // 1: java/lang/System#err#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences38[] = {
+    {38, 46}, // 0: java/lang/Thread#aRunnable#Ljava/lang/Runnable;
+    {38, 47}, // 1: java/lang/Thread#aThreadIdGenerator#J
+    {38, 48}, // 2: java/lang/Thread#aId#J
+    {38, 49}, // 3: java/lang/Thread#aState#I
+    {38, 50}, // 4: java/lang/Thread#aInterrupted#Z
+};
+
+const memberReference const allFieldReferences39[] = {
+    {39, 29}, // 0: java/lang/Throwable#aCause#Ljava/lang/String;
+    {39, 31}, // 1: java/lang/Throwable#aStackTrace#[I
+    {37, 33}, // 2: java/lang/System#err#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences42[] = {
+    {37, 71}, // 0: java/lang/System#out#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences46[] = {
+    {37, 71}, // 0: java/lang/System#out#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences47[] = {
+    {47, 141}, // 0: thinj/regression/DivMod#tusind#I
+    {37, 71}, // 1: java/lang/System#out#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences51[] = {
+    {51, 98}, // 0: thinj/regression/InstanceAttributes#aValue#I
+    {51, 99}, // 1: thinj/regression/InstanceAttributes#aEnabled#Z
+    {51, 100}, // 2: thinj/regression/InstanceAttributes#aObject#Ljava/lang/Object;
+    {51, 102}, // 3: thinj/regression/InstanceAttributes#aStaticDims#I
+};
+
+const memberReference const allFieldReferences54[] = {
+    {54, 103}, // 0: thinj/regression/InstanceSubclassing#aAttr#I
+    {54, 98}, // 1: thinj/regression/InstanceSubclassing#aValue#I
+    {54, 102}, // 2: thinj/regression/InstanceSubclassing#aStaticDims#I
+};
+
+const memberReference const allFieldReferences55[] = {
+    {37, 71}, // 0: java/lang/System#out#Ljava/io/PrintStream;
+    {55, 198}, // 1: thinj/regression/LongTest#aIdGenerator#J
+    {55, 199}, // 2: thinj/regression/LongTest#cLong#J
+};
+
+const memberReference const allFieldReferences56[] = {
+    {56, 204}, // 0: thinj/regression/LongTest$LinkObject#aNext#Lthinj/regression/LongTest$LinkObject;
+    {56, 205}, // 1: thinj/regression/LongTest$LinkObject#aGenerator#J
+    {56, 48}, // 2: thinj/regression/LongTest$LinkObject#aId#J
+};
+
+const memberReference const allFieldReferences57[] = {
+    {57, 201}, // 0: thinj/regression/LongTest$MyClass#aI#I
+    {57, 202}, // 1: thinj/regression/LongTest$MyClass#aJ#J
+    {57, 203}, // 2: thinj/regression/LongTest$MyClass#aB#Z
+};
+
+const memberReference const allFieldReferences61[] = {
+    {61, 137}, // 0: thinj/regression/StaticInnerClassTest#ST#Lthinj/regression/StaticInnerClassTest$Dims;
+};
+
+const memberReference const allFieldReferences63[] = {
+    {63, 91}, // 0: thinj/regression/StaticInstanceAndMethod#aFoobar#I
+};
+
+const memberReference const allFieldReferences64[] = {
+    {64, 207}, // 0: thinj/regression/ThreadTest#aCount2#I
+    {64, 208}, // 1: thinj/regression/ThreadTest#aMutex#Ljava/lang/Object;
+    {64, 210}, // 2: thinj/regression/ThreadTest#aFlag#Z
+    {64, 211}, // 3: thinj/regression/ThreadTest#aDone#Z
+    {64, 212}, // 4: thinj/regression/ThreadTest#aCount1#I
+    {37, 71}, // 5: java/lang/System#out#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences65[] = {
+    {65, 243}, // 0: thinj/regression/ThreadTest$1#val$mutex1#Ljava/lang/Object;
+    {65, 244}, // 1: thinj/regression/ThreadTest$1#val$mutex2#Ljava/lang/Object;
+};
+
+const memberReference const allFieldReferences67[] = {
+    {67, 241}, // 0: thinj/regression/ThreadTest$11#val$mutex#Ljava/lang/Object;
+};
+
+const memberReference const allFieldReferences68[] = {
+    {68, 241}, // 0: thinj/regression/ThreadTest$12#val$mutex#Ljava/lang/Object;
+};
+
+const memberReference const allFieldReferences76[] = {
+    {76, 244}, // 0: thinj/regression/ThreadTest$2#val$mutex2#Ljava/lang/Object;
+};
+
+const memberReference const allFieldReferences82[] = {
+    {82, 241}, // 0: thinj/regression/ThreadTest$4#val$mutex#Ljava/lang/Object;
+    {37, 71}, // 1: java/lang/System#out#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences85[] = {
+    {85, 241}, // 0: thinj/regression/ThreadTest$7#val$mutex#Ljava/lang/Object;
+};
+
+const memberReference const allFieldReferences86[] = {
+    {86, 241}, // 0: thinj/regression/ThreadTest$8#val$mutex#Ljava/lang/Object;
+    {86, 242}, // 1: thinj/regression/ThreadTest$8#val$t2#Ljava/lang/Thread;
+};
+
+const memberReference const allFieldReferences87[] = {
+    {87, 241}, // 0: thinj/regression/ThreadTest$9#val$mutex#Ljava/lang/Object;
+};
+
+const memberReference const allFieldReferences88[] = {
+    {88, 98}, // 0: thinj/regression/abstractclass/AbstractClass#aValue#I
+};
+
+const memberReference const allFieldReferences89[] = {
+    {89, 98}, // 0: thinj/regression/abstractclass/ExtendingClass#aValue#I
+};
+
+const memberReference const allFieldReferences90[] = {
+    {90, 121}, // 0: thinj/regression/arrays/ArrayTest#aValues#[I
+};
+
+const memberReference const allFieldReferences92[] = {
+    {92, 122}, // 0: thinj/regression/arrays/MultiArrayTest#dims#I
+};
+
+const memberReference const allFieldReferences93[] = {
+    {93, 126}, // 0: thinj/regression/arrays/Sudoku#count#I
+    {37, 71}, // 1: java/lang/System#out#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences99[] = {
+    {99, 118}, // 0: thinj/regression/exceptions/ExIALOAD#x#I
+    {37, 71}, // 1: java/lang/System#out#Ljava/io/PrintStream;
+};
+
+const memberReference const allFieldReferences100[] = {
+    {100, 178}, // 0: thinj/regression/exceptions/ExIALOAD$LinkObject#aNext#Lthinj/regression/exceptions/ExIALOAD$LinkObject;
+    {100, 133}, // 1: thinj/regression/exceptions/ExIALOAD$LinkObject#aPayload#[I
+};
+
+const memberReference const allFieldReferences103[] = {
+    {103, 153}, // 0: thinj/regression/exceptions/TestNullPointerException#aUncaughtTest1#Z
+    {103, 154}, // 1: thinj/regression/exceptions/TestNullPointerException#aUncaughtTest2#Z
+};
+
+const memberReference const allFieldReferences104[] = {
+    {104, 147}, // 0: thinj/regression/exceptions/ThrowException#aFinallyTest6#Z
+    {104, 149}, // 1: thinj/regression/exceptions/ThrowException#aFinallyTest7_2#Z
+    {104, 150}, // 2: thinj/regression/exceptions/ThrowException#aFinallyTest7_1#Z
+};
+
+const memberReference const allFieldReferences106[] = {
+    {106, 132}, // 0: thinj/regression/gc/GC$LinkObject#aNext#Lthinj/regression/gc/GC$LinkObject;
+    {106, 133}, // 1: thinj/regression/gc/GC$LinkObject#aPayload#[I
+};
+
+const memberReference const allFieldReferences109[] = {
+    {109, 120}, // 0: thinj/regression/interfaces/AnInterfaceImpl#y#I
 };
 
 
@@ -365,41 +731,41 @@ const fieldInClass const allFields0[] = {
    {0, 0, 1}, // 0-java/lang/Object#aMonitor#Ljava/lang/Object$Monitor;
 };
 
-const fieldInClass const allFields11[] = {
+const fieldInClass const allFields19[] = {
    {21, 1, 1}, // 21-java/lang/Class#aClassId#I
    {22, 0, 1}, // 22-java/lang/Class#aAllClasses#[Ljava/lang/Class;
    {23, 1, 1}, // 23-java/lang/Class#aGlobalRefList#Ljava/lang/Object;
 };
 
-const fieldInClass const allFields22[] = {
+const fieldInClass const allFields30[] = {
    {39, 1, 1}, // 39-java/lang/Object$Monitor#aOwner#Ljava/lang/Thread;
    {40, 2, 1}, // 40-java/lang/Object$Monitor#aLockCount#I
    {41, 3, 1}, // 41-java/lang/Object$Monitor#aWaitSet#Ljava/lang/Object$WaitElement;
 };
 
-const fieldInClass const allFields23[] = {
+const fieldInClass const allFields31[] = {
    {42, 1, 1}, // 42-java/lang/Object$WaitElement#aWaiting#Ljava/lang/Thread;
    {43, 2, 1}, // 43-java/lang/Object$WaitElement#aNext#Ljava/lang/Object$WaitElement;
 };
 
-const fieldInClass const allFields24[] = {
+const fieldInClass const allFields32[] = {
    {26, 2, 1}, // 26-java/lang/OutOfMemoryError#INSTANCE#Ljava/lang/OutOfMemoryError;
 };
 
-const fieldInClass const allFields27[] = {
+const fieldInClass const allFields35[] = {
    {5, 1, 1}, // 5-java/lang/String#value#[C
 };
 
-const fieldInClass const allFields28[] = {
-   {75, 1, 1}, // 75-java/lang/StringBuilder#aValue#[C
+const fieldInClass const allFields36[] = {
+   {76, 1, 1}, // 76-java/lang/StringBuilder#aValue#[C
 };
 
-const fieldInClass const allFields29[] = {
+const fieldInClass const allFields37[] = {
    {33, 6, 1}, // 33-java/lang/System#err#Ljava/io/PrintStream;
    {71, 5, 1}, // 71-java/lang/System#out#Ljava/io/PrintStream;
 };
 
-const fieldInClass const allFields30[] = {
+const fieldInClass const allFields38[] = {
    {40, 6, 1}, // 40-java/lang/Thread#aLockCount#I
    {46, 3, 1}, // 46-java/lang/Thread#aRunnable#Ljava/lang/Runnable;
    {47, 3, 2}, // 47-java/lang/Thread#aThreadIdGenerator#J
@@ -410,27 +776,143 @@ const fieldInClass const allFields30[] = {
    {60, 7, 2}, // 60-java/lang/Thread#aWakeUpAt#J
 };
 
-const fieldInClass const allFields31[] = {
+const fieldInClass const allFields39[] = {
    {29, 1, 1}, // 29-java/lang/Throwable#aCause#Ljava/lang/String;
    {31, 2, 1}, // 31-java/lang/Throwable#aStackTrace#[I
 };
 
-const fieldInClass const allFields35[] = {
-   {89, 10, 1}, // 89-thinj/regression/ThreadTest#aMutex#Ljava/lang/Object;
-   {91, 8, 1}, // 91-thinj/regression/ThreadTest#aFlag#Z
-   {92, 7, 1}, // 92-thinj/regression/ThreadTest#aDone#Z
-   {93, 9, 1}, // 93-thinj/regression/ThreadTest#aCount1#I
+const fieldInClass const allFields47[] = {
+   {141, 12, 1}, // 141-thinj/regression/DivMod#tusind#I
 };
 
-const fieldInClass const allFields36[] = {
-   {134, 10, 1}, // 134-thinj/regression/ThreadTest$4#val$mutex#Ljava/lang/Object;
+const fieldInClass const allFields51[] = {
+   {98, 1, 1}, // 98-thinj/regression/InstanceAttributes#aValue#I
+   {99, 2, 1}, // 99-thinj/regression/InstanceAttributes#aEnabled#Z
+   {100, 3, 1}, // 100-thinj/regression/InstanceAttributes#aObject#Ljava/lang/Object;
+   {102, 8, 1}, // 102-thinj/regression/InstanceAttributes#aStaticDims#I
 };
 
-const fieldInClass const allFields37[] = {
+const fieldInClass const allFields54[] = {
+   {103, 4, 1}, // 103-thinj/regression/InstanceSubclassing#aAttr#I
+};
+
+const fieldInClass const allFields55[] = {
+   {198, 20, 2}, // 198-thinj/regression/LongTest#aIdGenerator#J
+   {199, 18, 2}, // 199-thinj/regression/LongTest#cLong#J
+};
+
+const fieldInClass const allFields56[] = {
+   {48, 2, 2}, // 48-thinj/regression/LongTest$LinkObject#aId#J
+   {204, 1, 1}, // 204-thinj/regression/LongTest$LinkObject#aNext#Lthinj/regression/LongTest$LinkObject;
+   {205, 22, 2}, // 205-thinj/regression/LongTest$LinkObject#aGenerator#J
+};
+
+const fieldInClass const allFields57[] = {
+   {201, 1, 1}, // 201-thinj/regression/LongTest$MyClass#aI#I
+   {202, 2, 2}, // 202-thinj/regression/LongTest$MyClass#aJ#J
+   {203, 4, 1}, // 203-thinj/regression/LongTest$MyClass#aB#Z
+};
+
+const fieldInClass const allFields61[] = {
+   {137, 11, 1}, // 137-thinj/regression/StaticInnerClassTest#ST#Lthinj/regression/StaticInnerClassTest$Dims;
+};
+
+const fieldInClass const allFields63[] = {
+   {91, 7, 1}, // 91-thinj/regression/StaticInstanceAndMethod#aFoobar#I
+};
+
+const fieldInClass const allFields64[] = {
+   {207, 27, 1}, // 207-thinj/regression/ThreadTest#aCount2#I
+   {208, 28, 1}, // 208-thinj/regression/ThreadTest#aMutex#Ljava/lang/Object;
+   {210, 25, 1}, // 210-thinj/regression/ThreadTest#aFlag#Z
+   {211, 24, 1}, // 211-thinj/regression/ThreadTest#aDone#Z
+   {212, 26, 1}, // 212-thinj/regression/ThreadTest#aCount1#I
+};
+
+const fieldInClass const allFields65[] = {
+   {243, 10, 1}, // 243-thinj/regression/ThreadTest$1#val$mutex1#Ljava/lang/Object;
+   {244, 11, 1}, // 244-thinj/regression/ThreadTest$1#val$mutex2#Ljava/lang/Object;
+};
+
+const fieldInClass const allFields67[] = {
+   {241, 1, 1}, // 241-thinj/regression/ThreadTest$11#val$mutex#Ljava/lang/Object;
+};
+
+const fieldInClass const allFields68[] = {
+   {241, 1, 1}, // 241-thinj/regression/ThreadTest$12#val$mutex#Ljava/lang/Object;
+};
+
+const fieldInClass const allFields76[] = {
+   {244, 10, 1}, // 244-thinj/regression/ThreadTest$2#val$mutex2#Ljava/lang/Object;
+};
+
+const fieldInClass const allFields82[] = {
+   {241, 10, 1}, // 241-thinj/regression/ThreadTest$4#val$mutex#Ljava/lang/Object;
+};
+
+const fieldInClass const allFields85[] = {
+   {241, 10, 1}, // 241-thinj/regression/ThreadTest$7#val$mutex#Ljava/lang/Object;
+};
+
+const fieldInClass const allFields86[] = {
+   {241, 10, 1}, // 241-thinj/regression/ThreadTest$8#val$mutex#Ljava/lang/Object;
+   {242, 11, 1}, // 242-thinj/regression/ThreadTest$8#val$t2#Ljava/lang/Thread;
+};
+
+const fieldInClass const allFields87[] = {
+   {241, 1, 1}, // 241-thinj/regression/ThreadTest$9#val$mutex#Ljava/lang/Object;
+};
+
+const fieldInClass const allFields88[] = {
+   {98, 1, 1}, // 98-thinj/regression/abstractclass/AbstractClass#aValue#I
+};
+
+const fieldInClass const allFields90[] = {
+   {121, 1, 1}, // 121-thinj/regression/arrays/ArrayTest#aValues#[I
+};
+
+const fieldInClass const allFields92[] = {
+   {122, 9, 1}, // 122-thinj/regression/arrays/MultiArrayTest#dims#I
+};
+
+const fieldInClass const allFields93[] = {
+   {126, 10, 1}, // 126-thinj/regression/arrays/Sudoku#count#I
+};
+
+const fieldInClass const allFields99[] = {
+   {118, 1, 1}, // 118-thinj/regression/exceptions/ExIALOAD#x#I
+};
+
+const fieldInClass const allFields100[] = {
+   {133, 2, 1}, // 133-thinj/regression/exceptions/ExIALOAD$LinkObject#aPayload#[I
+   {178, 1, 1}, // 178-thinj/regression/exceptions/ExIALOAD$LinkObject#aNext#Lthinj/regression/exceptions/ExIALOAD$LinkObject;
+};
+
+const fieldInClass const allFields103[] = {
+   {153, 16, 1}, // 153-thinj/regression/exceptions/TestNullPointerException#aUncaughtTest1#Z
+   {154, 17, 1}, // 154-thinj/regression/exceptions/TestNullPointerException#aUncaughtTest2#Z
+};
+
+const fieldInClass const allFields104[] = {
+   {147, 13, 1}, // 147-thinj/regression/exceptions/ThrowException#aFinallyTest6#Z
+   {149, 15, 1}, // 149-thinj/regression/exceptions/ThrowException#aFinallyTest7_2#Z
+   {150, 14, 1}, // 150-thinj/regression/exceptions/ThrowException#aFinallyTest7_1#Z
+};
+
+const fieldInClass const allFields106[] = {
+   {132, 1, 1}, // 132-thinj/regression/gc/GC$LinkObject#aNext#Lthinj/regression/gc/GC$LinkObject;
+   {133, 2, 1}, // 133-thinj/regression/gc/GC$LinkObject#aPayload#[I
+};
+
+const fieldInClass const allFields109[] = {
+   {120, 1, 1}, // 120-thinj/regression/interfaces/AnInterfaceImpl#y#I
+};
+
+const fieldInClass const allFields111[] = {
    {68, 1, 1}, // 68-thinj/util/SimpleList#aList#Lthinj/util/SimpleList$Element;
 };
 
-const fieldInClass const allFields38[] = {
+const fieldInClass const allFields112[] = {
    {69, 1, 1}, // 69-thinj/util/SimpleList$Element#aNext#Lthinj/util/SimpleList$Element;
    {70, 2, 1}, // 70-thinj/util/SimpleList$Element#aValue#Ljava/lang/Object;
 };
@@ -440,203 +922,829 @@ const fieldInClass const allFields38[] = {
 // Static Memory
 //------------------------------------------------------------------------------
 
-const int staticMemorySize = 11;
-stackable staticMemory[11];
+const int staticMemorySize = 29;
+stackable staticMemory[29];
 
 //------------------------------------------------------------------------------
 // Method References
 //------------------------------------------------------------------------------
 
 const memberReference const allMethodReferences0[] = {
-    {28, 1, 1}, // 0: java/lang/StringBuilder#<init>#()V
+    {36, 1, 1}, // 0: java/lang/StringBuilder#<init>#()V
     {0, 2, 1}, // 1: java/lang/Object#getClass#()Ljava/lang/Class;
-    {11, 3, 1}, // 2: java/lang/Class#getName#()Ljava/lang/String;
-    {28, 4, 2}, // 3: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {19, 3, 1}, // 2: java/lang/Class#getName#()Ljava/lang/String;
+    {36, 4, 2}, // 3: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
     {0, 15, 1}, // 4: java/lang/Object#hashCode#()I
-    {28, 17, 2}, // 5: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {28, 6, 1}, // 6: java/lang/StringBuilder#toString#()Ljava/lang/String;
-};
-
-const memberReference const allMethodReferences8[] = {
-    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
-    {8, 79, 1}, // 1: java/io/PrintStream#outStringLf#(Ljava/lang/String;)V
-    {8, 80, 1}, // 2: java/io/PrintStream#outString#(Ljava/lang/String;)V
-    {8, 36, 2}, // 3: java/io/PrintStream#print#(Ljava/lang/String;)V
-    {28, 1, 1}, // 4: java/lang/StringBuilder#<init>#()V
-    {28, 4, 2}, // 5: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {28, 17, 2}, // 6: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {28, 6, 1}, // 7: java/lang/StringBuilder#toString#()Ljava/lang/String;
-    {0, 6, 1}, // 8: java/lang/Object#toString#()Ljava/lang/String;
-};
-
-const memberReference const allMethodReferences9[] = {
-    {26, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
-};
-
-const memberReference const allMethodReferences10[] = {
-    {18, 24, 2}, // 0: java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
-    {28, 1, 1}, // 1: java/lang/StringBuilder#<init>#()V
-    {28, 4, 2}, // 2: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {28, 17, 2}, // 3: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {28, 6, 1}, // 4: java/lang/StringBuilder#toString#()Ljava/lang/String;
-};
-
-const memberReference const allMethodReferences11[] = {
-    {28, 1, 1}, // 0: java/lang/StringBuilder#<init>#()V
-    {28, 4, 2}, // 1: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {28, 17, 2}, // 2: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {28, 6, 1}, // 3: java/lang/StringBuilder#toString#()Ljava/lang/String;
-    {11, 3, 1}, // 4: java/lang/Class#getName#()Ljava/lang/String;
-};
-
-const memberReference const allMethodReferences12[] = {
-    {26, 1, 1}, // 0: java/lang/RuntimeException#<init>#()V
-};
-
-const memberReference const allMethodReferences13[] = {
-    {31, 1, 1}, // 0: java/lang/Throwable#<init>#()V
-};
-
-const memberReference const allMethodReferences14[] = {
-    {31, 24, 2}, // 0: java/lang/Throwable#<init>#(Ljava/lang/String;)V
-    {31, 1, 1}, // 1: java/lang/Throwable#<init>#()V
-};
-
-const memberReference const allMethodReferences15[] = {
-    {26, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    {36, 17, 2}, // 5: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 6: java/lang/StringBuilder#toString#()Ljava/lang/String;
 };
 
 const memberReference const allMethodReferences16[] = {
-    {26, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {16, 80, 1}, // 1: java/io/PrintStream#outStringLf#(Ljava/lang/String;)V
+    {16, 81, 1}, // 2: java/io/PrintStream#outString#(Ljava/lang/String;)V
+    {16, 35, 2}, // 3: java/io/PrintStream#println#(Ljava/lang/String;)V
+    {16, 36, 2}, // 4: java/io/PrintStream#print#(Ljava/lang/String;)V
+    {36, 1, 1}, // 5: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 6: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 17, 2}, // 7: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 8: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {0, 6, 1}, // 9: java/lang/Object#toString#()Ljava/lang/String;
 };
 
 const memberReference const allMethodReferences17[] = {
-    {15, 24, 2}, // 0: java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V
+    {34, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences18[] = {
-    {26, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    {26, 24, 2}, // 0: java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
+    {36, 1, 1}, // 1: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 2: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 17, 2}, // 3: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 4: java/lang/StringBuilder#toString#()Ljava/lang/String;
 };
 
 const memberReference const allMethodReferences19[] = {
-    {14, 1, 1}, // 0: java/lang/Exception#<init>#()V
+    {36, 1, 1}, // 0: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 1: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 17, 2}, // 2: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 3: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {19, 3, 1}, // 4: java/lang/Class#getName#()Ljava/lang/String;
 };
 
 const memberReference const allMethodReferences20[] = {
-    {26, 1, 1}, // 0: java/lang/RuntimeException#<init>#()V
+    {34, 1, 1}, // 0: java/lang/RuntimeException#<init>#()V
 };
 
 const memberReference const allMethodReferences21[] = {
-    {26, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
-    {21, 24, 2}, // 1: java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
+    {39, 1, 1}, // 0: java/lang/Throwable#<init>#()V
+};
+
+const memberReference const allMethodReferences22[] = {
+    {39, 24, 2}, // 0: java/lang/Throwable#<init>#(Ljava/lang/String;)V
+    {39, 1, 1}, // 1: java/lang/Throwable#<init>#()V
+};
+
+const memberReference const allMethodReferences23[] = {
+    {34, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences24[] = {
-    {32, 1, 1}, // 0: java/lang/VirtualMachineError#<init>#()V
-    {24, 1, 1}, // 1: java/lang/OutOfMemoryError#<init>#()V
+    {34, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+};
+
+const memberReference const allMethodReferences25[] = {
+    {23, 24, 2}, // 0: java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences26[] = {
-    {14, 24, 2}, // 0: java/lang/Exception#<init>#(Ljava/lang/String;)V
-    {14, 1, 1}, // 1: java/lang/Exception#<init>#()V
+    {34, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences27[] = {
-    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
-    {33, 7, 1}, // 1: java/util/Arrays#hashCode#([C)I
+    {22, 1, 1}, // 0: java/lang/Exception#<init>#()V
 };
 
 const memberReference const allMethodReferences28[] = {
-    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
-    {27, 11, 1}, // 1: java/lang/String#length#()I
-    {27, 14, 5}, // 2: java/lang/String#getChars#(II[CI)V
-    {28, 4, 2}, // 3: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {27, 9, 4}, // 4: java/lang/String#<init>#([CII)V
-    {28, 1, 1}, // 5: java/lang/StringBuilder#<init>#()V
-    {28, 6, 1}, // 6: java/lang/StringBuilder#toString#()Ljava/lang/String;
-    {27, 10, 2}, // 7: java/lang/String#<init>#([C)V
+    {34, 1, 1}, // 0: java/lang/RuntimeException#<init>#()V
 };
 
 const memberReference const allMethodReferences29[] = {
-    {8, 1, 1}, // 0: java/io/PrintStream#<init>#()V
-};
-
-const memberReference const allMethodReferences30[] = {
-    {30, 45, 2}, // 0: java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
-    {0, 1, 1}, // 1: java/lang/Object#<init>#()V
-    {30, 51, 1}, // 2: java/lang/Thread#attach#()V
-    {28, 1, 1}, // 3: java/lang/StringBuilder#<init>#()V
-    {28, 4, 2}, // 4: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {28, 17, 2}, // 5: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {28, 6, 1}, // 6: java/lang/StringBuilder#toString#()Ljava/lang/String;
-    {17, 24, 2}, // 7: java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V
-    {25, 44, 1}, // 8: java/lang/Runnable#run#()V
-    {30, 44, 1}, // 9: java/lang/Thread#run#()V
-    {31, 38, 1}, // 10: java/lang/Throwable#printStackTrace#()V
-    {30, 52, 0}, // 11: java/lang/Thread#yield#()V
-    {30, 1, 1}, // 12: java/lang/Thread#<init>#()V
-};
-
-const memberReference const allMethodReferences31[] = {
-    {31, 24, 2}, // 0: java/lang/Throwable#<init>#(Ljava/lang/String;)V
-    {0, 1, 1}, // 1: java/lang/Object#<init>#()V
-    {31, 30, 1}, // 2: java/lang/Throwable#getStackTraceDepth#()I
-    {31, 32, 2}, // 3: java/lang/Throwable#getStackTraceElement#(I)I
-    {0, 2, 1}, // 4: java/lang/Object#getClass#()Ljava/lang/Class;
-    {8, 34, 2}, // 5: java/io/PrintStream#print#(Ljava/lang/Object;)V
-    {28, 1, 1}, // 6: java/lang/StringBuilder#<init>#()V
-    {28, 4, 2}, // 7: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {28, 6, 1}, // 8: java/lang/StringBuilder#toString#()Ljava/lang/String;
-    {8, 35, 2}, // 9: java/io/PrintStream#println#(Ljava/lang/String;)V
-    {8, 36, 2}, // 10: java/io/PrintStream#print#(Ljava/lang/String;)V
-    {8, 37, 2}, // 11: java/io/PrintStream#print#(I)V
+    {34, 24, 2}, // 0: java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    {29, 24, 2}, // 1: java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
 };
 
 const memberReference const allMethodReferences32[] = {
-    {13, 1, 1}, // 0: java/lang/Error#<init>#()V
+    {40, 1, 1}, // 0: java/lang/VirtualMachineError#<init>#()V
+    {32, 1, 1}, // 1: java/lang/OutOfMemoryError#<init>#()V
 };
 
 const memberReference const allMethodReferences34[] = {
-    {8, 35, 2}, // 0: java/io/PrintStream#println#(Ljava/lang/String;)V
-    {29, 72, 0}, // 1: java/lang/System#nanoTime#()J
-    {35, 73, 1}, // 2: thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
-    {28, 1, 1}, // 3: java/lang/StringBuilder#<init>#()V
-    {28, 4, 2}, // 4: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {28, 74, 3}, // 5: java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;
-    {28, 6, 1}, // 6: java/lang/StringBuilder#toString#()Ljava/lang/String;
-    {24, 28, 0}, // 7: java/lang/OutOfMemoryError#<clinit>#()V
-    {29, 28, 0}, // 8: java/lang/System#<clinit>#()V
-    {30, 28, 0}, // 9: java/lang/Thread#<clinit>#()V
-    {35, 28, 0}, // 10: thinj/regression/ThreadTest#<clinit>#()V
-    {34, 73, 1}, // 11: thinj/regression/AllTests#main#([Ljava/lang/String;)V
+    {22, 24, 2}, // 0: java/lang/Exception#<init>#(Ljava/lang/String;)V
+    {22, 1, 1}, // 1: java/lang/Exception#<init>#()V
 };
 
 const memberReference const allMethodReferences35[] = {
     {0, 1, 1}, // 0: java/lang/Object#<init>#()V
-    {8, 35, 2}, // 1: java/io/PrintStream#println#(Ljava/lang/String;)V
-    {35, 94, 0}, // 2: thinj/regression/ThreadTest#yieldAndGCMainThread#()V
-    {35, 95, 0}, // 3: thinj/regression/ThreadTest#yieldAndGCNewThread#()V
-    {30, 52, 0}, // 4: java/lang/Thread#yield#()V
-    {28, 1, 1}, // 5: java/lang/StringBuilder#<init>#()V
-    {28, 4, 2}, // 6: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {28, 17, 2}, // 7: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {28, 6, 1}, // 8: java/lang/StringBuilder#toString#()Ljava/lang/String;
-    {36, 97, 2}, // 9: thinj/regression/ThreadTest$4#<init>#(Ljava/lang/Object;)V
-    {36, 62, 1}, // 10: thinj/regression/ThreadTest$4#start#()V
-    {0, 20, 1}, // 11: java/lang/Object#wait#()V
-    {19, 38, 1}, // 12: java/lang/InterruptedException#printStackTrace#()V
+    {41, 7, 1}, // 1: java/util/Arrays#hashCode#([C)I
+    {0, 2, 1}, // 2: java/lang/Object#getClass#()Ljava/lang/Class;
+    {41, 8, 2}, // 3: java/util/Arrays#equals#([C[C)Z
 };
 
 const memberReference const allMethodReferences36[] = {
-    {30, 1, 1}, // 0: java/lang/Thread#<init>#()V
-    {30, 52, 0}, // 1: java/lang/Thread#yield#()V
-    {28, 1, 1}, // 2: java/lang/StringBuilder#<init>#()V
-    {28, 4, 2}, // 3: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {28, 17, 2}, // 4: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {28, 6, 1}, // 5: java/lang/StringBuilder#toString#()Ljava/lang/String;
-    {8, 35, 2}, // 6: java/io/PrintStream#println#(Ljava/lang/String;)V
-    {35, 127, 1}, // 7: thinj/regression/ThreadTest#access$102#(Z)Z
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {35, 11, 1}, // 1: java/lang/String#length#()I
+    {35, 14, 5}, // 2: java/lang/String#getChars#(II[CI)V
+    {36, 4, 2}, // 3: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {0, 6, 1}, // 4: java/lang/Object#toString#()Ljava/lang/String;
+    {35, 9, 4}, // 5: java/lang/String#<init>#([CII)V
+    {36, 1, 1}, // 6: java/lang/StringBuilder#<init>#()V
+    {36, 6, 1}, // 7: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {35, 10, 2}, // 8: java/lang/String#<init>#([C)V
+};
+
+const memberReference const allMethodReferences37[] = {
+    {16, 1, 1}, // 0: java/io/PrintStream#<init>#()V
+};
+
+const memberReference const allMethodReferences38[] = {
+    {38, 45, 2}, // 0: java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
+    {0, 1, 1}, // 1: java/lang/Object#<init>#()V
+    {38, 51, 1}, // 2: java/lang/Thread#attach#()V
+    {36, 1, 1}, // 3: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 4: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 17, 2}, // 5: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 6: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {25, 24, 2}, // 7: java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V
+    {33, 44, 1}, // 8: java/lang/Runnable#run#()V
+    {38, 44, 1}, // 9: java/lang/Thread#run#()V
+    {39, 38, 1}, // 10: java/lang/Throwable#printStackTrace#()V
+    {38, 52, 0}, // 11: java/lang/Thread#yield#()V
+    {38, 1, 1}, // 12: java/lang/Thread#<init>#()V
+};
+
+const memberReference const allMethodReferences39[] = {
+    {39, 24, 2}, // 0: java/lang/Throwable#<init>#(Ljava/lang/String;)V
+    {0, 1, 1}, // 1: java/lang/Object#<init>#()V
+    {39, 30, 1}, // 2: java/lang/Throwable#getStackTraceDepth#()I
+    {39, 32, 2}, // 3: java/lang/Throwable#getStackTraceElement#(I)I
+    {0, 2, 1}, // 4: java/lang/Object#getClass#()Ljava/lang/Class;
+    {16, 34, 2}, // 5: java/io/PrintStream#print#(Ljava/lang/Object;)V
+    {36, 1, 1}, // 6: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 7: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 8: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {16, 35, 2}, // 9: java/io/PrintStream#println#(Ljava/lang/String;)V
+    {16, 36, 2}, // 10: java/io/PrintStream#print#(Ljava/lang/String;)V
+    {16, 37, 2}, // 11: java/io/PrintStream#print#(I)V
+};
+
+const memberReference const allMethodReferences40[] = {
+    {21, 1, 1}, // 0: java/lang/Error#<init>#()V
+};
+
+const memberReference const allMethodReferences42[] = {
+    {16, 35, 2}, // 0: java/io/PrintStream#println#(Ljava/lang/String;)V
+    {37, 72, 0}, // 1: java/lang/System#nanoTime#()J
+    {63, 73, 0}, // 2: thinj/regression/StaticInstanceAndMethod#main#()V
+    {51, 73, 0}, // 3: thinj/regression/InstanceAttributes#main#()V
+    {59, 73, 0}, // 4: thinj/regression/ObjectTest#main#()V
+    {54, 73, 0}, // 5: thinj/regression/InstanceSubclassing#main#()V
+    {52, 73, 0}, // 6: thinj/regression/InstanceMethods#main#()V
+    {49, 73, 0}, // 7: thinj/regression/ExtendedBaseClass#main#()V
+    {88, 73, 0}, // 8: thinj/regression/abstractclass/AbstractClass#main#()V
+    {109, 73, 0}, // 9: thinj/regression/interfaces/AnInterfaceImpl#main#()V
+    {90, 73, 0}, // 10: thinj/regression/arrays/ArrayTest#main#()V
+    {92, 73, 0}, // 11: thinj/regression/arrays/MultiArrayTest#main#()V
+    {93, 73, 0}, // 12: thinj/regression/arrays/Sudoku#main#()V
+    {105, 73, 0}, // 13: thinj/regression/gc/GC#main#()V
+    {48, 73, 0}, // 14: thinj/regression/EqualsTest#main#()V
+    {58, 73, 0}, // 15: thinj/regression/NativeTest#main#()V
+    {45, 73, 0}, // 16: thinj/regression/CharTest#main#()V
+    {61, 73, 0}, // 17: thinj/regression/StaticInnerClassTest#main#()V
+    {107, 73, 0}, // 18: thinj/regression/gc/HeapTest#main#()V
+    {94, 73, 0}, // 19: thinj/regression/checkcast/CheckCast#main#()V
+    {50, 73, 0}, // 20: thinj/regression/Ineg#main#()V
+    {47, 73, 0}, // 21: thinj/regression/DivMod#main#()V
+    {44, 73, 0}, // 22: thinj/regression/ByteTest#main#()V
+    {104, 73, 0}, // 23: thinj/regression/exceptions/ThrowException#main#()V
+    {103, 73, 0}, // 24: thinj/regression/exceptions/TestNullPointerException#main#()V
+    {99, 73, 0}, // 25: thinj/regression/exceptions/ExIALOAD#main#()V
+    {46, 73, 0}, // 26: thinj/regression/ClassTest#main#()V
+    {55, 73, 0}, // 27: thinj/regression/LongTest#main#()V
+    {64, 74, 1}, // 28: thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
+    {36, 1, 1}, // 29: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 30: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 75, 3}, // 31: java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 32: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {32, 28, 0}, // 33: java/lang/OutOfMemoryError#<clinit>#()V
+    {37, 28, 0}, // 34: java/lang/System#<clinit>#()V
+    {38, 28, 0}, // 35: java/lang/Thread#<clinit>#()V
+    {47, 28, 0}, // 36: thinj/regression/DivMod#<clinit>#()V
+    {51, 28, 0}, // 37: thinj/regression/InstanceAttributes#<clinit>#()V
+    {55, 28, 0}, // 38: thinj/regression/LongTest#<clinit>#()V
+    {56, 28, 0}, // 39: thinj/regression/LongTest$LinkObject#<clinit>#()V
+    {61, 28, 0}, // 40: thinj/regression/StaticInnerClassTest#<clinit>#()V
+    {63, 28, 0}, // 41: thinj/regression/StaticInstanceAndMethod#<clinit>#()V
+    {64, 28, 0}, // 42: thinj/regression/ThreadTest#<clinit>#()V
+    {91, 28, 0}, // 43: thinj/regression/arrays/DummyClass#<clinit>#()V
+    {92, 28, 0}, // 44: thinj/regression/arrays/MultiArrayTest#<clinit>#()V
+    {93, 28, 0}, // 45: thinj/regression/arrays/Sudoku#<clinit>#()V
+    {42, 74, 1}, // 46: thinj/regression/AllTests#main#([Ljava/lang/String;)V
+};
+
+const memberReference const allMethodReferences43[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+};
+
+const memberReference const allMethodReferences44[] = {
+    {44, 143, 1}, // 0: thinj/regression/ByteTest#dims#(B)B
+    {60, 89, 1}, // 1: thinj/regression/Regression#verify#(Z)V
+    {44, 144, 1}, // 2: thinj/regression/ByteTest#dimsa#([B)B
+    {44, 93, 0}, // 3: thinj/regression/ByteTest#test1#()V
+    {44, 105, 0}, // 4: thinj/regression/ByteTest#test2#()V
+    {44, 106, 0}, // 5: thinj/regression/ByteTest#test3#()V
+};
+
+const memberReference const allMethodReferences45[] = {
+    {45, 134, 1}, // 0: thinj/regression/CharTest#dims#(C)C
+    {60, 89, 1}, // 1: thinj/regression/Regression#verify#(Z)V
+    {45, 135, 1}, // 2: thinj/regression/CharTest#dimsa#([C)C
+    {45, 93, 0}, // 3: thinj/regression/CharTest#test1#()V
+    {45, 105, 0}, // 4: thinj/regression/CharTest#test2#()V
+};
+
+const memberReference const allMethodReferences46[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {46, 93, 0}, // 1: thinj/regression/ClassTest#test1#()V
+    {46, 1, 1}, // 2: thinj/regression/ClassTest#<init>#()V
+    {0, 6, 1}, // 3: java/lang/Object#toString#()Ljava/lang/String;
+    {16, 35, 2}, // 4: java/io/PrintStream#println#(Ljava/lang/String;)V
+    {36, 1, 1}, // 5: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 6: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 7: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {0, 2, 1}, // 8: java/lang/Object#getClass#()Ljava/lang/Class;
+    {19, 6, 1}, // 9: java/lang/Class#toString#()Ljava/lang/String;
+    {35, 16, 2}, // 10: java/lang/String#equals#(Ljava/lang/Object;)Z
+    {60, 89, 1}, // 11: thinj/regression/Regression#verify#(Z)V
+    {36, 78, 2}, // 12: java/lang/StringBuilder#append#(Z)Ljava/lang/StringBuilder;
+    {19, 3, 1}, // 13: java/lang/Class#getName#()Ljava/lang/String;
+};
+
+const memberReference const allMethodReferences47[] = {
+    {60, 89, 1}, // 0: thinj/regression/Regression#verify#(Z)V
+    {47, 142, 2}, // 1: thinj/regression/DivMod#helper#(II)V
+    {16, 36, 2}, // 2: java/io/PrintStream#print#(Ljava/lang/String;)V
+    {16, 83, 1}, // 3: java/io/PrintStream#println#()V
+    {47, 93, 0}, // 4: thinj/regression/DivMod#test1#()V
+};
+
+const memberReference const allMethodReferences48[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {48, 1, 1}, // 1: thinj/regression/EqualsTest#<init>#()V
+    {0, 16, 2}, // 2: java/lang/Object#equals#(Ljava/lang/Object;)Z
+    {60, 89, 1}, // 3: thinj/regression/Regression#verify#(Z)V
+};
+
+const memberReference const allMethodReferences49[] = {
+    {43, 1, 1}, // 0: thinj/regression/BaseClass#<init>#()V
+    {49, 1, 1}, // 1: thinj/regression/ExtendedBaseClass#<init>#()V
+    {49, 109, 1}, // 2: thinj/regression/ExtendedBaseClass#foobar#()I
+    {60, 89, 1}, // 3: thinj/regression/Regression#verify#(Z)V
+    {43, 109, 1}, // 4: thinj/regression/BaseClass#foobar#()I
+    {43, 110, 1}, // 5: thinj/regression/BaseClass#barfoo#()I
+    {49, 110, 1}, // 6: thinj/regression/ExtendedBaseClass#barfoo#()I
+    {49, 111, 2}, // 7: thinj/regression/ExtendedBaseClass#adder#(I)I
+    {49, 93, 0}, // 8: thinj/regression/ExtendedBaseClass#test1#()V
+    {49, 105, 0}, // 9: thinj/regression/ExtendedBaseClass#test2#()V
+    {49, 106, 0}, // 10: thinj/regression/ExtendedBaseClass#test3#()V
+    {49, 112, 0}, // 11: thinj/regression/ExtendedBaseClass#test4#()V
+    {49, 113, 0}, // 12: thinj/regression/ExtendedBaseClass#test5#()V
+    {49, 114, 0}, // 13: thinj/regression/ExtendedBaseClass#test6#()V
+    {49, 115, 0}, // 14: thinj/regression/ExtendedBaseClass#test7#()V
+};
+
+const memberReference const allMethodReferences50[] = {
+    {60, 89, 1}, // 0: thinj/regression/Regression#verify#(Z)V
+    {50, 93, 0}, // 1: thinj/regression/Ineg#test1#()V
+    {50, 105, 0}, // 2: thinj/regression/Ineg#test2#()V
+    {50, 106, 0}, // 3: thinj/regression/Ineg#test3#()V
+};
+
+const memberReference const allMethodReferences51[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {51, 1, 1}, // 1: thinj/regression/InstanceAttributes#<init>#()V
+    {60, 89, 1}, // 2: thinj/regression/Regression#verify#(Z)V
+    {51, 93, 0}, // 3: thinj/regression/InstanceAttributes#test1#()V
+    {51, 101, 0}, // 4: thinj/regression/InstanceAttributes#testNull#()V
+};
+
+const memberReference const allMethodReferences52[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {60, 89, 1}, // 1: thinj/regression/Regression#verify#(Z)V
+    {52, 1, 1}, // 2: thinj/regression/InstanceMethods#<init>#()V
+    {52, 104, 3}, // 3: thinj/regression/InstanceMethods#testargs#(IZ)V
+    {53, 1, 1}, // 4: thinj/regression/InstanceMethodsSpecial#<init>#()V
+    {52, 93, 0}, // 5: thinj/regression/InstanceMethods#test1#()V
+    {52, 105, 0}, // 6: thinj/regression/InstanceMethods#test2#()V
+    {52, 106, 0}, // 7: thinj/regression/InstanceMethods#test3#()V
+    {52, 107, 2}, // 8: thinj/regression/InstanceMethods#basePrint#(I)V
+};
+
+const memberReference const allMethodReferences53[] = {
+    {52, 1, 1}, // 0: thinj/regression/InstanceMethods#<init>#()V
+    {60, 89, 1}, // 1: thinj/regression/Regression#verify#(Z)V
+    {52, 108, 1}, // 2: thinj/regression/InstanceMethods#basePrint2#()V
+    {52, 73, 0}, // 3: thinj/regression/InstanceMethods#main#()V
+    {53, 1, 1}, // 4: thinj/regression/InstanceMethodsSpecial#<init>#()V
+    {52, 107, 2}, // 5: thinj/regression/InstanceMethods#basePrint#(I)V
+};
+
+const memberReference const allMethodReferences54[] = {
+    {51, 1, 1}, // 0: thinj/regression/InstanceAttributes#<init>#()V
+    {54, 1, 1}, // 1: thinj/regression/InstanceSubclassing#<init>#()V
+    {60, 89, 1}, // 2: thinj/regression/Regression#verify#(Z)V
+    {54, 93, 0}, // 3: thinj/regression/InstanceSubclassing#test1#()V
+};
+
+const memberReference const allMethodReferences55[] = {
+    {55, 93, 0}, // 0: thinj/regression/LongTest#test1#()V
+    {55, 105, 0}, // 1: thinj/regression/LongTest#test2#()V
+    {55, 106, 0}, // 2: thinj/regression/LongTest#test3#()V
+    {55, 112, 0}, // 3: thinj/regression/LongTest#test4#()V
+    {55, 113, 0}, // 4: thinj/regression/LongTest#test5#()V
+    {55, 114, 0}, // 5: thinj/regression/LongTest#test6#()V
+    {55, 115, 0}, // 6: thinj/regression/LongTest#test7#()V
+    {55, 180, 0}, // 7: thinj/regression/LongTest#test8#()V
+    {55, 181, 0}, // 8: thinj/regression/LongTest#test9#()V
+    {55, 182, 0}, // 9: thinj/regression/LongTest#heapTest#()V
+    {55, 183, 0}, // 10: thinj/regression/LongTest#test10#()V
+    {55, 184, 0}, // 11: thinj/regression/LongTest#test11#()V
+    {55, 185, 0}, // 12: thinj/regression/LongTest#test12#()V
+    {55, 186, 0}, // 13: thinj/regression/LongTest#test13#()V
+    {55, 187, 0}, // 14: thinj/regression/LongTest#test14#()V
+    {60, 89, 1}, // 15: thinj/regression/Regression#verify#(Z)V
+    {55, 188, 4}, // 16: thinj/regression/LongTest#test7_1#(ZJI)V
+    {55, 189, 0}, // 17: thinj/regression/LongTest#test8_1#()J
+    {57, 190, 2}, // 18: thinj/regression/LongTest$MyClass#<init>#(Lthinj/regression/LongTest$1;)V
+    {57, 191, 2}, // 19: thinj/regression/LongTest$MyClass#access$102#(Lthinj/regression/LongTest$MyClass;Z)Z
+    {57, 192, 3}, // 20: thinj/regression/LongTest$MyClass#access$202#(Lthinj/regression/LongTest$MyClass;J)J
+    {57, 193, 2}, // 21: thinj/regression/LongTest$MyClass#access$302#(Lthinj/regression/LongTest$MyClass;I)I
+    {57, 194, 1}, // 22: thinj/regression/LongTest$MyClass#access$100#(Lthinj/regression/LongTest$MyClass;)Z
+    {57, 195, 1}, // 23: thinj/regression/LongTest$MyClass#access$200#(Lthinj/regression/LongTest$MyClass;)J
+    {57, 196, 1}, // 24: thinj/regression/LongTest$MyClass#access$300#(Lthinj/regression/LongTest$MyClass;)I
+    {56, 197, 0}, // 25: thinj/regression/LongTest$LinkObject#consumeHeap#()V
+    {16, 35, 2}, // 26: java/io/PrintStream#println#(Ljava/lang/String;)V
+};
+
+const memberReference const allMethodReferences56[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {56, 206, 2}, // 1: thinj/regression/LongTest$LinkObject#<init>#(Lthinj/regression/LongTest$LinkObject;)V
+};
+
+const memberReference const allMethodReferences57[] = {
+    {57, 1, 1}, // 0: thinj/regression/LongTest$MyClass#<init>#()V
+    {0, 1, 1}, // 1: java/lang/Object#<init>#()V
+};
+
+const memberReference const allMethodReferences58[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {0, 15, 1}, // 1: java/lang/Object#hashCode#()I
+    {60, 89, 1}, // 2: thinj/regression/Regression#verify#(Z)V
+};
+
+const memberReference const allMethodReferences59[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {59, 93, 0}, // 1: thinj/regression/ObjectTest#test1#()V
+    {60, 89, 1}, // 2: thinj/regression/Regression#verify#(Z)V
+};
+
+const memberReference const allMethodReferences60[] = {
+    {22, 24, 2}, // 0: java/lang/Exception#<init>#(Ljava/lang/String;)V
+    {22, 38, 1}, // 1: java/lang/Exception#printStackTrace#()V
+};
+
+const memberReference const allMethodReferences61[] = {
+    {62, 136, 2}, // 0: thinj/regression/StaticInnerClassTest$Dims#<init>#(Lthinj/regression/StaticInnerClassTest$1;)V
+};
+
+const memberReference const allMethodReferences62[] = {
+    {62, 1, 1}, // 0: thinj/regression/StaticInnerClassTest$Dims#<init>#()V
+    {0, 1, 1}, // 1: java/lang/Object#<init>#()V
+};
+
+const memberReference const allMethodReferences63[] = {
+    {60, 89, 1}, // 0: thinj/regression/Regression#verify#(Z)V
+    {63, 90, 1}, // 1: thinj/regression/StaticInstanceAndMethod#faculty#(I)I
+    {63, 92, 0}, // 2: thinj/regression/StaticInstanceAndMethod#ThisTestShallFail#()V
+    {63, 93, 0}, // 3: thinj/regression/StaticInstanceAndMethod#test1#()V
+    {63, 94, 0}, // 4: thinj/regression/StaticInstanceAndMethod#test2#()I
+};
+
+const memberReference const allMethodReferences64[] = {
+    {64, 209, 2}, // 0: thinj/regression/ThreadTest#busyWait#(J)V
+    {0, 1, 1}, // 1: java/lang/Object#<init>#()V
+    {16, 35, 2}, // 2: java/io/PrintStream#println#(Ljava/lang/String;)V
+    {64, 213, 0}, // 3: thinj/regression/ThreadTest#simpleYield#()V
+    {64, 214, 0}, // 4: thinj/regression/ThreadTest#yieldAndGCMainThread#()V
+    {64, 215, 0}, // 5: thinj/regression/ThreadTest#yieldAndGCNewThread#()V
+    {64, 216, 0}, // 6: thinj/regression/ThreadTest#testAutoYield#()V
+    {64, 217, 0}, // 7: thinj/regression/ThreadTest#threadGC#()V
+    {64, 218, 0}, // 8: thinj/regression/ThreadTest#testExplicitYield#()V
+    {64, 219, 0}, // 9: thinj/regression/ThreadTest#testMonitorEnterExit_0#()V
+    {64, 220, 0}, // 10: thinj/regression/ThreadTest#testMonitorEnterExit_2#()V
+    {64, 221, 0}, // 11: thinj/regression/ThreadTest#testMonitorEnterExit_1#()V
+    {64, 222, 0}, // 12: thinj/regression/ThreadTest#test2_1#()V
+    {64, 223, 0}, // 13: thinj/regression/ThreadTest#test2_2#()V
+    {64, 224, 0}, // 14: thinj/regression/ThreadTest#test2_3#()V
+    {64, 225, 0}, // 15: thinj/regression/ThreadTest#test2_4#()V
+    {64, 106, 0}, // 16: thinj/regression/ThreadTest#test3#()V
+    {64, 112, 0}, // 17: thinj/regression/ThreadTest#test4#()V
+    {64, 113, 0}, // 18: thinj/regression/ThreadTest#test5#()V
+    {64, 114, 0}, // 19: thinj/regression/ThreadTest#test6#()V
+    {64, 115, 0}, // 20: thinj/regression/ThreadTest#test7#()V
+    {64, 180, 0}, // 21: thinj/regression/ThreadTest#test8#()V
+    {64, 181, 0}, // 22: thinj/regression/ThreadTest#test9#()V
+    {64, 183, 0}, // 23: thinj/regression/ThreadTest#test10#()V
+    {64, 184, 0}, // 24: thinj/regression/ThreadTest#test11#()V
+    {64, 185, 0}, // 25: thinj/regression/ThreadTest#test12#()V
+    {64, 186, 0}, // 26: thinj/regression/ThreadTest#test13#()V
+    {65, 226, 3}, // 27: thinj/regression/ThreadTest$1#<init>#(Ljava/lang/Object;Ljava/lang/Object;)V
+    {65, 62, 1}, // 28: thinj/regression/ThreadTest$1#start#()V
+    {76, 227, 2}, // 29: thinj/regression/ThreadTest$2#<init>#(Ljava/lang/Object;)V
+    {76, 62, 1}, // 30: thinj/regression/ThreadTest$2#start#()V
+    {64, 228, 2}, // 31: thinj/regression/ThreadTest#busyWaitDone#(J)V
+    {38, 52, 0}, // 32: java/lang/Thread#yield#()V
+    {81, 1, 1}, // 33: thinj/regression/ThreadTest$3#<init>#()V
+    {81, 62, 1}, // 34: thinj/regression/ThreadTest$3#start#()V
+    {60, 89, 1}, // 35: thinj/regression/Regression#verify#(Z)V
+    {36, 1, 1}, // 36: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 37: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 17, 2}, // 38: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 39: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {82, 227, 2}, // 40: thinj/regression/ThreadTest$4#<init>#(Ljava/lang/Object;)V
+    {82, 62, 1}, // 41: thinj/regression/ThreadTest$4#start#()V
+    {0, 20, 1}, // 42: java/lang/Object#wait#()V
+    {27, 38, 1}, // 43: java/lang/InterruptedException#printStackTrace#()V
+    {83, 1, 1}, // 44: thinj/regression/ThreadTest$5#<init>#()V
+    {83, 62, 1}, // 45: thinj/regression/ThreadTest$5#start#()V
+    {84, 1, 1}, // 46: thinj/regression/ThreadTest$6#<init>#()V
+    {84, 62, 1}, // 47: thinj/regression/ThreadTest$6#start#()V
+    {85, 227, 2}, // 48: thinj/regression/ThreadTest$7#<init>#(Ljava/lang/Object;)V
+    {86, 229, 3}, // 49: thinj/regression/ThreadTest$8#<init>#(Ljava/lang/Object;Ljava/lang/Thread;)V
+    {38, 62, 1}, // 50: java/lang/Thread#start#()V
+    {87, 227, 2}, // 51: thinj/regression/ThreadTest$9#<init>#(Ljava/lang/Object;)V
+    {38, 45, 2}, // 52: java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
+    {0, 18, 1}, // 53: java/lang/Object#notifyAll#()V
+    {66, 1, 1}, // 54: thinj/regression/ThreadTest$10#<init>#()V
+    {67, 227, 2}, // 55: thinj/regression/ThreadTest$11#<init>#(Ljava/lang/Object;)V
+    {68, 227, 2}, // 56: thinj/regression/ThreadTest$12#<init>#(Ljava/lang/Object;)V
+    {69, 1, 1}, // 57: thinj/regression/ThreadTest$13#<init>#()V
+    {69, 62, 1}, // 58: thinj/regression/ThreadTest$13#start#()V
+    {70, 1, 1}, // 59: thinj/regression/ThreadTest$14#<init>#()V
+    {71, 1, 1}, // 60: thinj/regression/ThreadTest$15#<init>#()V
+    {72, 1, 1}, // 61: thinj/regression/ThreadTest$16#<init>#()V
+    {73, 1, 1}, // 62: thinj/regression/ThreadTest$17#<init>#()V
+    {29, 1, 1}, // 63: java/lang/NullPointerException#<init>#()V
+    {74, 1, 1}, // 64: thinj/regression/ThreadTest$18#<init>#()V
+    {74, 62, 1}, // 65: thinj/regression/ThreadTest$18#start#()V
+    {75, 1, 1}, // 66: thinj/regression/ThreadTest$19#<init>#()V
+    {75, 62, 1}, // 67: thinj/regression/ThreadTest$19#start#()V
+    {0, 19, 1}, // 68: java/lang/Object#notify#()V
+    {77, 1, 1}, // 69: thinj/regression/ThreadTest$20#<init>#()V
+    {64, 230, 0}, // 70: thinj/regression/ThreadTest#test9_helper1#()V
+    {64, 231, 0}, // 71: thinj/regression/ThreadTest#test9_helper2#()V
+    {78, 1, 1}, // 72: thinj/regression/ThreadTest$21#<init>#()V
+    {78, 62, 1}, // 73: thinj/regression/ThreadTest$21#start#()V
+    {37, 79, 0}, // 74: java/lang/System#currentTimeMillis#()J
+    {38, 67, 1}, // 75: java/lang/Thread#sleep#(J)V
+    {79, 1, 1}, // 76: thinj/regression/ThreadTest$22#<init>#()V
+    {38, 66, 1}, // 77: java/lang/Thread#interrupt#()V
+    {80, 1, 1}, // 78: thinj/regression/ThreadTest$23#<init>#()V
+    {37, 72, 0}, // 79: java/lang/System#nanoTime#()J
+};
+
+const memberReference const allMethodReferences65[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {38, 65, 0}, // 1: java/lang/Thread#currentThread#()Ljava/lang/Thread;
+    {60, 89, 1}, // 2: thinj/regression/Regression#verify#(Z)V
+    {65, 67, 1}, // 3: thinj/regression/ThreadTest$1#sleep#(J)V
+    {27, 38, 1}, // 4: java/lang/InterruptedException#printStackTrace#()V
+    {0, 18, 1}, // 5: java/lang/Object#notifyAll#()V
+    {0, 20, 1}, // 6: java/lang/Object#wait#()V
+    {64, 232, 0}, // 7: thinj/regression/ThreadTest#access$008#()I
+};
+
+const memberReference const allMethodReferences66[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {0, 15, 1}, // 1: java/lang/Object#hashCode#()I
+    {64, 234, 1}, // 2: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences67[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {64, 234, 1}, // 1: thinj/regression/ThreadTest#access$102#(Z)Z
+    {0, 20, 1}, // 2: java/lang/Object#wait#()V
+    {64, 238, 0}, // 3: thinj/regression/ThreadTest#access$100#()Z
+    {60, 89, 1}, // 4: thinj/regression/Regression#verify#(Z)V
+};
+
+const memberReference const allMethodReferences68[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {0, 18, 1}, // 1: java/lang/Object#notifyAll#()V
+    {64, 236, 2}, // 2: thinj/regression/ThreadTest#access$300#(J)V
+    {64, 234, 1}, // 3: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences69[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 234, 1}, // 1: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences70[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 239, 0}, // 1: thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;
+    {64, 234, 1}, // 2: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences71[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 239, 0}, // 1: thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;
+    {64, 240, 0}, // 2: thinj/regression/ThreadTest#access$508#()I
+    {0, 20, 1}, // 3: java/lang/Object#wait#()V
+    {27, 38, 1}, // 4: java/lang/InterruptedException#printStackTrace#()V
+    {64, 232, 0}, // 5: thinj/regression/ThreadTest#access$008#()I
+    {64, 233, 0}, // 6: thinj/regression/ThreadTest#access$000#()I
+    {64, 234, 1}, // 7: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences72[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 239, 0}, // 1: thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;
+    {0, 19, 1}, // 2: java/lang/Object#notify#()V
+};
+
+const memberReference const allMethodReferences73[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 239, 0}, // 1: thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;
+    {0, 18, 1}, // 2: java/lang/Object#notifyAll#()V
+};
+
+const memberReference const allMethodReferences74[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 239, 0}, // 1: thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;
+    {64, 237, 1}, // 2: thinj/regression/ThreadTest#access$202#(Z)Z
+    {64, 234, 1}, // 3: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences75[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 239, 0}, // 1: thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;
+    {64, 237, 1}, // 2: thinj/regression/ThreadTest#access$202#(Z)Z
+    {0, 20, 1}, // 3: java/lang/Object#wait#()V
+    {64, 234, 1}, // 4: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences76[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 233, 0}, // 1: thinj/regression/ThreadTest#access$000#()I
+    {38, 67, 1}, // 2: java/lang/Thread#sleep#(J)V
+    {27, 38, 1}, // 3: java/lang/InterruptedException#printStackTrace#()V
+    {38, 65, 0}, // 4: java/lang/Thread#currentThread#()Ljava/lang/Thread;
+    {60, 89, 1}, // 5: thinj/regression/Regression#verify#(Z)V
+    {0, 19, 1}, // 6: java/lang/Object#notify#()V
+    {64, 234, 1}, // 7: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences77[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 239, 0}, // 1: thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;
+    {64, 240, 0}, // 2: thinj/regression/ThreadTest#access$508#()I
+    {0, 20, 1}, // 3: java/lang/Object#wait#()V
+    {27, 38, 1}, // 4: java/lang/InterruptedException#printStackTrace#()V
+    {64, 232, 0}, // 5: thinj/regression/ThreadTest#access$008#()I
+    {64, 233, 0}, // 6: thinj/regression/ThreadTest#access$000#()I
+    {64, 234, 1}, // 7: thinj/regression/ThreadTest#access$102#(Z)Z
     {0, 19, 1}, // 8: java/lang/Object#notify#()V
+};
+
+const memberReference const allMethodReferences78[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 239, 0}, // 1: thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;
+    {64, 234, 1}, // 2: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences79[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 236, 2}, // 1: thinj/regression/ThreadTest#access$300#(J)V
+    {79, 67, 1}, // 2: thinj/regression/ThreadTest$22#sleep#(J)V
+    {60, 89, 1}, // 3: thinj/regression/Regression#verify#(Z)V
+    {64, 234, 1}, // 4: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences80[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {80, 67, 1}, // 1: thinj/regression/ThreadTest$23#sleep#(J)V
+    {60, 89, 1}, // 2: thinj/regression/Regression#verify#(Z)V
+    {64, 234, 1}, // 3: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences81[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 232, 0}, // 1: thinj/regression/ThreadTest#access$008#()I
+};
+
+const memberReference const allMethodReferences82[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {38, 52, 0}, // 1: java/lang/Thread#yield#()V
+    {36, 1, 1}, // 2: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 3: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 17, 2}, // 4: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 5: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {16, 35, 2}, // 6: java/io/PrintStream#println#(Ljava/lang/String;)V
+    {64, 234, 1}, // 7: thinj/regression/ThreadTest#access$102#(Z)Z
+    {0, 19, 1}, // 8: java/lang/Object#notify#()V
+};
+
+const memberReference const allMethodReferences83[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 234, 1}, // 1: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences84[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 234, 1}, // 1: thinj/regression/ThreadTest#access$102#(Z)Z
+    {38, 52, 0}, // 2: java/lang/Thread#yield#()V
+};
+
+const memberReference const allMethodReferences85[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 235, 0}, // 1: thinj/regression/ThreadTest#access$200#()Z
+    {60, 89, 1}, // 2: thinj/regression/Regression#verify#(Z)V
+    {64, 236, 2}, // 3: thinj/regression/ThreadTest#access$300#(J)V
+    {64, 234, 1}, // 4: thinj/regression/ThreadTest#access$102#(Z)Z
+};
+
+const memberReference const allMethodReferences86[] = {
+    {38, 1, 1}, // 0: java/lang/Thread#<init>#()V
+    {64, 237, 1}, // 1: thinj/regression/ThreadTest#access$202#(Z)Z
+    {38, 62, 1}, // 2: java/lang/Thread#start#()V
+    {64, 236, 2}, // 3: thinj/regression/ThreadTest#access$300#(J)V
+};
+
+const memberReference const allMethodReferences87[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {64, 233, 0}, // 1: thinj/regression/ThreadTest#access$000#()I
+    {60, 89, 1}, // 2: thinj/regression/Regression#verify#(Z)V
+    {64, 232, 0}, // 3: thinj/regression/ThreadTest#access$008#()I
+};
+
+const memberReference const allMethodReferences88[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {89, 25, 2}, // 1: thinj/regression/abstractclass/ExtendingClass#<init>#(I)V
+    {88, 116, 1}, // 2: thinj/regression/abstractclass/AbstractClass#foobar#()V
+    {89, 116, 1}, // 3: thinj/regression/abstractclass/ExtendingClass#foobar#()V
+    {88, 93, 0}, // 4: thinj/regression/abstractclass/AbstractClass#test1#()V
+    {88, 105, 0}, // 5: thinj/regression/abstractclass/AbstractClass#test2#()V
+};
+
+const memberReference const allMethodReferences89[] = {
+    {88, 25, 2}, // 0: thinj/regression/abstractclass/AbstractClass#<init>#(I)V
+    {60, 89, 1}, // 1: thinj/regression/Regression#verify#(Z)V
+};
+
+const memberReference const allMethodReferences90[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {60, 89, 1}, // 1: thinj/regression/Regression#verify#(Z)V
+    {90, 1, 1}, // 2: thinj/regression/arrays/ArrayTest#<init>#()V
+    {90, 93, 0}, // 3: thinj/regression/arrays/ArrayTest#test1#()V
+    {90, 105, 0}, // 4: thinj/regression/arrays/ArrayTest#test2#()V
+};
+
+const memberReference const allMethodReferences92[] = {
+    {60, 89, 1}, // 0: thinj/regression/Regression#verify#(Z)V
+    {92, 93, 0}, // 1: thinj/regression/arrays/MultiArrayTest#test1#()V
+    {92, 105, 0}, // 2: thinj/regression/arrays/MultiArrayTest#test2#()V
+    {92, 106, 0}, // 3: thinj/regression/arrays/MultiArrayTest#test3#()V
+    {91, 123, 0}, // 4: thinj/regression/arrays/DummyClass#cyclicDependency#()V
+};
+
+const memberReference const allMethodReferences93[] = {
+    {16, 36, 2}, // 0: java/io/PrintStream#print#(Ljava/lang/String;)V
+    {16, 83, 1}, // 1: java/io/PrintStream#println#()V
+    {93, 127, 2}, // 2: thinj/regression/arrays/Sudoku#solve#([[II)Z
+    {93, 128, 3}, // 3: thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z
+    {60, 89, 1}, // 4: thinj/regression/Regression#verify#(Z)V
+};
+
+const memberReference const allMethodReferences94[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {95, 1, 1}, // 1: thinj/regression/checkcast/CheckCast$1#<init>#()V
+    {60, 89, 1}, // 2: thinj/regression/Regression#verify#(Z)V
+    {96, 1, 1}, // 3: thinj/regression/checkcast/CheckCast$ClassA#<init>#()V
+    {97, 1, 1}, // 4: thinj/regression/checkcast/CheckCast$ClassB#<init>#()V
+    {94, 139, 1}, // 5: thinj/regression/checkcast/CheckCast#multitest#(Ljava/lang/Object;)V
+    {94, 93, 0}, // 6: thinj/regression/checkcast/CheckCast#test1#()V
+    {94, 105, 0}, // 7: thinj/regression/checkcast/CheckCast#test2#()V
+    {94, 106, 0}, // 8: thinj/regression/checkcast/CheckCast#test3#()V
+    {94, 112, 0}, // 9: thinj/regression/checkcast/CheckCast#test4#()V
+};
+
+const memberReference const allMethodReferences95[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+};
+
+const memberReference const allMethodReferences96[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+};
+
+const memberReference const allMethodReferences97[] = {
+    {96, 1, 1}, // 0: thinj/regression/checkcast/CheckCast$ClassA#<init>#()V
+};
+
+const memberReference const allMethodReferences99[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {60, 89, 1}, // 1: thinj/regression/Regression#verify#(Z)V
+    {99, 155, 2}, // 2: thinj/regression/exceptions/ExIALOAD#get#(I)I
+    {99, 119, 1}, // 3: thinj/regression/exceptions/ExIALOAD#get#()I
+    {0, 6, 1}, // 4: java/lang/Object#toString#()Ljava/lang/String;
+    {101, 116, 1}, // 5: thinj/regression/exceptions/ExIALOAD$MyInterface#foobar#()V
+    {100, 156, 1}, // 6: thinj/regression/exceptions/ExIALOAD$LinkObject#consumeHeap#(I)V
+    {16, 35, 2}, // 7: java/io/PrintStream#println#(Ljava/lang/String;)V
+    {99, 157, 0}, // 8: thinj/regression/exceptions/ExIALOAD#iaload#()V
+    {99, 158, 0}, // 9: thinj/regression/exceptions/ExIALOAD#aaload#()V
+    {99, 159, 0}, // 10: thinj/regression/exceptions/ExIALOAD#baload#()V
+    {99, 160, 0}, // 11: thinj/regression/exceptions/ExIALOAD#caload#()V
+    {99, 161, 0}, // 12: thinj/regression/exceptions/ExIALOAD#iastore#()V
+    {99, 162, 0}, // 13: thinj/regression/exceptions/ExIALOAD#aastore#()V
+    {99, 163, 0}, // 14: thinj/regression/exceptions/ExIALOAD#bastore#()V
+    {99, 164, 0}, // 15: thinj/regression/exceptions/ExIALOAD#castore#()V
+    {99, 165, 0}, // 16: thinj/regression/exceptions/ExIALOAD#idiv#()V
+    {99, 166, 0}, // 17: thinj/regression/exceptions/ExIALOAD#irem#()V
+    {99, 167, 0}, // 18: thinj/regression/exceptions/ExIALOAD#getfield#()V
+    {99, 168, 0}, // 19: thinj/regression/exceptions/ExIALOAD#putfield#()V
+    {99, 169, 0}, // 20: thinj/regression/exceptions/ExIALOAD#invokespecial#()V
+    {99, 170, 0}, // 21: thinj/regression/exceptions/ExIALOAD#invokevirtual#()V
+    {99, 171, 0}, // 22: thinj/regression/exceptions/ExIALOAD#invokeinterface#()V
+    {99, 172, 0}, // 23: thinj/regression/exceptions/ExIALOAD#test_new#()V
+    {99, 173, 0}, // 24: thinj/regression/exceptions/ExIALOAD#newarray#()V
+    {99, 174, 0}, // 25: thinj/regression/exceptions/ExIALOAD#anewarray#()V
+    {99, 175, 0}, // 26: thinj/regression/exceptions/ExIALOAD#arraylength#()V
+    {99, 176, 0}, // 27: thinj/regression/exceptions/ExIALOAD#athrow#()V
+    {99, 177, 0}, // 28: thinj/regression/exceptions/ExIALOAD#checkcast#()V
+    {36, 1, 1}, // 29: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 30: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 77, 2}, // 31: java/lang/StringBuilder#append#(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 32: java/lang/StringBuilder#toString#()Ljava/lang/String;
+};
+
+const memberReference const allMethodReferences100[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {100, 179, 3}, // 1: thinj/regression/exceptions/ExIALOAD$LinkObject#<init>#(Lthinj/regression/exceptions/ExIALOAD$LinkObject;I)V
+};
+
+const memberReference const allMethodReferences102[] = {
+    {104, 145, 0}, // 0: thinj/regression/exceptions/ThrowException#testHelper#()V
+};
+
+const memberReference const allMethodReferences103[] = {
+    {103, 93, 0}, // 0: thinj/regression/exceptions/TestNullPointerException#test1#()V
+    {60, 89, 1}, // 1: thinj/regression/Regression#verify#(Z)V
+    {103, 105, 0}, // 2: thinj/regression/exceptions/TestNullPointerException#test2#()V
+};
+
+const memberReference const allMethodReferences104[] = {
+    {22, 24, 2}, // 0: java/lang/Exception#<init>#(Ljava/lang/String;)V
+    {60, 89, 1}, // 1: thinj/regression/Regression#verify#(Z)V
+    {39, 24, 2}, // 2: java/lang/Throwable#<init>#(Ljava/lang/String;)V
+    {104, 145, 0}, // 3: thinj/regression/exceptions/ThrowException#testHelper#()V
+    {102, 146, 0}, // 4: thinj/regression/exceptions/ExceptionProxying#testExceptionProxy#()V
+    {104, 148, 0}, // 5: thinj/regression/exceptions/ThrowException#test6Helper#()V
+    {104, 151, 0}, // 6: thinj/regression/exceptions/ThrowException#test7Helper2#()V
+    {104, 152, 0}, // 7: thinj/regression/exceptions/ThrowException#test7Helper1#()V
+    {104, 93, 0}, // 8: thinj/regression/exceptions/ThrowException#test1#()V
+    {104, 105, 0}, // 9: thinj/regression/exceptions/ThrowException#test2#()V
+    {104, 106, 0}, // 10: thinj/regression/exceptions/ThrowException#test3#()V
+    {104, 112, 0}, // 11: thinj/regression/exceptions/ThrowException#test4#()V
+    {104, 113, 0}, // 12: thinj/regression/exceptions/ThrowException#test5#()V
+    {104, 114, 0}, // 13: thinj/regression/exceptions/ThrowException#test6#()V
+    {104, 115, 0}, // 14: thinj/regression/exceptions/ThrowException#test7#()V
+};
+
+const memberReference const allMethodReferences105[] = {
+    {106, 25, 2}, // 0: thinj/regression/gc/GC$LinkObject#<init>#(I)V
+    {106, 129, 2}, // 1: thinj/regression/gc/GC$LinkObject#access$002#(Lthinj/regression/gc/GC$LinkObject;Lthinj/regression/gc/GC$LinkObject;)Lthinj/regression/gc/GC$LinkObject;
+    {106, 130, 1}, // 2: thinj/regression/gc/GC$LinkObject#access$000#(Lthinj/regression/gc/GC$LinkObject;)Lthinj/regression/gc/GC$LinkObject;
+    {105, 131, 0}, // 3: thinj/regression/gc/GC#circularObjects#()V
+    {60, 89, 1}, // 4: thinj/regression/Regression#verify#(Z)V
+    {36, 1, 1}, // 5: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 6: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 7: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {35, 16, 2}, // 8: java/lang/String#equals#(Ljava/lang/Object;)Z
+};
+
+const memberReference const allMethodReferences106[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+};
+
+const memberReference const allMethodReferences107[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {36, 1, 1}, // 1: java/lang/StringBuilder#<init>#()V
+    {36, 4, 2}, // 2: java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 17, 2}, // 3: java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {36, 6, 1}, // 4: java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {107, 138, 0}, // 5: thinj/regression/gc/HeapTest#test0#()V
+    {107, 93, 0}, // 6: thinj/regression/gc/HeapTest#test1#()V
+    {107, 105, 0}, // 7: thinj/regression/gc/HeapTest#test2#()V
+};
+
+const memberReference const allMethodReferences109[] = {
+    {0, 1, 1}, // 0: java/lang/Object#<init>#()V
+    {109, 1, 1}, // 1: thinj/regression/interfaces/AnInterfaceImpl#<init>#()V
+    {108, 116, 1}, // 2: thinj/regression/interfaces/AnInterface#foobar#()V
+    {108, 119, 1}, // 3: thinj/regression/interfaces/AnInterface#get#()I
+    {60, 89, 1}, // 4: thinj/regression/Regression#verify#(Z)V
+    {108, 117, 1}, // 5: thinj/regression/interfaces/AnInterface#getLost#()I
+    {109, 93, 0}, // 6: thinj/regression/interfaces/AnInterfaceImpl#test1#()V
 };
 
 
@@ -646,160 +1754,638 @@ const memberReference const allMethodReferences36[] = {
 
 
 const methodInClass const allMethods0[] = {
-    {0, 1, 0x0085, 1, 1, 1, 0}, // 1-java/lang/Object#<init>#()V
-    {0, 2, 0x0086, 0, 1, 1, 4}, // 2-java/lang/Object#getClass#()Ljava/lang/Class;
-    {0, 6, 0x0086, 33, 1, 1, 0}, // 6-java/lang/Object#toString#()Ljava/lang/String;
-    {0, 15, 0x0086, 0, 1, 1, 3}, // 15-java/lang/Object#hashCode#()I
-    {0, 19, 0x0086, 0, 1, 1, 1}, // 19-java/lang/Object#notify#()V
-    {0, 20, 0x0086, 0, 1, 1, 2}, // 20-java/lang/Object#wait#()V
-};
-
-const methodInClass const allMethods8[] = {
-    {8, 1, 0x03fa, 5, 1, 1, 0}, // 1-java/io/PrintStream#<init>#()V
-    {8, 34, 0x0421, 17, 2, 2, 0}, // 34-java/io/PrintStream#print#(Ljava/lang/Object;)V
-    {8, 35, 0x03ff, 5, 2, 2, 0}, // 35-java/io/PrintStream#println#(Ljava/lang/String;)V
-    {8, 36, 0x0404, 5, 2, 2, 0}, // 36-java/io/PrintStream#print#(Ljava/lang/String;)V
-    {8, 37, 0x0409, 24, 2, 2, 0}, // 37-java/io/PrintStream#print#(I)V
-    {8, 79, 0x03ff, 0, 1, 1, 10}, // 79-java/io/PrintStream#outStringLf#(Ljava/lang/String;)V
-    {8, 80, 0x03ff, 0, 1, 1, 11}, // 80-java/io/PrintStream#outString#(Ljava/lang/String;)V
-};
-
-const methodInClass const allMethods9[] = {
-    {9, 24, 0x00db, 6, 2, 2, 0}, // 24-java/lang/ArithmeticException#<init>#(Ljava/lang/String;)V
-};
-
-const methodInClass const allMethods10[] = {
-    {10, 25, 0x00c3, 24, 2, 2, 0}, // 25-java/lang/ArrayIndexOutOfBoundsException#<init>#(I)V
-};
-
-const methodInClass const allMethods11[] = {
-    {11, 3, 0x00a7, 23, 1, 1, 0}, // 3-java/lang/Class#getName#()Ljava/lang/String;
-    {11, 6, 0x00be, 5, 1, 1, 0}, // 6-java/lang/Class#toString#()Ljava/lang/String;
-};
-
-const methodInClass const allMethods12[] = {
-    {12, 1, 0x00e1, 5, 1, 1, 0}, // 1-java/lang/ClassCastException#<init>#()V
-};
-
-const methodInClass const allMethods13[] = {
-    {13, 1, 0x011b, 5, 1, 1, 0}, // 1-java/lang/Error#<init>#()V
-};
-
-const methodInClass const allMethods14[] = {
-    {14, 1, 0x05a0, 5, 1, 1, 0}, // 1-java/lang/Exception#<init>#()V
-    {14, 24, 0x059a, 6, 2, 2, 0}, // 24-java/lang/Exception#<init>#(Ljava/lang/String;)V
-};
-
-const methodInClass const allMethods15[] = {
-    {15, 24, 0x0589, 6, 2, 2, 0}, // 24-java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V
+    {0, 1, 0x00b6, 1, 1, 1, 0}, // 1-java/lang/Object#<init>#()V
+    {0, 2, 0x00c2, 0, 1, 1, 5}, // 2-java/lang/Object#getClass#()Ljava/lang/Class;
+    {0, 6, 0x00c2, 33, 1, 1, 0}, // 6-java/lang/Object#toString#()Ljava/lang/String;
+    {0, 15, 0x00c2, 0, 1, 1, 4}, // 15-java/lang/Object#hashCode#()I
+    {0, 16, 0x00b7, 11, 2, 2, 0}, // 16-java/lang/Object#equals#(Ljava/lang/Object;)Z
+    {0, 18, 0x00c2, 0, 1, 1, 1}, // 18-java/lang/Object#notifyAll#()V
+    {0, 19, 0x00c2, 0, 1, 1, 2}, // 19-java/lang/Object#notify#()V
+    {0, 20, 0x00c2, 0, 1, 1, 3}, // 20-java/lang/Object#wait#()V
 };
 
 const methodInClass const allMethods16[] = {
-    {16, 24, 0x00e6, 6, 2, 2, 0}, // 24-java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V
+    {16, 1, 0x0576, 5, 1, 1, 0}, // 1-java/io/PrintStream#<init>#()V
+    {16, 34, 0x05a4, 17, 2, 2, 0}, // 34-java/io/PrintStream#print#(Ljava/lang/Object;)V
+    {16, 35, 0x057b, 5, 2, 2, 0}, // 35-java/io/PrintStream#println#(Ljava/lang/String;)V
+    {16, 36, 0x0580, 5, 2, 2, 0}, // 36-java/io/PrintStream#print#(Ljava/lang/String;)V
+    {16, 37, 0x058c, 24, 2, 2, 0}, // 37-java/io/PrintStream#print#(I)V
+    {16, 80, 0x057b, 0, 1, 1, 15}, // 80-java/io/PrintStream#outStringLf#(Ljava/lang/String;)V
+    {16, 81, 0x057b, 0, 1, 1, 16}, // 81-java/io/PrintStream#outString#(Ljava/lang/String;)V
+    {16, 83, 0x0585, 7, 1, 1, 0}, // 83-java/io/PrintStream#println#()V
 };
 
 const methodInClass const allMethods17[] = {
-    {17, 24, 0x0583, 6, 2, 2, 0}, // 24-java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V
+    {17, 24, 0x0117, 6, 2, 2, 0}, // 24-java/lang/ArithmeticException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods18[] = {
-    {18, 24, 0x05a5, 6, 2, 2, 0}, // 24-java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
+    {18, 25, 0x00ff, 24, 2, 2, 0}, // 25-java/lang/ArrayIndexOutOfBoundsException#<init>#(I)V
 };
 
 const methodInClass const allMethods19[] = {
-    {19, 1, 0x00ec, 5, 1, 1, 0}, // 1-java/lang/InterruptedException#<init>#()V
+    {19, 3, 0x00e3, 23, 1, 1, 0}, // 3-java/lang/Class#getName#()Ljava/lang/String;
+    {19, 6, 0x00fa, 5, 1, 1, 0}, // 6-java/lang/Class#toString#()Ljava/lang/String;
 };
 
 const methodInClass const allMethods20[] = {
-    {20, 1, 0x00f1, 5, 1, 1, 0}, // 1-java/lang/NegativeArraySizeException#<init>#()V
+    {20, 1, 0x011d, 5, 1, 1, 0}, // 1-java/lang/ClassCastException#<init>#()V
 };
 
 const methodInClass const allMethods21[] = {
-    {21, 1, 0x00fc, 6, 1, 1, 0}, // 1-java/lang/NullPointerException#<init>#()V
-    {21, 24, 0x00f6, 6, 2, 2, 0}, // 24-java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
+    {21, 1, 0x0157, 5, 1, 1, 0}, // 1-java/lang/Error#<init>#()V
+};
+
+const methodInClass const allMethods22[] = {
+    {22, 1, 0x0639, 5, 1, 1, 0}, // 1-java/lang/Exception#<init>#()V
+    {22, 24, 0x0633, 6, 2, 2, 0}, // 24-java/lang/Exception#<init>#(Ljava/lang/String;)V
+};
+
+const methodInClass const allMethods23[] = {
+    {23, 24, 0x2e94, 6, 2, 2, 0}, // 24-java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods24[] = {
-    {24, 1, 0x0102, 5, 1, 1, 0}, // 1-java/lang/OutOfMemoryError#<init>#()V
-    {24, 27, 0x0107, 4, 0, 0, 0}, // 27-java/lang/OutOfMemoryError#getInstance#()Ljava/lang/OutOfMemoryError;
-    {24, 28, 0x010b, 11, 0, 0, 0}, // 28-java/lang/OutOfMemoryError#<clinit>#()V
+    {24, 24, 0x0122, 6, 2, 2, 0}, // 24-java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods25[] = {
-    {25, 44, 0x01e6, 0, 0, 1, 0}, // 44-java/lang/Runnable#run#()V
+    {25, 24, 0x2e8e, 6, 2, 2, 0}, // 24-java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods26[] = {
-    {26, 1, 0x0595, 5, 1, 1, 0}, // 1-java/lang/RuntimeException#<init>#()V
-    {26, 24, 0x058f, 6, 2, 2, 0}, // 24-java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    {26, 24, 0x327e, 6, 2, 2, 0}, // 24-java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods27[] = {
-    {27, 6, 0x0072, 2, 1, 1, 0}, // 6-java/lang/String#toString#()Ljava/lang/String;
-    {27, 9, 0x0000, 40, 5, 4, 0}, // 9-java/lang/String#<init>#([CII)V
-    {27, 10, 0x0028, 36, 3, 2, 0}, // 10-java/lang/String#<init>#([C)V
-    {27, 11, 0x004c, 6, 1, 1, 0}, // 11-java/lang/String#length#()I
-    {27, 14, 0x0052, 32, 6, 5, 0}, // 14-java/lang/String#getChars#(II[CI)V
-    {27, 15, 0x0074, 17, 3, 1, 0}, // 15-java/lang/String#hashCode#()I
+    {27, 1, 0x0128, 5, 1, 1, 0}, // 1-java/lang/InterruptedException#<init>#()V
 };
 
 const methodInClass const allMethods28[] = {
-    {28, 1, 0x02b1, 12, 1, 1, 0}, // 1-java/lang/StringBuilder#<init>#()V
-    {28, 4, 0x02bd, 72, 4, 2, 0}, // 4-java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
-    {28, 6, 0x03d9, 12, 1, 1, 0}, // 6-java/lang/StringBuilder#toString#()Ljava/lang/String;
-    {28, 17, 0x0305, 85, 5, 2, 0}, // 17-java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
-    {28, 74, 0x035a, 127, 5, 3, 0}, // 74-java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;
+    {28, 1, 0x012d, 5, 1, 1, 0}, // 1-java/lang/NegativeArraySizeException#<init>#()V
 };
 
 const methodInClass const allMethods29[] = {
-    {29, 28, 0x03e5, 21, 0, 0, 0}, // 28-java/lang/System#<clinit>#()V
-    {29, 72, 0x03e5, 0, 0, 0, 9}, // 72-java/lang/System#nanoTime#()J
-};
-
-const methodInClass const allMethods30[] = {
-    {30, 1, 0x01e6, 6, 1, 1, 0}, // 1-java/lang/Thread#<init>#()V
-    {30, 28, 0x0263, 15, 0, 0, 0}, // 28-java/lang/Thread#<clinit>#()V
-    {30, 44, 0x0262, 1, 1, 1, 0}, // 44-java/lang/Thread#run#()V
-    {30, 45, 0x01ec, 33, 2, 2, 0}, // 45-java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
-    {30, 51, 0x0263, 0, 1, 1, 8}, // 51-java/lang/Thread#attach#()V
-    {30, 52, 0x0263, 0, 0, 0, 7}, // 52-java/lang/Thread#yield#()V
-    {30, 62, 0x020d, 45, 1, 1, 0}, // 62-java/lang/Thread#start#()V
-    {30, 63, 0x023a, 40, 2, 1, 0}, // 63-java/lang/Thread#runFromNative#()V
-};
-
-const methodInClass const allMethods31[] = {
-    {31, 1, 0x0120, 6, 1, 1, 0}, // 1-java/lang/Throwable#<init>#()V
-    {31, 6, 0x01cf, 23, 1, 1, 0}, // 6-java/lang/Throwable#toString#()Ljava/lang/String;
-    {31, 24, 0x0126, 46, 4, 2, 0}, // 24-java/lang/Throwable#<init>#(Ljava/lang/String;)V
-    {31, 30, 0x0154, 0, 1, 1, 6}, // 30-java/lang/Throwable#getStackTraceDepth#()I
-    {31, 32, 0x0154, 0, 2, 2, 5}, // 32-java/lang/Throwable#getStackTraceElement#(I)I
-    {31, 38, 0x0154, 123, 6, 1, 0}, // 38-java/lang/Throwable#printStackTrace#()V
+    {29, 1, 0x0138, 6, 1, 1, 0}, // 1-java/lang/NullPointerException#<init>#()V
+    {29, 24, 0x0132, 6, 2, 2, 0}, // 24-java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods32[] = {
-    {32, 1, 0x0116, 5, 1, 1, 0}, // 1-java/lang/VirtualMachineError#<init>#()V
+    {32, 1, 0x013e, 5, 1, 1, 0}, // 1-java/lang/OutOfMemoryError#<init>#()V
+    {32, 27, 0x0143, 4, 0, 0, 0}, // 27-java/lang/OutOfMemoryError#getInstance#()Ljava/lang/OutOfMemoryError;
+    {32, 28, 0x0147, 11, 0, 0, 0}, // 28-java/lang/OutOfMemoryError#<clinit>#()V
 };
 
 const methodInClass const allMethods33[] = {
-    {33, 7, 0x05ab, 38, 6, 1, 0}, // 7-java/util/Arrays#hashCode#([C)I
+    {33, 44, 0x0222, 0, 0, 1, 0}, // 44-java/lang/Runnable#run#()V
 };
 
 const methodInClass const allMethods34[] = {
-    {34, 73, 0x0272, 63, 3, 1, 0}, // 73-thinj/regression/AllTests#main#([Ljava/lang/String;)V
-    {34, 135, 0x05d1, 16, 0, 0, 0}, // 135-thinj/regression/AllTests#<jvminit>#()V
+    {34, 1, 0x2ea0, 5, 1, 1, 0}, // 1-java/lang/RuntimeException#<init>#()V
+    {34, 24, 0x2e9a, 6, 2, 2, 0}, // 24-java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
 };
 
 const methodInClass const allMethods35[] = {
-    {35, 28, 0x04ea, 23, 0, 0, 0}, // 28-thinj/regression/ThreadTest#<clinit>#()V
-    {35, 73, 0x0432, 23, 1, 1, 0}, // 73-thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
-    {35, 94, 0x0449, 91, 2, 0, 0}, // 94-thinj/regression/ThreadTest#yieldAndGCMainThread#()V
-    {35, 95, 0x04a4, 64, 4, 0, 0}, // 95-thinj/regression/ThreadTest#yieldAndGCNewThread#()V
-    {35, 127, 0x04e4, 6, 1, 1, 0}, // 127-thinj/regression/ThreadTest#access$102#(Z)Z
+    {35, 6, 0x0072, 2, 1, 1, 0}, // 6-java/lang/String#toString#()Ljava/lang/String;
+    {35, 9, 0x0000, 40, 5, 4, 0}, // 9-java/lang/String#<init>#([CII)V
+    {35, 10, 0x0028, 36, 3, 2, 0}, // 10-java/lang/String#<init>#([C)V
+    {35, 11, 0x004c, 6, 1, 1, 0}, // 11-java/lang/String#length#()I
+    {35, 14, 0x0052, 32, 6, 5, 0}, // 14-java/lang/String#getChars#(II[CI)V
+    {35, 15, 0x0074, 17, 3, 1, 0}, // 15-java/lang/String#hashCode#()I
+    {35, 16, 0x0085, 49, 3, 2, 0}, // 16-java/lang/String#equals#(Ljava/lang/Object;)Z
 };
 
 const methodInClass const allMethods36[] = {
-    {36, 44, 0x050b, 120, 4, 1, 0}, // 44-thinj/regression/ThreadTest$4#run#()V
-    {36, 97, 0x0501, 10, 2, 2, 0}, // 97-thinj/regression/ThreadTest$4#<init>#(Ljava/lang/Object;)V
+    {36, 1, 0x040b, 12, 1, 1, 0}, // 1-java/lang/StringBuilder#<init>#()V
+    {36, 4, 0x0417, 72, 4, 2, 0}, // 4-java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    {36, 6, 0x0555, 12, 1, 1, 0}, // 6-java/lang/StringBuilder#toString#()Ljava/lang/String;
+    {36, 17, 0x0481, 85, 5, 2, 0}, // 17-java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    {36, 75, 0x04d6, 127, 5, 3, 0}, // 75-java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;
+    {36, 77, 0x045f, 18, 2, 2, 0}, // 77-java/lang/StringBuilder#append#(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    {36, 78, 0x0471, 16, 2, 2, 0}, // 78-java/lang/StringBuilder#append#(Z)Ljava/lang/StringBuilder;
+};
+
+const methodInClass const allMethods37[] = {
+    {37, 28, 0x0561, 21, 0, 0, 0}, // 28-java/lang/System#<clinit>#()V
+    {37, 72, 0x0561, 0, 0, 0, 14}, // 72-java/lang/System#nanoTime#()J
+    {37, 79, 0x0561, 0, 0, 0, 13}, // 79-java/lang/System#currentTimeMillis#()J
+};
+
+const methodInClass const allMethods38[] = {
+    {38, 1, 0x0222, 6, 1, 1, 0}, // 1-java/lang/Thread#<init>#()V
+    {38, 28, 0x029f, 15, 0, 0, 0}, // 28-java/lang/Thread#<clinit>#()V
+    {38, 44, 0x029e, 1, 1, 1, 0}, // 44-java/lang/Thread#run#()V
+    {38, 45, 0x0228, 33, 2, 2, 0}, // 45-java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
+    {38, 51, 0x029f, 0, 1, 1, 12}, // 51-java/lang/Thread#attach#()V
+    {38, 52, 0x029f, 0, 0, 0, 11}, // 52-java/lang/Thread#yield#()V
+    {38, 62, 0x0249, 45, 1, 1, 0}, // 62-java/lang/Thread#start#()V
+    {38, 63, 0x0276, 40, 2, 1, 0}, // 63-java/lang/Thread#runFromNative#()V
+    {38, 65, 0x029f, 0, 0, 0, 8}, // 65-java/lang/Thread#currentThread#()Ljava/lang/Thread;
+    {38, 66, 0x029f, 0, 1, 1, 9}, // 66-java/lang/Thread#interrupt#()V
+    {38, 67, 0x029f, 0, 1, 1, 10}, // 67-java/lang/Thread#sleep#(J)V
+};
+
+const methodInClass const allMethods39[] = {
+    {39, 1, 0x015c, 6, 1, 1, 0}, // 1-java/lang/Throwable#<init>#()V
+    {39, 6, 0x020b, 23, 1, 1, 0}, // 6-java/lang/Throwable#toString#()Ljava/lang/String;
+    {39, 24, 0x0162, 46, 4, 2, 0}, // 24-java/lang/Throwable#<init>#(Ljava/lang/String;)V
+    {39, 30, 0x0190, 0, 1, 1, 7}, // 30-java/lang/Throwable#getStackTraceDepth#()I
+    {39, 32, 0x0190, 0, 2, 2, 6}, // 32-java/lang/Throwable#getStackTraceElement#(I)I
+    {39, 38, 0x0190, 123, 6, 1, 0}, // 38-java/lang/Throwable#printStackTrace#()V
+};
+
+const methodInClass const allMethods40[] = {
+    {40, 1, 0x0152, 5, 1, 1, 0}, // 1-java/lang/VirtualMachineError#<init>#()V
+};
+
+const methodInClass const allMethods41[] = {
+    {41, 7, 0x112d, 38, 6, 1, 0}, // 7-java/util/Arrays#hashCode#([C)I
+    {41, 8, 0x1153, 68, 4, 2, 0}, // 8-java/util/Arrays#equals#([C[C)Z
+};
+
+const methodInClass const allMethods42[] = {
+    {42, 74, 0x02ae, 349, 3, 1, 0}, // 74-thinj/regression/AllTests#main#([Ljava/lang/String;)V
+    {42, 245, 0x3284, 43, 0, 0, 0}, // 245-thinj/regression/AllTests#<jvminit>#()V
+};
+
+const methodInClass const allMethods43[] = {
+    {43, 1, 0x0936, 5, 1, 1, 0}, // 1-thinj/regression/BaseClass#<init>#()V
+    {43, 109, 0x093b, 2, 1, 1, 0}, // 109-thinj/regression/BaseClass#foobar#()I
+    {43, 110, 0x0941, 2, 1, 1, 0}, // 110-thinj/regression/BaseClass#barfoo#()I
+    {43, 111, 0x093d, 4, 2, 2, 0}, // 111-thinj/regression/BaseClass#adder#(I)I
+};
+
+const methodInClass const allMethods44[] = {
+    {44, 73, 0x16df, 10, 0, 0, 0}, // 73-thinj/regression/ByteTest#main#()V
+    {44, 93, 0x1653, 23, 2, 0, 0}, // 93-thinj/regression/ByteTest#test1#()V
+    {44, 105, 0x166e, 50, 1, 0, 0}, // 105-thinj/regression/ByteTest#test2#()V
+    {44, 106, 0x16a0, 63, 2, 0, 0}, // 106-thinj/regression/ByteTest#test3#()V
+    {44, 143, 0x1644, 15, 1, 1, 0}, // 143-thinj/regression/ByteTest#dims#(B)B
+    {44, 144, 0x166a, 4, 1, 1, 0}, // 144-thinj/regression/ByteTest#dimsa#([B)B
+};
+
+const methodInClass const allMethods45[] = {
+    {45, 73, 0x124c, 7, 0, 0, 0}, // 73-thinj/regression/CharTest#main#()V
+    {45, 93, 0x11ff, 23, 2, 0, 0}, // 93-thinj/regression/CharTest#test1#()V
+    {45, 105, 0x121a, 50, 1, 0, 0}, // 105-thinj/regression/CharTest#test2#()V
+    {45, 134, 0x11f1, 14, 1, 1, 0}, // 134-thinj/regression/CharTest#dims#(C)C
+    {45, 135, 0x1216, 4, 1, 1, 0}, // 135-thinj/regression/CharTest#dimsa#([C)C
+};
+
+const methodInClass const allMethods46[] = {
+    {46, 1, 0x1b81, 5, 1, 1, 0}, // 1-thinj/regression/ClassTest#<init>#()V
+    {46, 73, 0x1b86, 126, 1, 0, 0}, // 73-thinj/regression/ClassTest#main#()V
+    {46, 93, 0x1c04, 51, 2, 0, 0}, // 93-thinj/regression/ClassTest#test1#()V
+};
+
+const methodInClass const allMethods47[] = {
+    {47, 28, 0x163d, 7, 0, 0, 0}, // 28-thinj/regression/DivMod#<clinit>#()V
+    {47, 73, 0x1639, 4, 0, 0, 0}, // 73-thinj/regression/DivMod#main#()V
+    {47, 93, 0x1540, 249, 4, 0, 0}, // 93-thinj/regression/DivMod#test1#()V
+    {47, 142, 0x14ce, 114, 2, 2, 0}, // 142-thinj/regression/DivMod#helper#(II)V
+};
+
+const methodInClass const allMethods48[] = {
+    {48, 1, 0x1197, 5, 1, 1, 0}, // 1-thinj/regression/EqualsTest#<init>#()V
+    {48, 73, 0x119c, 57, 2, 0, 0}, // 73-thinj/regression/EqualsTest#main#()V
+};
+
+const methodInClass const allMethods49[] = {
+    {49, 1, 0x0858, 5, 1, 1, 0}, // 1-thinj/regression/ExtendedBaseClass#<init>#()V
+    {49, 73, 0x0920, 22, 0, 0, 0}, // 73-thinj/regression/ExtendedBaseClass#main#()V
+    {49, 93, 0x085f, 25, 1, 0, 0}, // 93-thinj/regression/ExtendedBaseClass#test1#()V
+    {49, 105, 0x0878, 25, 1, 0, 0}, // 105-thinj/regression/ExtendedBaseClass#test2#()V
+    {49, 106, 0x0891, 25, 1, 0, 0}, // 106-thinj/regression/ExtendedBaseClass#test3#()V
+    {49, 109, 0x085d, 2, 1, 1, 0}, // 109-thinj/regression/ExtendedBaseClass#foobar#()I
+    {49, 112, 0x08aa, 25, 1, 0, 0}, // 112-thinj/regression/ExtendedBaseClass#test4#()V
+    {49, 113, 0x08c3, 25, 1, 0, 0}, // 113-thinj/regression/ExtendedBaseClass#test5#()V
+    {49, 114, 0x08dc, 25, 1, 0, 0}, // 114-thinj/regression/ExtendedBaseClass#test6#()V
+    {49, 115, 0x08f5, 43, 1, 0, 0}, // 115-thinj/regression/ExtendedBaseClass#test7#()V
+};
+
+const methodInClass const allMethods50[] = {
+    {50, 73, 0x14c4, 10, 0, 0, 0}, // 73-thinj/regression/Ineg#main#()V
+    {50, 93, 0x1401, 35, 1, 0, 0}, // 93-thinj/regression/Ineg#test1#()V
+    {50, 105, 0x1424, 84, 1, 0, 0}, // 105-thinj/regression/Ineg#test2#()V
+    {50, 106, 0x1478, 76, 1, 0, 0}, // 106-thinj/regression/Ineg#test3#()V
+};
+
+const methodInClass const allMethods51[] = {
+    {51, 1, 0x063e, 21, 1, 1, 0}, // 1-thinj/regression/InstanceAttributes#<init>#()V
+    {51, 28, 0x0693, 6, 0, 0, 0}, // 28-thinj/regression/InstanceAttributes#<clinit>#()V
+    {51, 73, 0x068c, 7, 0, 0, 0}, // 73-thinj/regression/InstanceAttributes#main#()V
+    {51, 93, 0x0653, 33, 1, 0, 0}, // 93-thinj/regression/InstanceAttributes#test1#()V
+    {51, 101, 0x0674, 24, 1, 0, 0}, // 101-thinj/regression/InstanceAttributes#testNull#()V
+};
+
+const methodInClass const allMethods52[] = {
+    {52, 1, 0x07b9, 5, 1, 1, 0}, // 1-thinj/regression/InstanceMethods#<init>#()V
+    {52, 73, 0x080d, 22, 0, 0, 0}, // 73-thinj/regression/InstanceMethods#main#()V
+    {52, 93, 0x07db, 16, 1, 0, 0}, // 93-thinj/regression/InstanceMethods#test1#()V
+    {52, 104, 0x07be, 27, 3, 3, 0}, // 104-thinj/regression/InstanceMethods#testargs#(IZ)V
+    {52, 105, 0x07eb, 17, 1, 0, 0}, // 105-thinj/regression/InstanceMethods#test2#()V
+    {52, 106, 0x07fc, 17, 1, 0, 0}, // 106-thinj/regression/InstanceMethods#test3#()V
+    {52, 107, 0x07d9, 1, 2, 2, 0}, // 107-thinj/regression/InstanceMethods#basePrint#(I)V
+    {52, 108, 0x07da, 1, 1, 1, 0}, // 108-thinj/regression/InstanceMethods#basePrint2#()V
+};
+
+const methodInClass const allMethods53[] = {
+    {53, 1, 0x0823, 5, 1, 1, 0}, // 1-thinj/regression/InstanceMethodsSpecial#<init>#()V
+    {53, 73, 0x0841, 23, 1, 0, 0}, // 73-thinj/regression/InstanceMethodsSpecial#main#()V
+    {53, 104, 0x0828, 20, 3, 3, 0}, // 104-thinj/regression/InstanceMethodsSpecial#testargs#(IZ)V
+    {53, 108, 0x083c, 5, 1, 1, 0}, // 108-thinj/regression/InstanceMethodsSpecial#basePrint2#()V
+};
+
+const methodInClass const allMethods54[] = {
+    {54, 1, 0x06c0, 12, 1, 1, 0}, // 1-thinj/regression/InstanceSubclassing#<init>#()V
+    {54, 73, 0x07b5, 4, 0, 0, 0}, // 73-thinj/regression/InstanceSubclassing#main#()V
+    {54, 93, 0x06cc, 233, 1, 0, 0}, // 93-thinj/regression/InstanceSubclassing#test1#()V
+};
+
+const methodInClass const allMethods55[] = {
+    {55, 28, 0x26b6, 11, 0, 0, 0}, // 28-thinj/regression/LongTest#<clinit>#()V
+    {55, 73, 0x1c37, 46, 0, 0, 0}, // 73-thinj/regression/LongTest#main#()V
+    {55, 93, 0x2190, 108, 3, 0, 0}, // 93-thinj/regression/LongTest#test1#()V
+    {55, 105, 0x21fc, 108, 3, 0, 0}, // 105-thinj/regression/LongTest#test2#()V
+    {55, 106, 0x2268, 111, 4, 0, 0}, // 106-thinj/regression/LongTest#test3#()V
+    {55, 112, 0x22d7, 114, 5, 0, 0}, // 112-thinj/regression/LongTest#test4#()V
+    {55, 113, 0x2349, 125, 6, 0, 0}, // 113-thinj/regression/LongTest#test5#()V
+    {55, 114, 0x23c6, 55, 4, 0, 0}, // 114-thinj/regression/LongTest#test6#()V
+    {55, 115, 0x23fd, 13, 2, 0, 0}, // 115-thinj/regression/LongTest#test7#()V
+    {55, 180, 0x24c1, 19, 0, 0, 0}, // 180-thinj/regression/LongTest#test8#()V
+    {55, 181, 0x24e0, 157, 1, 0, 0}, // 181-thinj/regression/LongTest#test9#()V
+    {55, 182, 0x257d, 16, 2, 0, 0}, // 182-thinj/regression/LongTest#heapTest#()V
+    {55, 183, 0x1fed, 419, 6, 0, 0}, // 183-thinj/regression/LongTest#test10#()V
+    {55, 184, 0x258d, 100, 5, 0, 0}, // 184-thinj/regression/LongTest#test11#()V
+    {55, 185, 0x1c65, 451, 2, 0, 0}, // 185-thinj/regression/LongTest#test12#()V
+    {55, 186, 0x1e28, 453, 2, 0, 0}, // 186-thinj/regression/LongTest#test13#()V
+    {55, 187, 0x25f1, 197, 2, 0, 0}, // 187-thinj/regression/LongTest#test14#()V
+    {55, 188, 0x240a, 183, 4, 4, 0}, // 188-thinj/regression/LongTest#test7_1#(ZJI)V
+    {55, 189, 0x24d4, 12, 4, 0, 0}, // 189-thinj/regression/LongTest#test8_1#()J
+};
+
+const methodInClass const allMethods56[] = {
+    {56, 28, 0x2714, 5, 0, 0, 0}, // 28-thinj/regression/LongTest$LinkObject#<clinit>#()V
+    {56, 197, 0x2706, 14, 1, 0, 0}, // 197-thinj/regression/LongTest$LinkObject#consumeHeap#()V
+    {56, 206, 0x26ef, 23, 2, 2, 0}, // 206-thinj/regression/LongTest$LinkObject#<init>#(Lthinj/regression/LongTest$LinkObject;)V
+};
+
+const methodInClass const allMethods57[] = {
+    {57, 1, 0x26c1, 5, 1, 1, 0}, // 1-thinj/regression/LongTest$MyClass#<init>#()V
+    {57, 190, 0x26c6, 5, 2, 2, 0}, // 190-thinj/regression/LongTest$MyClass#<init>#(Lthinj/regression/LongTest$1;)V
+    {57, 191, 0x26cb, 7, 2, 2, 0}, // 191-thinj/regression/LongTest$MyClass#access$102#(Lthinj/regression/LongTest$MyClass;Z)Z
+    {57, 192, 0x26d2, 7, 3, 3, 0}, // 192-thinj/regression/LongTest$MyClass#access$202#(Lthinj/regression/LongTest$MyClass;J)J
+    {57, 193, 0x26d9, 7, 2, 2, 0}, // 193-thinj/regression/LongTest$MyClass#access$302#(Lthinj/regression/LongTest$MyClass;I)I
+    {57, 194, 0x26e0, 5, 1, 1, 0}, // 194-thinj/regression/LongTest$MyClass#access$100#(Lthinj/regression/LongTest$MyClass;)Z
+    {57, 195, 0x26e5, 5, 1, 1, 0}, // 195-thinj/regression/LongTest$MyClass#access$200#(Lthinj/regression/LongTest$MyClass;)J
+    {57, 196, 0x26ea, 5, 1, 1, 0}, // 196-thinj/regression/LongTest$MyClass#access$300#(Lthinj/regression/LongTest$MyClass;)I
+};
+
+const methodInClass const allMethods58[] = {
+    {58, 73, 0x11d5, 28, 1, 0, 0}, // 73-thinj/regression/NativeTest#main#()V
+};
+
+const methodInClass const allMethods59[] = {
+    {59, 73, 0x0699, 4, 0, 0, 0}, // 73-thinj/regression/ObjectTest#main#()V
+    {59, 93, 0x069d, 35, 1, 0, 0}, // 93-thinj/regression/ObjectTest#test1#()V
+};
+
+const methodInClass const allMethods60[] = {
+    {60, 89, 0x0622, 17, 1, 1, 0}, // 89-thinj/regression/Regression#verify#(Z)V
+};
+
+const methodInClass const allMethods61[] = {
+    {61, 28, 0x1254, 12, 0, 0, 0}, // 28-thinj/regression/StaticInnerClassTest#<clinit>#()V
+    {61, 73, 0x1253, 1, 0, 0, 0}, // 73-thinj/regression/StaticInnerClassTest#main#()V
+};
+
+const methodInClass const allMethods62[] = {
+    {62, 1, 0x1260, 5, 1, 1, 0}, // 1-thinj/regression/StaticInnerClassTest$Dims#<init>#()V
+    {62, 136, 0x1265, 5, 2, 2, 0}, // 136-thinj/regression/StaticInnerClassTest$Dims#<init>#(Lthinj/regression/StaticInnerClassTest$1;)V
+};
+
+const methodInClass const allMethods63[] = {
+    {63, 28, 0x061b, 7, 0, 0, 0}, // 28-thinj/regression/StaticInstanceAndMethod#<clinit>#()V
+    {63, 73, 0x05ed, 46, 1, 0, 0}, // 73-thinj/regression/StaticInstanceAndMethod#main#()V
+    {63, 90, 0x05b5, 31, 3, 1, 0}, // 90-thinj/regression/StaticInstanceAndMethod#faculty#(I)I
+    {63, 92, 0x05d4, 5, 0, 0, 0}, // 92-thinj/regression/StaticInstanceAndMethod#ThisTestShallFail#()V
+    {63, 93, 0x05d9, 17, 0, 0, 0}, // 93-thinj/regression/StaticInstanceAndMethod#test1#()V
+    {63, 94, 0x05ea, 3, 0, 0, 0}, // 94-thinj/regression/StaticInstanceAndMethod#test2#()I
+};
+
+const methodInClass const allMethods64[] = {
+    {64, 28, 0x2df5, 23, 0, 0, 0}, // 28-thinj/regression/ThreadTest#<clinit>#()V
+    {64, 74, 0x2719, 89, 1, 1, 0}, // 74-thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
+    {64, 106, 0x2ac3, 27, 0, 0, 0}, // 106-thinj/regression/ThreadTest#test3#()V
+    {64, 112, 0x2ade, 45, 3, 0, 0}, // 112-thinj/regression/ThreadTest#test4#()V
+    {64, 113, 0x2b0b, 157, 6, 0, 0}, // 113-thinj/regression/ThreadTest#test5#()V
+    {64, 114, 0x2ba8, 65, 3, 0, 0}, // 114-thinj/regression/ThreadTest#test6#()V
+    {64, 115, 0x2be9, 80, 2, 0, 0}, // 115-thinj/regression/ThreadTest#test7#()V
+    {64, 180, 0x2c39, 120, 6, 0, 0}, // 180-thinj/regression/ThreadTest#test8#()V
+    {64, 181, 0x2ccd, 48, 1, 0, 0}, // 181-thinj/regression/ThreadTest#test9#()V
+    {64, 183, 0x2cfd, 39, 3, 0, 0}, // 183-thinj/regression/ThreadTest#test10#()V
+    {64, 184, 0x2d24, 50, 2, 0, 0}, // 184-thinj/regression/ThreadTest#test11#()V
+    {64, 185, 0x2d56, 56, 2, 0, 0}, // 185-thinj/regression/ThreadTest#test12#()V
+    {64, 186, 0x2772, 68, 4, 0, 0}, // 186-thinj/regression/ThreadTest#test13#()V
+    {64, 209, 0x2daa, 22, 4, 2, 0}, // 209-thinj/regression/ThreadTest#busyWait#(J)V
+    {64, 213, 0x27b6, 22, 1, 0, 0}, // 213-thinj/regression/ThreadTest#simpleYield#()V
+    {64, 214, 0x2806, 91, 2, 0, 0}, // 214-thinj/regression/ThreadTest#yieldAndGCMainThread#()V
+    {64, 215, 0x2861, 64, 4, 0, 0}, // 215-thinj/regression/ThreadTest#yieldAndGCNewThread#()V
+    {64, 216, 0x28a1, 27, 0, 0, 0}, // 216-thinj/regression/ThreadTest#testAutoYield#()V
+    {64, 217, 0x27cc, 58, 1, 0, 0}, // 217-thinj/regression/ThreadTest#threadGC#()V
+    {64, 218, 0x28bc, 30, 0, 0, 0}, // 218-thinj/regression/ThreadTest#testExplicitYield#()V
+    {64, 219, 0x28da, 29, 3, 0, 0}, // 219-thinj/regression/ThreadTest#testMonitorEnterExit_0#()V
+    {64, 220, 0x28f7, 42, 3, 0, 0}, // 220-thinj/regression/ThreadTest#testMonitorEnterExit_2#()V
+    {64, 221, 0x2921, 237, 10, 0, 0}, // 221-thinj/regression/ThreadTest#testMonitorEnterExit_1#()V
+    {64, 222, 0x2a0e, 25, 3, 0, 0}, // 222-thinj/regression/ThreadTest#test2_1#()V
+    {64, 223, 0x2a27, 31, 3, 0, 0}, // 223-thinj/regression/ThreadTest#test2_2#()V
+    {64, 224, 0x2a46, 44, 2, 0, 0}, // 224-thinj/regression/ThreadTest#test2_3#()V
+    {64, 225, 0x2a72, 81, 3, 0, 0}, // 225-thinj/regression/ThreadTest#test2_4#()V
+    {64, 228, 0x2d8e, 28, 4, 2, 0}, // 228-thinj/regression/ThreadTest#busyWaitDone#(J)V
+    {64, 230, 0x2cb1, 8, 0, 0, 0}, // 230-thinj/regression/ThreadTest#test9_helper1#()V
+    {64, 231, 0x2cb9, 20, 2, 0, 0}, // 231-thinj/regression/ThreadTest#test9_helper2#()V
+    {64, 232, 0x2dc0, 10, 0, 0, 0}, // 232-thinj/regression/ThreadTest#access$008#()I
+    {64, 233, 0x2dca, 4, 0, 0, 0}, // 233-thinj/regression/ThreadTest#access$000#()I
+    {64, 234, 0x2dce, 6, 1, 1, 0}, // 234-thinj/regression/ThreadTest#access$102#(Z)Z
+    {64, 235, 0x2dd4, 4, 0, 0, 0}, // 235-thinj/regression/ThreadTest#access$200#()Z
+    {64, 236, 0x2dd8, 5, 2, 2, 0}, // 236-thinj/regression/ThreadTest#access$300#(J)V
+    {64, 237, 0x2ddd, 6, 1, 1, 0}, // 237-thinj/regression/ThreadTest#access$202#(Z)Z
+    {64, 238, 0x2de3, 4, 0, 0, 0}, // 238-thinj/regression/ThreadTest#access$100#()Z
+    {64, 239, 0x2de7, 4, 0, 0, 0}, // 239-thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;
+    {64, 240, 0x2deb, 10, 0, 0, 0}, // 240-thinj/regression/ThreadTest#access$508#()I
+};
+
+const methodInClass const allMethods65[] = {
+    {65, 44, 0x3189, 135, 4, 1, 0}, // 44-thinj/regression/ThreadTest$1#run#()V
+    {65, 226, 0x317a, 15, 3, 3, 0}, // 226-thinj/regression/ThreadTest$1#<init>#(Ljava/lang/Object;Ljava/lang/Object;)V
+};
+
+const methodInClass const allMethods66[] = {
+    {66, 1, 0x2f5c, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$10#<init>#()V
+    {66, 44, 0x2f61, 17, 3, 1, 0}, // 44-thinj/regression/ThreadTest$10#run#()V
+};
+
+const methodInClass const allMethods67[] = {
+    {67, 44, 0x2faa, 85, 7, 1, 0}, // 44-thinj/regression/ThreadTest$11#run#()V
+    {67, 227, 0x2fa0, 10, 2, 2, 0}, // 227-thinj/regression/ThreadTest$11#<init>#(Ljava/lang/Object;)V
+};
+
+const methodInClass const allMethods68[] = {
+    {68, 44, 0x2f7c, 36, 3, 1, 0}, // 44-thinj/regression/ThreadTest$12#run#()V
+    {68, 227, 0x2f72, 10, 2, 2, 0}, // 227-thinj/regression/ThreadTest$12#<init>#(Ljava/lang/Object;)V
+};
+
+const methodInClass const allMethods69[] = {
+    {69, 1, 0x2fff, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$13#<init>#()V
+    {69, 44, 0x3004, 6, 1, 1, 0}, // 44-thinj/regression/ThreadTest$13#run#()V
+};
+
+const methodInClass const allMethods70[] = {
+    {70, 1, 0x300a, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$14#<init>#()V
+    {70, 44, 0x300f, 22, 3, 1, 0}, // 44-thinj/regression/ThreadTest$14#run#()V
+};
+
+const methodInClass const allMethods71[] = {
+    {71, 1, 0x3025, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$15#<init>#()V
+    {71, 44, 0x302a, 56, 4, 1, 0}, // 44-thinj/regression/ThreadTest$15#run#()V
+};
+
+const methodInClass const allMethods72[] = {
+    {72, 1, 0x307e, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$16#<init>#()V
+    {72, 44, 0x3083, 23, 3, 1, 0}, // 44-thinj/regression/ThreadTest$16#run#()V
+};
+
+const methodInClass const allMethods73[] = {
+    {73, 1, 0x3062, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$17#<init>#()V
+    {73, 44, 0x3067, 23, 3, 1, 0}, // 44-thinj/regression/ThreadTest$17#run#()V
+};
+
+const methodInClass const allMethods74[] = {
+    {74, 1, 0x309a, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$18#<init>#()V
+    {74, 44, 0x309f, 27, 3, 1, 0}, // 44-thinj/regression/ThreadTest$18#run#()V
+};
+
+const methodInClass const allMethods75[] = {
+    {75, 1, 0x30ba, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$19#<init>#()V
+    {75, 44, 0x30bf, 37, 4, 1, 0}, // 44-thinj/regression/ThreadTest$19#run#()V
+};
+
+const methodInClass const allMethods76[] = {
+    {76, 44, 0x321a, 100, 3, 1, 0}, // 44-thinj/regression/ThreadTest$2#run#()V
+    {76, 227, 0x3210, 10, 2, 2, 0}, // 227-thinj/regression/ThreadTest$2#<init>#(Ljava/lang/Object;)V
+};
+
+const methodInClass const allMethods77[] = {
+    {77, 1, 0x30e4, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$20#<init>#()V
+    {77, 44, 0x30e9, 62, 4, 1, 0}, // 44-thinj/regression/ThreadTest$20#run#()V
+};
+
+const methodInClass const allMethods78[] = {
+    {78, 1, 0x3127, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$21#<init>#()V
+    {78, 44, 0x312c, 22, 3, 1, 0}, // 44-thinj/regression/ThreadTest$21#run#()V
+};
+
+const methodInClass const allMethods79[] = {
+    {79, 1, 0x3142, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$22#<init>#()V
+    {79, 44, 0x3147, 26, 2, 1, 0}, // 44-thinj/regression/ThreadTest$22#run#()V
+};
+
+const methodInClass const allMethods80[] = {
+    {80, 1, 0x3161, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$23#<init>#()V
+    {80, 44, 0x3166, 20, 2, 1, 0}, // 44-thinj/regression/ThreadTest$23#run#()V
+};
+
+const methodInClass const allMethods81[] = {
+    {81, 1, 0x2eb0, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$3#<init>#()V
+    {81, 44, 0x2eb5, 5, 1, 1, 0}, // 44-thinj/regression/ThreadTest$3#run#()V
+};
+
+const methodInClass const allMethods82[] = {
+    {82, 44, 0x2e16, 120, 4, 1, 0}, // 44-thinj/regression/ThreadTest$4#run#()V
+    {82, 227, 0x2e0c, 10, 2, 2, 0}, // 227-thinj/regression/ThreadTest$4#<init>#(Ljava/lang/Object;)V
+};
+
+const methodInClass const allMethods83[] = {
+    {83, 1, 0x2ea5, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$5#<init>#()V
+    {83, 44, 0x2eaa, 6, 1, 1, 0}, // 44-thinj/regression/ThreadTest$5#run#()V
+};
+
+const methodInClass const allMethods84[] = {
+    {84, 1, 0x2eba, 5, 1, 1, 0}, // 1-thinj/regression/ThreadTest$6#<init>#()V
+    {84, 44, 0x2ebf, 9, 1, 1, 0}, // 44-thinj/regression/ThreadTest$6#run#()V
+};
+
+const methodInClass const allMethods85[] = {
+    {85, 44, 0x2f0a, 35, 3, 1, 0}, // 44-thinj/regression/ThreadTest$7#run#()V
+    {85, 227, 0x2f00, 10, 2, 2, 0}, // 227-thinj/regression/ThreadTest$7#<init>#(Ljava/lang/Object;)V
+};
+
+const methodInClass const allMethods86[] = {
+    {86, 44, 0x2ed7, 41, 3, 1, 0}, // 44-thinj/regression/ThreadTest$8#run#()V
+    {86, 229, 0x2ec8, 15, 3, 3, 0}, // 229-thinj/regression/ThreadTest$8#<init>#(Ljava/lang/Object;Ljava/lang/Thread;)V
+};
+
+const methodInClass const allMethods87[] = {
+    {87, 44, 0x2f37, 37, 3, 1, 0}, // 44-thinj/regression/ThreadTest$9#run#()V
+    {87, 227, 0x2f2d, 10, 2, 2, 0}, // 227-thinj/regression/ThreadTest$9#<init>#(Ljava/lang/Object;)V
+};
+
+const methodInClass const allMethods88[] = {
+    {88, 25, 0x0943, 10, 2, 2, 0}, // 25-thinj/regression/abstractclass/AbstractClass#<init>#(I)V
+    {88, 73, 0x096b, 7, 0, 0, 0}, // 73-thinj/regression/abstractclass/AbstractClass#main#()V
+    {88, 93, 0x094d, 15, 1, 0, 0}, // 93-thinj/regression/abstractclass/AbstractClass#test1#()V
+    {88, 105, 0x095c, 15, 1, 0, 0}, // 105-thinj/regression/abstractclass/AbstractClass#test2#()V
+    {88, 116, 0x094d, 0, 0, 1, 0}, // 116-thinj/regression/abstractclass/AbstractClass#foobar#()V
+};
+
+const methodInClass const allMethods89[] = {
+    {89, 25, 0x0972, 6, 2, 2, 0}, // 25-thinj/regression/abstractclass/ExtendingClass#<init>#(I)V
+    {89, 116, 0x0978, 18, 1, 1, 0}, // 116-thinj/regression/abstractclass/ExtendingClass#foobar#()V
+};
+
+const methodInClass const allMethods90[] = {
+    {90, 1, 0x09d7, 98, 2, 1, 0}, // 1-thinj/regression/arrays/ArrayTest#<init>#()V
+    {90, 73, 0x0a92, 7, 0, 0, 0}, // 73-thinj/regression/arrays/ArrayTest#main#()V
+    {90, 93, 0x0a39, 9, 0, 0, 0}, // 93-thinj/regression/arrays/ArrayTest#test1#()V
+    {90, 105, 0x0a42, 80, 2, 0, 0}, // 105-thinj/regression/arrays/ArrayTest#test2#()V
+};
+
+const methodInClass const allMethods91[] = {
+    {91, 28, 0x0b4b, 1, 0, 0, 0}, // 28-thinj/regression/arrays/DummyClass#<clinit>#()V
+    {91, 123, 0x0b4a, 1, 0, 0, 0}, // 123-thinj/regression/arrays/DummyClass#cyclicDependency#()V
+};
+
+const methodInClass const allMethods92[] = {
+    {92, 28, 0x0b3c, 14, 0, 0, 0}, // 28-thinj/regression/arrays/MultiArrayTest#<clinit>#()V
+    {92, 73, 0x0b22, 26, 0, 0, 0}, // 73-thinj/regression/arrays/MultiArrayTest#main#()V
+    {92, 93, 0x0a99, 83, 3, 0, 0}, // 93-thinj/regression/arrays/MultiArrayTest#test1#()V
+    {92, 105, 0x0aec, 34, 2, 0, 0}, // 105-thinj/regression/arrays/MultiArrayTest#test2#()V
+    {92, 106, 0x0b0e, 20, 1, 0, 0}, // 106-thinj/regression/arrays/MultiArrayTest#test3#()V
+};
+
+const methodInClass const allMethods93[] = {
+    {93, 28, 0x1028, 5, 0, 0, 0}, // 28-thinj/regression/arrays/Sudoku#<clinit>#()V
+    {93, 73, 0x0c6c, 956, 4, 0, 0}, // 73-thinj/regression/arrays/Sudoku#main#()V
+    {93, 127, 0x0b4c, 143, 5, 2, 0}, // 127-thinj/regression/arrays/Sudoku#solve#([[II)Z
+    {93, 128, 0x0bdb, 145, 8, 3, 0}, // 128-thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z
+};
+
+const methodInClass const allMethods94[] = {
+    {94, 73, 0x13e2, 16, 1, 0, 0}, // 73-thinj/regression/checkcast/CheckCast#main#()V
+    {94, 93, 0x12f6, 23, 1, 0, 0}, // 93-thinj/regression/checkcast/CheckCast#test1#()V
+    {94, 105, 0x130d, 81, 2, 0, 0}, // 105-thinj/regression/checkcast/CheckCast#test2#()V
+    {94, 106, 0x135e, 43, 3, 0, 0}, // 106-thinj/regression/checkcast/CheckCast#test3#()V
+    {94, 112, 0x1389, 81, 2, 0, 0}, // 112-thinj/regression/checkcast/CheckCast#test4#()V
+    {94, 139, 0x13da, 8, 1, 1, 0}, // 139-thinj/regression/checkcast/CheckCast#multitest#(Ljava/lang/Object;)V
+};
+
+const methodInClass const allMethods95[] = {
+    {95, 1, 0x13f2, 5, 1, 1, 0}, // 1-thinj/regression/checkcast/CheckCast$1#<init>#()V
+};
+
+const methodInClass const allMethods96[] = {
+    {96, 1, 0x13f7, 5, 1, 1, 0}, // 1-thinj/regression/checkcast/CheckCast$ClassA#<init>#()V
+};
+
+const methodInClass const allMethods97[] = {
+    {97, 1, 0x13fc, 5, 1, 1, 0}, // 1-thinj/regression/checkcast/CheckCast$ClassB#<init>#()V
+};
+
+const methodInClass const allMethods99[] = {
+    {99, 73, 0x1b00, 93, 1, 0, 0}, // 73-thinj/regression/exceptions/ExIALOAD#main#()V
+    {99, 119, 0x186f, 2, 1, 1, 0}, // 119-thinj/regression/exceptions/ExIALOAD#get#()I
+    {99, 155, 0x186c, 3, 2, 2, 0}, // 155-thinj/regression/exceptions/ExIALOAD#get#(I)I
+    {99, 157, 0x1871, 44, 3, 0, 0}, // 157-thinj/regression/exceptions/ExIALOAD#iaload#()V
+    {99, 158, 0x189d, 50, 3, 0, 0}, // 158-thinj/regression/exceptions/ExIALOAD#aaload#()V
+    {99, 159, 0x18cf, 44, 3, 0, 0}, // 159-thinj/regression/exceptions/ExIALOAD#baload#()V
+    {99, 160, 0x18fb, 44, 3, 0, 0}, // 160-thinj/regression/exceptions/ExIALOAD#caload#()V
+    {99, 161, 0x1927, 46, 3, 0, 0}, // 161-thinj/regression/exceptions/ExIALOAD#iastore#()V
+    {99, 162, 0x1955, 62, 3, 0, 0}, // 162-thinj/regression/exceptions/ExIALOAD#aastore#()V
+    {99, 163, 0x1993, 43, 3, 0, 0}, // 163-thinj/regression/exceptions/ExIALOAD#bastore#()V
+    {99, 164, 0x19be, 46, 3, 0, 0}, // 164-thinj/regression/exceptions/ExIALOAD#castore#()V
+    {99, 165, 0x19ec, 22, 4, 0, 0}, // 165-thinj/regression/exceptions/ExIALOAD#idiv#()V
+    {99, 166, 0x1a02, 22, 4, 0, 0}, // 166-thinj/regression/exceptions/ExIALOAD#irem#()V
+    {99, 167, 0x1a18, 20, 3, 0, 0}, // 167-thinj/regression/exceptions/ExIALOAD#getfield#()V
+    {99, 168, 0x1a2c, 21, 3, 0, 0}, // 168-thinj/regression/exceptions/ExIALOAD#putfield#()V
+    {99, 169, 0x1a41, 39, 3, 0, 0}, // 169-thinj/regression/exceptions/ExIALOAD#invokespecial#()V
+    {99, 170, 0x1a68, 20, 3, 0, 0}, // 170-thinj/regression/exceptions/ExIALOAD#invokevirtual#()V
+    {99, 171, 0x1a7c, 21, 3, 0, 0}, // 171-thinj/regression/exceptions/ExIALOAD#invokeinterface#()V
+    {99, 172, 0x1a91, 17, 2, 0, 0}, // 172-thinj/regression/exceptions/ExIALOAD#test_new#()V
+    {99, 173, 0x1aa2, 18, 2, 0, 0}, // 173-thinj/regression/exceptions/ExIALOAD#newarray#()V
+    {99, 174, 0x1ab4, 19, 2, 0, 0}, // 174-thinj/regression/exceptions/ExIALOAD#anewarray#()V
+    {99, 175, 0x1ac7, 18, 3, 0, 0}, // 175-thinj/regression/exceptions/ExIALOAD#arraylength#()V
+    {99, 176, 0x1ad9, 12, 2, 0, 0}, // 176-thinj/regression/exceptions/ExIALOAD#athrow#()V
+    {99, 177, 0x1ae5, 27, 2, 0, 0}, // 177-thinj/regression/exceptions/ExIALOAD#checkcast#()V
+};
+
+const methodInClass const allMethods100[] = {
+    {100, 156, 0x1b72, 15, 2, 1, 0}, // 156-thinj/regression/exceptions/ExIALOAD$LinkObject#consumeHeap#(I)V
+    {100, 179, 0x1b5d, 21, 3, 3, 0}, // 179-thinj/regression/exceptions/ExIALOAD$LinkObject#<init>#(Lthinj/regression/exceptions/ExIALOAD$LinkObject;I)V
+};
+
+const methodInClass const allMethods101[] = {
+    {101, 116, 0x1b5d, 0, 0, 1, 0}, // 116-thinj/regression/exceptions/ExIALOAD$MyInterface#foobar#()V
+};
+
+const methodInClass const allMethods102[] = {
+    {102, 146, 0x180b, 4, 0, 0, 0}, // 146-thinj/regression/exceptions/ExceptionProxying#testExceptionProxy#()V
+};
+
+const methodInClass const allMethods103[] = {
+    {103, 73, 0x182c, 64, 2, 0, 0}, // 73-thinj/regression/exceptions/TestNullPointerException#main#()V
+    {103, 93, 0x180f, 14, 2, 0, 0}, // 93-thinj/regression/exceptions/TestNullPointerException#test1#()V
+    {103, 105, 0x181d, 15, 2, 0, 0}, // 105-thinj/regression/exceptions/TestNullPointerException#test2#()V
+};
+
+const methodInClass const allMethods104[] = {
+    {104, 73, 0x17f5, 22, 0, 0, 0}, // 73-thinj/regression/exceptions/ThrowException#main#()V
+    {104, 93, 0x16e9, 20, 2, 0, 0}, // 93-thinj/regression/exceptions/ThrowException#test1#()V
+    {104, 105, 0x1707, 16, 2, 0, 0}, // 105-thinj/regression/exceptions/ThrowException#test2#()V
+    {104, 106, 0x1717, 16, 2, 0, 0}, // 106-thinj/regression/exceptions/ThrowException#test3#()V
+    {104, 112, 0x1727, 20, 2, 0, 0}, // 112-thinj/regression/exceptions/ThrowException#test4#()V
+    {104, 113, 0x173b, 36, 4, 0, 0}, // 113-thinj/regression/exceptions/ThrowException#test5#()V
+    {104, 114, 0x1774, 40, 4, 0, 0}, // 114-thinj/regression/exceptions/ThrowException#test6#()V
+    {104, 115, 0x17c7, 46, 4, 0, 0}, // 115-thinj/regression/exceptions/ThrowException#test7#()V
+    {104, 145, 0x16fd, 10, 0, 0, 0}, // 145-thinj/regression/exceptions/ThrowException#testHelper#()V
+    {104, 148, 0x175f, 21, 1, 0, 0}, // 148-thinj/regression/exceptions/ThrowException#test6Helper#()V
+    {104, 151, 0x179c, 21, 1, 0, 0}, // 151-thinj/regression/exceptions/ThrowException#test7Helper2#()V
+    {104, 152, 0x17b1, 22, 1, 0, 0}, // 152-thinj/regression/exceptions/ThrowException#test7Helper1#()V
+};
+
+const methodInClass const allMethods105[] = {
+    {105, 73, 0x105a, 182, 4, 0, 0}, // 73-thinj/regression/gc/GC#main#()V
+    {105, 131, 0x102d, 45, 2, 0, 0}, // 131-thinj/regression/gc/GC#circularObjects#()V
+};
+
+const methodInClass const allMethods106[] = {
+    {106, 25, 0x1110, 17, 2, 2, 0}, // 25-thinj/regression/gc/GC$LinkObject#<init>#(I)V
+    {106, 129, 0x1121, 7, 2, 2, 0}, // 129-thinj/regression/gc/GC$LinkObject#access$002#(Lthinj/regression/gc/GC$LinkObject;Lthinj/regression/gc/GC$LinkObject;)Lthinj/regression/gc/GC$LinkObject;
+    {106, 130, 0x1128, 5, 1, 1, 0}, // 130-thinj/regression/gc/GC$LinkObject#access$000#(Lthinj/regression/gc/GC$LinkObject;)Lthinj/regression/gc/GC$LinkObject;
+};
+
+const methodInClass const allMethods107[] = {
+    {107, 73, 0x12ec, 10, 0, 0, 0}, // 73-thinj/regression/gc/HeapTest#main#()V
+    {107, 93, 0x1281, 62, 4, 0, 0}, // 93-thinj/regression/gc/HeapTest#test1#()V
+    {107, 105, 0x12bf, 45, 4, 0, 0}, // 105-thinj/regression/gc/HeapTest#test2#()V
+    {107, 138, 0x126a, 23, 2, 0, 0}, // 138-thinj/regression/gc/HeapTest#test0#()V
+};
+
+const methodInClass const allMethods108[] = {
+    {108, 116, 0x098a, 0, 0, 1, 0}, // 116-thinj/regression/interfaces/AnInterface#foobar#()V
+    {108, 119, 0x098a, 0, 0, 1, 0}, // 119-thinj/regression/interfaces/AnInterface#get#()I
+};
+
+const methodInClass const allMethods109[] = {
+    {109, 1, 0x098a, 5, 1, 1, 0}, // 1-thinj/regression/interfaces/AnInterfaceImpl#<init>#()V
+    {109, 73, 0x09d3, 4, 0, 0, 0}, // 73-thinj/regression/interfaces/AnInterfaceImpl#main#()V
+    {109, 93, 0x099e, 53, 1, 0, 0}, // 93-thinj/regression/interfaces/AnInterfaceImpl#test1#()V
+    {109, 116, 0x0992, 7, 1, 1, 0}, // 116-thinj/regression/interfaces/AnInterfaceImpl#foobar#()V
+    {109, 117, 0x098f, 3, 1, 1, 0}, // 117-thinj/regression/interfaces/AnInterfaceImpl#getLost#()I
+    {109, 119, 0x0999, 5, 1, 1, 0}, // 119-thinj/regression/interfaces/AnInterfaceImpl#get#()I
+};
+
+const methodInClass const allMethods110[] = {
+    {110, 117, 0x098a, 0, 0, 1, 0}, // 117-thinj/regression/interfaces/AnotherInterface#getLost#()I
 };
 
 
@@ -808,22 +2394,167 @@ const methodInClass const allMethods36[] = {
 //------------------------------------------------------------------------------
 
 const exceptionHandler const allExceptionHandersInAllClasses[] = {
-    {30, 31, 0x023a, 0x0251, 0x0254}, // java/lang/Throwable @0x023a
-    {35, 19, 0x04bf, 0x04d1, 0x04d4}, // java/lang/InterruptedException @0x04a4
-    {35, 0, 0x04bf, 0x04db, 0x04de}, // <finally> @0x04a4
-    {35, 0, 0x04de, 0x04e1, 0x04de}, // <finally> @0x04a4
-    {36, 0, 0x056c, 0x057a, 0x057d}, // <finally> @0x050b
-    {36, 0, 0x057d, 0x0580, 0x057d}, // <finally> @0x050b
+    {38, 39, 0x0276, 0x028d, 0x0290}, // java/lang/Throwable @0x0276
+    {105, 32, 0x109b, 0x109e, 0x10a1}, // java/lang/OutOfMemoryError @0x105a
+    {104, 22, 0x16eb, 0x16f5, 0x16f5}, // java/lang/Exception @0x16e9
+    {104, 39, 0x1709, 0x170c, 0x170f}, // java/lang/Throwable @0x1707
+    {104, 39, 0x1719, 0x171c, 0x171f}, // java/lang/Throwable @0x1717
+    {104, 39, 0x1729, 0x1733, 0x1733}, // java/lang/Throwable @0x1727
+    {104, 22, 0x173f, 0x1749, 0x1749}, // java/lang/Exception @0x173b
+    {104, 0, 0x173f, 0x174c, 0x1751}, // <finally> @0x173b
+    {104, 0, 0x1751, 0x1752, 0x1751}, // <finally> @0x173b
+    {104, 0, 0x1763, 0x176e, 0x176d}, // <finally> @0x175f
+    {104, 39, 0x1778, 0x177b, 0x1780}, // java/lang/Throwable @0x1774
+    {104, 0, 0x1778, 0x177b, 0x1788}, // <finally> @0x1774
+    {104, 0, 0x1780, 0x1783, 0x1788}, // <finally> @0x1774
+    {104, 0, 0x1788, 0x1789, 0x1788}, // <finally> @0x1774
+    {104, 0, 0x17a0, 0x17ab, 0x17aa}, // <finally> @0x179c
+    {104, 0, 0x17b5, 0x17b8, 0x17bf}, // <finally> @0x17b1
+    {104, 0, 0x17bf, 0x17c0, 0x17bf}, // <finally> @0x17b1
+    {104, 39, 0x17cb, 0x17ce, 0x17d3}, // java/lang/Throwable @0x17c7
+    {104, 0, 0x17cb, 0x17ce, 0x17db}, // <finally> @0x17c7
+    {104, 0, 0x17d3, 0x17d6, 0x17db}, // <finally> @0x17c7
+    {104, 0, 0x17db, 0x17dc, 0x17db}, // <finally> @0x17c7
+    {103, 22, 0x182e, 0x1831, 0x1834}, // java/lang/Exception @0x182c
+    {103, 22, 0x1846, 0x1849, 0x184c}, // java/lang/Exception @0x182c
+    {99, 29, 0x1875, 0x1879, 0x187c}, // java/lang/NullPointerException @0x1871
+    {99, 18, 0x188e, 0x1892, 0x1895}, // java/lang/ArrayIndexOutOfBoundsException @0x1871
+    {99, 29, 0x18a1, 0x18a5, 0x18a8}, // java/lang/NullPointerException @0x189d
+    {99, 18, 0x18c0, 0x18c4, 0x18c7}, // java/lang/ArrayIndexOutOfBoundsException @0x189d
+    {99, 29, 0x18d3, 0x18d7, 0x18da}, // java/lang/NullPointerException @0x18cf
+    {99, 18, 0x18ec, 0x18f0, 0x18f3}, // java/lang/ArrayIndexOutOfBoundsException @0x18cf
+    {99, 29, 0x18ff, 0x1903, 0x1906}, // java/lang/NullPointerException @0x18fb
+    {99, 18, 0x1918, 0x191c, 0x191f}, // java/lang/ArrayIndexOutOfBoundsException @0x18fb
+    {99, 29, 0x192b, 0x1930, 0x1933}, // java/lang/NullPointerException @0x1927
+    {99, 18, 0x1945, 0x194a, 0x194d}, // java/lang/ArrayIndexOutOfBoundsException @0x1927
+    {99, 29, 0x1959, 0x1963, 0x1966}, // java/lang/NullPointerException @0x1955
+    {99, 18, 0x197e, 0x1988, 0x198b}, // java/lang/ArrayIndexOutOfBoundsException @0x1955
+    {99, 29, 0x1997, 0x199b, 0x199e}, // java/lang/NullPointerException @0x1993
+    {99, 18, 0x19af, 0x19b3, 0x19b6}, // java/lang/ArrayIndexOutOfBoundsException @0x1993
+    {99, 29, 0x19c2, 0x19c7, 0x19ca}, // java/lang/NullPointerException @0x19be
+    {99, 18, 0x19dc, 0x19e1, 0x19e4}, // java/lang/ArrayIndexOutOfBoundsException @0x19be
+    {99, 17, 0x19f3, 0x19f7, 0x19fa}, // java/lang/ArithmeticException @0x19ec
+    {99, 17, 0x1a09, 0x1a0d, 0x1a10}, // java/lang/ArithmeticException @0x1a02
+    {99, 29, 0x1a1c, 0x1a21, 0x1a24}, // java/lang/NullPointerException @0x1a18
+    {99, 29, 0x1a30, 0x1a36, 0x1a39}, // java/lang/NullPointerException @0x1a2c
+    {99, 29, 0x1a45, 0x1a4c, 0x1a4f}, // java/lang/NullPointerException @0x1a41
+    {99, 29, 0x1a58, 0x1a5d, 0x1a60}, // java/lang/NullPointerException @0x1a41
+    {99, 29, 0x1a6c, 0x1a71, 0x1a74}, // java/lang/NullPointerException @0x1a68
+    {99, 29, 0x1a80, 0x1a86, 0x1a89}, // java/lang/NullPointerException @0x1a7c
+    {99, 32, 0x1a93, 0x1a97, 0x1a9a}, // java/lang/OutOfMemoryError @0x1a91
+    {99, 28, 0x1aa4, 0x1aa9, 0x1aac}, // java/lang/NegativeArraySizeException @0x1aa2
+    {99, 28, 0x1ab6, 0x1abc, 0x1abf}, // java/lang/NegativeArraySizeException @0x1ab4
+    {99, 29, 0x1acb, 0x1ace, 0x1ad1}, // java/lang/NullPointerException @0x1ac7
+    {99, 29, 0x1adb, 0x1add, 0x1add}, // java/lang/NullPointerException @0x1ad9
+    {99, 20, 0x1ae7, 0x1af5, 0x1af8}, // java/lang/ClassCastException @0x1ae5
+    {99, 39, 0x1b00, 0x1b3f, 0x1b42}, // java/lang/Throwable @0x1b00
+    {55, 32, 0x257f, 0x2582, 0x2585}, // java/lang/OutOfMemoryError @0x257d
+    {55, 18, 0x25ae, 0x25bd, 0x25c0}, // java/lang/ArrayIndexOutOfBoundsException @0x258d
+    {55, 29, 0x25cc, 0x25d3, 0x25d6}, // java/lang/NullPointerException @0x258d
+    {55, 29, 0x25e0, 0x25e5, 0x25e8}, // java/lang/NullPointerException @0x258d
+    {64, 27, 0x287c, 0x288e, 0x2891}, // java/lang/InterruptedException @0x2861
+    {64, 0, 0x287c, 0x2898, 0x289b}, // <finally> @0x2861
+    {64, 0, 0x289b, 0x289e, 0x289b}, // <finally> @0x2861
+    {64, 0, 0x28e6, 0x28ea, 0x28ed}, // <finally> @0x28da
+    {64, 0, 0x28ed, 0x28f0, 0x28ed}, // <finally> @0x28da
+    {64, 0, 0x292b, 0x292f, 0x2932}, // <finally> @0x2921
+    {64, 0, 0x2932, 0x2936, 0x2932}, // <finally> @0x2921
+    {64, 29, 0x2927, 0x2939, 0x293c}, // java/lang/NullPointerException @0x2921
+    {64, 0, 0x295b, 0x295f, 0x2962}, // <finally> @0x2921
+    {64, 0, 0x2962, 0x2966, 0x2962}, // <finally> @0x2921
+    {64, 0, 0x2999, 0x29b7, 0x29ba}, // <finally> @0x2921
+    {64, 0, 0x29ba, 0x29bf, 0x29ba}, // <finally> @0x2921
+    {64, 0, 0x29c7, 0x29d1, 0x29da}, // <finally> @0x2921
+    {64, 0, 0x29d4, 0x29d7, 0x29da}, // <finally> @0x2921
+    {64, 0, 0x29da, 0x29df, 0x29da}, // <finally> @0x2921
+    {64, 0, 0x29ea, 0x29fc, 0x29ff}, // <finally> @0x2921
+    {64, 0, 0x29ff, 0x2a04, 0x29ff}, // <finally> @0x2921
+    {64, 24, 0x2a18, 0x2a1c, 0x2a1f}, // java/lang/IllegalMonitorStateException @0x2a0e
+    {64, 24, 0x2a31, 0x2a35, 0x2a38}, // java/lang/IllegalMonitorStateException @0x2a27
+    {64, 27, 0x2a31, 0x2a35, 0x2a3e}, // java/lang/InterruptedException @0x2a27
+    {64, 0, 0x2af0, 0x2af6, 0x2af9}, // <finally> @0x2ade
+    {64, 0, 0x2af9, 0x2afc, 0x2af9}, // <finally> @0x2ade
+    {64, 0, 0x2bb0, 0x2bbb, 0x2bb8}, // <finally> @0x2ba8
+    {64, 29, 0x2baa, 0x2bbd, 0x2bbd}, // java/lang/NullPointerException @0x2ba8
+    {64, 0, 0x2c16, 0x2c1e, 0x2c21}, // <finally> @0x2be9
+    {64, 0, 0x2c21, 0x2c24, 0x2c21}, // <finally> @0x2be9
+    {64, 0, 0x2c92, 0x2c9a, 0x2c9d}, // <finally> @0x2c39
+    {64, 0, 0x2c9d, 0x2ca1, 0x2c9d}, // <finally> @0x2c39
+    {64, 0, 0x2cbf, 0x2cc4, 0x2cc7}, // <finally> @0x2cb9
+    {64, 0, 0x2cc7, 0x2cca, 0x2cc7}, // <finally> @0x2cb9
+    {64, 29, 0x2cd1, 0x2cd4, 0x2cd7}, // java/lang/NullPointerException @0x2ccd
+    {64, 27, 0x2d01, 0x2d07, 0x2d0a}, // java/lang/InterruptedException @0x2cfd
+    {64, 27, 0x2d3e, 0x2d44, 0x2d47}, // java/lang/InterruptedException @0x2d24
+    {64, 27, 0x2d76, 0x2d7c, 0x2d7f}, // java/lang/InterruptedException @0x2d56
+    {82, 0, 0x2e77, 0x2e85, 0x2e88}, // <finally> @0x2e16
+    {82, 0, 0x2e88, 0x2e8b, 0x2e88}, // <finally> @0x2e16
+    {86, 0, 0x2ede, 0x2ef7, 0x2efa}, // <finally> @0x2ed7
+    {86, 0, 0x2efa, 0x2efd, 0x2efa}, // <finally> @0x2ed7
+    {85, 0, 0x2f11, 0x2f24, 0x2f27}, // <finally> @0x2f0a
+    {85, 0, 0x2f27, 0x2f2a, 0x2f27}, // <finally> @0x2f0a
+    {87, 0, 0x2f3e, 0x2f53, 0x2f56}, // <finally> @0x2f37
+    {87, 0, 0x2f56, 0x2f59, 0x2f56}, // <finally> @0x2f37
+    {66, 29, 0x2f63, 0x2f68, 0x2f6b}, // java/lang/NullPointerException @0x2f61
+    {68, 0, 0x2f83, 0x2f97, 0x2f9a}, // <finally> @0x2f7c
+    {68, 0, 0x2f9a, 0x2f9d, 0x2f9a}, // <finally> @0x2f7c
+    {67, 0, 0x2fbf, 0x2fd3, 0x2fd6}, // <finally> @0x2faa
+    {67, 0, 0x2fd6, 0x2fda, 0x2fd6}, // <finally> @0x2faa
+    {67, 0, 0x2fb8, 0x2fdf, 0x2fe2}, // <finally> @0x2faa
+    {67, 0, 0x2fe2, 0x2fe6, 0x2fe2}, // <finally> @0x2faa
+    {67, 0, 0x2fb1, 0x2feb, 0x2fee}, // <finally> @0x2faa
+    {67, 0, 0x2fee, 0x2ff2, 0x2fee}, // <finally> @0x2faa
+    {67, 27, 0x2faa, 0x2ffa, 0x2ffd}, // java/lang/InterruptedException @0x2faa
+    {70, 0, 0x3015, 0x301c, 0x301f}, // <finally> @0x300f
+    {70, 0, 0x301f, 0x3022, 0x301f}, // <finally> @0x300f
+    {71, 27, 0x3030, 0x303a, 0x303d}, // java/lang/InterruptedException @0x302a
+    {71, 0, 0x3030, 0x3059, 0x305c}, // <finally> @0x302a
+    {71, 0, 0x305c, 0x305f, 0x305c}, // <finally> @0x302a
+    {73, 0, 0x306d, 0x3075, 0x3078}, // <finally> @0x3067
+    {73, 0, 0x3078, 0x307b, 0x3078}, // <finally> @0x3067
+    {72, 0, 0x3089, 0x3091, 0x3094}, // <finally> @0x3083
+    {72, 0, 0x3094, 0x3097, 0x3094}, // <finally> @0x3083
+    {74, 0, 0x30a5, 0x30ac, 0x30af}, // <finally> @0x309f
+    {74, 0, 0x30af, 0x30b2, 0x30af}, // <finally> @0x309f
+    {75, 27, 0x30ca, 0x30d5, 0x30d8}, // java/lang/InterruptedException @0x30bf
+    {75, 0, 0x30c5, 0x30db, 0x30de}, // <finally> @0x30bf
+    {75, 0, 0x30de, 0x30e1, 0x30de}, // <finally> @0x30bf
+    {77, 27, 0x30ef, 0x30f9, 0x30fc}, // java/lang/InterruptedException @0x30e9
+    {77, 0, 0x30ef, 0x311e, 0x3121}, // <finally> @0x30e9
+    {77, 0, 0x3121, 0x3124, 0x3121}, // <finally> @0x30e9
+    {78, 0, 0x3132, 0x3139, 0x313c}, // <finally> @0x312c
+    {78, 0, 0x313c, 0x313f, 0x313c}, // <finally> @0x312c
+    {79, 27, 0x314d, 0x3157, 0x315a}, // java/lang/InterruptedException @0x3147
+    {80, 27, 0x3166, 0x3170, 0x3173}, // java/lang/InterruptedException @0x3166
+    {65, 27, 0x3198, 0x319e, 0x31a1}, // java/lang/InterruptedException @0x3189
+    {65, 0, 0x31bc, 0x31d4, 0x31d7}, // <finally> @0x3189
+    {65, 0, 0x31d7, 0x31da, 0x31d7}, // <finally> @0x3189
+    {65, 27, 0x31e3, 0x31ea, 0x31ed}, // java/lang/InterruptedException @0x3189
+    {65, 0, 0x31e3, 0x3207, 0x320a}, // <finally> @0x3189
+    {65, 0, 0x320a, 0x320d, 0x320a}, // <finally> @0x3189
+    {76, 27, 0x3222, 0x3228, 0x322b}, // java/lang/InterruptedException @0x321a
+    {76, 0, 0x3237, 0x325e, 0x3261}, // <finally> @0x321a
+    {76, 0, 0x3261, 0x3264, 0x3261}, // <finally> @0x321a
 };
-const u2 numberOfAllExceptionHandersInAllClasses = 6;
+const u2 numberOfAllExceptionHandersInAllClasses = 140;
 
 //------------------------------------------------------------------------------
 // Native Method Encapsulations
 //------------------------------------------------------------------------------
 
-// 1: Java_java_lang_Object_notify
-JNIEXPORT void JNICALL Java_java_lang_Object_notify(JNIEnv *, jobject);
+// 1: Java_java_lang_Object_notifyAll
+JNIEXPORT void JNICALL Java_java_lang_Object_notifyAll(JNIEnv *, jobject);
 void native1(contextDef* context) {
+
+    jobject thisOrClass = operandStackPeekObjectRef(context, 0);
+    Java_java_lang_Object_notifyAll(context, thisOrClass);
+    if (!ExceptionCheck(context)) {
+        pop_frame(context);
+        
+    }
+}
+// 2: Java_java_lang_Object_notify
+JNIEXPORT void JNICALL Java_java_lang_Object_notify(JNIEnv *, jobject);
+void native2(contextDef* context) {
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
     Java_java_lang_Object_notify(context, thisOrClass);
@@ -832,9 +2563,9 @@ void native1(contextDef* context) {
         
     }
 }
-// 2: Java_java_lang_Object_wait
+// 3: Java_java_lang_Object_wait
 JNIEXPORT void JNICALL Java_java_lang_Object_wait(JNIEnv *, jobject);
-void native2(contextDef* context) {
+void native3(contextDef* context) {
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
     Java_java_lang_Object_wait(context, thisOrClass);
@@ -843,9 +2574,9 @@ void native2(contextDef* context) {
         
     }
 }
-// 3: Java_java_lang_Object_hashCode
+// 4: Java_java_lang_Object_hashCode
 JNIEXPORT jint JNICALL Java_java_lang_Object_hashCode(JNIEnv *, jobject);
-void native3(contextDef* context) {
+void native4(contextDef* context) {
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
     jint retval = Java_java_lang_Object_hashCode(context, thisOrClass);
@@ -854,9 +2585,9 @@ void native3(contextDef* context) {
         operandStackPushJavaInt(context, retval);
     }
 }
-// 4: Java_java_lang_Object_getClass
+// 5: Java_java_lang_Object_getClass
 JNIEXPORT jobject JNICALL Java_java_lang_Object_getClass(JNIEnv *, jobject);
-void native4(contextDef* context) {
+void native5(contextDef* context) {
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
     jobject retval = Java_java_lang_Object_getClass(context, thisOrClass);
@@ -865,9 +2596,9 @@ void native4(contextDef* context) {
         operandStackPushObjectRef(context, retval);
     }
 }
-// 5: Java_java_lang_Throwable_getStackTraceElement
+// 6: Java_java_lang_Throwable_getStackTraceElement
 JNIEXPORT jint JNICALL Java_java_lang_Throwable_getStackTraceElement(JNIEnv *, jobject, jint);
-void native5(contextDef* context) {
+void native6(contextDef* context) {
     jint p0 = operandStackPeekJavaInt(context, 1);
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
@@ -877,9 +2608,9 @@ void native5(contextDef* context) {
         operandStackPushJavaInt(context, retval);
     }
 }
-// 6: Java_java_lang_Throwable_getStackTraceDepth
+// 7: Java_java_lang_Throwable_getStackTraceDepth
 JNIEXPORT jint JNICALL Java_java_lang_Throwable_getStackTraceDepth(JNIEnv *, jobject);
-void native6(contextDef* context) {
+void native7(contextDef* context) {
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
     jint retval = Java_java_lang_Throwable_getStackTraceDepth(context, thisOrClass);
@@ -888,20 +2619,54 @@ void native6(contextDef* context) {
         operandStackPushJavaInt(context, retval);
     }
 }
-// 7: Java_java_lang_Thread_yield
-JNIEXPORT void JNICALL Java_java_lang_Thread_yield(JNIEnv *, jclass);
-void native7(contextDef* context) {
+// 8: Java_java_lang_Thread_currentThread
+JNIEXPORT jobject JNICALL Java_java_lang_Thread_currentThread(JNIEnv *, jclass);
+void native8(contextDef* context) {
 
-    jclass thisOrClass = getJavaLangClass(context, 30);
+    jclass thisOrClass = getJavaLangClass(context, 38);
+    jobject retval = Java_java_lang_Thread_currentThread(context, thisOrClass);
+    if (!ExceptionCheck(context)) {
+        pop_frame(context);
+        operandStackPushObjectRef(context, retval);
+    }
+}
+// 9: Java_java_lang_Thread_interrupt
+JNIEXPORT void JNICALL Java_java_lang_Thread_interrupt(JNIEnv *, jobject);
+void native9(contextDef* context) {
+
+    jobject thisOrClass = operandStackPeekObjectRef(context, 0);
+    Java_java_lang_Thread_interrupt(context, thisOrClass);
+    if (!ExceptionCheck(context)) {
+        pop_frame(context);
+        
+    }
+}
+// 10: Java_java_lang_Thread_sleep
+JNIEXPORT void JNICALL Java_java_lang_Thread_sleep(JNIEnv *, jclass, jlong);
+void native10(contextDef* context) {
+    jlong p0 = operandStackPeekJavaLong(context, 0);
+
+    jclass thisOrClass = getJavaLangClass(context, 38);
+    Java_java_lang_Thread_sleep(context, thisOrClass, p0);
+    if (!ExceptionCheck(context)) {
+        pop_frame(context);
+        
+    }
+}
+// 11: Java_java_lang_Thread_yield
+JNIEXPORT void JNICALL Java_java_lang_Thread_yield(JNIEnv *, jclass);
+void native11(contextDef* context) {
+
+    jclass thisOrClass = getJavaLangClass(context, 38);
     Java_java_lang_Thread_yield(context, thisOrClass);
     if (!ExceptionCheck(context)) {
         pop_frame(context);
         
     }
 }
-// 8: Java_java_lang_Thread_attach
+// 12: Java_java_lang_Thread_attach
 JNIEXPORT void JNICALL Java_java_lang_Thread_attach(JNIEnv *, jobject);
-void native8(contextDef* context) {
+void native12(contextDef* context) {
 
     jobject thisOrClass = operandStackPeekObjectRef(context, 0);
     Java_java_lang_Thread_attach(context, thisOrClass);
@@ -910,35 +2675,46 @@ void native8(contextDef* context) {
         
     }
 }
-// 9: Java_java_lang_System_nanoTime
-JNIEXPORT jlong JNICALL Java_java_lang_System_nanoTime(JNIEnv *, jclass);
-void native9(contextDef* context) {
+// 13: Java_java_lang_System_currentTimeMillis
+JNIEXPORT jlong JNICALL Java_java_lang_System_currentTimeMillis(JNIEnv *, jclass);
+void native13(contextDef* context) {
 
-    jclass thisOrClass = getJavaLangClass(context, 29);
+    jclass thisOrClass = getJavaLangClass(context, 37);
+    jlong retval = Java_java_lang_System_currentTimeMillis(context, thisOrClass);
+    if (!ExceptionCheck(context)) {
+        pop_frame(context);
+        operandStackPushJavaLong(context, retval);
+    }
+}
+// 14: Java_java_lang_System_nanoTime
+JNIEXPORT jlong JNICALL Java_java_lang_System_nanoTime(JNIEnv *, jclass);
+void native14(contextDef* context) {
+
+    jclass thisOrClass = getJavaLangClass(context, 37);
     jlong retval = Java_java_lang_System_nanoTime(context, thisOrClass);
     if (!ExceptionCheck(context)) {
         pop_frame(context);
         operandStackPushJavaLong(context, retval);
     }
 }
-// 10: Java_java_io_PrintStream_outStringLf
+// 15: Java_java_io_PrintStream_outStringLf
 JNIEXPORT void JNICALL Java_java_io_PrintStream_outStringLf(JNIEnv *, jclass, jstring);
-void native10(contextDef* context) {
+void native15(contextDef* context) {
     jstring p0 = (jstring) operandStackPeekObjectRef(context, 0);
 
-    jclass thisOrClass = getJavaLangClass(context, 8);
+    jclass thisOrClass = getJavaLangClass(context, 16);
     Java_java_io_PrintStream_outStringLf(context, thisOrClass, p0);
     if (!ExceptionCheck(context)) {
         pop_frame(context);
         
     }
 }
-// 11: Java_java_io_PrintStream_outString
+// 16: Java_java_io_PrintStream_outString
 JNIEXPORT void JNICALL Java_java_io_PrintStream_outString(JNIEnv *, jclass, jstring);
-void native11(contextDef* context) {
+void native16(contextDef* context) {
     jstring p0 = (jstring) operandStackPeekObjectRef(context, 0);
 
-    jclass thisOrClass = getJavaLangClass(context, 8);
+    jclass thisOrClass = getJavaLangClass(context, 16);
     Java_java_io_PrintStream_outString(context, thisOrClass, p0);
     if (!ExceptionCheck(context)) {
         pop_frame(context);
@@ -962,25 +2738,140 @@ const nativeJumpTableEntry const nativeJumpTable[] = {
     native9,
     native10,
     native11,
+    native12,
+    native13,
+    native14,
+    native15,
+    native16,
 };
-const u2 nativeJumpTableSize = 11;
+const u2 nativeJumpTableSize = 16;
 
 //------------------------------------------------------------------------------
 // Integer Constant References
 //------------------------------------------------------------------------------
 
-const u2 numberOfAllIntegerConstantReferences = 0;
+const u2 numberOfAllIntegerConstantReferences = 5;
 const integerConstantReference const allIntegerConstantReferences[] = {
+    {63, 5, -2147483648}, 
+    {55, 180, 12345678}, 
+    {55, 189, 1431655765}, 
+    {55, 190, -1431655766}, 
+    {55, 205, 2147483647}, 
 };
 
 //------------------------------------------------------------------------------
 // Long Constant References
 //------------------------------------------------------------------------------
 
-const u2 numberOfAllLongConstantReferences = 2;
+const u2 numberOfAllLongConstantReferences = 107;
 const longConstantReference const allLongConstantReferences[] = {
-    {34, 12, 1000000}, 
-    {28, 26, 10}, 
+    {42, 64, 1000000}, 
+    {36, 26, 10}, 
+    {55, 17, 1234567890}, 
+    {55, 19, 10}, 
+    {55, 21, 123456789}, 
+    {55, 24, 100}, 
+    {55, 26, 12345678}, 
+    {55, 28, 12345678901}, 
+    {55, 30, 1234567890123456789}, 
+    {55, 32, 123456789012345678}, 
+    {55, 34, 12345678901234567}, 
+    {55, 36, 1000}, 
+    {55, 38, 1234567890123456}, 
+    {55, 40, 10000}, 
+    {55, 42, 123456789012345}, 
+    {55, 44, 100000}, 
+    {55, 46, 12345678901234}, 
+    {55, 48, 1000000}, 
+    {55, 50, 1234567890123}, 
+    {55, 52, 10000000}, 
+    {55, 54, 123456789012}, 
+    {55, 56, 100000000}, 
+    {55, 58, 1000000000}, 
+    {55, 60, 10000000000}, 
+    {55, 62, 100000000000}, 
+    {55, 64, 1000000000000}, 
+    {55, 66, 1234567}, 
+    {55, 68, 10000000000000}, 
+    {55, 70, 123456}, 
+    {55, 72, 100000000000000}, 
+    {55, 74, 12345}, 
+    {55, 76, 1000000000000000}, 
+    {55, 78, 1234}, 
+    {55, 80, 10000000000000000}, 
+    {55, 82, 123}, 
+    {55, 84, 100000000000000000}, 
+    {55, 86, 12}, 
+    {55, 88, 1000000000000000000}, 
+    {55, 90, -1234567890}, 
+    {55, 92, -123456789}, 
+    {55, 94, -12345678}, 
+    {55, 96, -12345678901}, 
+    {55, 98, -1234567890123456789}, 
+    {55, 100, -123456789012345678}, 
+    {55, 102, -12345678901234567}, 
+    {55, 104, -1234567890123456}, 
+    {55, 106, -123456789012345}, 
+    {55, 108, -12345678901234}, 
+    {55, 110, -1234567890123}, 
+    {55, 112, -123456789012}, 
+    {55, 114, -1234567}, 
+    {55, 116, -123456}, 
+    {55, 118, -12345}, 
+    {55, 120, -1234}, 
+    {55, 122, -123}, 
+    {55, 124, -12}, 
+    {55, 126, -1}, 
+    {55, 128, 4711}, 
+    {55, 130, 14711}, 
+    {55, 132, -5289}, 
+    {55, 134, 98765432198765}, 
+    {55, 136, 111111111099999}, 
+    {55, 138, -86419753297531}, 
+    {55, 140, 17}, 
+    {55, 142, 7}, 
+    {55, 144, 119}, 
+    {55, 146, 2}, 
+    {55, 148, 3}, 
+    {55, 150, 65535}, 
+    {55, 152, 43690}, 
+    {55, 154, 21845}, 
+    {55, 156, -65536}, 
+    {55, 158, 1048560}, 
+    {55, 160, 4095}, 
+    {55, 162, -6917335510373314560}, 
+    {55, 164, 720588035208514816}, 
+    {55, 166, -432333469398332160}, 
+    {55, 168, -81985529216486896}, 
+    {55, 170, 1147797409030816545}, 
+    {55, 172, -5124095576030431}, 
+    {55, 174, 56}, 
+    {55, 176, 317}, 
+    {55, 178, 4712}, 
+    {55, 181, 4713}, 
+    {55, 183, 8142508126285856768}, 
+    {55, 185, 8214565720323784704}, 
+    {55, 187, 8070450532247928832}, 
+    {55, 191, 8608480567731124087}, 
+    {55, 194, -6148914691236517206}, 
+    {55, 208, 45}, 
+    {55, 216, 4294967296}, 
+    {55, 218, 4294967297}, 
+    {55, 220, 4294967298}, 
+    {64, 43, 1000}, 
+    {64, 86, 100}, 
+    {64, 110, 10}, 
+    {64, 112, 50}, 
+    {64, 127, 20}, 
+    {64, 132, 1000000}, 
+    {86, 6, 100}, 
+    {85, 5, 100}, 
+    {68, 4, 100}, 
+    {79, 2, 100}, 
+    {79, 5, 1000}, 
+    {80, 2, 1000}, 
+    {65, 6, 100}, 
+    {76, 4, 10}, 
 };
 
 //------------------------------------------------------------------------------
@@ -1003,45 +2894,103 @@ const doubleConstantReference const allDoubleConstantReferences[] = {
 // String Constant References
 //------------------------------------------------------------------------------
 
-const u2 numberOfAllStringConstantReferences = 37;
+const u2 numberOfAllStringConstantReferences = 95;
 const stringConstantReference const allStringConstantReferences[] = {
     {0, 7, "@"}, 
-    {11, 4, "#"}, 
-    {10, 4, "Index out of bounds: "}, 
-    {31, 12, ": "}, 
-    {31, 15, ""}, 
-    {31, 17, ","}, 
-    {31, 19, "  at: "}, 
-    {31, 21, "Throwable: "}, 
-    {30, 12, "Illegal thread state: "}, 
-    {34, 3, "Starting"}, 
-    {34, 6, "Test 28"}, 
-    {34, 10, "Elapsed time = "}, 
-    {34, 15, " ms"}, 
-    {28, 5, "null"}, 
-    {28, 12, ""}, 
-    {28, 13, "-"}, 
-    {28, 14, "0"}, 
-    {28, 15, "1"}, 
-    {28, 16, "2"}, 
-    {28, 17, "3"}, 
-    {28, 18, "4"}, 
-    {28, 19, "5"}, 
-    {28, 20, "6"}, 
-    {28, 21, "7"}, 
-    {28, 22, "8"}, 
-    {28, 23, "9"}, 
-    {8, 4, ""}, 
-    {8, 17, "null"}, 
-    {35, 9, "Hello folks"}, 
-    {35, 13, "Bye-bye folks"}, 
-    {35, 31, "nissehat "}, 
-    {35, 35, "!!"}, 
-    {35, 36, "s = "}, 
-    {35, 41, "Got all"}, 
-    {36, 6, "nissehat "}, 
-    {36, 10, "!!"}, 
-    {36, 12, "s = "}, 
+    {19, 4, "#"}, 
+    {18, 4, "Index out of bounds: "}, 
+    {39, 12, ": "}, 
+    {39, 15, ""}, 
+    {39, 17, ","}, 
+    {39, 19, "  at: "}, 
+    {39, 21, "Throwable: "}, 
+    {38, 12, "Illegal thread state: "}, 
+    {42, 3, "Starting"}, 
+    {42, 6, "Test 1"}, 
+    {42, 8, "Test 2"}, 
+    {42, 10, "Test 3"}, 
+    {42, 12, "Test 4"}, 
+    {42, 14, "Test 5"}, 
+    {42, 16, "Test 6"}, 
+    {42, 18, "Test 7"}, 
+    {42, 20, "Test 8"}, 
+    {42, 22, "Test 9"}, 
+    {42, 24, "Test 10"}, 
+    {42, 26, "Test 11"}, 
+    {42, 28, "Test 12"}, 
+    {42, 30, "Test 13"}, 
+    {42, 32, "Test 14"}, 
+    {42, 34, "Test 15"}, 
+    {42, 36, "Test 16"}, 
+    {42, 38, "Test 17"}, 
+    {42, 40, "Test 18"}, 
+    {42, 42, "Test 19"}, 
+    {42, 44, "Test 20"}, 
+    {42, 46, "Test 21"}, 
+    {42, 48, "Test 22"}, 
+    {42, 50, "Test 23"}, 
+    {42, 52, "Test 24"}, 
+    {42, 54, "Test 25"}, 
+    {42, 56, "Test 26"}, 
+    {42, 58, "Test 28"}, 
+    {42, 62, "Elapsed time = "}, 
+    {42, 67, " ms"}, 
+    {36, 5, "null"}, 
+    {36, 8, "true"}, 
+    {36, 9, "false"}, 
+    {36, 12, ""}, 
+    {36, 13, "-"}, 
+    {36, 14, "0"}, 
+    {36, 15, "1"}, 
+    {36, 16, "2"}, 
+    {36, 17, "3"}, 
+    {36, 18, "4"}, 
+    {36, 19, "5"}, 
+    {36, 20, "6"}, 
+    {36, 21, "7"}, 
+    {36, 22, "8"}, 
+    {36, 23, "9"}, 
+    {16, 4, ""}, 
+    {16, 17, "null"}, 
+    {60, 3, "Regression failed"}, 
+    {93, 4, "."}, 
+    {105, 9, "this is a test"}, 
+    {105, 11, "0"}, 
+    {105, 12, "1"}, 
+    {105, 13, "2"}, 
+    {105, 14, "3"}, 
+    {105, 15, "4"}, 
+    {105, 16, "5"}, 
+    {105, 17, "6"}, 
+    {105, 18, "7"}, 
+    {105, 19, "8"}, 
+    {105, 20, "9"}, 
+    {105, 28, "0123456789"}, 
+    {107, 4, "Hello "}, 
+    {107, 8, "Hello world: "}, 
+    {107, 10, "Hello world"}, 
+    {94, 22, "hej45"}, 
+    {47, 6, "."}, 
+    {104, 3, "just testing 1"}, 
+    {104, 7, "just testing"}, 
+    {104, 11, "just testing 4"}, 
+    {99, 43, "Throwable xx caught: "}, 
+    {46, 8, "5"}, 
+    {46, 11, "hej spade "}, 
+    {46, 17, "#0"}, 
+    {46, 20, "Equals: "}, 
+    {46, 21, "spade"}, 
+    {46, 24, "dims: "}, 
+    {55, 211, "hello wprod"}, 
+    {64, 9, "Hello folks"}, 
+    {64, 35, "Bye-bye folks"}, 
+    {64, 53, "nissehat "}, 
+    {64, 57, "!!"}, 
+    {64, 58, "s = "}, 
+    {64, 63, "Got all"}, 
+    {82, 6, "nissehat "}, 
+    {82, 10, "!!"}, 
+    {82, 12, "s = "}, 
 };
 
 //------------------------------------------------------------------------------
@@ -1051,7 +3000,7 @@ const stringConstantReference const allStringConstantReferences[] = {
 const u1 code[] = {
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/String#<init>#([CII)V
+    // (35) java/lang/String#<init>#([CII)V
     //------------------------------------------------------------------------------
 
     // java/lang/String#<init>#([CII)V:9
@@ -1090,7 +3039,7 @@ const u1 code[] = {
     /* 0027 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/String#<init>#([C)V
+    // (35) java/lang/String#<init>#([C)V
     //------------------------------------------------------------------------------
 
     // java/lang/String#<init>#([C)V:16
@@ -1129,7 +3078,7 @@ const u1 code[] = {
     /* 004b */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/String#length#()I
+    // (35) java/lang/String#length#()I
     //------------------------------------------------------------------------------
 
     // java/lang/String#length#()I:25
@@ -1139,7 +3088,7 @@ const u1 code[] = {
     /* 0051 */      c_ireturn()
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/String#getChars#(II[CI)V
+    // (35) java/lang/String#getChars#(II[CI)V
     //------------------------------------------------------------------------------
 
     // java/lang/String#getChars#(II[CI)V:44
@@ -1170,7 +3119,7 @@ const u1 code[] = {
     /* 0071 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/String#toString#()Ljava/lang/String;
+    // (35) java/lang/String#toString#()Ljava/lang/String;
     //------------------------------------------------------------------------------
 
     // java/lang/String#toString#()Ljava/lang/String;:51
@@ -1178,7 +3127,7 @@ const u1 code[] = {
     /* 0073 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (27) java/lang/String#hashCode#()I
+    // (35) java/lang/String#hashCode#()I
     //------------------------------------------------------------------------------
 
     // java/lang/String#hashCode#()I:57
@@ -1200,1330 +3149,12255 @@ const u1 code[] = {
     /* 0084 */      c_ireturn()
 
     //------------------------------------------------------------------------------
+    // (35) java/lang/String#equals#(Ljava/lang/Object;)Z
+    //------------------------------------------------------------------------------
+
+    // java/lang/String#equals#(Ljava/lang/Object;)Z:64
+    /* 0085 */      c_aload_0()
+    /* 0086 */      c_aload_1()
+    /* 0087 */      c_if_acmpne(0x00, 0x05)
+
+    // java/lang/String#equals#(Ljava/lang/Object;)Z:65
+    /* 008a */      c_iconst_1()
+    /* 008b */      c_ireturn()
+
+    // java/lang/String#equals#(Ljava/lang/Object;)Z:66
+    /* 008c */      c_aload_1()
+    /* 008d */      c_ifnonnull(0x00, 0x05)
+
+    // java/lang/String#equals#(Ljava/lang/Object;)Z:67
+    /* 0090 */      c_iconst_0()
+    /* 0091 */      c_ireturn()
+
+    // java/lang/String#equals#(Ljava/lang/Object;)Z:68
+    /* 0092 */      c_aload_0()
+    /* 0093 */      c_invokevirtual(0x00, 0x02)
+    /* 0096 */      c_aload_1()
+    /* 0097 */      c_invokevirtual(0x00, 0x02)
+    /* 009a */      c_if_acmpeq(0x00, 0x05)
+
+    // java/lang/String#equals#(Ljava/lang/Object;)Z:69
+    /* 009d */      c_iconst_0()
+    /* 009e */      c_ireturn()
+
+    // java/lang/String#equals#(Ljava/lang/Object;)Z:70
+    /* 009f */      c_aload_1()
+    /* 00a0 */      c_checkcast(0x00, 0x07)
+    /* 00a3 */      c_astore_2()
+
+    // java/lang/String#equals#(Ljava/lang/Object;)Z:72
+    /* 00a4 */      c_aload_0()
+    /* 00a5 */      c_getfield(0x00, 0x00)
+    /* 00a8 */      c_aload_2()
+    /* 00a9 */      c_getfield(0x00, 0x00)
+    /* 00ac */      c_invokestatic(0x00, 0x03)
+    /* 00af */      c_ifne(0x00, 0x05)
+
+    // java/lang/String#equals#(Ljava/lang/Object;)Z:73
+    /* 00b2 */      c_iconst_0()
+    /* 00b3 */      c_ireturn()
+
+    // java/lang/String#equals#(Ljava/lang/Object;)Z:74
+    /* 00b4 */      c_iconst_1()
+    /* 00b5 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
     // (0) java/lang/Object#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Object#<init>#()V:7
-    /* 0085 */      c_vreturn()
+    /* 00b6 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (0) java/lang/Object#equals#(Ljava/lang/Object;)Z
+    //------------------------------------------------------------------------------
+
+    // java/lang/Object#equals#(Ljava/lang/Object;)Z:11
+    /* 00b7 */      c_aload_0()
+    /* 00b8 */      c_aload_1()
+    /* 00b9 */      c_if_acmpne(0x00, 0x07)
+    /* 00bc */      c_iconst_1()
+    /* 00bd */      c_goto(0x00, 0x04)
+    /* 00c0 */      c_iconst_0()
+    /* 00c1 */      c_ireturn()
 
     //------------------------------------------------------------------------------
     // (0) java/lang/Object#toString#()Ljava/lang/String;
     //------------------------------------------------------------------------------
 
     // java/lang/Object#toString#()Ljava/lang/String;:25
-    /* 0086 */      c_new(0x00, 0x02)
-    /* 0089 */      c_dup()
-    /* 008a */      c_invokespecial(0x00, 0x00)
-    /* 008d */      c_aload_0()
-    /* 008e */      c_invokevirtual(0x00, 0x01)
-    /* 0091 */      c_invokevirtual(0x00, 0x02)
-    /* 0094 */      c_invokevirtual(0x00, 0x03)
-    /* 0097 */      c_ldc(0x07)
-    /* 0099 */      c_invokevirtual(0x00, 0x03)
-    /* 009c */      c_aload_0()
-    /* 009d */      c_invokevirtual(0x00, 0x04)
-    /* 00a0 */      c_invokevirtual(0x00, 0x05)
-    /* 00a3 */      c_invokevirtual(0x00, 0x06)
-    /* 00a6 */      c_areturn()
+    /* 00c2 */      c_new(0x00, 0x02)
+    /* 00c5 */      c_dup()
+    /* 00c6 */      c_invokespecial(0x00, 0x00)
+    /* 00c9 */      c_aload_0()
+    /* 00ca */      c_invokevirtual(0x00, 0x01)
+    /* 00cd */      c_invokevirtual(0x00, 0x02)
+    /* 00d0 */      c_invokevirtual(0x00, 0x03)
+    /* 00d3 */      c_ldc(0x07)
+    /* 00d5 */      c_invokevirtual(0x00, 0x03)
+    /* 00d8 */      c_aload_0()
+    /* 00d9 */      c_invokevirtual(0x00, 0x04)
+    /* 00dc */      c_invokevirtual(0x00, 0x05)
+    /* 00df */      c_invokevirtual(0x00, 0x06)
+    /* 00e2 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (11) java/lang/Class#getName#()Ljava/lang/String;
+    // (19) java/lang/Class#getName#()Ljava/lang/String;
     //------------------------------------------------------------------------------
 
     // java/lang/Class#getName#()Ljava/lang/String;:21
-    /* 00a7 */      c_new(0x00, 0x02)
-    /* 00aa */      c_dup()
-    /* 00ab */      c_invokespecial(0x00, 0x00)
-    /* 00ae */      c_ldc(0x04)
-    /* 00b0 */      c_invokevirtual(0x00, 0x01)
-    /* 00b3 */      c_aload_0()
-    /* 00b4 */      c_getfield(0x00, 0x00)
-    /* 00b7 */      c_invokevirtual(0x00, 0x02)
-    /* 00ba */      c_invokevirtual(0x00, 0x03)
-    /* 00bd */      c_areturn()
+    /* 00e3 */      c_new(0x00, 0x02)
+    /* 00e6 */      c_dup()
+    /* 00e7 */      c_invokespecial(0x00, 0x00)
+    /* 00ea */      c_ldc(0x04)
+    /* 00ec */      c_invokevirtual(0x00, 0x01)
+    /* 00ef */      c_aload_0()
+    /* 00f0 */      c_getfield(0x00, 0x00)
+    /* 00f3 */      c_invokevirtual(0x00, 0x02)
+    /* 00f6 */      c_invokevirtual(0x00, 0x03)
+    /* 00f9 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (11) java/lang/Class#toString#()Ljava/lang/String;
+    // (19) java/lang/Class#toString#()Ljava/lang/String;
     //------------------------------------------------------------------------------
 
     // java/lang/Class#toString#()Ljava/lang/String;:26
-    /* 00be */      c_aload_0()
-    /* 00bf */      c_invokevirtual(0x00, 0x04)
-    /* 00c2 */      c_areturn()
+    /* 00fa */      c_aload_0()
+    /* 00fb */      c_invokevirtual(0x00, 0x04)
+    /* 00fe */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (10) java/lang/ArrayIndexOutOfBoundsException#<init>#(I)V
+    // (18) java/lang/ArrayIndexOutOfBoundsException#<init>#(I)V
     //------------------------------------------------------------------------------
 
     // java/lang/ArrayIndexOutOfBoundsException#<init>#(I)V:9
-    /* 00c3 */      c_aload_0()
-    /* 00c4 */      c_new(0x00, 0x02)
-    /* 00c7 */      c_dup()
-    /* 00c8 */      c_invokespecial(0x00, 0x01)
-    /* 00cb */      c_ldc(0x04)
-    /* 00cd */      c_invokevirtual(0x00, 0x02)
-    /* 00d0 */      c_iload_1()
-    /* 00d1 */      c_invokevirtual(0x00, 0x03)
-    /* 00d4 */      c_invokevirtual(0x00, 0x04)
-    /* 00d7 */      c_invokespecial(0x00, 0x00)
+    /* 00ff */      c_aload_0()
+    /* 0100 */      c_new(0x00, 0x02)
+    /* 0103 */      c_dup()
+    /* 0104 */      c_invokespecial(0x00, 0x01)
+    /* 0107 */      c_ldc(0x04)
+    /* 0109 */      c_invokevirtual(0x00, 0x02)
+    /* 010c */      c_iload_1()
+    /* 010d */      c_invokevirtual(0x00, 0x03)
+    /* 0110 */      c_invokevirtual(0x00, 0x04)
+    /* 0113 */      c_invokespecial(0x00, 0x00)
 
     // java/lang/ArrayIndexOutOfBoundsException#<init>#(I)V:10
-    /* 00da */      c_vreturn()
+    /* 0116 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (9) java/lang/ArithmeticException#<init>#(Ljava/lang/String;)V
+    // (17) java/lang/ArithmeticException#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/ArithmeticException#<init>#(Ljava/lang/String;)V:6
-    /* 00db */      c_aload_0()
-    /* 00dc */      c_aload_1()
-    /* 00dd */      c_invokespecial(0x00, 0x00)
+    /* 0117 */      c_aload_0()
+    /* 0118 */      c_aload_1()
+    /* 0119 */      c_invokespecial(0x00, 0x00)
 
     // java/lang/ArithmeticException#<init>#(Ljava/lang/String;)V:7
-    /* 00e0 */      c_vreturn()
+    /* 011c */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (12) java/lang/ClassCastException#<init>#()V
+    // (20) java/lang/ClassCastException#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/ClassCastException#<init>#()V:3
-    /* 00e1 */      c_aload_0()
-    /* 00e2 */      c_invokespecial(0x00, 0x00)
-    /* 00e5 */      c_vreturn()
+    /* 011d */      c_aload_0()
+    /* 011e */      c_invokespecial(0x00, 0x00)
+    /* 0121 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (16) java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V
+    // (24) java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V:8
-    /* 00e6 */      c_aload_0()
-    /* 00e7 */      c_aload_1()
-    /* 00e8 */      c_invokespecial(0x00, 0x00)
+    /* 0122 */      c_aload_0()
+    /* 0123 */      c_aload_1()
+    /* 0124 */      c_invokespecial(0x00, 0x00)
 
     // java/lang/IllegalMonitorStateException#<init>#(Ljava/lang/String;)V:9
-    /* 00eb */      c_vreturn()
+    /* 0127 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (19) java/lang/InterruptedException#<init>#()V
+    // (27) java/lang/InterruptedException#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/InterruptedException#<init>#()V:3
-    /* 00ec */      c_aload_0()
-    /* 00ed */      c_invokespecial(0x00, 0x00)
-    /* 00f0 */      c_vreturn()
+    /* 0128 */      c_aload_0()
+    /* 0129 */      c_invokespecial(0x00, 0x00)
+    /* 012c */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (20) java/lang/NegativeArraySizeException#<init>#()V
+    // (28) java/lang/NegativeArraySizeException#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/NegativeArraySizeException#<init>#()V:3
-    /* 00f1 */      c_aload_0()
-    /* 00f2 */      c_invokespecial(0x00, 0x00)
-    /* 00f5 */      c_vreturn()
+    /* 012d */      c_aload_0()
+    /* 012e */      c_invokespecial(0x00, 0x00)
+    /* 0131 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (21) java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
+    // (29) java/lang/NullPointerException#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/NullPointerException#<init>#(Ljava/lang/String;)V:5
-    /* 00f6 */      c_aload_0()
-    /* 00f7 */      c_aload_1()
-    /* 00f8 */      c_invokespecial(0x00, 0x00)
+    /* 0132 */      c_aload_0()
+    /* 0133 */      c_aload_1()
+    /* 0134 */      c_invokespecial(0x00, 0x00)
 
     // java/lang/NullPointerException#<init>#(Ljava/lang/String;)V:6
-    /* 00fb */      c_vreturn()
+    /* 0137 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (21) java/lang/NullPointerException#<init>#()V
+    // (29) java/lang/NullPointerException#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/NullPointerException#<init>#()V:9
-    /* 00fc */      c_aload_0()
-    /* 00fd */      c_aconst_null()
-    /* 00fe */      c_invokespecial(0x00, 0x01)
+    /* 0138 */      c_aload_0()
+    /* 0139 */      c_aconst_null()
+    /* 013a */      c_invokespecial(0x00, 0x01)
 
     // java/lang/NullPointerException#<init>#()V:10
-    /* 0101 */      c_vreturn()
+    /* 013d */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (24) java/lang/OutOfMemoryError#<init>#()V
+    // (32) java/lang/OutOfMemoryError#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/OutOfMemoryError#<init>#()V:10
-    /* 0102 */      c_aload_0()
-    /* 0103 */      c_invokespecial(0x00, 0x00)
+    /* 013e */      c_aload_0()
+    /* 013f */      c_invokespecial(0x00, 0x00)
 
     // java/lang/OutOfMemoryError#<init>#()V:11
-    /* 0106 */      c_vreturn()
+    /* 0142 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (24) java/lang/OutOfMemoryError#getInstance#()Ljava/lang/OutOfMemoryError;
+    // (32) java/lang/OutOfMemoryError#getInstance#()Ljava/lang/OutOfMemoryError;
     //------------------------------------------------------------------------------
 
     // java/lang/OutOfMemoryError#getInstance#()Ljava/lang/OutOfMemoryError;:18
-    /* 0107 */      c_getstatic(0x00, 0x00)
-    /* 010a */      c_areturn()
+    /* 0143 */      c_getstatic(0x00, 0x00)
+    /* 0146 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (24) java/lang/OutOfMemoryError#<clinit>#()V
+    // (32) java/lang/OutOfMemoryError#<clinit>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/OutOfMemoryError#<clinit>#()V:5
-    /* 010b */      c_new(0x00, 0x04)
-    /* 010e */      c_dup()
-    /* 010f */      c_invokespecial(0x00, 0x01)
-    /* 0112 */      c_putstatic(0x00, 0x00)
-    /* 0115 */      c_vreturn()
+    /* 0147 */      c_new(0x00, 0x04)
+    /* 014a */      c_dup()
+    /* 014b */      c_invokespecial(0x00, 0x01)
+    /* 014e */      c_putstatic(0x00, 0x00)
+    /* 0151 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (32) java/lang/VirtualMachineError#<init>#()V
+    // (40) java/lang/VirtualMachineError#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/VirtualMachineError#<init>#()V:8
-    /* 0116 */      c_aload_0()
-    /* 0117 */      c_invokespecial(0x00, 0x00)
+    /* 0152 */      c_aload_0()
+    /* 0153 */      c_invokespecial(0x00, 0x00)
 
     // java/lang/VirtualMachineError#<init>#()V:9
-    /* 011a */      c_vreturn()
+    /* 0156 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (13) java/lang/Error#<init>#()V
+    // (21) java/lang/Error#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Error#<init>#()V:8
-    /* 011b */      c_aload_0()
-    /* 011c */      c_invokespecial(0x00, 0x00)
+    /* 0157 */      c_aload_0()
+    /* 0158 */      c_invokespecial(0x00, 0x00)
 
     // java/lang/Error#<init>#()V:9
-    /* 011f */      c_vreturn()
+    /* 015b */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (31) java/lang/Throwable#<init>#()V
+    // (39) java/lang/Throwable#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Throwable#<init>#()V:11
-    /* 0120 */      c_aload_0()
-    /* 0121 */      c_aconst_null()
-    /* 0122 */      c_invokespecial(0x00, 0x00)
+    /* 015c */      c_aload_0()
+    /* 015d */      c_aconst_null()
+    /* 015e */      c_invokespecial(0x00, 0x00)
 
     // java/lang/Throwable#<init>#()V:12
-    /* 0125 */      c_vreturn()
+    /* 0161 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (31) java/lang/Throwable#<init>#(Ljava/lang/String;)V
+    // (39) java/lang/Throwable#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/Throwable#<init>#(Ljava/lang/String;)V:14
-    /* 0126 */      c_aload_0()
-    /* 0127 */      c_invokespecial(0x00, 0x01)
+    /* 0162 */      c_aload_0()
+    /* 0163 */      c_invokespecial(0x00, 0x01)
 
     // java/lang/Throwable#<init>#(Ljava/lang/String;)V:15
-    /* 012a */      c_aload_0()
-    /* 012b */      c_aload_1()
-    /* 012c */      c_putfield(0x00, 0x00)
+    /* 0166 */      c_aload_0()
+    /* 0167 */      c_aload_1()
+    /* 0168 */      c_putfield(0x00, 0x00)
 
     // java/lang/Throwable#<init>#(Ljava/lang/String;)V:16
-    /* 012f */      c_aload_0()
-    /* 0130 */      c_invokespecial(0x00, 0x02)
-    /* 0133 */      c_istore_2()
+    /* 016b */      c_aload_0()
+    /* 016c */      c_invokespecial(0x00, 0x02)
+    /* 016f */      c_istore_2()
 
     // java/lang/Throwable#<init>#(Ljava/lang/String;)V:17
-    /* 0134 */      c_aload_0()
-    /* 0135 */      c_iload_2()
-    /* 0136 */      c_newarray(0x0a)
-    /* 0138 */      c_putfield(0x00, 0x01)
+    /* 0170 */      c_aload_0()
+    /* 0171 */      c_iload_2()
+    /* 0172 */      c_newarray(0x0a)
+    /* 0174 */      c_putfield(0x00, 0x01)
 
     // java/lang/Throwable#<init>#(Ljava/lang/String;)V:18
-    /* 013b */      c_iconst_0()
-    /* 013c */      c_istore_3()
-    /* 013d */      c_iload_3()
-    /* 013e */      c_iload_2()
-    /* 013f */      c_if_icmpge(0x00, 0x14)
+    /* 0177 */      c_iconst_0()
+    /* 0178 */      c_istore_3()
+    /* 0179 */      c_iload_3()
+    /* 017a */      c_iload_2()
+    /* 017b */      c_if_icmpge(0x00, 0x14)
 
     // java/lang/Throwable#<init>#(Ljava/lang/String;)V:19
-    /* 0142 */      c_aload_0()
-    /* 0143 */      c_getfield(0x00, 0x01)
-    /* 0146 */      c_iload_3()
-    /* 0147 */      c_aload_0()
-    /* 0148 */      c_iload_3()
-    /* 0149 */      c_invokespecial(0x00, 0x03)
-    /* 014c */      c_iastore()
+    /* 017e */      c_aload_0()
+    /* 017f */      c_getfield(0x00, 0x01)
+    /* 0182 */      c_iload_3()
+    /* 0183 */      c_aload_0()
+    /* 0184 */      c_iload_3()
+    /* 0185 */      c_invokespecial(0x00, 0x03)
+    /* 0188 */      c_iastore()
 
     // java/lang/Throwable#<init>#(Ljava/lang/String;)V:18
-    /* 014d */      c_iinc(0x03, 0x01)
-    /* 0150 */      c_goto(0xff, 0xed)
+    /* 0189 */      c_iinc(0x03, 0x01)
+    /* 018c */      c_goto(0xff, 0xed)
 
     // java/lang/Throwable#<init>#(Ljava/lang/String;)V:21
-    /* 0153 */      c_vreturn()
+    /* 018f */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (31) java/lang/Throwable#printStackTrace#()V
+    // (39) java/lang/Throwable#printStackTrace#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Throwable#printStackTrace#()V:39
-    /* 0154 */      c_getstatic(0x00, 0x02)
-    /* 0157 */      c_aload_0()
-    /* 0158 */      c_invokevirtual(0x00, 0x04)
-    /* 015b */      c_invokevirtual(0x00, 0x05)
+    /* 0190 */      c_getstatic(0x00, 0x02)
+    /* 0193 */      c_aload_0()
+    /* 0194 */      c_invokevirtual(0x00, 0x04)
+    /* 0197 */      c_invokevirtual(0x00, 0x05)
 
     // java/lang/Throwable#printStackTrace#()V:40
-    /* 015e */      c_getstatic(0x00, 0x02)
-    /* 0161 */      c_aload_0()
-    /* 0162 */      c_getfield(0x00, 0x00)
-    /* 0165 */      c_ifnull(0x00, 0x1c)
-    /* 0168 */      c_new(0x00, 0x0a)
-    /* 016b */      c_dup()
-    /* 016c */      c_invokespecial(0x00, 0x06)
-    /* 016f */      c_ldc(0x0c)
-    /* 0171 */      c_invokevirtual(0x00, 0x07)
-    /* 0174 */      c_aload_0()
-    /* 0175 */      c_getfield(0x00, 0x00)
-    /* 0178 */      c_invokevirtual(0x00, 0x07)
-    /* 017b */      c_invokevirtual(0x00, 0x08)
-    /* 017e */      c_goto(0x00, 0x05)
-    /* 0181 */      c_ldc(0x0f)
-    /* 0183 */      c_invokevirtual(0x00, 0x09)
+    /* 019a */      c_getstatic(0x00, 0x02)
+    /* 019d */      c_aload_0()
+    /* 019e */      c_getfield(0x00, 0x00)
+    /* 01a1 */      c_ifnull(0x00, 0x1c)
+    /* 01a4 */      c_new(0x00, 0x0a)
+    /* 01a7 */      c_dup()
+    /* 01a8 */      c_invokespecial(0x00, 0x06)
+    /* 01ab */      c_ldc(0x0c)
+    /* 01ad */      c_invokevirtual(0x00, 0x07)
+    /* 01b0 */      c_aload_0()
+    /* 01b1 */      c_getfield(0x00, 0x00)
+    /* 01b4 */      c_invokevirtual(0x00, 0x07)
+    /* 01b7 */      c_invokevirtual(0x00, 0x08)
+    /* 01ba */      c_goto(0x00, 0x05)
+    /* 01bd */      c_ldc(0x0f)
+    /* 01bf */      c_invokevirtual(0x00, 0x09)
 
     // java/lang/Throwable#printStackTrace#()V:42
-    /* 0186 */      c_iconst_0()
-    /* 0187 */      c_istore_1()
+    /* 01c2 */      c_iconst_0()
+    /* 01c3 */      c_istore_1()
 
     // java/lang/Throwable#printStackTrace#()V:43
-    /* 0188 */      c_aload_0()
-    /* 0189 */      c_getfield(0x00, 0x01)
-    /* 018c */      c_astore_2()
-    /* 018d */      c_aload_2()
-    /* 018e */      c_arraylength()
-    /* 018f */      c_istore_3()
-    /* 0190 */      c_iconst_0()
-    /* 0191 */      c_istore(0x04)
-    /* 0193 */      c_iload(0x04)
-    /* 0195 */      c_iload_3()
-    /* 0196 */      c_if_icmpge(0x00, 0x30)
-    /* 0199 */      c_aload_2()
-    /* 019a */      c_iload(0x04)
-    /* 019c */      c_iaload()
-    /* 019d */      c_istore(0x05)
+    /* 01c4 */      c_aload_0()
+    /* 01c5 */      c_getfield(0x00, 0x01)
+    /* 01c8 */      c_astore_2()
+    /* 01c9 */      c_aload_2()
+    /* 01ca */      c_arraylength()
+    /* 01cb */      c_istore_3()
+    /* 01cc */      c_iconst_0()
+    /* 01cd */      c_istore(0x04)
+    /* 01cf */      c_iload(0x04)
+    /* 01d1 */      c_iload_3()
+    /* 01d2 */      c_if_icmpge(0x00, 0x30)
+    /* 01d5 */      c_aload_2()
+    /* 01d6 */      c_iload(0x04)
+    /* 01d8 */      c_iaload()
+    /* 01d9 */      c_istore(0x05)
 
     // java/lang/Throwable#printStackTrace#()V:44
-    /* 019f */      c_iload_1()
-    /* 01a0 */      c_ifeq(0x00, 0x0e)
+    /* 01db */      c_iload_1()
+    /* 01dc */      c_ifeq(0x00, 0x0e)
 
     // java/lang/Throwable#printStackTrace#()V:45
-    /* 01a3 */      c_getstatic(0x00, 0x02)
-    /* 01a6 */      c_ldc(0x11)
-    /* 01a8 */      c_invokevirtual(0x00, 0x0a)
-    /* 01ab */      c_goto(0x00, 0x0d)
+    /* 01df */      c_getstatic(0x00, 0x02)
+    /* 01e2 */      c_ldc(0x11)
+    /* 01e4 */      c_invokevirtual(0x00, 0x0a)
+    /* 01e7 */      c_goto(0x00, 0x0d)
 
     // java/lang/Throwable#printStackTrace#()V:47
-    /* 01ae */      c_getstatic(0x00, 0x02)
-    /* 01b1 */      c_ldc(0x13)
-    /* 01b3 */      c_invokevirtual(0x00, 0x0a)
+    /* 01ea */      c_getstatic(0x00, 0x02)
+    /* 01ed */      c_ldc(0x13)
+    /* 01ef */      c_invokevirtual(0x00, 0x0a)
 
     // java/lang/Throwable#printStackTrace#()V:48
-    /* 01b6 */      c_iconst_1()
-    /* 01b7 */      c_istore_1()
+    /* 01f2 */      c_iconst_1()
+    /* 01f3 */      c_istore_1()
 
     // java/lang/Throwable#printStackTrace#()V:50
-    /* 01b8 */      c_getstatic(0x00, 0x02)
-    /* 01bb */      c_iload(0x05)
-    /* 01bd */      c_invokevirtual(0x00, 0x0b)
+    /* 01f4 */      c_getstatic(0x00, 0x02)
+    /* 01f7 */      c_iload(0x05)
+    /* 01f9 */      c_invokevirtual(0x00, 0x0b)
 
     // java/lang/Throwable#printStackTrace#()V:43
-    /* 01c0 */      c_iinc(0x04, 0x01)
-    /* 01c3 */      c_goto(0xff, 0xd0)
+    /* 01fc */      c_iinc(0x04, 0x01)
+    /* 01ff */      c_goto(0xff, 0xd0)
 
     // java/lang/Throwable#printStackTrace#()V:52
-    /* 01c6 */      c_getstatic(0x00, 0x02)
-    /* 01c9 */      c_ldc(0x0f)
-    /* 01cb */      c_invokevirtual(0x00, 0x09)
+    /* 0202 */      c_getstatic(0x00, 0x02)
+    /* 0205 */      c_ldc(0x0f)
+    /* 0207 */      c_invokevirtual(0x00, 0x09)
 
     // java/lang/Throwable#printStackTrace#()V:53
-    /* 01ce */      c_vreturn()
+    /* 020a */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (31) java/lang/Throwable#toString#()Ljava/lang/String;
+    // (39) java/lang/Throwable#toString#()Ljava/lang/String;
     //------------------------------------------------------------------------------
 
     // java/lang/Throwable#toString#()Ljava/lang/String;:57
-    /* 01cf */      c_new(0x00, 0x0a)
-    /* 01d2 */      c_dup()
-    /* 01d3 */      c_invokespecial(0x00, 0x06)
-    /* 01d6 */      c_ldc(0x15)
-    /* 01d8 */      c_invokevirtual(0x00, 0x07)
-    /* 01db */      c_aload_0()
-    /* 01dc */      c_getfield(0x00, 0x00)
-    /* 01df */      c_invokevirtual(0x00, 0x07)
-    /* 01e2 */      c_invokevirtual(0x00, 0x08)
-    /* 01e5 */      c_areturn()
+    /* 020b */      c_new(0x00, 0x0a)
+    /* 020e */      c_dup()
+    /* 020f */      c_invokespecial(0x00, 0x06)
+    /* 0212 */      c_ldc(0x15)
+    /* 0214 */      c_invokevirtual(0x00, 0x07)
+    /* 0217 */      c_aload_0()
+    /* 0218 */      c_getfield(0x00, 0x00)
+    /* 021b */      c_invokevirtual(0x00, 0x07)
+    /* 021e */      c_invokevirtual(0x00, 0x08)
+    /* 0221 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (30) java/lang/Thread#<init>#()V
+    // (38) java/lang/Thread#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#<init>#()V:65
-    /* 01e6 */      c_aload_0()
-    /* 01e7 */      c_aconst_null()
-    /* 01e8 */      c_invokespecial(0x00, 0x00)
+    /* 0222 */      c_aload_0()
+    /* 0223 */      c_aconst_null()
+    /* 0224 */      c_invokespecial(0x00, 0x00)
 
     // java/lang/Thread#<init>#()V:66
-    /* 01eb */      c_vreturn()
+    /* 0227 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (30) java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
+    // (38) java/lang/Thread#<init>#(Ljava/lang/Runnable;)V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#<init>#(Ljava/lang/Runnable;)V:73
-    /* 01ec */      c_aload_0()
-    /* 01ed */      c_invokespecial(0x00, 0x01)
+    /* 0228 */      c_aload_0()
+    /* 0229 */      c_invokespecial(0x00, 0x01)
 
     // java/lang/Thread#<init>#(Ljava/lang/Runnable;)V:74
-    /* 01f0 */      c_aload_0()
-    /* 01f1 */      c_aload_1()
-    /* 01f2 */      c_putfield(0x00, 0x00)
+    /* 022c */      c_aload_0()
+    /* 022d */      c_aload_1()
+    /* 022e */      c_putfield(0x00, 0x00)
 
     // java/lang/Thread#<init>#(Ljava/lang/Runnable;)V:76
-    /* 01f5 */      c_aload_0()
-    /* 01f6 */      c_getstatic(0x00, 0x01)
-    /* 01f9 */      c_dup2()
-    /* 01fa */      c_lconst_1()
-    /* 01fb */      c_ladd()
-    /* 01fc */      c_putstatic(0x00, 0x01)
-    /* 01ff */      c_putfield(0x00, 0x02)
+    /* 0231 */      c_aload_0()
+    /* 0232 */      c_getstatic(0x00, 0x01)
+    /* 0235 */      c_dup2()
+    /* 0236 */      c_lconst_1()
+    /* 0237 */      c_ladd()
+    /* 0238 */      c_putstatic(0x00, 0x01)
+    /* 023b */      c_putfield(0x00, 0x02)
 
     // java/lang/Thread#<init>#(Ljava/lang/Runnable;)V:77
-    /* 0202 */      c_aload_0()
-    /* 0203 */      c_iconst_0()
-    /* 0204 */      c_putfield(0x00, 0x03)
+    /* 023e */      c_aload_0()
+    /* 023f */      c_iconst_0()
+    /* 0240 */      c_putfield(0x00, 0x03)
 
     // java/lang/Thread#<init>#(Ljava/lang/Runnable;)V:78
-    /* 0207 */      c_aload_0()
-    /* 0208 */      c_iconst_0()
-    /* 0209 */      c_putfield(0x00, 0x04)
+    /* 0243 */      c_aload_0()
+    /* 0244 */      c_iconst_0()
+    /* 0245 */      c_putfield(0x00, 0x04)
 
     // java/lang/Thread#<init>#(Ljava/lang/Runnable;)V:79
-    /* 020c */      c_vreturn()
+    /* 0248 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (30) java/lang/Thread#start#()V
+    // (38) java/lang/Thread#start#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#start#()V:85
-    /* 020d */      c_aload_0()
-    /* 020e */      c_getfield(0x00, 0x03)
-    /* 0211 */      c_ifne(0x00, 0x0a)
+    /* 0249 */      c_aload_0()
+    /* 024a */      c_getfield(0x00, 0x03)
+    /* 024d */      c_ifne(0x00, 0x0a)
 
     // java/lang/Thread#start#()V:87
-    /* 0214 */      c_aload_0()
-    /* 0215 */      c_invokespecial(0x00, 0x02)
-    /* 0218 */      c_goto(0x00, 0x21)
+    /* 0250 */      c_aload_0()
+    /* 0251 */      c_invokespecial(0x00, 0x02)
+    /* 0254 */      c_goto(0x00, 0x21)
 
     // java/lang/Thread#start#()V:91
-    /* 021b */      c_new(0x00, 0x09)
-    /* 021e */      c_dup()
-    /* 021f */      c_new(0x00, 0x0a)
-    /* 0222 */      c_dup()
-    /* 0223 */      c_invokespecial(0x00, 0x03)
-    /* 0226 */      c_ldc(0x0c)
-    /* 0228 */      c_invokevirtual(0x00, 0x04)
-    /* 022b */      c_aload_0()
-    /* 022c */      c_getfield(0x00, 0x03)
-    /* 022f */      c_invokevirtual(0x00, 0x05)
-    /* 0232 */      c_invokevirtual(0x00, 0x06)
-    /* 0235 */      c_invokespecial(0x00, 0x07)
-    /* 0238 */      c_athrow()
+    /* 0257 */      c_new(0x00, 0x09)
+    /* 025a */      c_dup()
+    /* 025b */      c_new(0x00, 0x0a)
+    /* 025e */      c_dup()
+    /* 025f */      c_invokespecial(0x00, 0x03)
+    /* 0262 */      c_ldc(0x0c)
+    /* 0264 */      c_invokevirtual(0x00, 0x04)
+    /* 0267 */      c_aload_0()
+    /* 0268 */      c_getfield(0x00, 0x03)
+    /* 026b */      c_invokevirtual(0x00, 0x05)
+    /* 026e */      c_invokevirtual(0x00, 0x06)
+    /* 0271 */      c_invokespecial(0x00, 0x07)
+    /* 0274 */      c_athrow()
 
     // java/lang/Thread#start#()V:93
-    /* 0239 */      c_vreturn()
+    /* 0275 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (30) java/lang/Thread#runFromNative#()V
+    // (38) java/lang/Thread#runFromNative#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#runFromNative#()V:100
-    /* 023a */      c_aload_0()
-    /* 023b */      c_getfield(0x00, 0x00)
-    /* 023e */      c_ifnull(0x00, 0x0f)
+    /* 0276 */      c_aload_0()
+    /* 0277 */      c_getfield(0x00, 0x00)
+    /* 027a */      c_ifnull(0x00, 0x0f)
 
     // java/lang/Thread#runFromNative#()V:101
-    /* 0241 */      c_aload_0()
-    /* 0242 */      c_getfield(0x00, 0x00)
-    /* 0245 */      c_invokeinterface(0x00, 0x08, 0x01, 0x00)
-    /* 024a */      c_goto(0x00, 0x07)
+    /* 027d */      c_aload_0()
+    /* 027e */      c_getfield(0x00, 0x00)
+    /* 0281 */      c_invokeinterface(0x00, 0x08, 0x01, 0x00)
+    /* 0286 */      c_goto(0x00, 0x07)
 
     // java/lang/Thread#runFromNative#()V:103
-    /* 024d */      c_aload_0()
-    /* 024e */      c_invokevirtual(0x00, 0x09)
+    /* 0289 */      c_aload_0()
+    /* 028a */      c_invokevirtual(0x00, 0x09)
 
     // java/lang/Thread#runFromNative#()V:107
-    /* 0251 */      c_goto(0x00, 0x08)
+    /* 028d */      c_goto(0x00, 0x08)
 
     // java/lang/Thread#runFromNative#()V:105
-    /* 0254 */      c_astore_1()
+    /* 0290 */      c_astore_1()
 
     // java/lang/Thread#runFromNative#()V:106
-    /* 0255 */      c_aload_1()
-    /* 0256 */      c_invokevirtual(0x00, 0x0a)
+    /* 0291 */      c_aload_1()
+    /* 0292 */      c_invokevirtual(0x00, 0x0a)
 
     // java/lang/Thread#runFromNative#()V:109
-    /* 0259 */      c_aload_0()
-    /* 025a */      c_iconst_5()
-    /* 025b */      c_putfield(0x00, 0x03)
+    /* 0295 */      c_aload_0()
+    /* 0296 */      c_iconst_5()
+    /* 0297 */      c_putfield(0x00, 0x03)
 
     // java/lang/Thread#runFromNative#()V:116
-    /* 025e */      c_invokestatic(0x00, 0x0b)
+    /* 029a */      c_invokestatic(0x00, 0x0b)
 
     // java/lang/Thread#runFromNative#()V:117
-    /* 0261 */      c_vreturn()
+    /* 029d */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (30) java/lang/Thread#run#()V
+    // (38) java/lang/Thread#run#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#run#()V:128
-    /* 0262 */      c_vreturn()
+    /* 029e */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (30) java/lang/Thread#<clinit>#()V
+    // (38) java/lang/Thread#<clinit>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Thread#<clinit>#()V:26
-    /* 0263 */      c_lconst_0()
-    /* 0264 */      c_putstatic(0x00, 0x01)
+    /* 029f */      c_lconst_0()
+    /* 02a0 */      c_putstatic(0x00, 0x01)
 
     // java/lang/Thread#<clinit>#()V:58
-    /* 0267 */      c_new(0x00, 0x16)
-    /* 026a */      c_dup()
-    /* 026b */      c_invokespecial(0x00, 0x0c)
-    /* 026e */      c_invokespecial(0x00, 0x02)
+    /* 02a3 */      c_new(0x00, 0x16)
+    /* 02a6 */      c_dup()
+    /* 02a7 */      c_invokespecial(0x00, 0x0c)
+    /* 02aa */      c_invokespecial(0x00, 0x02)
 
     // java/lang/Thread#<clinit>#()V:59
-    /* 0271 */      c_vreturn()
+    /* 02ad */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (34) thinj/regression/AllTests#main#([Ljava/lang/String;)V
+    // (42) thinj/regression/AllTests#main#([Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // thinj/regression/AllTests#main#([Ljava/lang/String;)V:17
-    /* 0272 */      c_getstatic(0x00, 0x00)
-    /* 0275 */      c_ldc(0x03)
-    /* 0277 */      c_invokevirtual(0x00, 0x00)
+    /* 02ae */      c_getstatic(0x00, 0x00)
+    /* 02b1 */      c_ldc(0x03)
+    /* 02b3 */      c_invokevirtual(0x00, 0x00)
 
     // thinj/regression/AllTests#main#([Ljava/lang/String;)V:18
-    /* 027a */      c_invokestatic(0x00, 0x01)
-    /* 027d */      c_lstore_1()
+    /* 02b6 */      c_invokestatic(0x00, 0x01)
+    /* 02b9 */      c_lstore_1()
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:20
+    /* 02ba */      c_getstatic(0x00, 0x00)
+    /* 02bd */      c_ldc(0x06)
+    /* 02bf */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:21
+    /* 02c2 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:23
+    /* 02c5 */      c_getstatic(0x00, 0x00)
+    /* 02c8 */      c_ldc(0x08)
+    /* 02ca */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:24
+    /* 02cd */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:26
+    /* 02d0 */      c_getstatic(0x00, 0x00)
+    /* 02d3 */      c_ldc(0x0a)
+    /* 02d5 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:27
+    /* 02d8 */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:29
+    /* 02db */      c_getstatic(0x00, 0x00)
+    /* 02de */      c_ldc(0x0c)
+    /* 02e0 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:30
+    /* 02e3 */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:32
+    /* 02e6 */      c_getstatic(0x00, 0x00)
+    /* 02e9 */      c_ldc(0x0e)
+    /* 02eb */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:33
+    /* 02ee */      c_invokestatic(0x00, 0x06)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:35
+    /* 02f1 */      c_getstatic(0x00, 0x00)
+    /* 02f4 */      c_ldc(0x10)
+    /* 02f6 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:36
+    /* 02f9 */      c_invokestatic(0x00, 0x07)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:38
+    /* 02fc */      c_getstatic(0x00, 0x00)
+    /* 02ff */      c_ldc(0x12)
+    /* 0301 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:39
+    /* 0304 */      c_invokestatic(0x00, 0x08)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:41
+    /* 0307 */      c_getstatic(0x00, 0x00)
+    /* 030a */      c_ldc(0x14)
+    /* 030c */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:42
+    /* 030f */      c_invokestatic(0x00, 0x09)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:44
+    /* 0312 */      c_getstatic(0x00, 0x00)
+    /* 0315 */      c_ldc(0x16)
+    /* 0317 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:45
+    /* 031a */      c_invokestatic(0x00, 0x0a)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:47
+    /* 031d */      c_getstatic(0x00, 0x00)
+    /* 0320 */      c_ldc(0x18)
+    /* 0322 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:48
+    /* 0325 */      c_invokestatic(0x00, 0x0b)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:50
+    /* 0328 */      c_getstatic(0x00, 0x00)
+    /* 032b */      c_ldc(0x1a)
+    /* 032d */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:51
+    /* 0330 */      c_invokestatic(0x00, 0x0c)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:53
+    /* 0333 */      c_getstatic(0x00, 0x00)
+    /* 0336 */      c_ldc(0x1c)
+    /* 0338 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:54
+    /* 033b */      c_invokestatic(0x00, 0x0d)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:56
+    /* 033e */      c_getstatic(0x00, 0x00)
+    /* 0341 */      c_ldc(0x1e)
+    /* 0343 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:57
+    /* 0346 */      c_invokestatic(0x00, 0x0e)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:59
+    /* 0349 */      c_getstatic(0x00, 0x00)
+    /* 034c */      c_ldc(0x20)
+    /* 034e */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:60
+    /* 0351 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:62
+    /* 0354 */      c_getstatic(0x00, 0x00)
+    /* 0357 */      c_ldc(0x22)
+    /* 0359 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:63
+    /* 035c */      c_invokestatic(0x00, 0x10)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:65
+    /* 035f */      c_getstatic(0x00, 0x00)
+    /* 0362 */      c_ldc(0x24)
+    /* 0364 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:66
+    /* 0367 */      c_invokestatic(0x00, 0x11)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:68
+    /* 036a */      c_getstatic(0x00, 0x00)
+    /* 036d */      c_ldc(0x26)
+    /* 036f */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:69
+    /* 0372 */      c_invokestatic(0x00, 0x12)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:71
+    /* 0375 */      c_getstatic(0x00, 0x00)
+    /* 0378 */      c_ldc(0x28)
+    /* 037a */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:72
+    /* 037d */      c_invokestatic(0x00, 0x13)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:74
+    /* 0380 */      c_getstatic(0x00, 0x00)
+    /* 0383 */      c_ldc(0x2a)
+    /* 0385 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:75
+    /* 0388 */      c_invokestatic(0x00, 0x14)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:77
+    /* 038b */      c_getstatic(0x00, 0x00)
+    /* 038e */      c_ldc(0x2c)
+    /* 0390 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:78
+    /* 0393 */      c_invokestatic(0x00, 0x15)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:80
+    /* 0396 */      c_getstatic(0x00, 0x00)
+    /* 0399 */      c_ldc(0x2e)
+    /* 039b */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:81
+    /* 039e */      c_invokestatic(0x00, 0x16)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:83
+    /* 03a1 */      c_getstatic(0x00, 0x00)
+    /* 03a4 */      c_ldc(0x30)
+    /* 03a6 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:84
+    /* 03a9 */      c_invokestatic(0x00, 0x17)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:86
+    /* 03ac */      c_getstatic(0x00, 0x00)
+    /* 03af */      c_ldc(0x32)
+    /* 03b1 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:87
+    /* 03b4 */      c_invokestatic(0x00, 0x18)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:89
+    /* 03b7 */      c_getstatic(0x00, 0x00)
+    /* 03ba */      c_ldc(0x34)
+    /* 03bc */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:90
+    /* 03bf */      c_invokestatic(0x00, 0x19)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:92
+    /* 03c2 */      c_getstatic(0x00, 0x00)
+    /* 03c5 */      c_ldc(0x36)
+    /* 03c7 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:93
+    /* 03ca */      c_invokestatic(0x00, 0x1a)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:95
+    /* 03cd */      c_getstatic(0x00, 0x00)
+    /* 03d0 */      c_ldc(0x38)
+    /* 03d2 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/AllTests#main#([Ljava/lang/String;)V:96
+    /* 03d5 */      c_invokestatic(0x00, 0x1b)
 
     // thinj/regression/AllTests#main#([Ljava/lang/String;)V:101
-    /* 027e */      c_getstatic(0x00, 0x00)
-    /* 0281 */      c_ldc(0x06)
-    /* 0283 */      c_invokevirtual(0x00, 0x00)
+    /* 03d8 */      c_getstatic(0x00, 0x00)
+    /* 03db */      c_ldc(0x3a)
+    /* 03dd */      c_invokevirtual(0x00, 0x00)
 
     // thinj/regression/AllTests#main#([Ljava/lang/String;)V:102
-    /* 0286 */      c_aconst_null()
-    /* 0287 */      c_invokestatic(0x00, 0x02)
+    /* 03e0 */      c_aconst_null()
+    /* 03e1 */      c_invokestatic(0x00, 0x1c)
 
     // thinj/regression/AllTests#main#([Ljava/lang/String;)V:107
-    /* 028a */      c_getstatic(0x00, 0x00)
-    /* 028d */      c_new(0x00, 0x08)
-    /* 0290 */      c_dup()
-    /* 0291 */      c_invokespecial(0x00, 0x03)
-    /* 0294 */      c_ldc(0x0a)
-    /* 0296 */      c_invokevirtual(0x00, 0x04)
-    /* 0299 */      c_invokestatic(0x00, 0x01)
-    /* 029c */      c_lload_1()
-    /* 029d */      c_lsub()
-    /* 029e */      c_ldc2_w(0x00, 0x0c)
-    /* 02a1 */      c_ldiv()
-    /* 02a2 */      c_invokevirtual(0x00, 0x05)
-    /* 02a5 */      c_ldc(0x0f)
-    /* 02a7 */      c_invokevirtual(0x00, 0x04)
-    /* 02aa */      c_invokevirtual(0x00, 0x06)
-    /* 02ad */      c_invokevirtual(0x00, 0x00)
+    /* 03e4 */      c_getstatic(0x00, 0x00)
+    /* 03e7 */      c_new(0x00, 0x3c)
+    /* 03ea */      c_dup()
+    /* 03eb */      c_invokespecial(0x00, 0x1d)
+    /* 03ee */      c_ldc(0x3e)
+    /* 03f0 */      c_invokevirtual(0x00, 0x1e)
+    /* 03f3 */      c_invokestatic(0x00, 0x01)
+    /* 03f6 */      c_lload_1()
+    /* 03f7 */      c_lsub()
+    /* 03f8 */      c_ldc2_w(0x00, 0x40)
+    /* 03fb */      c_ldiv()
+    /* 03fc */      c_invokevirtual(0x00, 0x1f)
+    /* 03ff */      c_ldc(0x43)
+    /* 0401 */      c_invokevirtual(0x00, 0x1e)
+    /* 0404 */      c_invokevirtual(0x00, 0x20)
+    /* 0407 */      c_invokevirtual(0x00, 0x00)
 
     // thinj/regression/AllTests#main#([Ljava/lang/String;)V:108
-    /* 02b0 */      c_vreturn()
+    /* 040a */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (28) java/lang/StringBuilder#<init>#()V
+    // (36) java/lang/StringBuilder#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/StringBuilder#<init>#()V:11
-    /* 02b1 */      c_aload_0()
-    /* 02b2 */      c_invokespecial(0x00, 0x00)
+    /* 040b */      c_aload_0()
+    /* 040c */      c_invokespecial(0x00, 0x00)
 
     // java/lang/StringBuilder#<init>#()V:12
-    /* 02b5 */      c_aload_0()
-    /* 02b6 */      c_iconst_0()
-    /* 02b7 */      c_newarray(0x05)
-    /* 02b9 */      c_putfield(0x00, 0x00)
+    /* 040f */      c_aload_0()
+    /* 0410 */      c_iconst_0()
+    /* 0411 */      c_newarray(0x05)
+    /* 0413 */      c_putfield(0x00, 0x00)
 
     // java/lang/StringBuilder#<init>#()V:13
-    /* 02bc */      c_vreturn()
+    /* 0416 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (28) java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    // (36) java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;
     //------------------------------------------------------------------------------
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:16
-    /* 02bd */      c_aload_1()
-    /* 02be */      c_ifnonnull(0x00, 0x0a)
+    /* 0417 */      c_aload_1()
+    /* 0418 */      c_ifnonnull(0x00, 0x0a)
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:17
-    /* 02c1 */      c_aload_0()
-    /* 02c2 */      c_ldc(0x05)
-    /* 02c4 */      c_invokevirtual(0x00, 0x03)
-    /* 02c7 */      c_areturn()
+    /* 041b */      c_aload_0()
+    /* 041c */      c_ldc(0x05)
+    /* 041e */      c_invokevirtual(0x00, 0x03)
+    /* 0421 */      c_areturn()
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:19
-    /* 02c8 */      c_aload_0()
-    /* 02c9 */      c_getfield(0x00, 0x00)
-    /* 02cc */      c_arraylength()
-    /* 02cd */      c_aload_1()
-    /* 02ce */      c_invokevirtual(0x00, 0x01)
-    /* 02d1 */      c_iadd()
-    /* 02d2 */      c_newarray(0x05)
-    /* 02d4 */      c_astore_2()
+    /* 0422 */      c_aload_0()
+    /* 0423 */      c_getfield(0x00, 0x00)
+    /* 0426 */      c_arraylength()
+    /* 0427 */      c_aload_1()
+    /* 0428 */      c_invokevirtual(0x00, 0x01)
+    /* 042b */      c_iadd()
+    /* 042c */      c_newarray(0x05)
+    /* 042e */      c_astore_2()
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:21
-    /* 02d5 */      c_iconst_0()
-    /* 02d6 */      c_istore_3()
-    /* 02d7 */      c_iload_3()
-    /* 02d8 */      c_aload_0()
-    /* 02d9 */      c_getfield(0x00, 0x00)
-    /* 02dc */      c_arraylength()
-    /* 02dd */      c_if_icmpge(0x00, 0x12)
+    /* 042f */      c_iconst_0()
+    /* 0430 */      c_istore_3()
+    /* 0431 */      c_iload_3()
+    /* 0432 */      c_aload_0()
+    /* 0433 */      c_getfield(0x00, 0x00)
+    /* 0436 */      c_arraylength()
+    /* 0437 */      c_if_icmpge(0x00, 0x12)
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:22
-    /* 02e0 */      c_aload_2()
-    /* 02e1 */      c_iload_3()
-    /* 02e2 */      c_aload_0()
-    /* 02e3 */      c_getfield(0x00, 0x00)
-    /* 02e6 */      c_iload_3()
-    /* 02e7 */      c_caload()
-    /* 02e8 */      c_castore()
+    /* 043a */      c_aload_2()
+    /* 043b */      c_iload_3()
+    /* 043c */      c_aload_0()
+    /* 043d */      c_getfield(0x00, 0x00)
+    /* 0440 */      c_iload_3()
+    /* 0441 */      c_caload()
+    /* 0442 */      c_castore()
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:21
-    /* 02e9 */      c_iinc(0x03, 0x01)
-    /* 02ec */      c_goto(0xff, 0xeb)
+    /* 0443 */      c_iinc(0x03, 0x01)
+    /* 0446 */      c_goto(0xff, 0xeb)
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:25
-    /* 02ef */      c_aload_1()
-    /* 02f0 */      c_iconst_0()
-    /* 02f1 */      c_aload_1()
-    /* 02f2 */      c_invokevirtual(0x00, 0x01)
-    /* 02f5 */      c_aload_2()
-    /* 02f6 */      c_aload_0()
-    /* 02f7 */      c_getfield(0x00, 0x00)
-    /* 02fa */      c_arraylength()
-    /* 02fb */      c_invokevirtual(0x00, 0x02)
+    /* 0449 */      c_aload_1()
+    /* 044a */      c_iconst_0()
+    /* 044b */      c_aload_1()
+    /* 044c */      c_invokevirtual(0x00, 0x01)
+    /* 044f */      c_aload_2()
+    /* 0450 */      c_aload_0()
+    /* 0451 */      c_getfield(0x00, 0x00)
+    /* 0454 */      c_arraylength()
+    /* 0455 */      c_invokevirtual(0x00, 0x02)
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:26
-    /* 02fe */      c_aload_0()
-    /* 02ff */      c_aload_2()
-    /* 0300 */      c_putfield(0x00, 0x00)
+    /* 0458 */      c_aload_0()
+    /* 0459 */      c_aload_2()
+    /* 045a */      c_putfield(0x00, 0x00)
 
     // java/lang/StringBuilder#append#(Ljava/lang/String;)Ljava/lang/StringBuilder;:28
-    /* 0303 */      c_aload_0()
-    /* 0304 */      c_areturn()
+    /* 045d */      c_aload_0()
+    /* 045e */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (28) java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
+    // (36) java/lang/StringBuilder#append#(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    //------------------------------------------------------------------------------
+
+    // java/lang/StringBuilder#append#(Ljava/lang/Object;)Ljava/lang/StringBuilder;:33
+    /* 045f */      c_aload_0()
+    /* 0460 */      c_aload_1()
+    /* 0461 */      c_ifnonnull(0x00, 0x08)
+    /* 0464 */      c_ldc(0x05)
+    /* 0466 */      c_goto(0x00, 0x07)
+    /* 0469 */      c_aload_1()
+    /* 046a */      c_invokevirtual(0x00, 0x04)
+    /* 046d */      c_invokevirtual(0x00, 0x03)
+    /* 0470 */      c_areturn()
+
+    //------------------------------------------------------------------------------
+    // (36) java/lang/StringBuilder#append#(Z)Ljava/lang/StringBuilder;
+    //------------------------------------------------------------------------------
+
+    // java/lang/StringBuilder#append#(Z)Ljava/lang/StringBuilder;:37
+    /* 0471 */      c_aload_0()
+    /* 0472 */      c_iload_1()
+    /* 0473 */      c_ifeq(0x00, 0x08)
+    /* 0476 */      c_ldc(0x08)
+    /* 0478 */      c_goto(0x00, 0x05)
+    /* 047b */      c_ldc(0x09)
+    /* 047d */      c_invokevirtual(0x00, 0x03)
+    /* 0480 */      c_areturn()
+
+    //------------------------------------------------------------------------------
+    // (36) java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;
     //------------------------------------------------------------------------------
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:42
-    /* 0305 */      c_iload_1()
-    /* 0306 */      c_ifge(0x00, 0x07)
-    /* 0309 */      c_iconst_1()
-    /* 030a */      c_goto(0x00, 0x04)
-    /* 030d */      c_iconst_0()
-    /* 030e */      c_istore_2()
+    /* 0481 */      c_iload_1()
+    /* 0482 */      c_ifge(0x00, 0x07)
+    /* 0485 */      c_iconst_1()
+    /* 0486 */      c_goto(0x00, 0x04)
+    /* 0489 */      c_iconst_0()
+    /* 048a */      c_istore_2()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:43
-    /* 030f */      c_iload_2()
-    /* 0310 */      c_ifeq(0x00, 0x06)
+    /* 048b */      c_iload_2()
+    /* 048c */      c_ifeq(0x00, 0x06)
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:44
-    /* 0313 */      c_iload_1()
-    /* 0314 */      c_ineg()
-    /* 0315 */      c_istore_1()
+    /* 048f */      c_iload_1()
+    /* 0490 */      c_ineg()
+    /* 0491 */      c_istore_1()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:46
-    /* 0316 */      c_bipush(0x0b)
-    /* 0318 */      c_newarray(0x05)
-    /* 031a */      c_astore_3()
+    /* 0492 */      c_bipush(0x0b)
+    /* 0494 */      c_newarray(0x05)
+    /* 0496 */      c_astore_3()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:47
-    /* 031b */      c_aload_3()
-    /* 031c */      c_arraylength()
-    /* 031d */      c_istore(0x04)
+    /* 0497 */      c_aload_3()
+    /* 0498 */      c_arraylength()
+    /* 0499 */      c_istore(0x04)
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:49
-    /* 031f */      c_aload_3()
-    /* 0320 */      c_iinc(0x04, 0xff)
-    /* 0323 */      c_iload(0x04)
-    /* 0325 */      c_bipush(0x30)
-    /* 0327 */      c_iload_1()
-    /* 0328 */      c_bipush(0x0a)
-    /* 032a */      c_irem()
-    /* 032b */      c_iadd()
-    /* 032c */      c_i2c()
-    /* 032d */      c_castore()
+    /* 049b */      c_aload_3()
+    /* 049c */      c_iinc(0x04, 0xff)
+    /* 049f */      c_iload(0x04)
+    /* 04a1 */      c_bipush(0x30)
+    /* 04a3 */      c_iload_1()
+    /* 04a4 */      c_bipush(0x0a)
+    /* 04a6 */      c_irem()
+    /* 04a7 */      c_iadd()
+    /* 04a8 */      c_i2c()
+    /* 04a9 */      c_castore()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:50
-    /* 032e */      c_iload_1()
-    /* 032f */      c_bipush(0x0a)
-    /* 0331 */      c_idiv()
-    /* 0332 */      c_istore_1()
+    /* 04aa */      c_iload_1()
+    /* 04ab */      c_bipush(0x0a)
+    /* 04ad */      c_idiv()
+    /* 04ae */      c_istore_1()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:51
-    /* 0333 */      c_iload_1()
-    /* 0334 */      c_ifgt(0xff, 0xeb)
+    /* 04af */      c_iload_1()
+    /* 04b0 */      c_ifgt(0xff, 0xeb)
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:53
-    /* 0337 */      c_iload_2()
-    /* 0338 */      c_ifeq(0x00, 0x0c)
+    /* 04b3 */      c_iload_2()
+    /* 04b4 */      c_ifeq(0x00, 0x0c)
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:54
-    /* 033b */      c_aload_3()
-    /* 033c */      c_iinc(0x04, 0xff)
-    /* 033f */      c_iload(0x04)
-    /* 0341 */      c_bipush(0x2d)
-    /* 0343 */      c_castore()
+    /* 04b7 */      c_aload_3()
+    /* 04b8 */      c_iinc(0x04, 0xff)
+    /* 04bb */      c_iload(0x04)
+    /* 04bd */      c_bipush(0x2d)
+    /* 04bf */      c_castore()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:57
-    /* 0344 */      c_aload_0()
-    /* 0345 */      c_new(0x00, 0x0a)
-    /* 0348 */      c_dup()
-    /* 0349 */      c_aload_3()
-    /* 034a */      c_iload(0x04)
-    /* 034c */      c_aload_3()
-    /* 034d */      c_arraylength()
-    /* 034e */      c_iload(0x04)
-    /* 0350 */      c_isub()
-    /* 0351 */      c_invokespecial(0x00, 0x04)
-    /* 0354 */      c_invokevirtual(0x00, 0x03)
-    /* 0357 */      c_pop()
+    /* 04c0 */      c_aload_0()
+    /* 04c1 */      c_new(0x00, 0x0a)
+    /* 04c4 */      c_dup()
+    /* 04c5 */      c_aload_3()
+    /* 04c6 */      c_iload(0x04)
+    /* 04c8 */      c_aload_3()
+    /* 04c9 */      c_arraylength()
+    /* 04ca */      c_iload(0x04)
+    /* 04cc */      c_isub()
+    /* 04cd */      c_invokespecial(0x00, 0x05)
+    /* 04d0 */      c_invokevirtual(0x00, 0x03)
+    /* 04d3 */      c_pop()
 
     // java/lang/StringBuilder#append#(I)Ljava/lang/StringBuilder;:58
-    /* 0358 */      c_aload_0()
-    /* 0359 */      c_areturn()
+    /* 04d4 */      c_aload_0()
+    /* 04d5 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (28) java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;
+    // (36) java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;
     //------------------------------------------------------------------------------
 
     // java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;:63
-    /* 035a */      c_ldc(0x0c)
-    /* 035c */      c_astore_3()
+    /* 04d6 */      c_ldc(0x0c)
+    /* 04d8 */      c_astore_3()
 
     // java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;:64
-    /* 035d */      c_lload_1()
-    /* 035e */      c_lconst_0()
-    /* 035f */      c_lcmp()
-    /* 0360 */      c_ifge(0x00, 0x0d)
+    /* 04d9 */      c_lload_1()
+    /* 04da */      c_lconst_0()
+    /* 04db */      c_lcmp()
+    /* 04dc */      c_ifge(0x00, 0x0d)
 
     // java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;:65
-    /* 0363 */      c_aload_0()
-    /* 0364 */      c_ldc(0x0d)
-    /* 0366 */      c_invokevirtual(0x00, 0x03)
-    /* 0369 */      c_pop()
+    /* 04df */      c_aload_0()
+    /* 04e0 */      c_ldc(0x0d)
+    /* 04e2 */      c_invokevirtual(0x00, 0x03)
+    /* 04e5 */      c_pop()
 
     // java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;:66
-    /* 036a */      c_lload_1()
-    /* 036b */      c_lneg()
-    /* 036c */      c_lstore_1()
+    /* 04e6 */      c_lload_1()
+    /* 04e7 */      c_lneg()
+    /* 04e8 */      c_lstore_1()
 
     // java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;:68
-    /* 036d */      c_bipush(0x0a)
-    /* 036f */      c_anewarray(0x00, 0x0a)
-    /* 0372 */      c_dup()
-    /* 0373 */      c_iconst_0()
-    /* 0374 */      c_ldc(0x0e)
-    /* 0376 */      c_aastore()
-    /* 0377 */      c_dup()
-    /* 0378 */      c_iconst_1()
-    /* 0379 */      c_ldc(0x0f)
-    /* 037b */      c_aastore()
-    /* 037c */      c_dup()
-    /* 037d */      c_iconst_2()
-    /* 037e */      c_ldc(0x10)
-    /* 0380 */      c_aastore()
-    /* 0381 */      c_dup()
-    /* 0382 */      c_iconst_3()
-    /* 0383 */      c_ldc(0x11)
-    /* 0385 */      c_aastore()
-    /* 0386 */      c_dup()
-    /* 0387 */      c_iconst_4()
-    /* 0388 */      c_ldc(0x12)
-    /* 038a */      c_aastore()
-    /* 038b */      c_dup()
-    /* 038c */      c_iconst_5()
-    /* 038d */      c_ldc(0x13)
-    /* 038f */      c_aastore()
-    /* 0390 */      c_dup()
-    /* 0391 */      c_bipush(0x06)
-    /* 0393 */      c_ldc(0x14)
-    /* 0395 */      c_aastore()
-    /* 0396 */      c_dup()
-    /* 0397 */      c_bipush(0x07)
-    /* 0399 */      c_ldc(0x15)
-    /* 039b */      c_aastore()
-    /* 039c */      c_dup()
-    /* 039d */      c_bipush(0x08)
-    /* 039f */      c_ldc(0x16)
-    /* 03a1 */      c_aastore()
-    /* 03a2 */      c_dup()
-    /* 03a3 */      c_bipush(0x09)
-    /* 03a5 */      c_ldc(0x17)
-    /* 03a7 */      c_aastore()
-    /* 03a8 */      c_astore(0x04)
+    /* 04e9 */      c_bipush(0x0a)
+    /* 04eb */      c_anewarray(0x00, 0x0a)
+    /* 04ee */      c_dup()
+    /* 04ef */      c_iconst_0()
+    /* 04f0 */      c_ldc(0x0e)
+    /* 04f2 */      c_aastore()
+    /* 04f3 */      c_dup()
+    /* 04f4 */      c_iconst_1()
+    /* 04f5 */      c_ldc(0x0f)
+    /* 04f7 */      c_aastore()
+    /* 04f8 */      c_dup()
+    /* 04f9 */      c_iconst_2()
+    /* 04fa */      c_ldc(0x10)
+    /* 04fc */      c_aastore()
+    /* 04fd */      c_dup()
+    /* 04fe */      c_iconst_3()
+    /* 04ff */      c_ldc(0x11)
+    /* 0501 */      c_aastore()
+    /* 0502 */      c_dup()
+    /* 0503 */      c_iconst_4()
+    /* 0504 */      c_ldc(0x12)
+    /* 0506 */      c_aastore()
+    /* 0507 */      c_dup()
+    /* 0508 */      c_iconst_5()
+    /* 0509 */      c_ldc(0x13)
+    /* 050b */      c_aastore()
+    /* 050c */      c_dup()
+    /* 050d */      c_bipush(0x06)
+    /* 050f */      c_ldc(0x14)
+    /* 0511 */      c_aastore()
+    /* 0512 */      c_dup()
+    /* 0513 */      c_bipush(0x07)
+    /* 0515 */      c_ldc(0x15)
+    /* 0517 */      c_aastore()
+    /* 0518 */      c_dup()
+    /* 0519 */      c_bipush(0x08)
+    /* 051b */      c_ldc(0x16)
+    /* 051d */      c_aastore()
+    /* 051e */      c_dup()
+    /* 051f */      c_bipush(0x09)
+    /* 0521 */      c_ldc(0x17)
+    /* 0523 */      c_aastore()
+    /* 0524 */      c_astore(0x04)
 
     // java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;:70
-    /* 03aa */      c_new(0x00, 0x18)
-    /* 03ad */      c_dup()
-    /* 03ae */      c_invokespecial(0x00, 0x05)
-    /* 03b1 */      c_aload(0x04)
-    /* 03b3 */      c_lload_1()
-    /* 03b4 */      c_ldc2_w(0x00, 0x1a)
-    /* 03b7 */      c_lrem()
-    /* 03b8 */      c_l2i()
-    /* 03b9 */      c_aaload()
-    /* 03ba */      c_invokevirtual(0x00, 0x03)
-    /* 03bd */      c_aload_3()
-    /* 03be */      c_invokevirtual(0x00, 0x03)
-    /* 03c1 */      c_invokevirtual(0x00, 0x06)
-    /* 03c4 */      c_astore_3()
+    /* 0526 */      c_new(0x00, 0x18)
+    /* 0529 */      c_dup()
+    /* 052a */      c_invokespecial(0x00, 0x06)
+    /* 052d */      c_aload(0x04)
+    /* 052f */      c_lload_1()
+    /* 0530 */      c_ldc2_w(0x00, 0x1a)
+    /* 0533 */      c_lrem()
+    /* 0534 */      c_l2i()
+    /* 0535 */      c_aaload()
+    /* 0536 */      c_invokevirtual(0x00, 0x03)
+    /* 0539 */      c_aload_3()
+    /* 053a */      c_invokevirtual(0x00, 0x03)
+    /* 053d */      c_invokevirtual(0x00, 0x07)
+    /* 0540 */      c_astore_3()
 
     // java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;:71
-    /* 03c5 */      c_lload_1()
-    /* 03c6 */      c_ldc2_w(0x00, 0x1a)
-    /* 03c9 */      c_ldiv()
-    /* 03ca */      c_lstore_1()
+    /* 0541 */      c_lload_1()
+    /* 0542 */      c_ldc2_w(0x00, 0x1a)
+    /* 0545 */      c_ldiv()
+    /* 0546 */      c_lstore_1()
 
     // java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;:72
-    /* 03cb */      c_lload_1()
-    /* 03cc */      c_lconst_0()
-    /* 03cd */      c_lcmp()
-    /* 03ce */      c_ifgt(0xff, 0xdc)
+    /* 0547 */      c_lload_1()
+    /* 0548 */      c_lconst_0()
+    /* 0549 */      c_lcmp()
+    /* 054a */      c_ifgt(0xff, 0xdc)
 
     // java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;:73
-    /* 03d1 */      c_aload_0()
-    /* 03d2 */      c_aload_3()
-    /* 03d3 */      c_invokevirtual(0x00, 0x03)
-    /* 03d6 */      c_pop()
+    /* 054d */      c_aload_0()
+    /* 054e */      c_aload_3()
+    /* 054f */      c_invokevirtual(0x00, 0x03)
+    /* 0552 */      c_pop()
 
     // java/lang/StringBuilder#append#(J)Ljava/lang/StringBuilder;:74
-    /* 03d7 */      c_aload_0()
-    /* 03d8 */      c_areturn()
+    /* 0553 */      c_aload_0()
+    /* 0554 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (28) java/lang/StringBuilder#toString#()Ljava/lang/String;
+    // (36) java/lang/StringBuilder#toString#()Ljava/lang/String;
     //------------------------------------------------------------------------------
 
     // java/lang/StringBuilder#toString#()Ljava/lang/String;:78
-    /* 03d9 */      c_new(0x00, 0x0a)
-    /* 03dc */      c_dup()
-    /* 03dd */      c_aload_0()
-    /* 03de */      c_getfield(0x00, 0x00)
-    /* 03e1 */      c_invokespecial(0x00, 0x07)
-    /* 03e4 */      c_areturn()
+    /* 0555 */      c_new(0x00, 0x0a)
+    /* 0558 */      c_dup()
+    /* 0559 */      c_aload_0()
+    /* 055a */      c_getfield(0x00, 0x00)
+    /* 055d */      c_invokespecial(0x00, 0x08)
+    /* 0560 */      c_areturn()
 
     //------------------------------------------------------------------------------
-    // (29) java/lang/System#<clinit>#()V
+    // (37) java/lang/System#<clinit>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/System#<clinit>#()V:6
-    /* 03e5 */      c_new(0x00, 0x02)
-    /* 03e8 */      c_dup()
-    /* 03e9 */      c_invokespecial(0x00, 0x00)
-    /* 03ec */      c_putstatic(0x00, 0x00)
+    /* 0561 */      c_new(0x00, 0x02)
+    /* 0564 */      c_dup()
+    /* 0565 */      c_invokespecial(0x00, 0x00)
+    /* 0568 */      c_putstatic(0x00, 0x00)
 
     // java/lang/System#<clinit>#()V:7
-    /* 03ef */      c_new(0x00, 0x02)
-    /* 03f2 */      c_dup()
-    /* 03f3 */      c_invokespecial(0x00, 0x00)
-    /* 03f6 */      c_putstatic(0x00, 0x01)
-    /* 03f9 */      c_vreturn()
+    /* 056b */      c_new(0x00, 0x02)
+    /* 056e */      c_dup()
+    /* 056f */      c_invokespecial(0x00, 0x00)
+    /* 0572 */      c_putstatic(0x00, 0x01)
+    /* 0575 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (8) java/io/PrintStream#<init>#()V
+    // (16) java/io/PrintStream#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/io/PrintStream#<init>#()V:3
-    /* 03fa */      c_aload_0()
-    /* 03fb */      c_invokespecial(0x00, 0x00)
-    /* 03fe */      c_vreturn()
+    /* 0576 */      c_aload_0()
+    /* 0577 */      c_invokespecial(0x00, 0x00)
+    /* 057a */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (8) java/io/PrintStream#println#(Ljava/lang/String;)V
+    // (16) java/io/PrintStream#println#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/io/PrintStream#println#(Ljava/lang/String;)V:9
-    /* 03ff */      c_aload_1()
-    /* 0400 */      c_invokestatic(0x00, 0x01)
+    /* 057b */      c_aload_1()
+    /* 057c */      c_invokestatic(0x00, 0x01)
 
     // java/io/PrintStream#println#(Ljava/lang/String;)V:10
-    /* 0403 */      c_vreturn()
+    /* 057f */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (8) java/io/PrintStream#print#(Ljava/lang/String;)V
+    // (16) java/io/PrintStream#print#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/io/PrintStream#print#(Ljava/lang/String;)V:13
-    /* 0404 */      c_aload_1()
-    /* 0405 */      c_invokestatic(0x00, 0x02)
+    /* 0580 */      c_aload_1()
+    /* 0581 */      c_invokestatic(0x00, 0x02)
 
     // java/io/PrintStream#print#(Ljava/lang/String;)V:14
-    /* 0408 */      c_vreturn()
+    /* 0584 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (8) java/io/PrintStream#print#(I)V
+    // (16) java/io/PrintStream#println#()V
+    //------------------------------------------------------------------------------
+
+    // java/io/PrintStream#println#()V:17
+    /* 0585 */      c_aload_0()
+    /* 0586 */      c_ldc(0x04)
+    /* 0588 */      c_invokevirtual(0x00, 0x03)
+
+    // java/io/PrintStream#println#()V:18
+    /* 058b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (16) java/io/PrintStream#print#(I)V
     //------------------------------------------------------------------------------
 
     // java/io/PrintStream#print#(I)V:29
-    /* 0409 */      c_aload_0()
-    /* 040a */      c_new(0x00, 0x09)
-    /* 040d */      c_dup()
-    /* 040e */      c_invokespecial(0x00, 0x04)
-    /* 0411 */      c_ldc(0x04)
-    /* 0413 */      c_invokevirtual(0x00, 0x05)
-    /* 0416 */      c_iload_1()
-    /* 0417 */      c_invokevirtual(0x00, 0x06)
-    /* 041a */      c_invokevirtual(0x00, 0x07)
-    /* 041d */      c_invokevirtual(0x00, 0x03)
+    /* 058c */      c_aload_0()
+    /* 058d */      c_new(0x00, 0x09)
+    /* 0590 */      c_dup()
+    /* 0591 */      c_invokespecial(0x00, 0x05)
+    /* 0594 */      c_ldc(0x04)
+    /* 0596 */      c_invokevirtual(0x00, 0x06)
+    /* 0599 */      c_iload_1()
+    /* 059a */      c_invokevirtual(0x00, 0x07)
+    /* 059d */      c_invokevirtual(0x00, 0x08)
+    /* 05a0 */      c_invokevirtual(0x00, 0x04)
 
     // java/io/PrintStream#print#(I)V:30
-    /* 0420 */      c_vreturn()
+    /* 05a3 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (8) java/io/PrintStream#print#(Ljava/lang/Object;)V
+    // (16) java/io/PrintStream#print#(Ljava/lang/Object;)V
     //------------------------------------------------------------------------------
 
     // java/io/PrintStream#print#(Ljava/lang/Object;)V:49
-    /* 0421 */      c_aload_1()
-    /* 0422 */      c_ifnonnull(0x00, 0x08)
-    /* 0425 */      c_ldc(0x11)
-    /* 0427 */      c_goto(0x00, 0x07)
-    /* 042a */      c_aload_1()
-    /* 042b */      c_invokevirtual(0x00, 0x08)
-    /* 042e */      c_invokestatic(0x00, 0x02)
+    /* 05a4 */      c_aload_1()
+    /* 05a5 */      c_ifnonnull(0x00, 0x08)
+    /* 05a8 */      c_ldc(0x11)
+    /* 05aa */      c_goto(0x00, 0x07)
+    /* 05ad */      c_aload_1()
+    /* 05ae */      c_invokevirtual(0x00, 0x09)
+    /* 05b1 */      c_invokestatic(0x00, 0x02)
 
     // java/io/PrintStream#print#(Ljava/lang/Object;)V:50
-    /* 0431 */      c_vreturn()
+    /* 05b4 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (35) thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
+    // (63) thinj/regression/StaticInstanceAndMethod#faculty#(I)I
     //------------------------------------------------------------------------------
 
-    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:10
-    /* 0432 */      c_getstatic(0x00, 0x04)
-    /* 0435 */      c_ldc(0x09)
-    /* 0437 */      c_invokevirtual(0x00, 0x01)
+    // thinj/regression/StaticInstanceAndMethod#faculty#(I)I:24
+    /* 05b5 */      c_iload_0()
+    /* 05b6 */      c_ifne(0x00, 0x07)
+    /* 05b9 */      c_iconst_1()
+    /* 05ba */      c_goto(0x00, 0x04)
+    /* 05bd */      c_iconst_0()
+    /* 05be */      c_istore_1()
 
-    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:13
-    /* 043a */      c_invokestatic(0x00, 0x02)
+    // thinj/regression/StaticInstanceAndMethod#faculty#(I)I:25
+    /* 05bf */      c_iload_1()
+    /* 05c0 */      c_ifeq(0x00, 0x09)
 
-    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:14
-    /* 043d */      c_invokestatic(0x00, 0x03)
+    // thinj/regression/StaticInstanceAndMethod#faculty#(I)I:26
+    /* 05c3 */      c_iload_1()
+    /* 05c4 */      c_invokestatic(0x00, 0x00)
 
-    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:38
-    /* 0440 */      c_getstatic(0x00, 0x04)
-    /* 0443 */      c_ldc(0x0d)
-    /* 0445 */      c_invokevirtual(0x00, 0x01)
+    // thinj/regression/StaticInstanceAndMethod#faculty#(I)I:27
+    /* 05c7 */      c_iconst_1()
+    /* 05c8 */      c_ireturn()
 
-    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:39
-    /* 0448 */      c_vreturn()
+    // thinj/regression/StaticInstanceAndMethod#faculty#(I)I:29
+    /* 05c9 */      c_iload_0()
+    /* 05ca */      c_iload_0()
+    /* 05cb */      c_iconst_1()
+    /* 05cc */      c_isub()
+    /* 05cd */      c_invokestatic(0x00, 0x01)
+    /* 05d0 */      c_imul()
+    /* 05d1 */      c_istore_2()
 
-    //------------------------------------------------------------------------------
-    // (35) thinj/regression/ThreadTest#yieldAndGCMainThread#()V
-    //------------------------------------------------------------------------------
-
-    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:127
-    /* 0449 */      c_iconst_0()
-    /* 044a */      c_istore_0()
-    /* 044b */      c_iload_0()
-    /* 044c */      c_sipush(0x03, 0xe8)
-    /* 044f */      c_if_icmpge(0x00, 0x54)
-
-    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:128
-    /* 0452 */      c_invokestatic(0x00, 0x04)
-
-    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:129
-    /* 0455 */      c_new(0x00, 0x1d)
-    /* 0458 */      c_dup()
-    /* 0459 */      c_invokespecial(0x00, 0x05)
-    /* 045c */      c_ldc(0x1f)
-    /* 045e */      c_invokevirtual(0x00, 0x06)
-    /* 0461 */      c_iload_0()
-    /* 0462 */      c_invokevirtual(0x00, 0x07)
-    /* 0465 */      c_invokevirtual(0x00, 0x08)
-    /* 0468 */      c_astore_1()
-
-    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:130
-    /* 0469 */      c_iload_0()
-    /* 046a */      c_bipush(0x32)
-    /* 046c */      c_irem()
-    /* 046d */      c_ifne(0x00, 0x30)
-
-    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:131
-    /* 0470 */      c_new(0x00, 0x1d)
-    /* 0473 */      c_dup()
-    /* 0474 */      c_invokespecial(0x00, 0x05)
-    /* 0477 */      c_aload_1()
-    /* 0478 */      c_invokevirtual(0x00, 0x06)
-    /* 047b */      c_ldc(0x23)
-    /* 047d */      c_invokevirtual(0x00, 0x06)
-    /* 0480 */      c_invokevirtual(0x00, 0x08)
-    /* 0483 */      c_astore_1()
-
-    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:132
-    /* 0484 */      c_getstatic(0x00, 0x04)
-    /* 0487 */      c_new(0x00, 0x1d)
-    /* 048a */      c_dup()
-    /* 048b */      c_invokespecial(0x00, 0x05)
-    /* 048e */      c_ldc(0x24)
-    /* 0490 */      c_invokevirtual(0x00, 0x06)
-    /* 0493 */      c_aload_1()
-    /* 0494 */      c_invokevirtual(0x00, 0x06)
-    /* 0497 */      c_invokevirtual(0x00, 0x08)
-    /* 049a */      c_invokevirtual(0x00, 0x01)
-
-    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:127
-    /* 049d */      c_iinc(0x00, 0x01)
-    /* 04a0 */      c_goto(0xff, 0xab)
-
-    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:135
-    /* 04a3 */      c_vreturn()
+    // thinj/regression/StaticInstanceAndMethod#faculty#(I)I:30
+    /* 05d2 */      c_iload_2()
+    /* 05d3 */      c_ireturn()
 
     //------------------------------------------------------------------------------
-    // (35) thinj/regression/ThreadTest#yieldAndGCNewThread#()V
+    // (63) thinj/regression/StaticInstanceAndMethod#ThisTestShallFail#()V
     //------------------------------------------------------------------------------
 
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:138
-    /* 04a4 */      c_new(0x00, 0x0e)
-    /* 04a7 */      c_dup()
-    /* 04a8 */      c_invokespecial(0x00, 0x00)
-    /* 04ab */      c_astore_0()
+    // thinj/regression/StaticInstanceAndMethod#ThisTestShallFail#()V:35
+    /* 05d4 */      c_iconst_0()
+    /* 05d5 */      c_invokestatic(0x00, 0x00)
 
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:139
-    /* 04ac */      c_iconst_0()
-    /* 04ad */      c_putstatic(0x00, 0x02)
-
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:140
-    /* 04b0 */      c_new(0x00, 0x25)
-    /* 04b3 */      c_dup()
-    /* 04b4 */      c_aload_0()
-    /* 04b5 */      c_invokespecial(0x00, 0x09)
-    /* 04b8 */      c_invokevirtual(0x00, 0x0a)
-
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:158
-    /* 04bb */      c_aload_0()
-    /* 04bc */      c_dup()
-    /* 04bd */      c_astore_1()
-    /* 04be */      c_monitorenter()
-
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:160
-    /* 04bf */      c_getstatic(0x00, 0x02)
-    /* 04c2 */      c_ifne(0x00, 0x07)
-
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:161
-    /* 04c5 */      c_aload_0()
-    /* 04c6 */      c_invokevirtual(0x00, 0x0b)
-
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:163
-    /* 04c9 */      c_getstatic(0x00, 0x04)
-    /* 04cc */      c_ldc(0x29)
-    /* 04ce */      c_invokevirtual(0x00, 0x01)
-
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:166
-    /* 04d1 */      c_goto(0x00, 0x08)
-
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:164
-    /* 04d4 */      c_astore_2()
-
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:165
-    /* 04d5 */      c_aload_2()
-    /* 04d6 */      c_invokevirtual(0x00, 0x0c)
-
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:167
-    /* 04d9 */      c_aload_1()
-    /* 04da */      c_monitorexit()
-    /* 04db */      c_goto(0x00, 0x08)
-    /* 04de */      c_astore_3()
-    /* 04df */      c_aload_1()
-    /* 04e0 */      c_monitorexit()
-    /* 04e1 */      c_aload_3()
-    /* 04e2 */      c_athrow()
-
-    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:168
-    /* 04e3 */      c_vreturn()
+    // thinj/regression/StaticInstanceAndMethod#ThisTestShallFail#()V:36
+    /* 05d8 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (35) thinj/regression/ThreadTest#access$102#(Z)Z
+    // (63) thinj/regression/StaticInstanceAndMethod#test1#()V
     //------------------------------------------------------------------------------
 
-    // thinj/regression/ThreadTest#access$102#(Z)Z:3
-    /* 04e4 */      c_iload_0()
-    /* 04e5 */      c_dup()
-    /* 04e6 */      c_putstatic(0x00, 0x02)
-    /* 04e9 */      c_ireturn()
+    // thinj/regression/StaticInstanceAndMethod#test1#()V:39
+    /* 05d9 */      c_getstatic(0x00, 0x00)
+    /* 05dc */      c_ldc(0x05)
+    /* 05de */      c_if_icmple(0x00, 0x07)
+    /* 05e1 */      c_iconst_1()
+    /* 05e2 */      c_goto(0x00, 0x04)
+    /* 05e5 */      c_iconst_0()
+    /* 05e6 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/StaticInstanceAndMethod#test1#()V:40
+    /* 05e9 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (35) thinj/regression/ThreadTest#<clinit>#()V
+    // (63) thinj/regression/StaticInstanceAndMethod#test2#()I
     //------------------------------------------------------------------------------
 
-    // thinj/regression/ThreadTest#<clinit>#()V:4
-    /* 04ea */      c_iconst_0()
-    /* 04eb */      c_putstatic(0x00, 0x02)
-
-    // thinj/regression/ThreadTest#<clinit>#()V:5
-    /* 04ee */      c_iconst_0()
-    /* 04ef */      c_putstatic(0x00, 0x01)
-
-    // thinj/regression/ThreadTest#<clinit>#()V:6
-    /* 04f2 */      c_iconst_0()
-    /* 04f3 */      c_putstatic(0x00, 0x03)
-
-    // thinj/regression/ThreadTest#<clinit>#()V:405
-    /* 04f6 */      c_new(0x00, 0x0e)
-    /* 04f9 */      c_dup()
-    /* 04fa */      c_invokespecial(0x00, 0x00)
-    /* 04fd */      c_putstatic(0x00, 0x00)
-    /* 0500 */      c_vreturn()
+    // thinj/regression/StaticInstanceAndMethod#test2#()I:43
+    /* 05ea */      c_bipush(0x07)
+    /* 05ec */      c_ireturn()
 
     //------------------------------------------------------------------------------
-    // (36) thinj/regression/ThreadTest$4#<init>#(Ljava/lang/Object;)V
+    // (63) thinj/regression/StaticInstanceAndMethod#main#()V
     //------------------------------------------------------------------------------
 
-    // thinj/regression/ThreadTest$4#<init>#(Ljava/lang/Object;)V:140
-    /* 0501 */      c_aload_0()
-    /* 0502 */      c_aload_1()
-    /* 0503 */      c_putfield(0x00, 0x00)
-    /* 0506 */      c_aload_0()
-    /* 0507 */      c_invokespecial(0x00, 0x00)
-    /* 050a */      c_vreturn()
+    // thinj/regression/StaticInstanceAndMethod#main#()V:48
+    /* 05ed */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/StaticInstanceAndMethod#main#()V:49
+    /* 05f0 */      c_bipush(0x07)
+    /* 05f2 */      c_invokestatic(0x00, 0x01)
+    /* 05f5 */      c_istore_0()
+
+    // thinj/regression/StaticInstanceAndMethod#main#()V:50
+    /* 05f6 */      c_iload_0()
+    /* 05f7 */      c_sipush(0x13, 0xb0)
+    /* 05fa */      c_if_icmpne(0x00, 0x07)
+    /* 05fd */      c_iconst_1()
+    /* 05fe */      c_goto(0x00, 0x04)
+    /* 0601 */      c_iconst_0()
+    /* 0602 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/StaticInstanceAndMethod#main#()V:51
+    /* 0605 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/StaticInstanceAndMethod#main#()V:52
+    /* 0608 */      c_iconst_5()
+    /* 0609 */      c_invokestatic(0x00, 0x04)
+    /* 060c */      c_iadd()
+    /* 060d */      c_bipush(0x0c)
+    /* 060f */      c_if_icmpne(0x00, 0x07)
+    /* 0612 */      c_iconst_1()
+    /* 0613 */      c_goto(0x00, 0x04)
+    /* 0616 */      c_iconst_0()
+    /* 0617 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/StaticInstanceAndMethod#main#()V:56
+    /* 061a */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (36) thinj/regression/ThreadTest$4#run#()V
+    // (63) thinj/regression/StaticInstanceAndMethod#<clinit>#()V
     //------------------------------------------------------------------------------
 
-    // thinj/regression/ThreadTest$4#run#()V:143
-    /* 050b */      c_iconst_0()
-    /* 050c */      c_istore_1()
-    /* 050d */      c_iload_1()
-    /* 050e */      c_sipush(0x03, 0xe8)
-    /* 0511 */      c_if_icmpge(0x00, 0x54)
+    // thinj/regression/StaticInstanceAndMethod#<clinit>#()V:13
+    /* 061b */      c_sipush(0x12, 0x67)
+    /* 061e */      c_putstatic(0x00, 0x00)
 
-    // thinj/regression/ThreadTest$4#run#()V:144
-    /* 0514 */      c_invokestatic(0x00, 0x01)
-
-    // thinj/regression/ThreadTest$4#run#()V:145
-    /* 0517 */      c_new(0x00, 0x04)
-    /* 051a */      c_dup()
-    /* 051b */      c_invokespecial(0x00, 0x02)
-    /* 051e */      c_ldc(0x06)
-    /* 0520 */      c_invokevirtual(0x00, 0x03)
-    /* 0523 */      c_iload_1()
-    /* 0524 */      c_invokevirtual(0x00, 0x04)
-    /* 0527 */      c_invokevirtual(0x00, 0x05)
-    /* 052a */      c_astore_2()
-
-    // thinj/regression/ThreadTest$4#run#()V:146
-    /* 052b */      c_iload_1()
-    /* 052c */      c_bipush(0x32)
-    /* 052e */      c_irem()
-    /* 052f */      c_ifne(0x00, 0x30)
-
-    // thinj/regression/ThreadTest$4#run#()V:147
-    /* 0532 */      c_new(0x00, 0x04)
-    /* 0535 */      c_dup()
-    /* 0536 */      c_invokespecial(0x00, 0x02)
-    /* 0539 */      c_aload_2()
-    /* 053a */      c_invokevirtual(0x00, 0x03)
-    /* 053d */      c_ldc(0x0a)
-    /* 053f */      c_invokevirtual(0x00, 0x03)
-    /* 0542 */      c_invokevirtual(0x00, 0x05)
-    /* 0545 */      c_astore_2()
-
-    // thinj/regression/ThreadTest$4#run#()V:148
-    /* 0546 */      c_getstatic(0x00, 0x01)
-    /* 0549 */      c_new(0x00, 0x04)
-    /* 054c */      c_dup()
-    /* 054d */      c_invokespecial(0x00, 0x02)
-    /* 0550 */      c_ldc(0x0c)
-    /* 0552 */      c_invokevirtual(0x00, 0x03)
-    /* 0555 */      c_aload_2()
-    /* 0556 */      c_invokevirtual(0x00, 0x03)
-    /* 0559 */      c_invokevirtual(0x00, 0x05)
-    /* 055c */      c_invokevirtual(0x00, 0x06)
-
-    // thinj/regression/ThreadTest$4#run#()V:143
-    /* 055f */      c_iinc(0x01, 0x01)
-    /* 0562 */      c_goto(0xff, 0xab)
-
-    // thinj/regression/ThreadTest$4#run#()V:151
-    /* 0565 */      c_aload_0()
-    /* 0566 */      c_getfield(0x00, 0x00)
-    /* 0569 */      c_dup()
-    /* 056a */      c_astore_1()
-    /* 056b */      c_monitorenter()
-
-    // thinj/regression/ThreadTest$4#run#()V:152
-    /* 056c */      c_iconst_1()
-    /* 056d */      c_invokestatic(0x00, 0x07)
-    /* 0570 */      c_pop()
-
-    // thinj/regression/ThreadTest$4#run#()V:153
-    /* 0571 */      c_aload_0()
-    /* 0572 */      c_getfield(0x00, 0x00)
-    /* 0575 */      c_invokevirtual(0x00, 0x08)
-
-    // thinj/regression/ThreadTest$4#run#()V:154
-    /* 0578 */      c_aload_1()
-    /* 0579 */      c_monitorexit()
-    /* 057a */      c_goto(0x00, 0x08)
-    /* 057d */      c_astore_3()
-    /* 057e */      c_aload_1()
-    /* 057f */      c_monitorexit()
-    /* 0580 */      c_aload_3()
-    /* 0581 */      c_athrow()
-
-    // thinj/regression/ThreadTest$4#run#()V:155
-    /* 0582 */      c_vreturn()
+    // thinj/regression/StaticInstanceAndMethod#<clinit>#()V:60
+    /* 0621 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (17) java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V
+    // (60) thinj/regression/Regression#verify#(Z)V
     //------------------------------------------------------------------------------
 
-    // java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V:5
-    /* 0583 */      c_aload_0()
-    /* 0584 */      c_aload_1()
-    /* 0585 */      c_invokespecial(0x00, 0x00)
+    // thinj/regression/Regression#verify#(Z)V:11
+    /* 0622 */      c_iload_0()
+    /* 0623 */      c_ifne(0x00, 0x0f)
 
-    // java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V:6
-    /* 0588 */      c_vreturn()
+    // thinj/regression/Regression#verify#(Z)V:12
+    /* 0626 */      c_new(0x00, 0x02)
+    /* 0629 */      c_dup()
+    /* 062a */      c_ldc(0x03)
+    /* 062c */      c_invokespecial(0x00, 0x00)
+    /* 062f */      c_invokevirtual(0x00, 0x01)
 
-    //------------------------------------------------------------------------------
-    // (15) java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V
-    //------------------------------------------------------------------------------
-
-    // java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V:6
-    /* 0589 */      c_aload_0()
-    /* 058a */      c_aload_1()
-    /* 058b */      c_invokespecial(0x00, 0x00)
-
-    // java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V:7
-    /* 058e */      c_vreturn()
+    // thinj/regression/Regression#verify#(Z)V:14
+    /* 0632 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (26) java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
-    //------------------------------------------------------------------------------
-
-    // java/lang/RuntimeException#<init>#(Ljava/lang/String;)V:5
-    /* 058f */      c_aload_0()
-    /* 0590 */      c_aload_1()
-    /* 0591 */      c_invokespecial(0x00, 0x00)
-
-    // java/lang/RuntimeException#<init>#(Ljava/lang/String;)V:6
-    /* 0594 */      c_vreturn()
-
-    //------------------------------------------------------------------------------
-    // (26) java/lang/RuntimeException#<init>#()V
-    //------------------------------------------------------------------------------
-
-    // java/lang/RuntimeException#<init>#()V:7
-    /* 0595 */      c_aload_0()
-    /* 0596 */      c_invokespecial(0x00, 0x01)
-
-    // java/lang/RuntimeException#<init>#()V:8
-    /* 0599 */      c_vreturn()
-
-    //------------------------------------------------------------------------------
-    // (14) java/lang/Exception#<init>#(Ljava/lang/String;)V
+    // (22) java/lang/Exception#<init>#(Ljava/lang/String;)V
     //------------------------------------------------------------------------------
 
     // java/lang/Exception#<init>#(Ljava/lang/String;)V:5
-    /* 059a */      c_aload_0()
-    /* 059b */      c_aload_1()
-    /* 059c */      c_invokespecial(0x00, 0x00)
+    /* 0633 */      c_aload_0()
+    /* 0634 */      c_aload_1()
+    /* 0635 */      c_invokespecial(0x00, 0x00)
 
     // java/lang/Exception#<init>#(Ljava/lang/String;)V:6
-    /* 059f */      c_vreturn()
+    /* 0638 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (14) java/lang/Exception#<init>#()V
+    // (22) java/lang/Exception#<init>#()V
     //------------------------------------------------------------------------------
 
     // java/lang/Exception#<init>#()V:8
-    /* 05a0 */      c_aload_0()
-    /* 05a1 */      c_invokespecial(0x00, 0x01)
+    /* 0639 */      c_aload_0()
+    /* 063a */      c_invokespecial(0x00, 0x01)
 
     // java/lang/Exception#<init>#()V:9
-    /* 05a4 */      c_vreturn()
+    /* 063d */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (18) java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
+    // (51) thinj/regression/InstanceAttributes#<init>#()V
     //------------------------------------------------------------------------------
 
-    // java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V:5
-    /* 05a5 */      c_aload_0()
-    /* 05a6 */      c_aload_1()
-    /* 05a7 */      c_invokespecial(0x00, 0x00)
+    // thinj/regression/InstanceAttributes#<init>#()V:11
+    /* 063e */      c_aload_0()
+    /* 063f */      c_invokespecial(0x00, 0x00)
 
-    // java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V:6
-    /* 05aa */      c_vreturn()
+    // thinj/regression/InstanceAttributes#<init>#()V:12
+    /* 0642 */      c_aload_0()
+    /* 0643 */      c_bipush(0x2f)
+    /* 0645 */      c_putfield(0x00, 0x00)
+
+    // thinj/regression/InstanceAttributes#<init>#()V:13
+    /* 0648 */      c_aload_0()
+    /* 0649 */      c_iconst_1()
+    /* 064a */      c_putfield(0x00, 0x01)
+
+    // thinj/regression/InstanceAttributes#<init>#()V:14
+    /* 064d */      c_aload_0()
+    /* 064e */      c_aconst_null()
+    /* 064f */      c_putfield(0x00, 0x02)
+
+    // thinj/regression/InstanceAttributes#<init>#()V:15
+    /* 0652 */      c_vreturn()
 
     //------------------------------------------------------------------------------
-    // (33) java/util/Arrays#hashCode#([C)I
+    // (51) thinj/regression/InstanceAttributes#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceAttributes#test1#()V:18
+    /* 0653 */      c_new(0x00, 0x05)
+    /* 0656 */      c_dup()
+    /* 0657 */      c_invokespecial(0x00, 0x01)
+    /* 065a */      c_astore_0()
+
+    // thinj/regression/InstanceAttributes#test1#()V:19
+    /* 065b */      c_aload_0()
+    /* 065c */      c_getfield(0x00, 0x00)
+    /* 065f */      c_bipush(0x2f)
+    /* 0661 */      c_if_icmpne(0x00, 0x07)
+    /* 0664 */      c_iconst_1()
+    /* 0665 */      c_goto(0x00, 0x04)
+    /* 0668 */      c_iconst_0()
+    /* 0669 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceAttributes#test1#()V:20
+    /* 066c */      c_aload_0()
+    /* 066d */      c_getfield(0x00, 0x01)
+    /* 0670 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceAttributes#test1#()V:21
+    /* 0673 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (51) thinj/regression/InstanceAttributes#testNull#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceAttributes#testNull#()V:25
+    /* 0674 */      c_new(0x00, 0x05)
+    /* 0677 */      c_dup()
+    /* 0678 */      c_invokespecial(0x00, 0x01)
+    /* 067b */      c_astore_0()
+
+    // thinj/regression/InstanceAttributes#testNull#()V:26
+    /* 067c */      c_aload_0()
+    /* 067d */      c_getfield(0x00, 0x02)
+    /* 0680 */      c_ifnonnull(0x00, 0x07)
+    /* 0683 */      c_iconst_1()
+    /* 0684 */      c_goto(0x00, 0x04)
+    /* 0687 */      c_iconst_0()
+    /* 0688 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceAttributes#testNull#()V:27
+    /* 068b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (51) thinj/regression/InstanceAttributes#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceAttributes#main#()V:30
+    /* 068c */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/InstanceAttributes#main#()V:31
+    /* 068f */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/InstanceAttributes#main#()V:32
+    /* 0692 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (51) thinj/regression/InstanceAttributes#<clinit>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceAttributes#<clinit>#()V:9
+    /* 0693 */      c_bipush(0x38)
+    /* 0695 */      c_putstatic(0x00, 0x03)
+    /* 0698 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (59) thinj/regression/ObjectTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ObjectTest#main#()V:6
+    /* 0699 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/ObjectTest#main#()V:7
+    /* 069c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (59) thinj/regression/ObjectTest#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ObjectTest#test1#()V:10
+    /* 069d */      c_new(0x00, 0x03)
+    /* 06a0 */      c_dup()
+    /* 06a1 */      c_invokespecial(0x00, 0x00)
+    /* 06a4 */      c_astore_0()
+
+    // thinj/regression/ObjectTest#test1#()V:11
+    /* 06a5 */      c_aload_0()
+    /* 06a6 */      c_ifnull(0x00, 0x07)
+    /* 06a9 */      c_iconst_1()
+    /* 06aa */      c_goto(0x00, 0x04)
+    /* 06ad */      c_iconst_0()
+    /* 06ae */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ObjectTest#test1#()V:12
+    /* 06b1 */      c_aconst_null()
+    /* 06b2 */      c_astore_0()
+
+    // thinj/regression/ObjectTest#test1#()V:13
+    /* 06b3 */      c_aload_0()
+    /* 06b4 */      c_ifnonnull(0x00, 0x07)
+    /* 06b7 */      c_iconst_1()
+    /* 06b8 */      c_goto(0x00, 0x04)
+    /* 06bb */      c_iconst_0()
+    /* 06bc */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ObjectTest#test1#()V:14
+    /* 06bf */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (54) thinj/regression/InstanceSubclassing#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceSubclassing#<init>#()V:8
+    /* 06c0 */      c_aload_0()
+    /* 06c1 */      c_invokespecial(0x00, 0x00)
+
+    // thinj/regression/InstanceSubclassing#<init>#()V:9
+    /* 06c4 */      c_aload_0()
+    /* 06c5 */      c_sipush(0x03, 0xe7)
+    /* 06c8 */      c_putfield(0x00, 0x00)
+
+    // thinj/regression/InstanceSubclassing#<init>#()V:10
+    /* 06cb */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (54) thinj/regression/InstanceSubclassing#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceSubclassing#test1#()V:13
+    /* 06cc */      c_new(0x00, 0x03)
+    /* 06cf */      c_dup()
+    /* 06d0 */      c_invokespecial(0x00, 0x01)
+    /* 06d3 */      c_astore_0()
+
+    // thinj/regression/InstanceSubclassing#test1#()V:14
+    /* 06d4 */      c_aload_0()
+    /* 06d5 */      c_getfield(0x00, 0x01)
+    /* 06d8 */      c_bipush(0x2f)
+    /* 06da */      c_if_icmpne(0x00, 0x07)
+    /* 06dd */      c_iconst_1()
+    /* 06de */      c_goto(0x00, 0x04)
+    /* 06e1 */      c_iconst_0()
+    /* 06e2 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:15
+    /* 06e5 */      c_aload_0()
+    /* 06e6 */      c_getfield(0x00, 0x00)
+    /* 06e9 */      c_sipush(0x03, 0xe7)
+    /* 06ec */      c_if_icmpne(0x00, 0x07)
+    /* 06ef */      c_iconst_1()
+    /* 06f0 */      c_goto(0x00, 0x04)
+    /* 06f3 */      c_iconst_0()
+    /* 06f4 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:16
+    /* 06f7 */      c_getstatic(0x00, 0x02)
+    /* 06fa */      c_bipush(0x38)
+    /* 06fc */      c_if_icmpne(0x00, 0x07)
+    /* 06ff */      c_iconst_1()
+    /* 0700 */      c_goto(0x00, 0x04)
+    /* 0703 */      c_iconst_0()
+    /* 0704 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:18
+    /* 0707 */      c_aload_0()
+    /* 0708 */      c_bipush(0x64)
+    /* 070a */      c_putfield(0x00, 0x01)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:19
+    /* 070d */      c_aload_0()
+    /* 070e */      c_getfield(0x00, 0x01)
+    /* 0711 */      c_bipush(0x64)
+    /* 0713 */      c_if_icmpne(0x00, 0x07)
+    /* 0716 */      c_iconst_1()
+    /* 0717 */      c_goto(0x00, 0x04)
+    /* 071a */      c_iconst_0()
+    /* 071b */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:20
+    /* 071e */      c_aload_0()
+    /* 071f */      c_getfield(0x00, 0x00)
+    /* 0722 */      c_sipush(0x03, 0xe7)
+    /* 0725 */      c_if_icmpne(0x00, 0x07)
+    /* 0728 */      c_iconst_1()
+    /* 0729 */      c_goto(0x00, 0x04)
+    /* 072c */      c_iconst_0()
+    /* 072d */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:21
+    /* 0730 */      c_getstatic(0x00, 0x02)
+    /* 0733 */      c_bipush(0x38)
+    /* 0735 */      c_if_icmpne(0x00, 0x07)
+    /* 0738 */      c_iconst_1()
+    /* 0739 */      c_goto(0x00, 0x04)
+    /* 073c */      c_iconst_0()
+    /* 073d */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:23
+    /* 0740 */      c_aload_0()
+    /* 0741 */      c_sipush(0x00, 0xc8)
+    /* 0744 */      c_putfield(0x00, 0x00)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:24
+    /* 0747 */      c_aload_0()
+    /* 0748 */      c_getfield(0x00, 0x01)
+    /* 074b */      c_bipush(0x64)
+    /* 074d */      c_if_icmpne(0x00, 0x07)
+    /* 0750 */      c_iconst_1()
+    /* 0751 */      c_goto(0x00, 0x04)
+    /* 0754 */      c_iconst_0()
+    /* 0755 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:25
+    /* 0758 */      c_aload_0()
+    /* 0759 */      c_getfield(0x00, 0x00)
+    /* 075c */      c_sipush(0x00, 0xc8)
+    /* 075f */      c_if_icmpne(0x00, 0x07)
+    /* 0762 */      c_iconst_1()
+    /* 0763 */      c_goto(0x00, 0x04)
+    /* 0766 */      c_iconst_0()
+    /* 0767 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:26
+    /* 076a */      c_getstatic(0x00, 0x02)
+    /* 076d */      c_bipush(0x38)
+    /* 076f */      c_if_icmpne(0x00, 0x07)
+    /* 0772 */      c_iconst_1()
+    /* 0773 */      c_goto(0x00, 0x04)
+    /* 0776 */      c_iconst_0()
+    /* 0777 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:28
+    /* 077a */      c_sipush(0x30, 0x39)
+    /* 077d */      c_putstatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:29
+    /* 0780 */      c_aload_0()
+    /* 0781 */      c_getfield(0x00, 0x01)
+    /* 0784 */      c_bipush(0x64)
+    /* 0786 */      c_if_icmpne(0x00, 0x07)
+    /* 0789 */      c_iconst_1()
+    /* 078a */      c_goto(0x00, 0x04)
+    /* 078d */      c_iconst_0()
+    /* 078e */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:30
+    /* 0791 */      c_aload_0()
+    /* 0792 */      c_getfield(0x00, 0x00)
+    /* 0795 */      c_sipush(0x00, 0xc8)
+    /* 0798 */      c_if_icmpne(0x00, 0x07)
+    /* 079b */      c_iconst_1()
+    /* 079c */      c_goto(0x00, 0x04)
+    /* 079f */      c_iconst_0()
+    /* 07a0 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:31
+    /* 07a3 */      c_getstatic(0x00, 0x02)
+    /* 07a6 */      c_sipush(0x30, 0x39)
+    /* 07a9 */      c_if_icmpne(0x00, 0x07)
+    /* 07ac */      c_iconst_1()
+    /* 07ad */      c_goto(0x00, 0x04)
+    /* 07b0 */      c_iconst_0()
+    /* 07b1 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/InstanceSubclassing#test1#()V:32
+    /* 07b4 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (54) thinj/regression/InstanceSubclassing#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceSubclassing#main#()V:35
+    /* 07b5 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/InstanceSubclassing#main#()V:36
+    /* 07b8 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (52) thinj/regression/InstanceMethods#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethods#<init>#()V:3
+    /* 07b9 */      c_aload_0()
+    /* 07ba */      c_invokespecial(0x00, 0x00)
+    /* 07bd */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (52) thinj/regression/InstanceMethods#testargs#(IZ)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethods#testargs#(IZ)V:5
+    /* 07be */      c_iload_1()
+    /* 07bf */      c_bipush(0x2d)
+    /* 07c1 */      c_if_icmpne(0x00, 0x07)
+    /* 07c4 */      c_iconst_1()
+    /* 07c5 */      c_goto(0x00, 0x04)
+    /* 07c8 */      c_iconst_0()
+    /* 07c9 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/InstanceMethods#testargs#(IZ)V:6
+    /* 07cc */      c_iload_2()
+    /* 07cd */      c_ifne(0x00, 0x07)
+    /* 07d0 */      c_iconst_1()
+    /* 07d1 */      c_goto(0x00, 0x04)
+    /* 07d4 */      c_iconst_0()
+    /* 07d5 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/InstanceMethods#testargs#(IZ)V:7
+    /* 07d8 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (52) thinj/regression/InstanceMethods#basePrint#(I)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethods#basePrint#(I)V:10
+    /* 07d9 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (52) thinj/regression/InstanceMethods#basePrint2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethods#basePrint2#()V:14
+    /* 07da */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (52) thinj/regression/InstanceMethods#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethods#test1#()V:17
+    /* 07db */      c_new(0x00, 0x03)
+    /* 07de */      c_dup()
+    /* 07df */      c_invokespecial(0x00, 0x02)
+    /* 07e2 */      c_astore_0()
+
+    // thinj/regression/InstanceMethods#test1#()V:18
+    /* 07e3 */      c_aload_0()
+    /* 07e4 */      c_bipush(0x2d)
+    /* 07e6 */      c_iconst_0()
+    /* 07e7 */      c_invokevirtual(0x00, 0x03)
+
+    // thinj/regression/InstanceMethods#test1#()V:19
+    /* 07ea */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (52) thinj/regression/InstanceMethods#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethods#test2#()V:22
+    /* 07eb */      c_new(0x00, 0x06)
+    /* 07ee */      c_dup()
+    /* 07ef */      c_invokespecial(0x00, 0x04)
+    /* 07f2 */      c_astore_0()
+
+    // thinj/regression/InstanceMethods#test2#()V:23
+    /* 07f3 */      c_aload_0()
+    /* 07f4 */      c_sipush(0x00, 0x91)
+    /* 07f7 */      c_iconst_1()
+    /* 07f8 */      c_invokevirtual(0x00, 0x03)
+
+    // thinj/regression/InstanceMethods#test2#()V:24
+    /* 07fb */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (52) thinj/regression/InstanceMethods#test3#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethods#test3#()V:27
+    /* 07fc */      c_new(0x00, 0x06)
+    /* 07ff */      c_dup()
+    /* 0800 */      c_invokespecial(0x00, 0x04)
+    /* 0803 */      c_astore_0()
+
+    // thinj/regression/InstanceMethods#test3#()V:28
+    /* 0804 */      c_aload_0()
+    /* 0805 */      c_sipush(0x00, 0x91)
+    /* 0808 */      c_iconst_1()
+    /* 0809 */      c_invokevirtual(0x00, 0x03)
+
+    // thinj/regression/InstanceMethods#test3#()V:29
+    /* 080c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (52) thinj/regression/InstanceMethods#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethods#main#()V:32
+    /* 080d */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/InstanceMethods#main#()V:33
+    /* 0810 */      c_invokestatic(0x00, 0x06)
+
+    // thinj/regression/InstanceMethods#main#()V:34
+    /* 0813 */      c_invokestatic(0x00, 0x07)
+
+    // thinj/regression/InstanceMethods#main#()V:36
+    /* 0816 */      c_new(0x00, 0x03)
+    /* 0819 */      c_dup()
+    /* 081a */      c_invokespecial(0x00, 0x02)
+    /* 081d */      c_bipush(0x64)
+    /* 081f */      c_invokevirtual(0x00, 0x08)
+
+    // thinj/regression/InstanceMethods#main#()V:37
+    /* 0822 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (53) thinj/regression/InstanceMethodsSpecial#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethodsSpecial#<init>#()V:3
+    /* 0823 */      c_aload_0()
+    /* 0824 */      c_invokespecial(0x00, 0x00)
+    /* 0827 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (53) thinj/regression/InstanceMethodsSpecial#testargs#(IZ)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethodsSpecial#testargs#(IZ)V:6
+    /* 0828 */      c_iload_1()
+    /* 0829 */      c_sipush(0x00, 0x91)
+    /* 082c */      c_if_icmpne(0x00, 0x07)
+    /* 082f */      c_iconst_1()
+    /* 0830 */      c_goto(0x00, 0x04)
+    /* 0833 */      c_iconst_0()
+    /* 0834 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/InstanceMethodsSpecial#testargs#(IZ)V:7
+    /* 0837 */      c_iload_2()
+    /* 0838 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/InstanceMethodsSpecial#testargs#(IZ)V:8
+    /* 083b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (53) thinj/regression/InstanceMethodsSpecial#basePrint2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethodsSpecial#basePrint2#()V:11
+    /* 083c */      c_aload_0()
+    /* 083d */      c_invokespecial(0x00, 0x02)
+
+    // thinj/regression/InstanceMethodsSpecial#basePrint2#()V:13
+    /* 0840 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (53) thinj/regression/InstanceMethodsSpecial#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/InstanceMethodsSpecial#main#()V:17
+    /* 0841 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/InstanceMethodsSpecial#main#()V:18
+    /* 0844 */      c_new(0x00, 0x05)
+    /* 0847 */      c_dup()
+    /* 0848 */      c_invokespecial(0x00, 0x04)
+    /* 084b */      c_astore_0()
+
+    // thinj/regression/InstanceMethodsSpecial#main#()V:19
+    /* 084c */      c_aload_0()
+    /* 084d */      c_sipush(0x00, 0xc8)
+    /* 0850 */      c_invokevirtual(0x00, 0x05)
+
+    // thinj/regression/InstanceMethodsSpecial#main#()V:20
+    /* 0853 */      c_aload_0()
+    /* 0854 */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/InstanceMethodsSpecial#main#()V:21
+    /* 0857 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (49) thinj/regression/ExtendedBaseClass#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ExtendedBaseClass#<init>#()V:3
+    /* 0858 */      c_aload_0()
+    /* 0859 */      c_invokespecial(0x00, 0x00)
+    /* 085c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (49) thinj/regression/ExtendedBaseClass#foobar#()I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ExtendedBaseClass#foobar#()I:6
+    /* 085d */      c_iconst_2()
+    /* 085e */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (49) thinj/regression/ExtendedBaseClass#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ExtendedBaseClass#test1#()V:10
+    /* 085f */      c_new(0x00, 0x02)
+    /* 0862 */      c_dup()
+    /* 0863 */      c_invokespecial(0x00, 0x01)
+    /* 0866 */      c_astore_0()
+
+    // thinj/regression/ExtendedBaseClass#test1#()V:11
+    /* 0867 */      c_aload_0()
+    /* 0868 */      c_invokevirtual(0x00, 0x02)
+    /* 086b */      c_iconst_2()
+    /* 086c */      c_if_icmpne(0x00, 0x07)
+    /* 086f */      c_iconst_1()
+    /* 0870 */      c_goto(0x00, 0x04)
+    /* 0873 */      c_iconst_0()
+    /* 0874 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ExtendedBaseClass#test1#()V:12
+    /* 0877 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (49) thinj/regression/ExtendedBaseClass#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ExtendedBaseClass#test2#()V:15
+    /* 0878 */      c_new(0x00, 0x02)
+    /* 087b */      c_dup()
+    /* 087c */      c_invokespecial(0x00, 0x01)
+    /* 087f */      c_astore_0()
+
+    // thinj/regression/ExtendedBaseClass#test2#()V:16
+    /* 0880 */      c_aload_0()
+    /* 0881 */      c_invokevirtual(0x00, 0x04)
+    /* 0884 */      c_iconst_2()
+    /* 0885 */      c_if_icmpne(0x00, 0x07)
+    /* 0888 */      c_iconst_1()
+    /* 0889 */      c_goto(0x00, 0x04)
+    /* 088c */      c_iconst_0()
+    /* 088d */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ExtendedBaseClass#test2#()V:17
+    /* 0890 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (49) thinj/regression/ExtendedBaseClass#test3#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ExtendedBaseClass#test3#()V:20
+    /* 0891 */      c_new(0x00, 0x07)
+    /* 0894 */      c_dup()
+    /* 0895 */      c_invokespecial(0x00, 0x00)
+    /* 0898 */      c_astore_0()
+
+    // thinj/regression/ExtendedBaseClass#test3#()V:21
+    /* 0899 */      c_aload_0()
+    /* 089a */      c_invokevirtual(0x00, 0x04)
+    /* 089d */      c_iconst_1()
+    /* 089e */      c_if_icmpne(0x00, 0x07)
+    /* 08a1 */      c_iconst_1()
+    /* 08a2 */      c_goto(0x00, 0x04)
+    /* 08a5 */      c_iconst_0()
+    /* 08a6 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ExtendedBaseClass#test3#()V:22
+    /* 08a9 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (49) thinj/regression/ExtendedBaseClass#test4#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ExtendedBaseClass#test4#()V:25
+    /* 08aa */      c_new(0x00, 0x07)
+    /* 08ad */      c_dup()
+    /* 08ae */      c_invokespecial(0x00, 0x00)
+    /* 08b1 */      c_astore_0()
+
+    // thinj/regression/ExtendedBaseClass#test4#()V:26
+    /* 08b2 */      c_aload_0()
+    /* 08b3 */      c_invokevirtual(0x00, 0x05)
+    /* 08b6 */      c_iconst_3()
+    /* 08b7 */      c_if_icmpne(0x00, 0x07)
+    /* 08ba */      c_iconst_1()
+    /* 08bb */      c_goto(0x00, 0x04)
+    /* 08be */      c_iconst_0()
+    /* 08bf */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ExtendedBaseClass#test4#()V:27
+    /* 08c2 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (49) thinj/regression/ExtendedBaseClass#test5#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ExtendedBaseClass#test5#()V:30
+    /* 08c3 */      c_new(0x00, 0x02)
+    /* 08c6 */      c_dup()
+    /* 08c7 */      c_invokespecial(0x00, 0x01)
+    /* 08ca */      c_astore_0()
+
+    // thinj/regression/ExtendedBaseClass#test5#()V:31
+    /* 08cb */      c_aload_0()
+    /* 08cc */      c_invokevirtual(0x00, 0x06)
+    /* 08cf */      c_iconst_3()
+    /* 08d0 */      c_if_icmpne(0x00, 0x07)
+    /* 08d3 */      c_iconst_1()
+    /* 08d4 */      c_goto(0x00, 0x04)
+    /* 08d7 */      c_iconst_0()
+    /* 08d8 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ExtendedBaseClass#test5#()V:32
+    /* 08db */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (49) thinj/regression/ExtendedBaseClass#test6#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ExtendedBaseClass#test6#()V:35
+    /* 08dc */      c_new(0x00, 0x02)
+    /* 08df */      c_dup()
+    /* 08e0 */      c_invokespecial(0x00, 0x01)
+    /* 08e3 */      c_astore_0()
+
+    // thinj/regression/ExtendedBaseClass#test6#()V:36
+    /* 08e4 */      c_aload_0()
+    /* 08e5 */      c_invokevirtual(0x00, 0x05)
+    /* 08e8 */      c_iconst_3()
+    /* 08e9 */      c_if_icmpne(0x00, 0x07)
+    /* 08ec */      c_iconst_1()
+    /* 08ed */      c_goto(0x00, 0x04)
+    /* 08f0 */      c_iconst_0()
+    /* 08f1 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ExtendedBaseClass#test6#()V:37
+    /* 08f4 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (49) thinj/regression/ExtendedBaseClass#test7#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ExtendedBaseClass#test7#()V:40
+    /* 08f5 */      c_new(0x00, 0x02)
+    /* 08f8 */      c_dup()
+    /* 08f9 */      c_invokespecial(0x00, 0x01)
+    /* 08fc */      c_astore_0()
+
+    // thinj/regression/ExtendedBaseClass#test7#()V:41
+    /* 08fd */      c_aload_0()
+    /* 08fe */      c_iconst_1()
+    /* 08ff */      c_invokevirtual(0x00, 0x07)
+    /* 0902 */      c_iconst_2()
+    /* 0903 */      c_if_icmpne(0x00, 0x07)
+    /* 0906 */      c_iconst_1()
+    /* 0907 */      c_goto(0x00, 0x04)
+    /* 090a */      c_iconst_0()
+    /* 090b */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ExtendedBaseClass#test7#()V:42
+    /* 090e */      c_aload_0()
+    /* 090f */      c_iconst_1()
+    /* 0910 */      c_invokevirtual(0x00, 0x07)
+    /* 0913 */      c_iconst_2()
+    /* 0914 */      c_if_icmpne(0x00, 0x07)
+    /* 0917 */      c_iconst_1()
+    /* 0918 */      c_goto(0x00, 0x04)
+    /* 091b */      c_iconst_0()
+    /* 091c */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ExtendedBaseClass#test7#()V:43
+    /* 091f */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (49) thinj/regression/ExtendedBaseClass#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ExtendedBaseClass#main#()V:47
+    /* 0920 */      c_invokestatic(0x00, 0x08)
+
+    // thinj/regression/ExtendedBaseClass#main#()V:48
+    /* 0923 */      c_invokestatic(0x00, 0x09)
+
+    // thinj/regression/ExtendedBaseClass#main#()V:49
+    /* 0926 */      c_invokestatic(0x00, 0x0a)
+
+    // thinj/regression/ExtendedBaseClass#main#()V:50
+    /* 0929 */      c_invokestatic(0x00, 0x0b)
+
+    // thinj/regression/ExtendedBaseClass#main#()V:51
+    /* 092c */      c_invokestatic(0x00, 0x0c)
+
+    // thinj/regression/ExtendedBaseClass#main#()V:52
+    /* 092f */      c_invokestatic(0x00, 0x0d)
+
+    // thinj/regression/ExtendedBaseClass#main#()V:53
+    /* 0932 */      c_invokestatic(0x00, 0x0e)
+
+    // thinj/regression/ExtendedBaseClass#main#()V:54
+    /* 0935 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (43) thinj/regression/BaseClass#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/BaseClass#<init>#()V:3
+    /* 0936 */      c_aload_0()
+    /* 0937 */      c_invokespecial(0x00, 0x00)
+    /* 093a */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (43) thinj/regression/BaseClass#foobar#()I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/BaseClass#foobar#()I:6
+    /* 093b */      c_iconst_1()
+    /* 093c */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (43) thinj/regression/BaseClass#adder#(I)I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/BaseClass#adder#(I)I:10
+    /* 093d */      c_iload_1()
+    /* 093e */      c_iconst_1()
+    /* 093f */      c_iadd()
+    /* 0940 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (43) thinj/regression/BaseClass#barfoo#()I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/BaseClass#barfoo#()I:14
+    /* 0941 */      c_iconst_3()
+    /* 0942 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (88) thinj/regression/abstractclass/AbstractClass#<init>#(I)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/abstractclass/AbstractClass#<init>#(I)V:6
+    /* 0943 */      c_aload_0()
+    /* 0944 */      c_invokespecial(0x00, 0x00)
+
+    // thinj/regression/abstractclass/AbstractClass#<init>#(I)V:7
+    /* 0947 */      c_aload_0()
+    /* 0948 */      c_iload_1()
+    /* 0949 */      c_putfield(0x00, 0x00)
+
+    // thinj/regression/abstractclass/AbstractClass#<init>#(I)V:8
+    /* 094c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (88) thinj/regression/abstractclass/AbstractClass#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/abstractclass/AbstractClass#test1#()V:13
+    /* 094d */      c_new(0x00, 0x03)
+    /* 0950 */      c_dup()
+    /* 0951 */      c_bipush(0x2d)
+    /* 0953 */      c_invokespecial(0x00, 0x01)
+    /* 0956 */      c_astore_0()
+
+    // thinj/regression/abstractclass/AbstractClass#test1#()V:14
+    /* 0957 */      c_aload_0()
+    /* 0958 */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/abstractclass/AbstractClass#test1#()V:15
+    /* 095b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (88) thinj/regression/abstractclass/AbstractClass#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/abstractclass/AbstractClass#test2#()V:18
+    /* 095c */      c_new(0x00, 0x03)
+    /* 095f */      c_dup()
+    /* 0960 */      c_bipush(0x2d)
+    /* 0962 */      c_invokespecial(0x00, 0x01)
+    /* 0965 */      c_astore_0()
+
+    // thinj/regression/abstractclass/AbstractClass#test2#()V:19
+    /* 0966 */      c_aload_0()
+    /* 0967 */      c_invokevirtual(0x00, 0x03)
+
+    // thinj/regression/abstractclass/AbstractClass#test2#()V:20
+    /* 096a */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (88) thinj/regression/abstractclass/AbstractClass#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/abstractclass/AbstractClass#main#()V:23
+    /* 096b */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/abstractclass/AbstractClass#main#()V:24
+    /* 096e */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/abstractclass/AbstractClass#main#()V:25
+    /* 0971 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (89) thinj/regression/abstractclass/ExtendingClass#<init>#(I)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/abstractclass/ExtendingClass#<init>#(I)V:8
+    /* 0972 */      c_aload_0()
+    /* 0973 */      c_iload_1()
+    /* 0974 */      c_invokespecial(0x00, 0x00)
+
+    // thinj/regression/abstractclass/ExtendingClass#<init>#(I)V:9
+    /* 0977 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (89) thinj/regression/abstractclass/ExtendingClass#foobar#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/abstractclass/ExtendingClass#foobar#()V:13
+    /* 0978 */      c_aload_0()
+    /* 0979 */      c_getfield(0x00, 0x00)
+    /* 097c */      c_bipush(0x2d)
+    /* 097e */      c_if_icmpne(0x00, 0x07)
+    /* 0981 */      c_iconst_1()
+    /* 0982 */      c_goto(0x00, 0x04)
+    /* 0985 */      c_iconst_0()
+    /* 0986 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/abstractclass/ExtendingClass#foobar#()V:14
+    /* 0989 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (109) thinj/regression/interfaces/AnInterfaceImpl#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/interfaces/AnInterfaceImpl#<init>#()V:5
+    /* 098a */      c_aload_0()
+    /* 098b */      c_invokespecial(0x00, 0x00)
+    /* 098e */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (109) thinj/regression/interfaces/AnInterfaceImpl#getLost#()I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/interfaces/AnInterfaceImpl#getLost#()I:8
+    /* 098f */      c_bipush(0x63)
+    /* 0991 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (109) thinj/regression/interfaces/AnInterfaceImpl#foobar#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/interfaces/AnInterfaceImpl#foobar#()V:14
+    /* 0992 */      c_aload_0()
+    /* 0993 */      c_bipush(0x38)
+    /* 0995 */      c_putfield(0x00, 0x00)
+
+    // thinj/regression/interfaces/AnInterfaceImpl#foobar#()V:15
+    /* 0998 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (109) thinj/regression/interfaces/AnInterfaceImpl#get#()I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/interfaces/AnInterfaceImpl#get#()I:19
+    /* 0999 */      c_aload_0()
+    /* 099a */      c_getfield(0x00, 0x00)
+    /* 099d */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (109) thinj/regression/interfaces/AnInterfaceImpl#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/interfaces/AnInterfaceImpl#test1#()V:23
+    /* 099e */      c_new(0x00, 0x03)
+    /* 09a1 */      c_dup()
+    /* 09a2 */      c_invokespecial(0x00, 0x01)
+    /* 09a5 */      c_astore_0()
+
+    // thinj/regression/interfaces/AnInterfaceImpl#test1#()V:24
+    /* 09a6 */      c_aload_0()
+    /* 09a7 */      c_invokeinterface(0x00, 0x02, 0x01, 0x00)
+
+    // thinj/regression/interfaces/AnInterfaceImpl#test1#()V:26
+    /* 09ac */      c_aload_0()
+    /* 09ad */      c_invokeinterface(0x00, 0x03, 0x01, 0x00)
+    /* 09b2 */      c_bipush(0x38)
+    /* 09b4 */      c_if_icmpne(0x00, 0x07)
+    /* 09b7 */      c_iconst_1()
+    /* 09b8 */      c_goto(0x00, 0x04)
+    /* 09bb */      c_iconst_0()
+    /* 09bc */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/interfaces/AnInterfaceImpl#test1#()V:27
+    /* 09bf */      c_aload_0()
+    /* 09c0 */      c_invokeinterface(0x00, 0x05, 0x01, 0x00)
+    /* 09c5 */      c_bipush(0x63)
+    /* 09c7 */      c_if_icmpne(0x00, 0x07)
+    /* 09ca */      c_iconst_1()
+    /* 09cb */      c_goto(0x00, 0x04)
+    /* 09ce */      c_iconst_0()
+    /* 09cf */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/interfaces/AnInterfaceImpl#test1#()V:28
+    /* 09d2 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (109) thinj/regression/interfaces/AnInterfaceImpl#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/interfaces/AnInterfaceImpl#main#()V:31
+    /* 09d3 */      c_invokestatic(0x00, 0x06)
+
+    // thinj/regression/interfaces/AnInterfaceImpl#main#()V:32
+    /* 09d6 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (90) thinj/regression/arrays/ArrayTest#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/ArrayTest#<init>#()V:8
+    /* 09d7 */      c_aload_0()
+    /* 09d8 */      c_invokespecial(0x00, 0x00)
+
+    // thinj/regression/arrays/ArrayTest#<init>#()V:9
+    /* 09db */      c_aload_0()
+    /* 09dc */      c_iconst_4()
+    /* 09dd */      c_newarray(0x0a)
+    /* 09df */      c_putfield(0x00, 0x00)
+
+    // thinj/regression/arrays/ArrayTest#<init>#()V:10
+    /* 09e2 */      c_aload_0()
+    /* 09e3 */      c_getfield(0x00, 0x00)
+    /* 09e6 */      c_iconst_3()
+    /* 09e7 */      c_bipush(0x2d)
+    /* 09e9 */      c_iastore()
+
+    // thinj/regression/arrays/ArrayTest#<init>#()V:11
+    /* 09ea */      c_aload_0()
+    /* 09eb */      c_getfield(0x00, 0x00)
+    /* 09ee */      c_iconst_3()
+    /* 09ef */      c_iaload()
+    /* 09f0 */      c_bipush(0x2d)
+    /* 09f2 */      c_if_icmpne(0x00, 0x07)
+    /* 09f5 */      c_iconst_1()
+    /* 09f6 */      c_goto(0x00, 0x04)
+    /* 09f9 */      c_iconst_0()
+    /* 09fa */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/arrays/ArrayTest#<init>#()V:13
+    /* 09fd */      c_iconst_0()
+    /* 09fe */      c_istore_1()
+    /* 09ff */      c_iload_1()
+    /* 0a00 */      c_aload_0()
+    /* 0a01 */      c_getfield(0x00, 0x00)
+    /* 0a04 */      c_arraylength()
+    /* 0a05 */      c_if_icmpge(0x00, 0x22)
+
+    // thinj/regression/arrays/ArrayTest#<init>#()V:14
+    /* 0a08 */      c_aload_0()
+    /* 0a09 */      c_getfield(0x00, 0x00)
+    /* 0a0c */      c_iload_1()
+    /* 0a0d */      c_iload_1()
+    /* 0a0e */      c_iastore()
+
+    // thinj/regression/arrays/ArrayTest#<init>#()V:15
+    /* 0a0f */      c_aload_0()
+    /* 0a10 */      c_getfield(0x00, 0x00)
+    /* 0a13 */      c_iload_1()
+    /* 0a14 */      c_iaload()
+    /* 0a15 */      c_iload_1()
+    /* 0a16 */      c_if_icmpne(0x00, 0x07)
+    /* 0a19 */      c_iconst_1()
+    /* 0a1a */      c_goto(0x00, 0x04)
+    /* 0a1d */      c_iconst_0()
+    /* 0a1e */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/arrays/ArrayTest#<init>#()V:13
+    /* 0a21 */      c_iinc(0x01, 0x01)
+    /* 0a24 */      c_goto(0xff, 0xdb)
+
+    // thinj/regression/arrays/ArrayTest#<init>#()V:17
+    /* 0a27 */      c_aload_0()
+    /* 0a28 */      c_getfield(0x00, 0x00)
+    /* 0a2b */      c_arraylength()
+    /* 0a2c */      c_iconst_4()
+    /* 0a2d */      c_if_icmpne(0x00, 0x07)
+    /* 0a30 */      c_iconst_1()
+    /* 0a31 */      c_goto(0x00, 0x04)
+    /* 0a34 */      c_iconst_0()
+    /* 0a35 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/arrays/ArrayTest#<init>#()V:19
+    /* 0a38 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (90) thinj/regression/arrays/ArrayTest#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/ArrayTest#test1#()V:22
+    /* 0a39 */      c_new(0x00, 0x04)
+    /* 0a3c */      c_dup()
+    /* 0a3d */      c_invokespecial(0x00, 0x02)
+    /* 0a40 */      c_pop()
+
+    // thinj/regression/arrays/ArrayTest#test1#()V:23
+    /* 0a41 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (90) thinj/regression/arrays/ArrayTest#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/ArrayTest#test2#()V:26
+    /* 0a42 */      c_bipush(0x07)
+    /* 0a44 */      c_newarray(0x04)
+    /* 0a46 */      c_astore_0()
+
+    // thinj/regression/arrays/ArrayTest#test2#()V:27
+    /* 0a47 */      c_aload_0()
+    /* 0a48 */      c_iconst_3()
+    /* 0a49 */      c_iconst_1()
+    /* 0a4a */      c_bastore()
+
+    // thinj/regression/arrays/ArrayTest#test2#()V:28
+    /* 0a4b */      c_iconst_0()
+    /* 0a4c */      c_istore_1()
+    /* 0a4d */      c_iload_1()
+    /* 0a4e */      c_aload_0()
+    /* 0a4f */      c_arraylength()
+    /* 0a50 */      c_if_icmpge(0x00, 0x32)
+
+    // thinj/regression/arrays/ArrayTest#test2#()V:29
+    /* 0a53 */      c_aload_0()
+    /* 0a54 */      c_iload_1()
+    /* 0a55 */      c_iload_1()
+    /* 0a56 */      c_iconst_1()
+    /* 0a57 */      c_iand()
+    /* 0a58 */      c_iconst_1()
+    /* 0a59 */      c_if_icmpne(0x00, 0x07)
+    /* 0a5c */      c_iconst_1()
+    /* 0a5d */      c_goto(0x00, 0x04)
+    /* 0a60 */      c_iconst_0()
+    /* 0a61 */      c_bastore()
+
+    // thinj/regression/arrays/ArrayTest#test2#()V:30
+    /* 0a62 */      c_aload_0()
+    /* 0a63 */      c_iload_1()
+    /* 0a64 */      c_baload()
+    /* 0a65 */      c_iload_1()
+    /* 0a66 */      c_iconst_1()
+    /* 0a67 */      c_iand()
+    /* 0a68 */      c_iconst_1()
+    /* 0a69 */      c_if_icmpne(0x00, 0x07)
+    /* 0a6c */      c_iconst_1()
+    /* 0a6d */      c_goto(0x00, 0x04)
+    /* 0a70 */      c_iconst_0()
+    /* 0a71 */      c_if_icmpne(0x00, 0x07)
+    /* 0a74 */      c_iconst_1()
+    /* 0a75 */      c_goto(0x00, 0x04)
+    /* 0a78 */      c_iconst_0()
+    /* 0a79 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/arrays/ArrayTest#test2#()V:28
+    /* 0a7c */      c_iinc(0x01, 0x01)
+    /* 0a7f */      c_goto(0xff, 0xce)
+
+    // thinj/regression/arrays/ArrayTest#test2#()V:33
+    /* 0a82 */      c_aload_0()
+    /* 0a83 */      c_arraylength()
+    /* 0a84 */      c_bipush(0x07)
+    /* 0a86 */      c_if_icmpne(0x00, 0x07)
+    /* 0a89 */      c_iconst_1()
+    /* 0a8a */      c_goto(0x00, 0x04)
+    /* 0a8d */      c_iconst_0()
+    /* 0a8e */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/arrays/ArrayTest#test2#()V:34
+    /* 0a91 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (90) thinj/regression/arrays/ArrayTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/ArrayTest#main#()V:37
+    /* 0a92 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/arrays/ArrayTest#main#()V:38
+    /* 0a95 */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/arrays/ArrayTest#main#()V:39
+    /* 0a98 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (92) thinj/regression/arrays/MultiArrayTest#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/MultiArrayTest#test1#()V:13
+    /* 0a99 */      c_iconst_2()
+    /* 0a9a */      c_anewarray(0x00, 0x02)
+    /* 0a9d */      c_dup()
+    /* 0a9e */      c_iconst_0()
+    /* 0a9f */      c_iconst_2()
+    /* 0aa0 */      c_newarray(0x0a)
+    /* 0aa2 */      c_dup()
+    /* 0aa3 */      c_iconst_0()
+    /* 0aa4 */      c_iconst_1()
+    /* 0aa5 */      c_iastore()
+    /* 0aa6 */      c_dup()
+    /* 0aa7 */      c_iconst_1()
+    /* 0aa8 */      c_iconst_2()
+    /* 0aa9 */      c_iastore()
+    /* 0aaa */      c_aastore()
+    /* 0aab */      c_dup()
+    /* 0aac */      c_iconst_1()
+    /* 0aad */      c_iconst_2()
+    /* 0aae */      c_newarray(0x0a)
+    /* 0ab0 */      c_dup()
+    /* 0ab1 */      c_iconst_0()
+    /* 0ab2 */      c_iconst_3()
+    /* 0ab3 */      c_iastore()
+    /* 0ab4 */      c_dup()
+    /* 0ab5 */      c_iconst_1()
+    /* 0ab6 */      c_iconst_4()
+    /* 0ab7 */      c_iastore()
+    /* 0ab8 */      c_aastore()
+    /* 0ab9 */      c_astore_0()
+
+    // thinj/regression/arrays/MultiArrayTest#test1#()V:14
+    /* 0aba */      c_iconst_0()
+    /* 0abb */      c_istore_1()
+    /* 0abc */      c_iload_1()
+    /* 0abd */      c_iconst_2()
+    /* 0abe */      c_if_icmpge(0x00, 0x2d)
+
+    // thinj/regression/arrays/MultiArrayTest#test1#()V:15
+    /* 0ac1 */      c_iconst_0()
+    /* 0ac2 */      c_istore_2()
+    /* 0ac3 */      c_iload_2()
+    /* 0ac4 */      c_iconst_2()
+    /* 0ac5 */      c_if_icmpge(0x00, 0x20)
+
+    // thinj/regression/arrays/MultiArrayTest#test1#()V:16
+    /* 0ac8 */      c_aload_0()
+    /* 0ac9 */      c_iload_1()
+    /* 0aca */      c_aaload()
+    /* 0acb */      c_iload_2()
+    /* 0acc */      c_iaload()
+    /* 0acd */      c_iload_1()
+    /* 0ace */      c_iconst_2()
+    /* 0acf */      c_imul()
+    /* 0ad0 */      c_iload_2()
+    /* 0ad1 */      c_iadd()
+    /* 0ad2 */      c_iconst_1()
+    /* 0ad3 */      c_iadd()
+    /* 0ad4 */      c_if_icmpne(0x00, 0x07)
+    /* 0ad7 */      c_iconst_1()
+    /* 0ad8 */      c_goto(0x00, 0x04)
+    /* 0adb */      c_iconst_0()
+    /* 0adc */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/arrays/MultiArrayTest#test1#()V:15
+    /* 0adf */      c_iinc(0x02, 0x01)
+    /* 0ae2 */      c_goto(0xff, 0xe1)
+
+    // thinj/regression/arrays/MultiArrayTest#test1#()V:14
+    /* 0ae5 */      c_iinc(0x01, 0x01)
+    /* 0ae8 */      c_goto(0xff, 0xd4)
+
+    // thinj/regression/arrays/MultiArrayTest#test1#()V:19
+    /* 0aeb */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (92) thinj/regression/arrays/MultiArrayTest#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/MultiArrayTest#test2#()V:22
+    /* 0aec */      c_iconst_2()
+    /* 0aed */      c_anewarray(0x00, 0x04)
+    /* 0af0 */      c_astore_0()
+
+    // thinj/regression/arrays/MultiArrayTest#test2#()V:23
+    /* 0af1 */      c_iconst_0()
+    /* 0af2 */      c_istore_1()
+    /* 0af3 */      c_iload_1()
+    /* 0af4 */      c_aload_0()
+    /* 0af5 */      c_arraylength()
+    /* 0af6 */      c_if_icmpge(0x00, 0x17)
+
+    // thinj/regression/arrays/MultiArrayTest#test2#()V:24
+    /* 0af9 */      c_aload_0()
+    /* 0afa */      c_iload_1()
+    /* 0afb */      c_aaload()
+    /* 0afc */      c_ifnonnull(0x00, 0x07)
+    /* 0aff */      c_iconst_1()
+    /* 0b00 */      c_goto(0x00, 0x04)
+    /* 0b03 */      c_iconst_0()
+    /* 0b04 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/arrays/MultiArrayTest#test2#()V:23
+    /* 0b07 */      c_iinc(0x01, 0x01)
+    /* 0b0a */      c_goto(0xff, 0xe9)
+
+    // thinj/regression/arrays/MultiArrayTest#test2#()V:26
+    /* 0b0d */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (92) thinj/regression/arrays/MultiArrayTest#test3#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/MultiArrayTest#test3#()V:30
+    /* 0b0e */      c_iconst_2()
+    /* 0b0f */      c_anewarray(0x00, 0x05)
+    /* 0b12 */      c_astore_0()
+
+    // thinj/regression/arrays/MultiArrayTest#test3#()V:31
+    /* 0b13 */      c_aload_0()
+    /* 0b14 */      c_arraylength()
+    /* 0b15 */      c_iconst_2()
+    /* 0b16 */      c_if_icmpne(0x00, 0x07)
+    /* 0b19 */      c_iconst_1()
+    /* 0b1a */      c_goto(0x00, 0x04)
+    /* 0b1d */      c_iconst_0()
+    /* 0b1e */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/arrays/MultiArrayTest#test3#()V:33
+    /* 0b21 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (92) thinj/regression/arrays/MultiArrayTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/MultiArrayTest#main#()V:40
+    /* 0b22 */      c_getstatic(0x00, 0x00)
+    /* 0b25 */      c_bipush(0x57)
+    /* 0b27 */      c_if_icmpne(0x00, 0x07)
+    /* 0b2a */      c_iconst_1()
+    /* 0b2b */      c_goto(0x00, 0x04)
+    /* 0b2e */      c_iconst_0()
+    /* 0b2f */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/arrays/MultiArrayTest#main#()V:41
+    /* 0b32 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/arrays/MultiArrayTest#main#()V:42
+    /* 0b35 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/arrays/MultiArrayTest#main#()V:43
+    /* 0b38 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/arrays/MultiArrayTest#main#()V:44
+    /* 0b3b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (92) thinj/regression/arrays/MultiArrayTest#<clinit>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/MultiArrayTest#<clinit>#()V:6
+    /* 0b3c */      c_bipush(0x38)
+    /* 0b3e */      c_putstatic(0x00, 0x00)
+
+    // thinj/regression/arrays/MultiArrayTest#<clinit>#()V:8
+    /* 0b41 */      c_bipush(0x57)
+    /* 0b43 */      c_putstatic(0x00, 0x00)
+
+    // thinj/regression/arrays/MultiArrayTest#<clinit>#()V:9
+    /* 0b46 */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/arrays/MultiArrayTest#<clinit>#()V:10
+    /* 0b49 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (91) thinj/regression/arrays/DummyClass#cyclicDependency#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/DummyClass#cyclicDependency#()V:24
+    /* 0b4a */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (91) thinj/regression/arrays/DummyClass#<clinit>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/DummyClass#<clinit>#()V:6
+    /* 0b4b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (93) thinj/regression/arrays/Sudoku#solve#([[II)Z
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:9
+    /* 0b4c */      c_getstatic(0x00, 0x00)
+    /* 0b4f */      c_iconst_1()
+    /* 0b50 */      c_iadd()
+    /* 0b51 */      c_putstatic(0x00, 0x00)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:10
+    /* 0b54 */      c_getstatic(0x00, 0x00)
+    /* 0b57 */      c_bipush(0x64)
+    /* 0b59 */      c_irem()
+    /* 0b5a */      c_ifne(0x00, 0x1b)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:12
+    /* 0b5d */      c_getstatic(0x00, 0x01)
+    /* 0b60 */      c_ldc(0x04)
+    /* 0b62 */      c_invokevirtual(0x00, 0x00)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:13
+    /* 0b65 */      c_getstatic(0x00, 0x00)
+    /* 0b68 */      c_sipush(0x1f, 0x40)
+    /* 0b6b */      c_irem()
+    /* 0b6c */      c_ifne(0x00, 0x09)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:14
+    /* 0b6f */      c_getstatic(0x00, 0x01)
+    /* 0b72 */      c_invokevirtual(0x00, 0x01)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:17
+    /* 0b75 */      c_iload_1()
+    /* 0b76 */      c_bipush(0x51)
+    /* 0b78 */      c_if_icmplt(0x00, 0x05)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:18
+    /* 0b7b */      c_iconst_1()
+    /* 0b7c */      c_ireturn()
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:20
+    /* 0b7d */      c_iload_1()
+    /* 0b7e */      c_bipush(0x09)
+    /* 0b80 */      c_idiv()
+    /* 0b81 */      c_istore_2()
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:21
+    /* 0b82 */      c_iload_1()
+    /* 0b83 */      c_bipush(0x09)
+    /* 0b85 */      c_irem()
+    /* 0b86 */      c_istore_3()
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:23
+    /* 0b87 */      c_aload_0()
+    /* 0b88 */      c_iload_2()
+    /* 0b89 */      c_aaload()
+    /* 0b8a */      c_iload_3()
+    /* 0b8b */      c_iaload()
+    /* 0b8c */      c_ifeq(0x00, 0x0b)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:24
+    /* 0b8f */      c_aload_0()
+    /* 0b90 */      c_iload_1()
+    /* 0b91 */      c_iconst_1()
+    /* 0b92 */      c_iadd()
+    /* 0b93 */      c_invokestatic(0x00, 0x02)
+    /* 0b96 */      c_ireturn()
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:27
+    /* 0b97 */      c_aload_0()
+    /* 0b98 */      c_iload_2()
+    /* 0b99 */      c_iload_3()
+    /* 0b9a */      c_invokestatic(0x00, 0x03)
+    /* 0b9d */      c_astore(0x04)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:29
+    /* 0b9f */      c_aload_0()
+    /* 0ba0 */      c_iload_2()
+    /* 0ba1 */      c_aaload()
+    /* 0ba2 */      c_iload_3()
+    /* 0ba3 */      c_iconst_1()
+    /* 0ba4 */      c_iastore()
+    /* 0ba5 */      c_aload_0()
+    /* 0ba6 */      c_iload_2()
+    /* 0ba7 */      c_aaload()
+    /* 0ba8 */      c_iload_3()
+    /* 0ba9 */      c_iaload()
+    /* 0baa */      c_aload(0x04)
+    /* 0bac */      c_arraylength()
+    /* 0bad */      c_if_icmpge(0x00, 0x26)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:30
+    /* 0bb0 */      c_aload(0x04)
+    /* 0bb2 */      c_aload_0()
+    /* 0bb3 */      c_iload_2()
+    /* 0bb4 */      c_aaload()
+    /* 0bb5 */      c_iload_3()
+    /* 0bb6 */      c_iaload()
+    /* 0bb7 */      c_baload()
+    /* 0bb8 */      c_ifne(0x00, 0x0f)
+    /* 0bbb */      c_aload_0()
+    /* 0bbc */      c_iload_1()
+    /* 0bbd */      c_iconst_1()
+    /* 0bbe */      c_iadd()
+    /* 0bbf */      c_invokestatic(0x00, 0x02)
+    /* 0bc2 */      c_ifeq(0x00, 0x05)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:31
+    /* 0bc5 */      c_iconst_1()
+    /* 0bc6 */      c_ireturn()
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:29
+    /* 0bc7 */      c_aload_0()
+    /* 0bc8 */      c_iload_2()
+    /* 0bc9 */      c_aaload()
+    /* 0bca */      c_iload_3()
+    /* 0bcb */      c_dup2()
+    /* 0bcc */      c_iaload()
+    /* 0bcd */      c_iconst_1()
+    /* 0bce */      c_iadd()
+    /* 0bcf */      c_iastore()
+    /* 0bd0 */      c_goto(0xff, 0xd5)
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:34
+    /* 0bd3 */      c_aload_0()
+    /* 0bd4 */      c_iload_2()
+    /* 0bd5 */      c_aaload()
+    /* 0bd6 */      c_iload_3()
+    /* 0bd7 */      c_iconst_0()
+    /* 0bd8 */      c_iastore()
+
+    // thinj/regression/arrays/Sudoku#solve#([[II)Z:35
+    /* 0bd9 */      c_iconst_0()
+    /* 0bda */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (93) thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:44
+    /* 0bdb */      c_bipush(0x0a)
+    /* 0bdd */      c_newarray(0x04)
+    /* 0bdf */      c_dup()
+    /* 0be0 */      c_iconst_0()
+    /* 0be1 */      c_iconst_0()
+    /* 0be2 */      c_bastore()
+    /* 0be3 */      c_dup()
+    /* 0be4 */      c_iconst_1()
+    /* 0be5 */      c_iconst_0()
+    /* 0be6 */      c_bastore()
+    /* 0be7 */      c_dup()
+    /* 0be8 */      c_iconst_2()
+    /* 0be9 */      c_iconst_0()
+    /* 0bea */      c_bastore()
+    /* 0beb */      c_dup()
+    /* 0bec */      c_iconst_3()
+    /* 0bed */      c_iconst_0()
+    /* 0bee */      c_bastore()
+    /* 0bef */      c_dup()
+    /* 0bf0 */      c_iconst_4()
+    /* 0bf1 */      c_iconst_0()
+    /* 0bf2 */      c_bastore()
+    /* 0bf3 */      c_dup()
+    /* 0bf4 */      c_iconst_5()
+    /* 0bf5 */      c_iconst_0()
+    /* 0bf6 */      c_bastore()
+    /* 0bf7 */      c_dup()
+    /* 0bf8 */      c_bipush(0x06)
+    /* 0bfa */      c_iconst_0()
+    /* 0bfb */      c_bastore()
+    /* 0bfc */      c_dup()
+    /* 0bfd */      c_bipush(0x07)
+    /* 0bff */      c_iconst_0()
+    /* 0c00 */      c_bastore()
+    /* 0c01 */      c_dup()
+    /* 0c02 */      c_bipush(0x08)
+    /* 0c04 */      c_iconst_0()
+    /* 0c05 */      c_bastore()
+    /* 0c06 */      c_dup()
+    /* 0c07 */      c_bipush(0x09)
+    /* 0c09 */      c_iconst_0()
+    /* 0c0a */      c_bastore()
+    /* 0c0b */      c_astore_3()
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:46
+    /* 0c0c */      c_iconst_0()
+    /* 0c0d */      c_istore(0x04)
+    /* 0c0f */      c_iload(0x04)
+    /* 0c11 */      c_bipush(0x09)
+    /* 0c13 */      c_if_icmpge(0x00, 0x1b)
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:47
+    /* 0c16 */      c_aload_3()
+    /* 0c17 */      c_aload_0()
+    /* 0c18 */      c_iload(0x04)
+    /* 0c1a */      c_aaload()
+    /* 0c1b */      c_iload_2()
+    /* 0c1c */      c_iaload()
+    /* 0c1d */      c_iconst_1()
+    /* 0c1e */      c_bastore()
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:48
+    /* 0c1f */      c_aload_3()
+    /* 0c20 */      c_aload_0()
+    /* 0c21 */      c_iload_1()
+    /* 0c22 */      c_aaload()
+    /* 0c23 */      c_iload(0x04)
+    /* 0c25 */      c_iaload()
+    /* 0c26 */      c_iconst_1()
+    /* 0c27 */      c_bastore()
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:46
+    /* 0c28 */      c_iinc(0x04, 0x01)
+    /* 0c2b */      c_goto(0xff, 0xe4)
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:51
+    /* 0c2e */      c_iload_1()
+    /* 0c2f */      c_iload_1()
+    /* 0c30 */      c_iconst_3()
+    /* 0c31 */      c_irem()
+    /* 0c32 */      c_isub()
+    /* 0c33 */      c_istore(0x04)
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:52
+    /* 0c35 */      c_iload_2()
+    /* 0c36 */      c_iload_2()
+    /* 0c37 */      c_iconst_3()
+    /* 0c38 */      c_irem()
+    /* 0c39 */      c_isub()
+    /* 0c3a */      c_istore(0x05)
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:53
+    /* 0c3c */      c_iconst_0()
+    /* 0c3d */      c_istore(0x06)
+    /* 0c3f */      c_iload(0x06)
+    /* 0c41 */      c_iconst_3()
+    /* 0c42 */      c_if_icmpge(0x00, 0x28)
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:54
+    /* 0c45 */      c_iconst_0()
+    /* 0c46 */      c_istore(0x07)
+    /* 0c48 */      c_iload(0x07)
+    /* 0c4a */      c_iconst_3()
+    /* 0c4b */      c_if_icmpge(0x00, 0x19)
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:55
+    /* 0c4e */      c_aload_3()
+    /* 0c4f */      c_aload_0()
+    /* 0c50 */      c_iload(0x04)
+    /* 0c52 */      c_iload(0x06)
+    /* 0c54 */      c_iadd()
+    /* 0c55 */      c_aaload()
+    /* 0c56 */      c_iload(0x05)
+    /* 0c58 */      c_iload(0x07)
+    /* 0c5a */      c_iadd()
+    /* 0c5b */      c_iaload()
+    /* 0c5c */      c_iconst_1()
+    /* 0c5d */      c_bastore()
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:54
+    /* 0c5e */      c_iinc(0x07, 0x01)
+    /* 0c61 */      c_goto(0xff, 0xe7)
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:53
+    /* 0c64 */      c_iinc(0x06, 0x01)
+    /* 0c67 */      c_goto(0xff, 0xd8)
+
+    // thinj/regression/arrays/Sudoku#getUsedValues#([[III)[Z:59
+    /* 0c6a */      c_aload_3()
+    /* 0c6b */      c_areturn()
+
+    //------------------------------------------------------------------------------
+    // (93) thinj/regression/arrays/Sudoku#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/Sudoku#main#()V:63
+    /* 0c6c */      c_bipush(0x09)
+    /* 0c6e */      c_anewarray(0x00, 0x09)
+    /* 0c71 */      c_dup()
+    /* 0c72 */      c_iconst_0()
+    /* 0c73 */      c_bipush(0x09)
+    /* 0c75 */      c_newarray(0x0a)
+    /* 0c77 */      c_dup()
+    /* 0c78 */      c_iconst_0()
+    /* 0c79 */      c_iconst_0()
+    /* 0c7a */      c_iastore()
+    /* 0c7b */      c_dup()
+    /* 0c7c */      c_iconst_1()
+    /* 0c7d */      c_iconst_5()
+    /* 0c7e */      c_iastore()
+    /* 0c7f */      c_dup()
+    /* 0c80 */      c_iconst_2()
+    /* 0c81 */      c_iconst_0()
+    /* 0c82 */      c_iastore()
+    /* 0c83 */      c_dup()
+    /* 0c84 */      c_iconst_3()
+    /* 0c85 */      c_iconst_0()
+    /* 0c86 */      c_iastore()
+    /* 0c87 */      c_dup()
+    /* 0c88 */      c_iconst_4()
+    /* 0c89 */      c_bipush(0x06)
+    /* 0c8b */      c_iastore()
+    /* 0c8c */      c_dup()
+    /* 0c8d */      c_iconst_5()
+    /* 0c8e */      c_iconst_0()
+    /* 0c8f */      c_iastore()
+    /* 0c90 */      c_dup()
+    /* 0c91 */      c_bipush(0x06)
+    /* 0c93 */      c_iconst_0()
+    /* 0c94 */      c_iastore()
+    /* 0c95 */      c_dup()
+    /* 0c96 */      c_bipush(0x07)
+    /* 0c98 */      c_iconst_0()
+    /* 0c99 */      c_iastore()
+    /* 0c9a */      c_dup()
+    /* 0c9b */      c_bipush(0x08)
+    /* 0c9d */      c_iconst_1()
+    /* 0c9e */      c_iastore()
+    /* 0c9f */      c_aastore()
+    /* 0ca0 */      c_dup()
+    /* 0ca1 */      c_iconst_1()
+    /* 0ca2 */      c_bipush(0x09)
+    /* 0ca4 */      c_newarray(0x0a)
+    /* 0ca6 */      c_dup()
+    /* 0ca7 */      c_iconst_0()
+    /* 0ca8 */      c_iconst_0()
+    /* 0ca9 */      c_iastore()
+    /* 0caa */      c_dup()
+    /* 0cab */      c_iconst_1()
+    /* 0cac */      c_iconst_0()
+    /* 0cad */      c_iastore()
+    /* 0cae */      c_dup()
+    /* 0caf */      c_iconst_2()
+    /* 0cb0 */      c_iconst_4()
+    /* 0cb1 */      c_iastore()
+    /* 0cb2 */      c_dup()
+    /* 0cb3 */      c_iconst_3()
+    /* 0cb4 */      c_bipush(0x08)
+    /* 0cb6 */      c_iastore()
+    /* 0cb7 */      c_dup()
+    /* 0cb8 */      c_iconst_4()
+    /* 0cb9 */      c_iconst_0()
+    /* 0cba */      c_iastore()
+    /* 0cbb */      c_dup()
+    /* 0cbc */      c_iconst_5()
+    /* 0cbd */      c_iconst_0()
+    /* 0cbe */      c_iastore()
+    /* 0cbf */      c_dup()
+    /* 0cc0 */      c_bipush(0x06)
+    /* 0cc2 */      c_iconst_0()
+    /* 0cc3 */      c_iastore()
+    /* 0cc4 */      c_dup()
+    /* 0cc5 */      c_bipush(0x07)
+    /* 0cc7 */      c_bipush(0x07)
+    /* 0cc9 */      c_iastore()
+    /* 0cca */      c_dup()
+    /* 0ccb */      c_bipush(0x08)
+    /* 0ccd */      c_iconst_0()
+    /* 0cce */      c_iastore()
+    /* 0ccf */      c_aastore()
+    /* 0cd0 */      c_dup()
+    /* 0cd1 */      c_iconst_2()
+    /* 0cd2 */      c_bipush(0x09)
+    /* 0cd4 */      c_newarray(0x0a)
+    /* 0cd6 */      c_dup()
+    /* 0cd7 */      c_iconst_0()
+    /* 0cd8 */      c_bipush(0x08)
+    /* 0cda */      c_iastore()
+    /* 0cdb */      c_dup()
+    /* 0cdc */      c_iconst_1()
+    /* 0cdd */      c_iconst_0()
+    /* 0cde */      c_iastore()
+    /* 0cdf */      c_dup()
+    /* 0ce0 */      c_iconst_2()
+    /* 0ce1 */      c_iconst_0()
+    /* 0ce2 */      c_iastore()
+    /* 0ce3 */      c_dup()
+    /* 0ce4 */      c_iconst_3()
+    /* 0ce5 */      c_iconst_0()
+    /* 0ce6 */      c_iastore()
+    /* 0ce7 */      c_dup()
+    /* 0ce8 */      c_iconst_4()
+    /* 0ce9 */      c_iconst_0()
+    /* 0cea */      c_iastore()
+    /* 0ceb */      c_dup()
+    /* 0cec */      c_iconst_5()
+    /* 0ced */      c_iconst_0()
+    /* 0cee */      c_iastore()
+    /* 0cef */      c_dup()
+    /* 0cf0 */      c_bipush(0x06)
+    /* 0cf2 */      c_iconst_0()
+    /* 0cf3 */      c_iastore()
+    /* 0cf4 */      c_dup()
+    /* 0cf5 */      c_bipush(0x07)
+    /* 0cf7 */      c_iconst_5()
+    /* 0cf8 */      c_iastore()
+    /* 0cf9 */      c_dup()
+    /* 0cfa */      c_bipush(0x08)
+    /* 0cfc */      c_iconst_2()
+    /* 0cfd */      c_iastore()
+    /* 0cfe */      c_aastore()
+    /* 0cff */      c_dup()
+    /* 0d00 */      c_iconst_3()
+    /* 0d01 */      c_bipush(0x09)
+    /* 0d03 */      c_newarray(0x0a)
+    /* 0d05 */      c_dup()
+    /* 0d06 */      c_iconst_0()
+    /* 0d07 */      c_iconst_2()
+    /* 0d08 */      c_iastore()
+    /* 0d09 */      c_dup()
+    /* 0d0a */      c_iconst_1()
+    /* 0d0b */      c_iconst_0()
+    /* 0d0c */      c_iastore()
+    /* 0d0d */      c_dup()
+    /* 0d0e */      c_iconst_2()
+    /* 0d0f */      c_iconst_0()
+    /* 0d10 */      c_iastore()
+    /* 0d11 */      c_dup()
+    /* 0d12 */      c_iconst_3()
+    /* 0d13 */      c_iconst_0()
+    /* 0d14 */      c_iastore()
+    /* 0d15 */      c_dup()
+    /* 0d16 */      c_iconst_4()
+    /* 0d17 */      c_iconst_5()
+    /* 0d18 */      c_iastore()
+    /* 0d19 */      c_dup()
+    /* 0d1a */      c_iconst_5()
+    /* 0d1b */      c_bipush(0x07)
+    /* 0d1d */      c_iastore()
+    /* 0d1e */      c_dup()
+    /* 0d1f */      c_bipush(0x06)
+    /* 0d21 */      c_iconst_0()
+    /* 0d22 */      c_iastore()
+    /* 0d23 */      c_dup()
+    /* 0d24 */      c_bipush(0x07)
+    /* 0d26 */      c_iconst_3()
+    /* 0d27 */      c_iastore()
+    /* 0d28 */      c_dup()
+    /* 0d29 */      c_bipush(0x08)
+    /* 0d2b */      c_iconst_0()
+    /* 0d2c */      c_iastore()
+    /* 0d2d */      c_aastore()
+    /* 0d2e */      c_dup()
+    /* 0d2f */      c_iconst_4()
+    /* 0d30 */      c_bipush(0x09)
+    /* 0d32 */      c_newarray(0x0a)
+    /* 0d34 */      c_dup()
+    /* 0d35 */      c_iconst_0()
+    /* 0d36 */      c_iconst_0()
+    /* 0d37 */      c_iastore()
+    /* 0d38 */      c_dup()
+    /* 0d39 */      c_iconst_1()
+    /* 0d3a */      c_iconst_0()
+    /* 0d3b */      c_iastore()
+    /* 0d3c */      c_dup()
+    /* 0d3d */      c_iconst_2()
+    /* 0d3e */      c_iconst_0()
+    /* 0d3f */      c_iastore()
+    /* 0d40 */      c_dup()
+    /* 0d41 */      c_iconst_3()
+    /* 0d42 */      c_iconst_0()
+    /* 0d43 */      c_iastore()
+    /* 0d44 */      c_dup()
+    /* 0d45 */      c_iconst_4()
+    /* 0d46 */      c_iconst_0()
+    /* 0d47 */      c_iastore()
+    /* 0d48 */      c_dup()
+    /* 0d49 */      c_iconst_5()
+    /* 0d4a */      c_iconst_0()
+    /* 0d4b */      c_iastore()
+    /* 0d4c */      c_dup()
+    /* 0d4d */      c_bipush(0x06)
+    /* 0d4f */      c_iconst_0()
+    /* 0d50 */      c_iastore()
+    /* 0d51 */      c_dup()
+    /* 0d52 */      c_bipush(0x07)
+    /* 0d54 */      c_iconst_0()
+    /* 0d55 */      c_iastore()
+    /* 0d56 */      c_dup()
+    /* 0d57 */      c_bipush(0x08)
+    /* 0d59 */      c_iconst_0()
+    /* 0d5a */      c_iastore()
+    /* 0d5b */      c_aastore()
+    /* 0d5c */      c_dup()
+    /* 0d5d */      c_iconst_5()
+    /* 0d5e */      c_bipush(0x09)
+    /* 0d60 */      c_newarray(0x0a)
+    /* 0d62 */      c_dup()
+    /* 0d63 */      c_iconst_0()
+    /* 0d64 */      c_iconst_0()
+    /* 0d65 */      c_iastore()
+    /* 0d66 */      c_dup()
+    /* 0d67 */      c_iconst_1()
+    /* 0d68 */      c_iconst_3()
+    /* 0d69 */      c_iastore()
+    /* 0d6a */      c_dup()
+    /* 0d6b */      c_iconst_2()
+    /* 0d6c */      c_iconst_0()
+    /* 0d6d */      c_iastore()
+    /* 0d6e */      c_dup()
+    /* 0d6f */      c_iconst_3()
+    /* 0d70 */      c_bipush(0x06)
+    /* 0d72 */      c_iastore()
+    /* 0d73 */      c_dup()
+    /* 0d74 */      c_iconst_4()
+    /* 0d75 */      c_bipush(0x09)
+    /* 0d77 */      c_iastore()
+    /* 0d78 */      c_dup()
+    /* 0d79 */      c_iconst_5()
+    /* 0d7a */      c_iconst_0()
+    /* 0d7b */      c_iastore()
+    /* 0d7c */      c_dup()
+    /* 0d7d */      c_bipush(0x06)
+    /* 0d7f */      c_iconst_0()
+    /* 0d80 */      c_iastore()
+    /* 0d81 */      c_dup()
+    /* 0d82 */      c_bipush(0x07)
+    /* 0d84 */      c_iconst_0()
+    /* 0d85 */      c_iastore()
+    /* 0d86 */      c_dup()
+    /* 0d87 */      c_bipush(0x08)
+    /* 0d89 */      c_iconst_5()
+    /* 0d8a */      c_iastore()
+    /* 0d8b */      c_aastore()
+    /* 0d8c */      c_dup()
+    /* 0d8d */      c_bipush(0x06)
+    /* 0d8f */      c_bipush(0x09)
+    /* 0d91 */      c_newarray(0x0a)
+    /* 0d93 */      c_dup()
+    /* 0d94 */      c_iconst_0()
+    /* 0d95 */      c_bipush(0x07)
+    /* 0d97 */      c_iastore()
+    /* 0d98 */      c_dup()
+    /* 0d99 */      c_iconst_1()
+    /* 0d9a */      c_bipush(0x09)
+    /* 0d9c */      c_iastore()
+    /* 0d9d */      c_dup()
+    /* 0d9e */      c_iconst_2()
+    /* 0d9f */      c_iconst_0()
+    /* 0da0 */      c_iastore()
+    /* 0da1 */      c_dup()
+    /* 0da2 */      c_iconst_3()
+    /* 0da3 */      c_iconst_0()
+    /* 0da4 */      c_iastore()
+    /* 0da5 */      c_dup()
+    /* 0da6 */      c_iconst_4()
+    /* 0da7 */      c_iconst_0()
+    /* 0da8 */      c_iastore()
+    /* 0da9 */      c_dup()
+    /* 0daa */      c_iconst_5()
+    /* 0dab */      c_iconst_0()
+    /* 0dac */      c_iastore()
+    /* 0dad */      c_dup()
+    /* 0dae */      c_bipush(0x06)
+    /* 0db0 */      c_iconst_0()
+    /* 0db1 */      c_iastore()
+    /* 0db2 */      c_dup()
+    /* 0db3 */      c_bipush(0x07)
+    /* 0db5 */      c_iconst_0()
+    /* 0db6 */      c_iastore()
+    /* 0db7 */      c_dup()
+    /* 0db8 */      c_bipush(0x08)
+    /* 0dba */      c_bipush(0x08)
+    /* 0dbc */      c_iastore()
+    /* 0dbd */      c_aastore()
+    /* 0dbe */      c_dup()
+    /* 0dbf */      c_bipush(0x07)
+    /* 0dc1 */      c_bipush(0x09)
+    /* 0dc3 */      c_newarray(0x0a)
+    /* 0dc5 */      c_dup()
+    /* 0dc6 */      c_iconst_0()
+    /* 0dc7 */      c_iconst_0()
+    /* 0dc8 */      c_iastore()
+    /* 0dc9 */      c_dup()
+    /* 0dca */      c_iconst_1()
+    /* 0dcb */      c_iconst_1()
+    /* 0dcc */      c_iastore()
+    /* 0dcd */      c_dup()
+    /* 0dce */      c_iconst_2()
+    /* 0dcf */      c_iconst_0()
+    /* 0dd0 */      c_iastore()
+    /* 0dd1 */      c_dup()
+    /* 0dd2 */      c_iconst_3()
+    /* 0dd3 */      c_iconst_0()
+    /* 0dd4 */      c_iastore()
+    /* 0dd5 */      c_dup()
+    /* 0dd6 */      c_iconst_4()
+    /* 0dd7 */      c_iconst_0()
+    /* 0dd8 */      c_iastore()
+    /* 0dd9 */      c_dup()
+    /* 0dda */      c_iconst_5()
+    /* 0ddb */      c_bipush(0x06)
+    /* 0ddd */      c_iastore()
+    /* 0dde */      c_dup()
+    /* 0ddf */      c_bipush(0x06)
+    /* 0de1 */      c_iconst_5()
+    /* 0de2 */      c_iastore()
+    /* 0de3 */      c_dup()
+    /* 0de4 */      c_bipush(0x07)
+    /* 0de6 */      c_iconst_0()
+    /* 0de7 */      c_iastore()
+    /* 0de8 */      c_dup()
+    /* 0de9 */      c_bipush(0x08)
+    /* 0deb */      c_iconst_0()
+    /* 0dec */      c_iastore()
+    /* 0ded */      c_aastore()
+    /* 0dee */      c_dup()
+    /* 0def */      c_bipush(0x08)
+    /* 0df1 */      c_bipush(0x09)
+    /* 0df3 */      c_newarray(0x0a)
+    /* 0df5 */      c_dup()
+    /* 0df6 */      c_iconst_0()
+    /* 0df7 */      c_iconst_5()
+    /* 0df8 */      c_iastore()
+    /* 0df9 */      c_dup()
+    /* 0dfa */      c_iconst_1()
+    /* 0dfb */      c_iconst_0()
+    /* 0dfc */      c_iastore()
+    /* 0dfd */      c_dup()
+    /* 0dfe */      c_iconst_2()
+    /* 0dff */      c_iconst_0()
+    /* 0e00 */      c_iastore()
+    /* 0e01 */      c_dup()
+    /* 0e02 */      c_iconst_3()
+    /* 0e03 */      c_iconst_0()
+    /* 0e04 */      c_iastore()
+    /* 0e05 */      c_dup()
+    /* 0e06 */      c_iconst_4()
+    /* 0e07 */      c_iconst_3()
+    /* 0e08 */      c_iastore()
+    /* 0e09 */      c_dup()
+    /* 0e0a */      c_iconst_5()
+    /* 0e0b */      c_iconst_0()
+    /* 0e0c */      c_iastore()
+    /* 0e0d */      c_dup()
+    /* 0e0e */      c_bipush(0x06)
+    /* 0e10 */      c_iconst_0()
+    /* 0e11 */      c_iastore()
+    /* 0e12 */      c_dup()
+    /* 0e13 */      c_bipush(0x07)
+    /* 0e15 */      c_bipush(0x06)
+    /* 0e17 */      c_iastore()
+    /* 0e18 */      c_dup()
+    /* 0e19 */      c_bipush(0x08)
+    /* 0e1b */      c_iconst_0()
+    /* 0e1c */      c_iastore()
+    /* 0e1d */      c_aastore()
+    /* 0e1e */      c_astore_0()
+
+    // thinj/regression/arrays/Sudoku#main#()V:69
+    /* 0e1f */      c_bipush(0x09)
+    /* 0e21 */      c_anewarray(0x00, 0x09)
+    /* 0e24 */      c_dup()
+    /* 0e25 */      c_iconst_0()
+    /* 0e26 */      c_bipush(0x09)
+    /* 0e28 */      c_newarray(0x0a)
+    /* 0e2a */      c_dup()
+    /* 0e2b */      c_iconst_0()
+    /* 0e2c */      c_bipush(0x09)
+    /* 0e2e */      c_iastore()
+    /* 0e2f */      c_dup()
+    /* 0e30 */      c_iconst_1()
+    /* 0e31 */      c_iconst_5()
+    /* 0e32 */      c_iastore()
+    /* 0e33 */      c_dup()
+    /* 0e34 */      c_iconst_2()
+    /* 0e35 */      c_iconst_3()
+    /* 0e36 */      c_iastore()
+    /* 0e37 */      c_dup()
+    /* 0e38 */      c_iconst_3()
+    /* 0e39 */      c_bipush(0x07)
+    /* 0e3b */      c_iastore()
+    /* 0e3c */      c_dup()
+    /* 0e3d */      c_iconst_4()
+    /* 0e3e */      c_bipush(0x06)
+    /* 0e40 */      c_iastore()
+    /* 0e41 */      c_dup()
+    /* 0e42 */      c_iconst_5()
+    /* 0e43 */      c_iconst_2()
+    /* 0e44 */      c_iastore()
+    /* 0e45 */      c_dup()
+    /* 0e46 */      c_bipush(0x06)
+    /* 0e48 */      c_bipush(0x08)
+    /* 0e4a */      c_iastore()
+    /* 0e4b */      c_dup()
+    /* 0e4c */      c_bipush(0x07)
+    /* 0e4e */      c_iconst_4()
+    /* 0e4f */      c_iastore()
+    /* 0e50 */      c_dup()
+    /* 0e51 */      c_bipush(0x08)
+    /* 0e53 */      c_iconst_1()
+    /* 0e54 */      c_iastore()
+    /* 0e55 */      c_aastore()
+    /* 0e56 */      c_dup()
+    /* 0e57 */      c_iconst_1()
+    /* 0e58 */      c_bipush(0x09)
+    /* 0e5a */      c_newarray(0x0a)
+    /* 0e5c */      c_dup()
+    /* 0e5d */      c_iconst_0()
+    /* 0e5e */      c_bipush(0x06)
+    /* 0e60 */      c_iastore()
+    /* 0e61 */      c_dup()
+    /* 0e62 */      c_iconst_1()
+    /* 0e63 */      c_iconst_2()
+    /* 0e64 */      c_iastore()
+    /* 0e65 */      c_dup()
+    /* 0e66 */      c_iconst_2()
+    /* 0e67 */      c_iconst_4()
+    /* 0e68 */      c_iastore()
+    /* 0e69 */      c_dup()
+    /* 0e6a */      c_iconst_3()
+    /* 0e6b */      c_bipush(0x08)
+    /* 0e6d */      c_iastore()
+    /* 0e6e */      c_dup()
+    /* 0e6f */      c_iconst_4()
+    /* 0e70 */      c_iconst_1()
+    /* 0e71 */      c_iastore()
+    /* 0e72 */      c_dup()
+    /* 0e73 */      c_iconst_5()
+    /* 0e74 */      c_iconst_5()
+    /* 0e75 */      c_iastore()
+    /* 0e76 */      c_dup()
+    /* 0e77 */      c_bipush(0x06)
+    /* 0e79 */      c_bipush(0x09)
+    /* 0e7b */      c_iastore()
+    /* 0e7c */      c_dup()
+    /* 0e7d */      c_bipush(0x07)
+    /* 0e7f */      c_bipush(0x07)
+    /* 0e81 */      c_iastore()
+    /* 0e82 */      c_dup()
+    /* 0e83 */      c_bipush(0x08)
+    /* 0e85 */      c_iconst_3()
+    /* 0e86 */      c_iastore()
+    /* 0e87 */      c_aastore()
+    /* 0e88 */      c_dup()
+    /* 0e89 */      c_iconst_2()
+    /* 0e8a */      c_bipush(0x09)
+    /* 0e8c */      c_newarray(0x0a)
+    /* 0e8e */      c_dup()
+    /* 0e8f */      c_iconst_0()
+    /* 0e90 */      c_bipush(0x08)
+    /* 0e92 */      c_iastore()
+    /* 0e93 */      c_dup()
+    /* 0e94 */      c_iconst_1()
+    /* 0e95 */      c_bipush(0x07)
+    /* 0e97 */      c_iastore()
+    /* 0e98 */      c_dup()
+    /* 0e99 */      c_iconst_2()
+    /* 0e9a */      c_iconst_1()
+    /* 0e9b */      c_iastore()
+    /* 0e9c */      c_dup()
+    /* 0e9d */      c_iconst_3()
+    /* 0e9e */      c_iconst_3()
+    /* 0e9f */      c_iastore()
+    /* 0ea0 */      c_dup()
+    /* 0ea1 */      c_iconst_4()
+    /* 0ea2 */      c_iconst_4()
+    /* 0ea3 */      c_iastore()
+    /* 0ea4 */      c_dup()
+    /* 0ea5 */      c_iconst_5()
+    /* 0ea6 */      c_bipush(0x09)
+    /* 0ea8 */      c_iastore()
+    /* 0ea9 */      c_dup()
+    /* 0eaa */      c_bipush(0x06)
+    /* 0eac */      c_bipush(0x06)
+    /* 0eae */      c_iastore()
+    /* 0eaf */      c_dup()
+    /* 0eb0 */      c_bipush(0x07)
+    /* 0eb2 */      c_iconst_5()
+    /* 0eb3 */      c_iastore()
+    /* 0eb4 */      c_dup()
+    /* 0eb5 */      c_bipush(0x08)
+    /* 0eb7 */      c_iconst_2()
+    /* 0eb8 */      c_iastore()
+    /* 0eb9 */      c_aastore()
+    /* 0eba */      c_dup()
+    /* 0ebb */      c_iconst_3()
+    /* 0ebc */      c_bipush(0x09)
+    /* 0ebe */      c_newarray(0x0a)
+    /* 0ec0 */      c_dup()
+    /* 0ec1 */      c_iconst_0()
+    /* 0ec2 */      c_iconst_2()
+    /* 0ec3 */      c_iastore()
+    /* 0ec4 */      c_dup()
+    /* 0ec5 */      c_iconst_1()
+    /* 0ec6 */      c_bipush(0x08)
+    /* 0ec8 */      c_iastore()
+    /* 0ec9 */      c_dup()
+    /* 0eca */      c_iconst_2()
+    /* 0ecb */      c_bipush(0x09)
+    /* 0ecd */      c_iastore()
+    /* 0ece */      c_dup()
+    /* 0ecf */      c_iconst_3()
+    /* 0ed0 */      c_iconst_4()
+    /* 0ed1 */      c_iastore()
+    /* 0ed2 */      c_dup()
+    /* 0ed3 */      c_iconst_4()
+    /* 0ed4 */      c_iconst_5()
+    /* 0ed5 */      c_iastore()
+    /* 0ed6 */      c_dup()
+    /* 0ed7 */      c_iconst_5()
+    /* 0ed8 */      c_bipush(0x07)
+    /* 0eda */      c_iastore()
+    /* 0edb */      c_dup()
+    /* 0edc */      c_bipush(0x06)
+    /* 0ede */      c_iconst_1()
+    /* 0edf */      c_iastore()
+    /* 0ee0 */      c_dup()
+    /* 0ee1 */      c_bipush(0x07)
+    /* 0ee3 */      c_iconst_3()
+    /* 0ee4 */      c_iastore()
+    /* 0ee5 */      c_dup()
+    /* 0ee6 */      c_bipush(0x08)
+    /* 0ee8 */      c_bipush(0x06)
+    /* 0eea */      c_iastore()
+    /* 0eeb */      c_aastore()
+    /* 0eec */      c_dup()
+    /* 0eed */      c_iconst_4()
+    /* 0eee */      c_bipush(0x09)
+    /* 0ef0 */      c_newarray(0x0a)
+    /* 0ef2 */      c_dup()
+    /* 0ef3 */      c_iconst_0()
+    /* 0ef4 */      c_iconst_1()
+    /* 0ef5 */      c_iastore()
+    /* 0ef6 */      c_dup()
+    /* 0ef7 */      c_iconst_1()
+    /* 0ef8 */      c_bipush(0x06)
+    /* 0efa */      c_iastore()
+    /* 0efb */      c_dup()
+    /* 0efc */      c_iconst_2()
+    /* 0efd */      c_iconst_5()
+    /* 0efe */      c_iastore()
+    /* 0eff */      c_dup()
+    /* 0f00 */      c_iconst_3()
+    /* 0f01 */      c_iconst_2()
+    /* 0f02 */      c_iastore()
+    /* 0f03 */      c_dup()
+    /* 0f04 */      c_iconst_4()
+    /* 0f05 */      c_bipush(0x08)
+    /* 0f07 */      c_iastore()
+    /* 0f08 */      c_dup()
+    /* 0f09 */      c_iconst_5()
+    /* 0f0a */      c_iconst_3()
+    /* 0f0b */      c_iastore()
+    /* 0f0c */      c_dup()
+    /* 0f0d */      c_bipush(0x06)
+    /* 0f0f */      c_iconst_4()
+    /* 0f10 */      c_iastore()
+    /* 0f11 */      c_dup()
+    /* 0f12 */      c_bipush(0x07)
+    /* 0f14 */      c_bipush(0x09)
+    /* 0f16 */      c_iastore()
+    /* 0f17 */      c_dup()
+    /* 0f18 */      c_bipush(0x08)
+    /* 0f1a */      c_bipush(0x07)
+    /* 0f1c */      c_iastore()
+    /* 0f1d */      c_aastore()
+    /* 0f1e */      c_dup()
+    /* 0f1f */      c_iconst_5()
+    /* 0f20 */      c_bipush(0x09)
+    /* 0f22 */      c_newarray(0x0a)
+    /* 0f24 */      c_dup()
+    /* 0f25 */      c_iconst_0()
+    /* 0f26 */      c_iconst_4()
+    /* 0f27 */      c_iastore()
+    /* 0f28 */      c_dup()
+    /* 0f29 */      c_iconst_1()
+    /* 0f2a */      c_iconst_3()
+    /* 0f2b */      c_iastore()
+    /* 0f2c */      c_dup()
+    /* 0f2d */      c_iconst_2()
+    /* 0f2e */      c_bipush(0x07)
+    /* 0f30 */      c_iastore()
+    /* 0f31 */      c_dup()
+    /* 0f32 */      c_iconst_3()
+    /* 0f33 */      c_bipush(0x06)
+    /* 0f35 */      c_iastore()
+    /* 0f36 */      c_dup()
+    /* 0f37 */      c_iconst_4()
+    /* 0f38 */      c_bipush(0x09)
+    /* 0f3a */      c_iastore()
+    /* 0f3b */      c_dup()
+    /* 0f3c */      c_iconst_5()
+    /* 0f3d */      c_iconst_1()
+    /* 0f3e */      c_iastore()
+    /* 0f3f */      c_dup()
+    /* 0f40 */      c_bipush(0x06)
+    /* 0f42 */      c_iconst_2()
+    /* 0f43 */      c_iastore()
+    /* 0f44 */      c_dup()
+    /* 0f45 */      c_bipush(0x07)
+    /* 0f47 */      c_bipush(0x08)
+    /* 0f49 */      c_iastore()
+    /* 0f4a */      c_dup()
+    /* 0f4b */      c_bipush(0x08)
+    /* 0f4d */      c_iconst_5()
+    /* 0f4e */      c_iastore()
+    /* 0f4f */      c_aastore()
+    /* 0f50 */      c_dup()
+    /* 0f51 */      c_bipush(0x06)
+    /* 0f53 */      c_bipush(0x09)
+    /* 0f55 */      c_newarray(0x0a)
+    /* 0f57 */      c_dup()
+    /* 0f58 */      c_iconst_0()
+    /* 0f59 */      c_bipush(0x07)
+    /* 0f5b */      c_iastore()
+    /* 0f5c */      c_dup()
+    /* 0f5d */      c_iconst_1()
+    /* 0f5e */      c_bipush(0x09)
+    /* 0f60 */      c_iastore()
+    /* 0f61 */      c_dup()
+    /* 0f62 */      c_iconst_2()
+    /* 0f63 */      c_bipush(0x06)
+    /* 0f65 */      c_iastore()
+    /* 0f66 */      c_dup()
+    /* 0f67 */      c_iconst_3()
+    /* 0f68 */      c_iconst_5()
+    /* 0f69 */      c_iastore()
+    /* 0f6a */      c_dup()
+    /* 0f6b */      c_iconst_4()
+    /* 0f6c */      c_iconst_2()
+    /* 0f6d */      c_iastore()
+    /* 0f6e */      c_dup()
+    /* 0f6f */      c_iconst_5()
+    /* 0f70 */      c_iconst_4()
+    /* 0f71 */      c_iastore()
+    /* 0f72 */      c_dup()
+    /* 0f73 */      c_bipush(0x06)
+    /* 0f75 */      c_iconst_3()
+    /* 0f76 */      c_iastore()
+    /* 0f77 */      c_dup()
+    /* 0f78 */      c_bipush(0x07)
+    /* 0f7a */      c_iconst_1()
+    /* 0f7b */      c_iastore()
+    /* 0f7c */      c_dup()
+    /* 0f7d */      c_bipush(0x08)
+    /* 0f7f */      c_bipush(0x08)
+    /* 0f81 */      c_iastore()
+    /* 0f82 */      c_aastore()
+    /* 0f83 */      c_dup()
+    /* 0f84 */      c_bipush(0x07)
+    /* 0f86 */      c_bipush(0x09)
+    /* 0f88 */      c_newarray(0x0a)
+    /* 0f8a */      c_dup()
+    /* 0f8b */      c_iconst_0()
+    /* 0f8c */      c_iconst_3()
+    /* 0f8d */      c_iastore()
+    /* 0f8e */      c_dup()
+    /* 0f8f */      c_iconst_1()
+    /* 0f90 */      c_iconst_1()
+    /* 0f91 */      c_iastore()
+    /* 0f92 */      c_dup()
+    /* 0f93 */      c_iconst_2()
+    /* 0f94 */      c_bipush(0x08)
+    /* 0f96 */      c_iastore()
+    /* 0f97 */      c_dup()
+    /* 0f98 */      c_iconst_3()
+    /* 0f99 */      c_bipush(0x09)
+    /* 0f9b */      c_iastore()
+    /* 0f9c */      c_dup()
+    /* 0f9d */      c_iconst_4()
+    /* 0f9e */      c_bipush(0x07)
+    /* 0fa0 */      c_iastore()
+    /* 0fa1 */      c_dup()
+    /* 0fa2 */      c_iconst_5()
+    /* 0fa3 */      c_bipush(0x06)
+    /* 0fa5 */      c_iastore()
+    /* 0fa6 */      c_dup()
+    /* 0fa7 */      c_bipush(0x06)
+    /* 0fa9 */      c_iconst_5()
+    /* 0faa */      c_iastore()
+    /* 0fab */      c_dup()
+    /* 0fac */      c_bipush(0x07)
+    /* 0fae */      c_iconst_2()
+    /* 0faf */      c_iastore()
+    /* 0fb0 */      c_dup()
+    /* 0fb1 */      c_bipush(0x08)
+    /* 0fb3 */      c_iconst_4()
+    /* 0fb4 */      c_iastore()
+    /* 0fb5 */      c_aastore()
+    /* 0fb6 */      c_dup()
+    /* 0fb7 */      c_bipush(0x08)
+    /* 0fb9 */      c_bipush(0x09)
+    /* 0fbb */      c_newarray(0x0a)
+    /* 0fbd */      c_dup()
+    /* 0fbe */      c_iconst_0()
+    /* 0fbf */      c_iconst_5()
+    /* 0fc0 */      c_iastore()
+    /* 0fc1 */      c_dup()
+    /* 0fc2 */      c_iconst_1()
+    /* 0fc3 */      c_iconst_4()
+    /* 0fc4 */      c_iastore()
+    /* 0fc5 */      c_dup()
+    /* 0fc6 */      c_iconst_2()
+    /* 0fc7 */      c_iconst_2()
+    /* 0fc8 */      c_iastore()
+    /* 0fc9 */      c_dup()
+    /* 0fca */      c_iconst_3()
+    /* 0fcb */      c_iconst_1()
+    /* 0fcc */      c_iastore()
+    /* 0fcd */      c_dup()
+    /* 0fce */      c_iconst_4()
+    /* 0fcf */      c_iconst_3()
+    /* 0fd0 */      c_iastore()
+    /* 0fd1 */      c_dup()
+    /* 0fd2 */      c_iconst_5()
+    /* 0fd3 */      c_bipush(0x08)
+    /* 0fd5 */      c_iastore()
+    /* 0fd6 */      c_dup()
+    /* 0fd7 */      c_bipush(0x06)
+    /* 0fd9 */      c_bipush(0x07)
+    /* 0fdb */      c_iastore()
+    /* 0fdc */      c_dup()
+    /* 0fdd */      c_bipush(0x07)
+    /* 0fdf */      c_bipush(0x06)
+    /* 0fe1 */      c_iastore()
+    /* 0fe2 */      c_dup()
+    /* 0fe3 */      c_bipush(0x08)
+    /* 0fe5 */      c_bipush(0x09)
+    /* 0fe7 */      c_iastore()
+    /* 0fe8 */      c_aastore()
+    /* 0fe9 */      c_astore_1()
+
+    // thinj/regression/arrays/Sudoku#main#()V:74
+    /* 0fea */      c_aload_0()
+    /* 0feb */      c_iconst_0()
+    /* 0fec */      c_invokestatic(0x00, 0x02)
+    /* 0fef */      c_pop()
+
+    // thinj/regression/arrays/Sudoku#main#()V:75
+    /* 0ff0 */      c_getstatic(0x00, 0x01)
+    /* 0ff3 */      c_invokevirtual(0x00, 0x01)
+
+    // thinj/regression/arrays/Sudoku#main#()V:76
+    /* 0ff6 */      c_iconst_0()
+    /* 0ff7 */      c_istore_2()
+    /* 0ff8 */      c_iload_2()
+    /* 0ff9 */      c_bipush(0x09)
+    /* 0ffb */      c_if_icmpge(0x00, 0x2c)
+
+    // thinj/regression/arrays/Sudoku#main#()V:77
+    /* 0ffe */      c_iconst_0()
+    /* 0fff */      c_istore_3()
+    /* 1000 */      c_iload_3()
+    /* 1001 */      c_bipush(0x09)
+    /* 1003 */      c_if_icmpge(0x00, 0x1e)
+
+    // thinj/regression/arrays/Sudoku#main#()V:78
+    /* 1006 */      c_aload_0()
+    /* 1007 */      c_iload_2()
+    /* 1008 */      c_aaload()
+    /* 1009 */      c_iload_3()
+    /* 100a */      c_iaload()
+    /* 100b */      c_aload_1()
+    /* 100c */      c_iload_2()
+    /* 100d */      c_aaload()
+    /* 100e */      c_iload_3()
+    /* 100f */      c_iaload()
+    /* 1010 */      c_if_icmpne(0x00, 0x07)
+    /* 1013 */      c_iconst_1()
+    /* 1014 */      c_goto(0x00, 0x04)
+    /* 1017 */      c_iconst_0()
+    /* 1018 */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/arrays/Sudoku#main#()V:77
+    /* 101b */      c_iinc(0x03, 0x01)
+    /* 101e */      c_goto(0xff, 0xe2)
+
+    // thinj/regression/arrays/Sudoku#main#()V:76
+    /* 1021 */      c_iinc(0x02, 0x01)
+    /* 1024 */      c_goto(0xff, 0xd4)
+
+    // thinj/regression/arrays/Sudoku#main#()V:81
+    /* 1027 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (93) thinj/regression/arrays/Sudoku#<clinit>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/arrays/Sudoku#<clinit>#()V:6
+    /* 1028 */      c_iconst_0()
+    /* 1029 */      c_putstatic(0x00, 0x00)
+    /* 102c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (105) thinj/regression/gc/GC#circularObjects#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/gc/GC#circularObjects#()V:26
+    /* 102d */      c_aconst_null()
+    /* 102e */      c_astore_0()
+
+    // thinj/regression/gc/GC#circularObjects#()V:28
+    /* 102f */      c_new(0x00, 0x05)
+    /* 1032 */      c_dup()
+    /* 1033 */      c_bipush(0x64)
+    /* 1035 */      c_invokespecial(0x00, 0x00)
+    /* 1038 */      c_astore_1()
+
+    // thinj/regression/gc/GC#circularObjects#()V:30
+    /* 1039 */      c_aload_0()
+    /* 103a */      c_ifnonnull(0x00, 0x0e)
+
+    // thinj/regression/gc/GC#circularObjects#()V:31
+    /* 103d */      c_aload_1()
+    /* 103e */      c_aload_1()
+    /* 103f */      c_invokestatic(0x00, 0x01)
+    /* 1042 */      c_pop()
+
+    // thinj/regression/gc/GC#circularObjects#()V:32
+    /* 1043 */      c_aload_1()
+    /* 1044 */      c_astore_0()
+    /* 1045 */      c_goto(0x00, 0x12)
+
+    // thinj/regression/gc/GC#circularObjects#()V:34
+    /* 1048 */      c_aload_1()
+    /* 1049 */      c_aload_0()
+    /* 104a */      c_invokestatic(0x00, 0x02)
+    /* 104d */      c_invokestatic(0x00, 0x01)
+    /* 1050 */      c_pop()
+
+    // thinj/regression/gc/GC#circularObjects#()V:35
+    /* 1051 */      c_aload_0()
+    /* 1052 */      c_aload_1()
+    /* 1053 */      c_invokestatic(0x00, 0x01)
+    /* 1056 */      c_pop()
+
+    // thinj/regression/gc/GC#circularObjects#()V:37
+    /* 1057 */      c_goto(0xff, 0xd8)
+
+    //------------------------------------------------------------------------------
+    // (105) thinj/regression/gc/GC#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/gc/GC#main#()V:41
+    /* 105a */      c_ldc(0x09)
+    /* 105c */      c_astore_0()
+
+    // thinj/regression/gc/GC#main#()V:42
+    /* 105d */      c_bipush(0x0a)
+    /* 105f */      c_anewarray(0x00, 0x0a)
+    /* 1062 */      c_dup()
+    /* 1063 */      c_iconst_0()
+    /* 1064 */      c_ldc(0x0b)
+    /* 1066 */      c_aastore()
+    /* 1067 */      c_dup()
+    /* 1068 */      c_iconst_1()
+    /* 1069 */      c_ldc(0x0c)
+    /* 106b */      c_aastore()
+    /* 106c */      c_dup()
+    /* 106d */      c_iconst_2()
+    /* 106e */      c_ldc(0x0d)
+    /* 1070 */      c_aastore()
+    /* 1071 */      c_dup()
+    /* 1072 */      c_iconst_3()
+    /* 1073 */      c_ldc(0x0e)
+    /* 1075 */      c_aastore()
+    /* 1076 */      c_dup()
+    /* 1077 */      c_iconst_4()
+    /* 1078 */      c_ldc(0x0f)
+    /* 107a */      c_aastore()
+    /* 107b */      c_dup()
+    /* 107c */      c_iconst_5()
+    /* 107d */      c_ldc(0x10)
+    /* 107f */      c_aastore()
+    /* 1080 */      c_dup()
+    /* 1081 */      c_bipush(0x06)
+    /* 1083 */      c_ldc(0x11)
+    /* 1085 */      c_aastore()
+    /* 1086 */      c_dup()
+    /* 1087 */      c_bipush(0x07)
+    /* 1089 */      c_ldc(0x12)
+    /* 108b */      c_aastore()
+    /* 108c */      c_dup()
+    /* 108d */      c_bipush(0x08)
+    /* 108f */      c_ldc(0x13)
+    /* 1091 */      c_aastore()
+    /* 1092 */      c_dup()
+    /* 1093 */      c_bipush(0x09)
+    /* 1095 */      c_ldc(0x14)
+    /* 1097 */      c_aastore()
+    /* 1098 */      c_astore_1()
+
+    // thinj/regression/gc/GC#main#()V:43
+    /* 1099 */      c_iconst_0()
+    /* 109a */      c_istore_2()
+
+    // thinj/regression/gc/GC#main#()V:45
+    /* 109b */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/gc/GC#main#()V:48
+    /* 109e */      c_goto(0x00, 0x06)
+
+    // thinj/regression/gc/GC#main#()V:46
+    /* 10a1 */      c_astore_3()
+
+    // thinj/regression/gc/GC#main#()V:47
+    /* 10a2 */      c_iconst_1()
+    /* 10a3 */      c_istore_2()
+
+    // thinj/regression/gc/GC#main#()V:49
+    /* 10a4 */      c_iload_2()
+    /* 10a5 */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/gc/GC#main#()V:54
+    /* 10a8 */      c_new(0x00, 0x18)
+    /* 10ab */      c_dup()
+    /* 10ac */      c_invokespecial(0x00, 0x05)
+    /* 10af */      c_aload_0()
+    /* 10b0 */      c_invokevirtual(0x00, 0x06)
+    /* 10b3 */      c_aload_1()
+    /* 10b4 */      c_iconst_0()
+    /* 10b5 */      c_aaload()
+    /* 10b6 */      c_invokevirtual(0x00, 0x06)
+    /* 10b9 */      c_aload_1()
+    /* 10ba */      c_iconst_1()
+    /* 10bb */      c_aaload()
+    /* 10bc */      c_invokevirtual(0x00, 0x06)
+    /* 10bf */      c_aload_1()
+    /* 10c0 */      c_iconst_2()
+    /* 10c1 */      c_aaload()
+    /* 10c2 */      c_invokevirtual(0x00, 0x06)
+    /* 10c5 */      c_aload_1()
+    /* 10c6 */      c_iconst_3()
+    /* 10c7 */      c_aaload()
+    /* 10c8 */      c_invokevirtual(0x00, 0x06)
+    /* 10cb */      c_aload_1()
+    /* 10cc */      c_iconst_4()
+    /* 10cd */      c_aaload()
+    /* 10ce */      c_invokevirtual(0x00, 0x06)
+    /* 10d1 */      c_aload_1()
+    /* 10d2 */      c_iconst_5()
+    /* 10d3 */      c_aaload()
+    /* 10d4 */      c_invokevirtual(0x00, 0x06)
+    /* 10d7 */      c_aload_1()
+    /* 10d8 */      c_bipush(0x06)
+    /* 10da */      c_aaload()
+    /* 10db */      c_invokevirtual(0x00, 0x06)
+    /* 10de */      c_aload_1()
+    /* 10df */      c_bipush(0x07)
+    /* 10e1 */      c_aaload()
+    /* 10e2 */      c_invokevirtual(0x00, 0x06)
+    /* 10e5 */      c_aload_1()
+    /* 10e6 */      c_bipush(0x08)
+    /* 10e8 */      c_aaload()
+    /* 10e9 */      c_invokevirtual(0x00, 0x06)
+    /* 10ec */      c_aload_1()
+    /* 10ed */      c_bipush(0x09)
+    /* 10ef */      c_aaload()
+    /* 10f0 */      c_invokevirtual(0x00, 0x06)
+    /* 10f3 */      c_invokevirtual(0x00, 0x07)
+    /* 10f6 */      c_new(0x00, 0x18)
+    /* 10f9 */      c_dup()
+    /* 10fa */      c_invokespecial(0x00, 0x05)
+    /* 10fd */      c_aload_0()
+    /* 10fe */      c_invokevirtual(0x00, 0x06)
+    /* 1101 */      c_ldc(0x1c)
+    /* 1103 */      c_invokevirtual(0x00, 0x06)
+    /* 1106 */      c_invokevirtual(0x00, 0x07)
+    /* 1109 */      c_invokevirtual(0x00, 0x08)
+    /* 110c */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/gc/GC#main#()V:62
+    /* 110f */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (106) thinj/regression/gc/GC$LinkObject#<init>#(I)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/gc/GC$LinkObject#<init>#(I)V:18
+    /* 1110 */      c_aload_0()
+    /* 1111 */      c_invokespecial(0x00, 0x00)
+
+    // thinj/regression/gc/GC$LinkObject#<init>#(I)V:19
+    /* 1114 */      c_aload_0()
+    /* 1115 */      c_iload_1()
+    /* 1116 */      c_newarray(0x0a)
+    /* 1118 */      c_putfield(0x00, 0x01)
+
+    // thinj/regression/gc/GC$LinkObject#<init>#(I)V:21
+    /* 111b */      c_aload_0()
+    /* 111c */      c_aconst_null()
+    /* 111d */      c_putfield(0x00, 0x00)
+
+    // thinj/regression/gc/GC$LinkObject#<init>#(I)V:22
+    /* 1120 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (106) thinj/regression/gc/GC$LinkObject#access$002#(Lthinj/regression/gc/GC$LinkObject;Lthinj/regression/gc/GC$LinkObject;)Lthinj/regression/gc/GC$LinkObject;
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/gc/GC$LinkObject#access$002#(Lthinj/regression/gc/GC$LinkObject;Lthinj/regression/gc/GC$LinkObject;)Lthinj/regression/gc/GC$LinkObject;:14
+    /* 1121 */      c_aload_0()
+    /* 1122 */      c_aload_1()
+    /* 1123 */      c_dup_x1()
+    /* 1124 */      c_putfield(0x00, 0x00)
+    /* 1127 */      c_areturn()
+
+    //------------------------------------------------------------------------------
+    // (106) thinj/regression/gc/GC$LinkObject#access$000#(Lthinj/regression/gc/GC$LinkObject;)Lthinj/regression/gc/GC$LinkObject;
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/gc/GC$LinkObject#access$000#(Lthinj/regression/gc/GC$LinkObject;)Lthinj/regression/gc/GC$LinkObject;:14
+    /* 1128 */      c_aload_0()
+    /* 1129 */      c_getfield(0x00, 0x00)
+    /* 112c */      c_areturn()
+
+    //------------------------------------------------------------------------------
+    // (41) java/util/Arrays#hashCode#([C)I
     //------------------------------------------------------------------------------
 
     // java/util/Arrays#hashCode#([C)I:6
-    /* 05ab */      c_bipush(0x25)
-    /* 05ad */      c_istore_1()
+    /* 112d */      c_bipush(0x25)
+    /* 112f */      c_istore_1()
 
     // java/util/Arrays#hashCode#([C)I:7
-    /* 05ae */      c_aload_0()
-    /* 05af */      c_astore_2()
-    /* 05b0 */      c_aload_2()
-    /* 05b1 */      c_arraylength()
-    /* 05b2 */      c_istore_3()
-    /* 05b3 */      c_iconst_0()
-    /* 05b4 */      c_istore(0x04)
-    /* 05b6 */      c_iload(0x04)
-    /* 05b8 */      c_iload_3()
-    /* 05b9 */      c_if_icmpge(0x00, 0x16)
-    /* 05bc */      c_aload_2()
-    /* 05bd */      c_iload(0x04)
-    /* 05bf */      c_caload()
-    /* 05c0 */      c_istore(0x05)
+    /* 1130 */      c_aload_0()
+    /* 1131 */      c_astore_2()
+    /* 1132 */      c_aload_2()
+    /* 1133 */      c_arraylength()
+    /* 1134 */      c_istore_3()
+    /* 1135 */      c_iconst_0()
+    /* 1136 */      c_istore(0x04)
+    /* 1138 */      c_iload(0x04)
+    /* 113a */      c_iload_3()
+    /* 113b */      c_if_icmpge(0x00, 0x16)
+    /* 113e */      c_aload_2()
+    /* 113f */      c_iload(0x04)
+    /* 1141 */      c_caload()
+    /* 1142 */      c_istore(0x05)
 
     // java/util/Arrays#hashCode#([C)I:8
-    /* 05c2 */      c_iload_1()
-    /* 05c3 */      c_iconst_2()
-    /* 05c4 */      c_imul()
-    /* 05c5 */      c_iload(0x05)
-    /* 05c7 */      c_iadd()
-    /* 05c8 */      c_istore_1()
+    /* 1144 */      c_iload_1()
+    /* 1145 */      c_iconst_2()
+    /* 1146 */      c_imul()
+    /* 1147 */      c_iload(0x05)
+    /* 1149 */      c_iadd()
+    /* 114a */      c_istore_1()
 
     // java/util/Arrays#hashCode#([C)I:7
-    /* 05c9 */      c_iinc(0x04, 0x01)
-    /* 05cc */      c_goto(0xff, 0xea)
+    /* 114b */      c_iinc(0x04, 0x01)
+    /* 114e */      c_goto(0xff, 0xea)
 
     // java/util/Arrays#hashCode#([C)I:10
-    /* 05cf */      c_iload_1()
-    /* 05d0 */      c_ireturn()
+    /* 1151 */      c_iload_1()
+    /* 1152 */      c_ireturn()
 
     //------------------------------------------------------------------------------
-    // (34) thinj/regression/AllTests#<jvminit>#()V
+    // (41) java/util/Arrays#equals#([C[C)Z
     //------------------------------------------------------------------------------
-    /* 05d1 */      c_invokestatic(0x00, 0x07)
-    /* 05d4 */      c_invokestatic(0x00, 0x08)
-    /* 05d7 */      c_invokestatic(0x00, 0x09)
-    /* 05da */      c_invokestatic(0x00, 0x0a)
-    /* 05dd */      c_invokestatic(0x00, 0x0b)
-    /* 05e0 */      c_vreturn()
+
+    // java/util/Arrays#equals#([C[C)Z:14
+    /* 1153 */      c_aload_0()
+    /* 1154 */      c_aload_1()
+    /* 1155 */      c_if_acmpne(0x00, 0x05)
+
+    // java/util/Arrays#equals#([C[C)Z:15
+    /* 1158 */      c_iconst_1()
+    /* 1159 */      c_ireturn()
+
+    // java/util/Arrays#equals#([C[C)Z:17
+    /* 115a */      c_aload_0()
+    /* 115b */      c_ifnull(0x00, 0x09)
+    /* 115e */      c_aload_1()
+    /* 115f */      c_ifnonnull(0x00, 0x05)
+
+    // java/util/Arrays#equals#([C[C)Z:18
+    /* 1162 */      c_iconst_0()
+    /* 1163 */      c_ireturn()
+
+    // java/util/Arrays#equals#([C[C)Z:21
+    /* 1164 */      c_aload_0()
+    /* 1165 */      c_ifnonnull(0x00, 0x09)
+    /* 1168 */      c_aload_1()
+    /* 1169 */      c_ifnull(0x00, 0x05)
+
+    // java/util/Arrays#equals#([C[C)Z:22
+    /* 116c */      c_iconst_0()
+    /* 116d */      c_ireturn()
+
+    // java/util/Arrays#equals#([C[C)Z:25
+    /* 116e */      c_aload_0()
+    /* 116f */      c_arraylength()
+    /* 1170 */      c_aload_1()
+    /* 1171 */      c_arraylength()
+    /* 1172 */      c_if_icmpeq(0x00, 0x05)
+
+    // java/util/Arrays#equals#([C[C)Z:26
+    /* 1175 */      c_iconst_0()
+    /* 1176 */      c_ireturn()
+
+    // java/util/Arrays#equals#([C[C)Z:29
+    /* 1177 */      c_iconst_1()
+    /* 1178 */      c_istore_2()
+
+    // java/util/Arrays#equals#([C[C)Z:30
+    /* 1179 */      c_iconst_0()
+    /* 117a */      c_istore_3()
+    /* 117b */      c_iload_3()
+    /* 117c */      c_aload_0()
+    /* 117d */      c_arraylength()
+    /* 117e */      c_if_icmpge(0x00, 0x17)
+
+    // java/util/Arrays#equals#([C[C)Z:31
+    /* 1181 */      c_aload_0()
+    /* 1182 */      c_iload_3()
+    /* 1183 */      c_caload()
+    /* 1184 */      c_aload_1()
+    /* 1185 */      c_iload_3()
+    /* 1186 */      c_caload()
+    /* 1187 */      c_if_icmpeq(0x00, 0x08)
+
+    // java/util/Arrays#equals#([C[C)Z:32
+    /* 118a */      c_iconst_0()
+    /* 118b */      c_istore_2()
+
+    // java/util/Arrays#equals#([C[C)Z:33
+    /* 118c */      c_goto(0x00, 0x09)
+
+    // java/util/Arrays#equals#([C[C)Z:30
+    /* 118f */      c_iinc(0x03, 0x01)
+    /* 1192 */      c_goto(0xff, 0xe9)
+
+    // java/util/Arrays#equals#([C[C)Z:37
+    /* 1195 */      c_iload_2()
+    /* 1196 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (48) thinj/regression/EqualsTest#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/EqualsTest#<init>#()V:3
+    /* 1197 */      c_aload_0()
+    /* 1198 */      c_invokespecial(0x00, 0x00)
+    /* 119b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (48) thinj/regression/EqualsTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/EqualsTest#main#()V:5
+    /* 119c */      c_new(0x00, 0x02)
+    /* 119f */      c_dup()
+    /* 11a0 */      c_invokespecial(0x00, 0x01)
+    /* 11a3 */      c_astore_0()
+
+    // thinj/regression/EqualsTest#main#()V:6
+    /* 11a4 */      c_new(0x00, 0x02)
+    /* 11a7 */      c_dup()
+    /* 11a8 */      c_invokespecial(0x00, 0x01)
+    /* 11ab */      c_astore_1()
+
+    // thinj/regression/EqualsTest#main#()V:8
+    /* 11ac */      c_aload_0()
+    /* 11ad */      c_aload_0()
+    /* 11ae */      c_invokevirtual(0x00, 0x02)
+    /* 11b1 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/EqualsTest#main#()V:9
+    /* 11b4 */      c_aload_0()
+    /* 11b5 */      c_aload_1()
+    /* 11b6 */      c_invokevirtual(0x00, 0x02)
+    /* 11b9 */      c_ifne(0x00, 0x07)
+    /* 11bc */      c_iconst_1()
+    /* 11bd */      c_goto(0x00, 0x04)
+    /* 11c0 */      c_iconst_0()
+    /* 11c1 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/EqualsTest#main#()V:10
+    /* 11c4 */      c_aload_0()
+    /* 11c5 */      c_aconst_null()
+    /* 11c6 */      c_invokevirtual(0x00, 0x02)
+    /* 11c9 */      c_ifne(0x00, 0x07)
+    /* 11cc */      c_iconst_1()
+    /* 11cd */      c_goto(0x00, 0x04)
+    /* 11d0 */      c_iconst_0()
+    /* 11d1 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/EqualsTest#main#()V:11
+    /* 11d4 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (58) thinj/regression/NativeTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/NativeTest#main#()V:5
+    /* 11d5 */      c_new(0x00, 0x02)
+    /* 11d8 */      c_dup()
+    /* 11d9 */      c_invokespecial(0x00, 0x00)
+    /* 11dc */      c_astore_0()
+
+    // thinj/regression/NativeTest#main#()V:6
+    /* 11dd */      c_aload_0()
+    /* 11de */      c_invokevirtual(0x00, 0x01)
+    /* 11e1 */      c_aload_0()
+    /* 11e2 */      c_invokevirtual(0x00, 0x01)
+    /* 11e5 */      c_if_icmpne(0x00, 0x07)
+    /* 11e8 */      c_iconst_1()
+    /* 11e9 */      c_goto(0x00, 0x04)
+    /* 11ec */      c_iconst_0()
+    /* 11ed */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/NativeTest#main#()V:7
+    /* 11f0 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (45) thinj/regression/CharTest#dims#(C)C
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/CharTest#dims#(C)C:7
+    /* 11f1 */      c_iload_0()
+    /* 11f2 */      c_bipush(0x40)
+    /* 11f4 */      c_if_icmpne(0x00, 0x08)
+    /* 11f7 */      c_bipush(0x41)
+    /* 11f9 */      c_goto(0x00, 0x05)
+    /* 11fc */      c_bipush(0x42)
+    /* 11fe */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (45) thinj/regression/CharTest#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/CharTest#test1#()V:11
+    /* 11ff */      c_bipush(0x3f)
+    /* 1201 */      c_istore_0()
+
+    // thinj/regression/CharTest#test1#()V:12
+    /* 1202 */      c_iload_0()
+    /* 1203 */      c_invokestatic(0x00, 0x00)
+    /* 1206 */      c_istore_1()
+
+    // thinj/regression/CharTest#test1#()V:13
+    /* 1207 */      c_bipush(0x42)
+    /* 1209 */      c_iload_1()
+    /* 120a */      c_if_icmpne(0x00, 0x07)
+    /* 120d */      c_iconst_1()
+    /* 120e */      c_goto(0x00, 0x04)
+    /* 1211 */      c_iconst_0()
+    /* 1212 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/CharTest#test1#()V:14
+    /* 1215 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (45) thinj/regression/CharTest#dimsa#([C)C
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/CharTest#dimsa#([C)C:17
+    /* 1216 */      c_aload_0()
+    /* 1217 */      c_iconst_0()
+    /* 1218 */      c_caload()
+    /* 1219 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (45) thinj/regression/CharTest#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/CharTest#test2#()V:22
+    /* 121a */      c_bipush(0x0a)
+    /* 121c */      c_newarray(0x05)
+    /* 121e */      c_astore_0()
+
+    // thinj/regression/CharTest#test2#()V:23
+    /* 121f */      c_aload_0()
+    /* 1220 */      c_iconst_0()
+    /* 1221 */      c_bipush(0x4b)
+    /* 1223 */      c_castore()
+
+    // thinj/regression/CharTest#test2#()V:24
+    /* 1224 */      c_aload_0()
+    /* 1225 */      c_iconst_0()
+    /* 1226 */      c_caload()
+    /* 1227 */      c_bipush(0x4b)
+    /* 1229 */      c_if_icmpne(0x00, 0x07)
+    /* 122c */      c_iconst_1()
+    /* 122d */      c_goto(0x00, 0x04)
+    /* 1230 */      c_iconst_0()
+    /* 1231 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/CharTest#test2#()V:26
+    /* 1234 */      c_aload_0()
+    /* 1235 */      c_iconst_1()
+    /* 1236 */      c_aload_0()
+    /* 1237 */      c_invokestatic(0x00, 0x02)
+    /* 123a */      c_castore()
+
+    // thinj/regression/CharTest#test2#()V:27
+    /* 123b */      c_aload_0()
+    /* 123c */      c_iconst_1()
+    /* 123d */      c_caload()
+    /* 123e */      c_bipush(0x4b)
+    /* 1240 */      c_if_icmpne(0x00, 0x07)
+    /* 1243 */      c_iconst_1()
+    /* 1244 */      c_goto(0x00, 0x04)
+    /* 1247 */      c_iconst_0()
+    /* 1248 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/CharTest#test2#()V:28
+    /* 124b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (45) thinj/regression/CharTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/CharTest#main#()V:31
+    /* 124c */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/CharTest#main#()V:32
+    /* 124f */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/CharTest#main#()V:33
+    /* 1252 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (61) thinj/regression/StaticInnerClassTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/StaticInnerClassTest#main#()V:11
+    /* 1253 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (61) thinj/regression/StaticInnerClassTest#<clinit>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/StaticInnerClassTest#<clinit>#()V:13
+    /* 1254 */      c_new(0x00, 0x02)
+    /* 1257 */      c_dup()
+    /* 1258 */      c_aconst_null()
+    /* 1259 */      c_invokespecial(0x00, 0x00)
+    /* 125c */      c_putstatic(0x00, 0x00)
+    /* 125f */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (62) thinj/regression/StaticInnerClassTest$Dims#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/StaticInnerClassTest$Dims#<init>#()V:14
+    /* 1260 */      c_aload_0()
+    /* 1261 */      c_invokespecial(0x00, 0x01)
+    /* 1264 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (62) thinj/regression/StaticInnerClassTest$Dims#<init>#(Lthinj/regression/StaticInnerClassTest$1;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/StaticInnerClassTest$Dims#<init>#(Lthinj/regression/StaticInnerClassTest$1;)V:14
+    /* 1265 */      c_aload_0()
+    /* 1266 */      c_invokespecial(0x00, 0x00)
+    /* 1269 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (107) thinj/regression/gc/HeapTest#test0#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/gc/HeapTest#test0#()V:5
+    /* 126a */      c_iconst_0()
+    /* 126b */      c_istore_0()
+
+    // thinj/regression/gc/HeapTest#test0#()V:6
+    /* 126c */      c_new(0x00, 0x02)
+    /* 126f */      c_dup()
+    /* 1270 */      c_invokespecial(0x00, 0x01)
+    /* 1273 */      c_ldc(0x04)
+    /* 1275 */      c_invokevirtual(0x00, 0x02)
+    /* 1278 */      c_iload_0()
+    /* 1279 */      c_invokevirtual(0x00, 0x03)
+    /* 127c */      c_invokevirtual(0x00, 0x04)
+    /* 127f */      c_astore_1()
+
+    // thinj/regression/gc/HeapTest#test0#()V:9
+    /* 1280 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (107) thinj/regression/gc/HeapTest#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/gc/HeapTest#test1#()V:12
+    /* 1281 */      c_iconst_0()
+    /* 1282 */      c_istore_0()
+
+    // thinj/regression/gc/HeapTest#test1#()V:13
+    /* 1283 */      c_iconst_0()
+    /* 1284 */      c_istore_1()
+    /* 1285 */      c_iload_1()
+    /* 1286 */      c_bipush(0x64)
+    /* 1288 */      c_if_icmpge(0x00, 0x36)
+
+    // thinj/regression/gc/HeapTest#test1#()V:14
+    /* 128b */      c_new(0x00, 0x02)
+    /* 128e */      c_dup()
+    /* 128f */      c_invokespecial(0x00, 0x01)
+    /* 1292 */      c_ldc(0x08)
+    /* 1294 */      c_invokevirtual(0x00, 0x02)
+    /* 1297 */      c_iload_0()
+    /* 1298 */      c_invokevirtual(0x00, 0x03)
+    /* 129b */      c_invokevirtual(0x00, 0x04)
+    /* 129e */      c_astore_2()
+
+    // thinj/regression/gc/HeapTest#test1#()V:15
+    /* 129f */      c_iinc(0x00, 0x01)
+
+    // thinj/regression/gc/HeapTest#test1#()V:16
+    /* 12a2 */      c_iconst_0()
+    /* 12a3 */      c_istore_3()
+    /* 12a4 */      c_iload_3()
+    /* 12a5 */      c_bipush(0x64)
+    /* 12a7 */      c_if_icmpge(0x00, 0x11)
+
+    // thinj/regression/gc/HeapTest#test1#()V:17
+    /* 12aa */      c_new(0x00, 0x09)
+    /* 12ad */      c_dup()
+    /* 12ae */      c_invokespecial(0x00, 0x00)
+    /* 12b1 */      c_pop()
+
+    // thinj/regression/gc/HeapTest#test1#()V:16
+    /* 12b2 */      c_iinc(0x03, 0x01)
+    /* 12b5 */      c_goto(0xff, 0xef)
+
+    // thinj/regression/gc/HeapTest#test1#()V:13
+    /* 12b8 */      c_iinc(0x01, 0x01)
+    /* 12bb */      c_goto(0xff, 0xca)
+
+    // thinj/regression/gc/HeapTest#test1#()V:20
+    /* 12be */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (107) thinj/regression/gc/HeapTest#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/gc/HeapTest#test2#()V:23
+    /* 12bf */      c_iconst_0()
+    /* 12c0 */      c_istore_0()
+
+    // thinj/regression/gc/HeapTest#test2#()V:24
+    /* 12c1 */      c_iconst_0()
+    /* 12c2 */      c_istore_1()
+    /* 12c3 */      c_iload_1()
+    /* 12c4 */      c_bipush(0x64)
+    /* 12c6 */      c_if_icmpge(0x00, 0x25)
+
+    // thinj/regression/gc/HeapTest#test2#()V:25
+    /* 12c9 */      c_ldc(0x0a)
+    /* 12cb */      c_astore_2()
+
+    // thinj/regression/gc/HeapTest#test2#()V:26
+    /* 12cc */      c_iconst_0()
+    /* 12cd */      c_istore_3()
+    /* 12ce */      c_iload_3()
+    /* 12cf */      c_bipush(0x64)
+    /* 12d1 */      c_if_icmpge(0x00, 0x14)
+
+    // thinj/regression/gc/HeapTest#test2#()V:27
+    /* 12d4 */      c_new(0x00, 0x09)
+    /* 12d7 */      c_dup()
+    /* 12d8 */      c_invokespecial(0x00, 0x00)
+    /* 12db */      c_pop()
+
+    // thinj/regression/gc/HeapTest#test2#()V:28
+    /* 12dc */      c_iinc(0x00, 0x01)
+
+    // thinj/regression/gc/HeapTest#test2#()V:26
+    /* 12df */      c_iinc(0x03, 0x01)
+    /* 12e2 */      c_goto(0xff, 0xec)
+
+    // thinj/regression/gc/HeapTest#test2#()V:24
+    /* 12e5 */      c_iinc(0x01, 0x01)
+    /* 12e8 */      c_goto(0xff, 0xdb)
+
+    // thinj/regression/gc/HeapTest#test2#()V:31
+    /* 12eb */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (107) thinj/regression/gc/HeapTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/gc/HeapTest#main#()V:34
+    /* 12ec */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/gc/HeapTest#main#()V:35
+    /* 12ef */      c_invokestatic(0x00, 0x06)
+
+    // thinj/regression/gc/HeapTest#main#()V:36
+    /* 12f2 */      c_invokestatic(0x00, 0x07)
+
+    // thinj/regression/gc/HeapTest#main#()V:37
+    /* 12f5 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (94) thinj/regression/checkcast/CheckCast#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/checkcast/CheckCast#test1#()V:12
+    /* 12f6 */      c_new(0x00, 0x02)
+    /* 12f9 */      c_dup()
+    /* 12fa */      c_invokespecial(0x00, 0x01)
+    /* 12fd */      c_astore_0()
+
+    // thinj/regression/checkcast/CheckCast#test1#()V:18
+    /* 12fe */      c_aload_0()
+    /* 12ff */      c_instanceof(0x00, 0x04)
+    /* 1302 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test1#()V:19
+    /* 1305 */      c_aload_0()
+    /* 1306 */      c_instanceof(0x00, 0x06)
+    /* 1309 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test1#()V:20
+    /* 130c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (94) thinj/regression/checkcast/CheckCast#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/checkcast/CheckCast#test2#()V:29
+    /* 130d */      c_new(0x00, 0x04)
+    /* 1310 */      c_dup()
+    /* 1311 */      c_invokespecial(0x00, 0x00)
+    /* 1314 */      c_instanceof(0x00, 0x07)
+    /* 1317 */      c_ifne(0x00, 0x07)
+    /* 131a */      c_iconst_1()
+    /* 131b */      c_goto(0x00, 0x04)
+    /* 131e */      c_iconst_0()
+    /* 131f */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test2#()V:31
+    /* 1322 */      c_new(0x00, 0x07)
+    /* 1325 */      c_dup()
+    /* 1326 */      c_invokespecial(0x00, 0x03)
+    /* 1329 */      c_astore_0()
+
+    // thinj/regression/checkcast/CheckCast#test2#()V:32
+    /* 132a */      c_aload_0()
+    /* 132b */      c_instanceof(0x00, 0x07)
+    /* 132e */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test2#()V:33
+    /* 1331 */      c_aload_0()
+    /* 1332 */      c_instanceof(0x00, 0x04)
+    /* 1335 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test2#()V:35
+    /* 1338 */      c_new(0x00, 0x09)
+    /* 133b */      c_dup()
+    /* 133c */      c_invokespecial(0x00, 0x04)
+    /* 133f */      c_astore_1()
+
+    // thinj/regression/checkcast/CheckCast#test2#()V:36
+    /* 1340 */      c_aload_1()
+    /* 1341 */      c_instanceof(0x00, 0x07)
+    /* 1344 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test2#()V:37
+    /* 1347 */      c_aload_1()
+    /* 1348 */      c_instanceof(0x00, 0x04)
+    /* 134b */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test2#()V:39
+    /* 134e */      c_aload_0()
+    /* 134f */      c_instanceof(0x00, 0x09)
+    /* 1352 */      c_ifne(0x00, 0x07)
+    /* 1355 */      c_iconst_1()
+    /* 1356 */      c_goto(0x00, 0x04)
+    /* 1359 */      c_iconst_0()
+    /* 135a */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test2#()V:40
+    /* 135d */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (94) thinj/regression/checkcast/CheckCast#test3#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/checkcast/CheckCast#test3#()V:43
+    /* 135e */      c_iconst_2()
+    /* 135f */      c_anewarray(0x00, 0x04)
+    /* 1362 */      c_astore_0()
+
+    // thinj/regression/checkcast/CheckCast#test3#()V:44
+    /* 1363 */      c_aload_0()
+    /* 1364 */      c_instanceof(0x00, 0x04)
+    /* 1367 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test3#()V:45
+    /* 136a */      c_aload_0()
+    /* 136b */      c_instanceof(0x00, 0x0b)
+    /* 136e */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test3#()V:47
+    /* 1371 */      c_iconst_2()
+    /* 1372 */      c_anewarray(0x00, 0x0c)
+    /* 1375 */      c_astore_1()
+
+    // thinj/regression/checkcast/CheckCast#test3#()V:48
+    /* 1376 */      c_aload_1()
+    /* 1377 */      c_instanceof(0x00, 0x0d)
+    /* 137a */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test3#()V:50
+    /* 137d */      c_iconst_2()
+    /* 137e */      c_newarray(0x0a)
+    /* 1380 */      c_astore_2()
+
+    // thinj/regression/checkcast/CheckCast#test3#()V:51
+    /* 1381 */      c_aload_2()
+    /* 1382 */      c_instanceof(0x00, 0x0e)
+    /* 1385 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test3#()V:53
+    /* 1388 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (94) thinj/regression/checkcast/CheckCast#test4#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/checkcast/CheckCast#test4#()V:56
+    /* 1389 */      c_aconst_null()
+    /* 138a */      c_instanceof(0x00, 0x04)
+    /* 138d */      c_ifne(0x00, 0x07)
+    /* 1390 */      c_iconst_1()
+    /* 1391 */      c_goto(0x00, 0x04)
+    /* 1394 */      c_iconst_0()
+    /* 1395 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test4#()V:58
+    /* 1398 */      c_iconst_2()
+    /* 1399 */      c_anewarray(0x00, 0x0e)
+    /* 139c */      c_dup()
+    /* 139d */      c_iconst_0()
+    /* 139e */      c_iconst_2()
+    /* 139f */      c_newarray(0x0a)
+    /* 13a1 */      c_dup()
+    /* 13a2 */      c_iconst_0()
+    /* 13a3 */      c_iconst_1()
+    /* 13a4 */      c_iastore()
+    /* 13a5 */      c_dup()
+    /* 13a6 */      c_iconst_1()
+    /* 13a7 */      c_iconst_2()
+    /* 13a8 */      c_iastore()
+    /* 13a9 */      c_aastore()
+    /* 13aa */      c_dup()
+    /* 13ab */      c_iconst_1()
+    /* 13ac */      c_iconst_2()
+    /* 13ad */      c_newarray(0x0a)
+    /* 13af */      c_dup()
+    /* 13b0 */      c_iconst_0()
+    /* 13b1 */      c_iconst_3()
+    /* 13b2 */      c_iastore()
+    /* 13b3 */      c_dup()
+    /* 13b4 */      c_iconst_1()
+    /* 13b5 */      c_iconst_4()
+    /* 13b6 */      c_iastore()
+    /* 13b7 */      c_aastore()
+    /* 13b8 */      c_astore_0()
+
+    // thinj/regression/checkcast/CheckCast#test4#()V:59
+    /* 13b9 */      c_aload_0()
+    /* 13ba */      c_instanceof(0x00, 0x0f)
+    /* 13bd */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test4#()V:61
+    /* 13c0 */      c_bipush(0x08)
+    /* 13c2 */      c_anewarray(0x00, 0x0b)
+    /* 13c5 */      c_astore_1()
+
+    // thinj/regression/checkcast/CheckCast#test4#()V:62
+    /* 13c6 */      c_aload_1()
+    /* 13c7 */      c_instanceof(0x00, 0x10)
+    /* 13ca */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#test4#()V:63
+    /* 13cd */      c_aload_1()
+    /* 13ce */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/checkcast/CheckCast#test4#()V:64
+    /* 13d1 */      c_bipush(0x06)
+    /* 13d3 */      c_anewarray(0x00, 0x0d)
+    /* 13d6 */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/checkcast/CheckCast#test4#()V:65
+    /* 13d9 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (94) thinj/regression/checkcast/CheckCast#multitest#(Ljava/lang/Object;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/checkcast/CheckCast#multitest#(Ljava/lang/Object;)V:73
+    /* 13da */      c_aload_0()
+    /* 13db */      c_instanceof(0x00, 0x10)
+    /* 13de */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/checkcast/CheckCast#multitest#(Ljava/lang/Object;)V:74
+    /* 13e1 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (94) thinj/regression/checkcast/CheckCast#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/checkcast/CheckCast#main#()V:77
+    /* 13e2 */      c_invokestatic(0x00, 0x06)
+
+    // thinj/regression/checkcast/CheckCast#main#()V:78
+    /* 13e5 */      c_invokestatic(0x00, 0x07)
+
+    // thinj/regression/checkcast/CheckCast#main#()V:79
+    /* 13e8 */      c_invokestatic(0x00, 0x08)
+
+    // thinj/regression/checkcast/CheckCast#main#()V:80
+    /* 13eb */      c_invokestatic(0x00, 0x09)
+
+    // thinj/regression/checkcast/CheckCast#main#()V:81
+    /* 13ee */      c_ldc(0x16)
+    /* 13f0 */      c_astore_0()
+
+    // thinj/regression/checkcast/CheckCast#main#()V:82
+    /* 13f1 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (95) thinj/regression/checkcast/CheckCast$1#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/checkcast/CheckCast$1#<init>#()V:12
+    /* 13f2 */      c_aload_0()
+    /* 13f3 */      c_invokespecial(0x00, 0x00)
+    /* 13f6 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (96) thinj/regression/checkcast/CheckCast$ClassA#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/checkcast/CheckCast$ClassA#<init>#()V:22
+    /* 13f7 */      c_aload_0()
+    /* 13f8 */      c_invokespecial(0x00, 0x00)
+    /* 13fb */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (97) thinj/regression/checkcast/CheckCast$ClassB#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/checkcast/CheckCast$ClassB#<init>#()V:25
+    /* 13fc */      c_aload_0()
+    /* 13fd */      c_invokespecial(0x00, 0x00)
+    /* 1400 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (50) thinj/regression/Ineg#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/Ineg#test1#()V:6
+    /* 1401 */      c_bipush(0x2d)
+    /* 1403 */      c_istore_0()
+
+    // thinj/regression/Ineg#test1#()V:7
+    /* 1404 */      c_iload_0()
+    /* 1405 */      c_bipush(0x2d)
+    /* 1407 */      c_if_icmpne(0x00, 0x07)
+    /* 140a */      c_iconst_1()
+    /* 140b */      c_goto(0x00, 0x04)
+    /* 140e */      c_iconst_0()
+    /* 140f */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/Ineg#test1#()V:8
+    /* 1412 */      c_iload_0()
+    /* 1413 */      c_ineg()
+    /* 1414 */      c_istore_0()
+
+    // thinj/regression/Ineg#test1#()V:9
+    /* 1415 */      c_iload_0()
+    /* 1416 */      c_bipush(0xd3)
+    /* 1418 */      c_if_icmpne(0x00, 0x07)
+    /* 141b */      c_iconst_1()
+    /* 141c */      c_goto(0x00, 0x04)
+    /* 141f */      c_iconst_0()
+    /* 1420 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/Ineg#test1#()V:10
+    /* 1423 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (50) thinj/regression/Ineg#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/Ineg#test2#()V:13
+    /* 1424 */      c_bipush(0x65)
+    /* 1426 */      c_istore_0()
+
+    // thinj/regression/Ineg#test2#()V:14
+    /* 1427 */      c_iload_0()
+    /* 1428 */      c_iconst_2()
+    /* 1429 */      c_ishl()
+    /* 142a */      c_sipush(0x01, 0x94)
+    /* 142d */      c_if_icmpne(0x00, 0x07)
+    /* 1430 */      c_iconst_1()
+    /* 1431 */      c_goto(0x00, 0x04)
+    /* 1434 */      c_iconst_0()
+    /* 1435 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/Ineg#test2#()V:15
+    /* 1438 */      c_sipush(0x01, 0xf4)
+    /* 143b */      c_istore_0()
+
+    // thinj/regression/Ineg#test2#()V:16
+    /* 143c */      c_iload_0()
+    /* 143d */      c_iconst_2()
+    /* 143e */      c_ishr()
+    /* 143f */      c_bipush(0x7d)
+    /* 1441 */      c_if_icmpne(0x00, 0x07)
+    /* 1444 */      c_iconst_1()
+    /* 1445 */      c_goto(0x00, 0x04)
+    /* 1448 */      c_iconst_0()
+    /* 1449 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/Ineg#test2#()V:18
+    /* 144c */      c_sipush(0x00, 0xff)
+    /* 144f */      c_istore_0()
+
+    // thinj/regression/Ineg#test2#()V:19
+    /* 1450 */      c_iload_0()
+    /* 1451 */      c_bipush(0x0f)
+    /* 1453 */      c_iand()
+    /* 1454 */      c_bipush(0x0f)
+    /* 1456 */      c_if_icmpne(0x00, 0x07)
+    /* 1459 */      c_iconst_1()
+    /* 145a */      c_goto(0x00, 0x04)
+    /* 145d */      c_iconst_0()
+    /* 145e */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/Ineg#test2#()V:20
+    /* 1461 */      c_sipush(0x00, 0xf0)
+    /* 1464 */      c_istore_0()
+
+    // thinj/regression/Ineg#test2#()V:21
+    /* 1465 */      c_iload_0()
+    /* 1466 */      c_bipush(0x0f)
+    /* 1468 */      c_ior()
+    /* 1469 */      c_sipush(0x00, 0xff)
+    /* 146c */      c_if_icmpne(0x00, 0x07)
+    /* 146f */      c_iconst_1()
+    /* 1470 */      c_goto(0x00, 0x04)
+    /* 1473 */      c_iconst_0()
+    /* 1474 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/Ineg#test2#()V:22
+    /* 1477 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (50) thinj/regression/Ineg#test3#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/Ineg#test3#()V:25
+    /* 1478 */      c_iconst_0()
+    /* 1479 */      c_istore_0()
+
+    // thinj/regression/Ineg#test3#()V:26
+    /* 147a */      c_iload_0()
+    /* 147b */      c_iconst_m1()
+    /* 147c */      c_ixor()
+    /* 147d */      c_istore_0()
+
+    // thinj/regression/Ineg#test3#()V:27
+    /* 147e */      c_iload_0()
+    /* 147f */      c_sipush(0x00, 0xff)
+    /* 1482 */      c_iand()
+    /* 1483 */      c_sipush(0x00, 0xff)
+    /* 1486 */      c_if_icmpne(0x00, 0x07)
+    /* 1489 */      c_iconst_1()
+    /* 148a */      c_goto(0x00, 0x04)
+    /* 148d */      c_iconst_0()
+    /* 148e */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/Ineg#test3#()V:29
+    /* 1491 */      c_bipush(0x5a)
+    /* 1493 */      c_istore_0()
+
+    // thinj/regression/Ineg#test3#()V:30
+    /* 1494 */      c_iload_0()
+    /* 1495 */      c_iconst_0()
+    /* 1496 */      c_ixor()
+    /* 1497 */      c_istore_0()
+
+    // thinj/regression/Ineg#test3#()V:31
+    /* 1498 */      c_iload_0()
+    /* 1499 */      c_sipush(0x00, 0xff)
+    /* 149c */      c_iand()
+    /* 149d */      c_bipush(0x5a)
+    /* 149f */      c_if_icmpne(0x00, 0x07)
+    /* 14a2 */      c_iconst_1()
+    /* 14a3 */      c_goto(0x00, 0x04)
+    /* 14a6 */      c_iconst_0()
+    /* 14a7 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/Ineg#test3#()V:33
+    /* 14aa */      c_iload_0()
+    /* 14ab */      c_sipush(0x00, 0xff)
+    /* 14ae */      c_ixor()
+    /* 14af */      c_istore_0()
+
+    // thinj/regression/Ineg#test3#()V:34
+    /* 14b0 */      c_iload_0()
+    /* 14b1 */      c_sipush(0x00, 0xff)
+    /* 14b4 */      c_iand()
+    /* 14b5 */      c_sipush(0x00, 0xa5)
+    /* 14b8 */      c_if_icmpne(0x00, 0x07)
+    /* 14bb */      c_iconst_1()
+    /* 14bc */      c_goto(0x00, 0x04)
+    /* 14bf */      c_iconst_0()
+    /* 14c0 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/Ineg#test3#()V:35
+    /* 14c3 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (50) thinj/regression/Ineg#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/Ineg#main#()V:38
+    /* 14c4 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/Ineg#main#()V:39
+    /* 14c7 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/Ineg#main#()V:40
+    /* 14ca */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/Ineg#main#()V:41
+    /* 14cd */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (47) thinj/regression/DivMod#helper#(II)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/DivMod#helper#(II)V:7
+    /* 14ce */      c_iload_1()
+    /* 14cf */      c_iconst_1()
+    /* 14d0 */      c_if_icmpeq(0x00, 0x08)
+    /* 14d3 */      c_iload_1()
+    /* 14d4 */      c_iconst_m1()
+    /* 14d5 */      c_if_icmpne(0x00, 0x18)
+
+    // thinj/regression/DivMod#helper#(II)V:8
+    /* 14d8 */      c_iload_0()
+    /* 14d9 */      c_iload_1()
+    /* 14da */      c_iadd()
+    /* 14db */      c_iconst_1()
+    /* 14dc */      c_isub()
+    /* 14dd */      c_iload_1()
+    /* 14de */      c_irem()
+    /* 14df */      c_ifne(0x00, 0x07)
+    /* 14e2 */      c_iconst_1()
+    /* 14e3 */      c_goto(0x00, 0x04)
+    /* 14e6 */      c_iconst_0()
+    /* 14e7 */      c_invokestatic(0x00, 0x00)
+    /* 14ea */      c_goto(0x00, 0x55)
+
+    // thinj/regression/DivMod#helper#(II)V:9
+    /* 14ed */      c_iload_0()
+    /* 14ee */      c_iload_1()
+    /* 14ef */      c_iadd()
+    /* 14f0 */      c_iconst_1()
+    /* 14f1 */      c_isub()
+    /* 14f2 */      c_ifge(0x00, 0x19)
+
+    // thinj/regression/DivMod#helper#(II)V:10
+    /* 14f5 */      c_iload_0()
+    /* 14f6 */      c_iload_1()
+    /* 14f7 */      c_iadd()
+    /* 14f8 */      c_iconst_1()
+    /* 14f9 */      c_isub()
+    /* 14fa */      c_iload_1()
+    /* 14fb */      c_irem()
+    /* 14fc */      c_iconst_m1()
+    /* 14fd */      c_if_icmpne(0x00, 0x07)
+    /* 1500 */      c_iconst_1()
+    /* 1501 */      c_goto(0x00, 0x04)
+    /* 1504 */      c_iconst_0()
+    /* 1505 */      c_invokestatic(0x00, 0x00)
+    /* 1508 */      c_goto(0x00, 0x37)
+
+    // thinj/regression/DivMod#helper#(II)V:12
+    /* 150b */      c_iload_1()
+    /* 150c */      c_iconst_1()
+    /* 150d */      c_isub()
+    /* 150e */      c_ifge(0x00, 0x1c)
+
+    // thinj/regression/DivMod#helper#(II)V:13
+    /* 1511 */      c_iload_0()
+    /* 1512 */      c_iload_1()
+    /* 1513 */      c_iadd()
+    /* 1514 */      c_iconst_1()
+    /* 1515 */      c_isub()
+    /* 1516 */      c_iload_1()
+    /* 1517 */      c_irem()
+    /* 1518 */      c_iload_1()
+    /* 1519 */      c_ineg()
+    /* 151a */      c_iconst_1()
+    /* 151b */      c_isub()
+    /* 151c */      c_if_icmpne(0x00, 0x07)
+    /* 151f */      c_iconst_1()
+    /* 1520 */      c_goto(0x00, 0x04)
+    /* 1523 */      c_iconst_0()
+    /* 1524 */      c_invokestatic(0x00, 0x00)
+    /* 1527 */      c_goto(0x00, 0x18)
+
+    // thinj/regression/DivMod#helper#(II)V:15
+    /* 152a */      c_iload_0()
+    /* 152b */      c_iload_1()
+    /* 152c */      c_iadd()
+    /* 152d */      c_iconst_1()
+    /* 152e */      c_isub()
+    /* 152f */      c_iload_1()
+    /* 1530 */      c_irem()
+    /* 1531 */      c_iload_1()
+    /* 1532 */      c_iconst_1()
+    /* 1533 */      c_isub()
+    /* 1534 */      c_if_icmpne(0x00, 0x07)
+    /* 1537 */      c_iconst_1()
+    /* 1538 */      c_goto(0x00, 0x04)
+    /* 153b */      c_iconst_0()
+    /* 153c */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#helper#(II)V:18
+    /* 153f */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (47) thinj/regression/DivMod#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/DivMod#test1#()V:21
+    /* 1540 */      c_iconst_1()
+    /* 1541 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:22
+    /* 1544 */      c_iconst_1()
+    /* 1545 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:23
+    /* 1548 */      c_iconst_1()
+    /* 1549 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:24
+    /* 154c */      c_iconst_1()
+    /* 154d */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:25
+    /* 1550 */      c_iconst_1()
+    /* 1551 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:26
+    /* 1554 */      c_iconst_1()
+    /* 1555 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:27
+    /* 1558 */      c_iconst_1()
+    /* 1559 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:29
+    /* 155c */      c_iconst_0()
+    /* 155d */      c_istore_0()
+
+    // thinj/regression/DivMod#test1#()V:30
+    /* 155e */      c_getstatic(0x00, 0x00)
+    /* 1561 */      c_ineg()
+    /* 1562 */      c_bipush(0xf9)
+    /* 1564 */      c_irem()
+    /* 1565 */      c_bipush(0xfa)
+    /* 1567 */      c_if_icmpne(0x00, 0x07)
+    /* 156a */      c_iconst_1()
+    /* 156b */      c_goto(0x00, 0x04)
+    /* 156e */      c_iconst_0()
+    /* 156f */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:31
+    /* 1572 */      c_getstatic(0x00, 0x00)
+    /* 1575 */      c_bipush(0xf9)
+    /* 1577 */      c_irem()
+    /* 1578 */      c_bipush(0x06)
+    /* 157a */      c_if_icmpne(0x00, 0x07)
+    /* 157d */      c_iconst_1()
+    /* 157e */      c_goto(0x00, 0x04)
+    /* 1581 */      c_iconst_0()
+    /* 1582 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:32
+    /* 1585 */      c_getstatic(0x00, 0x00)
+    /* 1588 */      c_ineg()
+    /* 1589 */      c_bipush(0x07)
+    /* 158b */      c_irem()
+    /* 158c */      c_bipush(0xfa)
+    /* 158e */      c_if_icmpne(0x00, 0x07)
+    /* 1591 */      c_iconst_1()
+    /* 1592 */      c_goto(0x00, 0x04)
+    /* 1595 */      c_iconst_0()
+    /* 1596 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:33
+    /* 1599 */      c_getstatic(0x00, 0x00)
+    /* 159c */      c_bipush(0x07)
+    /* 159e */      c_irem()
+    /* 159f */      c_bipush(0x06)
+    /* 15a1 */      c_if_icmpne(0x00, 0x07)
+    /* 15a4 */      c_iconst_1()
+    /* 15a5 */      c_goto(0x00, 0x04)
+    /* 15a8 */      c_iconst_0()
+    /* 15a9 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:35
+    /* 15ac */      c_sipush(0xfc, 0x18)
+    /* 15af */      c_istore_1()
+    /* 15b0 */      c_iload_1()
+    /* 15b1 */      c_sipush(0x03, 0xe8)
+    /* 15b4 */      c_if_icmpge(0x00, 0x7e)
+
+    // thinj/regression/DivMod#test1#()V:36
+    /* 15b7 */      c_sipush(0xfc, 0x18)
+    /* 15ba */      c_istore_2()
+    /* 15bb */      c_iload_2()
+    /* 15bc */      c_sipush(0x03, 0xe8)
+    /* 15bf */      c_if_icmpge(0x00, 0x6d)
+
+    // thinj/regression/DivMod#test1#()V:37
+    /* 15c2 */      c_iload_1()
+    /* 15c3 */      c_ifeq(0x00, 0x63)
+    /* 15c6 */      c_iload_2()
+    /* 15c7 */      c_ifeq(0x00, 0x5f)
+
+    // thinj/regression/DivMod#test1#()V:38
+    /* 15ca */      c_iload_1()
+    /* 15cb */      c_iload_2()
+    /* 15cc */      c_imul()
+    /* 15cd */      c_istore_3()
+
+    // thinj/regression/DivMod#test1#()V:39
+    /* 15ce */      c_iload_3()
+    /* 15cf */      c_iload_1()
+    /* 15d0 */      c_idiv()
+    /* 15d1 */      c_iload_2()
+    /* 15d2 */      c_if_icmpne(0x00, 0x07)
+    /* 15d5 */      c_iconst_1()
+    /* 15d6 */      c_goto(0x00, 0x04)
+    /* 15d9 */      c_iconst_0()
+    /* 15da */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:40
+    /* 15dd */      c_iload_3()
+    /* 15de */      c_iload_2()
+    /* 15df */      c_idiv()
+    /* 15e0 */      c_iload_1()
+    /* 15e1 */      c_if_icmpne(0x00, 0x07)
+    /* 15e4 */      c_iconst_1()
+    /* 15e5 */      c_goto(0x00, 0x04)
+    /* 15e8 */      c_iconst_0()
+    /* 15e9 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:42
+    /* 15ec */      c_iload_3()
+    /* 15ed */      c_iload_1()
+    /* 15ee */      c_irem()
+    /* 15ef */      c_ifne(0x00, 0x07)
+    /* 15f2 */      c_iconst_1()
+    /* 15f3 */      c_goto(0x00, 0x04)
+    /* 15f6 */      c_iconst_0()
+    /* 15f7 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:43
+    /* 15fa */      c_iload_3()
+    /* 15fb */      c_iload_2()
+    /* 15fc */      c_irem()
+    /* 15fd */      c_ifne(0x00, 0x07)
+    /* 1600 */      c_iconst_1()
+    /* 1601 */      c_goto(0x00, 0x04)
+    /* 1604 */      c_iconst_0()
+    /* 1605 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/DivMod#test1#()V:45
+    /* 1608 */      c_iload_3()
+    /* 1609 */      c_iload_1()
+    /* 160a */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/DivMod#test1#()V:46
+    /* 160d */      c_iload_3()
+    /* 160e */      c_iload_2()
+    /* 160f */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/DivMod#test1#()V:48
+    /* 1612 */      c_iinc(0x00, 0x01)
+    /* 1615 */      c_iload_0()
+    /* 1616 */      c_sipush(0x03, 0x1d)
+    /* 1619 */      c_if_icmplt(0x00, 0x0d)
+
+    // thinj/regression/DivMod#test1#()V:49
+    /* 161c */      c_getstatic(0x00, 0x01)
+    /* 161f */      c_ldc(0x06)
+    /* 1621 */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/DivMod#test1#()V:50
+    /* 1624 */      c_iconst_0()
+    /* 1625 */      c_istore_0()
+
+    // thinj/regression/DivMod#test1#()V:36
+    /* 1626 */      c_iinc(0x02, 0x07)
+    /* 1629 */      c_goto(0xff, 0x92)
+
+    // thinj/regression/DivMod#test1#()V:35
+    /* 162c */      c_iinc(0x01, 0x09)
+    /* 162f */      c_goto(0xff, 0x81)
+
+    // thinj/regression/DivMod#test1#()V:55
+    /* 1632 */      c_getstatic(0x00, 0x01)
+    /* 1635 */      c_invokevirtual(0x00, 0x03)
+
+    // thinj/regression/DivMod#test1#()V:56
+    /* 1638 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (47) thinj/regression/DivMod#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/DivMod#main#()V:59
+    /* 1639 */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/DivMod#main#()V:60
+    /* 163c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (47) thinj/regression/DivMod#<clinit>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/DivMod#<clinit>#()V:4
+    /* 163d */      c_sipush(0x03, 0xe8)
+    /* 1640 */      c_putstatic(0x00, 0x00)
+    /* 1643 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (44) thinj/regression/ByteTest#dims#(B)B
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ByteTest#dims#(B)B:5
+    /* 1644 */      c_iload_0()
+    /* 1645 */      c_bipush(0x0f)
+    /* 1647 */      c_if_icmpne(0x00, 0x08)
+    /* 164a */      c_bipush(0x32)
+    /* 164c */      c_goto(0x00, 0x05)
+    /* 164f */      c_bipush(0xce)
+    /* 1651 */      c_i2b()
+    /* 1652 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (44) thinj/regression/ByteTest#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ByteTest#test1#()V:9
+    /* 1653 */      c_bipush(0x0f)
+    /* 1655 */      c_istore_0()
+
+    // thinj/regression/ByteTest#test1#()V:10
+    /* 1656 */      c_iload_0()
+    /* 1657 */      c_invokestatic(0x00, 0x00)
+    /* 165a */      c_istore_1()
+
+    // thinj/regression/ByteTest#test1#()V:11
+    /* 165b */      c_bipush(0x32)
+    /* 165d */      c_iload_1()
+    /* 165e */      c_if_icmpne(0x00, 0x07)
+    /* 1661 */      c_iconst_1()
+    /* 1662 */      c_goto(0x00, 0x04)
+    /* 1665 */      c_iconst_0()
+    /* 1666 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/ByteTest#test1#()V:12
+    /* 1669 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (44) thinj/regression/ByteTest#dimsa#([B)B
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ByteTest#dimsa#([B)B:15
+    /* 166a */      c_aload_0()
+    /* 166b */      c_iconst_0()
+    /* 166c */      c_baload()
+    /* 166d */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (44) thinj/regression/ByteTest#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ByteTest#test2#()V:19
+    /* 166e */      c_bipush(0x0a)
+    /* 1670 */      c_newarray(0x08)
+    /* 1672 */      c_astore_0()
+
+    // thinj/regression/ByteTest#test2#()V:20
+    /* 1673 */      c_aload_0()
+    /* 1674 */      c_iconst_0()
+    /* 1675 */      c_bipush(0x7f)
+    /* 1677 */      c_bastore()
+
+    // thinj/regression/ByteTest#test2#()V:21
+    /* 1678 */      c_aload_0()
+    /* 1679 */      c_iconst_0()
+    /* 167a */      c_baload()
+    /* 167b */      c_bipush(0x7f)
+    /* 167d */      c_if_icmpne(0x00, 0x07)
+    /* 1680 */      c_iconst_1()
+    /* 1681 */      c_goto(0x00, 0x04)
+    /* 1684 */      c_iconst_0()
+    /* 1685 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/ByteTest#test2#()V:23
+    /* 1688 */      c_aload_0()
+    /* 1689 */      c_iconst_1()
+    /* 168a */      c_aload_0()
+    /* 168b */      c_invokestatic(0x00, 0x02)
+    /* 168e */      c_bastore()
+
+    // thinj/regression/ByteTest#test2#()V:24
+    /* 168f */      c_aload_0()
+    /* 1690 */      c_iconst_1()
+    /* 1691 */      c_baload()
+    /* 1692 */      c_bipush(0x7f)
+    /* 1694 */      c_if_icmpne(0x00, 0x07)
+    /* 1697 */      c_iconst_1()
+    /* 1698 */      c_goto(0x00, 0x04)
+    /* 169b */      c_iconst_0()
+    /* 169c */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/ByteTest#test2#()V:25
+    /* 169f */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (44) thinj/regression/ByteTest#test3#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ByteTest#test3#()V:28
+    /* 16a0 */      c_iconst_0()
+    /* 16a1 */      c_istore_0()
+    /* 16a2 */      c_iload_0()
+    /* 16a3 */      c_sipush(0x00, 0x80)
+    /* 16a6 */      c_if_icmpge(0x00, 0x18)
+
+    // thinj/regression/ByteTest#test3#()V:29
+    /* 16a9 */      c_iload_0()
+    /* 16aa */      c_i2b()
+    /* 16ab */      c_istore_1()
+
+    // thinj/regression/ByteTest#test3#()V:30
+    /* 16ac */      c_iload_1()
+    /* 16ad */      c_iflt(0x00, 0x07)
+    /* 16b0 */      c_iconst_1()
+    /* 16b1 */      c_goto(0x00, 0x04)
+    /* 16b4 */      c_iconst_0()
+    /* 16b5 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/ByteTest#test3#()V:28
+    /* 16b8 */      c_iinc(0x00, 0x01)
+    /* 16bb */      c_goto(0xff, 0xe7)
+
+    // thinj/regression/ByteTest#test3#()V:32
+    /* 16be */      c_sipush(0x00, 0x80)
+    /* 16c1 */      c_istore_0()
+    /* 16c2 */      c_iload_0()
+    /* 16c3 */      c_sipush(0x01, 0x00)
+    /* 16c6 */      c_if_icmpge(0x00, 0x18)
+
+    // thinj/regression/ByteTest#test3#()V:33
+    /* 16c9 */      c_iload_0()
+    /* 16ca */      c_i2b()
+    /* 16cb */      c_istore_1()
+
+    // thinj/regression/ByteTest#test3#()V:34
+    /* 16cc */      c_iload_1()
+    /* 16cd */      c_ifge(0x00, 0x07)
+    /* 16d0 */      c_iconst_1()
+    /* 16d1 */      c_goto(0x00, 0x04)
+    /* 16d4 */      c_iconst_0()
+    /* 16d5 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/ByteTest#test3#()V:32
+    /* 16d8 */      c_iinc(0x00, 0x01)
+    /* 16db */      c_goto(0xff, 0xe7)
+
+    // thinj/regression/ByteTest#test3#()V:36
+    /* 16de */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (44) thinj/regression/ByteTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ByteTest#main#()V:39
+    /* 16df */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ByteTest#main#()V:40
+    /* 16e2 */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/ByteTest#main#()V:41
+    /* 16e5 */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/ByteTest#main#()V:42
+    /* 16e8 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#test1#()V:9
+    /* 16e9 */      c_iconst_0()
+    /* 16ea */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test1#()V:11
+    /* 16eb */      c_new(0x00, 0x02)
+    /* 16ee */      c_dup()
+    /* 16ef */      c_ldc(0x03)
+    /* 16f1 */      c_invokespecial(0x00, 0x00)
+    /* 16f4 */      c_athrow()
+
+    // thinj/regression/exceptions/ThrowException#test1#()V:12
+    /* 16f5 */      c_astore_1()
+
+    // thinj/regression/exceptions/ThrowException#test1#()V:14
+    /* 16f6 */      c_iconst_1()
+    /* 16f7 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test1#()V:16
+    /* 16f8 */      c_iload_0()
+    /* 16f9 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test1#()V:17
+    /* 16fc */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#testHelper#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#testHelper#()V:21
+    /* 16fd */      c_new(0x00, 0x06)
+    /* 1700 */      c_dup()
+    /* 1701 */      c_ldc(0x07)
+    /* 1703 */      c_invokespecial(0x00, 0x02)
+    /* 1706 */      c_athrow()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#test2#()V:25
+    /* 1707 */      c_iconst_0()
+    /* 1708 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test2#()V:27
+    /* 1709 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/exceptions/ThrowException#test2#()V:31
+    /* 170c */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ThrowException#test2#()V:28
+    /* 170f */      c_astore_1()
+
+    // thinj/regression/exceptions/ThrowException#test2#()V:30
+    /* 1710 */      c_iconst_1()
+    /* 1711 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test2#()V:32
+    /* 1712 */      c_iload_0()
+    /* 1713 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test2#()V:33
+    /* 1716 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#test3#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#test3#()V:38
+    /* 1717 */      c_iconst_0()
+    /* 1718 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test3#()V:40
+    /* 1719 */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/exceptions/ThrowException#test3#()V:44
+    /* 171c */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ThrowException#test3#()V:41
+    /* 171f */      c_astore_1()
+
+    // thinj/regression/exceptions/ThrowException#test3#()V:43
+    /* 1720 */      c_iconst_1()
+    /* 1721 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test3#()V:45
+    /* 1722 */      c_iload_0()
+    /* 1723 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test3#()V:46
+    /* 1726 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#test4#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#test4#()V:51
+    /* 1727 */      c_iconst_0()
+    /* 1728 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test4#()V:53
+    /* 1729 */      c_new(0x00, 0x02)
+    /* 172c */      c_dup()
+    /* 172d */      c_ldc(0x0b)
+    /* 172f */      c_invokespecial(0x00, 0x00)
+    /* 1732 */      c_athrow()
+
+    // thinj/regression/exceptions/ThrowException#test4#()V:54
+    /* 1733 */      c_astore_1()
+
+    // thinj/regression/exceptions/ThrowException#test4#()V:56
+    /* 1734 */      c_iconst_1()
+    /* 1735 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test4#()V:58
+    /* 1736 */      c_iload_0()
+    /* 1737 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test4#()V:59
+    /* 173a */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#test5#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:64
+    /* 173b */      c_iconst_0()
+    /* 173c */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:65
+    /* 173d */      c_iconst_0()
+    /* 173e */      c_istore_1()
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:67
+    /* 173f */      c_new(0x00, 0x02)
+    /* 1742 */      c_dup()
+    /* 1743 */      c_ldc(0x03)
+    /* 1745 */      c_invokespecial(0x00, 0x00)
+    /* 1748 */      c_athrow()
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:68
+    /* 1749 */      c_astore_2()
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:70
+    /* 174a */      c_iconst_1()
+    /* 174b */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:72
+    /* 174c */      c_iconst_1()
+    /* 174d */      c_istore_1()
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:73
+    /* 174e */      c_goto(0x00, 0x08)
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:72
+    /* 1751 */      c_astore_3()
+    /* 1752 */      c_iconst_1()
+    /* 1753 */      c_istore_1()
+    /* 1754 */      c_aload_3()
+    /* 1755 */      c_athrow()
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:74
+    /* 1756 */      c_iload_0()
+    /* 1757 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:75
+    /* 175a */      c_iload_1()
+    /* 175b */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test5#()V:76
+    /* 175e */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#test6Helper#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#test6Helper#()V:82
+    /* 175f */      c_iconst_0()
+    /* 1760 */      c_putstatic(0x00, 0x00)
+
+    // thinj/regression/exceptions/ThrowException#test6Helper#()V:84
+    /* 1763 */      c_new(0x00, 0x02)
+    /* 1766 */      c_dup()
+    /* 1767 */      c_ldc(0x03)
+    /* 1769 */      c_invokespecial(0x00, 0x00)
+    /* 176c */      c_athrow()
+
+    // thinj/regression/exceptions/ThrowException#test6Helper#()V:86
+    /* 176d */      c_astore_0()
+    /* 176e */      c_iconst_1()
+    /* 176f */      c_putstatic(0x00, 0x00)
+    /* 1772 */      c_aload_0()
+    /* 1773 */      c_athrow()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#test6#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:94
+    /* 1774 */      c_iconst_0()
+    /* 1775 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:95
+    /* 1776 */      c_iconst_0()
+    /* 1777 */      c_istore_1()
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:97
+    /* 1778 */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:102
+    /* 177b */      c_iconst_1()
+    /* 177c */      c_istore_1()
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:103
+    /* 177d */      c_goto(0x00, 0x10)
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:98
+    /* 1780 */      c_astore_2()
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:100
+    /* 1781 */      c_iconst_1()
+    /* 1782 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:102
+    /* 1783 */      c_iconst_1()
+    /* 1784 */      c_istore_1()
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:103
+    /* 1785 */      c_goto(0x00, 0x08)
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:102
+    /* 1788 */      c_astore_3()
+    /* 1789 */      c_iconst_1()
+    /* 178a */      c_istore_1()
+    /* 178b */      c_aload_3()
+    /* 178c */      c_athrow()
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:104
+    /* 178d */      c_getstatic(0x00, 0x00)
+    /* 1790 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:105
+    /* 1793 */      c_iload_0()
+    /* 1794 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:106
+    /* 1797 */      c_iload_1()
+    /* 1798 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test6#()V:107
+    /* 179b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#test7Helper2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#test7Helper2#()V:114
+    /* 179c */      c_iconst_0()
+    /* 179d */      c_putstatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test7Helper2#()V:116
+    /* 17a0 */      c_new(0x00, 0x02)
+    /* 17a3 */      c_dup()
+    /* 17a4 */      c_ldc(0x03)
+    /* 17a6 */      c_invokespecial(0x00, 0x00)
+    /* 17a9 */      c_athrow()
+
+    // thinj/regression/exceptions/ThrowException#test7Helper2#()V:118
+    /* 17aa */      c_astore_0()
+    /* 17ab */      c_iconst_1()
+    /* 17ac */      c_putstatic(0x00, 0x01)
+    /* 17af */      c_aload_0()
+    /* 17b0 */      c_athrow()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#test7Helper1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#test7Helper1#()V:123
+    /* 17b1 */      c_iconst_0()
+    /* 17b2 */      c_putstatic(0x00, 0x02)
+
+    // thinj/regression/exceptions/ThrowException#test7Helper1#()V:125
+    /* 17b5 */      c_invokestatic(0x00, 0x06)
+
+    // thinj/regression/exceptions/ThrowException#test7Helper1#()V:127
+    /* 17b8 */      c_iconst_1()
+    /* 17b9 */      c_putstatic(0x00, 0x02)
+
+    // thinj/regression/exceptions/ThrowException#test7Helper1#()V:128
+    /* 17bc */      c_goto(0x00, 0x0a)
+
+    // thinj/regression/exceptions/ThrowException#test7Helper1#()V:127
+    /* 17bf */      c_astore_0()
+    /* 17c0 */      c_iconst_1()
+    /* 17c1 */      c_putstatic(0x00, 0x02)
+    /* 17c4 */      c_aload_0()
+    /* 17c5 */      c_athrow()
+
+    // thinj/regression/exceptions/ThrowException#test7Helper1#()V:129
+    /* 17c6 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#test7#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:135
+    /* 17c7 */      c_iconst_0()
+    /* 17c8 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:136
+    /* 17c9 */      c_iconst_0()
+    /* 17ca */      c_istore_1()
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:138
+    /* 17cb */      c_invokestatic(0x00, 0x07)
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:143
+    /* 17ce */      c_iconst_1()
+    /* 17cf */      c_istore_1()
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:144
+    /* 17d0 */      c_goto(0x00, 0x10)
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:139
+    /* 17d3 */      c_astore_2()
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:141
+    /* 17d4 */      c_iconst_1()
+    /* 17d5 */      c_istore_0()
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:143
+    /* 17d6 */      c_iconst_1()
+    /* 17d7 */      c_istore_1()
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:144
+    /* 17d8 */      c_goto(0x00, 0x08)
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:143
+    /* 17db */      c_astore_3()
+    /* 17dc */      c_iconst_1()
+    /* 17dd */      c_istore_1()
+    /* 17de */      c_aload_3()
+    /* 17df */      c_athrow()
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:145
+    /* 17e0 */      c_getstatic(0x00, 0x02)
+    /* 17e3 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:146
+    /* 17e6 */      c_getstatic(0x00, 0x01)
+    /* 17e9 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:147
+    /* 17ec */      c_iload_0()
+    /* 17ed */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:148
+    /* 17f0 */      c_iload_1()
+    /* 17f1 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ThrowException#test7#()V:149
+    /* 17f4 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (104) thinj/regression/exceptions/ThrowException#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ThrowException#main#()V:155
+    /* 17f5 */      c_invokestatic(0x00, 0x08)
+
+    // thinj/regression/exceptions/ThrowException#main#()V:156
+    /* 17f8 */      c_invokestatic(0x00, 0x09)
+
+    // thinj/regression/exceptions/ThrowException#main#()V:157
+    /* 17fb */      c_invokestatic(0x00, 0x0a)
+
+    // thinj/regression/exceptions/ThrowException#main#()V:158
+    /* 17fe */      c_invokestatic(0x00, 0x0b)
+
+    // thinj/regression/exceptions/ThrowException#main#()V:159
+    /* 1801 */      c_invokestatic(0x00, 0x0c)
+
+    // thinj/regression/exceptions/ThrowException#main#()V:160
+    /* 1804 */      c_invokestatic(0x00, 0x0d)
+
+    // thinj/regression/exceptions/ThrowException#main#()V:161
+    /* 1807 */      c_invokestatic(0x00, 0x0e)
+
+    // thinj/regression/exceptions/ThrowException#main#()V:162
+    /* 180a */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (102) thinj/regression/exceptions/ExceptionProxying#testExceptionProxy#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExceptionProxying#testExceptionProxy#()V:6
+    /* 180b */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/exceptions/ExceptionProxying#testExceptionProxy#()V:7
+    /* 180e */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (103) thinj/regression/exceptions/TestNullPointerException#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/TestNullPointerException#test1#()V:12
+    /* 180f */      c_iconst_0()
+    /* 1810 */      c_putstatic(0x00, 0x00)
+
+    // thinj/regression/exceptions/TestNullPointerException#test1#()V:13
+    /* 1813 */      c_aconst_null()
+    /* 1814 */      c_astore_0()
+
+    // thinj/regression/exceptions/TestNullPointerException#test1#()V:14
+    /* 1815 */      c_aload_0()
+    /* 1816 */      c_arraylength()
+    /* 1817 */      c_istore_1()
+
+    // thinj/regression/exceptions/TestNullPointerException#test1#()V:15
+    /* 1818 */      c_iconst_1()
+    /* 1819 */      c_putstatic(0x00, 0x00)
+
+    // thinj/regression/exceptions/TestNullPointerException#test1#()V:16
+    /* 181c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (103) thinj/regression/exceptions/TestNullPointerException#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/TestNullPointerException#test2#()V:24
+    /* 181d */      c_iconst_0()
+    /* 181e */      c_putstatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/TestNullPointerException#test2#()V:25
+    /* 1821 */      c_aconst_null()
+    /* 1822 */      c_astore_0()
+
+    // thinj/regression/exceptions/TestNullPointerException#test2#()V:26
+    /* 1823 */      c_aload_0()
+    /* 1824 */      c_iconst_0()
+    /* 1825 */      c_iaload()
+    /* 1826 */      c_istore_1()
+
+    // thinj/regression/exceptions/TestNullPointerException#test2#()V:27
+    /* 1827 */      c_iconst_1()
+    /* 1828 */      c_putstatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/TestNullPointerException#test2#()V:28
+    /* 182b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (103) thinj/regression/exceptions/TestNullPointerException#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:33
+    /* 182c */      c_iconst_0()
+    /* 182d */      c_istore_0()
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:35
+    /* 182e */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:39
+    /* 1831 */      c_goto(0x00, 0x07)
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:36
+    /* 1834 */      c_astore_1()
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:38
+    /* 1835 */      c_iinc(0x00, 0x01)
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:40
+    /* 1838 */      c_getstatic(0x00, 0x00)
+    /* 183b */      c_ifne(0x00, 0x07)
+    /* 183e */      c_iconst_1()
+    /* 183f */      c_goto(0x00, 0x04)
+    /* 1842 */      c_iconst_0()
+    /* 1843 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:42
+    /* 1846 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:46
+    /* 1849 */      c_goto(0x00, 0x07)
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:43
+    /* 184c */      c_astore_1()
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:45
+    /* 184d */      c_iinc(0x00, 0x01)
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:47
+    /* 1850 */      c_getstatic(0x00, 0x01)
+    /* 1853 */      c_ifne(0x00, 0x07)
+    /* 1856 */      c_iconst_1()
+    /* 1857 */      c_goto(0x00, 0x04)
+    /* 185a */      c_iconst_0()
+    /* 185b */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:48
+    /* 185e */      c_iload_0()
+    /* 185f */      c_iconst_2()
+    /* 1860 */      c_if_icmpne(0x00, 0x07)
+    /* 1863 */      c_iconst_1()
+    /* 1864 */      c_goto(0x00, 0x04)
+    /* 1867 */      c_iconst_0()
+    /* 1868 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/TestNullPointerException#main#()V:49
+    /* 186b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#get#(I)I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#get#(I)I:9
+    /* 186c */      c_bipush(0x43)
+    /* 186e */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#get#()I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#get#()I:13
+    /* 186f */      c_iconst_0()
+    /* 1870 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#iaload#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:18
+    /* 1871 */      c_aconst_null()
+    /* 1872 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:20
+    /* 1873 */      c_iconst_0()
+    /* 1874 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:22
+    /* 1875 */      c_aload_0()
+    /* 1876 */      c_iconst_1()
+    /* 1877 */      c_iaload()
+    /* 1878 */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:25
+    /* 1879 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:23
+    /* 187c */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:24
+    /* 187d */      c_iconst_1()
+    /* 187e */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:27
+    /* 187f */      c_iload_1()
+    /* 1880 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:29
+    /* 1883 */      c_iconst_1()
+    /* 1884 */      c_newarray(0x0a)
+    /* 1886 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:30
+    /* 1887 */      c_aload_0()
+    /* 1888 */      c_iconst_0()
+    /* 1889 */      c_bipush(0x2d)
+    /* 188b */      c_iastore()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:32
+    /* 188c */      c_iconst_0()
+    /* 188d */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:34
+    /* 188e */      c_aload_0()
+    /* 188f */      c_iconst_2()
+    /* 1890 */      c_iaload()
+    /* 1891 */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:37
+    /* 1892 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:35
+    /* 1895 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:36
+    /* 1896 */      c_iconst_1()
+    /* 1897 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:38
+    /* 1898 */      c_iload_1()
+    /* 1899 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#iaload#()V:40
+    /* 189c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#aaload#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:44
+    /* 189d */      c_aconst_null()
+    /* 189e */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:46
+    /* 189f */      c_iconst_0()
+    /* 18a0 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:48
+    /* 18a1 */      c_aload_0()
+    /* 18a2 */      c_iconst_1()
+    /* 18a3 */      c_aaload()
+    /* 18a4 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:51
+    /* 18a5 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:49
+    /* 18a8 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:50
+    /* 18a9 */      c_iconst_1()
+    /* 18aa */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:53
+    /* 18ab */      c_iload_1()
+    /* 18ac */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:55
+    /* 18af */      c_iconst_1()
+    /* 18b0 */      c_anewarray(0x00, 0x05)
+    /* 18b3 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:56
+    /* 18b4 */      c_aload_0()
+    /* 18b5 */      c_iconst_0()
+    /* 18b6 */      c_new(0x00, 0x05)
+    /* 18b9 */      c_dup()
+    /* 18ba */      c_invokespecial(0x00, 0x00)
+    /* 18bd */      c_aastore()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:58
+    /* 18be */      c_iconst_0()
+    /* 18bf */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:60
+    /* 18c0 */      c_aload_0()
+    /* 18c1 */      c_iconst_2()
+    /* 18c2 */      c_aaload()
+    /* 18c3 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:63
+    /* 18c4 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:61
+    /* 18c7 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:62
+    /* 18c8 */      c_iconst_1()
+    /* 18c9 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:64
+    /* 18ca */      c_iload_1()
+    /* 18cb */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#aaload#()V:66
+    /* 18ce */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#baload#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:70
+    /* 18cf */      c_aconst_null()
+    /* 18d0 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:72
+    /* 18d1 */      c_iconst_0()
+    /* 18d2 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:74
+    /* 18d3 */      c_aload_0()
+    /* 18d4 */      c_iconst_1()
+    /* 18d5 */      c_baload()
+    /* 18d6 */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:77
+    /* 18d7 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:75
+    /* 18da */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:76
+    /* 18db */      c_iconst_1()
+    /* 18dc */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:79
+    /* 18dd */      c_iload_1()
+    /* 18de */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:81
+    /* 18e1 */      c_iconst_1()
+    /* 18e2 */      c_newarray(0x08)
+    /* 18e4 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:82
+    /* 18e5 */      c_aload_0()
+    /* 18e6 */      c_iconst_0()
+    /* 18e7 */      c_bipush(0x11)
+    /* 18e9 */      c_bastore()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:84
+    /* 18ea */      c_iconst_0()
+    /* 18eb */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:86
+    /* 18ec */      c_aload_0()
+    /* 18ed */      c_iconst_2()
+    /* 18ee */      c_baload()
+    /* 18ef */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:89
+    /* 18f0 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:87
+    /* 18f3 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:88
+    /* 18f4 */      c_iconst_1()
+    /* 18f5 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:90
+    /* 18f6 */      c_iload_1()
+    /* 18f7 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#baload#()V:92
+    /* 18fa */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#caload#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:96
+    /* 18fb */      c_aconst_null()
+    /* 18fc */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:98
+    /* 18fd */      c_iconst_0()
+    /* 18fe */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:100
+    /* 18ff */      c_aload_0()
+    /* 1900 */      c_iconst_1()
+    /* 1901 */      c_caload()
+    /* 1902 */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:103
+    /* 1903 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:101
+    /* 1906 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:102
+    /* 1907 */      c_iconst_1()
+    /* 1908 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:105
+    /* 1909 */      c_iload_1()
+    /* 190a */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:107
+    /* 190d */      c_iconst_1()
+    /* 190e */      c_newarray(0x05)
+    /* 1910 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:108
+    /* 1911 */      c_aload_0()
+    /* 1912 */      c_iconst_0()
+    /* 1913 */      c_bipush(0x11)
+    /* 1915 */      c_castore()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:110
+    /* 1916 */      c_iconst_0()
+    /* 1917 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:112
+    /* 1918 */      c_aload_0()
+    /* 1919 */      c_iconst_2()
+    /* 191a */      c_caload()
+    /* 191b */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:115
+    /* 191c */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:113
+    /* 191f */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:114
+    /* 1920 */      c_iconst_1()
+    /* 1921 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:116
+    /* 1922 */      c_iload_1()
+    /* 1923 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#caload#()V:118
+    /* 1926 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#iastore#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:122
+    /* 1927 */      c_aconst_null()
+    /* 1928 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:124
+    /* 1929 */      c_iconst_0()
+    /* 192a */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:126
+    /* 192b */      c_aload_0()
+    /* 192c */      c_iconst_1()
+    /* 192d */      c_bipush(0x2d)
+    /* 192f */      c_iastore()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:129
+    /* 1930 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:127
+    /* 1933 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:128
+    /* 1934 */      c_iconst_1()
+    /* 1935 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:131
+    /* 1936 */      c_iload_1()
+    /* 1937 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:133
+    /* 193a */      c_iconst_1()
+    /* 193b */      c_newarray(0x0a)
+    /* 193d */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:134
+    /* 193e */      c_aload_0()
+    /* 193f */      c_iconst_0()
+    /* 1940 */      c_bipush(0x2d)
+    /* 1942 */      c_iastore()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:136
+    /* 1943 */      c_iconst_0()
+    /* 1944 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:138
+    /* 1945 */      c_aload_0()
+    /* 1946 */      c_iconst_2()
+    /* 1947 */      c_bipush(0x13)
+    /* 1949 */      c_iastore()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:141
+    /* 194a */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:139
+    /* 194d */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:140
+    /* 194e */      c_iconst_1()
+    /* 194f */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:142
+    /* 1950 */      c_iload_1()
+    /* 1951 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#iastore#()V:144
+    /* 1954 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#aastore#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:148
+    /* 1955 */      c_aconst_null()
+    /* 1956 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:150
+    /* 1957 */      c_iconst_0()
+    /* 1958 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:152
+    /* 1959 */      c_aload_0()
+    /* 195a */      c_iconst_1()
+    /* 195b */      c_new(0x00, 0x05)
+    /* 195e */      c_dup()
+    /* 195f */      c_invokespecial(0x00, 0x00)
+    /* 1962 */      c_aastore()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:155
+    /* 1963 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:153
+    /* 1966 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:154
+    /* 1967 */      c_iconst_1()
+    /* 1968 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:157
+    /* 1969 */      c_iload_1()
+    /* 196a */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:159
+    /* 196d */      c_iconst_1()
+    /* 196e */      c_anewarray(0x00, 0x05)
+    /* 1971 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:160
+    /* 1972 */      c_aload_0()
+    /* 1973 */      c_iconst_0()
+    /* 1974 */      c_new(0x00, 0x05)
+    /* 1977 */      c_dup()
+    /* 1978 */      c_invokespecial(0x00, 0x00)
+    /* 197b */      c_aastore()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:162
+    /* 197c */      c_iconst_0()
+    /* 197d */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:164
+    /* 197e */      c_aload_0()
+    /* 197f */      c_iconst_2()
+    /* 1980 */      c_new(0x00, 0x05)
+    /* 1983 */      c_dup()
+    /* 1984 */      c_invokespecial(0x00, 0x00)
+    /* 1987 */      c_aastore()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:167
+    /* 1988 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:165
+    /* 198b */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:166
+    /* 198c */      c_iconst_1()
+    /* 198d */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:168
+    /* 198e */      c_iload_1()
+    /* 198f */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#aastore#()V:170
+    /* 1992 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#bastore#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:174
+    /* 1993 */      c_aconst_null()
+    /* 1994 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:176
+    /* 1995 */      c_iconst_0()
+    /* 1996 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:178
+    /* 1997 */      c_aload_0()
+    /* 1998 */      c_iconst_1()
+    /* 1999 */      c_iconst_0()
+    /* 199a */      c_bastore()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:181
+    /* 199b */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:179
+    /* 199e */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:180
+    /* 199f */      c_iconst_1()
+    /* 19a0 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:183
+    /* 19a1 */      c_iload_1()
+    /* 19a2 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:185
+    /* 19a5 */      c_iconst_1()
+    /* 19a6 */      c_newarray(0x04)
+    /* 19a8 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:186
+    /* 19a9 */      c_aload_0()
+    /* 19aa */      c_iconst_0()
+    /* 19ab */      c_iconst_1()
+    /* 19ac */      c_bastore()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:188
+    /* 19ad */      c_iconst_0()
+    /* 19ae */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:190
+    /* 19af */      c_aload_0()
+    /* 19b0 */      c_iconst_2()
+    /* 19b1 */      c_iconst_0()
+    /* 19b2 */      c_bastore()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:193
+    /* 19b3 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:191
+    /* 19b6 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:192
+    /* 19b7 */      c_iconst_1()
+    /* 19b8 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:194
+    /* 19b9 */      c_iload_1()
+    /* 19ba */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#bastore#()V:196
+    /* 19bd */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#castore#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:200
+    /* 19be */      c_aconst_null()
+    /* 19bf */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:202
+    /* 19c0 */      c_iconst_0()
+    /* 19c1 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:204
+    /* 19c2 */      c_aload_0()
+    /* 19c3 */      c_iconst_1()
+    /* 19c4 */      c_bipush(0x61)
+    /* 19c6 */      c_castore()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:207
+    /* 19c7 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:205
+    /* 19ca */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:206
+    /* 19cb */      c_iconst_1()
+    /* 19cc */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:209
+    /* 19cd */      c_iload_1()
+    /* 19ce */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:211
+    /* 19d1 */      c_iconst_1()
+    /* 19d2 */      c_newarray(0x05)
+    /* 19d4 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:212
+    /* 19d5 */      c_aload_0()
+    /* 19d6 */      c_iconst_0()
+    /* 19d7 */      c_bipush(0x41)
+    /* 19d9 */      c_castore()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:214
+    /* 19da */      c_iconst_0()
+    /* 19db */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:216
+    /* 19dc */      c_aload_0()
+    /* 19dd */      c_iconst_2()
+    /* 19de */      c_bipush(0x40)
+    /* 19e0 */      c_castore()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:219
+    /* 19e1 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:217
+    /* 19e4 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:218
+    /* 19e5 */      c_iconst_1()
+    /* 19e6 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:220
+    /* 19e7 */      c_iload_1()
+    /* 19e8 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#castore#()V:222
+    /* 19eb */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#idiv#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#idiv#()V:225
+    /* 19ec */      c_iconst_0()
+    /* 19ed */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#idiv#()V:226
+    /* 19ee */      c_bipush(0x59)
+    /* 19f0 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#idiv#()V:227
+    /* 19f1 */      c_iconst_0()
+    /* 19f2 */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#idiv#()V:229
+    /* 19f3 */      c_iload_1()
+    /* 19f4 */      c_iload_2()
+    /* 19f5 */      c_idiv()
+    /* 19f6 */      c_istore_3()
+
+    // thinj/regression/exceptions/ExIALOAD#idiv#()V:232
+    /* 19f7 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#idiv#()V:230
+    /* 19fa */      c_astore_3()
+
+    // thinj/regression/exceptions/ExIALOAD#idiv#()V:231
+    /* 19fb */      c_iconst_1()
+    /* 19fc */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#idiv#()V:233
+    /* 19fd */      c_iload_0()
+    /* 19fe */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#idiv#()V:234
+    /* 1a01 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#irem#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#irem#()V:237
+    /* 1a02 */      c_iconst_0()
+    /* 1a03 */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#irem#()V:238
+    /* 1a04 */      c_bipush(0x59)
+    /* 1a06 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#irem#()V:239
+    /* 1a07 */      c_iconst_0()
+    /* 1a08 */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#irem#()V:241
+    /* 1a09 */      c_iload_1()
+    /* 1a0a */      c_iload_2()
+    /* 1a0b */      c_irem()
+    /* 1a0c */      c_istore_3()
+
+    // thinj/regression/exceptions/ExIALOAD#irem#()V:244
+    /* 1a0d */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#irem#()V:242
+    /* 1a10 */      c_astore_3()
+
+    // thinj/regression/exceptions/ExIALOAD#irem#()V:243
+    /* 1a11 */      c_iconst_1()
+    /* 1a12 */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#irem#()V:245
+    /* 1a13 */      c_iload_0()
+    /* 1a14 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#irem#()V:246
+    /* 1a17 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#getfield#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#getfield#()V:249
+    /* 1a18 */      c_aconst_null()
+    /* 1a19 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#getfield#()V:250
+    /* 1a1a */      c_iconst_0()
+    /* 1a1b */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#getfield#()V:252
+    /* 1a1c */      c_aload_0()
+    /* 1a1d */      c_getfield(0x00, 0x00)
+    /* 1a20 */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#getfield#()V:255
+    /* 1a21 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#getfield#()V:253
+    /* 1a24 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#getfield#()V:254
+    /* 1a25 */      c_iconst_1()
+    /* 1a26 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#getfield#()V:256
+    /* 1a27 */      c_iload_1()
+    /* 1a28 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#getfield#()V:257
+    /* 1a2b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#putfield#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#putfield#()V:260
+    /* 1a2c */      c_aconst_null()
+    /* 1a2d */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#putfield#()V:261
+    /* 1a2e */      c_iconst_0()
+    /* 1a2f */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#putfield#()V:263
+    /* 1a30 */      c_aload_0()
+    /* 1a31 */      c_bipush(0x4e)
+    /* 1a33 */      c_putfield(0x00, 0x00)
+
+    // thinj/regression/exceptions/ExIALOAD#putfield#()V:266
+    /* 1a36 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#putfield#()V:264
+    /* 1a39 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#putfield#()V:265
+    /* 1a3a */      c_iconst_1()
+    /* 1a3b */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#putfield#()V:267
+    /* 1a3c */      c_iload_1()
+    /* 1a3d */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#putfield#()V:268
+    /* 1a40 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#invokespecial#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:271
+    /* 1a41 */      c_aconst_null()
+    /* 1a42 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:272
+    /* 1a43 */      c_iconst_0()
+    /* 1a44 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:274
+    /* 1a45 */      c_aload_0()
+    /* 1a46 */      c_bipush(0x38)
+    /* 1a48 */      c_invokespecial(0x00, 0x02)
+    /* 1a4b */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:277
+    /* 1a4c */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:275
+    /* 1a4f */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:276
+    /* 1a50 */      c_iconst_1()
+    /* 1a51 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:278
+    /* 1a52 */      c_iload_1()
+    /* 1a53 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:280
+    /* 1a56 */      c_iconst_0()
+    /* 1a57 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:282
+    /* 1a58 */      c_aload_0()
+    /* 1a59 */      c_invokespecial(0x00, 0x03)
+    /* 1a5c */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:285
+    /* 1a5d */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:283
+    /* 1a60 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:284
+    /* 1a61 */      c_iconst_1()
+    /* 1a62 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:286
+    /* 1a63 */      c_iload_1()
+    /* 1a64 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#invokespecial#()V:287
+    /* 1a67 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#invokevirtual#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#invokevirtual#()V:290
+    /* 1a68 */      c_aconst_null()
+    /* 1a69 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#invokevirtual#()V:291
+    /* 1a6a */      c_iconst_0()
+    /* 1a6b */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#invokevirtual#()V:293
+    /* 1a6c */      c_aload_0()
+    /* 1a6d */      c_invokevirtual(0x00, 0x04)
+    /* 1a70 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#invokevirtual#()V:296
+    /* 1a71 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#invokevirtual#()V:294
+    /* 1a74 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#invokevirtual#()V:295
+    /* 1a75 */      c_iconst_1()
+    /* 1a76 */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#invokevirtual#()V:297
+    /* 1a77 */      c_iload_1()
+    /* 1a78 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#invokevirtual#()V:298
+    /* 1a7b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#invokeinterface#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#invokeinterface#()V:305
+    /* 1a7c */      c_aconst_null()
+    /* 1a7d */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#invokeinterface#()V:306
+    /* 1a7e */      c_iconst_0()
+    /* 1a7f */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#invokeinterface#()V:308
+    /* 1a80 */      c_aload_0()
+    /* 1a81 */      c_invokeinterface(0x00, 0x05, 0x01, 0x00)
+
+    // thinj/regression/exceptions/ExIALOAD#invokeinterface#()V:311
+    /* 1a86 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#invokeinterface#()V:309
+    /* 1a89 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#invokeinterface#()V:310
+    /* 1a8a */      c_iconst_1()
+    /* 1a8b */      c_istore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#invokeinterface#()V:312
+    /* 1a8c */      c_iload_1()
+    /* 1a8d */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#invokeinterface#()V:313
+    /* 1a90 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#test_new#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#test_new#()V:337
+    /* 1a91 */      c_iconst_0()
+    /* 1a92 */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#test_new#()V:339
+    /* 1a93 */      c_iconst_0()
+    /* 1a94 */      c_invokestatic(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#test_new#()V:343
+    /* 1a97 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#test_new#()V:340
+    /* 1a9a */      c_astore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#test_new#()V:341
+    /* 1a9b */      c_iconst_1()
+    /* 1a9c */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#test_new#()V:344
+    /* 1a9d */      c_iload_0()
+    /* 1a9e */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#test_new#()V:345
+    /* 1aa1 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#newarray#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#newarray#()V:348
+    /* 1aa2 */      c_iconst_0()
+    /* 1aa3 */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#newarray#()V:350
+    /* 1aa4 */      c_bipush(0xfd)
+    /* 1aa6 */      c_newarray(0x0a)
+    /* 1aa8 */      c_astore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#newarray#()V:353
+    /* 1aa9 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#newarray#()V:351
+    /* 1aac */      c_astore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#newarray#()V:352
+    /* 1aad */      c_iconst_1()
+    /* 1aae */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#newarray#()V:355
+    /* 1aaf */      c_iload_0()
+    /* 1ab0 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#newarray#()V:356
+    /* 1ab3 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#anewarray#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#anewarray#()V:359
+    /* 1ab4 */      c_iconst_0()
+    /* 1ab5 */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#anewarray#()V:361
+    /* 1ab6 */      c_bipush(0xfd)
+    /* 1ab8 */      c_anewarray(0x00, 0x0f)
+    /* 1abb */      c_astore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#anewarray#()V:364
+    /* 1abc */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#anewarray#()V:362
+    /* 1abf */      c_astore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#anewarray#()V:363
+    /* 1ac0 */      c_iconst_1()
+    /* 1ac1 */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#anewarray#()V:366
+    /* 1ac2 */      c_iload_0()
+    /* 1ac3 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#anewarray#()V:367
+    /* 1ac6 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#arraylength#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#arraylength#()V:370
+    /* 1ac7 */      c_iconst_0()
+    /* 1ac8 */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#arraylength#()V:371
+    /* 1ac9 */      c_aconst_null()
+    /* 1aca */      c_astore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#arraylength#()V:373
+    /* 1acb */      c_aload_1()
+    /* 1acc */      c_arraylength()
+    /* 1acd */      c_istore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#arraylength#()V:376
+    /* 1ace */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#arraylength#()V:374
+    /* 1ad1 */      c_astore_2()
+
+    // thinj/regression/exceptions/ExIALOAD#arraylength#()V:375
+    /* 1ad2 */      c_iconst_1()
+    /* 1ad3 */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#arraylength#()V:378
+    /* 1ad4 */      c_iload_0()
+    /* 1ad5 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#arraylength#()V:379
+    /* 1ad8 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#athrow#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#athrow#()V:382
+    /* 1ad9 */      c_iconst_0()
+    /* 1ada */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#athrow#()V:384
+    /* 1adb */      c_aconst_null()
+    /* 1adc */      c_athrow()
+
+    // thinj/regression/exceptions/ExIALOAD#athrow#()V:385
+    /* 1add */      c_astore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#athrow#()V:386
+    /* 1ade */      c_iconst_1()
+    /* 1adf */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#athrow#()V:389
+    /* 1ae0 */      c_iload_0()
+    /* 1ae1 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#athrow#()V:390
+    /* 1ae4 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#checkcast#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#checkcast#()V:393
+    /* 1ae5 */      c_iconst_0()
+    /* 1ae6 */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#checkcast#()V:395
+    /* 1ae7 */      c_iconst_0()
+    /* 1ae8 */      c_newarray(0x0a)
+    /* 1aea */      c_astore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#checkcast#()V:396
+    /* 1aeb */      c_getstatic(0x00, 0x01)
+    /* 1aee */      c_aload_1()
+    /* 1aef */      c_checkcast(0x00, 0x0f)
+    /* 1af2 */      c_invokevirtual(0x00, 0x07)
+
+    // thinj/regression/exceptions/ExIALOAD#checkcast#()V:399
+    /* 1af5 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/exceptions/ExIALOAD#checkcast#()V:397
+    /* 1af8 */      c_astore_1()
+
+    // thinj/regression/exceptions/ExIALOAD#checkcast#()V:398
+    /* 1af9 */      c_iconst_1()
+    /* 1afa */      c_istore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#checkcast#()V:401
+    /* 1afb */      c_iload_0()
+    /* 1afc */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD#checkcast#()V:402
+    /* 1aff */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (99) thinj/regression/exceptions/ExIALOAD#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:407
+    /* 1b00 */      c_invokestatic(0x00, 0x08)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:408
+    /* 1b03 */      c_invokestatic(0x00, 0x09)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:409
+    /* 1b06 */      c_invokestatic(0x00, 0x0a)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:410
+    /* 1b09 */      c_invokestatic(0x00, 0x0b)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:411
+    /* 1b0c */      c_invokestatic(0x00, 0x0c)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:412
+    /* 1b0f */      c_invokestatic(0x00, 0x0d)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:413
+    /* 1b12 */      c_invokestatic(0x00, 0x0e)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:414
+    /* 1b15 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:415
+    /* 1b18 */      c_invokestatic(0x00, 0x10)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:416
+    /* 1b1b */      c_invokestatic(0x00, 0x11)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:417
+    /* 1b1e */      c_invokestatic(0x00, 0x12)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:418
+    /* 1b21 */      c_invokestatic(0x00, 0x13)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:419
+    /* 1b24 */      c_invokestatic(0x00, 0x14)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:420
+    /* 1b27 */      c_invokestatic(0x00, 0x15)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:421
+    /* 1b2a */      c_invokestatic(0x00, 0x16)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:422
+    /* 1b2d */      c_invokestatic(0x00, 0x17)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:423
+    /* 1b30 */      c_invokestatic(0x00, 0x18)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:424
+    /* 1b33 */      c_invokestatic(0x00, 0x19)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:425
+    /* 1b36 */      c_invokestatic(0x00, 0x1a)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:426
+    /* 1b39 */      c_invokestatic(0x00, 0x1b)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:427
+    /* 1b3c */      c_invokestatic(0x00, 0x1c)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:430
+    /* 1b3f */      c_goto(0x00, 0x1d)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:428
+    /* 1b42 */      c_astore_0()
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:429
+    /* 1b43 */      c_getstatic(0x00, 0x01)
+    /* 1b46 */      c_new(0x00, 0x29)
+    /* 1b49 */      c_dup()
+    /* 1b4a */      c_invokespecial(0x00, 0x1d)
+    /* 1b4d */      c_ldc(0x2b)
+    /* 1b4f */      c_invokevirtual(0x00, 0x1e)
+    /* 1b52 */      c_aload_0()
+    /* 1b53 */      c_invokevirtual(0x00, 0x1f)
+    /* 1b56 */      c_invokevirtual(0x00, 0x20)
+    /* 1b59 */      c_invokevirtual(0x00, 0x07)
+
+    // thinj/regression/exceptions/ExIALOAD#main#()V:431
+    /* 1b5c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (100) thinj/regression/exceptions/ExIALOAD$LinkObject#<init>#(Lthinj/regression/exceptions/ExIALOAD$LinkObject;I)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD$LinkObject#<init>#(Lthinj/regression/exceptions/ExIALOAD$LinkObject;I)V:320
+    /* 1b5d */      c_aload_0()
+    /* 1b5e */      c_invokespecial(0x00, 0x00)
+
+    // thinj/regression/exceptions/ExIALOAD$LinkObject#<init>#(Lthinj/regression/exceptions/ExIALOAD$LinkObject;I)V:321
+    /* 1b61 */      c_aload_0()
+    /* 1b62 */      c_aload_1()
+    /* 1b63 */      c_putfield(0x00, 0x00)
+
+    // thinj/regression/exceptions/ExIALOAD$LinkObject#<init>#(Lthinj/regression/exceptions/ExIALOAD$LinkObject;I)V:322
+    /* 1b66 */      c_iload_2()
+    /* 1b67 */      c_ifle(0x00, 0x0a)
+
+    // thinj/regression/exceptions/ExIALOAD$LinkObject#<init>#(Lthinj/regression/exceptions/ExIALOAD$LinkObject;I)V:323
+    /* 1b6a */      c_aload_0()
+    /* 1b6b */      c_iload_2()
+    /* 1b6c */      c_newarray(0x0a)
+    /* 1b6e */      c_putfield(0x00, 0x01)
+
+    // thinj/regression/exceptions/ExIALOAD$LinkObject#<init>#(Lthinj/regression/exceptions/ExIALOAD$LinkObject;I)V:325
+    /* 1b71 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (100) thinj/regression/exceptions/ExIALOAD$LinkObject#consumeHeap#(I)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/exceptions/ExIALOAD$LinkObject#consumeHeap#(I)V:328
+    /* 1b72 */      c_aconst_null()
+    /* 1b73 */      c_astore_1()
+
+    // thinj/regression/exceptions/ExIALOAD$LinkObject#consumeHeap#(I)V:331
+    /* 1b74 */      c_new(0x00, 0x04)
+    /* 1b77 */      c_dup()
+    /* 1b78 */      c_aload_1()
+    /* 1b79 */      c_iconst_0()
+    /* 1b7a */      c_invokespecial(0x00, 0x01)
+    /* 1b7d */      c_astore_1()
+    /* 1b7e */      c_goto(0xff, 0xf6)
+
+    //------------------------------------------------------------------------------
+    // (46) thinj/regression/ClassTest#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ClassTest#<init>#()V:3
+    /* 1b81 */      c_aload_0()
+    /* 1b82 */      c_invokespecial(0x00, 0x00)
+    /* 1b85 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (46) thinj/regression/ClassTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ClassTest#main#()V:6
+    /* 1b86 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/ClassTest#main#()V:8
+    /* 1b89 */      c_getstatic(0x00, 0x00)
+    /* 1b8c */      c_new(0x00, 0x04)
+    /* 1b8f */      c_dup()
+    /* 1b90 */      c_invokespecial(0x00, 0x02)
+    /* 1b93 */      c_invokevirtual(0x00, 0x03)
+    /* 1b96 */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ClassTest#main#()V:9
+    /* 1b99 */      c_getstatic(0x00, 0x00)
+    /* 1b9c */      c_ldc(0x08)
+    /* 1b9e */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ClassTest#main#()V:10
+    /* 1ba1 */      c_getstatic(0x00, 0x00)
+    /* 1ba4 */      c_new(0x00, 0x09)
+    /* 1ba7 */      c_dup()
+    /* 1ba8 */      c_invokespecial(0x00, 0x05)
+    /* 1bab */      c_ldc(0x0b)
+    /* 1bad */      c_invokevirtual(0x00, 0x06)
+    /* 1bb0 */      c_new(0x00, 0x0d)
+    /* 1bb3 */      c_dup()
+    /* 1bb4 */      c_invokespecial(0x00, 0x00)
+    /* 1bb7 */      c_invokevirtual(0x00, 0x03)
+    /* 1bba */      c_invokevirtual(0x00, 0x06)
+    /* 1bbd */      c_invokevirtual(0x00, 0x07)
+    /* 1bc0 */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ClassTest#main#()V:11
+    /* 1bc3 */      c_new(0x00, 0x0d)
+    /* 1bc6 */      c_dup()
+    /* 1bc7 */      c_invokespecial(0x00, 0x00)
+    /* 1bca */      c_invokevirtual(0x00, 0x08)
+    /* 1bcd */      c_astore_0()
+
+    // thinj/regression/ClassTest#main#()V:12
+    /* 1bce */      c_getstatic(0x00, 0x00)
+    /* 1bd1 */      c_aload_0()
+    /* 1bd2 */      c_invokevirtual(0x00, 0x09)
+    /* 1bd5 */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ClassTest#main#()V:13
+    /* 1bd8 */      c_aload_0()
+    /* 1bd9 */      c_invokevirtual(0x00, 0x09)
+    /* 1bdc */      c_ldc(0x11)
+    /* 1bde */      c_invokevirtual(0x00, 0x0a)
+    /* 1be1 */      c_invokestatic(0x00, 0x0b)
+
+    // thinj/regression/ClassTest#main#()V:15
+    /* 1be4 */      c_getstatic(0x00, 0x00)
+    /* 1be7 */      c_new(0x00, 0x09)
+    /* 1bea */      c_dup()
+    /* 1beb */      c_invokespecial(0x00, 0x05)
+    /* 1bee */      c_ldc(0x14)
+    /* 1bf0 */      c_invokevirtual(0x00, 0x06)
+    /* 1bf3 */      c_ldc(0x15)
+    /* 1bf5 */      c_ldc(0x15)
+    /* 1bf7 */      c_invokevirtual(0x00, 0x0a)
+    /* 1bfa */      c_invokevirtual(0x00, 0x0c)
+    /* 1bfd */      c_invokevirtual(0x00, 0x07)
+    /* 1c00 */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ClassTest#main#()V:16
+    /* 1c03 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (46) thinj/regression/ClassTest#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ClassTest#test1#()V:19
+    /* 1c04 */      c_ldc_w(0x00, 0x17)
+    /* 1c07 */      c_astore_0()
+
+    // thinj/regression/ClassTest#test1#()V:20
+    /* 1c08 */      c_getstatic(0x00, 0x00)
+    /* 1c0b */      c_new(0x00, 0x09)
+    /* 1c0e */      c_dup()
+    /* 1c0f */      c_invokespecial(0x00, 0x05)
+    /* 1c12 */      c_ldc(0x18)
+    /* 1c14 */      c_invokevirtual(0x00, 0x06)
+    /* 1c17 */      c_aload_0()
+    /* 1c18 */      c_invokevirtual(0x00, 0x0d)
+    /* 1c1b */      c_invokevirtual(0x00, 0x06)
+    /* 1c1e */      c_invokevirtual(0x00, 0x07)
+    /* 1c21 */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ClassTest#test1#()V:21
+    /* 1c24 */      c_iconst_4()
+    /* 1c25 */      c_anewarray(0x00, 0x0d)
+    /* 1c28 */      c_astore_1()
+
+    // thinj/regression/ClassTest#test1#()V:22
+    /* 1c29 */      c_getstatic(0x00, 0x00)
+    /* 1c2c */      c_aload_1()
+    /* 1c2d */      c_invokevirtual(0x00, 0x08)
+    /* 1c30 */      c_invokevirtual(0x00, 0x0d)
+    /* 1c33 */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ClassTest#test1#()V:23
+    /* 1c36 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#main#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#main#()V:7
+    /* 1c37 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/LongTest#main#()V:8
+    /* 1c3a */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/LongTest#main#()V:9
+    /* 1c3d */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/LongTest#main#()V:10
+    /* 1c40 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/LongTest#main#()V:11
+    /* 1c43 */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/LongTest#main#()V:12
+    /* 1c46 */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/LongTest#main#()V:13
+    /* 1c49 */      c_invokestatic(0x00, 0x06)
+
+    // thinj/regression/LongTest#main#()V:14
+    /* 1c4c */      c_invokestatic(0x00, 0x07)
+
+    // thinj/regression/LongTest#main#()V:15
+    /* 1c4f */      c_invokestatic(0x00, 0x08)
+
+    // thinj/regression/LongTest#main#()V:16
+    /* 1c52 */      c_invokestatic(0x00, 0x09)
+
+    // thinj/regression/LongTest#main#()V:17
+    /* 1c55 */      c_invokestatic(0x00, 0x0a)
+
+    // thinj/regression/LongTest#main#()V:18
+    /* 1c58 */      c_invokestatic(0x00, 0x0b)
+
+    // thinj/regression/LongTest#main#()V:19
+    /* 1c5b */      c_invokestatic(0x00, 0x0c)
+
+    // thinj/regression/LongTest#main#()V:20
+    /* 1c5e */      c_invokestatic(0x00, 0x0d)
+
+    // thinj/regression/LongTest#main#()V:21
+    /* 1c61 */      c_invokestatic(0x00, 0x0e)
+
+    // thinj/regression/LongTest#main#()V:22
+    /* 1c64 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test12#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test12#()V:26
+    /* 1c65 */      c_ldc2_w(0x00, 0x11)
+    /* 1c68 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test12#()V:27
+    /* 1c69 */      c_lload_0()
+    /* 1c6a */      c_ldc2_w(0x00, 0x13)
+    /* 1c6d */      c_ldiv()
+    /* 1c6e */      c_ldc2_w(0x00, 0x15)
+    /* 1c71 */      c_lcmp()
+    /* 1c72 */      c_ifne(0x00, 0x07)
+    /* 1c75 */      c_iconst_1()
+    /* 1c76 */      c_goto(0x00, 0x04)
+    /* 1c79 */      c_iconst_0()
+    /* 1c7a */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:28
+    /* 1c7d */      c_lload_0()
+    /* 1c7e */      c_ldc2_w(0x00, 0x18)
+    /* 1c81 */      c_ldiv()
+    /* 1c82 */      c_ldc2_w(0x00, 0x1a)
+    /* 1c85 */      c_lcmp()
+    /* 1c86 */      c_ifne(0x00, 0x07)
+    /* 1c89 */      c_iconst_1()
+    /* 1c8a */      c_goto(0x00, 0x04)
+    /* 1c8d */      c_iconst_0()
+    /* 1c8e */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:30
+    /* 1c91 */      c_ldc2_w(0x00, 0x1c)
+    /* 1c94 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test12#()V:31
+    /* 1c95 */      c_lload_0()
+    /* 1c96 */      c_ldc2_w(0x00, 0x13)
+    /* 1c99 */      c_ldiv()
+    /* 1c9a */      c_ldc2_w(0x00, 0x11)
+    /* 1c9d */      c_lcmp()
+    /* 1c9e */      c_ifne(0x00, 0x07)
+    /* 1ca1 */      c_iconst_1()
+    /* 1ca2 */      c_goto(0x00, 0x04)
+    /* 1ca5 */      c_iconst_0()
+    /* 1ca6 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:32
+    /* 1ca9 */      c_lload_0()
+    /* 1caa */      c_ldc2_w(0x00, 0x18)
+    /* 1cad */      c_ldiv()
+    /* 1cae */      c_ldc2_w(0x00, 0x15)
+    /* 1cb1 */      c_lcmp()
+    /* 1cb2 */      c_ifne(0x00, 0x07)
+    /* 1cb5 */      c_iconst_1()
+    /* 1cb6 */      c_goto(0x00, 0x04)
+    /* 1cb9 */      c_iconst_0()
+    /* 1cba */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:35
+    /* 1cbd */      c_ldc2_w(0x00, 0x1e)
+    /* 1cc0 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test12#()V:36
+    /* 1cc1 */      c_lload_0()
+    /* 1cc2 */      c_ldc2_w(0x00, 0x13)
+    /* 1cc5 */      c_ldiv()
+    /* 1cc6 */      c_ldc2_w(0x00, 0x20)
+    /* 1cc9 */      c_lcmp()
+    /* 1cca */      c_ifne(0x00, 0x07)
+    /* 1ccd */      c_iconst_1()
+    /* 1cce */      c_goto(0x00, 0x04)
+    /* 1cd1 */      c_iconst_0()
+    /* 1cd2 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:37
+    /* 1cd5 */      c_lload_0()
+    /* 1cd6 */      c_ldc2_w(0x00, 0x18)
+    /* 1cd9 */      c_ldiv()
+    /* 1cda */      c_ldc2_w(0x00, 0x22)
+    /* 1cdd */      c_lcmp()
+    /* 1cde */      c_ifne(0x00, 0x07)
+    /* 1ce1 */      c_iconst_1()
+    /* 1ce2 */      c_goto(0x00, 0x04)
+    /* 1ce5 */      c_iconst_0()
+    /* 1ce6 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:38
+    /* 1ce9 */      c_lload_0()
+    /* 1cea */      c_ldc2_w(0x00, 0x24)
+    /* 1ced */      c_ldiv()
+    /* 1cee */      c_ldc2_w(0x00, 0x26)
+    /* 1cf1 */      c_lcmp()
+    /* 1cf2 */      c_ifne(0x00, 0x07)
+    /* 1cf5 */      c_iconst_1()
+    /* 1cf6 */      c_goto(0x00, 0x04)
+    /* 1cf9 */      c_iconst_0()
+    /* 1cfa */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:39
+    /* 1cfd */      c_lload_0()
+    /* 1cfe */      c_ldc2_w(0x00, 0x28)
+    /* 1d01 */      c_ldiv()
+    /* 1d02 */      c_ldc2_w(0x00, 0x2a)
+    /* 1d05 */      c_lcmp()
+    /* 1d06 */      c_ifne(0x00, 0x07)
+    /* 1d09 */      c_iconst_1()
+    /* 1d0a */      c_goto(0x00, 0x04)
+    /* 1d0d */      c_iconst_0()
+    /* 1d0e */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:40
+    /* 1d11 */      c_lload_0()
+    /* 1d12 */      c_ldc2_w(0x00, 0x2c)
+    /* 1d15 */      c_ldiv()
+    /* 1d16 */      c_ldc2_w(0x00, 0x2e)
+    /* 1d19 */      c_lcmp()
+    /* 1d1a */      c_ifne(0x00, 0x07)
+    /* 1d1d */      c_iconst_1()
+    /* 1d1e */      c_goto(0x00, 0x04)
+    /* 1d21 */      c_iconst_0()
+    /* 1d22 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:41
+    /* 1d25 */      c_lload_0()
+    /* 1d26 */      c_ldc2_w(0x00, 0x30)
+    /* 1d29 */      c_ldiv()
+    /* 1d2a */      c_ldc2_w(0x00, 0x32)
+    /* 1d2d */      c_lcmp()
+    /* 1d2e */      c_ifne(0x00, 0x07)
+    /* 1d31 */      c_iconst_1()
+    /* 1d32 */      c_goto(0x00, 0x04)
+    /* 1d35 */      c_iconst_0()
+    /* 1d36 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:42
+    /* 1d39 */      c_lload_0()
+    /* 1d3a */      c_ldc2_w(0x00, 0x34)
+    /* 1d3d */      c_ldiv()
+    /* 1d3e */      c_ldc2_w(0x00, 0x36)
+    /* 1d41 */      c_lcmp()
+    /* 1d42 */      c_ifne(0x00, 0x07)
+    /* 1d45 */      c_iconst_1()
+    /* 1d46 */      c_goto(0x00, 0x04)
+    /* 1d49 */      c_iconst_0()
+    /* 1d4a */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:43
+    /* 1d4d */      c_lload_0()
+    /* 1d4e */      c_ldc2_w(0x00, 0x38)
+    /* 1d51 */      c_ldiv()
+    /* 1d52 */      c_ldc2_w(0x00, 0x1c)
+    /* 1d55 */      c_lcmp()
+    /* 1d56 */      c_ifne(0x00, 0x07)
+    /* 1d59 */      c_iconst_1()
+    /* 1d5a */      c_goto(0x00, 0x04)
+    /* 1d5d */      c_iconst_0()
+    /* 1d5e */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:44
+    /* 1d61 */      c_lload_0()
+    /* 1d62 */      c_ldc2_w(0x00, 0x3a)
+    /* 1d65 */      c_ldiv()
+    /* 1d66 */      c_ldc2_w(0x00, 0x11)
+    /* 1d69 */      c_lcmp()
+    /* 1d6a */      c_ifne(0x00, 0x07)
+    /* 1d6d */      c_iconst_1()
+    /* 1d6e */      c_goto(0x00, 0x04)
+    /* 1d71 */      c_iconst_0()
+    /* 1d72 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:45
+    /* 1d75 */      c_lload_0()
+    /* 1d76 */      c_ldc2_w(0x00, 0x3c)
+    /* 1d79 */      c_ldiv()
+    /* 1d7a */      c_ldc2_w(0x00, 0x15)
+    /* 1d7d */      c_lcmp()
+    /* 1d7e */      c_ifne(0x00, 0x07)
+    /* 1d81 */      c_iconst_1()
+    /* 1d82 */      c_goto(0x00, 0x04)
+    /* 1d85 */      c_iconst_0()
+    /* 1d86 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:46
+    /* 1d89 */      c_lload_0()
+    /* 1d8a */      c_ldc2_w(0x00, 0x3e)
+    /* 1d8d */      c_ldiv()
+    /* 1d8e */      c_ldc2_w(0x00, 0x1a)
+    /* 1d91 */      c_lcmp()
+    /* 1d92 */      c_ifne(0x00, 0x07)
+    /* 1d95 */      c_iconst_1()
+    /* 1d96 */      c_goto(0x00, 0x04)
+    /* 1d99 */      c_iconst_0()
+    /* 1d9a */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:47
+    /* 1d9d */      c_lload_0()
+    /* 1d9e */      c_ldc2_w(0x00, 0x40)
+    /* 1da1 */      c_ldiv()
+    /* 1da2 */      c_ldc2_w(0x00, 0x42)
+    /* 1da5 */      c_lcmp()
+    /* 1da6 */      c_ifne(0x00, 0x07)
+    /* 1da9 */      c_iconst_1()
+    /* 1daa */      c_goto(0x00, 0x04)
+    /* 1dad */      c_iconst_0()
+    /* 1dae */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:48
+    /* 1db1 */      c_lload_0()
+    /* 1db2 */      c_ldc2_w(0x00, 0x44)
+    /* 1db5 */      c_ldiv()
+    /* 1db6 */      c_ldc2_w(0x00, 0x46)
+    /* 1db9 */      c_lcmp()
+    /* 1dba */      c_ifne(0x00, 0x07)
+    /* 1dbd */      c_iconst_1()
+    /* 1dbe */      c_goto(0x00, 0x04)
+    /* 1dc1 */      c_iconst_0()
+    /* 1dc2 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:49
+    /* 1dc5 */      c_lload_0()
+    /* 1dc6 */      c_ldc2_w(0x00, 0x48)
+    /* 1dc9 */      c_ldiv()
+    /* 1dca */      c_ldc2_w(0x00, 0x4a)
+    /* 1dcd */      c_lcmp()
+    /* 1dce */      c_ifne(0x00, 0x07)
+    /* 1dd1 */      c_iconst_1()
+    /* 1dd2 */      c_goto(0x00, 0x04)
+    /* 1dd5 */      c_iconst_0()
+    /* 1dd6 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:50
+    /* 1dd9 */      c_lload_0()
+    /* 1dda */      c_ldc2_w(0x00, 0x4c)
+    /* 1ddd */      c_ldiv()
+    /* 1dde */      c_ldc2_w(0x00, 0x4e)
+    /* 1de1 */      c_lcmp()
+    /* 1de2 */      c_ifne(0x00, 0x07)
+    /* 1de5 */      c_iconst_1()
+    /* 1de6 */      c_goto(0x00, 0x04)
+    /* 1de9 */      c_iconst_0()
+    /* 1dea */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:51
+    /* 1ded */      c_lload_0()
+    /* 1dee */      c_ldc2_w(0x00, 0x50)
+    /* 1df1 */      c_ldiv()
+    /* 1df2 */      c_ldc2_w(0x00, 0x52)
+    /* 1df5 */      c_lcmp()
+    /* 1df6 */      c_ifne(0x00, 0x07)
+    /* 1df9 */      c_iconst_1()
+    /* 1dfa */      c_goto(0x00, 0x04)
+    /* 1dfd */      c_iconst_0()
+    /* 1dfe */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:52
+    /* 1e01 */      c_lload_0()
+    /* 1e02 */      c_ldc2_w(0x00, 0x54)
+    /* 1e05 */      c_ldiv()
+    /* 1e06 */      c_ldc2_w(0x00, 0x56)
+    /* 1e09 */      c_lcmp()
+    /* 1e0a */      c_ifne(0x00, 0x07)
+    /* 1e0d */      c_iconst_1()
+    /* 1e0e */      c_goto(0x00, 0x04)
+    /* 1e11 */      c_iconst_0()
+    /* 1e12 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:53
+    /* 1e15 */      c_lload_0()
+    /* 1e16 */      c_ldc2_w(0x00, 0x58)
+    /* 1e19 */      c_ldiv()
+    /* 1e1a */      c_lconst_1()
+    /* 1e1b */      c_lcmp()
+    /* 1e1c */      c_ifne(0x00, 0x07)
+    /* 1e1f */      c_iconst_1()
+    /* 1e20 */      c_goto(0x00, 0x04)
+    /* 1e23 */      c_iconst_0()
+    /* 1e24 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test12#()V:54
+    /* 1e27 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test13#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test13#()V:58
+    /* 1e28 */      c_ldc2_w(0x00, 0x5a)
+    /* 1e2b */      c_lstore_0()
+
+    // thinj/regression/LongTest#test13#()V:59
+    /* 1e2c */      c_lload_0()
+    /* 1e2d */      c_ldc2_w(0x00, 0x13)
+    /* 1e30 */      c_ldiv()
+    /* 1e31 */      c_ldc2_w(0x00, 0x5c)
+    /* 1e34 */      c_lcmp()
+    /* 1e35 */      c_ifne(0x00, 0x07)
+    /* 1e38 */      c_iconst_1()
+    /* 1e39 */      c_goto(0x00, 0x04)
+    /* 1e3c */      c_iconst_0()
+    /* 1e3d */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:60
+    /* 1e40 */      c_lload_0()
+    /* 1e41 */      c_ldc2_w(0x00, 0x18)
+    /* 1e44 */      c_ldiv()
+    /* 1e45 */      c_ldc2_w(0x00, 0x5e)
+    /* 1e48 */      c_lcmp()
+    /* 1e49 */      c_ifne(0x00, 0x07)
+    /* 1e4c */      c_iconst_1()
+    /* 1e4d */      c_goto(0x00, 0x04)
+    /* 1e50 */      c_iconst_0()
+    /* 1e51 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:62
+    /* 1e54 */      c_ldc2_w(0x00, 0x60)
+    /* 1e57 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test13#()V:63
+    /* 1e58 */      c_lload_0()
+    /* 1e59 */      c_ldc2_w(0x00, 0x13)
+    /* 1e5c */      c_ldiv()
+    /* 1e5d */      c_ldc2_w(0x00, 0x5a)
+    /* 1e60 */      c_lcmp()
+    /* 1e61 */      c_ifne(0x00, 0x07)
+    /* 1e64 */      c_iconst_1()
+    /* 1e65 */      c_goto(0x00, 0x04)
+    /* 1e68 */      c_iconst_0()
+    /* 1e69 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:64
+    /* 1e6c */      c_lload_0()
+    /* 1e6d */      c_ldc2_w(0x00, 0x18)
+    /* 1e70 */      c_ldiv()
+    /* 1e71 */      c_ldc2_w(0x00, 0x5c)
+    /* 1e74 */      c_lcmp()
+    /* 1e75 */      c_ifne(0x00, 0x07)
+    /* 1e78 */      c_iconst_1()
+    /* 1e79 */      c_goto(0x00, 0x04)
+    /* 1e7c */      c_iconst_0()
+    /* 1e7d */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:67
+    /* 1e80 */      c_ldc2_w(0x00, 0x62)
+    /* 1e83 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test13#()V:68
+    /* 1e84 */      c_lload_0()
+    /* 1e85 */      c_ldc2_w(0x00, 0x13)
+    /* 1e88 */      c_ldiv()
+    /* 1e89 */      c_ldc2_w(0x00, 0x64)
+    /* 1e8c */      c_lcmp()
+    /* 1e8d */      c_ifne(0x00, 0x07)
+    /* 1e90 */      c_iconst_1()
+    /* 1e91 */      c_goto(0x00, 0x04)
+    /* 1e94 */      c_iconst_0()
+    /* 1e95 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:69
+    /* 1e98 */      c_lload_0()
+    /* 1e99 */      c_ldc2_w(0x00, 0x18)
+    /* 1e9c */      c_ldiv()
+    /* 1e9d */      c_ldc2_w(0x00, 0x66)
+    /* 1ea0 */      c_lcmp()
+    /* 1ea1 */      c_ifne(0x00, 0x07)
+    /* 1ea4 */      c_iconst_1()
+    /* 1ea5 */      c_goto(0x00, 0x04)
+    /* 1ea8 */      c_iconst_0()
+    /* 1ea9 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:70
+    /* 1eac */      c_lload_0()
+    /* 1ead */      c_ldc2_w(0x00, 0x24)
+    /* 1eb0 */      c_ldiv()
+    /* 1eb1 */      c_ldc2_w(0x00, 0x68)
+    /* 1eb4 */      c_lcmp()
+    /* 1eb5 */      c_ifne(0x00, 0x07)
+    /* 1eb8 */      c_iconst_1()
+    /* 1eb9 */      c_goto(0x00, 0x04)
+    /* 1ebc */      c_iconst_0()
+    /* 1ebd */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:71
+    /* 1ec0 */      c_lload_0()
+    /* 1ec1 */      c_ldc2_w(0x00, 0x28)
+    /* 1ec4 */      c_ldiv()
+    /* 1ec5 */      c_ldc2_w(0x00, 0x6a)
+    /* 1ec8 */      c_lcmp()
+    /* 1ec9 */      c_ifne(0x00, 0x07)
+    /* 1ecc */      c_iconst_1()
+    /* 1ecd */      c_goto(0x00, 0x04)
+    /* 1ed0 */      c_iconst_0()
+    /* 1ed1 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:72
+    /* 1ed4 */      c_lload_0()
+    /* 1ed5 */      c_ldc2_w(0x00, 0x2c)
+    /* 1ed8 */      c_ldiv()
+    /* 1ed9 */      c_ldc2_w(0x00, 0x6c)
+    /* 1edc */      c_lcmp()
+    /* 1edd */      c_ifne(0x00, 0x07)
+    /* 1ee0 */      c_iconst_1()
+    /* 1ee1 */      c_goto(0x00, 0x04)
+    /* 1ee4 */      c_iconst_0()
+    /* 1ee5 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:73
+    /* 1ee8 */      c_lload_0()
+    /* 1ee9 */      c_ldc2_w(0x00, 0x30)
+    /* 1eec */      c_ldiv()
+    /* 1eed */      c_ldc2_w(0x00, 0x6e)
+    /* 1ef0 */      c_lcmp()
+    /* 1ef1 */      c_ifne(0x00, 0x07)
+    /* 1ef4 */      c_iconst_1()
+    /* 1ef5 */      c_goto(0x00, 0x04)
+    /* 1ef8 */      c_iconst_0()
+    /* 1ef9 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:74
+    /* 1efc */      c_lload_0()
+    /* 1efd */      c_ldc2_w(0x00, 0x34)
+    /* 1f00 */      c_ldiv()
+    /* 1f01 */      c_ldc2_w(0x00, 0x70)
+    /* 1f04 */      c_lcmp()
+    /* 1f05 */      c_ifne(0x00, 0x07)
+    /* 1f08 */      c_iconst_1()
+    /* 1f09 */      c_goto(0x00, 0x04)
+    /* 1f0c */      c_iconst_0()
+    /* 1f0d */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:75
+    /* 1f10 */      c_lload_0()
+    /* 1f11 */      c_ldc2_w(0x00, 0x38)
+    /* 1f14 */      c_ldiv()
+    /* 1f15 */      c_ldc2_w(0x00, 0x60)
+    /* 1f18 */      c_lcmp()
+    /* 1f19 */      c_ifne(0x00, 0x07)
+    /* 1f1c */      c_iconst_1()
+    /* 1f1d */      c_goto(0x00, 0x04)
+    /* 1f20 */      c_iconst_0()
+    /* 1f21 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:76
+    /* 1f24 */      c_lload_0()
+    /* 1f25 */      c_ldc2_w(0x00, 0x3a)
+    /* 1f28 */      c_ldiv()
+    /* 1f29 */      c_ldc2_w(0x00, 0x5a)
+    /* 1f2c */      c_lcmp()
+    /* 1f2d */      c_ifne(0x00, 0x07)
+    /* 1f30 */      c_iconst_1()
+    /* 1f31 */      c_goto(0x00, 0x04)
+    /* 1f34 */      c_iconst_0()
+    /* 1f35 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:77
+    /* 1f38 */      c_lload_0()
+    /* 1f39 */      c_ldc2_w(0x00, 0x3c)
+    /* 1f3c */      c_ldiv()
+    /* 1f3d */      c_ldc2_w(0x00, 0x5c)
+    /* 1f40 */      c_lcmp()
+    /* 1f41 */      c_ifne(0x00, 0x07)
+    /* 1f44 */      c_iconst_1()
+    /* 1f45 */      c_goto(0x00, 0x04)
+    /* 1f48 */      c_iconst_0()
+    /* 1f49 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:78
+    /* 1f4c */      c_lload_0()
+    /* 1f4d */      c_ldc2_w(0x00, 0x3e)
+    /* 1f50 */      c_ldiv()
+    /* 1f51 */      c_ldc2_w(0x00, 0x5e)
+    /* 1f54 */      c_lcmp()
+    /* 1f55 */      c_ifne(0x00, 0x07)
+    /* 1f58 */      c_iconst_1()
+    /* 1f59 */      c_goto(0x00, 0x04)
+    /* 1f5c */      c_iconst_0()
+    /* 1f5d */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:79
+    /* 1f60 */      c_lload_0()
+    /* 1f61 */      c_ldc2_w(0x00, 0x40)
+    /* 1f64 */      c_ldiv()
+    /* 1f65 */      c_ldc2_w(0x00, 0x72)
+    /* 1f68 */      c_lcmp()
+    /* 1f69 */      c_ifne(0x00, 0x07)
+    /* 1f6c */      c_iconst_1()
+    /* 1f6d */      c_goto(0x00, 0x04)
+    /* 1f70 */      c_iconst_0()
+    /* 1f71 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:80
+    /* 1f74 */      c_lload_0()
+    /* 1f75 */      c_ldc2_w(0x00, 0x44)
+    /* 1f78 */      c_ldiv()
+    /* 1f79 */      c_ldc2_w(0x00, 0x74)
+    /* 1f7c */      c_lcmp()
+    /* 1f7d */      c_ifne(0x00, 0x07)
+    /* 1f80 */      c_iconst_1()
+    /* 1f81 */      c_goto(0x00, 0x04)
+    /* 1f84 */      c_iconst_0()
+    /* 1f85 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:81
+    /* 1f88 */      c_lload_0()
+    /* 1f89 */      c_ldc2_w(0x00, 0x48)
+    /* 1f8c */      c_ldiv()
+    /* 1f8d */      c_ldc2_w(0x00, 0x76)
+    /* 1f90 */      c_lcmp()
+    /* 1f91 */      c_ifne(0x00, 0x07)
+    /* 1f94 */      c_iconst_1()
+    /* 1f95 */      c_goto(0x00, 0x04)
+    /* 1f98 */      c_iconst_0()
+    /* 1f99 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:82
+    /* 1f9c */      c_lload_0()
+    /* 1f9d */      c_ldc2_w(0x00, 0x4c)
+    /* 1fa0 */      c_ldiv()
+    /* 1fa1 */      c_ldc2_w(0x00, 0x78)
+    /* 1fa4 */      c_lcmp()
+    /* 1fa5 */      c_ifne(0x00, 0x07)
+    /* 1fa8 */      c_iconst_1()
+    /* 1fa9 */      c_goto(0x00, 0x04)
+    /* 1fac */      c_iconst_0()
+    /* 1fad */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:83
+    /* 1fb0 */      c_lload_0()
+    /* 1fb1 */      c_ldc2_w(0x00, 0x50)
+    /* 1fb4 */      c_ldiv()
+    /* 1fb5 */      c_ldc2_w(0x00, 0x7a)
+    /* 1fb8 */      c_lcmp()
+    /* 1fb9 */      c_ifne(0x00, 0x07)
+    /* 1fbc */      c_iconst_1()
+    /* 1fbd */      c_goto(0x00, 0x04)
+    /* 1fc0 */      c_iconst_0()
+    /* 1fc1 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:84
+    /* 1fc4 */      c_lload_0()
+    /* 1fc5 */      c_ldc2_w(0x00, 0x54)
+    /* 1fc8 */      c_ldiv()
+    /* 1fc9 */      c_ldc2_w(0x00, 0x7c)
+    /* 1fcc */      c_lcmp()
+    /* 1fcd */      c_ifne(0x00, 0x07)
+    /* 1fd0 */      c_iconst_1()
+    /* 1fd1 */      c_goto(0x00, 0x04)
+    /* 1fd4 */      c_iconst_0()
+    /* 1fd5 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:85
+    /* 1fd8 */      c_lload_0()
+    /* 1fd9 */      c_ldc2_w(0x00, 0x58)
+    /* 1fdc */      c_ldiv()
+    /* 1fdd */      c_ldc2_w(0x00, 0x7e)
+    /* 1fe0 */      c_lcmp()
+    /* 1fe1 */      c_ifne(0x00, 0x07)
+    /* 1fe4 */      c_iconst_1()
+    /* 1fe5 */      c_goto(0x00, 0x04)
+    /* 1fe8 */      c_iconst_0()
+    /* 1fe9 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test13#()V:86
+    /* 1fec */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test10#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test10#()V:89
+    /* 1fed */      c_ldc2_w(0x00, 0x80)
+    /* 1ff0 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test10#()V:90
+    /* 1ff1 */      c_ldc2_w(0x00, 0x28)
+    /* 1ff4 */      c_lstore_2()
+
+    // thinj/regression/LongTest#test10#()V:91
+    /* 1ff5 */      c_lload_0()
+    /* 1ff6 */      c_lload_2()
+    /* 1ff7 */      c_ladd()
+    /* 1ff8 */      c_ldc2_w(0x00, 0x82)
+    /* 1ffb */      c_lcmp()
+    /* 1ffc */      c_ifne(0x00, 0x07)
+    /* 1fff */      c_iconst_1()
+    /* 2000 */      c_goto(0x00, 0x04)
+    /* 2003 */      c_iconst_0()
+    /* 2004 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:92
+    /* 2007 */      c_lload_0()
+    /* 2008 */      c_lload_2()
+    /* 2009 */      c_lsub()
+    /* 200a */      c_ldc2_w(0x00, 0x84)
+    /* 200d */      c_lcmp()
+    /* 200e */      c_ifne(0x00, 0x07)
+    /* 2011 */      c_iconst_1()
+    /* 2012 */      c_goto(0x00, 0x04)
+    /* 2015 */      c_iconst_0()
+    /* 2016 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:94
+    /* 2019 */      c_ldc2_w(0x00, 0x2e)
+    /* 201c */      c_lstore_0()
+
+    // thinj/regression/LongTest#test10#()V:95
+    /* 201d */      c_ldc2_w(0x00, 0x86)
+    /* 2020 */      c_lstore_2()
+
+    // thinj/regression/LongTest#test10#()V:96
+    /* 2021 */      c_lload_0()
+    /* 2022 */      c_lload_2()
+    /* 2023 */      c_ladd()
+    /* 2024 */      c_ldc2_w(0x00, 0x88)
+    /* 2027 */      c_lcmp()
+    /* 2028 */      c_ifne(0x00, 0x07)
+    /* 202b */      c_iconst_1()
+    /* 202c */      c_goto(0x00, 0x04)
+    /* 202f */      c_iconst_0()
+    /* 2030 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:97
+    /* 2033 */      c_lload_0()
+    /* 2034 */      c_lload_2()
+    /* 2035 */      c_lsub()
+    /* 2036 */      c_ldc2_w(0x00, 0x8a)
+    /* 2039 */      c_lcmp()
+    /* 203a */      c_ifne(0x00, 0x07)
+    /* 203d */      c_iconst_1()
+    /* 203e */      c_goto(0x00, 0x04)
+    /* 2041 */      c_iconst_0()
+    /* 2042 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:99
+    /* 2045 */      c_ldc2_w(0x00, 0x8c)
+    /* 2048 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test10#()V:100
+    /* 2049 */      c_ldc2_w(0x00, 0x8e)
+    /* 204c */      c_lstore_2()
+
+    // thinj/regression/LongTest#test10#()V:101
+    /* 204d */      c_lload_0()
+    /* 204e */      c_lload_2()
+    /* 204f */      c_lmul()
+    /* 2050 */      c_ldc2_w(0x00, 0x90)
+    /* 2053 */      c_lcmp()
+    /* 2054 */      c_ifne(0x00, 0x07)
+    /* 2057 */      c_iconst_1()
+    /* 2058 */      c_goto(0x00, 0x04)
+    /* 205b */      c_iconst_0()
+    /* 205c */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:102
+    /* 205f */      c_lload_0()
+    /* 2060 */      c_lload_2()
+    /* 2061 */      c_ldiv()
+    /* 2062 */      c_ldc2_w(0x00, 0x92)
+    /* 2065 */      c_lcmp()
+    /* 2066 */      c_ifne(0x00, 0x07)
+    /* 2069 */      c_iconst_1()
+    /* 206a */      c_goto(0x00, 0x04)
+    /* 206d */      c_iconst_0()
+    /* 206e */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:103
+    /* 2071 */      c_lload_0()
+    /* 2072 */      c_lload_2()
+    /* 2073 */      c_lrem()
+    /* 2074 */      c_ldc2_w(0x00, 0x94)
+    /* 2077 */      c_lcmp()
+    /* 2078 */      c_ifne(0x00, 0x07)
+    /* 207b */      c_iconst_1()
+    /* 207c */      c_goto(0x00, 0x04)
+    /* 207f */      c_iconst_0()
+    /* 2080 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:106
+    /* 2083 */      c_ldc2_w(0x00, 0x96)
+    /* 2086 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test10#()V:107
+    /* 2087 */      c_ldc2_w(0x00, 0x98)
+    /* 208a */      c_lstore_2()
+
+    // thinj/regression/LongTest#test10#()V:108
+    /* 208b */      c_lload_0()
+    /* 208c */      c_lload_2()
+    /* 208d */      c_land()
+    /* 208e */      c_lload_2()
+    /* 208f */      c_lcmp()
+    /* 2090 */      c_ifne(0x00, 0x07)
+    /* 2093 */      c_iconst_1()
+    /* 2094 */      c_goto(0x00, 0x04)
+    /* 2097 */      c_iconst_0()
+    /* 2098 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:109
+    /* 209b */      c_lload_0()
+    /* 209c */      c_lload_2()
+    /* 209d */      c_lor()
+    /* 209e */      c_lload_0()
+    /* 209f */      c_lcmp()
+    /* 20a0 */      c_ifne(0x00, 0x07)
+    /* 20a3 */      c_iconst_1()
+    /* 20a4 */      c_goto(0x00, 0x04)
+    /* 20a7 */      c_iconst_0()
+    /* 20a8 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:110
+    /* 20ab */      c_lload_0()
+    /* 20ac */      c_lload_2()
+    /* 20ad */      c_lxor()
+    /* 20ae */      c_ldc2_w(0x00, 0x9a)
+    /* 20b1 */      c_lcmp()
+    /* 20b2 */      c_ifne(0x00, 0x07)
+    /* 20b5 */      c_iconst_1()
+    /* 20b6 */      c_goto(0x00, 0x04)
+    /* 20b9 */      c_iconst_0()
+    /* 20ba */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:111
+    /* 20bd */      c_lload_0()
+    /* 20be */      c_ldc2_w(0x00, 0x7e)
+    /* 20c1 */      c_lxor()
+    /* 20c2 */      c_ldc2_w(0x00, 0x9c)
+    /* 20c5 */      c_lcmp()
+    /* 20c6 */      c_ifne(0x00, 0x07)
+    /* 20c9 */      c_iconst_1()
+    /* 20ca */      c_goto(0x00, 0x04)
+    /* 20cd */      c_iconst_0()
+    /* 20ce */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:113
+    /* 20d1 */      c_ldc2_w(0x00, 0x1a)
+    /* 20d4 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test10#()V:114
+    /* 20d5 */      c_lload_0()
+    /* 20d6 */      c_lneg()
+    /* 20d7 */      c_ldc2_w(0x00, 0x5e)
+    /* 20da */      c_lcmp()
+    /* 20db */      c_ifne(0x00, 0x07)
+    /* 20de */      c_iconst_1()
+    /* 20df */      c_goto(0x00, 0x04)
+    /* 20e2 */      c_iconst_0()
+    /* 20e3 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:116
+    /* 20e6 */      c_ldc2_w(0x00, 0x96)
+    /* 20e9 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test10#()V:120
+    /* 20ea */      c_lload_0()
+    /* 20eb */      c_iconst_4()
+    /* 20ec */      c_lshl()
+    /* 20ed */      c_ldc2_w(0x00, 0x9e)
+    /* 20f0 */      c_lcmp()
+    /* 20f1 */      c_ifne(0x00, 0x07)
+    /* 20f4 */      c_iconst_1()
+    /* 20f5 */      c_goto(0x00, 0x04)
+    /* 20f8 */      c_iconst_0()
+    /* 20f9 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:121
+    /* 20fc */      c_lload_0()
+    /* 20fd */      c_iconst_4()
+    /* 20fe */      c_lshr()
+    /* 20ff */      c_ldc2_w(0x00, 0xa0)
+    /* 2102 */      c_lcmp()
+    /* 2103 */      c_ifne(0x00, 0x07)
+    /* 2106 */      c_iconst_1()
+    /* 2107 */      c_goto(0x00, 0x04)
+    /* 210a */      c_iconst_0()
+    /* 210b */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:123
+    /* 210e */      c_ldc2_w(0x00, 0xa2)
+    /* 2111 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test10#()V:124
+    /* 2112 */      c_lload_0()
+    /* 2113 */      c_iconst_4()
+    /* 2114 */      c_lushr()
+    /* 2115 */      c_ldc2_w(0x00, 0xa4)
+    /* 2118 */      c_lcmp()
+    /* 2119 */      c_ifne(0x00, 0x07)
+    /* 211c */      c_iconst_1()
+    /* 211d */      c_goto(0x00, 0x04)
+    /* 2120 */      c_iconst_0()
+    /* 2121 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:125
+    /* 2124 */      c_lload_0()
+    /* 2125 */      c_iconst_4()
+    /* 2126 */      c_lshr()
+    /* 2127 */      c_ldc2_w(0x00, 0xa6)
+    /* 212a */      c_lcmp()
+    /* 212b */      c_ifne(0x00, 0x07)
+    /* 212e */      c_iconst_1()
+    /* 212f */      c_goto(0x00, 0x04)
+    /* 2132 */      c_iconst_0()
+    /* 2133 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:127
+    /* 2136 */      c_ldc2_w(0x00, 0xa8)
+    /* 2139 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test10#()V:128
+    /* 213a */      c_lload_0()
+    /* 213b */      c_iconst_4()
+    /* 213c */      c_lushr()
+    /* 213d */      c_ldc2_w(0x00, 0xaa)
+    /* 2140 */      c_lcmp()
+    /* 2141 */      c_ifne(0x00, 0x07)
+    /* 2144 */      c_iconst_1()
+    /* 2145 */      c_goto(0x00, 0x04)
+    /* 2148 */      c_iconst_0()
+    /* 2149 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:129
+    /* 214c */      c_lload_0()
+    /* 214d */      c_iconst_4()
+    /* 214e */      c_lshr()
+    /* 214f */      c_ldc2_w(0x00, 0xac)
+    /* 2152 */      c_lcmp()
+    /* 2153 */      c_ifne(0x00, 0x07)
+    /* 2156 */      c_iconst_1()
+    /* 2157 */      c_goto(0x00, 0x04)
+    /* 215a */      c_iconst_0()
+    /* 215b */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:131
+    /* 215e */      c_bipush(0x38)
+    /* 2160 */      c_istore(0x04)
+
+    // thinj/regression/LongTest#test10#()V:132
+    /* 2162 */      c_iload(0x04)
+    /* 2164 */      c_i2l()
+    /* 2165 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test10#()V:133
+    /* 2166 */      c_lload_0()
+    /* 2167 */      c_ldc2_w(0x00, 0xae)
+    /* 216a */      c_lcmp()
+    /* 216b */      c_ifne(0x00, 0x07)
+    /* 216e */      c_iconst_1()
+    /* 216f */      c_goto(0x00, 0x04)
+    /* 2172 */      c_iconst_0()
+    /* 2173 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:135
+    /* 2176 */      c_sipush(0x01, 0x3d)
+    /* 2179 */      c_istore(0x05)
+
+    // thinj/regression/LongTest#test10#()V:136
+    /* 217b */      c_iload(0x05)
+    /* 217d */      c_i2l()
+    /* 217e */      c_lstore_0()
+
+    // thinj/regression/LongTest#test10#()V:137
+    /* 217f */      c_lload_0()
+    /* 2180 */      c_ldc2_w(0x00, 0xb0)
+    /* 2183 */      c_lcmp()
+    /* 2184 */      c_ifne(0x00, 0x07)
+    /* 2187 */      c_iconst_1()
+    /* 2188 */      c_goto(0x00, 0x04)
+    /* 218b */      c_iconst_0()
+    /* 218c */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test10#()V:138
+    /* 218f */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test1#()V:158
+    /* 2190 */      c_ldc2_w(0x00, 0xb2)
+    /* 2193 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test1#()V:159
+    /* 2194 */      c_ldc(0xb4)
+    /* 2196 */      c_istore_2()
+
+    // thinj/regression/LongTest#test1#()V:160
+    /* 2197 */      c_lload_0()
+    /* 2198 */      c_ldc2_w(0x00, 0xb2)
+    /* 219b */      c_lcmp()
+    /* 219c */      c_ifne(0x00, 0x07)
+    /* 219f */      c_iconst_1()
+    /* 21a0 */      c_goto(0x00, 0x04)
+    /* 21a3 */      c_iconst_0()
+    /* 21a4 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test1#()V:161
+    /* 21a7 */      c_lload_0()
+    /* 21a8 */      c_ldc2_w(0x00, 0xb5)
+    /* 21ab */      c_lcmp()
+    /* 21ac */      c_ifge(0x00, 0x07)
+    /* 21af */      c_iconst_1()
+    /* 21b0 */      c_goto(0x00, 0x04)
+    /* 21b3 */      c_iconst_0()
+    /* 21b4 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test1#()V:162
+    /* 21b7 */      c_lload_0()
+    /* 21b8 */      c_ldc2_w(0x00, 0x80)
+    /* 21bb */      c_lcmp()
+    /* 21bc */      c_ifle(0x00, 0x07)
+    /* 21bf */      c_iconst_1()
+    /* 21c0 */      c_goto(0x00, 0x04)
+    /* 21c3 */      c_iconst_0()
+    /* 21c4 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test1#()V:164
+    /* 21c7 */      c_ldc2_w(0x00, 0xb7)
+    /* 21ca */      c_lstore_0()
+
+    // thinj/regression/LongTest#test1#()V:166
+    /* 21cb */      c_lload_0()
+    /* 21cc */      c_ldc2_w(0x00, 0xb7)
+    /* 21cf */      c_lcmp()
+    /* 21d0 */      c_ifne(0x00, 0x07)
+    /* 21d3 */      c_iconst_1()
+    /* 21d4 */      c_goto(0x00, 0x04)
+    /* 21d7 */      c_iconst_0()
+    /* 21d8 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test1#()V:167
+    /* 21db */      c_lload_0()
+    /* 21dc */      c_ldc2_w(0x00, 0xb9)
+    /* 21df */      c_lcmp()
+    /* 21e0 */      c_ifge(0x00, 0x07)
+    /* 21e3 */      c_iconst_1()
+    /* 21e4 */      c_goto(0x00, 0x04)
+    /* 21e7 */      c_iconst_0()
+    /* 21e8 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test1#()V:168
+    /* 21eb */      c_lload_0()
+    /* 21ec */      c_ldc2_w(0x00, 0xbb)
+    /* 21ef */      c_lcmp()
+    /* 21f0 */      c_ifle(0x00, 0x07)
+    /* 21f3 */      c_iconst_1()
+    /* 21f4 */      c_goto(0x00, 0x04)
+    /* 21f7 */      c_iconst_0()
+    /* 21f8 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test1#()V:169
+    /* 21fb */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test2#()V:173
+    /* 21fc */      c_ldc(0xb4)
+    /* 21fe */      c_istore_0()
+
+    // thinj/regression/LongTest#test2#()V:174
+    /* 21ff */      c_ldc2_w(0x00, 0xb2)
+    /* 2202 */      c_lstore_1()
+
+    // thinj/regression/LongTest#test2#()V:176
+    /* 2203 */      c_lload_1()
+    /* 2204 */      c_ldc2_w(0x00, 0xb2)
+    /* 2207 */      c_lcmp()
+    /* 2208 */      c_ifne(0x00, 0x07)
+    /* 220b */      c_iconst_1()
+    /* 220c */      c_goto(0x00, 0x04)
+    /* 220f */      c_iconst_0()
+    /* 2210 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test2#()V:177
+    /* 2213 */      c_lload_1()
+    /* 2214 */      c_ldc2_w(0x00, 0xb5)
+    /* 2217 */      c_lcmp()
+    /* 2218 */      c_ifge(0x00, 0x07)
+    /* 221b */      c_iconst_1()
+    /* 221c */      c_goto(0x00, 0x04)
+    /* 221f */      c_iconst_0()
+    /* 2220 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test2#()V:178
+    /* 2223 */      c_lload_1()
+    /* 2224 */      c_ldc2_w(0x00, 0x80)
+    /* 2227 */      c_lcmp()
+    /* 2228 */      c_ifle(0x00, 0x07)
+    /* 222b */      c_iconst_1()
+    /* 222c */      c_goto(0x00, 0x04)
+    /* 222f */      c_iconst_0()
+    /* 2230 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test2#()V:180
+    /* 2233 */      c_ldc2_w(0x00, 0xb7)
+    /* 2236 */      c_lstore_1()
+
+    // thinj/regression/LongTest#test2#()V:182
+    /* 2237 */      c_lload_1()
+    /* 2238 */      c_ldc2_w(0x00, 0xb7)
+    /* 223b */      c_lcmp()
+    /* 223c */      c_ifne(0x00, 0x07)
+    /* 223f */      c_iconst_1()
+    /* 2240 */      c_goto(0x00, 0x04)
+    /* 2243 */      c_iconst_0()
+    /* 2244 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test2#()V:183
+    /* 2247 */      c_lload_1()
+    /* 2248 */      c_ldc2_w(0x00, 0xb9)
+    /* 224b */      c_lcmp()
+    /* 224c */      c_ifge(0x00, 0x07)
+    /* 224f */      c_iconst_1()
+    /* 2250 */      c_goto(0x00, 0x04)
+    /* 2253 */      c_iconst_0()
+    /* 2254 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test2#()V:184
+    /* 2257 */      c_lload_1()
+    /* 2258 */      c_ldc2_w(0x00, 0xbb)
+    /* 225b */      c_lcmp()
+    /* 225c */      c_ifle(0x00, 0x07)
+    /* 225f */      c_iconst_1()
+    /* 2260 */      c_goto(0x00, 0x04)
+    /* 2263 */      c_iconst_0()
+    /* 2264 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test2#()V:185
+    /* 2267 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test3#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test3#()V:189
+    /* 2268 */      c_ldc(0xb4)
+    /* 226a */      c_istore_0()
+
+    // thinj/regression/LongTest#test3#()V:190
+    /* 226b */      c_ldc(0xb4)
+    /* 226d */      c_istore_1()
+
+    // thinj/regression/LongTest#test3#()V:191
+    /* 226e */      c_ldc2_w(0x00, 0xb2)
+    /* 2271 */      c_lstore_2()
+
+    // thinj/regression/LongTest#test3#()V:193
+    /* 2272 */      c_lload_2()
+    /* 2273 */      c_ldc2_w(0x00, 0xb2)
+    /* 2276 */      c_lcmp()
+    /* 2277 */      c_ifne(0x00, 0x07)
+    /* 227a */      c_iconst_1()
+    /* 227b */      c_goto(0x00, 0x04)
+    /* 227e */      c_iconst_0()
+    /* 227f */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test3#()V:194
+    /* 2282 */      c_lload_2()
+    /* 2283 */      c_ldc2_w(0x00, 0xb5)
+    /* 2286 */      c_lcmp()
+    /* 2287 */      c_ifge(0x00, 0x07)
+    /* 228a */      c_iconst_1()
+    /* 228b */      c_goto(0x00, 0x04)
+    /* 228e */      c_iconst_0()
+    /* 228f */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test3#()V:195
+    /* 2292 */      c_lload_2()
+    /* 2293 */      c_ldc2_w(0x00, 0x80)
+    /* 2296 */      c_lcmp()
+    /* 2297 */      c_ifle(0x00, 0x07)
+    /* 229a */      c_iconst_1()
+    /* 229b */      c_goto(0x00, 0x04)
+    /* 229e */      c_iconst_0()
+    /* 229f */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test3#()V:197
+    /* 22a2 */      c_ldc2_w(0x00, 0xb7)
+    /* 22a5 */      c_lstore_2()
+
+    // thinj/regression/LongTest#test3#()V:199
+    /* 22a6 */      c_lload_2()
+    /* 22a7 */      c_ldc2_w(0x00, 0xb7)
+    /* 22aa */      c_lcmp()
+    /* 22ab */      c_ifne(0x00, 0x07)
+    /* 22ae */      c_iconst_1()
+    /* 22af */      c_goto(0x00, 0x04)
+    /* 22b2 */      c_iconst_0()
+    /* 22b3 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test3#()V:200
+    /* 22b6 */      c_lload_2()
+    /* 22b7 */      c_ldc2_w(0x00, 0xb9)
+    /* 22ba */      c_lcmp()
+    /* 22bb */      c_ifge(0x00, 0x07)
+    /* 22be */      c_iconst_1()
+    /* 22bf */      c_goto(0x00, 0x04)
+    /* 22c2 */      c_iconst_0()
+    /* 22c3 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test3#()V:201
+    /* 22c6 */      c_lload_2()
+    /* 22c7 */      c_ldc2_w(0x00, 0xbb)
+    /* 22ca */      c_lcmp()
+    /* 22cb */      c_ifle(0x00, 0x07)
+    /* 22ce */      c_iconst_1()
+    /* 22cf */      c_goto(0x00, 0x04)
+    /* 22d2 */      c_iconst_0()
+    /* 22d3 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test3#()V:202
+    /* 22d6 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test4#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test4#()V:206
+    /* 22d7 */      c_ldc(0xb4)
+    /* 22d9 */      c_istore_0()
+
+    // thinj/regression/LongTest#test4#()V:207
+    /* 22da */      c_ldc(0xb4)
+    /* 22dc */      c_istore_1()
+
+    // thinj/regression/LongTest#test4#()V:208
+    /* 22dd */      c_ldc(0xb4)
+    /* 22df */      c_istore_2()
+
+    // thinj/regression/LongTest#test4#()V:209
+    /* 22e0 */      c_ldc2_w(0x00, 0xb2)
+    /* 22e3 */      c_lstore_3()
+
+    // thinj/regression/LongTest#test4#()V:211
+    /* 22e4 */      c_lload_3()
+    /* 22e5 */      c_ldc2_w(0x00, 0xb2)
+    /* 22e8 */      c_lcmp()
+    /* 22e9 */      c_ifne(0x00, 0x07)
+    /* 22ec */      c_iconst_1()
+    /* 22ed */      c_goto(0x00, 0x04)
+    /* 22f0 */      c_iconst_0()
+    /* 22f1 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test4#()V:212
+    /* 22f4 */      c_lload_3()
+    /* 22f5 */      c_ldc2_w(0x00, 0xb5)
+    /* 22f8 */      c_lcmp()
+    /* 22f9 */      c_ifge(0x00, 0x07)
+    /* 22fc */      c_iconst_1()
+    /* 22fd */      c_goto(0x00, 0x04)
+    /* 2300 */      c_iconst_0()
+    /* 2301 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test4#()V:213
+    /* 2304 */      c_lload_3()
+    /* 2305 */      c_ldc2_w(0x00, 0x80)
+    /* 2308 */      c_lcmp()
+    /* 2309 */      c_ifle(0x00, 0x07)
+    /* 230c */      c_iconst_1()
+    /* 230d */      c_goto(0x00, 0x04)
+    /* 2310 */      c_iconst_0()
+    /* 2311 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test4#()V:215
+    /* 2314 */      c_ldc2_w(0x00, 0xb7)
+    /* 2317 */      c_lstore_3()
+
+    // thinj/regression/LongTest#test4#()V:217
+    /* 2318 */      c_lload_3()
+    /* 2319 */      c_ldc2_w(0x00, 0xb7)
+    /* 231c */      c_lcmp()
+    /* 231d */      c_ifne(0x00, 0x07)
+    /* 2320 */      c_iconst_1()
+    /* 2321 */      c_goto(0x00, 0x04)
+    /* 2324 */      c_iconst_0()
+    /* 2325 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test4#()V:218
+    /* 2328 */      c_lload_3()
+    /* 2329 */      c_ldc2_w(0x00, 0xb9)
+    /* 232c */      c_lcmp()
+    /* 232d */      c_ifge(0x00, 0x07)
+    /* 2330 */      c_iconst_1()
+    /* 2331 */      c_goto(0x00, 0x04)
+    /* 2334 */      c_iconst_0()
+    /* 2335 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test4#()V:219
+    /* 2338 */      c_lload_3()
+    /* 2339 */      c_ldc2_w(0x00, 0xbb)
+    /* 233c */      c_lcmp()
+    /* 233d */      c_ifle(0x00, 0x07)
+    /* 2340 */      c_iconst_1()
+    /* 2341 */      c_goto(0x00, 0x04)
+    /* 2344 */      c_iconst_0()
+    /* 2345 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test4#()V:220
+    /* 2348 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test5#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test5#()V:224
+    /* 2349 */      c_ldc(0xb4)
+    /* 234b */      c_istore_0()
+
+    // thinj/regression/LongTest#test5#()V:225
+    /* 234c */      c_ldc(0xb4)
+    /* 234e */      c_istore_1()
+
+    // thinj/regression/LongTest#test5#()V:226
+    /* 234f */      c_ldc(0xb4)
+    /* 2351 */      c_istore_2()
+
+    // thinj/regression/LongTest#test5#()V:227
+    /* 2352 */      c_ldc(0xb4)
+    /* 2354 */      c_istore_3()
+
+    // thinj/regression/LongTest#test5#()V:228
+    /* 2355 */      c_ldc2_w(0x00, 0xb2)
+    /* 2358 */      c_lstore(0x04)
+
+    // thinj/regression/LongTest#test5#()V:230
+    /* 235a */      c_lload(0x04)
+    /* 235c */      c_ldc2_w(0x00, 0xb2)
+    /* 235f */      c_lcmp()
+    /* 2360 */      c_ifne(0x00, 0x07)
+    /* 2363 */      c_iconst_1()
+    /* 2364 */      c_goto(0x00, 0x04)
+    /* 2367 */      c_iconst_0()
+    /* 2368 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test5#()V:231
+    /* 236b */      c_lload(0x04)
+    /* 236d */      c_ldc2_w(0x00, 0xb5)
+    /* 2370 */      c_lcmp()
+    /* 2371 */      c_ifge(0x00, 0x07)
+    /* 2374 */      c_iconst_1()
+    /* 2375 */      c_goto(0x00, 0x04)
+    /* 2378 */      c_iconst_0()
+    /* 2379 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test5#()V:232
+    /* 237c */      c_lload(0x04)
+    /* 237e */      c_ldc2_w(0x00, 0x80)
+    /* 2381 */      c_lcmp()
+    /* 2382 */      c_ifle(0x00, 0x07)
+    /* 2385 */      c_iconst_1()
+    /* 2386 */      c_goto(0x00, 0x04)
+    /* 2389 */      c_iconst_0()
+    /* 238a */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test5#()V:234
+    /* 238d */      c_ldc2_w(0x00, 0xb7)
+    /* 2390 */      c_lstore(0x04)
+
+    // thinj/regression/LongTest#test5#()V:236
+    /* 2392 */      c_lload(0x04)
+    /* 2394 */      c_ldc2_w(0x00, 0xb7)
+    /* 2397 */      c_lcmp()
+    /* 2398 */      c_ifne(0x00, 0x07)
+    /* 239b */      c_iconst_1()
+    /* 239c */      c_goto(0x00, 0x04)
+    /* 239f */      c_iconst_0()
+    /* 23a0 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test5#()V:237
+    /* 23a3 */      c_lload(0x04)
+    /* 23a5 */      c_ldc2_w(0x00, 0xb9)
+    /* 23a8 */      c_lcmp()
+    /* 23a9 */      c_ifge(0x00, 0x07)
+    /* 23ac */      c_iconst_1()
+    /* 23ad */      c_goto(0x00, 0x04)
+    /* 23b0 */      c_iconst_0()
+    /* 23b1 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test5#()V:238
+    /* 23b4 */      c_lload(0x04)
+    /* 23b6 */      c_ldc2_w(0x00, 0xbb)
+    /* 23b9 */      c_lcmp()
+    /* 23ba */      c_ifle(0x00, 0x07)
+    /* 23bd */      c_iconst_1()
+    /* 23be */      c_goto(0x00, 0x04)
+    /* 23c1 */      c_iconst_0()
+    /* 23c2 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test5#()V:239
+    /* 23c5 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test6#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test6#()V:243
+    /* 23c6 */      c_ldc(0xbd)
+    /* 23c8 */      c_istore_0()
+
+    // thinj/regression/LongTest#test6#()V:244
+    /* 23c9 */      c_ldc2_w(0x00, 0xb2)
+    /* 23cc */      c_lstore_1()
+
+    // thinj/regression/LongTest#test6#()V:245
+    /* 23cd */      c_ldc(0xbe)
+    /* 23cf */      c_istore_3()
+
+    // thinj/regression/LongTest#test6#()V:247
+    /* 23d0 */      c_lload_1()
+    /* 23d1 */      c_ldc2_w(0x00, 0xb2)
+    /* 23d4 */      c_lcmp()
+    /* 23d5 */      c_ifne(0x00, 0x07)
+    /* 23d8 */      c_iconst_1()
+    /* 23d9 */      c_goto(0x00, 0x04)
+    /* 23dc */      c_iconst_0()
+    /* 23dd */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test6#()V:248
+    /* 23e0 */      c_iload_0()
+    /* 23e1 */      c_ldc(0xbd)
+    /* 23e3 */      c_if_icmpne(0x00, 0x07)
+    /* 23e6 */      c_iconst_1()
+    /* 23e7 */      c_goto(0x00, 0x04)
+    /* 23ea */      c_iconst_0()
+    /* 23eb */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test6#()V:249
+    /* 23ee */      c_iload_3()
+    /* 23ef */      c_ldc(0xbe)
+    /* 23f1 */      c_if_icmpne(0x00, 0x07)
+    /* 23f4 */      c_iconst_1()
+    /* 23f5 */      c_goto(0x00, 0x04)
+    /* 23f8 */      c_iconst_0()
+    /* 23f9 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test6#()V:250
+    /* 23fc */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test7#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test7#()V:253
+    /* 23fd */      c_ldc2_w(0x00, 0xbf)
+    /* 2400 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test7#()V:254
+    /* 2401 */      c_iconst_0()
+    /* 2402 */      c_lload_0()
+    /* 2403 */      c_sipush(0x0f, 0x6c)
+    /* 2406 */      c_invokestatic(0x00, 0x10)
+
+    // thinj/regression/LongTest#test7#()V:257
+    /* 2409 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test7_1#(ZJI)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:260
+    /* 240a */      c_iload_0()
+    /* 240b */      c_ifne(0x00, 0x07)
+    /* 240e */      c_iconst_1()
+    /* 240f */      c_goto(0x00, 0x04)
+    /* 2412 */      c_iconst_0()
+    /* 2413 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:261
+    /* 2416 */      c_lload_1()
+    /* 2417 */      c_ldc2_w(0x00, 0xbf)
+    /* 241a */      c_lcmp()
+    /* 241b */      c_ifne(0x00, 0x07)
+    /* 241e */      c_iconst_1()
+    /* 241f */      c_goto(0x00, 0x04)
+    /* 2422 */      c_iconst_0()
+    /* 2423 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:262
+    /* 2426 */      c_iload_3()
+    /* 2427 */      c_sipush(0x0f, 0x6c)
+    /* 242a */      c_if_icmpne(0x00, 0x07)
+    /* 242d */      c_iconst_1()
+    /* 242e */      c_goto(0x00, 0x04)
+    /* 2431 */      c_iconst_0()
+    /* 2432 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:264
+    /* 2435 */      c_ldc2_w(0x00, 0xc2)
+    /* 2438 */      c_lstore_1()
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:265
+    /* 2439 */      c_iload_0()
+    /* 243a */      c_ifne(0x00, 0x07)
+    /* 243d */      c_iconst_1()
+    /* 243e */      c_goto(0x00, 0x04)
+    /* 2441 */      c_iconst_0()
+    /* 2442 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:266
+    /* 2445 */      c_lload_1()
+    /* 2446 */      c_ldc2_w(0x00, 0xc2)
+    /* 2449 */      c_lcmp()
+    /* 244a */      c_ifne(0x00, 0x07)
+    /* 244d */      c_iconst_1()
+    /* 244e */      c_goto(0x00, 0x04)
+    /* 2451 */      c_iconst_0()
+    /* 2452 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:267
+    /* 2455 */      c_iload_3()
+    /* 2456 */      c_sipush(0x0f, 0x6c)
+    /* 2459 */      c_if_icmpne(0x00, 0x07)
+    /* 245c */      c_iconst_1()
+    /* 245d */      c_goto(0x00, 0x04)
+    /* 2460 */      c_iconst_0()
+    /* 2461 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:269
+    /* 2464 */      c_iconst_1()
+    /* 2465 */      c_istore_0()
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:270
+    /* 2466 */      c_iload_0()
+    /* 2467 */      c_iconst_1()
+    /* 2468 */      c_if_icmpne(0x00, 0x07)
+    /* 246b */      c_iconst_1()
+    /* 246c */      c_goto(0x00, 0x04)
+    /* 246f */      c_iconst_0()
+    /* 2470 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:271
+    /* 2473 */      c_lload_1()
+    /* 2474 */      c_ldc2_w(0x00, 0xc2)
+    /* 2477 */      c_lcmp()
+    /* 2478 */      c_ifne(0x00, 0x07)
+    /* 247b */      c_iconst_1()
+    /* 247c */      c_goto(0x00, 0x04)
+    /* 247f */      c_iconst_0()
+    /* 2480 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:272
+    /* 2483 */      c_iload_3()
+    /* 2484 */      c_sipush(0x0f, 0x6c)
+    /* 2487 */      c_if_icmpne(0x00, 0x07)
+    /* 248a */      c_iconst_1()
+    /* 248b */      c_goto(0x00, 0x04)
+    /* 248e */      c_iconst_0()
+    /* 248f */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:274
+    /* 2492 */      c_ldc(0xbd)
+    /* 2494 */      c_istore_3()
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:275
+    /* 2495 */      c_iload_0()
+    /* 2496 */      c_iconst_1()
+    /* 2497 */      c_if_icmpne(0x00, 0x07)
+    /* 249a */      c_iconst_1()
+    /* 249b */      c_goto(0x00, 0x04)
+    /* 249e */      c_iconst_0()
+    /* 249f */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:276
+    /* 24a2 */      c_lload_1()
+    /* 24a3 */      c_ldc2_w(0x00, 0xc2)
+    /* 24a6 */      c_lcmp()
+    /* 24a7 */      c_ifne(0x00, 0x07)
+    /* 24aa */      c_iconst_1()
+    /* 24ab */      c_goto(0x00, 0x04)
+    /* 24ae */      c_iconst_0()
+    /* 24af */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:277
+    /* 24b2 */      c_iload_3()
+    /* 24b3 */      c_ldc(0xbd)
+    /* 24b5 */      c_if_icmpne(0x00, 0x07)
+    /* 24b8 */      c_iconst_1()
+    /* 24b9 */      c_goto(0x00, 0x04)
+    /* 24bc */      c_iconst_0()
+    /* 24bd */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test7_1#(ZJI)V:278
+    /* 24c0 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test8#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test8#()V:281
+    /* 24c1 */      c_invokestatic(0x00, 0x11)
+    /* 24c4 */      c_ldc2_w(0x00, 0xc2)
+    /* 24c7 */      c_lcmp()
+    /* 24c8 */      c_ifne(0x00, 0x07)
+    /* 24cb */      c_iconst_1()
+    /* 24cc */      c_goto(0x00, 0x04)
+    /* 24cf */      c_iconst_0()
+    /* 24d0 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test8#()V:282
+    /* 24d3 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test8_1#()J
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test8_1#()J:285
+    /* 24d4 */      c_sipush(0x72, 0xc8)
+    /* 24d7 */      c_istore_0()
+
+    // thinj/regression/LongTest#test8_1#()J:286
+    /* 24d8 */      c_ldc2_w(0x00, 0xc2)
+    /* 24db */      c_lstore_1()
+
+    // thinj/regression/LongTest#test8_1#()J:287
+    /* 24dc */      c_iconst_0()
+    /* 24dd */      c_istore_3()
+
+    // thinj/regression/LongTest#test8_1#()J:289
+    /* 24de */      c_lload_1()
+    /* 24df */      c_lreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test9#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test9#()V:293
+    /* 24e0 */      c_new(0x00, 0xc5)
+    /* 24e3 */      c_dup()
+    /* 24e4 */      c_aconst_null()
+    /* 24e5 */      c_invokespecial(0x00, 0x12)
+    /* 24e8 */      c_astore_0()
+
+    // thinj/regression/LongTest#test9#()V:295
+    /* 24e9 */      c_aload_0()
+    /* 24ea */      c_iconst_0()
+    /* 24eb */      c_invokestatic(0x00, 0x13)
+    /* 24ee */      c_pop()
+
+    // thinj/regression/LongTest#test9#()V:296
+    /* 24ef */      c_aload_0()
+    /* 24f0 */      c_ldc2_w(0x00, 0xbf)
+    /* 24f3 */      c_invokestatic(0x00, 0x14)
+    /* 24f6 */      c_pop2()
+
+    // thinj/regression/LongTest#test9#()V:297
+    /* 24f7 */      c_aload_0()
+    /* 24f8 */      c_sipush(0x0f, 0x6c)
+    /* 24fb */      c_invokestatic(0x00, 0x15)
+    /* 24fe */      c_pop()
+
+    // thinj/regression/LongTest#test9#()V:299
+    /* 24ff */      c_aload_0()
+    /* 2500 */      c_invokestatic(0x00, 0x16)
+    /* 2503 */      c_ifne(0x00, 0x07)
+    /* 2506 */      c_iconst_1()
+    /* 2507 */      c_goto(0x00, 0x04)
+    /* 250a */      c_iconst_0()
+    /* 250b */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test9#()V:300
+    /* 250e */      c_aload_0()
+    /* 250f */      c_invokestatic(0x00, 0x17)
+    /* 2512 */      c_ldc2_w(0x00, 0xbf)
+    /* 2515 */      c_lcmp()
+    /* 2516 */      c_ifne(0x00, 0x07)
+    /* 2519 */      c_iconst_1()
+    /* 251a */      c_goto(0x00, 0x04)
+    /* 251d */      c_iconst_0()
+    /* 251e */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test9#()V:301
+    /* 2521 */      c_aload_0()
+    /* 2522 */      c_invokestatic(0x00, 0x18)
+    /* 2525 */      c_sipush(0x0f, 0x6c)
+    /* 2528 */      c_if_icmpne(0x00, 0x07)
+    /* 252b */      c_iconst_1()
+    /* 252c */      c_goto(0x00, 0x04)
+    /* 252f */      c_iconst_0()
+    /* 2530 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test9#()V:303
+    /* 2533 */      c_aload_0()
+    /* 2534 */      c_iconst_1()
+    /* 2535 */      c_invokestatic(0x00, 0x13)
+    /* 2538 */      c_pop()
+
+    // thinj/regression/LongTest#test9#()V:304
+    /* 2539 */      c_aload_0()
+    /* 253a */      c_ldc2_w(0x00, 0x94)
+    /* 253d */      c_invokestatic(0x00, 0x14)
+    /* 2540 */      c_pop2()
+
+    // thinj/regression/LongTest#test9#()V:305
+    /* 2541 */      c_aload_0()
+    /* 2542 */      c_ldc(0xcd)
+    /* 2544 */      c_invokestatic(0x00, 0x15)
+    /* 2547 */      c_pop()
+
+    // thinj/regression/LongTest#test9#()V:307
+    /* 2548 */      c_aload_0()
+    /* 2549 */      c_invokestatic(0x00, 0x16)
+    /* 254c */      c_iconst_1()
+    /* 254d */      c_if_icmpne(0x00, 0x07)
+    /* 2550 */      c_iconst_1()
+    /* 2551 */      c_goto(0x00, 0x04)
+    /* 2554 */      c_iconst_0()
+    /* 2555 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test9#()V:308
+    /* 2558 */      c_aload_0()
+    /* 2559 */      c_invokestatic(0x00, 0x17)
+    /* 255c */      c_ldc2_w(0x00, 0x94)
+    /* 255f */      c_lcmp()
+    /* 2560 */      c_ifne(0x00, 0x07)
+    /* 2563 */      c_iconst_1()
+    /* 2564 */      c_goto(0x00, 0x04)
+    /* 2567 */      c_iconst_0()
+    /* 2568 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test9#()V:309
+    /* 256b */      c_aload_0()
+    /* 256c */      c_invokestatic(0x00, 0x18)
+    /* 256f */      c_ldc(0xcd)
+    /* 2571 */      c_if_icmpne(0x00, 0x07)
+    /* 2574 */      c_iconst_1()
+    /* 2575 */      c_goto(0x00, 0x04)
+    /* 2578 */      c_iconst_0()
+    /* 2579 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test9#()V:310
+    /* 257c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#heapTest#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#heapTest#()V:343
+    /* 257d */      c_iconst_0()
+    /* 257e */      c_istore_0()
+
+    // thinj/regression/LongTest#heapTest#()V:345
+    /* 257f */      c_invokestatic(0x00, 0x19)
+
+    // thinj/regression/LongTest#heapTest#()V:348
+    /* 2582 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/LongTest#heapTest#()V:346
+    /* 2585 */      c_astore_1()
+
+    // thinj/regression/LongTest#heapTest#()V:347
+    /* 2586 */      c_iconst_1()
+    /* 2587 */      c_istore_0()
+
+    // thinj/regression/LongTest#heapTest#()V:349
+    /* 2588 */      c_iload_0()
+    /* 2589 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#heapTest#()V:350
+    /* 258c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test11#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test11#()V:354
+    /* 258d */      c_bipush(0x0a)
+    /* 258f */      c_newarray(0x0b)
+    /* 2591 */      c_astore_0()
+
+    // thinj/regression/LongTest#test11#()V:355
+    /* 2592 */      c_aload_0()
+    /* 2593 */      c_iconst_0()
+    /* 2594 */      c_ldc2_w(0x00, 0xd0)
+    /* 2597 */      c_lastore()
+
+    // thinj/regression/LongTest#test11#()V:357
+    /* 2598 */      c_aload_0()
+    /* 2599 */      c_iconst_0()
+    /* 259a */      c_laload()
+    /* 259b */      c_lstore_1()
+
+    // thinj/regression/LongTest#test11#()V:359
+    /* 259c */      c_lload_1()
+    /* 259d */      c_ldc2_w(0x00, 0xd0)
+    /* 25a0 */      c_lcmp()
+    /* 25a1 */      c_ifne(0x00, 0x07)
+    /* 25a4 */      c_iconst_1()
+    /* 25a5 */      c_goto(0x00, 0x04)
+    /* 25a8 */      c_iconst_0()
+    /* 25a9 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test11#()V:361
+    /* 25ac */      c_iconst_0()
+    /* 25ad */      c_istore_3()
+
+    // thinj/regression/LongTest#test11#()V:363
+    /* 25ae */      c_aload_0()
+    /* 25af */      c_bipush(0x0a)
+    /* 25b1 */      c_ldc2_w(0x00, 0xae)
+    /* 25b4 */      c_lastore()
+
+    // thinj/regression/LongTest#test11#()V:364
+    /* 25b5 */      c_getstatic(0x00, 0x00)
+    /* 25b8 */      c_ldc(0xd3)
+    /* 25ba */      c_invokevirtual(0x00, 0x1a)
+
+    // thinj/regression/LongTest#test11#()V:367
+    /* 25bd */      c_goto(0x00, 0x07)
+
+    // thinj/regression/LongTest#test11#()V:365
+    /* 25c0 */      c_astore(0x04)
+
+    // thinj/regression/LongTest#test11#()V:366
+    /* 25c2 */      c_iconst_1()
+    /* 25c3 */      c_istore_3()
+
+    // thinj/regression/LongTest#test11#()V:368
+    /* 25c4 */      c_iload_3()
+    /* 25c5 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test11#()V:370
+    /* 25c8 */      c_iconst_0()
+    /* 25c9 */      c_istore_3()
+
+    // thinj/regression/LongTest#test11#()V:371
+    /* 25ca */      c_aconst_null()
+    /* 25cb */      c_astore_0()
+
+    // thinj/regression/LongTest#test11#()V:373
+    /* 25cc */      c_aload_0()
+    /* 25cd */      c_bipush(0x0a)
+    /* 25cf */      c_ldc2_w(0x00, 0xae)
+    /* 25d2 */      c_lastore()
+
+    // thinj/regression/LongTest#test11#()V:376
+    /* 25d3 */      c_goto(0x00, 0x07)
+
+    // thinj/regression/LongTest#test11#()V:374
+    /* 25d6 */      c_astore(0x04)
+
+    // thinj/regression/LongTest#test11#()V:375
+    /* 25d8 */      c_iconst_1()
+    /* 25d9 */      c_istore_3()
+
+    // thinj/regression/LongTest#test11#()V:377
+    /* 25da */      c_iload_3()
+    /* 25db */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test11#()V:379
+    /* 25de */      c_iconst_0()
+    /* 25df */      c_istore_3()
+
+    // thinj/regression/LongTest#test11#()V:381
+    /* 25e0 */      c_aload_0()
+    /* 25e1 */      c_bipush(0x0a)
+    /* 25e3 */      c_laload()
+    /* 25e4 */      c_lstore_1()
+
+    // thinj/regression/LongTest#test11#()V:384
+    /* 25e5 */      c_goto(0x00, 0x07)
+
+    // thinj/regression/LongTest#test11#()V:382
+    /* 25e8 */      c_astore(0x04)
+
+    // thinj/regression/LongTest#test11#()V:383
+    /* 25ea */      c_iconst_1()
+    /* 25eb */      c_istore_3()
+
+    // thinj/regression/LongTest#test11#()V:385
+    /* 25ec */      c_iload_3()
+    /* 25ed */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test11#()V:386
+    /* 25f0 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#test14#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#test14#()V:391
+    /* 25f1 */      c_lconst_0()
+    /* 25f2 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test14#()V:392
+    /* 25f3 */      c_getstatic(0x00, 0x01)
+    /* 25f6 */      c_dup2()
+    /* 25f7 */      c_lconst_1()
+    /* 25f8 */      c_ladd()
+    /* 25f9 */      c_putstatic(0x00, 0x01)
+    /* 25fc */      c_lstore_0()
+
+    // thinj/regression/LongTest#test14#()V:393
+    /* 25fd */      c_lload_0()
+    /* 25fe */      c_lconst_0()
+    /* 25ff */      c_lcmp()
+    /* 2600 */      c_ifne(0x00, 0x07)
+    /* 2603 */      c_iconst_1()
+    /* 2604 */      c_goto(0x00, 0x04)
+    /* 2607 */      c_iconst_0()
+    /* 2608 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test14#()V:394
+    /* 260b */      c_getstatic(0x00, 0x01)
+    /* 260e */      c_lconst_1()
+    /* 260f */      c_lcmp()
+    /* 2610 */      c_ifne(0x00, 0x07)
+    /* 2613 */      c_iconst_1()
+    /* 2614 */      c_goto(0x00, 0x04)
+    /* 2617 */      c_iconst_0()
+    /* 2618 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test14#()V:396
+    /* 261b */      c_getstatic(0x00, 0x01)
+    /* 261e */      c_dup2()
+    /* 261f */      c_lconst_1()
+    /* 2620 */      c_ladd()
+    /* 2621 */      c_putstatic(0x00, 0x01)
+    /* 2624 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test14#()V:397
+    /* 2625 */      c_lload_0()
+    /* 2626 */      c_lconst_1()
+    /* 2627 */      c_lcmp()
+    /* 2628 */      c_ifne(0x00, 0x07)
+    /* 262b */      c_iconst_1()
+    /* 262c */      c_goto(0x00, 0x04)
+    /* 262f */      c_iconst_0()
+    /* 2630 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test14#()V:398
+    /* 2633 */      c_getstatic(0x00, 0x01)
+    /* 2636 */      c_ldc2_w(0x00, 0x92)
+    /* 2639 */      c_lcmp()
+    /* 263a */      c_ifne(0x00, 0x07)
+    /* 263d */      c_iconst_1()
+    /* 263e */      c_goto(0x00, 0x04)
+    /* 2641 */      c_iconst_0()
+    /* 2642 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test14#()V:400
+    /* 2645 */      c_ldc2_w(0x00, 0xd8)
+    /* 2648 */      c_putstatic(0x00, 0x01)
+
+    // thinj/regression/LongTest#test14#()V:401
+    /* 264b */      c_getstatic(0x00, 0x01)
+    /* 264e */      c_ldc2_w(0x00, 0xd8)
+    /* 2651 */      c_lcmp()
+    /* 2652 */      c_ifne(0x00, 0x07)
+    /* 2655 */      c_iconst_1()
+    /* 2656 */      c_goto(0x00, 0x04)
+    /* 2659 */      c_iconst_0()
+    /* 265a */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test14#()V:403
+    /* 265d */      c_getstatic(0x00, 0x01)
+    /* 2660 */      c_dup2()
+    /* 2661 */      c_lconst_1()
+    /* 2662 */      c_ladd()
+    /* 2663 */      c_putstatic(0x00, 0x01)
+    /* 2666 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test14#()V:404
+    /* 2667 */      c_lload_0()
+    /* 2668 */      c_ldc2_w(0x00, 0xd8)
+    /* 266b */      c_lcmp()
+    /* 266c */      c_ifne(0x00, 0x07)
+    /* 266f */      c_iconst_1()
+    /* 2670 */      c_goto(0x00, 0x04)
+    /* 2673 */      c_iconst_0()
+    /* 2674 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test14#()V:405
+    /* 2677 */      c_getstatic(0x00, 0x01)
+    /* 267a */      c_ldc2_w(0x00, 0xda)
+    /* 267d */      c_lcmp()
+    /* 267e */      c_ifne(0x00, 0x07)
+    /* 2681 */      c_iconst_1()
+    /* 2682 */      c_goto(0x00, 0x04)
+    /* 2685 */      c_iconst_0()
+    /* 2686 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test14#()V:407
+    /* 2689 */      c_getstatic(0x00, 0x01)
+    /* 268c */      c_dup2()
+    /* 268d */      c_lconst_1()
+    /* 268e */      c_ladd()
+    /* 268f */      c_putstatic(0x00, 0x01)
+    /* 2692 */      c_lstore_0()
+
+    // thinj/regression/LongTest#test14#()V:408
+    /* 2693 */      c_lload_0()
+    /* 2694 */      c_ldc2_w(0x00, 0xda)
+    /* 2697 */      c_lcmp()
+    /* 2698 */      c_ifne(0x00, 0x07)
+    /* 269b */      c_iconst_1()
+    /* 269c */      c_goto(0x00, 0x04)
+    /* 269f */      c_iconst_0()
+    /* 26a0 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test14#()V:409
+    /* 26a3 */      c_getstatic(0x00, 0x01)
+    /* 26a6 */      c_ldc2_w(0x00, 0xdc)
+    /* 26a9 */      c_lcmp()
+    /* 26aa */      c_ifne(0x00, 0x07)
+    /* 26ad */      c_iconst_1()
+    /* 26ae */      c_goto(0x00, 0x04)
+    /* 26b1 */      c_iconst_0()
+    /* 26b2 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/LongTest#test14#()V:410
+    /* 26b5 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (55) thinj/regression/LongTest#<clinit>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest#<clinit>#()V:4
+    /* 26b6 */      c_ldc2_w(0x00, 0x46)
+    /* 26b9 */      c_putstatic(0x00, 0x02)
+
+    // thinj/regression/LongTest#<clinit>#()V:388
+    /* 26bc */      c_lconst_0()
+    /* 26bd */      c_putstatic(0x00, 0x01)
+    /* 26c0 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (57) thinj/regression/LongTest$MyClass#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$MyClass#<init>#()V:315
+    /* 26c1 */      c_aload_0()
+    /* 26c2 */      c_invokespecial(0x00, 0x01)
+    /* 26c5 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (57) thinj/regression/LongTest$MyClass#<init>#(Lthinj/regression/LongTest$1;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$MyClass#<init>#(Lthinj/regression/LongTest$1;)V:315
+    /* 26c6 */      c_aload_0()
+    /* 26c7 */      c_invokespecial(0x00, 0x00)
+    /* 26ca */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (57) thinj/regression/LongTest$MyClass#access$102#(Lthinj/regression/LongTest$MyClass;Z)Z
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$MyClass#access$102#(Lthinj/regression/LongTest$MyClass;Z)Z:315
+    /* 26cb */      c_aload_0()
+    /* 26cc */      c_iload_1()
+    /* 26cd */      c_dup_x1()
+    /* 26ce */      c_putfield(0x00, 0x02)
+    /* 26d1 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (57) thinj/regression/LongTest$MyClass#access$202#(Lthinj/regression/LongTest$MyClass;J)J
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$MyClass#access$202#(Lthinj/regression/LongTest$MyClass;J)J:315
+    /* 26d2 */      c_aload_0()
+    /* 26d3 */      c_lload_1()
+    /* 26d4 */      c_dup2_x1()
+    /* 26d5 */      c_putfield(0x00, 0x01)
+    /* 26d8 */      c_lreturn()
+
+    //------------------------------------------------------------------------------
+    // (57) thinj/regression/LongTest$MyClass#access$302#(Lthinj/regression/LongTest$MyClass;I)I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$MyClass#access$302#(Lthinj/regression/LongTest$MyClass;I)I:315
+    /* 26d9 */      c_aload_0()
+    /* 26da */      c_iload_1()
+    /* 26db */      c_dup_x1()
+    /* 26dc */      c_putfield(0x00, 0x00)
+    /* 26df */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (57) thinj/regression/LongTest$MyClass#access$100#(Lthinj/regression/LongTest$MyClass;)Z
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$MyClass#access$100#(Lthinj/regression/LongTest$MyClass;)Z:315
+    /* 26e0 */      c_aload_0()
+    /* 26e1 */      c_getfield(0x00, 0x02)
+    /* 26e4 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (57) thinj/regression/LongTest$MyClass#access$200#(Lthinj/regression/LongTest$MyClass;)J
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$MyClass#access$200#(Lthinj/regression/LongTest$MyClass;)J:315
+    /* 26e5 */      c_aload_0()
+    /* 26e6 */      c_getfield(0x00, 0x01)
+    /* 26e9 */      c_lreturn()
+
+    //------------------------------------------------------------------------------
+    // (57) thinj/regression/LongTest$MyClass#access$300#(Lthinj/regression/LongTest$MyClass;)I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$MyClass#access$300#(Lthinj/regression/LongTest$MyClass;)I:315
+    /* 26ea */      c_aload_0()
+    /* 26eb */      c_getfield(0x00, 0x00)
+    /* 26ee */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (56) thinj/regression/LongTest$LinkObject#<init>#(Lthinj/regression/LongTest$LinkObject;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$LinkObject#<init>#(Lthinj/regression/LongTest$LinkObject;)V:327
+    /* 26ef */      c_aload_0()
+    /* 26f0 */      c_invokespecial(0x00, 0x00)
+
+    // thinj/regression/LongTest$LinkObject#<init>#(Lthinj/regression/LongTest$LinkObject;)V:328
+    /* 26f3 */      c_aload_0()
+    /* 26f4 */      c_aload_1()
+    /* 26f5 */      c_putfield(0x00, 0x00)
+
+    // thinj/regression/LongTest$LinkObject#<init>#(Lthinj/regression/LongTest$LinkObject;)V:330
+    /* 26f8 */      c_aload_0()
+    /* 26f9 */      c_getstatic(0x00, 0x01)
+    /* 26fc */      c_dup2()
+    /* 26fd */      c_lconst_1()
+    /* 26fe */      c_ladd()
+    /* 26ff */      c_putstatic(0x00, 0x01)
+    /* 2702 */      c_putfield(0x00, 0x02)
+
+    // thinj/regression/LongTest$LinkObject#<init>#(Lthinj/regression/LongTest$LinkObject;)V:331
+    /* 2705 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (56) thinj/regression/LongTest$LinkObject#consumeHeap#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$LinkObject#consumeHeap#()V:334
+    /* 2706 */      c_aconst_null()
+    /* 2707 */      c_astore_0()
+
+    // thinj/regression/LongTest$LinkObject#consumeHeap#()V:337
+    /* 2708 */      c_new(0x00, 0x05)
+    /* 270b */      c_dup()
+    /* 270c */      c_aload_0()
+    /* 270d */      c_invokespecial(0x00, 0x01)
+    /* 2710 */      c_astore_0()
+    /* 2711 */      c_goto(0xff, 0xf7)
+
+    //------------------------------------------------------------------------------
+    // (56) thinj/regression/LongTest$LinkObject#<clinit>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/LongTest$LinkObject#<clinit>#()V:324
+    /* 2714 */      c_lconst_0()
+    /* 2715 */      c_putstatic(0x00, 0x01)
+    /* 2718 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#main#([Ljava/lang/String;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:10
+    /* 2719 */      c_getstatic(0x00, 0x05)
+    /* 271c */      c_ldc(0x09)
+    /* 271e */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:12
+    /* 2721 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:13
+    /* 2724 */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:14
+    /* 2727 */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:15
+    /* 272a */      c_invokestatic(0x00, 0x06)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:16
+    /* 272d */      c_invokestatic(0x00, 0x07)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:17
+    /* 2730 */      c_invokestatic(0x00, 0x08)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:19
+    /* 2733 */      c_invokestatic(0x00, 0x09)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:20
+    /* 2736 */      c_invokestatic(0x00, 0x0a)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:21
+    /* 2739 */      c_invokestatic(0x00, 0x0b)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:22
+    /* 273c */      c_invokestatic(0x00, 0x0c)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:23
+    /* 273f */      c_invokestatic(0x00, 0x0d)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:24
+    /* 2742 */      c_invokestatic(0x00, 0x0e)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:25
+    /* 2745 */      c_invokestatic(0x00, 0x0f)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:27
+    /* 2748 */      c_invokestatic(0x00, 0x10)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:28
+    /* 274b */      c_invokestatic(0x00, 0x11)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:29
+    /* 274e */      c_invokestatic(0x00, 0x12)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:30
+    /* 2751 */      c_invokestatic(0x00, 0x13)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:31
+    /* 2754 */      c_invokestatic(0x00, 0x14)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:32
+    /* 2757 */      c_invokestatic(0x00, 0x15)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:33
+    /* 275a */      c_invokestatic(0x00, 0x16)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:34
+    /* 275d */      c_invokestatic(0x00, 0x17)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:35
+    /* 2760 */      c_invokestatic(0x00, 0x18)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:36
+    /* 2763 */      c_invokestatic(0x00, 0x19)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:37
+    /* 2766 */      c_invokestatic(0x00, 0x1a)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:38
+    /* 2769 */      c_getstatic(0x00, 0x05)
+    /* 276c */      c_ldc(0x23)
+    /* 276e */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/ThreadTest#main#([Ljava/lang/String;)V:39
+    /* 2771 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test13#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test13#()V:42
+    /* 2772 */      c_new(0x00, 0x24)
+    /* 2775 */      c_dup()
+    /* 2776 */      c_invokespecial(0x00, 0x01)
+    /* 2779 */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test13#()V:43
+    /* 277a */      c_new(0x00, 0x24)
+    /* 277d */      c_dup()
+    /* 277e */      c_invokespecial(0x00, 0x01)
+    /* 2781 */      c_astore_1()
+
+    // thinj/regression/ThreadTest#test13#()V:44
+    /* 2782 */      c_iconst_0()
+    /* 2783 */      c_putstatic(0x00, 0x04)
+
+    // thinj/regression/ThreadTest#test13#()V:45
+    /* 2786 */      c_iconst_0()
+    /* 2787 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test13#()V:48
+    /* 278a */      c_iconst_0()
+    /* 278b */      c_istore_3()
+    /* 278c */      c_iload_3()
+    /* 278d */      c_bipush(0x0a)
+    /* 278f */      c_if_icmpge(0x00, 0x15)
+
+    // thinj/regression/ThreadTest#test13#()V:49
+    /* 2792 */      c_new(0x00, 0x25)
+    /* 2795 */      c_dup()
+    /* 2796 */      c_aload_0()
+    /* 2797 */      c_aload_1()
+    /* 2798 */      c_invokespecial(0x00, 0x1b)
+    /* 279b */      c_invokevirtual(0x00, 0x1c)
+
+    // thinj/regression/ThreadTest#test13#()V:48
+    /* 279e */      c_iinc(0x03, 0x01)
+    /* 27a1 */      c_goto(0xff, 0xeb)
+
+    // thinj/regression/ThreadTest#test13#()V:78
+    /* 27a4 */      c_new(0x00, 0x28)
+    /* 27a7 */      c_dup()
+    /* 27a8 */      c_aload_1()
+    /* 27a9 */      c_invokespecial(0x00, 0x1d)
+    /* 27ac */      c_invokevirtual(0x00, 0x1e)
+
+    // thinj/regression/ThreadTest#test13#()V:98
+    /* 27af */      c_ldc2_w(0x00, 0x2b)
+    /* 27b2 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test13#()V:99
+    /* 27b5 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#simpleYield#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#simpleYield#()V:102
+    /* 27b6 */      c_iconst_0()
+    /* 27b7 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#simpleYield#()V:103
+    /* 27ba */      c_iconst_0()
+    /* 27bb */      c_istore_0()
+    /* 27bc */      c_iload_0()
+    /* 27bd */      c_bipush(0x0a)
+    /* 27bf */      c_if_icmpge(0x00, 0x0c)
+
+    // thinj/regression/ThreadTest#simpleYield#()V:104
+    /* 27c2 */      c_invokestatic(0x00, 0x20)
+
+    // thinj/regression/ThreadTest#simpleYield#()V:103
+    /* 27c5 */      c_iinc(0x00, 0x01)
+    /* 27c8 */      c_goto(0xff, 0xf4)
+
+    // thinj/regression/ThreadTest#simpleYield#()V:106
+    /* 27cb */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#threadGC#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#threadGC#()V:109
+    /* 27cc */      c_iconst_0()
+    /* 27cd */      c_putstatic(0x00, 0x04)
+
+    // thinj/regression/ThreadTest#threadGC#()V:110
+    /* 27d0 */      c_iconst_0()
+    /* 27d1 */      c_istore_0()
+    /* 27d2 */      c_iload_0()
+    /* 27d3 */      c_bipush(0x64)
+    /* 27d5 */      c_if_icmpge(0x00, 0x13)
+
+    // thinj/regression/ThreadTest#threadGC#()V:111
+    /* 27d8 */      c_new(0x00, 0x2f)
+    /* 27db */      c_dup()
+    /* 27dc */      c_invokespecial(0x00, 0x21)
+    /* 27df */      c_invokevirtual(0x00, 0x22)
+
+    // thinj/regression/ThreadTest#threadGC#()V:110
+    /* 27e2 */      c_iinc(0x00, 0x01)
+    /* 27e5 */      c_goto(0xff, 0xed)
+
+    // thinj/regression/ThreadTest#threadGC#()V:119
+    /* 27e8 */      c_iconst_m1()
+    /* 27e9 */      c_istore_0()
+
+    // thinj/regression/ThreadTest#threadGC#()V:120
+    /* 27ea */      c_getstatic(0x00, 0x04)
+    /* 27ed */      c_bipush(0x64)
+    /* 27ef */      c_if_icmpge(0x00, 0x06)
+    /* 27f2 */      c_goto(0xff, 0xf8)
+
+    // thinj/regression/ThreadTest#threadGC#()V:123
+    /* 27f5 */      c_getstatic(0x00, 0x04)
+    /* 27f8 */      c_bipush(0x64)
+    /* 27fa */      c_if_icmplt(0x00, 0x07)
+    /* 27fd */      c_iconst_1()
+    /* 27fe */      c_goto(0x00, 0x04)
+    /* 2801 */      c_iconst_0()
+    /* 2802 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#threadGC#()V:124
+    /* 2805 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#yieldAndGCMainThread#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:127
+    /* 2806 */      c_iconst_0()
+    /* 2807 */      c_istore_0()
+    /* 2808 */      c_iload_0()
+    /* 2809 */      c_sipush(0x03, 0xe8)
+    /* 280c */      c_if_icmpge(0x00, 0x54)
+
+    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:128
+    /* 280f */      c_invokestatic(0x00, 0x20)
+
+    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:129
+    /* 2812 */      c_new(0x00, 0x33)
+    /* 2815 */      c_dup()
+    /* 2816 */      c_invokespecial(0x00, 0x24)
+    /* 2819 */      c_ldc(0x35)
+    /* 281b */      c_invokevirtual(0x00, 0x25)
+    /* 281e */      c_iload_0()
+    /* 281f */      c_invokevirtual(0x00, 0x26)
+    /* 2822 */      c_invokevirtual(0x00, 0x27)
+    /* 2825 */      c_astore_1()
+
+    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:130
+    /* 2826 */      c_iload_0()
+    /* 2827 */      c_bipush(0x32)
+    /* 2829 */      c_irem()
+    /* 282a */      c_ifne(0x00, 0x30)
+
+    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:131
+    /* 282d */      c_new(0x00, 0x33)
+    /* 2830 */      c_dup()
+    /* 2831 */      c_invokespecial(0x00, 0x24)
+    /* 2834 */      c_aload_1()
+    /* 2835 */      c_invokevirtual(0x00, 0x25)
+    /* 2838 */      c_ldc(0x39)
+    /* 283a */      c_invokevirtual(0x00, 0x25)
+    /* 283d */      c_invokevirtual(0x00, 0x27)
+    /* 2840 */      c_astore_1()
+
+    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:132
+    /* 2841 */      c_getstatic(0x00, 0x05)
+    /* 2844 */      c_new(0x00, 0x33)
+    /* 2847 */      c_dup()
+    /* 2848 */      c_invokespecial(0x00, 0x24)
+    /* 284b */      c_ldc(0x3a)
+    /* 284d */      c_invokevirtual(0x00, 0x25)
+    /* 2850 */      c_aload_1()
+    /* 2851 */      c_invokevirtual(0x00, 0x25)
+    /* 2854 */      c_invokevirtual(0x00, 0x27)
+    /* 2857 */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:127
+    /* 285a */      c_iinc(0x00, 0x01)
+    /* 285d */      c_goto(0xff, 0xab)
+
+    // thinj/regression/ThreadTest#yieldAndGCMainThread#()V:135
+    /* 2860 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#yieldAndGCNewThread#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:138
+    /* 2861 */      c_new(0x00, 0x24)
+    /* 2864 */      c_dup()
+    /* 2865 */      c_invokespecial(0x00, 0x01)
+    /* 2868 */      c_astore_0()
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:139
+    /* 2869 */      c_iconst_0()
+    /* 286a */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:140
+    /* 286d */      c_new(0x00, 0x3b)
+    /* 2870 */      c_dup()
+    /* 2871 */      c_aload_0()
+    /* 2872 */      c_invokespecial(0x00, 0x28)
+    /* 2875 */      c_invokevirtual(0x00, 0x29)
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:158
+    /* 2878 */      c_aload_0()
+    /* 2879 */      c_dup()
+    /* 287a */      c_astore_1()
+    /* 287b */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:160
+    /* 287c */      c_getstatic(0x00, 0x03)
+    /* 287f */      c_ifne(0x00, 0x07)
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:161
+    /* 2882 */      c_aload_0()
+    /* 2883 */      c_invokevirtual(0x00, 0x2a)
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:163
+    /* 2886 */      c_getstatic(0x00, 0x05)
+    /* 2889 */      c_ldc(0x3f)
+    /* 288b */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:166
+    /* 288e */      c_goto(0x00, 0x08)
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:164
+    /* 2891 */      c_astore_2()
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:165
+    /* 2892 */      c_aload_2()
+    /* 2893 */      c_invokevirtual(0x00, 0x2b)
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:167
+    /* 2896 */      c_aload_1()
+    /* 2897 */      c_monitorexit()
+    /* 2898 */      c_goto(0x00, 0x08)
+    /* 289b */      c_astore_3()
+    /* 289c */      c_aload_1()
+    /* 289d */      c_monitorexit()
+    /* 289e */      c_aload_3()
+    /* 289f */      c_athrow()
+
+    // thinj/regression/ThreadTest#yieldAndGCNewThread#()V:168
+    /* 28a0 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#testAutoYield#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#testAutoYield#()V:171
+    /* 28a1 */      c_iconst_0()
+    /* 28a2 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#testAutoYield#()V:172
+    /* 28a5 */      c_new(0x00, 0x42)
+    /* 28a8 */      c_dup()
+    /* 28a9 */      c_invokespecial(0x00, 0x2c)
+    /* 28ac */      c_invokevirtual(0x00, 0x2d)
+
+    // thinj/regression/ThreadTest#testAutoYield#()V:178
+    /* 28af */      c_ldc2_w(0x00, 0x2b)
+    /* 28b2 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#testAutoYield#()V:179
+    /* 28b5 */      c_getstatic(0x00, 0x03)
+    /* 28b8 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#testAutoYield#()V:180
+    /* 28bb */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#testExplicitYield#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#testExplicitYield#()V:183
+    /* 28bc */      c_iconst_0()
+    /* 28bd */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#testExplicitYield#()V:184
+    /* 28c0 */      c_new(0x00, 0x45)
+    /* 28c3 */      c_dup()
+    /* 28c4 */      c_invokespecial(0x00, 0x2e)
+    /* 28c7 */      c_invokevirtual(0x00, 0x2f)
+
+    // thinj/regression/ThreadTest#testExplicitYield#()V:191
+    /* 28ca */      c_invokestatic(0x00, 0x20)
+
+    // thinj/regression/ThreadTest#testExplicitYield#()V:192
+    /* 28cd */      c_ldc2_w(0x00, 0x2b)
+    /* 28d0 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#testExplicitYield#()V:193
+    /* 28d3 */      c_getstatic(0x00, 0x03)
+    /* 28d6 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#testExplicitYield#()V:194
+    /* 28d9 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#testMonitorEnterExit_0#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_0#()V:198
+    /* 28da */      c_iconst_0()
+    /* 28db */      c_istore_0()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_0#()V:199
+    /* 28dc */      c_new(0x00, 0x24)
+    /* 28df */      c_dup()
+    /* 28e0 */      c_invokespecial(0x00, 0x01)
+    /* 28e3 */      c_dup()
+    /* 28e4 */      c_astore_1()
+    /* 28e5 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_0#()V:200
+    /* 28e6 */      c_iconst_1()
+    /* 28e7 */      c_istore_0()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_0#()V:201
+    /* 28e8 */      c_aload_1()
+    /* 28e9 */      c_monitorexit()
+    /* 28ea */      c_goto(0x00, 0x08)
+    /* 28ed */      c_astore_2()
+    /* 28ee */      c_aload_1()
+    /* 28ef */      c_monitorexit()
+    /* 28f0 */      c_aload_2()
+    /* 28f1 */      c_athrow()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_0#()V:203
+    /* 28f2 */      c_iload_0()
+    /* 28f3 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_0#()V:205
+    /* 28f6 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#testMonitorEnterExit_2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_2#()V:208
+    /* 28f7 */      c_new(0x00, 0x24)
+    /* 28fa */      c_dup()
+    /* 28fb */      c_invokespecial(0x00, 0x01)
+    /* 28fe */      c_astore_0()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_2#()V:210
+    /* 28ff */      c_iconst_0()
+    /* 2900 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_2#()V:211
+    /* 2903 */      c_new(0x00, 0x48)
+    /* 2906 */      c_dup()
+    /* 2907 */      c_aload_0()
+    /* 2908 */      c_invokespecial(0x00, 0x30)
+    /* 290b */      c_astore_1()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_2#()V:221
+    /* 290c */      c_new(0x00, 0x4a)
+    /* 290f */      c_dup()
+    /* 2910 */      c_aload_0()
+    /* 2911 */      c_aload_1()
+    /* 2912 */      c_invokespecial(0x00, 0x31)
+    /* 2915 */      c_astore_2()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_2#()V:235
+    /* 2916 */      c_aload_2()
+    /* 2917 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_2#()V:236
+    /* 291a */      c_ldc2_w(0x00, 0x2b)
+    /* 291d */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_2#()V:237
+    /* 2920 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#testMonitorEnterExit_1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:240
+    /* 2921 */      c_iconst_0()
+    /* 2922 */      c_istore_0()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:241
+    /* 2923 */      c_iconst_0()
+    /* 2924 */      c_istore_1()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:242
+    /* 2925 */      c_aconst_null()
+    /* 2926 */      c_astore_2()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:244
+    /* 2927 */      c_aload_2()
+    /* 2928 */      c_dup()
+    /* 2929 */      c_astore_3()
+    /* 292a */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:245
+    /* 292b */      c_iconst_1()
+    /* 292c */      c_istore_1()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:246
+    /* 292d */      c_aload_3()
+    /* 292e */      c_monitorexit()
+    /* 292f */      c_goto(0x00, 0x0a)
+    /* 2932 */      c_astore(0x04)
+    /* 2934 */      c_aload_3()
+    /* 2935 */      c_monitorexit()
+    /* 2936 */      c_aload(0x04)
+    /* 2938 */      c_athrow()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:249
+    /* 2939 */      c_goto(0x00, 0x06)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:247
+    /* 293c */      c_astore_3()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:248
+    /* 293d */      c_iconst_1()
+    /* 293e */      c_istore_0()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:250
+    /* 293f */      c_iload_1()
+    /* 2940 */      c_ifne(0x00, 0x07)
+    /* 2943 */      c_iconst_1()
+    /* 2944 */      c_goto(0x00, 0x04)
+    /* 2947 */      c_iconst_0()
+    /* 2948 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:251
+    /* 294b */      c_iload_0()
+    /* 294c */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:253
+    /* 294f */      c_iconst_0()
+    /* 2950 */      c_istore_1()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:254
+    /* 2951 */      c_new(0x00, 0x24)
+    /* 2954 */      c_dup()
+    /* 2955 */      c_invokespecial(0x00, 0x01)
+    /* 2958 */      c_dup()
+    /* 2959 */      c_astore_3()
+    /* 295a */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:255
+    /* 295b */      c_iconst_1()
+    /* 295c */      c_istore_1()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:256
+    /* 295d */      c_aload_3()
+    /* 295e */      c_monitorexit()
+    /* 295f */      c_goto(0x00, 0x0a)
+    /* 2962 */      c_astore(0x05)
+    /* 2964 */      c_aload_3()
+    /* 2965 */      c_monitorexit()
+    /* 2966 */      c_aload(0x05)
+    /* 2968 */      c_athrow()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:257
+    /* 2969 */      c_iload_1()
+    /* 296a */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:259
+    /* 296d */      c_new(0x00, 0x24)
+    /* 2970 */      c_dup()
+    /* 2971 */      c_invokespecial(0x00, 0x01)
+    /* 2974 */      c_astore_3()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:260
+    /* 2975 */      c_iconst_0()
+    /* 2976 */      c_istore(0x04)
+    /* 2978 */      c_iload(0x04)
+    /* 297a */      c_bipush(0x64)
+    /* 297c */      c_if_icmpge(0x00, 0x91)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:261
+    /* 297f */      c_iconst_0()
+    /* 2980 */      c_putstatic(0x00, 0x04)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:262
+    /* 2983 */      c_new(0x00, 0x4e)
+    /* 2986 */      c_dup()
+    /* 2987 */      c_new(0x00, 0x4f)
+    /* 298a */      c_dup()
+    /* 298b */      c_aload_3()
+    /* 298c */      c_invokespecial(0x00, 0x33)
+    /* 298f */      c_invokespecial(0x00, 0x34)
+    /* 2992 */      c_astore(0x05)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:272
+    /* 2994 */      c_aload_3()
+    /* 2995 */      c_dup()
+    /* 2996 */      c_astore(0x06)
+    /* 2998 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:273
+    /* 2999 */      c_getstatic(0x00, 0x04)
+    /* 299c */      c_ifne(0x00, 0x07)
+    /* 299f */      c_iconst_1()
+    /* 29a0 */      c_goto(0x00, 0x04)
+    /* 29a3 */      c_iconst_0()
+    /* 29a4 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:274
+    /* 29a7 */      c_getstatic(0x00, 0x04)
+    /* 29aa */      c_iconst_1()
+    /* 29ab */      c_iadd()
+    /* 29ac */      c_putstatic(0x00, 0x04)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:277
+    /* 29af */      c_aload(0x05)
+    /* 29b1 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:278
+    /* 29b4 */      c_aload(0x06)
+    /* 29b6 */      c_monitorexit()
+    /* 29b7 */      c_goto(0x00, 0x0b)
+    /* 29ba */      c_astore(0x07)
+    /* 29bc */      c_aload(0x06)
+    /* 29be */      c_monitorexit()
+    /* 29bf */      c_aload(0x07)
+    /* 29c1 */      c_athrow()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:282
+    /* 29c2 */      c_aload_3()
+    /* 29c3 */      c_dup()
+    /* 29c4 */      c_astore(0x06)
+    /* 29c6 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:283
+    /* 29c7 */      c_getstatic(0x00, 0x04)
+    /* 29ca */      c_iconst_2()
+    /* 29cb */      c_if_icmpne(0x00, 0x09)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:284
+    /* 29ce */      c_aload(0x06)
+    /* 29d0 */      c_monitorexit()
+    /* 29d1 */      c_goto(0x00, 0x14)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:286
+    /* 29d4 */      c_aload(0x06)
+    /* 29d6 */      c_monitorexit()
+    /* 29d7 */      c_goto(0x00, 0x0b)
+    /* 29da */      c_astore(0x08)
+    /* 29dc */      c_aload(0x06)
+    /* 29de */      c_monitorexit()
+    /* 29df */      c_aload(0x08)
+    /* 29e1 */      c_athrow()
+    /* 29e2 */      c_goto(0xff, 0xe0)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:289
+    /* 29e5 */      c_aload_3()
+    /* 29e6 */      c_dup()
+    /* 29e7 */      c_astore(0x06)
+    /* 29e9 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:290
+    /* 29ea */      c_getstatic(0x00, 0x04)
+    /* 29ed */      c_iconst_2()
+    /* 29ee */      c_if_icmpne(0x00, 0x07)
+    /* 29f1 */      c_iconst_1()
+    /* 29f2 */      c_goto(0x00, 0x04)
+    /* 29f5 */      c_iconst_0()
+    /* 29f6 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:291
+    /* 29f9 */      c_aload(0x06)
+    /* 29fb */      c_monitorexit()
+    /* 29fc */      c_goto(0x00, 0x0b)
+    /* 29ff */      c_astore(0x09)
+    /* 2a01 */      c_aload(0x06)
+    /* 2a03 */      c_monitorexit()
+    /* 2a04 */      c_aload(0x09)
+    /* 2a06 */      c_athrow()
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:260
+    /* 2a07 */      c_iinc(0x04, 0x01)
+    /* 2a0a */      c_goto(0xff, 0x6e)
+
+    // thinj/regression/ThreadTest#testMonitorEnterExit_1#()V:293
+    /* 2a0d */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test2_1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test2_1#()V:296
+    /* 2a0e */      c_new(0x00, 0x24)
+    /* 2a11 */      c_dup()
+    /* 2a12 */      c_invokespecial(0x00, 0x01)
+    /* 2a15 */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test2_1#()V:297
+    /* 2a16 */      c_iconst_0()
+    /* 2a17 */      c_istore_1()
+
+    // thinj/regression/ThreadTest#test2_1#()V:299
+    /* 2a18 */      c_aload_0()
+    /* 2a19 */      c_invokevirtual(0x00, 0x35)
+
+    // thinj/regression/ThreadTest#test2_1#()V:302
+    /* 2a1c */      c_goto(0x00, 0x06)
+
+    // thinj/regression/ThreadTest#test2_1#()V:300
+    /* 2a1f */      c_astore_2()
+
+    // thinj/regression/ThreadTest#test2_1#()V:301
+    /* 2a20 */      c_iconst_1()
+    /* 2a21 */      c_istore_1()
+
+    // thinj/regression/ThreadTest#test2_1#()V:303
+    /* 2a22 */      c_iload_1()
+    /* 2a23 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test2_1#()V:304
+    /* 2a26 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test2_2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test2_2#()V:307
+    /* 2a27 */      c_new(0x00, 0x24)
+    /* 2a2a */      c_dup()
+    /* 2a2b */      c_invokespecial(0x00, 0x01)
+    /* 2a2e */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test2_2#()V:308
+    /* 2a2f */      c_iconst_0()
+    /* 2a30 */      c_istore_1()
+
+    // thinj/regression/ThreadTest#test2_2#()V:310
+    /* 2a31 */      c_aload_0()
+    /* 2a32 */      c_invokevirtual(0x00, 0x2a)
+
+    // thinj/regression/ThreadTest#test2_2#()V:315
+    /* 2a35 */      c_goto(0x00, 0x0c)
+
+    // thinj/regression/ThreadTest#test2_2#()V:311
+    /* 2a38 */      c_astore_2()
+
+    // thinj/regression/ThreadTest#test2_2#()V:312
+    /* 2a39 */      c_iconst_1()
+    /* 2a3a */      c_istore_1()
+
+    // thinj/regression/ThreadTest#test2_2#()V:315
+    /* 2a3b */      c_goto(0x00, 0x06)
+
+    // thinj/regression/ThreadTest#test2_2#()V:313
+    /* 2a3e */      c_astore_2()
+
+    // thinj/regression/ThreadTest#test2_2#()V:314
+    /* 2a3f */      c_iconst_0()
+    /* 2a40 */      c_istore_1()
+
+    // thinj/regression/ThreadTest#test2_2#()V:316
+    /* 2a41 */      c_iload_1()
+    /* 2a42 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test2_2#()V:317
+    /* 2a45 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test2_3#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test2_3#()V:320
+    /* 2a46 */      c_new(0x00, 0x24)
+    /* 2a49 */      c_dup()
+    /* 2a4a */      c_invokespecial(0x00, 0x01)
+    /* 2a4d */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test2_3#()V:322
+    /* 2a4e */      c_iconst_0()
+    /* 2a4f */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test2_3#()V:323
+    /* 2a52 */      c_new(0x00, 0x4e)
+    /* 2a55 */      c_dup()
+    /* 2a56 */      c_new(0x00, 0x54)
+    /* 2a59 */      c_dup()
+    /* 2a5a */      c_invokespecial(0x00, 0x36)
+    /* 2a5d */      c_invokespecial(0x00, 0x34)
+    /* 2a60 */      c_astore_1()
+
+    // thinj/regression/ThreadTest#test2_3#()V:334
+    /* 2a61 */      c_aload_1()
+    /* 2a62 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#test2_3#()V:335
+    /* 2a65 */      c_ldc2_w(0x00, 0x56)
+    /* 2a68 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test2_3#()V:336
+    /* 2a6b */      c_getstatic(0x00, 0x03)
+    /* 2a6e */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test2_3#()V:337
+    /* 2a71 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test2_4#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test2_4#()V:340
+    /* 2a72 */      c_new(0x00, 0x24)
+    /* 2a75 */      c_dup()
+    /* 2a76 */      c_invokespecial(0x00, 0x01)
+    /* 2a79 */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test2_4#()V:341
+    /* 2a7a */      c_iconst_0()
+    /* 2a7b */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test2_4#()V:342
+    /* 2a7e */      c_new(0x00, 0x4e)
+    /* 2a81 */      c_dup()
+    /* 2a82 */      c_new(0x00, 0x58)
+    /* 2a85 */      c_dup()
+    /* 2a86 */      c_aload_0()
+    /* 2a87 */      c_invokespecial(0x00, 0x37)
+    /* 2a8a */      c_invokespecial(0x00, 0x34)
+    /* 2a8d */      c_astore_1()
+
+    // thinj/regression/ThreadTest#test2_4#()V:365
+    /* 2a8e */      c_aload_1()
+    /* 2a8f */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#test2_4#()V:368
+    /* 2a92 */      c_ldc2_w(0x00, 0x56)
+    /* 2a95 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/ThreadTest#test2_4#()V:369
+    /* 2a98 */      c_getstatic(0x00, 0x03)
+    /* 2a9b */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test2_4#()V:370
+    /* 2a9e */      c_iconst_0()
+    /* 2a9f */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test2_4#()V:372
+    /* 2aa2 */      c_new(0x00, 0x4e)
+    /* 2aa5 */      c_dup()
+    /* 2aa6 */      c_new(0x00, 0x5a)
+    /* 2aa9 */      c_dup()
+    /* 2aaa */      c_aload_0()
+    /* 2aab */      c_invokespecial(0x00, 0x38)
+    /* 2aae */      c_invokespecial(0x00, 0x34)
+    /* 2ab1 */      c_astore_2()
+
+    // thinj/regression/ThreadTest#test2_4#()V:384
+    /* 2ab2 */      c_aload_2()
+    /* 2ab3 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#test2_4#()V:387
+    /* 2ab6 */      c_ldc2_w(0x00, 0x2b)
+    /* 2ab9 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test2_4#()V:389
+    /* 2abc */      c_getstatic(0x00, 0x03)
+    /* 2abf */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test2_4#()V:390
+    /* 2ac2 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test3#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test3#()V:394
+    /* 2ac3 */      c_iconst_0()
+    /* 2ac4 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test3#()V:395
+    /* 2ac7 */      c_new(0x00, 0x5c)
+    /* 2aca */      c_dup()
+    /* 2acb */      c_invokespecial(0x00, 0x39)
+    /* 2ace */      c_invokevirtual(0x00, 0x3a)
+
+    // thinj/regression/ThreadTest#test3#()V:401
+    /* 2ad1 */      c_ldc2_w(0x00, 0x56)
+    /* 2ad4 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test3#()V:402
+    /* 2ad7 */      c_getstatic(0x00, 0x03)
+    /* 2ada */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test3#()V:403
+    /* 2add */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test4#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test4#()V:408
+    /* 2ade */      c_iconst_0()
+    /* 2adf */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test4#()V:409
+    /* 2ae2 */      c_new(0x00, 0x5f)
+    /* 2ae5 */      c_dup()
+    /* 2ae6 */      c_invokespecial(0x00, 0x3b)
+    /* 2ae9 */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test4#()V:422
+    /* 2aea */      c_getstatic(0x00, 0x01)
+    /* 2aed */      c_dup()
+    /* 2aee */      c_astore_1()
+    /* 2aef */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#test4#()V:423
+    /* 2af0 */      c_aload_0()
+    /* 2af1 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#test4#()V:424
+    /* 2af4 */      c_aload_1()
+    /* 2af5 */      c_monitorexit()
+    /* 2af6 */      c_goto(0x00, 0x08)
+
+    // thinj/regression/ThreadTest#test4#()V:425
+    /* 2af9 */      c_astore_2()
+    /* 2afa */      c_aload_1()
+    /* 2afb */      c_monitorexit()
+    /* 2afc */      c_aload_2()
+    /* 2afd */      c_athrow()
+
+    // thinj/regression/ThreadTest#test4#()V:429
+    /* 2afe */      c_ldc2_w(0x00, 0x56)
+    /* 2b01 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test4#()V:430
+    /* 2b04 */      c_getstatic(0x00, 0x03)
+    /* 2b07 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test4#()V:431
+    /* 2b0a */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test5#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test5#()V:436
+    /* 2b0b */      c_iconst_0()
+    /* 2b0c */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test5#()V:437
+    /* 2b0f */      c_iconst_0()
+    /* 2b10 */      c_putstatic(0x00, 0x04)
+
+    // thinj/regression/ThreadTest#test5#()V:438
+    /* 2b13 */      c_iconst_0()
+    /* 2b14 */      c_putstatic(0x00, 0x00)
+
+    // thinj/regression/ThreadTest#test5#()V:439
+    /* 2b17 */      c_bipush(0x0a)
+    /* 2b19 */      c_anewarray(0x00, 0x4e)
+    /* 2b1c */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test5#()V:440
+    /* 2b1d */      c_iconst_0()
+    /* 2b1e */      c_istore_1()
+    /* 2b1f */      c_iload_1()
+    /* 2b20 */      c_aload_0()
+    /* 2b21 */      c_arraylength()
+    /* 2b22 */      c_if_icmpge(0x00, 0x13)
+
+    // thinj/regression/ThreadTest#test5#()V:441
+    /* 2b25 */      c_aload_0()
+    /* 2b26 */      c_iload_1()
+    /* 2b27 */      c_new(0x00, 0x61)
+    /* 2b2a */      c_dup()
+    /* 2b2b */      c_invokespecial(0x00, 0x3c)
+    /* 2b2e */      c_aastore()
+
+    // thinj/regression/ThreadTest#test5#()V:440
+    /* 2b2f */      c_iinc(0x01, 0x01)
+    /* 2b32 */      c_goto(0xff, 0xed)
+
+    // thinj/regression/ThreadTest#test5#()V:460
+    /* 2b35 */      c_iconst_0()
+    /* 2b36 */      c_istore_1()
+
+    // thinj/regression/ThreadTest#test5#()V:461
+    /* 2b37 */      c_aload_0()
+    /* 2b38 */      c_astore_2()
+    /* 2b39 */      c_aload_2()
+    /* 2b3a */      c_arraylength()
+    /* 2b3b */      c_istore_3()
+    /* 2b3c */      c_iconst_0()
+    /* 2b3d */      c_istore(0x04)
+    /* 2b3f */      c_iload(0x04)
+    /* 2b41 */      c_iload_3()
+    /* 2b42 */      c_if_icmpge(0x00, 0x17)
+    /* 2b45 */      c_aload_2()
+    /* 2b46 */      c_iload(0x04)
+    /* 2b48 */      c_aaload()
+    /* 2b49 */      c_astore(0x05)
+
+    // thinj/regression/ThreadTest#test5#()V:462
+    /* 2b4b */      c_iinc(0x01, 0x01)
+
+    // thinj/regression/ThreadTest#test5#()V:463
+    /* 2b4e */      c_aload(0x05)
+    /* 2b50 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#test5#()V:461
+    /* 2b53 */      c_iinc(0x04, 0x01)
+    /* 2b56 */      c_goto(0xff, 0xe9)
+
+    // thinj/regression/ThreadTest#test5#()V:468
+    /* 2b59 */      c_getstatic(0x00, 0x00)
+    /* 2b5c */      c_bipush(0x0a)
+    /* 2b5e */      c_if_icmpge(0x00, 0x06)
+    /* 2b61 */      c_goto(0xff, 0xf8)
+
+    // thinj/regression/ThreadTest#test5#()V:471
+    /* 2b64 */      c_ldc2_w(0x00, 0x56)
+    /* 2b67 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/ThreadTest#test5#()V:473
+    /* 2b6a */      c_new(0x00, 0x63)
+    /* 2b6d */      c_dup()
+    /* 2b6e */      c_invokespecial(0x00, 0x3d)
+    /* 2b71 */      c_astore_2()
+
+    // thinj/regression/ThreadTest#test5#()V:483
+    /* 2b72 */      c_aload_2()
+    /* 2b73 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#test5#()V:485
+    /* 2b76 */      c_getstatic(0x00, 0x04)
+    /* 2b79 */      c_iconst_1()
+    /* 2b7a */      c_if_icmpge(0x00, 0x06)
+    /* 2b7d */      c_goto(0xff, 0xf9)
+
+    // thinj/regression/ThreadTest#test5#()V:489
+    /* 2b80 */      c_getstatic(0x00, 0x04)
+    /* 2b83 */      c_iconst_1()
+    /* 2b84 */      c_if_icmpne(0x00, 0x07)
+    /* 2b87 */      c_iconst_1()
+    /* 2b88 */      c_goto(0x00, 0x04)
+    /* 2b8b */      c_iconst_0()
+    /* 2b8c */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test5#()V:491
+    /* 2b8f */      c_new(0x00, 0x65)
+    /* 2b92 */      c_dup()
+    /* 2b93 */      c_invokespecial(0x00, 0x3e)
+    /* 2b96 */      c_astore_2()
+
+    // thinj/regression/ThreadTest#test5#()V:499
+    /* 2b97 */      c_aload_2()
+    /* 2b98 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#test5#()V:501
+    /* 2b9b */      c_ldc2_w(0x00, 0x2b)
+    /* 2b9e */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test5#()V:502
+    /* 2ba1 */      c_getstatic(0x00, 0x03)
+    /* 2ba4 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test5#()V:503
+    /* 2ba7 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test6#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test6#()V:506
+    /* 2ba8 */      c_iconst_0()
+    /* 2ba9 */      c_istore_0()
+
+    // thinj/regression/ThreadTest#test6#()V:508
+    /* 2baa */      c_getstatic(0x00, 0x01)
+    /* 2bad */      c_dup()
+    /* 2bae */      c_astore_1()
+    /* 2baf */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#test6#()V:509
+    /* 2bb0 */      c_new(0x00, 0x4d)
+    /* 2bb3 */      c_dup()
+    /* 2bb4 */      c_invokespecial(0x00, 0x3f)
+    /* 2bb7 */      c_athrow()
+
+    // thinj/regression/ThreadTest#test6#()V:510
+    /* 2bb8 */      c_astore_2()
+    /* 2bb9 */      c_aload_1()
+    /* 2bba */      c_monitorexit()
+    /* 2bbb */      c_aload_2()
+    /* 2bbc */      c_athrow()
+
+    // thinj/regression/ThreadTest#test6#()V:511
+    /* 2bbd */      c_astore_1()
+
+    // thinj/regression/ThreadTest#test6#()V:512
+    /* 2bbe */      c_iconst_1()
+    /* 2bbf */      c_istore_0()
+
+    // thinj/regression/ThreadTest#test6#()V:514
+    /* 2bc0 */      c_iload_0()
+    /* 2bc1 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test6#()V:516
+    /* 2bc4 */      c_iconst_0()
+    /* 2bc5 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test6#()V:517
+    /* 2bc8 */      c_iconst_0()
+    /* 2bc9 */      c_putstatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest#test6#()V:518
+    /* 2bcc */      c_new(0x00, 0x68)
+    /* 2bcf */      c_dup()
+    /* 2bd0 */      c_invokespecial(0x00, 0x40)
+    /* 2bd3 */      c_invokevirtual(0x00, 0x41)
+
+    // thinj/regression/ThreadTest#test6#()V:527
+    /* 2bd6 */      c_ldc2_w(0x00, 0x2b)
+    /* 2bd9 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test6#()V:528
+    /* 2bdc */      c_getstatic(0x00, 0x03)
+    /* 2bdf */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test6#()V:529
+    /* 2be2 */      c_getstatic(0x00, 0x02)
+    /* 2be5 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test6#()V:530
+    /* 2be8 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test7#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test7#()V:536
+    /* 2be9 */      c_iconst_0()
+    /* 2bea */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test7#()V:537
+    /* 2bed */      c_iconst_0()
+    /* 2bee */      c_putstatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest#test7#()V:538
+    /* 2bf1 */      c_new(0x00, 0x6b)
+    /* 2bf4 */      c_dup()
+    /* 2bf5 */      c_invokespecial(0x00, 0x42)
+    /* 2bf8 */      c_invokevirtual(0x00, 0x43)
+
+    // thinj/regression/ThreadTest#test7#()V:552
+    /* 2bfb */      c_getstatic(0x00, 0x02)
+    /* 2bfe */      c_ifne(0x00, 0x0c)
+
+    // thinj/regression/ThreadTest#test7#()V:553
+    /* 2c01 */      c_ldc2_w(0x00, 0x6e)
+    /* 2c04 */      c_invokestatic(0x00, 0x00)
+    /* 2c07 */      c_goto(0xff, 0xf4)
+
+    // thinj/regression/ThreadTest#test7#()V:555
+    /* 2c0a */      c_ldc2_w(0x00, 0x70)
+    /* 2c0d */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test7#()V:556
+    /* 2c10 */      c_getstatic(0x00, 0x01)
+    /* 2c13 */      c_dup()
+    /* 2c14 */      c_astore_0()
+    /* 2c15 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#test7#()V:557
+    /* 2c16 */      c_getstatic(0x00, 0x01)
+    /* 2c19 */      c_invokevirtual(0x00, 0x44)
+
+    // thinj/regression/ThreadTest#test7#()V:558
+    /* 2c1c */      c_aload_0()
+    /* 2c1d */      c_monitorexit()
+    /* 2c1e */      c_goto(0x00, 0x08)
+    /* 2c21 */      c_astore_1()
+    /* 2c22 */      c_aload_0()
+    /* 2c23 */      c_monitorexit()
+    /* 2c24 */      c_aload_1()
+    /* 2c25 */      c_athrow()
+
+    // thinj/regression/ThreadTest#test7#()V:560
+    /* 2c26 */      c_ldc2_w(0x00, 0x2b)
+    /* 2c29 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test7#()V:561
+    /* 2c2c */      c_getstatic(0x00, 0x03)
+    /* 2c2f */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test7#()V:562
+    /* 2c32 */      c_getstatic(0x00, 0x02)
+    /* 2c35 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test7#()V:563
+    /* 2c38 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test8#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test8#()V:569
+    /* 2c39 */      c_iconst_0()
+    /* 2c3a */      c_putstatic(0x00, 0x04)
+
+    // thinj/regression/ThreadTest#test8#()V:570
+    /* 2c3d */      c_iconst_0()
+    /* 2c3e */      c_putstatic(0x00, 0x00)
+
+    // thinj/regression/ThreadTest#test8#()V:571
+    /* 2c41 */      c_bipush(0x0a)
+    /* 2c43 */      c_anewarray(0x00, 0x4e)
+    /* 2c46 */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test8#()V:572
+    /* 2c47 */      c_iconst_0()
+    /* 2c48 */      c_istore_1()
+    /* 2c49 */      c_iload_1()
+    /* 2c4a */      c_aload_0()
+    /* 2c4b */      c_arraylength()
+    /* 2c4c */      c_if_icmpge(0x00, 0x13)
+
+    // thinj/regression/ThreadTest#test8#()V:573
+    /* 2c4f */      c_aload_0()
+    /* 2c50 */      c_iload_1()
+    /* 2c51 */      c_new(0x00, 0x73)
+    /* 2c54 */      c_dup()
+    /* 2c55 */      c_invokespecial(0x00, 0x45)
+    /* 2c58 */      c_aastore()
+
+    // thinj/regression/ThreadTest#test8#()V:572
+    /* 2c59 */      c_iinc(0x01, 0x01)
+    /* 2c5c */      c_goto(0xff, 0xed)
+
+    // thinj/regression/ThreadTest#test8#()V:594
+    /* 2c5f */      c_aload_0()
+    /* 2c60 */      c_astore_1()
+    /* 2c61 */      c_aload_1()
+    /* 2c62 */      c_arraylength()
+    /* 2c63 */      c_istore_2()
+    /* 2c64 */      c_iconst_0()
+    /* 2c65 */      c_istore_3()
+    /* 2c66 */      c_iload_3()
+    /* 2c67 */      c_iload_2()
+    /* 2c68 */      c_if_icmpge(0x00, 0x13)
+    /* 2c6b */      c_aload_1()
+    /* 2c6c */      c_iload_3()
+    /* 2c6d */      c_aaload()
+    /* 2c6e */      c_astore(0x04)
+
+    // thinj/regression/ThreadTest#test8#()V:595
+    /* 2c70 */      c_aload(0x04)
+    /* 2c72 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#test8#()V:594
+    /* 2c75 */      c_iinc(0x03, 0x01)
+    /* 2c78 */      c_goto(0xff, 0xee)
+
+    // thinj/regression/ThreadTest#test8#()V:599
+    /* 2c7b */      c_getstatic(0x00, 0x00)
+    /* 2c7e */      c_bipush(0x0a)
+    /* 2c80 */      c_if_icmpge(0x00, 0x06)
+    /* 2c83 */      c_goto(0xff, 0xf8)
+
+    // thinj/regression/ThreadTest#test8#()V:602
+    /* 2c86 */      c_ldc2_w(0x00, 0x56)
+    /* 2c89 */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/ThreadTest#test8#()V:605
+    /* 2c8c */      c_getstatic(0x00, 0x01)
+    /* 2c8f */      c_dup()
+    /* 2c90 */      c_astore_1()
+    /* 2c91 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#test8#()V:607
+    /* 2c92 */      c_getstatic(0x00, 0x01)
+    /* 2c95 */      c_invokevirtual(0x00, 0x44)
+
+    // thinj/regression/ThreadTest#test8#()V:608
+    /* 2c98 */      c_aload_1()
+    /* 2c99 */      c_monitorexit()
+    /* 2c9a */      c_goto(0x00, 0x0a)
+    /* 2c9d */      c_astore(0x05)
+    /* 2c9f */      c_aload_1()
+    /* 2ca0 */      c_monitorexit()
+    /* 2ca1 */      c_aload(0x05)
+    /* 2ca3 */      c_athrow()
+
+    // thinj/regression/ThreadTest#test8#()V:610
+    /* 2ca4 */      c_ldc2_w(0x00, 0x2b)
+    /* 2ca7 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test8#()V:611
+    /* 2caa */      c_getstatic(0x00, 0x03)
+    /* 2cad */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test8#()V:612
+    /* 2cb0 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test9_helper1#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test9_helper1#()V:615
+    /* 2cb1 */      c_new(0x00, 0x4d)
+    /* 2cb4 */      c_dup()
+    /* 2cb5 */      c_invokespecial(0x00, 0x3f)
+    /* 2cb8 */      c_athrow()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test9_helper2#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test9_helper2#()V:619
+    /* 2cb9 */      c_getstatic(0x00, 0x01)
+    /* 2cbc */      c_dup()
+    /* 2cbd */      c_astore_0()
+    /* 2cbe */      c_monitorenter()
+
+    // thinj/regression/ThreadTest#test9_helper2#()V:620
+    /* 2cbf */      c_invokestatic(0x00, 0x46)
+
+    // thinj/regression/ThreadTest#test9_helper2#()V:621
+    /* 2cc2 */      c_aload_0()
+    /* 2cc3 */      c_monitorexit()
+    /* 2cc4 */      c_goto(0x00, 0x08)
+    /* 2cc7 */      c_astore_1()
+    /* 2cc8 */      c_aload_0()
+    /* 2cc9 */      c_monitorexit()
+    /* 2cca */      c_aload_1()
+    /* 2ccb */      c_athrow()
+
+    // thinj/regression/ThreadTest#test9_helper2#()V:622
+    /* 2ccc */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test9#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test9#()V:628
+    /* 2ccd */      c_iconst_0()
+    /* 2cce */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test9#()V:630
+    /* 2cd1 */      c_invokestatic(0x00, 0x47)
+
+    // thinj/regression/ThreadTest#test9#()V:633
+    /* 2cd4 */      c_goto(0x00, 0x08)
+
+    // thinj/regression/ThreadTest#test9#()V:631
+    /* 2cd7 */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test9#()V:632
+    /* 2cd8 */      c_iconst_1()
+    /* 2cd9 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test9#()V:634
+    /* 2cdc */      c_getstatic(0x00, 0x03)
+    /* 2cdf */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test9#()V:636
+    /* 2ce2 */      c_iconst_0()
+    /* 2ce3 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test9#()V:637
+    /* 2ce6 */      c_new(0x00, 0x77)
+    /* 2ce9 */      c_dup()
+    /* 2cea */      c_invokespecial(0x00, 0x48)
+    /* 2ced */      c_invokevirtual(0x00, 0x49)
+
+    // thinj/regression/ThreadTest#test9#()V:646
+    /* 2cf0 */      c_ldc2_w(0x00, 0x2b)
+    /* 2cf3 */      c_invokestatic(0x00, 0x1f)
+
+    // thinj/regression/ThreadTest#test9#()V:647
+    /* 2cf6 */      c_getstatic(0x00, 0x03)
+    /* 2cf9 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test9#()V:648
+    /* 2cfc */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test10#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test10#()V:654
+    /* 2cfd */      c_invokestatic(0x00, 0x4a)
+    /* 2d00 */      c_lstore_0()
+
+    // thinj/regression/ThreadTest#test10#()V:656
+    /* 2d01 */      c_ldc2_w(0x00, 0x2b)
+    /* 2d04 */      c_invokestatic(0x00, 0x4b)
+
+    // thinj/regression/ThreadTest#test10#()V:660
+    /* 2d07 */      c_goto(0x00, 0x08)
+
+    // thinj/regression/ThreadTest#test10#()V:657
+    /* 2d0a */      c_astore_2()
+
+    // thinj/regression/ThreadTest#test10#()V:659
+    /* 2d0b */      c_iconst_0()
+    /* 2d0c */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test10#()V:661
+    /* 2d0f */      c_invokestatic(0x00, 0x4a)
+    /* 2d12 */      c_lload_0()
+    /* 2d13 */      c_lsub()
+    /* 2d14 */      c_ldc2_w(0x00, 0x2b)
+    /* 2d17 */      c_lcmp()
+    /* 2d18 */      c_iflt(0x00, 0x07)
+    /* 2d1b */      c_iconst_1()
+    /* 2d1c */      c_goto(0x00, 0x04)
+    /* 2d1f */      c_iconst_0()
+    /* 2d20 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test10#()V:662
+    /* 2d23 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test11#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test11#()V:668
+    /* 2d24 */      c_iconst_0()
+    /* 2d25 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test11#()V:670
+    /* 2d28 */      c_new(0x00, 0x7c)
+    /* 2d2b */      c_dup()
+    /* 2d2c */      c_invokespecial(0x00, 0x4c)
+    /* 2d2f */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test11#()V:686
+    /* 2d30 */      c_aload_0()
+    /* 2d31 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#test11#()V:688
+    /* 2d34 */      c_getstatic(0x00, 0x03)
+    /* 2d37 */      c_ifne(0x00, 0x18)
+
+    // thinj/regression/ThreadTest#test11#()V:689
+    /* 2d3a */      c_aload_0()
+    /* 2d3b */      c_invokevirtual(0x00, 0x4d)
+
+    // thinj/regression/ThreadTest#test11#()V:691
+    /* 2d3e */      c_ldc2_w(0x00, 0x7f)
+    /* 2d41 */      c_invokestatic(0x00, 0x4b)
+
+    // thinj/regression/ThreadTest#test11#()V:695
+    /* 2d44 */      c_goto(0xff, 0xf0)
+
+    // thinj/regression/ThreadTest#test11#()V:692
+    /* 2d47 */      c_astore_1()
+
+    // thinj/regression/ThreadTest#test11#()V:694
+    /* 2d48 */      c_iconst_0()
+    /* 2d49 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test11#()V:695
+    /* 2d4c */      c_goto(0xff, 0xe8)
+
+    // thinj/regression/ThreadTest#test11#()V:698
+    /* 2d4f */      c_getstatic(0x00, 0x03)
+    /* 2d52 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test11#()V:699
+    /* 2d55 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#test12#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#test12#()V:705
+    /* 2d56 */      c_iconst_0()
+    /* 2d57 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#test12#()V:707
+    /* 2d5a */      c_new(0x00, 0x81)
+    /* 2d5d */      c_dup()
+    /* 2d5e */      c_invokespecial(0x00, 0x4e)
+    /* 2d61 */      c_astore_0()
+
+    // thinj/regression/ThreadTest#test12#()V:721
+    /* 2d62 */      c_aload_0()
+    /* 2d63 */      c_invokevirtual(0x00, 0x32)
+
+    // thinj/regression/ThreadTest#test12#()V:723
+    /* 2d66 */      c_getstatic(0x00, 0x03)
+    /* 2d69 */      c_ifne(0x00, 0x1e)
+
+    // thinj/regression/ThreadTest#test12#()V:725
+    /* 2d6c */      c_ldc2_w(0x00, 0x56)
+    /* 2d6f */      c_invokestatic(0x00, 0x00)
+
+    // thinj/regression/ThreadTest#test12#()V:726
+    /* 2d72 */      c_aload_0()
+    /* 2d73 */      c_invokevirtual(0x00, 0x4d)
+
+    // thinj/regression/ThreadTest#test12#()V:728
+    /* 2d76 */      c_ldc2_w(0x00, 0x7f)
+    /* 2d79 */      c_invokestatic(0x00, 0x4b)
+
+    // thinj/regression/ThreadTest#test12#()V:732
+    /* 2d7c */      c_goto(0xff, 0xea)
+
+    // thinj/regression/ThreadTest#test12#()V:729
+    /* 2d7f */      c_astore_1()
+
+    // thinj/regression/ThreadTest#test12#()V:731
+    /* 2d80 */      c_iconst_0()
+    /* 2d81 */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test12#()V:732
+    /* 2d84 */      c_goto(0xff, 0xe2)
+
+    // thinj/regression/ThreadTest#test12#()V:735
+    /* 2d87 */      c_getstatic(0x00, 0x03)
+    /* 2d8a */      c_invokestatic(0x00, 0x23)
+
+    // thinj/regression/ThreadTest#test12#()V:736
+    /* 2d8d */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#busyWaitDone#(J)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#busyWaitDone#(J)V:740
+    /* 2d8e */      c_invokestatic(0x00, 0x4f)
+    /* 2d91 */      c_lload_0()
+    /* 2d92 */      c_ldc2_w(0x00, 0x84)
+    /* 2d95 */      c_lmul()
+    /* 2d96 */      c_ladd()
+    /* 2d97 */      c_lstore_2()
+
+    // thinj/regression/ThreadTest#busyWaitDone#(J)V:741
+    /* 2d98 */      c_invokestatic(0x00, 0x4f)
+    /* 2d9b */      c_lload_2()
+    /* 2d9c */      c_lcmp()
+    /* 2d9d */      c_ifge(0x00, 0x0c)
+    /* 2da0 */      c_getstatic(0x00, 0x03)
+    /* 2da3 */      c_ifne(0x00, 0x06)
+
+    // thinj/regression/ThreadTest#busyWaitDone#(J)V:742
+    /* 2da6 */      c_goto(0xff, 0xf2)
+
+    // thinj/regression/ThreadTest#busyWaitDone#(J)V:743
+    /* 2da9 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#busyWait#(J)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#busyWait#(J)V:747
+    /* 2daa */      c_invokestatic(0x00, 0x4f)
+    /* 2dad */      c_lload_0()
+    /* 2dae */      c_ldc2_w(0x00, 0x84)
+    /* 2db1 */      c_lmul()
+    /* 2db2 */      c_ladd()
+    /* 2db3 */      c_lstore_2()
+
+    // thinj/regression/ThreadTest#busyWait#(J)V:748
+    /* 2db4 */      c_invokestatic(0x00, 0x4f)
+    /* 2db7 */      c_lload_2()
+    /* 2db8 */      c_lcmp()
+    /* 2db9 */      c_ifge(0x00, 0x06)
+
+    // thinj/regression/ThreadTest#busyWait#(J)V:749
+    /* 2dbc */      c_goto(0xff, 0xf8)
+
+    // thinj/regression/ThreadTest#busyWait#(J)V:750
+    /* 2dbf */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#access$008#()I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#access$008#()I:3
+    /* 2dc0 */      c_getstatic(0x00, 0x04)
+    /* 2dc3 */      c_dup()
+    /* 2dc4 */      c_iconst_1()
+    /* 2dc5 */      c_iadd()
+    /* 2dc6 */      c_putstatic(0x00, 0x04)
+    /* 2dc9 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#access$000#()I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#access$000#()I:3
+    /* 2dca */      c_getstatic(0x00, 0x04)
+    /* 2dcd */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#access$102#(Z)Z
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#access$102#(Z)Z:3
+    /* 2dce */      c_iload_0()
+    /* 2dcf */      c_dup()
+    /* 2dd0 */      c_putstatic(0x00, 0x03)
+    /* 2dd3 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#access$200#()Z
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#access$200#()Z:3
+    /* 2dd4 */      c_getstatic(0x00, 0x02)
+    /* 2dd7 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#access$300#(J)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#access$300#(J)V:3
+    /* 2dd8 */      c_lload_0()
+    /* 2dd9 */      c_invokestatic(0x00, 0x00)
+    /* 2ddc */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#access$202#(Z)Z
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#access$202#(Z)Z:3
+    /* 2ddd */      c_iload_0()
+    /* 2dde */      c_dup()
+    /* 2ddf */      c_putstatic(0x00, 0x02)
+    /* 2de2 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#access$100#()Z
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#access$100#()Z:3
+    /* 2de3 */      c_getstatic(0x00, 0x03)
+    /* 2de6 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#access$400#()Ljava/lang/Object;:3
+    /* 2de7 */      c_getstatic(0x00, 0x01)
+    /* 2dea */      c_areturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#access$508#()I
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#access$508#()I:3
+    /* 2deb */      c_getstatic(0x00, 0x00)
+    /* 2dee */      c_dup()
+    /* 2def */      c_iconst_1()
+    /* 2df0 */      c_iadd()
+    /* 2df1 */      c_putstatic(0x00, 0x00)
+    /* 2df4 */      c_ireturn()
+
+    //------------------------------------------------------------------------------
+    // (64) thinj/regression/ThreadTest#<clinit>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest#<clinit>#()V:4
+    /* 2df5 */      c_iconst_0()
+    /* 2df6 */      c_putstatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest#<clinit>#()V:5
+    /* 2df9 */      c_iconst_0()
+    /* 2dfa */      c_putstatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest#<clinit>#()V:6
+    /* 2dfd */      c_iconst_0()
+    /* 2dfe */      c_putstatic(0x00, 0x04)
+
+    // thinj/regression/ThreadTest#<clinit>#()V:405
+    /* 2e01 */      c_new(0x00, 0x24)
+    /* 2e04 */      c_dup()
+    /* 2e05 */      c_invokespecial(0x00, 0x01)
+    /* 2e08 */      c_putstatic(0x00, 0x01)
+    /* 2e0b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (82) thinj/regression/ThreadTest$4#<init>#(Ljava/lang/Object;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$4#<init>#(Ljava/lang/Object;)V:140
+    /* 2e0c */      c_aload_0()
+    /* 2e0d */      c_aload_1()
+    /* 2e0e */      c_putfield(0x00, 0x00)
+    /* 2e11 */      c_aload_0()
+    /* 2e12 */      c_invokespecial(0x00, 0x00)
+    /* 2e15 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (82) thinj/regression/ThreadTest$4#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$4#run#()V:143
+    /* 2e16 */      c_iconst_0()
+    /* 2e17 */      c_istore_1()
+    /* 2e18 */      c_iload_1()
+    /* 2e19 */      c_sipush(0x03, 0xe8)
+    /* 2e1c */      c_if_icmpge(0x00, 0x54)
+
+    // thinj/regression/ThreadTest$4#run#()V:144
+    /* 2e1f */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/ThreadTest$4#run#()V:145
+    /* 2e22 */      c_new(0x00, 0x04)
+    /* 2e25 */      c_dup()
+    /* 2e26 */      c_invokespecial(0x00, 0x02)
+    /* 2e29 */      c_ldc(0x06)
+    /* 2e2b */      c_invokevirtual(0x00, 0x03)
+    /* 2e2e */      c_iload_1()
+    /* 2e2f */      c_invokevirtual(0x00, 0x04)
+    /* 2e32 */      c_invokevirtual(0x00, 0x05)
+    /* 2e35 */      c_astore_2()
+
+    // thinj/regression/ThreadTest$4#run#()V:146
+    /* 2e36 */      c_iload_1()
+    /* 2e37 */      c_bipush(0x32)
+    /* 2e39 */      c_irem()
+    /* 2e3a */      c_ifne(0x00, 0x30)
+
+    // thinj/regression/ThreadTest$4#run#()V:147
+    /* 2e3d */      c_new(0x00, 0x04)
+    /* 2e40 */      c_dup()
+    /* 2e41 */      c_invokespecial(0x00, 0x02)
+    /* 2e44 */      c_aload_2()
+    /* 2e45 */      c_invokevirtual(0x00, 0x03)
+    /* 2e48 */      c_ldc(0x0a)
+    /* 2e4a */      c_invokevirtual(0x00, 0x03)
+    /* 2e4d */      c_invokevirtual(0x00, 0x05)
+    /* 2e50 */      c_astore_2()
+
+    // thinj/regression/ThreadTest$4#run#()V:148
+    /* 2e51 */      c_getstatic(0x00, 0x01)
+    /* 2e54 */      c_new(0x00, 0x04)
+    /* 2e57 */      c_dup()
+    /* 2e58 */      c_invokespecial(0x00, 0x02)
+    /* 2e5b */      c_ldc(0x0c)
+    /* 2e5d */      c_invokevirtual(0x00, 0x03)
+    /* 2e60 */      c_aload_2()
+    /* 2e61 */      c_invokevirtual(0x00, 0x03)
+    /* 2e64 */      c_invokevirtual(0x00, 0x05)
+    /* 2e67 */      c_invokevirtual(0x00, 0x06)
+
+    // thinj/regression/ThreadTest$4#run#()V:143
+    /* 2e6a */      c_iinc(0x01, 0x01)
+    /* 2e6d */      c_goto(0xff, 0xab)
+
+    // thinj/regression/ThreadTest$4#run#()V:151
+    /* 2e70 */      c_aload_0()
+    /* 2e71 */      c_getfield(0x00, 0x00)
+    /* 2e74 */      c_dup()
+    /* 2e75 */      c_astore_1()
+    /* 2e76 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$4#run#()V:152
+    /* 2e77 */      c_iconst_1()
+    /* 2e78 */      c_invokestatic(0x00, 0x07)
+    /* 2e7b */      c_pop()
+
+    // thinj/regression/ThreadTest$4#run#()V:153
+    /* 2e7c */      c_aload_0()
+    /* 2e7d */      c_getfield(0x00, 0x00)
+    /* 2e80 */      c_invokevirtual(0x00, 0x08)
+
+    // thinj/regression/ThreadTest$4#run#()V:154
+    /* 2e83 */      c_aload_1()
+    /* 2e84 */      c_monitorexit()
+    /* 2e85 */      c_goto(0x00, 0x08)
+    /* 2e88 */      c_astore_3()
+    /* 2e89 */      c_aload_1()
+    /* 2e8a */      c_monitorexit()
+    /* 2e8b */      c_aload_3()
+    /* 2e8c */      c_athrow()
+
+    // thinj/regression/ThreadTest$4#run#()V:155
+    /* 2e8d */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (25) java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V
+    //------------------------------------------------------------------------------
+
+    // java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V:5
+    /* 2e8e */      c_aload_0()
+    /* 2e8f */      c_aload_1()
+    /* 2e90 */      c_invokespecial(0x00, 0x00)
+
+    // java/lang/IllegalThreadStateException#<init>#(Ljava/lang/String;)V:6
+    /* 2e93 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (23) java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V
+    //------------------------------------------------------------------------------
+
+    // java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V:6
+    /* 2e94 */      c_aload_0()
+    /* 2e95 */      c_aload_1()
+    /* 2e96 */      c_invokespecial(0x00, 0x00)
+
+    // java/lang/IllegalArgumentException#<init>#(Ljava/lang/String;)V:7
+    /* 2e99 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (34) java/lang/RuntimeException#<init>#(Ljava/lang/String;)V
+    //------------------------------------------------------------------------------
+
+    // java/lang/RuntimeException#<init>#(Ljava/lang/String;)V:5
+    /* 2e9a */      c_aload_0()
+    /* 2e9b */      c_aload_1()
+    /* 2e9c */      c_invokespecial(0x00, 0x00)
+
+    // java/lang/RuntimeException#<init>#(Ljava/lang/String;)V:6
+    /* 2e9f */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (34) java/lang/RuntimeException#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // java/lang/RuntimeException#<init>#()V:7
+    /* 2ea0 */      c_aload_0()
+    /* 2ea1 */      c_invokespecial(0x00, 0x01)
+
+    // java/lang/RuntimeException#<init>#()V:8
+    /* 2ea4 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (83) thinj/regression/ThreadTest$5#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$5#<init>#()V:172
+    /* 2ea5 */      c_aload_0()
+    /* 2ea6 */      c_invokespecial(0x00, 0x00)
+    /* 2ea9 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (83) thinj/regression/ThreadTest$5#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$5#run#()V:174
+    /* 2eaa */      c_iconst_1()
+    /* 2eab */      c_invokestatic(0x00, 0x01)
+    /* 2eae */      c_pop()
+
+    // thinj/regression/ThreadTest$5#run#()V:175
+    /* 2eaf */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (81) thinj/regression/ThreadTest$3#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$3#<init>#()V:111
+    /* 2eb0 */      c_aload_0()
+    /* 2eb1 */      c_invokespecial(0x00, 0x00)
+    /* 2eb4 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (81) thinj/regression/ThreadTest$3#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$3#run#()V:114
+    /* 2eb5 */      c_invokestatic(0x00, 0x01)
+    /* 2eb8 */      c_pop()
+
+    // thinj/regression/ThreadTest$3#run#()V:115
+    /* 2eb9 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (84) thinj/regression/ThreadTest$6#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$6#<init>#()V:184
+    /* 2eba */      c_aload_0()
+    /* 2ebb */      c_invokespecial(0x00, 0x00)
+    /* 2ebe */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (84) thinj/regression/ThreadTest$6#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$6#run#()V:186
+    /* 2ebf */      c_iconst_1()
+    /* 2ec0 */      c_invokestatic(0x00, 0x01)
+    /* 2ec3 */      c_pop()
+
+    // thinj/regression/ThreadTest$6#run#()V:187
+    /* 2ec4 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$6#run#()V:188
+    /* 2ec7 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (86) thinj/regression/ThreadTest$8#<init>#(Ljava/lang/Object;Ljava/lang/Thread;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$8#<init>#(Ljava/lang/Object;Ljava/lang/Thread;)V:221
+    /* 2ec8 */      c_aload_0()
+    /* 2ec9 */      c_aload_1()
+    /* 2eca */      c_putfield(0x00, 0x00)
+    /* 2ecd */      c_aload_0()
+    /* 2ece */      c_aload_2()
+    /* 2ecf */      c_putfield(0x00, 0x01)
+    /* 2ed2 */      c_aload_0()
+    /* 2ed3 */      c_invokespecial(0x00, 0x00)
+    /* 2ed6 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (86) thinj/regression/ThreadTest$8#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$8#run#()V:224
+    /* 2ed7 */      c_aload_0()
+    /* 2ed8 */      c_getfield(0x00, 0x00)
+    /* 2edb */      c_dup()
+    /* 2edc */      c_astore_1()
+    /* 2edd */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$8#run#()V:225
+    /* 2ede */      c_iconst_0()
+    /* 2edf */      c_invokestatic(0x00, 0x01)
+    /* 2ee2 */      c_pop()
+
+    // thinj/regression/ThreadTest$8#run#()V:226
+    /* 2ee3 */      c_aload_0()
+    /* 2ee4 */      c_getfield(0x00, 0x01)
+    /* 2ee7 */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$8#run#()V:229
+    /* 2eea */      c_ldc2_w(0x00, 0x06)
+    /* 2eed */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest$8#run#()V:230
+    /* 2ef0 */      c_iconst_1()
+    /* 2ef1 */      c_invokestatic(0x00, 0x01)
+    /* 2ef4 */      c_pop()
+
+    // thinj/regression/ThreadTest$8#run#()V:231
+    /* 2ef5 */      c_aload_1()
+    /* 2ef6 */      c_monitorexit()
+    /* 2ef7 */      c_goto(0x00, 0x08)
+    /* 2efa */      c_astore_2()
+    /* 2efb */      c_aload_1()
+    /* 2efc */      c_monitorexit()
+    /* 2efd */      c_aload_2()
+    /* 2efe */      c_athrow()
+
+    // thinj/regression/ThreadTest$8#run#()V:232
+    /* 2eff */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (85) thinj/regression/ThreadTest$7#<init>#(Ljava/lang/Object;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$7#<init>#(Ljava/lang/Object;)V:211
+    /* 2f00 */      c_aload_0()
+    /* 2f01 */      c_aload_1()
+    /* 2f02 */      c_putfield(0x00, 0x00)
+    /* 2f05 */      c_aload_0()
+    /* 2f06 */      c_invokespecial(0x00, 0x00)
+    /* 2f09 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (85) thinj/regression/ThreadTest$7#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$7#run#()V:214
+    /* 2f0a */      c_aload_0()
+    /* 2f0b */      c_getfield(0x00, 0x00)
+    /* 2f0e */      c_dup()
+    /* 2f0f */      c_astore_1()
+    /* 2f10 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$7#run#()V:215
+    /* 2f11 */      c_invokestatic(0x00, 0x01)
+    /* 2f14 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$7#run#()V:216
+    /* 2f17 */      c_ldc2_w(0x00, 0x05)
+    /* 2f1a */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest$7#run#()V:217
+    /* 2f1d */      c_iconst_1()
+    /* 2f1e */      c_invokestatic(0x00, 0x04)
+    /* 2f21 */      c_pop()
+
+    // thinj/regression/ThreadTest$7#run#()V:218
+    /* 2f22 */      c_aload_1()
+    /* 2f23 */      c_monitorexit()
+    /* 2f24 */      c_goto(0x00, 0x08)
+    /* 2f27 */      c_astore_2()
+    /* 2f28 */      c_aload_1()
+    /* 2f29 */      c_monitorexit()
+    /* 2f2a */      c_aload_2()
+    /* 2f2b */      c_athrow()
+
+    // thinj/regression/ThreadTest$7#run#()V:219
+    /* 2f2c */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (87) thinj/regression/ThreadTest$9#<init>#(Ljava/lang/Object;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$9#<init>#(Ljava/lang/Object;)V:262
+    /* 2f2d */      c_aload_0()
+    /* 2f2e */      c_aload_1()
+    /* 2f2f */      c_putfield(0x00, 0x00)
+    /* 2f32 */      c_aload_0()
+    /* 2f33 */      c_invokespecial(0x00, 0x00)
+    /* 2f36 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (87) thinj/regression/ThreadTest$9#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$9#run#()V:265
+    /* 2f37 */      c_aload_0()
+    /* 2f38 */      c_getfield(0x00, 0x00)
+    /* 2f3b */      c_dup()
+    /* 2f3c */      c_astore_1()
+    /* 2f3d */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$9#run#()V:266
+    /* 2f3e */      c_invokestatic(0x00, 0x01)
+    /* 2f41 */      c_iconst_1()
+    /* 2f42 */      c_if_icmpne(0x00, 0x07)
+    /* 2f45 */      c_iconst_1()
+    /* 2f46 */      c_goto(0x00, 0x04)
+    /* 2f49 */      c_iconst_0()
+    /* 2f4a */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$9#run#()V:267
+    /* 2f4d */      c_invokestatic(0x00, 0x03)
+    /* 2f50 */      c_pop()
+
+    // thinj/regression/ThreadTest$9#run#()V:268
+    /* 2f51 */      c_aload_1()
+    /* 2f52 */      c_monitorexit()
+    /* 2f53 */      c_goto(0x00, 0x08)
+    /* 2f56 */      c_astore_2()
+    /* 2f57 */      c_aload_1()
+    /* 2f58 */      c_monitorexit()
+    /* 2f59 */      c_aload_2()
+    /* 2f5a */      c_athrow()
+
+    // thinj/regression/ThreadTest$9#run#()V:269
+    /* 2f5b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (66) thinj/regression/ThreadTest$10#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$10#<init>#()V:323
+    /* 2f5c */      c_aload_0()
+    /* 2f5d */      c_invokespecial(0x00, 0x00)
+    /* 2f60 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (66) thinj/regression/ThreadTest$10#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$10#run#()V:326
+    /* 2f61 */      c_aconst_null()
+    /* 2f62 */      c_astore_1()
+
+    // thinj/regression/ThreadTest$10#run#()V:328
+    /* 2f63 */      c_aload_1()
+    /* 2f64 */      c_invokevirtual(0x00, 0x01)
+    /* 2f67 */      c_pop()
+
+    // thinj/regression/ThreadTest$10#run#()V:331
+    /* 2f68 */      c_goto(0x00, 0x09)
+
+    // thinj/regression/ThreadTest$10#run#()V:329
+    /* 2f6b */      c_astore_2()
+
+    // thinj/regression/ThreadTest$10#run#()V:330
+    /* 2f6c */      c_iconst_1()
+    /* 2f6d */      c_invokestatic(0x00, 0x02)
+    /* 2f70 */      c_pop()
+
+    // thinj/regression/ThreadTest$10#run#()V:332
+    /* 2f71 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (68) thinj/regression/ThreadTest$12#<init>#(Ljava/lang/Object;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$12#<init>#(Ljava/lang/Object;)V:372
+    /* 2f72 */      c_aload_0()
+    /* 2f73 */      c_aload_1()
+    /* 2f74 */      c_putfield(0x00, 0x00)
+    /* 2f77 */      c_aload_0()
+    /* 2f78 */      c_invokespecial(0x00, 0x00)
+    /* 2f7b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (68) thinj/regression/ThreadTest$12#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$12#run#()V:374
+    /* 2f7c */      c_aload_0()
+    /* 2f7d */      c_getfield(0x00, 0x00)
+    /* 2f80 */      c_dup()
+    /* 2f81 */      c_astore_1()
+    /* 2f82 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$12#run#()V:375
+    /* 2f83 */      c_aload_0()
+    /* 2f84 */      c_getfield(0x00, 0x00)
+    /* 2f87 */      c_invokevirtual(0x00, 0x01)
+
+    // thinj/regression/ThreadTest$12#run#()V:377
+    /* 2f8a */      c_ldc2_w(0x00, 0x04)
+    /* 2f8d */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$12#run#()V:380
+    /* 2f90 */      c_iconst_1()
+    /* 2f91 */      c_invokestatic(0x00, 0x03)
+    /* 2f94 */      c_pop()
+
+    // thinj/regression/ThreadTest$12#run#()V:381
+    /* 2f95 */      c_aload_1()
+    /* 2f96 */      c_monitorexit()
+    /* 2f97 */      c_goto(0x00, 0x08)
+    /* 2f9a */      c_astore_2()
+    /* 2f9b */      c_aload_1()
+    /* 2f9c */      c_monitorexit()
+    /* 2f9d */      c_aload_2()
+    /* 2f9e */      c_athrow()
+
+    // thinj/regression/ThreadTest$12#run#()V:382
+    /* 2f9f */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (67) thinj/regression/ThreadTest$11#<init>#(Ljava/lang/Object;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$11#<init>#(Ljava/lang/Object;)V:342
+    /* 2fa0 */      c_aload_0()
+    /* 2fa1 */      c_aload_1()
+    /* 2fa2 */      c_putfield(0x00, 0x00)
+    /* 2fa5 */      c_aload_0()
+    /* 2fa6 */      c_invokespecial(0x00, 0x00)
+    /* 2fa9 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (67) thinj/regression/ThreadTest$11#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$11#run#()V:346
+    /* 2faa */      c_aload_0()
+    /* 2fab */      c_getfield(0x00, 0x00)
+    /* 2fae */      c_dup()
+    /* 2faf */      c_astore_1()
+    /* 2fb0 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$11#run#()V:347
+    /* 2fb1 */      c_aload_0()
+    /* 2fb2 */      c_getfield(0x00, 0x00)
+    /* 2fb5 */      c_dup()
+    /* 2fb6 */      c_astore_2()
+    /* 2fb7 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$11#run#()V:348
+    /* 2fb8 */      c_aload_0()
+    /* 2fb9 */      c_getfield(0x00, 0x00)
+    /* 2fbc */      c_dup()
+    /* 2fbd */      c_astore_3()
+    /* 2fbe */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$11#run#()V:350
+    /* 2fbf */      c_iconst_1()
+    /* 2fc0 */      c_invokestatic(0x00, 0x01)
+    /* 2fc3 */      c_pop()
+
+    // thinj/regression/ThreadTest$11#run#()V:353
+    /* 2fc4 */      c_aload_0()
+    /* 2fc5 */      c_getfield(0x00, 0x00)
+    /* 2fc8 */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$11#run#()V:356
+    /* 2fcb */      c_invokestatic(0x00, 0x03)
+    /* 2fce */      c_invokestatic(0x00, 0x04)
+
+    // thinj/regression/ThreadTest$11#run#()V:357
+    /* 2fd1 */      c_aload_3()
+    /* 2fd2 */      c_monitorexit()
+    /* 2fd3 */      c_goto(0x00, 0x0a)
+    /* 2fd6 */      c_astore(0x04)
+    /* 2fd8 */      c_aload_3()
+    /* 2fd9 */      c_monitorexit()
+    /* 2fda */      c_aload(0x04)
+    /* 2fdc */      c_athrow()
+
+    // thinj/regression/ThreadTest$11#run#()V:358
+    /* 2fdd */      c_aload_2()
+    /* 2fde */      c_monitorexit()
+    /* 2fdf */      c_goto(0x00, 0x0a)
+    /* 2fe2 */      c_astore(0x05)
+    /* 2fe4 */      c_aload_2()
+    /* 2fe5 */      c_monitorexit()
+    /* 2fe6 */      c_aload(0x05)
+    /* 2fe8 */      c_athrow()
+
+    // thinj/regression/ThreadTest$11#run#()V:359
+    /* 2fe9 */      c_aload_1()
+    /* 2fea */      c_monitorexit()
+    /* 2feb */      c_goto(0x00, 0x0a)
+    /* 2fee */      c_astore(0x06)
+    /* 2ff0 */      c_aload_1()
+    /* 2ff1 */      c_monitorexit()
+    /* 2ff2 */      c_aload(0x06)
+    /* 2ff4 */      c_athrow()
+
+    // thinj/regression/ThreadTest$11#run#()V:360
+    /* 2ff5 */      c_iconst_1()
+    /* 2ff6 */      c_invokestatic(0x00, 0x01)
+    /* 2ff9 */      c_pop()
+
+    // thinj/regression/ThreadTest$11#run#()V:362
+    /* 2ffa */      c_goto(0x00, 0x04)
+
+    // thinj/regression/ThreadTest$11#run#()V:361
+    /* 2ffd */      c_astore_1()
+
+    // thinj/regression/ThreadTest$11#run#()V:363
+    /* 2ffe */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (69) thinj/regression/ThreadTest$13#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$13#<init>#()V:395
+    /* 2fff */      c_aload_0()
+    /* 3000 */      c_invokespecial(0x00, 0x00)
+    /* 3003 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (69) thinj/regression/ThreadTest$13#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$13#run#()V:397
+    /* 3004 */      c_iconst_1()
+    /* 3005 */      c_invokestatic(0x00, 0x01)
+    /* 3008 */      c_pop()
+
+    // thinj/regression/ThreadTest$13#run#()V:398
+    /* 3009 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (70) thinj/regression/ThreadTest$14#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$14#<init>#()V:409
+    /* 300a */      c_aload_0()
+    /* 300b */      c_invokespecial(0x00, 0x00)
+    /* 300e */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (70) thinj/regression/ThreadTest$14#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$14#run#()V:411
+    /* 300f */      c_invokestatic(0x00, 0x01)
+    /* 3012 */      c_dup()
+    /* 3013 */      c_astore_1()
+    /* 3014 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$14#run#()V:412
+    /* 3015 */      c_iconst_1()
+    /* 3016 */      c_invokestatic(0x00, 0x02)
+    /* 3019 */      c_pop()
+
+    // thinj/regression/ThreadTest$14#run#()V:413
+    /* 301a */      c_aload_1()
+    /* 301b */      c_monitorexit()
+    /* 301c */      c_goto(0x00, 0x08)
+    /* 301f */      c_astore_2()
+    /* 3020 */      c_aload_1()
+    /* 3021 */      c_monitorexit()
+    /* 3022 */      c_aload_2()
+    /* 3023 */      c_athrow()
+
+    // thinj/regression/ThreadTest$14#run#()V:414
+    /* 3024 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (71) thinj/regression/ThreadTest$15#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$15#<init>#()V:441
+    /* 3025 */      c_aload_0()
+    /* 3026 */      c_invokespecial(0x00, 0x00)
+    /* 3029 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (71) thinj/regression/ThreadTest$15#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$15#run#()V:444
+    /* 302a */      c_invokestatic(0x00, 0x01)
+    /* 302d */      c_dup()
+    /* 302e */      c_astore_1()
+    /* 302f */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$15#run#()V:446
+    /* 3030 */      c_invokestatic(0x00, 0x02)
+    /* 3033 */      c_pop()
+
+    // thinj/regression/ThreadTest$15#run#()V:447
+    /* 3034 */      c_invokestatic(0x00, 0x01)
+    /* 3037 */      c_invokevirtual(0x00, 0x03)
+
+    // thinj/regression/ThreadTest$15#run#()V:450
+    /* 303a */      c_goto(0x00, 0x08)
+
+    // thinj/regression/ThreadTest$15#run#()V:448
+    /* 303d */      c_astore_2()
+
+    // thinj/regression/ThreadTest$15#run#()V:449
+    /* 303e */      c_aload_2()
+    /* 303f */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ThreadTest$15#run#()V:451
+    /* 3042 */      c_invokestatic(0x00, 0x05)
+    /* 3045 */      c_pop()
+
+    // thinj/regression/ThreadTest$15#run#()V:452
+    /* 3046 */      c_invokestatic(0x00, 0x06)
+    /* 3049 */      c_bipush(0x0a)
+    /* 304b */      c_if_icmplt(0x00, 0x07)
+    /* 304e */      c_iconst_1()
+    /* 304f */      c_goto(0x00, 0x04)
+    /* 3052 */      c_iconst_0()
+    /* 3053 */      c_invokestatic(0x00, 0x07)
+    /* 3056 */      c_pop()
+
+    // thinj/regression/ThreadTest$15#run#()V:453
+    /* 3057 */      c_aload_1()
+    /* 3058 */      c_monitorexit()
+    /* 3059 */      c_goto(0x00, 0x08)
+    /* 305c */      c_astore_3()
+    /* 305d */      c_aload_1()
+    /* 305e */      c_monitorexit()
+    /* 305f */      c_aload_3()
+    /* 3060 */      c_athrow()
+
+    // thinj/regression/ThreadTest$15#run#()V:454
+    /* 3061 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (73) thinj/regression/ThreadTest$17#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$17#<init>#()V:491
+    /* 3062 */      c_aload_0()
+    /* 3063 */      c_invokespecial(0x00, 0x00)
+    /* 3066 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (73) thinj/regression/ThreadTest$17#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$17#run#()V:493
+    /* 3067 */      c_invokestatic(0x00, 0x01)
+    /* 306a */      c_dup()
+    /* 306b */      c_astore_1()
+    /* 306c */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$17#run#()V:495
+    /* 306d */      c_invokestatic(0x00, 0x01)
+    /* 3070 */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$17#run#()V:496
+    /* 3073 */      c_aload_1()
+    /* 3074 */      c_monitorexit()
+    /* 3075 */      c_goto(0x00, 0x08)
+    /* 3078 */      c_astore_2()
+    /* 3079 */      c_aload_1()
+    /* 307a */      c_monitorexit()
+    /* 307b */      c_aload_2()
+    /* 307c */      c_athrow()
+
+    // thinj/regression/ThreadTest$17#run#()V:497
+    /* 307d */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (72) thinj/regression/ThreadTest$16#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$16#<init>#()V:473
+    /* 307e */      c_aload_0()
+    /* 307f */      c_invokespecial(0x00, 0x00)
+    /* 3082 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (72) thinj/regression/ThreadTest$16#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$16#run#()V:475
+    /* 3083 */      c_invokestatic(0x00, 0x01)
+    /* 3086 */      c_dup()
+    /* 3087 */      c_astore_1()
+    /* 3088 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$16#run#()V:477
+    /* 3089 */      c_invokestatic(0x00, 0x01)
+    /* 308c */      c_invokevirtual(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$16#run#()V:478
+    /* 308f */      c_aload_1()
+    /* 3090 */      c_monitorexit()
+    /* 3091 */      c_goto(0x00, 0x08)
+    /* 3094 */      c_astore_2()
+    /* 3095 */      c_aload_1()
+    /* 3096 */      c_monitorexit()
+    /* 3097 */      c_aload_2()
+    /* 3098 */      c_athrow()
+
+    // thinj/regression/ThreadTest$16#run#()V:479
+    /* 3099 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (74) thinj/regression/ThreadTest$18#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$18#<init>#()V:518
+    /* 309a */      c_aload_0()
+    /* 309b */      c_invokespecial(0x00, 0x00)
+    /* 309e */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (74) thinj/regression/ThreadTest$18#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$18#run#()V:521
+    /* 309f */      c_invokestatic(0x00, 0x01)
+    /* 30a2 */      c_dup()
+    /* 30a3 */      c_astore_1()
+    /* 30a4 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$18#run#()V:522
+    /* 30a5 */      c_iconst_1()
+    /* 30a6 */      c_invokestatic(0x00, 0x02)
+    /* 30a9 */      c_pop()
+
+    // thinj/regression/ThreadTest$18#run#()V:523
+    /* 30aa */      c_aload_1()
+    /* 30ab */      c_monitorexit()
+    /* 30ac */      c_goto(0x00, 0x08)
+    /* 30af */      c_astore_2()
+    /* 30b0 */      c_aload_1()
+    /* 30b1 */      c_monitorexit()
+    /* 30b2 */      c_aload_2()
+    /* 30b3 */      c_athrow()
+
+    // thinj/regression/ThreadTest$18#run#()V:524
+    /* 30b4 */      c_iconst_1()
+    /* 30b5 */      c_invokestatic(0x00, 0x03)
+    /* 30b8 */      c_pop()
+
+    // thinj/regression/ThreadTest$18#run#()V:525
+    /* 30b9 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (75) thinj/regression/ThreadTest$19#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$19#<init>#()V:538
+    /* 30ba */      c_aload_0()
+    /* 30bb */      c_invokespecial(0x00, 0x00)
+    /* 30be */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (75) thinj/regression/ThreadTest$19#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$19#run#()V:541
+    /* 30bf */      c_invokestatic(0x00, 0x01)
+    /* 30c2 */      c_dup()
+    /* 30c3 */      c_astore_1()
+    /* 30c4 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$19#run#()V:542
+    /* 30c5 */      c_iconst_1()
+    /* 30c6 */      c_invokestatic(0x00, 0x02)
+    /* 30c9 */      c_pop()
+
+    // thinj/regression/ThreadTest$19#run#()V:544
+    /* 30ca */      c_invokestatic(0x00, 0x01)
+    /* 30cd */      c_invokevirtual(0x00, 0x03)
+
+    // thinj/regression/ThreadTest$19#run#()V:545
+    /* 30d0 */      c_iconst_1()
+    /* 30d1 */      c_invokestatic(0x00, 0x04)
+    /* 30d4 */      c_pop()
+
+    // thinj/regression/ThreadTest$19#run#()V:547
+    /* 30d5 */      c_goto(0x00, 0x04)
+
+    // thinj/regression/ThreadTest$19#run#()V:546
+    /* 30d8 */      c_astore_2()
+
+    // thinj/regression/ThreadTest$19#run#()V:548
+    /* 30d9 */      c_aload_1()
+    /* 30da */      c_monitorexit()
+    /* 30db */      c_goto(0x00, 0x08)
+    /* 30de */      c_astore_3()
+    /* 30df */      c_aload_1()
+    /* 30e0 */      c_monitorexit()
+    /* 30e1 */      c_aload_3()
+    /* 30e2 */      c_athrow()
+
+    // thinj/regression/ThreadTest$19#run#()V:549
+    /* 30e3 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (77) thinj/regression/ThreadTest$20#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$20#<init>#()V:573
+    /* 30e4 */      c_aload_0()
+    /* 30e5 */      c_invokespecial(0x00, 0x00)
+    /* 30e8 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (77) thinj/regression/ThreadTest$20#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$20#run#()V:575
+    /* 30e9 */      c_invokestatic(0x00, 0x01)
+    /* 30ec */      c_dup()
+    /* 30ed */      c_astore_1()
+    /* 30ee */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$20#run#()V:577
+    /* 30ef */      c_invokestatic(0x00, 0x02)
+    /* 30f2 */      c_pop()
+
+    // thinj/regression/ThreadTest$20#run#()V:578
+    /* 30f3 */      c_invokestatic(0x00, 0x01)
+    /* 30f6 */      c_invokevirtual(0x00, 0x03)
+
+    // thinj/regression/ThreadTest$20#run#()V:581
+    /* 30f9 */      c_goto(0x00, 0x08)
+
+    // thinj/regression/ThreadTest$20#run#()V:579
+    /* 30fc */      c_astore_2()
+
+    // thinj/regression/ThreadTest$20#run#()V:580
+    /* 30fd */      c_aload_2()
+    /* 30fe */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ThreadTest$20#run#()V:582
+    /* 3101 */      c_invokestatic(0x00, 0x05)
+    /* 3104 */      c_pop()
+
+    // thinj/regression/ThreadTest$20#run#()V:583
+    /* 3105 */      c_invokestatic(0x00, 0x06)
+    /* 3108 */      c_bipush(0x0a)
+    /* 310a */      c_if_icmplt(0x00, 0x07)
+    /* 310d */      c_iconst_1()
+    /* 310e */      c_goto(0x00, 0x04)
+    /* 3111 */      c_iconst_0()
+    /* 3112 */      c_invokestatic(0x00, 0x07)
+    /* 3115 */      c_pop()
+
+    // thinj/regression/ThreadTest$20#run#()V:586
+    /* 3116 */      c_invokestatic(0x00, 0x01)
+    /* 3119 */      c_invokevirtual(0x00, 0x08)
+
+    // thinj/regression/ThreadTest$20#run#()V:587
+    /* 311c */      c_aload_1()
+    /* 311d */      c_monitorexit()
+    /* 311e */      c_goto(0x00, 0x08)
+    /* 3121 */      c_astore_3()
+    /* 3122 */      c_aload_1()
+    /* 3123 */      c_monitorexit()
+    /* 3124 */      c_aload_3()
+    /* 3125 */      c_athrow()
+
+    // thinj/regression/ThreadTest$20#run#()V:588
+    /* 3126 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (78) thinj/regression/ThreadTest$21#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$21#<init>#()V:637
+    /* 3127 */      c_aload_0()
+    /* 3128 */      c_invokespecial(0x00, 0x00)
+    /* 312b */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (78) thinj/regression/ThreadTest$21#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$21#run#()V:639
+    /* 312c */      c_invokestatic(0x00, 0x01)
+    /* 312f */      c_dup()
+    /* 3130 */      c_astore_1()
+    /* 3131 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$21#run#()V:640
+    /* 3132 */      c_iconst_1()
+    /* 3133 */      c_invokestatic(0x00, 0x02)
+    /* 3136 */      c_pop()
+
+    // thinj/regression/ThreadTest$21#run#()V:641
+    /* 3137 */      c_aload_1()
+    /* 3138 */      c_monitorexit()
+    /* 3139 */      c_goto(0x00, 0x08)
+    /* 313c */      c_astore_2()
+    /* 313d */      c_aload_1()
+    /* 313e */      c_monitorexit()
+    /* 313f */      c_aload_2()
+    /* 3140 */      c_athrow()
+
+    // thinj/regression/ThreadTest$21#run#()V:642
+    /* 3141 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (79) thinj/regression/ThreadTest$22#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$22#<init>#()V:670
+    /* 3142 */      c_aload_0()
+    /* 3143 */      c_invokespecial(0x00, 0x00)
+    /* 3146 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (79) thinj/regression/ThreadTest$22#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$22#run#()V:674
+    /* 3147 */      c_ldc2_w(0x00, 0x02)
+    /* 314a */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/ThreadTest$22#run#()V:676
+    /* 314d */      c_ldc2_w(0x00, 0x05)
+    /* 3150 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$22#run#()V:678
+    /* 3153 */      c_iconst_0()
+    /* 3154 */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest$22#run#()V:682
+    /* 3157 */      c_goto(0x00, 0x09)
+
+    // thinj/regression/ThreadTest$22#run#()V:679
+    /* 315a */      c_astore_1()
+
+    // thinj/regression/ThreadTest$22#run#()V:681
+    /* 315b */      c_iconst_1()
+    /* 315c */      c_invokestatic(0x00, 0x04)
+    /* 315f */      c_pop()
+
+    // thinj/regression/ThreadTest$22#run#()V:683
+    /* 3160 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (80) thinj/regression/ThreadTest$23#<init>#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$23#<init>#()V:707
+    /* 3161 */      c_aload_0()
+    /* 3162 */      c_invokespecial(0x00, 0x00)
+    /* 3165 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (80) thinj/regression/ThreadTest$23#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$23#run#()V:711
+    /* 3166 */      c_ldc2_w(0x00, 0x02)
+    /* 3169 */      c_invokestatic(0x00, 0x01)
+
+    // thinj/regression/ThreadTest$23#run#()V:713
+    /* 316c */      c_iconst_0()
+    /* 316d */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$23#run#()V:717
+    /* 3170 */      c_goto(0x00, 0x09)
+
+    // thinj/regression/ThreadTest$23#run#()V:714
+    /* 3173 */      c_astore_1()
+
+    // thinj/regression/ThreadTest$23#run#()V:716
+    /* 3174 */      c_iconst_1()
+    /* 3175 */      c_invokestatic(0x00, 0x03)
+    /* 3178 */      c_pop()
+
+    // thinj/regression/ThreadTest$23#run#()V:718
+    /* 3179 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (65) thinj/regression/ThreadTest$1#<init>#(Ljava/lang/Object;Ljava/lang/Object;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$1#<init>#(Ljava/lang/Object;Ljava/lang/Object;)V:49
+    /* 317a */      c_aload_0()
+    /* 317b */      c_aload_1()
+    /* 317c */      c_putfield(0x00, 0x00)
+    /* 317f */      c_aload_0()
+    /* 3180 */      c_aload_2()
+    /* 3181 */      c_putfield(0x00, 0x01)
+    /* 3184 */      c_aload_0()
+    /* 3185 */      c_invokespecial(0x00, 0x00)
+    /* 3188 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (65) thinj/regression/ThreadTest$1#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$1#run#()V:52
+    /* 3189 */      c_invokestatic(0x00, 0x01)
+    /* 318c */      c_aload_0()
+    /* 318d */      c_if_acmpne(0x00, 0x07)
+    /* 3190 */      c_iconst_1()
+    /* 3191 */      c_goto(0x00, 0x04)
+    /* 3194 */      c_iconst_0()
+    /* 3195 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$1#run#()V:55
+    /* 3198 */      c_ldc2_w(0x00, 0x06)
+    /* 319b */      c_invokestatic(0x00, 0x03)
+
+    // thinj/regression/ThreadTest$1#run#()V:58
+    /* 319e */      c_goto(0x00, 0x08)
+
+    // thinj/regression/ThreadTest$1#run#()V:56
+    /* 31a1 */      c_astore_1()
+
+    // thinj/regression/ThreadTest$1#run#()V:57
+    /* 31a2 */      c_aload_1()
+    /* 31a3 */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ThreadTest$1#run#()V:59
+    /* 31a6 */      c_invokestatic(0x00, 0x01)
+    /* 31a9 */      c_aload_0()
+    /* 31aa */      c_if_acmpne(0x00, 0x07)
+    /* 31ad */      c_iconst_1()
+    /* 31ae */      c_goto(0x00, 0x04)
+    /* 31b1 */      c_iconst_0()
+    /* 31b2 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$1#run#()V:61
+    /* 31b5 */      c_aload_0()
+    /* 31b6 */      c_getfield(0x00, 0x00)
+    /* 31b9 */      c_dup()
+    /* 31ba */      c_astore_1()
+    /* 31bb */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$1#run#()V:62
+    /* 31bc */      c_aload_0()
+    /* 31bd */      c_getfield(0x00, 0x00)
+    /* 31c0 */      c_invokevirtual(0x00, 0x05)
+
+    // thinj/regression/ThreadTest$1#run#()V:63
+    /* 31c3 */      c_invokestatic(0x00, 0x01)
+    /* 31c6 */      c_aload_0()
+    /* 31c7 */      c_if_acmpne(0x00, 0x07)
+    /* 31ca */      c_iconst_1()
+    /* 31cb */      c_goto(0x00, 0x04)
+    /* 31ce */      c_iconst_0()
+    /* 31cf */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$1#run#()V:64
+    /* 31d2 */      c_aload_1()
+    /* 31d3 */      c_monitorexit()
+    /* 31d4 */      c_goto(0x00, 0x08)
+    /* 31d7 */      c_astore_2()
+    /* 31d8 */      c_aload_1()
+    /* 31d9 */      c_monitorexit()
+    /* 31da */      c_aload_2()
+    /* 31db */      c_athrow()
+
+    // thinj/regression/ThreadTest$1#run#()V:66
+    /* 31dc */      c_aload_0()
+    /* 31dd */      c_getfield(0x00, 0x01)
+    /* 31e0 */      c_dup()
+    /* 31e1 */      c_astore_1()
+    /* 31e2 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$1#run#()V:68
+    /* 31e3 */      c_aload_0()
+    /* 31e4 */      c_getfield(0x00, 0x01)
+    /* 31e7 */      c_invokevirtual(0x00, 0x06)
+
+    // thinj/regression/ThreadTest$1#run#()V:71
+    /* 31ea */      c_goto(0x00, 0x08)
+
+    // thinj/regression/ThreadTest$1#run#()V:69
+    /* 31ed */      c_astore_2()
+
+    // thinj/regression/ThreadTest$1#run#()V:70
+    /* 31ee */      c_aload_2()
+    /* 31ef */      c_invokevirtual(0x00, 0x04)
+
+    // thinj/regression/ThreadTest$1#run#()V:72
+    /* 31f2 */      c_invokestatic(0x00, 0x01)
+    /* 31f5 */      c_aload_0()
+    /* 31f6 */      c_if_acmpne(0x00, 0x07)
+    /* 31f9 */      c_iconst_1()
+    /* 31fa */      c_goto(0x00, 0x04)
+    /* 31fd */      c_iconst_0()
+    /* 31fe */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$1#run#()V:73
+    /* 3201 */      c_invokestatic(0x00, 0x07)
+    /* 3204 */      c_pop()
+
+    // thinj/regression/ThreadTest$1#run#()V:74
+    /* 3205 */      c_aload_1()
+    /* 3206 */      c_monitorexit()
+    /* 3207 */      c_goto(0x00, 0x08)
+    /* 320a */      c_astore_3()
+    /* 320b */      c_aload_1()
+    /* 320c */      c_monitorexit()
+    /* 320d */      c_aload_3()
+    /* 320e */      c_athrow()
+
+    // thinj/regression/ThreadTest$1#run#()V:75
+    /* 320f */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (76) thinj/regression/ThreadTest$2#<init>#(Ljava/lang/Object;)V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$2#<init>#(Ljava/lang/Object;)V:78
+    /* 3210 */      c_aload_0()
+    /* 3211 */      c_aload_1()
+    /* 3212 */      c_putfield(0x00, 0x00)
+    /* 3215 */      c_aload_0()
+    /* 3216 */      c_invokespecial(0x00, 0x00)
+    /* 3219 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (76) thinj/regression/ThreadTest$2#run#()V
+    //------------------------------------------------------------------------------
+
+    // thinj/regression/ThreadTest$2#run#()V:81
+    /* 321a */      c_invokestatic(0x00, 0x01)
+    /* 321d */      c_bipush(0x0a)
+    /* 321f */      c_if_icmpge(0x00, 0x59)
+
+    // thinj/regression/ThreadTest$2#run#()V:83
+    /* 3222 */      c_ldc2_w(0x00, 0x04)
+    /* 3225 */      c_invokestatic(0x00, 0x02)
+
+    // thinj/regression/ThreadTest$2#run#()V:86
+    /* 3228 */      c_goto(0x00, 0x08)
+
+    // thinj/regression/ThreadTest$2#run#()V:84
+    /* 322b */      c_astore_1()
+
+    // thinj/regression/ThreadTest$2#run#()V:85
+    /* 322c */      c_aload_1()
+    /* 322d */      c_invokevirtual(0x00, 0x03)
+
+    // thinj/regression/ThreadTest$2#run#()V:87
+    /* 3230 */      c_aload_0()
+    /* 3231 */      c_getfield(0x00, 0x00)
+    /* 3234 */      c_dup()
+    /* 3235 */      c_astore_1()
+    /* 3236 */      c_monitorenter()
+
+    // thinj/regression/ThreadTest$2#run#()V:88
+    /* 3237 */      c_invokestatic(0x00, 0x04)
+    /* 323a */      c_aload_0()
+    /* 323b */      c_if_acmpne(0x00, 0x07)
+    /* 323e */      c_iconst_1()
+    /* 323f */      c_goto(0x00, 0x04)
+    /* 3242 */      c_iconst_0()
+    /* 3243 */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/ThreadTest$2#run#()V:89
+    /* 3246 */      c_aload_0()
+    /* 3247 */      c_getfield(0x00, 0x00)
+    /* 324a */      c_invokevirtual(0x00, 0x06)
+
+    // thinj/regression/ThreadTest$2#run#()V:90
+    /* 324d */      c_invokestatic(0x00, 0x04)
+    /* 3250 */      c_aload_0()
+    /* 3251 */      c_if_acmpne(0x00, 0x07)
+    /* 3254 */      c_iconst_1()
+    /* 3255 */      c_goto(0x00, 0x04)
+    /* 3258 */      c_iconst_0()
+    /* 3259 */      c_invokestatic(0x00, 0x05)
+
+    // thinj/regression/ThreadTest$2#run#()V:91
+    /* 325c */      c_aload_1()
+    /* 325d */      c_monitorexit()
+    /* 325e */      c_goto(0x00, 0x08)
+    /* 3261 */      c_astore_2()
+    /* 3262 */      c_aload_1()
+    /* 3263 */      c_monitorexit()
+    /* 3264 */      c_aload_2()
+    /* 3265 */      c_athrow()
+
+    // thinj/regression/ThreadTest$2#run#()V:92
+    /* 3266 */      c_invokestatic(0x00, 0x04)
+    /* 3269 */      c_aload_0()
+    /* 326a */      c_if_acmpne(0x00, 0x07)
+    /* 326d */      c_iconst_1()
+    /* 326e */      c_goto(0x00, 0x04)
+    /* 3271 */      c_iconst_0()
+    /* 3272 */      c_invokestatic(0x00, 0x05)
+    /* 3275 */      c_goto(0xff, 0xa5)
+
+    // thinj/regression/ThreadTest$2#run#()V:94
+    /* 3278 */      c_iconst_1()
+    /* 3279 */      c_invokestatic(0x00, 0x07)
+    /* 327c */      c_pop()
+
+    // thinj/regression/ThreadTest$2#run#()V:95
+    /* 327d */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (26) java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V
+    //------------------------------------------------------------------------------
+
+    // java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V:5
+    /* 327e */      c_aload_0()
+    /* 327f */      c_aload_1()
+    /* 3280 */      c_invokespecial(0x00, 0x00)
+
+    // java/lang/IndexOutOfBoundsException#<init>#(Ljava/lang/String;)V:6
+    /* 3283 */      c_vreturn()
+
+    //------------------------------------------------------------------------------
+    // (42) thinj/regression/AllTests#<jvminit>#()V
+    //------------------------------------------------------------------------------
+    /* 3284 */      c_invokestatic(0x00, 0x21)
+    /* 3287 */      c_invokestatic(0x00, 0x22)
+    /* 328a */      c_invokestatic(0x00, 0x23)
+    /* 328d */      c_invokestatic(0x00, 0x24)
+    /* 3290 */      c_invokestatic(0x00, 0x25)
+    /* 3293 */      c_invokestatic(0x00, 0x26)
+    /* 3296 */      c_invokestatic(0x00, 0x27)
+    /* 3299 */      c_invokestatic(0x00, 0x28)
+    /* 329c */      c_invokestatic(0x00, 0x29)
+    /* 329f */      c_invokestatic(0x00, 0x2a)
+    /* 32a2 */      c_invokestatic(0x00, 0x2b)
+    /* 32a5 */      c_invokestatic(0x00, 0x2c)
+    /* 32a8 */      c_invokestatic(0x00, 0x2d)
+    /* 32ab */      c_invokestatic(0x00, 0x2e)
+    /* 32ae */      c_vreturn()
 };
-const u2 codeSize = 1505;
+const u2 codeSize = 12975;
 
 //------------------------------------------------------------------------------
 // Constant Pools
@@ -2531,7 +15405,7 @@ const u2 codeSize = 1505;
 
 const constantPool const allConstantPools[] = {
     // 0: java/lang/Object
-    {allMethodReferences0, 7, allMethods0, 6, NULL, 0, allFields0, 1},
+    {allMethodReferences0, 7, allMethods0, 8, NULL, 0, allFields0, 1},
     // 1: [B
     {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
     // 2: [C
@@ -2540,79 +15414,227 @@ const constantPool const allConstantPools[] = {
     {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
     // 4: [J
     {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
-    // 5: [Ljava/lang/Class
+    // 5: [L[I
     {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
-    // 6: [Ljava/lang/Object
+    // 6: [L[Ljava/lang/Object
     {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
-    // 7: [Ljava/lang/String
+    // 7: [L[Lthinj/regression/checkcast/CheckCast
     {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
-    // 8: java/io/PrintStream
-    {allMethodReferences8, 9, allMethods8, 7, NULL, 0, NULL, 0},
-    // 9: java/lang/ArithmeticException
-    {allMethodReferences9, 1, allMethods9, 1, NULL, 0, NULL, 0},
-    // 10: java/lang/ArrayIndexOutOfBoundsException
-    {allMethodReferences10, 5, allMethods10, 1, NULL, 0, NULL, 0},
-    // 11: java/lang/Class
-    {allMethodReferences11, 5, allMethods11, 2, allFieldReferences11, 1, allFields11, 3},
-    // 12: java/lang/ClassCastException
-    {allMethodReferences12, 1, allMethods12, 1, NULL, 0, NULL, 0},
-    // 13: java/lang/Error
-    {allMethodReferences13, 1, allMethods13, 1, NULL, 0, NULL, 0},
-    // 14: java/lang/Exception
-    {allMethodReferences14, 2, allMethods14, 2, NULL, 0, NULL, 0},
-    // 15: java/lang/IllegalArgumentException
-    {allMethodReferences15, 1, allMethods15, 1, NULL, 0, NULL, 0},
-    // 16: java/lang/IllegalMonitorStateException
-    {allMethodReferences16, 1, allMethods16, 1, NULL, 0, NULL, 0},
-    // 17: java/lang/IllegalThreadStateException
+    // 8: [Ljava/lang/Class
+    {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
+    // 9: [Ljava/lang/Object
+    {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
+    // 10: [Ljava/lang/String
+    {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
+    // 11: [Ljava/lang/Thread
+    {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
+    // 12: [Lthinj/regression/arrays/DummyClass
+    {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
+    // 13: [Lthinj/regression/arrays/MultiArrayTest
+    {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
+    // 14: [Lthinj/regression/checkcast/CheckCast
+    {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
+    // 15: [Z
+    {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
+    // 16: java/io/PrintStream
+    {allMethodReferences16, 10, allMethods16, 8, NULL, 0, NULL, 0},
+    // 17: java/lang/ArithmeticException
     {allMethodReferences17, 1, allMethods17, 1, NULL, 0, NULL, 0},
-    // 18: java/lang/IndexOutOfBoundsException
-    {allMethodReferences18, 1, allMethods18, 1, NULL, 0, NULL, 0},
-    // 19: java/lang/InterruptedException
-    {allMethodReferences19, 1, allMethods19, 1, NULL, 0, NULL, 0},
-    // 20: java/lang/NegativeArraySizeException
+    // 18: java/lang/ArrayIndexOutOfBoundsException
+    {allMethodReferences18, 5, allMethods18, 1, NULL, 0, NULL, 0},
+    // 19: java/lang/Class
+    {allMethodReferences19, 5, allMethods19, 2, allFieldReferences19, 1, allFields19, 3},
+    // 20: java/lang/ClassCastException
     {allMethodReferences20, 1, allMethods20, 1, NULL, 0, NULL, 0},
-    // 21: java/lang/NullPointerException
-    {allMethodReferences21, 2, allMethods21, 2, NULL, 0, NULL, 0},
-    // 22: java/lang/Object$Monitor
-    {NULL, 0, NULL, 0, NULL, 0, allFields22, 3},
-    // 23: java/lang/Object$WaitElement
-    {NULL, 0, NULL, 0, NULL, 0, allFields23, 2},
-    // 24: java/lang/OutOfMemoryError
-    {allMethodReferences24, 2, allMethods24, 3, allFieldReferences24, 1, allFields24, 1},
-    // 25: java/lang/Runnable
-    {NULL, 0, allMethods25, 1, NULL, 0, NULL, 0},
-    // 26: java/lang/RuntimeException
-    {allMethodReferences26, 2, allMethods26, 2, NULL, 0, NULL, 0},
-    // 27: java/lang/String
-    {allMethodReferences27, 2, allMethods27, 6, allFieldReferences27, 1, allFields27, 1},
-    // 28: java/lang/StringBuilder
-    {allMethodReferences28, 8, allMethods28, 5, allFieldReferences28, 1, allFields28, 1},
-    // 29: java/lang/System
-    {allMethodReferences29, 1, allMethods29, 2, allFieldReferences29, 2, allFields29, 2},
-    // 30: java/lang/Thread
-    {allMethodReferences30, 13, allMethods30, 8, allFieldReferences30, 5, allFields30, 8},
-    // 31: java/lang/Throwable
-    {allMethodReferences31, 12, allMethods31, 6, allFieldReferences31, 3, allFields31, 2},
-    // 32: java/lang/VirtualMachineError
-    {allMethodReferences32, 1, allMethods32, 1, NULL, 0, NULL, 0},
-    // 33: java/util/Arrays
+    // 21: java/lang/Error
+    {allMethodReferences21, 1, allMethods21, 1, NULL, 0, NULL, 0},
+    // 22: java/lang/Exception
+    {allMethodReferences22, 2, allMethods22, 2, NULL, 0, NULL, 0},
+    // 23: java/lang/IllegalArgumentException
+    {allMethodReferences23, 1, allMethods23, 1, NULL, 0, NULL, 0},
+    // 24: java/lang/IllegalMonitorStateException
+    {allMethodReferences24, 1, allMethods24, 1, NULL, 0, NULL, 0},
+    // 25: java/lang/IllegalThreadStateException
+    {allMethodReferences25, 1, allMethods25, 1, NULL, 0, NULL, 0},
+    // 26: java/lang/IndexOutOfBoundsException
+    {allMethodReferences26, 1, allMethods26, 1, NULL, 0, NULL, 0},
+    // 27: java/lang/InterruptedException
+    {allMethodReferences27, 1, allMethods27, 1, NULL, 0, NULL, 0},
+    // 28: java/lang/NegativeArraySizeException
+    {allMethodReferences28, 1, allMethods28, 1, NULL, 0, NULL, 0},
+    // 29: java/lang/NullPointerException
+    {allMethodReferences29, 2, allMethods29, 2, NULL, 0, NULL, 0},
+    // 30: java/lang/Object$Monitor
+    {NULL, 0, NULL, 0, NULL, 0, allFields30, 3},
+    // 31: java/lang/Object$WaitElement
+    {NULL, 0, NULL, 0, NULL, 0, allFields31, 2},
+    // 32: java/lang/OutOfMemoryError
+    {allMethodReferences32, 2, allMethods32, 3, allFieldReferences32, 1, allFields32, 1},
+    // 33: java/lang/Runnable
     {NULL, 0, allMethods33, 1, NULL, 0, NULL, 0},
-    // 34: thinj/regression/AllTests
-    {allMethodReferences34, 12, allMethods34, 2, allFieldReferences34, 1, NULL, 0},
-    // 35: thinj/regression/ThreadTest
-    {allMethodReferences35, 13, allMethods35, 5, allFieldReferences35, 5, allFields35, 4},
-    // 36: thinj/regression/ThreadTest$4
-    {allMethodReferences36, 9, allMethods36, 2, allFieldReferences36, 2, allFields36, 1},
-    // 37: thinj/util/SimpleList
-    {NULL, 0, NULL, 0, NULL, 0, allFields37, 1},
-    // 38: thinj/util/SimpleList$Element
-    {NULL, 0, NULL, 0, NULL, 0, allFields38, 2},
+    // 34: java/lang/RuntimeException
+    {allMethodReferences34, 2, allMethods34, 2, NULL, 0, NULL, 0},
+    // 35: java/lang/String
+    {allMethodReferences35, 4, allMethods35, 7, allFieldReferences35, 1, allFields35, 1},
+    // 36: java/lang/StringBuilder
+    {allMethodReferences36, 9, allMethods36, 7, allFieldReferences36, 1, allFields36, 1},
+    // 37: java/lang/System
+    {allMethodReferences37, 1, allMethods37, 3, allFieldReferences37, 2, allFields37, 2},
+    // 38: java/lang/Thread
+    {allMethodReferences38, 13, allMethods38, 11, allFieldReferences38, 5, allFields38, 8},
+    // 39: java/lang/Throwable
+    {allMethodReferences39, 12, allMethods39, 6, allFieldReferences39, 3, allFields39, 2},
+    // 40: java/lang/VirtualMachineError
+    {allMethodReferences40, 1, allMethods40, 1, NULL, 0, NULL, 0},
+    // 41: java/util/Arrays
+    {NULL, 0, allMethods41, 2, NULL, 0, NULL, 0},
+    // 42: thinj/regression/AllTests
+    {allMethodReferences42, 47, allMethods42, 2, allFieldReferences42, 1, NULL, 0},
+    // 43: thinj/regression/BaseClass
+    {allMethodReferences43, 1, allMethods43, 4, NULL, 0, NULL, 0},
+    // 44: thinj/regression/ByteTest
+    {allMethodReferences44, 6, allMethods44, 6, NULL, 0, NULL, 0},
+    // 45: thinj/regression/CharTest
+    {allMethodReferences45, 5, allMethods45, 5, NULL, 0, NULL, 0},
+    // 46: thinj/regression/ClassTest
+    {allMethodReferences46, 14, allMethods46, 3, allFieldReferences46, 1, NULL, 0},
+    // 47: thinj/regression/DivMod
+    {allMethodReferences47, 5, allMethods47, 4, allFieldReferences47, 2, allFields47, 1},
+    // 48: thinj/regression/EqualsTest
+    {allMethodReferences48, 4, allMethods48, 2, NULL, 0, NULL, 0},
+    // 49: thinj/regression/ExtendedBaseClass
+    {allMethodReferences49, 15, allMethods49, 10, NULL, 0, NULL, 0},
+    // 50: thinj/regression/Ineg
+    {allMethodReferences50, 4, allMethods50, 4, NULL, 0, NULL, 0},
+    // 51: thinj/regression/InstanceAttributes
+    {allMethodReferences51, 5, allMethods51, 5, allFieldReferences51, 4, allFields51, 4},
+    // 52: thinj/regression/InstanceMethods
+    {allMethodReferences52, 9, allMethods52, 8, NULL, 0, NULL, 0},
+    // 53: thinj/regression/InstanceMethodsSpecial
+    {allMethodReferences53, 6, allMethods53, 4, NULL, 0, NULL, 0},
+    // 54: thinj/regression/InstanceSubclassing
+    {allMethodReferences54, 4, allMethods54, 3, allFieldReferences54, 3, allFields54, 1},
+    // 55: thinj/regression/LongTest
+    {allMethodReferences55, 27, allMethods55, 19, allFieldReferences55, 3, allFields55, 2},
+    // 56: thinj/regression/LongTest$LinkObject
+    {allMethodReferences56, 2, allMethods56, 3, allFieldReferences56, 3, allFields56, 3},
+    // 57: thinj/regression/LongTest$MyClass
+    {allMethodReferences57, 2, allMethods57, 8, allFieldReferences57, 3, allFields57, 3},
+    // 58: thinj/regression/NativeTest
+    {allMethodReferences58, 3, allMethods58, 1, NULL, 0, NULL, 0},
+    // 59: thinj/regression/ObjectTest
+    {allMethodReferences59, 3, allMethods59, 2, NULL, 0, NULL, 0},
+    // 60: thinj/regression/Regression
+    {allMethodReferences60, 2, allMethods60, 1, NULL, 0, NULL, 0},
+    // 61: thinj/regression/StaticInnerClassTest
+    {allMethodReferences61, 1, allMethods61, 2, allFieldReferences61, 1, allFields61, 1},
+    // 62: thinj/regression/StaticInnerClassTest$Dims
+    {allMethodReferences62, 2, allMethods62, 2, NULL, 0, NULL, 0},
+    // 63: thinj/regression/StaticInstanceAndMethod
+    {allMethodReferences63, 5, allMethods63, 6, allFieldReferences63, 1, allFields63, 1},
+    // 64: thinj/regression/ThreadTest
+    {allMethodReferences64, 80, allMethods64, 39, allFieldReferences64, 6, allFields64, 5},
+    // 65: thinj/regression/ThreadTest$1
+    {allMethodReferences65, 8, allMethods65, 2, allFieldReferences65, 2, allFields65, 2},
+    // 66: thinj/regression/ThreadTest$10
+    {allMethodReferences66, 3, allMethods66, 2, NULL, 0, NULL, 0},
+    // 67: thinj/regression/ThreadTest$11
+    {allMethodReferences67, 5, allMethods67, 2, allFieldReferences67, 1, allFields67, 1},
+    // 68: thinj/regression/ThreadTest$12
+    {allMethodReferences68, 4, allMethods68, 2, allFieldReferences68, 1, allFields68, 1},
+    // 69: thinj/regression/ThreadTest$13
+    {allMethodReferences69, 2, allMethods69, 2, NULL, 0, NULL, 0},
+    // 70: thinj/regression/ThreadTest$14
+    {allMethodReferences70, 3, allMethods70, 2, NULL, 0, NULL, 0},
+    // 71: thinj/regression/ThreadTest$15
+    {allMethodReferences71, 8, allMethods71, 2, NULL, 0, NULL, 0},
+    // 72: thinj/regression/ThreadTest$16
+    {allMethodReferences72, 3, allMethods72, 2, NULL, 0, NULL, 0},
+    // 73: thinj/regression/ThreadTest$17
+    {allMethodReferences73, 3, allMethods73, 2, NULL, 0, NULL, 0},
+    // 74: thinj/regression/ThreadTest$18
+    {allMethodReferences74, 4, allMethods74, 2, NULL, 0, NULL, 0},
+    // 75: thinj/regression/ThreadTest$19
+    {allMethodReferences75, 5, allMethods75, 2, NULL, 0, NULL, 0},
+    // 76: thinj/regression/ThreadTest$2
+    {allMethodReferences76, 8, allMethods76, 2, allFieldReferences76, 1, allFields76, 1},
+    // 77: thinj/regression/ThreadTest$20
+    {allMethodReferences77, 9, allMethods77, 2, NULL, 0, NULL, 0},
+    // 78: thinj/regression/ThreadTest$21
+    {allMethodReferences78, 3, allMethods78, 2, NULL, 0, NULL, 0},
+    // 79: thinj/regression/ThreadTest$22
+    {allMethodReferences79, 5, allMethods79, 2, NULL, 0, NULL, 0},
+    // 80: thinj/regression/ThreadTest$23
+    {allMethodReferences80, 4, allMethods80, 2, NULL, 0, NULL, 0},
+    // 81: thinj/regression/ThreadTest$3
+    {allMethodReferences81, 2, allMethods81, 2, NULL, 0, NULL, 0},
+    // 82: thinj/regression/ThreadTest$4
+    {allMethodReferences82, 9, allMethods82, 2, allFieldReferences82, 2, allFields82, 1},
+    // 83: thinj/regression/ThreadTest$5
+    {allMethodReferences83, 2, allMethods83, 2, NULL, 0, NULL, 0},
+    // 84: thinj/regression/ThreadTest$6
+    {allMethodReferences84, 3, allMethods84, 2, NULL, 0, NULL, 0},
+    // 85: thinj/regression/ThreadTest$7
+    {allMethodReferences85, 5, allMethods85, 2, allFieldReferences85, 1, allFields85, 1},
+    // 86: thinj/regression/ThreadTest$8
+    {allMethodReferences86, 4, allMethods86, 2, allFieldReferences86, 2, allFields86, 2},
+    // 87: thinj/regression/ThreadTest$9
+    {allMethodReferences87, 4, allMethods87, 2, allFieldReferences87, 1, allFields87, 1},
+    // 88: thinj/regression/abstractclass/AbstractClass
+    {allMethodReferences88, 6, allMethods88, 5, allFieldReferences88, 1, allFields88, 1},
+    // 89: thinj/regression/abstractclass/ExtendingClass
+    {allMethodReferences89, 2, allMethods89, 2, allFieldReferences89, 1, NULL, 0},
+    // 90: thinj/regression/arrays/ArrayTest
+    {allMethodReferences90, 5, allMethods90, 4, allFieldReferences90, 1, allFields90, 1},
+    // 91: thinj/regression/arrays/DummyClass
+    {NULL, 0, allMethods91, 2, NULL, 0, NULL, 0},
+    // 92: thinj/regression/arrays/MultiArrayTest
+    {allMethodReferences92, 5, allMethods92, 5, allFieldReferences92, 1, allFields92, 1},
+    // 93: thinj/regression/arrays/Sudoku
+    {allMethodReferences93, 5, allMethods93, 4, allFieldReferences93, 2, allFields93, 1},
+    // 94: thinj/regression/checkcast/CheckCast
+    {allMethodReferences94, 10, allMethods94, 6, NULL, 0, NULL, 0},
+    // 95: thinj/regression/checkcast/CheckCast$1
+    {allMethodReferences95, 1, allMethods95, 1, NULL, 0, NULL, 0},
+    // 96: thinj/regression/checkcast/CheckCast$ClassA
+    {allMethodReferences96, 1, allMethods96, 1, NULL, 0, NULL, 0},
+    // 97: thinj/regression/checkcast/CheckCast$ClassB
+    {allMethodReferences97, 1, allMethods97, 1, NULL, 0, NULL, 0},
+    // 98: thinj/regression/checkcast/CheckCast$IA
+    {NULL, 0, NULL, 0, NULL, 0, NULL, 0},
+    // 99: thinj/regression/exceptions/ExIALOAD
+    {allMethodReferences99, 33, allMethods99, 24, allFieldReferences99, 2, allFields99, 1},
+    // 100: thinj/regression/exceptions/ExIALOAD$LinkObject
+    {allMethodReferences100, 2, allMethods100, 2, allFieldReferences100, 2, allFields100, 2},
+    // 101: thinj/regression/exceptions/ExIALOAD$MyInterface
+    {NULL, 0, allMethods101, 1, NULL, 0, NULL, 0},
+    // 102: thinj/regression/exceptions/ExceptionProxying
+    {allMethodReferences102, 1, allMethods102, 1, NULL, 0, NULL, 0},
+    // 103: thinj/regression/exceptions/TestNullPointerException
+    {allMethodReferences103, 3, allMethods103, 3, allFieldReferences103, 2, allFields103, 2},
+    // 104: thinj/regression/exceptions/ThrowException
+    {allMethodReferences104, 15, allMethods104, 12, allFieldReferences104, 3, allFields104, 3},
+    // 105: thinj/regression/gc/GC
+    {allMethodReferences105, 9, allMethods105, 2, NULL, 0, NULL, 0},
+    // 106: thinj/regression/gc/GC$LinkObject
+    {allMethodReferences106, 1, allMethods106, 3, allFieldReferences106, 2, allFields106, 2},
+    // 107: thinj/regression/gc/HeapTest
+    {allMethodReferences107, 8, allMethods107, 4, NULL, 0, NULL, 0},
+    // 108: thinj/regression/interfaces/AnInterface
+    {NULL, 0, allMethods108, 2, NULL, 0, NULL, 0},
+    // 109: thinj/regression/interfaces/AnInterfaceImpl
+    {allMethodReferences109, 7, allMethods109, 6, allFieldReferences109, 1, allFields109, 1},
+    // 110: thinj/regression/interfaces/AnotherInterface
+    {NULL, 0, allMethods110, 1, NULL, 0, NULL, 0},
+    // 111: thinj/util/SimpleList
+    {NULL, 0, NULL, 0, NULL, 0, allFields111, 1},
+    // 112: thinj/util/SimpleList$Element
+    {NULL, 0, NULL, 0, NULL, 0, allFields112, 2},
 };
 
 //------------------------------------------------------------------------------
 // Startup information
 //------------------------------------------------------------------------------
 
-const u2 startClassIndex = 34;
-const codeIndex startAddress = 0x05d1;
+const u2 startClassIndex = 42;
+const codeIndex startAddress = 0x3284;

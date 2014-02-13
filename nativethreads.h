@@ -35,9 +35,6 @@ extern "C" {
         // Java stack:
         jbyteArray javaStack;
 
-        // The associated java.lang.Thread object:
-        jobject javaThread;
-
         // Pointer to the memory holding the C stack. Only used when starting thread:
         jbyteArray stack;
 

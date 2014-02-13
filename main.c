@@ -14,14 +14,14 @@
 #include <stdio.h>
 #include "thread.h"
 
-//align_t heap[80000];
-//
-//int main() {
-//    thStartVM(heap, sizeof (heap) / sizeof (heap[0]), 20000, 4000);
-align_t heap[8000];
+align_t heap[80000];
 
 int main() {
-    thStartVM(heap, sizeof (heap) / sizeof (heap[0]), 2000, 5000);
+    thStartVM(heap, sizeof (heap) / sizeof (heap[0]), 20000, 4000);
+//align_t heap[8000];
+//
+//int main() {
+//    thStartVM(heap, sizeof (heap) / sizeof (heap[0]), 2000, 5000);
 
     // Unreachable:
     return 0;

@@ -47,8 +47,35 @@ static size_t sGetStackSizeInBytes() {
     return STACK_SIZE * sizeof (stackable);
 }
 
+/**
+ * This function returns the java thread object associated with native thread ntc
+ * \param ntc The native thread 
+ * \return  The associated java thread object or NULL, if none associated or ntc == NULL
+ */
+static jobject sGetJavaThread(contextDef* context, ntThreadContext_t* ntc) {
+    jobject retval = NULL;
+    if (ntc != NULL) {
+        if (ntc->javaStack != NULL) {
+            stackable* stack = jaGetArrayPayLoad(context, (jarray) ntc->javaStack);
+
+            retval = stack[0].operand.jref;
+        }
+    }
+
+    return retval;
+}
+
+/**
+ * This function returns the current java thread object
+ * 
+ * \return  The current thread object or NULL, if no current
+ */
+static jobject sGetCurrentJavaThread(contextDef* context) {
+    return sGetJavaThread(context, thCurrentThread);
+}
+
 static void sDumpContext(contextDef* context, char* prefix) {
-    jobject thr = thCurrentThread->javaThread;
+    jobject thr = sGetCurrentJavaThread(context);
     consoutli("%s"
             "pc = 0x%04x "
             "sp = 0x%04x "
@@ -99,7 +126,7 @@ void thTryYield(contextDef* context) {
 }
 
 jlong thGetCurrentThreadId(contextDef* context) {
-    jobject currentThread = thCurrentThread->javaThread;
+    jobject currentThread = sGetCurrentJavaThread(context);
     return GetLongField(context, currentThread, A_java_lang_Thread_aId);
 }
 
@@ -160,9 +187,10 @@ static void sRemoveThread(ntThreadContext_t* curr) {
 
 ntThreadContext_t* sGetNextRunnableThread(contextDef* context) {
     ntThreadContext_t* nextThread = thCurrentThread;
-    if (nextThread->javaThread != NULL) {
+    if (sGetJavaThread(context, nextThread) != NULL) {
         while ((nextThread = sGetNextThread(nextThread)) != NULL) {
-            int state = GetIntField(context, nextThread->javaThread, A_java_lang_Thread_aState);
+            jobject nextJavaThread = sGetJavaThread(context, nextThread);
+            int state = GetIntField(context, nextJavaThread, A_java_lang_Thread_aState);
             if (state == StateTerminated) {
                 // TODO Use enum value in stead!
                 // Thread is terminated, get rid of it:
@@ -171,15 +199,14 @@ ntThreadContext_t* sGetNextRunnableThread(contextDef* context) {
                 // Start all over searching for a runnable thread:
                 nextThread = sAllThreads;
             } else if (state == StateTimedWaiting) {
-                jobject javaThread = nextThread->javaThread;
-                jlong when = GetLongField(context, nextThread->javaThread, A_java_lang_Thread_aWakeUpAt);
+                jlong when = GetLongField(context, nextJavaThread, A_java_lang_Thread_aWakeUpAt);
                 if (when < vtCurrentTimeMillis()) {
-                    SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
+                    SetIntField(context, nextJavaThread, A_java_lang_Thread_aState, StateRunnable);
                     break;
                 } else {
                     // Check for interrupt:
-                    if (GetBooleanField(context, javaThread, A_java_lang_Thread_aInterrupted)) {
-                        SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
+                    if (GetBooleanField(context, nextJavaThread, A_java_lang_Thread_aInterrupted)) {
+                        SetIntField(context, nextJavaThread, A_java_lang_Thread_aState, StateRunnable);
                         break;
                     }
                     // else: Not interrupted, stay asleep...
@@ -211,7 +238,7 @@ void thYield(contextDef* context) {
         // Let the other thread run:
         if (thCurrentThread != nextThread) {
             jclass cls = getJavaLangClass(context, C_java_lang_Thread);
-            if (nextThread->javaThread == NULL) {
+            if (sGetJavaThread(context, nextThread) == NULL) {
                 jvmexit(88);
             }
 
@@ -304,16 +331,17 @@ static void sUnlockThread(contextDef* context, jobject lockedObject) {
     // No longer locking the monitor, test if some other thread is blocking on the monitor:
     ntThreadContext_t* thread = sAllThreads;
     while (thread != NULL) {
-        jint state = GetIntField(context, thread->javaThread, A_java_lang_Thread_aState);
+        jobject javaThread = sGetJavaThread(context, thread);
+        jint state = GetIntField(context, javaThread, A_java_lang_Thread_aState);
         if (state == StateBlocked) {
-            jobject blockingObject = GetObjectField(context, thread->javaThread, A_java_lang_Thread_aBlockingObject);
+            jobject blockingObject = GetObjectField(context, javaThread, A_java_lang_Thread_aBlockingObject);
             if (blockingObject == lockedObject) {
                 // If monitorLockCount == 0 then the monitor isn't locked:
                 jint monitorLockCount = GetIntField(context, monitor, A_java_lang_Object_Monitor_aLockCount);
                 if (monitorLockCount == 0) {
                     // Make this thread runnable; as long as it has a blocking object ref it will gain the 
                     // lock before continuing execution:
-                    SetIntField(context, thread->javaThread, A_java_lang_Thread_aState, StateRunnable);
+                    SetIntField(context, javaThread, A_java_lang_Thread_aState, StateRunnable);
                     break;
                 }
             }
@@ -354,7 +382,7 @@ void thMonitorEnter(contextDef* context, jobject objectToLock) {
 
     if (objectToLock != NULL) {
         jobject monitor = GetObjectField(context, objectToLock, A_java_lang_Object_aMonitor);
-        jobject currentThread = thCurrentThread->javaThread;
+        jobject currentThread = sGetCurrentJavaThread(context);
 
         if (monitor == NULL) {
             // Lazy monitor allocation:
@@ -385,7 +413,7 @@ void thMonitorExit(contextDef* context, jobject objectToLock) {
     __DEBUG("thMonitorExit enter %p\n", context);
     if (objectToLock != NULL) {
         jobject monitor = GetObjectField(context, objectToLock, A_java_lang_Object_aMonitor);
-        jobject currentThread = thCurrentThread->javaThread;
+        jobject currentThread = sGetCurrentJavaThread(context);
         jobject lockOwnerThread = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aOwner);
 
         if (lockOwnerThread == currentThread) {
@@ -416,7 +444,7 @@ BOOL sCheckWaitNotify(contextDef* context, jobject lockedObject, jobject* monito
     if (lockedObject != NULL) {
         *monitor = GetObjectField(context, lockedObject, A_java_lang_Object_aMonitor);
         if (*monitor != NULL) {
-            *currentThread = thCurrentThread->javaThread;
+            *currentThread = sGetCurrentJavaThread(context);
             jobject lockOwnerThread = GetObjectField(context, *monitor, A_java_lang_Object_Monitor_aOwner);
             if (*currentThread == lockOwnerThread) {
                 retval = TRUE;
@@ -542,7 +570,7 @@ void thWait(contextDef* context, jobject lockedObject) {
 }
 
 void thSleep(contextDef* context, jlong millis) {
-    jobject currentThread = thCurrentThread->javaThread;
+    jobject currentThread = sGetCurrentJavaThread(context);
 
     // Fall asleep:
     jlong wakeup = vtCurrentTimeMillis() + millis;
@@ -637,7 +665,6 @@ static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
     if (nativeContext != NULL) {
         nativeContext->next = NULL;
         nativeContext->javaStack = javaStack;
-        nativeContext->javaThread = thread;
     }
 
     return nativeContext;
@@ -645,12 +672,11 @@ static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
 
 void thAttach(contextDef* context, jobject thread) {
     __DEBUG("**** BEGIN adding: %p", thread);
-    // The initial stack shall no longer be protected:
 
     // Set current state to StateRunnable:
     SetIntField(context, thread, A_java_lang_Thread_aState, StateRunnable);
 
-    if (sAllThreads->javaThread != NULL) {
+    if (sGetJavaThread(context, sAllThreads) != NULL) {
         ntThreadContext_t* nativeContext = sAllocContext(context, thread);
 
         if (nativeContext != NULL) {
@@ -661,14 +687,12 @@ void thAttach(contextDef* context, jobject thread) {
     } else {
         // It's the main thread; the context has already been alloc'ed, however
         // at the alloc time the java Thread object did not exist:
-        sAllThreads->javaThread = thread;
-        
         // At the top of the java stack there shall be a reference to own thread;
         // otherwise the Main Thread will be garbage collected:
         stackable* st = jaGetArrayPayLoad(context, (jarray) sAllThreads->javaStack);
         st[0].operand.jref = thread;
         st[0].type = OBJECTREF;
-        
+
     }
 
     __DEBUG("**** END adding: %p", thread);
@@ -746,5 +770,5 @@ void thForeachThread(contextDef* context, thCallback_t callback) {
 }
 
 jobject thGetCurrentThread(contextDef* context) {
-    return thCurrentThread->javaThread;
+    return sGetCurrentJavaThread(context);
 }
