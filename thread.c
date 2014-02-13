@@ -47,6 +47,18 @@ static size_t sGetStackSizeInBytes() {
     return STACK_SIZE * sizeof (stackable);
 }
 
+
+/**
+ * This function sets the java thread reference as the first element in the java stack
+ * \param javaStack  The java stack to modify
+ * \param javaThread The thread reference to write
+ */
+static void sSetJavaThread(contextDef* context, jbyteArray javaStack, jobject javaThread) {
+    stackable* st = jaGetArrayPayLoad(context, (jarray) javaStack);
+    st[0].operand.jref = javaThread;
+    st[0].type = OBJECTREF;
+}
+
 /**
  * This function returns the java thread object associated with native thread ntc
  * \param ntc The native thread 
@@ -598,11 +610,7 @@ jbyteArray sAllocStack(contextDef* context, jobject thread) {
 
         if (thread != NULL) {
             // Prepare the stack so it contains 'this' as its first element:
-            stackable* stack = jaGetArrayPayLoad(context, (jarray) stackObject);
-
-            // Push 'this':
-            stack[0].operand.jref = thread;
-            stack[0].type = OBJECTREF;
+            sSetJavaThread(context, stackObject, thread);
         }
     }
     // else: An out-of-mem exception has been thrown
@@ -689,10 +697,7 @@ void thAttach(contextDef* context, jobject thread) {
         // at the alloc time the java Thread object did not exist:
         // At the top of the java stack there shall be a reference to own thread;
         // otherwise the Main Thread will be garbage collected:
-        stackable* st = jaGetArrayPayLoad(context, (jarray) sAllThreads->javaStack);
-        st[0].operand.jref = thread;
-        st[0].type = OBJECTREF;
-
+        sSetJavaThread(context, sAllThreads->javaStack, thread);
     }
 
     __DEBUG("**** END adding: %p", thread);
