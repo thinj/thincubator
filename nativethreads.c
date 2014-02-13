@@ -19,7 +19,6 @@ extern ntThreadContext_t* thCurrentThread;
 static ntReg_t RSP;
 static ntThreadContext_t* cThr;
 static ntThreadContext_t* nThr;
-//static size_t sCStackSize;
 static void* stack;
 static void (*nextFunc)(ntThreadContext_t*);
 
@@ -96,7 +95,7 @@ void ntInitContext(ntThreadContext_t* ctx, size_t stackSize, void (*func)(ntThre
 
     ctx->context.programCounter = startAddress;
     ctx->context.classIndex = classId;
-    ctx->context.stackPointer = 1;
+    ctx->context.stackPointer = 1; // There is already a Thread object pointer at [0]
     ctx->context.framePointer = 0;
     ctx->context.contextPointer = 0;
     ctx->context.returnFromVM = FALSE;

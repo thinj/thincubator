@@ -39,3 +39,7 @@ JNIEXPORT void JNICALL Java_java_lang_Thread_sleep(JNIEnv *env, jclass cls, jlon
 JNIEXPORT void JNICALL Java_java_lang_Thread_interrupt(JNIEnv *env, jobject this) {
     thInterrupt(env, this);
 }
+
+JNIEXPORT jobject JNICALL Java_java_lang_Thread_currentThread(JNIEnv *env, jclass cls) {
+    return thGetCurrentThread(env);
+}

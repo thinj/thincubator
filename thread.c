@@ -48,7 +48,7 @@ static size_t sGetStackSizeInBytes() {
 }
 
 static void sDumpContext(contextDef* context, char* prefix) {
-    jobject thr = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread), A_java_lang_Thread_aCurrentThread);
+    jobject thr = thCurrentThread->javaThread;
     consoutli("%s"
             "pc = 0x%04x "
             "sp = 0x%04x "
@@ -214,7 +214,6 @@ void thYield(contextDef* context) {
             if (nextThread->javaThread == NULL) {
                 jvmexit(88);
             }
-            SetStaticObjectField(context, cls, A_java_lang_Thread_aCurrentThread, nextThread->javaThread);
 
             __DEBUG("nt yield %p %p\n", thCurrentThread, nextThread);
             // Set stack to point at next Thread's stack:
@@ -355,8 +354,7 @@ void thMonitorEnter(contextDef* context, jobject objectToLock) {
 
     if (objectToLock != NULL) {
         jobject monitor = GetObjectField(context, objectToLock, A_java_lang_Object_aMonitor);
-        jobject currentThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread),
-                A_java_lang_Thread_aCurrentThread);
+        jobject currentThread = thCurrentThread->javaThread;
 
         if (monitor == NULL) {
             // Lazy monitor allocation:
@@ -387,8 +385,7 @@ void thMonitorExit(contextDef* context, jobject objectToLock) {
     __DEBUG("thMonitorExit enter %p\n", context);
     if (objectToLock != NULL) {
         jobject monitor = GetObjectField(context, objectToLock, A_java_lang_Object_aMonitor);
-        jobject currentThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread),
-                A_java_lang_Thread_aCurrentThread);
+        jobject currentThread = thCurrentThread->javaThread;
         jobject lockOwnerThread = GetObjectField(context, monitor, A_java_lang_Object_Monitor_aOwner);
 
         if (lockOwnerThread == currentThread) {
@@ -419,8 +416,7 @@ BOOL sCheckWaitNotify(contextDef* context, jobject lockedObject, jobject* monito
     if (lockedObject != NULL) {
         *monitor = GetObjectField(context, lockedObject, A_java_lang_Object_aMonitor);
         if (*monitor != NULL) {
-            *currentThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread),
-                    A_java_lang_Thread_aCurrentThread);
+            *currentThread = thCurrentThread->javaThread;
             jobject lockOwnerThread = GetObjectField(context, *monitor, A_java_lang_Object_Monitor_aOwner);
             if (*currentThread == lockOwnerThread) {
                 retval = TRUE;
@@ -546,8 +542,7 @@ void thWait(contextDef* context, jobject lockedObject) {
 }
 
 void thSleep(contextDef* context, jlong millis) {
-    jobject currentThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread),
-            A_java_lang_Thread_aCurrentThread);
+    jobject currentThread = thCurrentThread->javaThread;
 
     // Fall asleep:
     jlong wakeup = vtCurrentTimeMillis() + millis;
@@ -558,8 +553,7 @@ void thSleep(contextDef* context, jlong millis) {
     thYield(context);
 
     // Check for interrupt:
-    jobject newThread = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread), A_java_lang_Thread_aCurrentThread);
-    if (GetBooleanField(context, newThread, A_java_lang_Thread_aInterrupted)) {
+    if (GetBooleanField(context, currentThread, A_java_lang_Thread_aInterrupted)) {
         throwInterruptedException(context);
     }
 }
@@ -668,6 +662,13 @@ void thAttach(contextDef* context, jobject thread) {
         // It's the main thread; the context has already been alloc'ed, however
         // at the alloc time the java Thread object did not exist:
         sAllThreads->javaThread = thread;
+        
+        // At the top of the java stack there shall be a reference to own thread;
+        // otherwise the Main Thread will be garbage collected:
+        stackable* st = jaGetArrayPayLoad(context, (jarray) sAllThreads->javaStack);
+        st[0].operand.jref = thread;
+        st[0].type = OBJECTREF;
+        
     }
 
     __DEBUG("**** END adding: %p", thread);
@@ -742,4 +743,8 @@ void thForeachThread(contextDef* context, thCallback_t callback) {
 
         callback(context, stack, ntc->context.stackPointer);
     }
+}
+
+jobject thGetCurrentThread(contextDef* context) {
+    return thCurrentThread->javaThread;
 }

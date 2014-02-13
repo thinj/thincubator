@@ -73,6 +73,12 @@ void thSleep(contextDef* context, jlong millis);
  */
 void thInterrupt(contextDef* context, jobject thread);
 
+/**
+ * This function returns current thread
+ * \param context
+ * \return The current thread
+ */
+jobject thGetCurrentThread(contextDef* context);
 
 /**
  * Simple count based yield method

@@ -166,17 +166,6 @@ static void mark2(contextDef* context, stackable* memory, size_t size) {
     HEAP_VALIDATE;
 }
 
-//static stackable* sGetThreadStack(jobject stackThread) {
-////    // Get the aStack attribute the thread identified by 'stackThread':
-////    jbyteArray ba = GetObjectField(context, stackThread, A_java_lang_Thread_aStack);
-////
-////    // Set the stack pointer to the byte[]:
-////    return (stackable*) jaGetArrayPayLoad((jarray) ba);
-//    consoutli("Ikke faerdigt\n");
-//    jvmexit(87);
-//    return NULL;
-//}
-
 void markAndSweep(contextDef* context) {
     __DEBUG("Mark & Sweep BEGIN");
     //	heap_dump();

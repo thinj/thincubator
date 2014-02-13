@@ -174,7 +174,6 @@ void heap_sweep(unsigned int markValue) {
                     previousSize = previous->e.size;
                 }
 
-                //				consout("Collecting %p (%d)\n", h, (int)h->e.classId);
                 // This call might merge with previous and next element on heap:
                 heap_free(h);
 

@@ -55,7 +55,7 @@ nextInstruction:
     HEAP_VALIDATE;
 
 #ifdef DEBUG_ENABLE
-    jobject thr = GetStaticObjectField(context, getJavaLangClass(context, C_java_lang_Thread), A_java_lang_Thread_aCurrentThread);
+    jobject thr = thGetCurrentThread(context);
     __DEBUG("thr=%p, pc = 0x%04x, sp = 0x%04x, fp = 0x%04x, ExcepThrown: %s, Ins=0x%02x, clid = %d",
             thr, context->programCounter, context->stackPointer, context->framePointer,
             context->exceptionThrown ? "Yes" : "No", code[context->programCounter], context->classIndex);

@@ -51,7 +51,6 @@ extern const u2 M_java_lang_OutOfMemoryError__init;
 extern const u2 M_java_lang_OutOfMemoryError_getInstance;
 extern const u2 A_java_lang_String_value;
 extern const u2 A_java_lang_Thread_aBlockingObject;
-extern const u2 A_java_lang_Thread_aCurrentThread;
 extern const u2 A_java_lang_Thread_aId;
 extern const u2 A_java_lang_Thread_aInterrupted;
 extern const u2 A_java_lang_Thread_aLockCount;
