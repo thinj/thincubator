@@ -22,7 +22,7 @@ int main() {
 //
 //int main() {
 //    thStartVM(heap, sizeof (heap) / sizeof (heap[0]), 2000, 5000);
-
+//
     // Unreachable:
     return 0;
 }

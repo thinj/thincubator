@@ -29,9 +29,6 @@ ntThreadContext_t* thCurrentThread = NULL;
 // Native Thread context for the 'thread' calling the 'main' method of this executable:
 static ntThreadContext_t sCMainContext;
 
-// Native thread context for the main thread:
-static ntThreadContext_t* sJavaMainContext;
-
 // The size of a Native C stack:
 static size_t sCStackSize;
 
@@ -111,20 +108,6 @@ static void sDumpContext(contextDef* context, char* prefix) {
 
             thr);
 }
-
-
-//static void sDumpAllThreads() {
-//	jclass threadClass = getJavaLangClass(C_java_lang_Thread);
-//	jobject stackThread = GetStaticObjectField(threadClass, A_java_lang_Thread_aAllThreads);
-//	__DEBUG("A_java_lang_Thread_aAllThreads: %p", stackThread);
-//
-//	while (stackThread != NULL ) {
-//		__DEBUG("    thread: %p", stackThread);
-//		// Next thread:
-//		stackThread = GetObjectField(stackThread, A_java_lang_Thread_aNextThread);
-//	}
-//}
-
 
 // TODO Make time-based!
 static int aYieldCount = 0;
@@ -623,6 +606,28 @@ static void sRunFunction(ntThreadContext_t* ntc) {
 }
 
 /**
+ * Definition of main function for VM. Has to be compatible with the native scheduling mechanism
+ */
+static void sMainFunction(ntThreadContext_t* ntc) {
+    // First thread running:
+    sAllThreads = ntc;
+
+    // Set as current stack:
+    osSetStack(&ntc->context, ntc->javaStack);
+
+    // Load all java.lang.Class instances:
+    cpGenerateJavaLangClassInstances(&ntc->context);
+
+    push_frame(&ntc->context, 0, ntc->context.classIndex, ntc->context.programCounter, TRUE);
+
+    inExecute(&ntc->context);
+
+    __DEBUG("Java Main thread has terminated");
+    // Return to C Main thread:
+    ntYield(&ntc->context, NULL, &sCMainContext);
+}
+
+/**
  * This function allocates a native thread context for the calling thread.
  * \param context Java context
  * \param this The thread instance
@@ -639,8 +644,10 @@ ntThreadContext_t* thAllocNativeContext(contextDef* context, jobject this, jbyte
         if (this != NULL) {
             const methodInClass* mic = getVirtualMethodEntryByLinkId(this, M_java_lang_Thread_runFromNative);
             ntInitContext(nt, sCStackSize, sRunFunction, C_java_lang_Thread, mic->codeOffset);
+        } else {
+            // It's the main thread
+            ntInitContext(nt, sCStackSize, sMainFunction, startClassIndex, startAddress);
         }
-        // else: It's the main thread
         nt->javaSelf = ntContextObject;
     }
     // else: Out of mem has been thrown
@@ -677,25 +684,6 @@ void thInterrupt(contextDef* context, jobject thread) {
     SetBooleanField(context, thread, A_java_lang_Thread_aInterrupted, TRUE);
 }
 
-/**
- * Definition of main function for VM. Has to be compatible with the native scheduling mechanism
- */
-static void sMainFunction(ntThreadContext_t* ntc) {
-    // First thread running:
-    sAllThreads = ntc;
-
-    // Load all java.lang.Class instances:
-    cpGenerateJavaLangClassInstances(&ntc->context);
-
-    push_frame(&ntc->context, 0, ntc->context.classIndex, ntc->context.programCounter, TRUE);
-
-    inExecute(&ntc->context);
-
-    __DEBUG("Java Main thread has terminated");
-    // Return to C Main thread:
-    ntYield(&ntc->context, sJavaMainContext, &sCMainContext);
-}
-
 void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cStackSize) {
     // Initialize java heap:
     heapInit(heap, heapSize);
@@ -715,20 +703,11 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
     sCMainContext.func = NULL;
 
     // -------------------------------------------------------------------
-    sJavaMainContext = sAllocContext(&sCMainContext.context, NULL);
-    if (sJavaMainContext == NULL) {
-        consoutli("Premature out of memory; can't alloc resources for main thread\n");
-        jvmexit(1);
-    }
-
-    // Set as current stack:
-    osSetStack(&sCMainContext.context, sJavaMainContext->javaStack);
-
-    // Initialize context:
-    ntInitContext(sJavaMainContext, sCStackSize, sMainFunction, startClassIndex, startAddress);
+    // TODO set no-throw flag 
+    ntThreadContext_t* javaMainContext = sAllocContext(&sCMainContext.context, NULL);
 
     // Start Java Main Thread:
-    ntYield(&sJavaMainContext->context, &sCMainContext, sJavaMainContext);
+    ntYield(&javaMainContext->context, &sCMainContext, javaMainContext);
 
     __DEBUG("VM is terminating");
     // will only return to this point when the main thread has terminated
