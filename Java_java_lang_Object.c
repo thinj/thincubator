@@ -48,7 +48,7 @@ jobject JNICALL Java_java_lang_Object_getClass(JNIEnv *env, jobject this) {
     return class;
 }
 
-JNIEXPORT void JNICALL Java_java_lang_Object_wait(JNIEnv *env, jobject lockedObject) {
-    thWait(env, lockedObject);
+JNIEXPORT void JNICALL Java_java_lang_Object_wait(JNIEnv *env, jobject lockedObject, jlong timeout) {
+    thWait(env, lockedObject, timeout);
 }
 

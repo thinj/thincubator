@@ -126,11 +126,11 @@ jlong operandStackPeekJavaLong(contextDef* context, int offset) {
     jlong j;
     jint value;
 
-    value = PEEK_VERIFY_INT(context, offset);
+    value = PEEK_VERIFY_INT(context, offset + 1);
     j = value;
     j <<= 32;
     //	j = ((jlong) value) << 32;
-    value = PEEK_VERIFY_INT(context, offset - 1);
+    value = PEEK_VERIFY_INT(context, offset);
     j = j | (value & 0xffffffff);
 
     return j;
@@ -247,6 +247,9 @@ BOOL osIsObjectRefAtOffsetNull(contextDef* context, u2 offset) {
 
 void getOperandRelativeToStackPointer(contextDef* context, s1 offset, stackable* st) {
     *st = stack[context->stackPointer + offset];
+        if (context->programCounter == 0x008b) {
+            consoutli("offset = %04x, %d\n", context->stackPointer + offset, st->type);
+        }
 }
 
 void operandStackIncrementVariableJavaInt(contextDef* context, u1 varnum, jint delta) {

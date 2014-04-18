@@ -26,6 +26,18 @@ static void sValidateClassId(u2 classId) {
     }
 }
 
+static void sDumpStack(contextDef* context, int lineNo) {
+    consoutli("%d: dumping 0x%04x 0x%04x...\n", lineNo, context->programCounter, context->stackPointer);
+    int i;
+    for (i = 0; i < context->stackPointer; i++) {
+        stackable* stp;
+        stp = stack + i;
+        const char* typ = StackTypeToString(stp->type);
+        consoutli("%04x %s\n", i, typ);
+    }
+
+}
+
 jobjectArray cpJavaLangClassArray;
 
 /**
@@ -207,6 +219,9 @@ CLASS_TYPE convertArrayType(ARRAY_TYPE atyp) {
  * \param nativeIndex The index (+1) into the native jump table
  */
 void invokeNativeMethod(contextDef* context, u2 nativeIndex) {
+//    if (nativeIndex == 1) {
+//    sDumpStack(context, __LINE__);
+//    }
     nativeJumpTableEntry entry = nativeJumpTable[nativeIndex - 1];
     entry(context);
 }
@@ -239,7 +254,14 @@ void cpInvokeCommon(contextDef* context, const methodInClass* mic, BOOL returnFr
     // This is a no-go: context->operandStackPointer += localVariableCount - argumentCount;
     // since it might leave jref - lookalikes on the stack, which might confuse GC
 
-    push_frame(context, mic->numberOfLocalVariables, mic->classId, mic->codeOffset, returnFromVM);
+//    Søg på FIX 1 (her); FIX 2 & 3 i thinj og få taget højde for +1 fænomenet.
+    int numLocVar = mic->numberOfLocalVariables;
+//    if (mic->nativeIndex == 1) {
+//        consoutli("FIX 1 native: %d %d\n", mic->nativeIndex, numLocVar);
+//        sDumpStack(context, __LINE__);
+//        //numLocVar++;
+//    }
+    push_frame(context, numLocVar, mic->classId, mic->codeOffset, returnFromVM);
     if (mic->nativeIndex > 0) {
         //		consoutli("localVariableCount: %d, native method: %d\n", mic->numberOfLocalVariables, mic->nativeIndex - 1);
         //		consoutli("context: PC=0x%04x  CID=0x%04x  SP=0x%04x  FP=0x%04x EX.THROWN=%s\n", context->programCounter,
@@ -388,8 +410,15 @@ const methodInClass* cpGetVirtualMethodEntry(contextDef* context, u2 cp_index) {
     // Find the class (-id) on which the referenced method shall be invoked:
     stackable st;
 
+//    consoutli("dumping 0x%04x 0x%04x...\n", context->programCounter, context->stackPointer);
+//    if (context->programCounter == 0x008d) {
+//        sDumpStack(context, __LINE__);
+//    }
+    
+    s1 ac = (s1) (-argCount);
+//    consoutli("argcount = %d %04x, index = %04x\n", argCount, context->programCounter, context->stackPointer + ac);
     getOperandRelativeToStackPointer(context, (s1) (-argCount), &st);
-
+//    consoutli("type = %s\n", StackTypeToString(st.type));
     VALIDATE_TYPE(st.type, OBJECTREF);
 
     jobject jref = st.operand.jref;

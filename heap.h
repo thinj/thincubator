@@ -90,6 +90,13 @@ void markAndSweep(contextDef* context);
  */
 void heapProtect(jobject jref, BOOL protected);
 
+
+/**
+ * This function enables throwing of OutOfMemException. 
+ */
+void hpEnableOutOfMemException(void);
+
+
 void validateStackables(stackable* memory, size_t length);
 
 #endif /* HEAP_H_ */

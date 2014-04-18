@@ -26,7 +26,7 @@
 static ntThreadContext_t* sAllThreads = NULL;
 ntThreadContext_t* thCurrentThread = NULL;
 
-// Native Thread context for the 'thread' calling the 'main' method of this executable:
+// Native Thread context for the 'thread' calling the 'main' method of this executable: 
 static ntThreadContext_t sCMainContext;
 
 // The size of a Native C stack:
@@ -502,7 +502,7 @@ void thNotify(contextDef* context, jobject lockedObject, BOOL notifyAll) {
     __DEBUG("end %04x\n", context->programCounter);
 }
 
-void thWait(contextDef* context, jobject lockedObject) {
+void thWait(contextDef* context, jobject lockedObject, jlong timeout) {
     // file:///tools/vmspec/Threads.doc.html#21294
 
     __DEBUG("Begin PC = %04x\n", context->programCounter);
@@ -580,21 +580,6 @@ void thSleep(contextDef* context, jlong millis) {
     }
 }
 
-jbyteArray sAllocStack(contextDef* context) {
-    // Allocate an object without protecting it:
-    jbyteArray stackObject = NewByteArray(context, sGetStackSizeInBytes());
-
-    if (stackObject != NULL) {
-        // Avoid garbage collection of our one and only stack (at this point).
-        // The stack shall be unprotected when the stack has been referenced from the
-        // first thread, see osUnprotectStack():
-        heapProtect((jobject) stackObject, TRUE);
-    }
-    // else: An out-of-mem exception has been thrown
-
-    return stackObject;
-}
-
 /**
  * Definition of function for starting the run-method
  */
@@ -661,8 +646,12 @@ static ntThreadContext_t* sAllocContext(contextDef* context, jobject thread) {
     ntThreadContext_t* nativeContext = NULL;
 
     // Allocate and prepare the java stack for this thread:
-    javaStack = sAllocStack(context);
+
+    // Allocate an object without protecting it:
+    javaStack = NewByteArray(context, sGetStackSizeInBytes());
+
     if (javaStack != NULL) {
+        heapProtect((jobject) javaStack, TRUE);
         // Allocate and prepare the native C stack for this thread:
         nativeStack = NewByteArray(context, sCStackSize);
     }
@@ -684,7 +673,7 @@ void thInterrupt(contextDef* context, jobject thread) {
     SetBooleanField(context, thread, A_java_lang_Thread_aInterrupted, TRUE);
 }
 
-void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cStackSize) {
+int thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cStackSize) {
     // Initialize java heap:
     heapInit(heap, heapSize);
 
@@ -703,14 +692,19 @@ void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cSta
     sCMainContext.func = NULL;
 
     // -------------------------------------------------------------------
-    // TODO set no-throw flag 
     ntThreadContext_t* javaMainContext = sAllocContext(&sCMainContext.context, NULL);
 
-    // Start Java Main Thread:
-    ntYield(&javaMainContext->context, &sCMainContext, javaMainContext);
+    if (javaMainContext != NULL) {
+        // Until now; out of mem exception throwing is disabled; change to enabled:
+        hpEnableOutOfMemException();
 
+        // Start Java Main Thread:
+        ntYield(&javaMainContext->context, &sCMainContext, javaMainContext);
+    }
     __DEBUG("VM is terminating");
     // will only return to this point when the main thread has terminated
+    
+    return javaMainContext != NULL ? 0 : -1;
 }
 
 void thAttach(contextDef* context, jobject thread) {

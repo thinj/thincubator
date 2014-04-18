@@ -54,9 +54,10 @@ void thNotify(contextDef* context, jobject lockedObject, BOOL notifyAll);
  * This function waits for a notification on an object
  *
  * \param lockedObject The object to wait on
+ * \param timeout The timeout in millis. If == 0; wait until notified == never timeout.
  * \throws IllegalMonitorStateException If the lockedObject is not owned by calling thread,
  */
-void thWait(contextDef* context, jobject lockedObject);
+void thWait(contextDef* context, jobject lockedObject, jlong timeout);
 
 /**
  * This function puts the current thread into sleep state for at least the specified time
@@ -97,8 +98,9 @@ jlong thGetCurrentThreadId(contextDef* context);
  * \param heapSize The size of the heap area (in chunks of align_t)
  * \param javaStackSize The size of the java stack (in bytes)
  * \param cStackSize The size of the c stack (in bytes)
+ * \return 0 if succ
  */
-void thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cStackSize);
+int thStartVM(align_t* heap, size_t heapSize, size_t javaStackSize, size_t cStackSize);
 
 
 typedef void (*thCallback_t)(contextDef* context, stackable* memory, size_t size);

@@ -21,6 +21,10 @@
 #include "debug.h"
 #include "nativethreads.h"
 
+// During startup, no OOM exception shall be thrown; in stead NULL shall silently
+// be returned. The state of this is controlled using this boolean:
+static BOOL sThrowOutOfMemException = FALSE;
+
 // The current mark value:
 static unsigned int markValue;
 
@@ -46,8 +50,10 @@ jobject heapAllocObjectByByteSize(contextDef* context, u2 size, u2 classId) {
         // The mark - field is already init to 0 => it is always != markValue as long it isn't marked
         // => it can be garbage collected, and it will not by incident look like it is marked
     } else {
-        //		consout("out of mem friends!\n");
-        throwOutOfMemoryError(context);
+        if (sThrowOutOfMemException) {
+            throwOutOfMemoryError(context);
+        }
+        // else: Silently return NULL
     }
 
     return (jobject) h;
@@ -180,7 +186,7 @@ void markAndSweep(contextDef* context) {
 
     // Mark all stacks:
     thForeachThread(context, mark2);
-    
+
     // Sweep heap:
     heap_sweep(markValue);
 
@@ -188,4 +194,8 @@ void markAndSweep(contextDef* context) {
     __DEBUG("Mark & Sweep END");
 
     HEAP_VALIDATE;
+}
+
+void hpEnableOutOfMemException(void) {
+    sThrowOutOfMemException = TRUE;
 }
